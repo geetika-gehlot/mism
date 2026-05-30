@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Step Six: Billets — Thirteen Steps to Mentalism</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FDF8F0;
+    --parchment: #F5EDD8;
+    --warm-white: #FEFCF8;
+    --gold: #C8922A;
+    --gold-light: #F5E6C8;
+    --gold-mid: #E8C97A;
+    --deep-brown: #2C1A0E;
+    --mid-brown: #5C3D1E;
+    --warm-gray: #8B7355;
+    --ink: #1A1209;
+
+    --lavender-bg: #F0EDFF;
+    --lavender-border: #C5BBF5;
+    --lavender-text: #3C2E8A;
+
+    --mint-bg: #E8F7F1;
+    --mint-border: #7DD4B0;
+    --mint-text: #0A5C3A;
+
+    --peach-bg: #FDF0EA;
+    --peach-border: #F0B89A;
+    --peach-text: #8A3215;
+
+    --sky-bg: #EAF4FD;
+    --sky-border: #8CC8F0;
+    --sky-text: #0D4E7A;
+
+    --rose-bg: #FDF0F4;
+    --rose-border: #F2AABF;
+    --rose-text: #8A1A3C;
+
+    --lemon-bg: #FDFAEC;
+    --lemon-border: #E8D070;
+    --lemon-text: #6B5200;
+
+    --sage-bg: #EEF5E8;
+    --sage-border: #AACCAA; 
+    --sage-text: #2E5520;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Lora', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.8;
+    padding: 0;
+  }
+
+  .book-header {
+    background: var(--deep-brown);
+    padding: 3rem 2.5rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .book-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center top, #5C3D1E 0%, #2C1A0E 60%);
+    opacity: 0.7;
+  }
+
+  .book-header-inner { position: relative; z-index: 1; }
+
+  .series-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-mid);
+    margin-bottom: 0.75rem;
+  }
+
+  .book-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #FDF8F0;
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+  }
+
+  .book-subtitle {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--gold-mid);
+    margin-bottom: 1.5rem;
+  }
+
+  .gold-divider {
+    width: 80px;
+    height: 2px;
+    background: var(--gold-mid);
+    margin: 1.2rem auto;
+    border-radius: 2px;
+  }
+
+  .header-meta {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: #C8B896;
+    letter-spacing: 0.05em;
+  }
+
+  .toc-wrapper {
+    background: var(--parchment);
+    border-top: 3px solid var(--gold);
+    padding: 2rem 2.5rem;
+  }
+
+  .toc-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--mid-brown);
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.05em;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.3rem 2rem;
+  }
+
+  .toc-item {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13.5px;
+    color: var(--mid-brown);
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    padding: 0.2rem 0;
+  }
+
+  .toc-num {
+    font-weight: 500;
+    color: var(--gold);
+    min-width: 1.5rem;
+    font-size: 12px;
+  }
+
+  .toc-dot {
+    flex: 1;
+    border-bottom: 1px dotted var(--gold-mid);
+    margin: 0 0.3rem;
+    min-width: 1rem;
+  }
+
+  .page-num {
+    color: var(--warm-gray);
+    font-size: 12px;
+  }
+
+  .content {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 2rem 2rem 4rem;
+  }
+
+  .part-header {
+    text-align: center;
+    padding: 2.5rem 0 1rem;
+    position: relative;
+  }
+
+  .part-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .part-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--deep-brown);
+    margin-bottom: 0.8rem;
+  }
+
+  h2.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.45rem;
+    color: var(--deep-brown);
+    margin: 2.2rem 0 0.8rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1.5px solid var(--gold-light);
+  }
+
+  h3.subsection {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: var(--mid-brown);
+    margin: 1.5rem 0 0.6rem;
+    font-style: italic;
+  }
+
+  p { margin-bottom: 1rem; }
+
+  .callout {
+    border-radius: 10px;
+    padding: 1.1rem 1.4rem;
+    margin: 1.3rem 0;
+    border-left: 4px solid;
+  }
+
+  .callout-lavender { background: var(--lavender-bg); border-color: var(--lavender-border); color: var(--lavender-text); }
+  .callout-mint     { background: var(--mint-bg);     border-color: var(--mint-border);     color: var(--mint-text); }
+  .callout-peach    { background: var(--peach-bg);    border-color: var(--peach-border);    color: var(--peach-text); }
+  .callout-sky      { background: var(--sky-bg);      border-color: var(--sky-border);      color: var(--sky-text); }
+  .callout-rose     { background: var(--rose-bg);     border-color: var(--rose-border);     color: var(--rose-text); }
+  .callout-lemon    { background: var(--lemon-bg);    border-color: var(--lemon-border);    color: var(--lemon-text); }
+  .callout-sage     { background: var(--sage-bg);     border-color: var(--sage-border);     color: var(--sage-text); }
+
+  .callout-icon { font-size: 1.2rem; margin-right: 0.4rem; }
+
+  .box {
+    border-radius: 12px;
+    padding: 1.3rem 1.6rem;
+    margin: 1.5rem 0;
+  }
+
+  .box-lavender { background: var(--lavender-bg); border: 1.5px solid var(--lavender-border); color: var(--lavender-text); }
+  .box-mint     { background: var(--mint-bg);     border: 1.5px solid var(--mint-border);     color: var(--mint-text); }
+  .box-peach    { background: var(--peach-bg);    border: 1.5px solid var(--peach-border);    color: var(--peach-text); }
+  .box-sky      { background: var(--sky-bg);      border: 1.5px solid var(--sky-border);      color: var(--sky-text); }
+  .box-rose     { background: var(--rose-bg);     border: 1.5px solid var(--rose-border);     color: var(--rose-text); }
+  .box-lemon    { background: var(--lemon-bg);    border: 1.5px solid var(--lemon-border);    color: var(--lemon-text); }
+  .box-sage     { background: var(--sage-bg);     border: 1.5px solid var(--sage-border);     color: var(--sage-text); }
+  .box-gold     { background: var(--gold-light);  border: 1.5px solid var(--gold);            color: var(--deep-brown); }
+  .box-parchment { background: var(--parchment);  border: 1.5px solid var(--gold-mid);        color: var(--deep-brown); }
+
+  .box-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .nested-box {
+    border-radius: 8px;
+    padding: 0.9rem 1.2rem;
+    margin: 0.8rem 0;
+    border: 1px solid;
+  }
+
+  .nested-lavender { background: #E8E3FF; border-color: var(--lavender-border); color: var(--lavender-text); }
+  .nested-mint     { background: #D0EFE5; border-color: var(--mint-border);     color: var(--mint-text); }
+  .nested-peach    { background: #FAE4D4; border-color: var(--peach-border);    color: var(--peach-text); }
+  .nested-sky      { background: #D4EAFA; border-color: var(--sky-border);      color: var(--sky-text); }
+  .nested-lemon    { background: #F8F0C8; border-color: var(--lemon-border);    color: var(--lemon-text); }
+  .nested-gold     { background: #EDD898; border-color: var(--gold);            color: var(--deep-brown); }
+  .nested-rose     { background: #FAD8E2; border-color: var(--rose-border);     color: var(--rose-text); }
+
+  .rules-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin: 1rem 0;
+  }
+
+  .rule-card {
+    border-radius: 10px;
+    padding: 0.85rem 1.1rem;
+    font-size: 14.5px;
+    line-height: 1.5;
+  }
+
+  .step-number {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 0.25rem;
+  }
+
+  .step-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gold);
+    float: left;
+    margin-right: 0.5rem;
+    line-height: 1;
+    margin-top: 0.15rem;
+  }
+
+  ol.styled-list, ul.styled-list {
+    padding-left: 0;
+    list-style: none;
+    margin: 0.8rem 0;
+  }
+
+  ol.styled-list li, ul.styled-list li {
+    padding: 0.5rem 0 0.5rem 2rem;
+    position: relative;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    font-size: 15.5px;
+    line-height: 1.65;
+  }
+
+  ol.styled-list { counter-reset: list-counter; }
+  ol.styled-list li { counter-increment: list-counter; }
+  ol.styled-list li::before {
+    content: counter(list-counter, lower-alpha) ".";
+    position: absolute;
+    left: 0;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--gold);
+    font-size: 14px;
+  }
+
+  ul.styled-list li::before {
+    content: "✦";
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 11px;
+    top: 0.75rem;
+  }
+
+  .highlight-quote {
+    border-left: 4px solid var(--gold);
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    background: var(--gold-light);
+    border-radius: 0 10px 10px 0;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--deep-brown);
+  }
+
+  .technique-tag {
+    display: inline-block;
+    background: var(--gold-light);
+    border: 1px solid var(--gold);
+    color: var(--deep-brown);
+    border-radius: 20px;
+    padding: 0.2rem 0.75rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0.15rem;
+  }
+
+  .trick-header {
+    background: var(--deep-brown);
+    color: var(--gold-light);
+    border-radius: 12px 12px 0 0;
+    padding: 1rem 1.5rem 0.8rem;
+  }
+
+  .trick-body {
+    background: var(--warm-white);
+    border: 1.5px solid var(--gold-mid);
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    padding: 1.3rem 1.5rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .trick-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--gold-mid);
+    margin-bottom: 0.2rem;
+  }
+
+  .trick-author {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: #C8B896;
+  }
+
+  .effect-badge {
+    display: inline-block;
+    background: var(--lavender-bg);
+    color: var(--lavender-text);
+    border: 1px solid var(--lavender-border);
+    border-radius: 20px;
+    padding: 0.2rem 0.8rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11.5px;
+    font-weight: 500;
+    margin-bottom: 0.7rem;
+  }
+
+  .method-badge {
+    display: inline-block;
+    background: var(--mint-bg);
+    color: var(--mint-text);
+    border: 1px solid var(--mint-border);
+    border-radius: 20px;
+    padding: 0.2rem 0.8rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11.5px;
+    font-weight: 500;
+    margin-bottom: 0.7rem;
+  }
+
+  .separator {
+    border: none;
+    border-top: 2px solid var(--gold-light);
+    margin: 2.5rem 0;
+  }
+
+  .emoji-lead { font-size: 1.2rem; margin-right: 0.3rem; }
+
+  .warning-banner {
+    background: var(--peach-bg);
+    border: 2px solid var(--peach-border);
+    border-radius: 10px;
+    padding: 1rem 1.4rem;
+    margin: 1rem 0;
+    color: var(--peach-text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14.5px;
+  }
+
+  .tip-banner {
+    background: var(--lemon-bg);
+    border: 2px solid var(--lemon-border);
+    border-radius: 10px;
+    padding: 1rem 1.4rem;
+    margin: 1rem 0;
+    color: var(--lemon-text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14.5px;
+  }
+
+  .summary-box {
+    background: var(--deep-brown);
+    color: var(--gold-light);
+    border-radius: 14px;
+    padding: 1.5rem 1.8rem;
+    margin: 2rem 0;
+  }
+
+  .summary-box .box-title { color: var(--gold-mid); font-size: 1.1rem; }
+
+  .cols-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+
+  @media (max-width: 640px) {
+    .toc-grid { grid-template-columns: 1fr; }
+    .rules-grid { grid-template-columns: 1fr; }
+    .cols-2 { grid-template-columns: 1fr; }
+    .book-title { font-size: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════ HEADER -->
+<header class="book-header">
+  <div class="book-header-inner">
+    <p class="series-label">✦ Step Six ✦ Corinda's Series ✦</p>
+    <h1 class="book-title">Billets</h1>
+    <p class="book-subtitle">From "Thirteen Steps to Mentalism"</p>
+    <div class="gold-divider"></div>
+    <p class="header-meta">Part One: Technique &nbsp;·&nbsp; Part Two: Tricks &amp; Routines</p>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════ TABLE OF CONTENTS -->
+<div class="toc-wrapper">
+  <p class="toc-title">📋 Contents</p>
+  <div class="toc-grid">
+    <div class="toc-item"><span class="toc-num">①</span> Introduction <span class="toc-dot"></span><span class="page-num">165</span></div>
+    <div class="toc-item"><span class="toc-num">②</span> Simple Rules to Follow <span class="toc-dot"></span><span class="page-num">166</span></div>
+    <div class="toc-item"><span class="toc-num">③</span> The Centre Tear (Corinda) <span class="toc-dot"></span><span class="page-num">166</span></div>
+    <div class="toc-item"><span class="toc-num">④</span> The Centre Tear (Punx) <span class="toc-dot"></span><span class="page-num">171</span></div>
+    <div class="toc-item"><span class="toc-num">⑤</span> Centre Tear (One Hand) <span class="toc-dot"></span><span class="page-num">171</span></div>
+    <div class="toc-item"><span class="toc-num">⑥</span> Centre Tear (Backward Variation) <span class="toc-dot"></span><span class="page-num">173</span></div>
+    <div class="toc-item"><span class="toc-num">⑦</span> Centre Tear Preparation <span class="toc-dot"></span><span class="page-num">174</span></div>
+    <div class="toc-item"><span class="toc-num">⑧</span> Centre Tear (Reading the Billet) <span class="toc-dot"></span><span class="page-num">175</span></div>
+    <div class="toc-item"><span class="toc-num">⑨</span> Billet Switch (Bare Hand) <span class="toc-dot"></span><span class="page-num">175</span></div>
+    <div class="toc-item"><span class="toc-num">⑩</span> Billet Switch (Annemann) <span class="toc-dot"></span><span class="page-num">176</span></div>
+    <div class="toc-item"><span class="toc-num">⑪</span> Billet Switch by Lapping <span class="toc-dot"></span><span class="page-num">178</span></div>
+    <div class="toc-item"><span class="toc-num">⑫</span> Billet Switch (Magnetic Clip) <span class="toc-dot"></span><span class="page-num">178</span></div>
+    <div class="toc-item"><span class="toc-num">⑬</span> Billet Switch (Corinda Pull) <span class="toc-dot"></span><span class="page-num">178</span></div>
+    <div class="toc-item"><span class="toc-num">⑭</span> Billet Switch (Henley) <span class="toc-dot"></span><span class="page-num">182</span></div>
+    <div class="toc-item"><span class="toc-num">⑮</span> Billet Stands <span class="toc-dot"></span><span class="page-num">185</span></div>
+    <div class="toc-item"><span class="toc-num">⑯</span> Marking of Billets <span class="toc-dot"></span><span class="page-num">185</span></div>
+    <div class="toc-item"><span class="toc-num">⑰</span> Star Trap Switch (Mason) <span class="toc-dot"></span><span class="page-num">181</span></div>
+    <div class="toc-item"><span class="toc-num">⑱</span> Summary of Billet Switching <span class="toc-dot"></span><span class="page-num">184</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ CONTENT -->
+<main class="content">
+
+  <!-- PART ONE HEADER -->
+  <div class="part-header">
+    <p class="part-eyebrow">Part One</p>
+    <h2 class="part-title">Technique ✋</h2>
+    <div class="gold-divider"></div>
+  </div>
+
+  <!-- INTRODUCTION -->
+  <h2 class="section-title">Introduction 📜</h2>
+
+  <p>A "Billet" in the magical sense of the word, means a small piece of paper which is used generally in the performance of an effect of Mentalism. This piece of paper may be of any texture and of any size, although it is usually conceded that a Billet is about the size of a Playing card or smaller.</p>
+
+  <div class="box box-sky">
+    <div class="box-title">🌟 Why Billets Matter More Than Anything</div>
+    <p style="margin-bottom:0.6rem;">In order to assess the value of working with Billets, we should survey the field of Mentalism as a whole, and consider how many effects depend on the principle that something is written. Either of two occurrences are commonplace: you write something and then have the spectator think... or, the spectator thinks and then writes his thoughts. A moment's reflection on your part will prove beyond all doubt that more Mental effects involve the written word (or number, etc.) than any others. Even more than Card tricks, of which there are painfully too many!</p>
+    <div class="nested-box nested-sky">
+      <strong>In view of this, it would be fair to say that we are dealing with the most important principle of Mental Magic.</strong>
+    </div>
+  </div>
+
+  <p>To work with Billets, you have to be able to switch them, tear them to pieces and retain certain parts, force them and locate them from indexes. All this involves hard work, considerable practice, a lot of confidence in your own ability and nerve. Few aspects of Mentalism call for manipulation, but working with Billets does involve quite a bit of digital dexterity and like most other forms of manipulative skill, you need an acute sense of good timing.</p>
+
+  <div class="callout callout-rose">
+    <span class="callout-icon">⚠️</span> To discourage the lazy Mentalist further, I might add that without a fair knowledge of misdirection, your chances of success are pretty awful.
+  </div>
+
+  <p>At this stage, some may be prompted to ask "why bother if it's that hard?" to which the reply is, "don't, unless you happen to be one of those people that love Mentalism as an Art, and think that in its purest form you come down to working with practically no props; relying on personal skill and showmanship to make a miracle out of a little bit of paper." A complicated and gigantic prop may produce the wonder of wonders by the mere push of a button, but it will never give you as much personal satisfaction as the little swindle where you switched papers right under their noses!</p>
+
+  <div class="highlight-quote">
+    ✨ You can take my word for it, every hour you work to study the use of Billets, will reward you with years of pleasure. Give them enough practice and find out what you can do with them, and I'll lay ten to one you will chuck away the suitcases of props and walk around with a small pad of paper and a pencil in your pocket!
+  </div>
+
+  <p>People often say to me, "what do you think is the best mental effect?" and when they ask, I always reply the same: "to me, I have met nothing yet which will replace my esteem for the Centre Tear." For a good many years this one trick with a Billet has stood me in good stead. I've used it everywhere under almost every possible condition and never once has it failed to do me more good than any other three tricks I know.</p>
+
+  <div class="box box-gold">
+    <div class="box-title">🏆 The Ultimate Recommendation</div>
+    <p style="margin-bottom:0;">If you want to get one thing out of this book, and can't be bothered to read the lot, don't waste any more time because you will find nothing better than the Centre Tear. That's worth the price of the full Thirteen Steps.</p>
+  </div>
+
+  <p>For those of you who remain, we must get down to work! This Step deals first with Technique and later with tricks. I wish you lots of luck and as much success as Bert Reese, Foster and Morelle had, with "bits of paper." It was their living.</p>
+
+  <hr class="separator">
+
+  <!-- SECTION 1: RULES -->
+  <h2 class="section-title">① A Few Simple Rules for Working with Billets 📏</h2>
+
+  <div class="box box-lavender">
+    <div class="box-title">✦ The Golden Rules</div>
+    <div class="rules-grid">
+      <div class="rule-card nested-lavender">
+        <div class="step-number">Rule A</div>
+        Never call a Billet a "Billet" when talking to the spectator.
+      </div>
+      <div class="rule-card nested-lavender">
+        <div class="step-number">Rule B</div>
+        If you treat the Billet with indifference, so will they.
+      </div>
+      <div class="rule-card nested-lavender">
+        <div class="step-number">Rule C</div>
+        Look at the spectator when you switch a Billet, not your hands.
+      </div>
+      <div class="rule-card nested-lavender">
+        <div class="step-number">Rule D</div>
+        Never tell them what you are going to do, unless you have to for the effect.
+      </div>
+      <div class="rule-card nested-lavender">
+        <div class="step-number">Rule E</div>
+        Don't rush; take your time. Slow and sure is better than fast and failure.
+      </div>
+      <div class="rule-card nested-lavender">
+        <div class="step-number">Rule F</div>
+        When the spectator has written something, say "what you are thinking," NOT "what you have written."
+      </div>
+      <div class="rule-card nested-lavender">
+        <div class="step-number">Rule G</div>
+        Never repeat the same trick immediately. Do a different one for an encore.
+      </div>
+      <div class="rule-card nested-lavender">
+        <div class="step-number">Rule H</div>
+        When you mis-read a Billet, look at it.
+      </div>
+    </div>
+    <div class="nested-box nested-gold" style="margin-top:0.8rem;">
+      <strong>Rule I 🎯</strong> Work hard until you find a good trick and when you have that, discard it and find a better one!
+    </div>
+  </div>
+
+  <hr class="separator">
+
+  <!-- SECTION 2: THE CENTRE TEAR -->
+  <h2 class="section-title">② The Centre Tear (Corinda Variation) ✂️</h2>
+
+  <p>There are lots of versions of the Centre Tear (or "Torn Centre") and some of them are good, others deplorable. This is not so much a "variation" as a "routine." It is the exact handling that I use and is the result of continuous performance. Because of this, many of the snags and possible errors have been eliminated. I should mention that, although there may appear to be many details, there are none that could be called superfluous.</p>
+
+  <div class="box box-mint">
+    <div class="box-title">🎭 The Effect</div>
+    <p style="margin-bottom:0;">The spectator is invited to think of a word and write it on a slip of paper. The paper is burnt and from the ashes the Mentalist reads the chosen word.</p>
+  </div>
+
+  <h3 class="subsection">📋 Preparation: Before You Begin</h3>
+
+  <div class="box box-lemon">
+    <div class="box-title">⚙️ Everything You Need Ready in Advance</div>
+    <ol class="styled-list">
+      <li>See that you have a piece of paper that is not too thin. It should be larger than two inches square and smaller than three inches square. In an emergency, borrow a used envelope and rip a square out. Make the paper as square as you can without bothering to achieve geometric exactness.</li>
+      <li>See that you have a pencil, preferably with a soft lead, or a Ball point pen ready for use. An ink pen is not a good thing since the Billet cannot be folded until the ink is dry.</li>
+      <li>See that there is an empty ashtray in the room, preferably on the table. If not, look for a suitable container that can be used to hold burning paper and ash.</li>
+      <li>See that your right hand trousers pocket is empty, but for a box of matches or a lighter and see that your jacket coat is unbuttoned. This preparation all takes place before you even suggest that you should try an experiment. Miss any one of the above details and you will feel an idiot at some part in the routine.</li>
+    </ol>
+  </div>
+
+  <h3 class="subsection">🎬 The Routine, Step by Step</h3>
+
+  <div class="box box-sky">
+    <div class="box-title">🗣️ Steps E–J: Setting the Scene</div>
+    <ol class="styled-list">
+      <li>Propose that you conduct "an experiment." Never call it a trick or an effect. Explain that you will attempt to do something shown to you many years ago. Say that it is simply an experiment with the mind, something that works under the right conditions, and sometimes fails. Make the trick uncertain, then it is more effective when it works, which it always does!</li>
+      <li>Ask the audience to relax whilst you prepare for the test. If you approach it correctly, they will expect you to start, when in fact you have finished!</li>
+      <li>See if you can borrow a pencil and if one is offered, produce the paper (from now on called "the billet") and immediately draw a circle about 1½" in diameter in the middle. It should be as central as you can make it without appearing to bother too much. As you take the pencil, look at it, put down the Billet and say "I suppose it does write?" Immediately, as if to test it, draw the circle. For some unknown reason, people usually laugh when you say "I suppose it does write." Let them laugh at the pencil; you worry about the circle! If you cannot borrow a pencil, use your own and again say something, perhaps, "O.K. now if the lead is not broken..."</li>
+      <li>Put the Billet in front of the subject and hand him the pencil. Walk away, well away, five to ten yards and call out your instructions. Pay particular note to these instructions because this is where you can meet with trouble:</li>
+    </ol>
+    <div class="nested-box nested-sky">
+      <strong>📢 The Exact Wording:</strong> "Do exactly as I ask you please, first think of a word, any word you like in the English language. It makes no difference what you think of. When you have done that, print it in block letters in the circle please."
+    </div>
+    <ol class="styled-list" style="counter-reset: list-counter 8;">
+      <li>Although this instruction appears to make blatant demands from the spectator, I have yet to find anyone who remembers what you said after the trick is done. Why you emphasise "English language" is because you will do the Centre Tear ninety-nine times and you can read what you see. One day, the billet is opened and for the one hundredth go you find yourself looking at hieroglyphics which could be Chinese or Uro-Afghanistani; you may not be educated. You also emphasise "in the circle" because if you don't, and they write outside, later on you will have to be psychic because their word is in ashes, really! You say "block letters" because the word on the billet has to be read with a glimpse lasting a fraction of a second. Have you ever tried reading a doctor's prescription in 0.5 seconds? You cannot read bad handwriting quickly.</li>
+      <li>Having given the instruction, add quietly: "tell me when you have done that."</li>
+      <li>He tells you he is ready. Without approaching the table yet, say casually: "very well, fold the paper in half please." Wait a moment, and then add, "Can you see through it?" He will look and whether he replies "yes" or "no," add, "well to be sure, better fold it once more, in half please..."</li>
+    </ol>
+  </div>
+
+  <div class="box box-peach">
+    <div class="box-title">🎩 Steps K–P: Approach and Take the Billet</div>
+    <ol class="styled-list" style="counter-reset: list-counter 10;">
+      <li>Walk back to the table and if necessary collect the ashtray on the way and put it on the table. If it is on the table, move it to the centre. Don't say why or anything, just move it. You want to telegraph psychologically that fire is going to be used.</li>
+      <li>As soon as you arrive at the table, ask for the pencil if it is yours, saying, "that's how I got it..." You see there is no rush to get the Billet. You worry about an ashtray and a pencil. Towards the Billet you are <strong>INDIFFERENT</strong>.</li>
+      <li>Look at the billet in his hands and sight the centre corner. Take the Billet in the right hand between thumb and first finger, holding it by the centre. (No sharp torn edges are on the centre corner). Push the Billet between the fingers so that the ball of the thumb and finger give full protection to the centre corner.</li>
+      <li>Proceed to tear the billet into strips. Tear two-thirds off with a downward pull of the left hand. Immediately place the centre corner strip on top of the other pieces and tear the bottom strip again, making it three strips in all with the centre corner held on top of the stack under the ball of the thumb.</li>
+      <li>Turn all the strips sideways keeping the centre corner under the thumb and on top, tear off two-thirds and stack again, as always, centre corner bits on top. Tear for the last time and stack as before. Altogether you have made four tears, forming nine sets of pieces, you have them all stacked in one pile and the very top piece is the folded centre corner. Generally speaking, keep the hands open during the tearing process, and do it "at the fingertips."</li>
+      <li>Hold the pieces in one block at the fingertips (thumb and first finger) of the right hand. Keep the other fingers close together and gently curled. Face the back of your right hand straight at the spectator's face (which is the best guide to angles you can get) and with the left hand pull forward the ashtray. "Now I think we can burn them in here..."</li>
+    </ol>
+  </div>
+
+  <div class="box box-rose">
+    <div class="box-title">⚡ Step Q: The Steal — The Only Hard Move!</div>
+    <p>You are about to perform the only hard move in the routine. You must "steal" the centre corner without him knowing it.</p>
+    <div class="nested-box nested-rose">
+      <strong>🎯 Exact Timing:</strong> Look him straight in the face and say "have you got a match please, oh! never mind, I've got one here..." <strong>Timing is ESSENTIAL.</strong> As you ask him for a match he is distracted by the question and with half a second delay you follow up with the line "never mind..." As you say that, pinch the stack a bit pulling the ball of the thumb with the top section (centre corner) back a bit; take all the other pieces into the left hand, holding them at the fingertips, and quickly reach into your pocket with the right hand. Without any pause whatsoever, drop the centre tear into the pocket and bring out the matches and give them a shake.
+    </div>
+  </div>
+
+  <div class="box box-sage">
+    <div class="box-title">🔥 Steps R–U: Burn the Evidence</div>
+    <ol class="styled-list" style="counter-reset: list-counter 17;">
+      <li>Drop the matches on to the table and drop all the pieces of paper into the ashtray. Brush your hands together as though rubbing off some dust, to show them empty without saying "examine my empty hands..."</li>
+      <li>Strike a match and set light to the papers. As they begin to burn say to the subject "they might unfold as they get hot, so you burn them and tell me when there are ashes only left." Stroll away and turn your back. Put your right hand into your right trouser pocket and do what is called the "umbrella move." That is, slip the thumb into the folded Billet and push it open. Hold it in the fingers (there is no call for palming) and bring it out. Cough and cough again; on the second cough, bring your hand up to your mouth and on the way down with that hand, look into the palm and read their word. If it should be upside down, drop the hand to the side, twist it round and repeat the cough-move.</li>
+      <li>Never get flustered over reading the centre Billet. Take your time. Never do it as soon as you get away, relax, wait and be natural.</li>
+      <li>You have read their word. Remember it. Drop the Billet back into your pocket and return to the table saying, "have you done that yet?" Make sure that most if not all of the paper is in ashes. Tell them to use another match from the box on the table if necessary. Once the pieces are in ashes, the evidence of your trickery is destroyed.</li>
+    </ol>
+  </div>
+
+  <div class="box box-lavender">
+    <div class="box-title">🌀 Steps V–Z: The Revelation</div>
+    <ol class="styled-list" style="counter-reset: list-counter 21;">
+      <li>Ask the spectator to crush the ashes and to give you any one small particle of ash. Take it on your open palm of the left hand. Take another piece of paper and the pencil again. Tell the subject to put his fingertips on the ash, forming a complete circle between you, the ash and the spectator. This, you will say, creates the basic harmony required to establish psychometric vibrations... or some such twaddle! Tell him you are about to begin the experiment! Everything depends on his power to co-operate. Remind him that up to now test conditions have been imposed. "You chose any word out of many thousands, you wrote it down, folded the paper, tore it up and burnt it. All that we have is a small piece of ash to establish contact." You deliberately alter what happened as you remind him, and played skilfully, he will think back later and swear blind that at no time did you touch the paper.</li>
+      <li>"Now this may sound silly, but please do exactly as I say. Close your eyes and imagine that you are going into an empty room. There is nothing in that room excepting a blackboard. You go to the board and take a piece of white chalk from your pocket. Now write your word on that board. Do it in your mind, only think of your word and write it in your imagination..." Wait a moment and say, "have you done that?"</li>
+      <li>Do not omit to say that last line, "have you done that?" It is important. If not, you may write his word before he has done so in his mind and he will certainly tell you "I've not finished yet." Say "have you done that, the same word?" This gives you a warning if he is a clever boy who waits until you write the word on his billet and then tells you "ah! but the word I wrote on the board was a different one..."</li>
+      <li>Tell him, after the first attempt, that it is not quite right. "Do it again please in larger letters, keep your eyes open this time." Look him straight in the eyes and holding the pencil in the right hand begin to print the letters of his Billet-word on your paper. Don't look down; it looks very good if you appear to be doing automatic writing. He will see your pencil moving but continue to stare into his eyes and he will still look at you. When you have written his word, drop the pencil and cover the paper with the right hand. Say, "now will you please say what word YOU WERE THINKING OF, out loud please," and as soon as he speaks, hand him the paper and say "and read that out loud."</li>
+    </ol>
+    <div class="nested-box nested-lavender">
+      <strong>🏅 That is the complete routine.</strong> One trick, worth its weight in gold. Every detail is here, follow the moves carefully, practice it time and time again and in doing so, do justice to one of the greatest mental effects you can use.
+    </div>
+  </div>
+
+  <hr class="separator">
+
+  <!-- SECTION 3: PUNX VARIATION -->
+  <h2 class="section-title">③ Centre Tear (Punx-Mier Variation) 🎩</h2>
+
+  <p>Punx has some brilliant ideas and this is just a simple move, but such a move can make all the difference to a practical Mentalist. The word is written as normal and the Billet folded twice. The performer takes it and without the slightest hesitation licks it and sticks it, still folded, on to his forehead. Punx tells me the originator of the move is Mier.</p>
+
+  <p>Now the performer begins to give a reading. He sees letters and finally a word. He names the first word that enters his head, but adds that it's "pretty vague."</p>
+
+  <div class="box box-mint">
+    <div class="box-title">💡 The Clever Twist</div>
+    <div class="nested-box nested-mint">
+      If the spectator tells you that you are right, you faint! If not, say, "no, I knew something was wrong it was very vague. Never mind, try again, write it again but write it backwards this time please because I get a mirror image when it works..." Take down the billet, tear it up and throw the bits away, and in doing so, perform the Centre Tear!! He thinks the billet is done with and pays no attention to your action but begins to write it out again.
+    </div>
+    <p style="margin-top:0.8rem;">You read the Centre Tear and this time when he has re-written the word and folded his paper, say "will you hold it please to my forehead." Whilst he holds the billet in his own hands, you name the word!! The "off-beat" misdirection of this subtlety is so cunning and natural that it will fool magicians who use the Centre Tear. Such is the simplicity of the Punx move.</p>
+  </div>
+
+  <div class="tip-banner">
+    💡 <strong>Pro tip:</strong> In using this variation, since no burning is involved, I have found it a good dodge to refold the centre tear after reading and give it a couple of extra tears, then drop it amid the other pieces on the table. If the spectator should be a deep thinker he's going to find it disappointing when he finds ALL the bits on the table in the old pile!
+  </div>
+
+  <hr class="separator">
+
+  <!-- SECTION 4: ONE HAND VARIATION -->
+  <h2 class="section-title">④ Centre Tear (One Hand Variation) 🖐️</h2>
+
+  <p>From time to time during the performance of a Mental effects with Billets, you will find it necessary to hold a Billet in each hand, and yet one of them has to be used for the centre tear. With both in view at the same time this could present a cumbersome problem. However, this variation solves the problem and it will be found a clean and convincing version.</p>
+
+  <p>Several effects with Billets have made use of the Centre Tear Variation where the end on an oblong billet is torn off. Usually the move involved a two-hand operation; the Billet was held by the end in the left hand and it was taken in the right, the torn end being left behind as it was taken. This principle is made use of in Ron Baillie's "Universal Mind." That is the two-handed operation.</p>
+
+  <p>Discussing this matter with Al Koran one day, he taught me a handling which to my mind is superior to the original handling and quite useful as it is a one hand tear, without any trouble and very little practice. A piece of paper is cut to size about two by six inches. The paper should be a brand that tears easily and yet is not too flimsy, as for example, ordinary duplicating paper which is ideal.</p>
+
+  <div class="box box-sky">
+    <div class="box-title">📐 Setup &amp; Technique</div>
+    <ol class="styled-list">
+      <li>The folding of the billet by the spectator can be done erroneously. To prevent this, you pre-fold the Billet so that he will follow the creases made by you when he comes to fold. Fold the paper once in half long ways and in half again long ways. Then fold once in half so that the six-inch strip is three inches long. Open out the paper again and you will have creases ready.</li>
+      <li>The next important thing is to be able to control where the spectator writes on a fairly large strip of paper. To do this, draw three circles, and with some suitable explanation, write your name in one of the end ones and his name in the other. The centre circle leave blank; that is where he writes his word.</li>
+      <li>Have the spectator write in the blank circle a word, number, name, etc. and tell him to fold the paper when he has done that. Take the folded Billet from him and hold it by the fingers of the right hand just so: Ball of thumb pressing the middle of the billet on to the first joint of the index finger. Centre tear section of the billet resting on the second joint of the second finger. Billet is seen sticking out of the hand. Hold tight with the thumb and first finger and clip the very bottom of the Billet with the edge of the third finger. Now, if you curl your last three fingers the end of the Billet is torn off and carried into the hand all in one move and the visible part of the billet does not move.</li>
+      <li>The tear is accomplished under cover of misdirection which is gained by moving the hands towards a clip or stand. It is a good thing, for example, to be holding a bulldog clip pinched open in the left hand. The right seems to put the billet into the clip. It does, but performs the tear on the way.</li>
+    </ol>
+  </div>
+
+  <hr class="separator">
+
+  <!-- SECTION 5: BACKWARD VARIATION -->
+  <h2 class="section-title">⑤ Centre Tear (Corinda's "Backward" Variation) 😂</h2>
+
+  <div class="callout callout-lemon">
+    <span class="callout-icon">🎭</span> This is a gag! I've had lots of fun with this idea and although I meant it to be a laugh when I first invented it, from time to time it has been taken seriously and caused a sensation! It's strictly for the Magic Club or gathering of magicians and means nothing to a lay audience.
+  </div>
+
+  <p>Get a friend to act as a stooge, or, for those with high morals, use an impression pad or pencil reading (!). Arrange that he will write "Sausage." Work the routine like this:</p>
+
+  <div class="box box-lemon">
+    <div class="box-title">😄 The Comedic Routine</div>
+    <ol class="styled-list">
+      <li>Stand up and say you will show a new trick that you saw published a week ago in "The Fishmongers' Gazette"! Ask for an assistant and state that you would prefer a Mentalist or someone interested in mind reading. Your friend gets there first.</li>
+      <li>Take a piece of paper and very carefully tear it into a small square. Then take a pencil and with a lot of trouble, draw a circle in the middle.</li>
+      <li>Give the paper to the assistant with a pencil and say, "I want you to think of any word you like, then to write it in the circle, I repeat, in the circle, in bold capital letters, then fold the paper exactly in half and in half again so that it is just a quarter of its original size." Great deliberation on the instructions from you are given with painfully obvious details that indicate the Centre Tear. Those only half in the know, will recognise what you are doing and, with knowing nods and whispers to each other, will declare "old stuff," it's the Centre Tear!</li>
+      <li>Stand away with your back turned to the spectator (assistant). When he has done as told you bring in the surprise! "Now before you came up to assist me I asked for a Mentalist and you came. By that I would suppose you are acquainted with the basic principle of Mental Magic? You are, good. Then you will know roughly perhaps what is meant by the Centre Tear! You do, excellent. Then please do it with the paper you are holding." At this stage things go very quiet as the bright boys are quite taken aback by this display of unexpected frankness. Quietness is usually followed by laughter from those who appreciate what you are doing.</li>
+      <li>The assistant does the Centre Tear, usually a diabolical performance, but he does it! You say, "have you done it? Excellent, are you sure you have the bit that matters? You know what I mean! You have, good. Then hand it to the President for safekeeping and then kindly give me the other bits." These you take and hold above your head perhaps making a false glimpse as you put them there. Slowly and melodramatically you reveal the chosen word.</li>
+      <li>"I'm getting an impression of a living object, it's living and yet dead! It seems that you have written something connected with an animal, it could be a dog. Has your word any animal connections?" (Ask the assistant) "Don't help me! You have written a word connected with food. It's Fried Kipper, No, nearly right... Sausage!! Will you check that please Mr. President..."</li>
+    </ol>
+    <div class="nested-box nested-lemon">
+      <em>Note: I am aware that the similarity between a Kipper and a Sausage is only skin deep. — Author</em>
+    </div>
+  </div>
+
+  <hr class="separator">
+
+  <!-- SECTION 6: PREPARATION -->
+  <h2 class="section-title">⑥ Centre Tear (Preparation of the Billet) 📝</h2>
+
+  <div class="cols-2">
+    <div class="box box-sage" style="margin:0;">
+      <div class="box-title">📄 A) Folding</div>
+      <p style="margin-bottom:0;">Some Mentalists find that more satisfactory results are obtained if the square of paper is pre-folded before it is handed to the spectator. The theory being that the spectator, when told to fold the paper, will follow your creases and do so correctly. It invariably works. Most performers who use this preparation feel that it does away with the necessity of telling the spectator to fold in a specific manner.</p>
+    </div>
+    <div class="box box-lavender" style="margin:0;">
+      <div class="box-title">⭕ B) Misdirection for the Circle</div>
+      <p style="margin-bottom:0;">Ways and means have been devised to excuse the drawing of a circle and to hide the reason why they should write their word in the middle. Some call it a mystic symbol and write or draw additional signs around the outside of the circle, so that you have no choice but to write in the blank space, the centre. A casual mention of "in the circle" during your instructions and they do as they are told and I have yet to meet a spectator who remembers the details of your instructions.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-peach" style="margin-top:1.2rem;">
+    <span class="callout-icon">🪞</span> <strong>A lovely presentation touch:</strong> Draw a square instead of a circle and tell them that it represents a mirror. Ask them to imagine that they have a stick of lipstick and that they are going to write a word on the mirror. When you come to reveal their word after doing the usual routine, write it, but write it backwards and explain that you received a "mirror image." A nice touch for presentation and a reason for the square.
+  </div>
+
+  <hr class="separator">
+
+  <!-- SECTION 7: READING THE BILLET -->
+  <h2 class="section-title">⑦ Centre Tear (Reading the Billet) 👁️</h2>
+
+  <p>I think it would be safe to say that the reason why the Centre Tear is not used as much as it should be is because most performers cannot find a comfortable way to glimpse the billet when it comes to reading the word or number. Having done a bit of research on this trick I find that throughout the pages of magic in print there are literally dozens of means suggested. "Look at the billet whilst lighting a cigar (or cigarette if you are a Magic Dealer!), look at it in the lap, under cover of a notepad," and so on.</p>
+
+  <div class="callout callout-mint">
+    <span class="callout-icon">✅</span> Take it from me, if you use the method I give in my routine you won't bother with these alternatives. Wait your time, open it, look at it.
+  </div>
+
+  <div class="warning-banner">
+    ⚠️ <strong>A cautionary tale:</strong> Sometimes one is tempted to try and be too clever and I can give you a wonderful example of applied stupidity achieved in an effort to be over keen. A friend of mine, a good friend but stupid all the same, was with me and performed the Centre Tear on another person. The spectator was the only other person present except myself. He got up to the point where he had to do the steal and did this by taking it from the ashtray on the end of the match (another diabolical variation). Having done that, and made himself really nervous, he subjects himself to further torture whilst he manipulates the centre billet to the second sheet down in his notepad. The top pad he scribbles on, tears off and chucks away and then sees the word. From the manipulation that followed you would suppose that not only was the billet upside down, but also that it was written inside out! So he gets to know the word and then, telling the spectator to close his eyes and think hard he reveals it letter by letter. He followed a routine that has been published, and I say it stinks because if you are going to tell someone to shut their eyes, then that is not a bad time to read the billet. With one person it cannot fail. Don't murder Mentalism, just do it!
+  </div>
+
+  <hr class="separator">
+
+  <!-- BILLET SWITCH INTRO -->
+  <h2 class="section-title">⑧ The Billet Switch (Bare Hand Method) 🤲</h2>
+
+  <p>The next few paragraphs on Technique will deal with a variety of methods that can be used to exchange one billet for another. Before we begin, I should explain that several methods are given because what suits one person is not always adaptable to another. However, it would be a mistake on your part to learn all methods. Run through them and try them out until you discover which one suits you best and then stick with that one and practise it to perfection. You cannot use two methods at once and since they both achieve the same effect you waste your time learning more than one.</p>
+
+  <div class="box box-peach">
+    <div class="box-title">🃏 The Annemann Method (Basic)</div>
+    <p>The Basic Billet Switch as suggested by Theodore Annemann in his Practical Mental Effects requires that you first learn to finger palm a dummy billet. The Billet size is of some importance and also the method of folding. The size should be 2½ × 3½ inches and should be folded once the long way and then twice the other way. This forms a small slip of folded paper which can be finger palmed.</p>
+    <div class="nested-box nested-peach">
+      <p style="margin-bottom:0.5rem;">You will appreciate that if dummy billets are to be folded in a special manner, then so must the real ones. Consequently, see that every billet for this type of work is folded in the same manner.</p>
+      <p style="margin-bottom:0;">The dummy is finger-palmed in the left hand, clipped over the first and second joint of the second finger. A slight bend of the second finger tip keeps it in position. The hand is held at waist level, palm facing the body when the switch is executed.</p>
+    </div>
+    <p>Hold the dummy finger-palmed. With the same hand, pick up the real one holding it at the fingertips. Using the ball of the thumb, draw the real one back on top of the dummy and further still until you get it as far back as you can, then using the thumb and fingers, manipulate the dummy into view, retaining the real one from sight.</p>
+    <div class="nested-box nested-peach">
+      <strong>🔑 Key principle:</strong> In order to perform this move smoothly and faultlessly, one must be expected to practise it for a considerable while. Work with one slip to start with, learn to control that using either left or right hand and then introduce the second. You will discover that for experimental purposes, highly gloss paper is best as it has a smooth surface which allows the slips to pass over each other with ease. Later on, when proficient, you will work with any paper.
+    </div>
+    <p style="margin-bottom:0;">During the performance of the basic switch, it is a good thing to keep the hands in motion and to avoid looking at them. Al Baker, using his own Billet switch, always asked "Did you write it in English?" at the vital moment when the change took place.</p>
+  </div>
+
+  <hr class="separator">
+
+  <!-- SECTION 9: CORINDA BARE HAND -->
+  <h2 class="section-title">⑨ The Billet Switch (Bare Hand — Corinda's Method) 🎱</h2>
+
+  <p>I have had a great deal of success with this method and I think it is the easiest one to learn. The Billets used are size 3 × 3" or thereabouts. They are not folded, but rolled instead into a tight ball. This makes the handling in general ten times easier than a slip of folded paper. The ball, being about half an inch in diameter, gives you something to get hold of, and can be retained in the Classic palm as well as the finger palm. Like sponge balls used in magic or other small objects used in Cups and Balls, there are many possible sleights available and some of them we find adaptable to Mentalism. Care should be taken to avoid any move which in itself suggests a sleight.</p>
+
+  <div class="box box-mint">
+    <div class="box-title">🎱 The Rolled Ball Switch</div>
+    <ol class="styled-list">
+      <li>Practise with balls made from slips of rolled up newspaper.</li>
+      <li>Hold a dummy just out of sight at the fingertips of the right hand.</li>
+      <li>Pick up the real one with the right hand pressing the dummy on top as you do.</li>
+      <li>Transfer both to the left fingertips pushing the real one on top out of sight and leaving the dummy showing.</li>
+      <li>Tell the spectator to "roll them really tightly," showing them what to do by squeezing the dummy and under cover of this motion let the real one drop into the palm leaving one only at the fingertips of the left hand.</li>
+      <li>Take the ball from the left hand (dummy) and give it to the spectator.</li>
+    </ol>
+    <div class="nested-box nested-mint">
+      Those of you who are acquainted with Slydini's Torn and Restored Cigarette Routine (Published in The Stars of Magic) will recognise the opening moves.
+    </div>
+  </div>
+
+  <hr class="separator">
+
+  <!-- SECTION 10: LAPPING -->
+  <h2 class="section-title">⑩ The Billet Switch (by Lapping) 🪑</h2>
+
+  <p>Mention of Slydini automatically brings to mind lapping! There are several good uses for lapping when working with Billets, not only for switching, but for reading them also. Since a lot of Billet work is done at the table, these things will be found useful and you will get the opportunity to apply them.</p>
+
+  <p>We cannot deal technically with the Art of Lapping here, for two reasons: I have neither the space nor the knowledge! However we can cover the Billet switch by Lapping, that I have used!</p>
+
+  <div class="box box-lemon">
+    <div class="box-title">🪑 How to Lap a Billet</div>
+    <p>Make sure that your audience cannot see the lap. The best time for this switch is when you are seated opposite the spectator. Have a dummy billet held at the fingertips of the right hand and have the other billet/s lined up near the edge of the table nearest to you. Make a slight sweeping motion bringing the right hand over the table and towards the billets, appearing to pick up one. In actual fact, you sweep one into your lap, over the edge of the table and bring the hand up without a pause; display the Billet you held at the start.</p>
+  </div>
+
+  <hr class="separator">
+
+  <!-- SECTION 11: MAGNETIC CLIP -->
+  <h2 class="section-title">⑪ The Billet Switch (Magnetic Clip Method) 🧲</h2>
+
+  <div class="box box-sky">
+    <div class="box-title">🧲 A Clever Mechanical Switch</div>
+    <p>Billets size about 3 × 4" are folded twice and sealed with an ordinary paper clip. They are dropped into a cup, shaken and then tipped out. They are all switched or any number of them have been exchanged.</p>
+    <div class="nested-box nested-sky">
+      <strong>⚙️ The secret:</strong> In the bottom of a cup stick (with Araldite or Evostik) a powerful magnet. Buy some paper clips made of steel which you will find are magnetic. Buy or make some more (brass that is nickel plated) that are non-magnetic. Put non-magnetic clips on those you want to act as dummies and have them in the cup to start with. Give the spectator steel clips to put on his billets. Drop these also into the cup. Shake the lot, holding it of course above eye level so that no one can see into the cup, and then boldly tip upside down shooting the contents on to the table. All the billets with a steel clip are held back by the magnet.
+    </div>
+    <p style="margin-bottom:0;">This sort of switch is handy for a Living and Dead test where it is expected that you will mix a number of billets.</p>
+  </div>
+
+  <hr class="separator">
+
+  <!-- SECTION 12: CORINDA PULL -->
+  <h2 class="section-title">⑫ The Billet Switch (Corinda's Billet Pull) 🎪</h2>
+
+  <div class="callout callout-lavender">
+    <span class="callout-icon">🎡</span> Whether or not Billets appeal to you, and whether or not you try anything told to you in this Step, please do one thing for me: try this out. Even if you do not see fit to use it (which is doubtful) I can assure you that it will give you an awful lot of fun.
+  </div>
+
+  <div class="box box-lavender">
+    <div class="box-title">🔧 Building the Apparatus</div>
+    <p>The apparatus consists of our old friend, a piece of elastic acting as a pull. Get a piece of elastic about two feet long. (Adjust to the exact length during use.) On one end tie a small safety pin and on the other end, a paper clip. With that done, the apparatus is ready. Fix the pin to the inside of your right jacket sleeve, just under the armpit. Run the other end down the sleeve and see that the clip hangs about three to four inches from the end of the sleeve. Always have the shirt sleeve rolled up past the elbow when you intend to use the pull.</p>
+    <p>The Billet pull is designed to help you switch billets. In some respects it has a limited application, because it is not possible to obtain the switched billet back from the clip, without a little manoeuvre which takes a second or so with both hands behind the back. However, there are a large number of effects where one does not have to read the stolen billet immediately, and for that type of trick, this apparatus is ideal.</p>
+    <div class="nested-box nested-lavender">
+      You will have to work with this gimmick for quite a long time (a few hours) before you acquire sufficient proficiency to use it in public.
+    </div>
+  </div>
+
+  <div class="box box-rose">
+    <div class="box-title">🎯 The Six Moves</div>
+    <div class="rules-grid">
+      <div class="rule-card nested-rose">
+        <div class="step-number">Move 1 — The Throw</div>
+        Possibly the most amusing and yet startling switch of all. Have a dummy billet ready folded to size ½ × ½" held sideways in the right hand. Pick up the spectator's billet and clip it; that is, put it into your pull-clip. Swing the right hand upwards in a small half circle. Move the hand in a small circular anticlockwise motion. When it reaches the bottom of the circle the billet points to the floor and the back of the hand faces the spectator. Bring the hand upwards in a straight line towards the spectator and at the same time let go of the clip. At the same time open the hand and allow the dummy to travel forward towards the spectator. Performed correctly, this move is absolutely undetectable.
+      </div>
+      <div class="rule-card nested-rose">
+        <div class="step-number">Move 2 — The Slap Down</div>
+        More or less the same handling as the first method is adopted, only the billet is slapped on to a table instead of being thrown.
+      </div>
+      <div class="rule-card nested-rose">
+        <div class="step-number">Move 3 — On to the Spectator's Hand</div>
+        Yes, you can even switch it in their hands! Tell them to hold out their hand, don't say why, show the billet and place it on to their hand telling them to hold it tight!
+      </div>
+      <div class="rule-card nested-rose">
+        <div class="step-number">Move 4 — Hand to Hand Pass</div>
+        You appear to put the billet from your right hand into your left and exchange it as you go.
+      </div>
+      <div class="rule-card nested-rose">
+        <div class="step-number">Move 5 — Into the Glass Switch</div>
+        This is pretty, but you have to get the timing right again. The billet is shown and dropped into a glass. You release just as the hand covers the top of the glass. This looks best with a tall beer glass which allows the audience to see the billet leaving your hand and falling down to the bottom.
+      </div>
+      <div class="rule-card nested-rose">
+        <div class="step-number">Move 6 — Putting it on Display</div>
+        This is also very good, if not the best of the lot as you have a logical reason for the clip. You have a Billet Display Stand and the exchange is made as you put the Billet on to the stand.
+      </div>
+    </div>
+  </div>
+
+  <div class="tip-banner">
+    💡 <strong>Final tip:</strong> When you first practise make the billets out of fairly thick card. That makes it easier to handle.
+  </div>
+
+  <hr class="separator">
+
+  <!-- SECTION 13: DEXTER MATCHBOX -->
+  <h2 class="section-title">⑬ The Billet Switch (The Matchbox Switch — by Will Dexter) 🔥</h2>
+
+  <p>It might not always be logical to burn a billet, but logical or otherwise, it's darn convenient! You find a better way of destroying the evidence of your sins. So for many effects we just have something written, the paper folded and burnt. From the ashes, etc., you read the question. To burn anything requires matches, and this method is a switch which is made possible by a fake matchbox which exchanges the billets (i.e. real one for a dummy) as you remove a match and strike it ready to burn the billet. Natural moves with apparatus above suspicion.</p>
+
+  <div class="box box-peach">
+    <div class="box-title">🔧 Construction Notes</div>
+    <p>The box is made with both the drawer and case part faked. You have the dummy ready held under the box in a cut-out clip arrangement. It has a section cut away to allow the fingers to pull out the billet later. The same part of the box has one side cut away with a slot large enough to allow your billet to pass inside the case part when the box drawer is open. The inside of the case part is lined with black paper or painted black.</p>
+    <div class="nested-box nested-peach">
+      <p style="margin-bottom:0.5rem;"><strong>Case part:</strong> A slot is cut in the side for the billet to enter. The underside has an extra piece of casing attached from another box, forming the holder for the billet with a cut-out part which allows it to be removed easily.</p>
+      <p style="margin-bottom:0;"><strong>Drawer:</strong> A small piece of wood is stuck in the drawer making a false bottom so that matches go on top and the billet goes below.</p>
+    </div>
+    <p>It appears as though you have simply dropped the matchbox with the billet into your left hand, removed a match and then pulled the billet from under the box and set it alight. There is nothing to be seen as you put the box away: the real billet is now inside and can be tipped out into your hand when you want to read it. As the drawer closes, the right hand slides the dummy from under the box (out of the holder) and that one is burnt.</p>
+  </div>
+
+  <hr class="separator">
+
+  <!-- SECTION 14: STAR TRAP -->
+  <h2 class="section-title">⑭ The Star Trap Billet Switch (Eric Mason) ⭐</h2>
+
+  <p>This method will be found of use for effects that require the handling of few billets. It is more or less limited to working with two billets only. A good example of its use would be the trick where the spectator takes a £1 note from his wallet, rolls it into a ball and throws it to you; without unrolling it, you hold it to your forehead and call out the number of the note, then throw it back to be checked.</p>
+
+  <div class="box box-sage">
+    <div class="box-title">⭐ Setup</div>
+    <p>Obtain one of those plastic or rubber "star trap" towel holders. Stick this on a small square of cardboard which may then be pinned to the lining of your jacket, in such a position that when the right arm hangs naturally at the side, the fingertips of the right hand arrive level with the Star Trap. Just behind the side jacket pocket is the place.</p>
+  </div>
+
+  <p>Eric Mason advocates that in the act of performing the switch, a drop is made to give the necessary misdirection for the exchange. Although dropping and picking up of articles is a clumsy affair, one cannot question that in doing so, you create a very powerful form of misdirection. I am inclined to condone the means in this switch, having seen it done and tried it myself.</p>
+
+  <div class="box box-sky">
+    <div class="box-title">🎬 The Execution</div>
+    <p>In your right hand hold a £1 note that has been rolled into a ball. The number of this note you know and have memorised. Ask the subject to lend you a note, tell him to roll it tightly into a ball and take it from him with the right hand. At some point early on in your patter, appear to drop his note to the floor. In actual fact, drop your note with the known number and draw his back from sight into the right hand. As you drop the note, look down at it in surprise and immediately bend forward reaching across the body with the LEFT hand to pick it up. As the left hand picks up the note, the right hangs naturally at the side for a moment, and as it does, it sticks the borrowed note into the Star trap. By the time you are standing upright, a matter of perhaps three seconds, you have one note in your left hand, the number of that note you know and the right hand is empty. You are all set to perform.</p>
+    <div class="nested-box nested-sky">
+      <strong>⚠️ Important:</strong> I suppose it is obvious that at the start you make no mention to the spectator that you intend to deal with the number of his note. He must not look at his note because the one he gets back is not the same as the one he gives. Hasten the proceedings at the start and you will have no trouble.
+    </div>
+  </div>
+
+  <hr class="separator">
+
+  <!-- SECTION 15: ECLIPSE SWITCH -->
+  <h2 class="section-title">⑮ Eclipse Billet Switch (John Henley) 🌑</h2>
+
+  <div class="box box-lavender">
+    <div class="box-title">✨ The Effect</div>
+    <p>An assisting spectator examines a piece of paper, about 5½ × 2½", folds it twice and secures it in a small Bulldog clip. He then signs his name on the billet which is dropped, complete with clip, into a tumbler. When next he examines the paper, the spectator finds written on it the name of a chosen card, colour, number or design, as the mentalist pleases.</p>
+    <div class="nested-box nested-lavender">
+      <strong>Key points:</strong> (a) the mentalist has no need to touch the paper at any time, except of course, when handing it for examination at the beginning; (b) the piece of paper the spectator signs is the one on which the writing appears; (c) the spectator removes the billet from the glass and unfolds it himself.
+    </div>
+  </div>
+
+  <div class="box box-mint">
+    <div class="box-title">⚙️ Required Materials</div>
+    <p style="margin-bottom:0;">2 Eclipse magnets; 2 pieces of paper about 5½ × 2½"; 2 ½" Waverley Bulldog clips; a short pencil; and a glass tumbler.</p>
+  </div>
+
+  <div class="box box-sky">
+    <div class="box-title">🔧 The Method</div>
+    <p>For the sake of argument we shall assume that ESP cards are being used and that the spectator is going to "choose" the triangle design. First, empty the back pocket of your trousers and put one magnet in one bottom corner and the second magnet in the other. You may find it convenient to place a box of matches between them to prevent their clinging together. The pencil is also kept in the back pocket.</p>
+    <p>Now take one of the pieces of paper which, incidentally, should be thick rather than thin, and draw a picture lightly in the centre area. Fold the paper into four and secure the four narrow edges with one of the clips, remove your jacket, let the clip cling to the left hand magnet through the cloth of the back pocket and you are ready to begin. The tumbler is on a nearby table.</p>
+    <ol class="styled-list">
+      <li>Take the billet from the spectator by the clip with the left hand, which is then held waist-high, and feel with the right hand in the right trouser pocket as though looking for the pencil.</li>
+      <li>Withdraw hand and swap billet from left hand to right, again holding it by the clip.</li>
+      <li>This is when the switch is made. As the left hand feels in the left pocket for the pencil the right hand moves behind the back and as it passes the back pocket it leaves the clip attached to the right-hand magnet and immediately removes the duplicate clip and billet from the left-hand magnet.</li>
+      <li>As the left hand is withdrawn the right hand comes to the front, swaps billet from hand to hand as before and the right hand goes behind the back, removes the remaining billet and clip which is adhering to the back of your trousers, drops it into the back pocket and removes the pencil. This method of disposing of the billet was suggested by Slydini, and as you can see, leaves the performer "clean."</li>
+    </ol>
+    <div class="nested-box nested-sky">
+      You give the spectator the pencil and after he has initialled the paper ask him to drop it into the glass. He now selects a symbol and it is up to you to impress upon him that he has the power to transmit his thought-of design to the nearby tumbler. Build up a certain amount of tension without overdoing it, and then let him remove the clip and billet from the tumbler. <strong>DO NOT HANDLE THE PAPER YOURSELF</strong> as, after the effect is over he will remember, when speculating, that he put the billet in the tumbler, and also he was the one to take it out.
+    </div>
+    <p>Although the moves surrounding the switch have taken many lines to describe, their actual execution is completed in less than half a minute, and as stated at the beginning, this is only the basic handling without dressing or elaboration. The design, card or colour is of course forced, and the spectator must be given the impression that the clip is used only to eliminate your handling of the billet. A short pencil is used as it is more natural to have difficulty in finding this than a full length one. The writing on the duplicate billet has to be light as, even on thick paper, it tends to show slightly when the paper is folded. Working without a jacket helps to convince your helper that no switch could be made without his seeing it, although, of course, you do not actually say so.</p>
+    <p>One thing to remember is that the confusion in looking for the pencil must appear natural and not hurried. As far as the spectator is concerned the trick does not start until he has put the billet in the glass, by which time, unbeknown to him, all under-the-counter handling has been completed.</p>
+  </div>
+
+  <div class="callout callout-rose">
+    <span class="callout-icon">📝</span> <strong>Note by Corinda:</strong> This particular switch has the disadvantage that it fringes on the magical appearance of writing on a blank piece of paper. For Mentalism it must be questioned whether or not this is a good thing. However, for those seeking effects which are suitable for demonstrations of mediumistic abilities, this switch then comes into a class on its own, and utilised to perform Living and Dead Tests, where the dead name appears written by The Spirits, you have one of the best methods available.
+  </div>
+
+  <hr class="separator">
+
+  <!-- SECTION 16: SUMMARY -->
+  <h2 class="section-title">⑯ Summary of Billet Switching 📊</h2>
+
+  <p>Somewhere one must draw the line; I can go on and give you a dozen other methods and at the end you will be so confused you won't know which one to use! Enough has been said, you have a fair selection of methods of skill and mechanical self-working ways.</p>
+
+  <p>As I have said before, and must stress again, it is not essential to know different techniques, but it is essential to understand and apply the same basic principles of Billet switching, no matter what method you choose to use. To summarise those principles in a few words:</p>
+
+  <div class="box box-gold">
+    <div class="box-title">📋 The Seven Commandments of Billet Switching</div>
+    <ol class="styled-list">
+      <li>Be able to do your billet switch when your eyes are closed, so that you need not look at your hands.</li>
+      <li>Go steady, not fast and not slow. A sudden quick move which noticeably changes the tempo of your performance is the deadliest way to inform your audience that something is being done. They may not know what, but they know something has happened. It is better to go slower than faster.</li>
+      <li>Pay attention to the section in this book which tells you how to mark your billets so that you can recognise the dummy easily. If you don't, one day without fail, you will land yourself in trouble.</li>
+      <li>Wait your time for the switch. Many a clumsy switch is caused by lack of good timing. When you take a billet from somebody, THEY EXPECT YOU TO DO SOMETHING WITH IT, otherwise why would you take it? So you do nothing. Take it, hold it and show it whilst you talk. Let them wait until they no longer know what is going to happen, and then switch. Never fall head over heels trying to do the switch as soon as the billet arrives in your hands.</li>
+      <li>Never forget that misdirection can do more for you than anything else. Faith can move mountains, and misdirection will move them back again; neither time will you see them go! Learn six stock questions or requests like "do you mind if I use that ashtray over there?" and "Will you see what you have in your right jacket pocket and remove it please..." These stock questions and requests are your standby to put the spectator off his guard for the switch. Do not wait until you are performing; learn them first. They don't always come to mind when you have other things to think about.</li>
+      <li>Have faith in yourself. Never worry. You cannot do Mentalism in any shape or form without confidence. Remember they are at a disadvantage all the way: they do not know what you are going to do, whereas, it is hoped that you do! Always remember that an occasional FAILURE makes things look much more legitimate than constant success. You can afford a mistake; it's good publicity.</li>
+      <li>The best way to learn billet switching is to perform with billets until you have made every possible mistake and general blunder. That will teach you more than fifty books, and you will remember what matters!</li>
+    </ol>
+  </div>
+
+  <hr class="separator">
+
+  <!-- SECTION 17: MARKING BILLETS -->
+  <h2 class="section-title">⑰ Marking of Billets 🔖</h2>
+
+  <div class="callout callout-rose">
+    <span class="callout-icon">⚠️</span> This is important. Read it and remember it. Whenever you intend to use more than one billet, make a habit of secretly marking the dummy.
+  </div>
+
+  <p>Suppose you are doing a trick with three billets, a question and answer effect. On the table are the three billets each one folded and ready for you to read. To do this, you will probably use the "one ahead" system. This means you must switch one of the real billets for a dummy which will leave two questions and one blank on the table. You proceed through the routine, secretly reading the stolen billet and applying that question to one of the others, a normal one ahead technique. BUT you have to know which of the three on the table is the blank. If you get mixed up at any point in the proceedings, you are quite liable to pick up the blank and end your performance abruptly because you cannot read the next question.</p>
+
+  <div class="box box-sage">
+    <div class="box-title">🔖 Methods of Marking</div>
+    <div class="cols-2">
+      <div class="nested-box nested-mint">
+        <strong>✦ The Tail Method (recommended):</strong> I usually fold or roll the billet as usual, but taking one corner of the dummy, give it a tight twist forming a tail which although small and inconspicuous, stays put regardless of how much handling it gets, and can always be seen if you know where to look. Moreover, if done properly, it can be detected by feel which occasionally comes in handy.
+      </div>
+      <div class="nested-box nested-sage">
+        <strong>✦ Other Methods:</strong> Nail nicking and folding in a special manner known to you only. These methods are alright as long as the billets are not going to be handled to the extent that they may become accidentally marked in a similar manner.
+      </div>
+    </div>
+    <div class="nested-box nested-gold" style="margin-top:0.8rem;">
+      <strong>🎯 The standard:</strong> Whatever method you decide to use, it should be one that is good enough to avoid suspicion and yet one that allows you to choose the marked billet from any other ten, at a glance.
+    </div>
+  </div>
+
+  <hr class="separator">
+
+  <!-- SECTION 18: BILLET STANDS -->
+  <h2 class="section-title">⑱ Billet Stands 🗂️</h2>
+
+  <p>A Stand, designed to hold and display a billet can serve more purposes than it might appear to! Primarily, it helps with the presentation, but behind the scenes, it affords you the chance to DO SOMETHING with a billet; an opportunity to do something is an opportunity to switch. Either in the act of taking the billet off the stand or putting it on in the first place, you have movement and cover all with reason and cause.</p>
+
+  <div class="box box-sky">
+    <div class="box-title">🔧 Building Your Stand</div>
+    <p>The stand should have two or three essential qualities. It should appear simple and unlike a conjuring prop in every respect. The best type is easy to make and meets all our requirements for Mentalism.</p>
+    <p>Take a ten inch 14 gauge knitting needle and nip off the nob at the end. Bend the pointed end to form a loop as illustrated in the drawing. Get a block of wood to act as the base and drill a hole (slightly smaller than the diameter of the needle) right in the centre. Into the hole jam the needle; your stand is made.</p>
+    <p style="margin-bottom:0;">In use, a Billet is folded and then clipped with an ordinary small paper clip which is then hung on the stand. It looks good; it is good! You will be able to put the stand into your pocket, making it easy to carry. To pack down, simply pull out the needle and it becomes two parts both easy to carry.</p>
+  </div>
+
+  <div class="callout callout-lavender">
+    <span class="callout-icon">📎</span> <strong>The Lapel Clip:</strong> Another means of displaying a Billet which again offers you considerable scope for trickery is to have a Small Bulldog Clip attached to a little safety pin. This clip can be pinned on your lapel where the billet can be held on show clearly visible to all and yet not in your hands. Alternatively, the clip may be pinned on to the spectator's lapel and the billet left there, which can be very useful on occasions when you would rather not trust the billet into his hands!
+  </div>
+
+  <hr class="separator">
+
+  <!-- SECTION 19: CRYSTAL BALL -->
+  <h2 class="section-title">⑲ The Use of a Crystal Ball 🔮</h2>
+
+  <div class="box box-lavender">
+    <div class="box-title">🔮 A Natural Tool for Reading</div>
+    <p>Of the many means that have been devised for the purpose of secretly reading a billet, the use of a Crystal Ball is one of the best. A good ball magnifies the writing which helps, it seems a natural thing to hold in the hands for this type of work and simply by holding a billet open in the hand and reading through the crystal ball you can see everything. From time to time you will find that with careful handling of the crystal ball, you can let the subject look himself and see the answer to his question, etc.</p>
+    <p style="margin-bottom:0;">The use of miniature playing cards for the last mentioned principle offer you a wide range of effects where the spectator "reads" the name of his card in your crystal.</p>
+  </div>
+
+  <div class="box box-parchment">
+    <div class="box-title">📚 References on Technique with Billets in Other Steps</div>
+    <div class="cols-2">
+      <div class="nested-box nested-lemon">Billet Knife and Billet Pencil &nbsp;→&nbsp; <strong>Step Four</strong></div>
+      <div class="nested-box nested-lemon">Billet Index and Pellet Index &nbsp;→&nbsp; <strong>Step Four</strong></div>
+      <div class="nested-box nested-lemon">Questions and Answers with Billets &nbsp;→&nbsp; <strong>Step Eleven</strong></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════ PART TWO -->
+
+  <div class="part-header" style="margin-top:3rem;">
+    <p class="part-eyebrow">Part Two</p>
+    <h2 class="part-title">Tricks &amp; Routines 🎩</h2>
+    <div class="gold-divider"></div>
+  </div>
+
+  <!-- TRICK 1: CRYSTAL LOCKET -->
+  <div class="trick-header">
+    <p class="trick-author">✦ DR. STANLEY JAKS ✦</p>
+    <h3 class="trick-title">"The Crystal Locket" 💎</h3>
+  </div>
+  <div class="trick-body">
+    <p>Dr. Stanley Jaks needs no introduction to the world of Mentalism having established himself as a first-rate performer. This effect is one of his favourite close up tricks and the routine is just as was written by Dr. Jaks for this Step.</p>
+
+    <span class="effect-badge">✨ The Effect</span>
+    <p>An interesting crystal locket is shown and placed on the table. It is one of those pendant lockets that hangs on a chain and should be an attractive ornament, it is also necessary that it opens so that you can put a slip of paper inside. Next you tear off a sheet of paper from a notepad. This sheet is prepared for the trick by having faint pencil lines ruled on it. The size of the pad should be three by five inches. The top sheet has five lines ruled across the width on one side, and two lines ruled along the length on the other side.</p>
+    <p>Having removed the top sheet the performer takes a pair of scissors and cuts along the five short lines making six slips of paper. On the back of each of these slips will be two lines running the other way. The slips are handed to six people and each person is asked to write the name of a male or female friend on their paper. However, it is important that you emphasise that the name should be written across the lines covering the full distance between the three divisions, and you say that you will explain the reason why in a moment.</p>
+    <p>The scissors are placed on the table and the performer turns his head whilst the writing is done. Still without looking, he tells each spectator to take the scissors and having written the name, cut along the two lines dividing their slip into three sections, and when this has been done, to turn all the slips writing side downwards and to mix every one together in a pile in the middle of the table. When that has been done, he turns round again.</p>
+    <p>The performer picks up the locket and begins to talk about the powers of a Pendulum. The spiel is patterned along the lines of the old sex detector trick, and the locket is used to demonstrate that a Pendulum swings in circles to indicate a male, and in straight lines to indicate a female.</p>
+    <p>Holding the chain so that the locket swings about two inches from the eighteen slips of paper, the performer moves around until suddenly there seems to be some reaction. The locket begins to swing back and forth in straight lines over one piece of paper. Triumphantly the performer seizes this piece and folds it without looking at the writing on the underside. He puts this piece in the locket, closes it, and then explains that it will act as a locator for the pendant.</p>
+    <p>Again he holds the locket over the slips on the table and moves round until he finds another piece which reacts the same way, and then another. These two are pushed to one side. This done, the piece in the locket is removed and added to the other two. These three are lined up to form one piece again, but left face down on the table for the moment. The locket is held above them and this time begins to react immediately. This, says the performer, shows without doubt that the name was written by a lady. All the ladies are told to hold out their hands, and one by one the pendant is tested over their palms. One of the hands gives a reaction and the performer asks this lady if she will admit that the name she wrote was a Female friend. She agrees that it was so.</p>
+    <p>This lady is now asked to turn over the three slips on the table and she finds that out of all the eighteen pieces, mixed and identical in appearance, the Crystal Locket has located the three bits of paper that spell out the name of the woman friend written in her own handwriting!</p>
+
+    <span class="method-badge">🔍 The Method</span>
+    <div class="box box-mint" style="margin-top:0.5rem;">
+      <p>Based on an idea of Stewart James, I think that it has been hoccussed beyond recognition. Consider, what do you really have to know? You must be able to identify one slip of paper, and you have to know who wrote on it in the first place. That's all.</p>
+      <p>When you remove the top sheet from the pad, hold it with the five pencil lines towards you. As you cut off the first slip, make sure that you cut slightly above the pencil line so that this piece of paper HAS NO LINE ON IT. Give this piece to a lady and remember that she has that slip. Go back to cutting the other slips from the big sheet and do so in the same manner which will have the result that the next five pieces all have a pencil line along one edge. This is your means of identification, simple and sure.</p>
+      <p>When you turn your back, instruct the first lady with the blank-back slip to write a name, the name of a female friend. Tell the others to write the name of a male friend. When you hold the locket over the eighteen pieces of paper, scattered across the top of the table, you will have ample opportunity to look for the three pieces that do not have the faint pencil line across them. These must be the three that matter.</p>
+      <p style="margin-bottom:0;">The routine requires a lot of presentation. In Mentalism EVERYTHING is presentation and even though you told the lady to write a female name, they will be amazed how you found out, and how the pieces all came together. The effect could of course be presented as a Living and Dead Test, but I personally never liked those effects.</p>
+    </div>
+  </div>
+
+  <!-- TRICK 2: THREE LITTLE QUESTIONS -->
+  <div class="trick-header">
+    <p class="trick-author">✦ CORINDA ✦</p>
+    <h3 class="trick-title">"Three Little Questions" 🤔</h3>
+  </div>
+  <div class="trick-body">
+    <p>I have used this routine for many years and I have found it indispensable for the occasion when one is called upon to display one's strange faculties to ladies. It is not my trick; the effect is as old as the hills, going back to the days when Fraudulent Mediumship was big business in America. However, this is my handling and my routine and it is the result of trying out many variations to find the very best.</p>
+
+    <span class="effect-badge">✨ The Effect</span>
+    <p>The Mentalist condescends to give a lady a private reading. To try and receive inspirations which may answer any three personal questions the lady may like to ask. No positive results are guaranteed and the questions should be serious and private. The lady writes three questions and the performer answers them. Having done that, the lady will never forget you!</p>
+
+    <span class="method-badge">🔍 The Routine</span>
+    <div class="box box-lavender" style="margin-top:0.5rem;">
+      <p>Get ready before you offer to give the reading. Prepare by taking a sheet of paper size 5½ × 4 inches (or thereabouts) and tear it into four equal pieces. One of these will be your dummy billet and must be marked. Roll it into a tight ball and screw a tail on it to mark. Drop the dummy in your pocket for the moment and with the three slips and a pencil on the table you are ready to begin.</p>
+      <p>Hand the three slips to the lady with the pencil and tell her to consider any three personal questions she likes. Emphasise that she must be serious and that she has a free choice of any subject. No embarrassment will be caused. The lady is told to print one question on each slip of paper and to tell you when she has done that.</p>
+      <p>You walk away, well away and make no effort to see what is written. However, if you do happen to pencil read all her questions by looking in a mirror, don't pass it by! Whilst waiting, take the dummy from your pocket and hold it in the right hand. When she tells you she has done that, call out: "roll the pieces into a ball please, each one separately." Give her time to roll up the first and the second but arrive at the table as she is rolling the third. Immediately pick up one and say: "No, roll them really tight please, like this." Switch that one as per the instructions given under Section 7 of Technique in this book.</p>
+      <p>Put the dummy down and tell her then to take all three in her hands and to mix them thoroughly so that neither of you know the order (that's why you mark the dummy!). As she does this, sit down opposite her and holding the first real billet in your lap, read the question. Tell her to follow your instructions very carefully. Look at the three billets now on the table and see which are the two real ones. Push one of these forward with your finger and say "hold that to your forehead please."</p>
+      <div class="nested-box nested-lavender">
+        <strong>📢 Example phrasing for the first reading:</strong> "As soon as you held that paper to your forehead, I got an inspiration which suggested a clock. Does that have anything to do with any of your questions? You can't place it. Never mind. Now I also see what appears to be a calendar, would I be right in saying that somehow you are concerned with time? Don't answer yet. I also get a letter, a friend, a message from someone who has been away for a while. You are waiting to hear from someone; is it a friend?... I cannot say exactly what the question is, but I feel I should answer it by telling you that you must see a lady, and that there will be a letter concerning this matter. You understand what I mean. I could go a bit further but I feel that this matter is really too personal to discuss openly. You know what I mean don't you? Let me read what you wrote please..."
+        </div>
+      <p>At this point you reach forward and extend your hand. She drops the billet into your outstretched palm. You open it, appear to have a little difficulty reading it and then slowly read out loud the exact wording of her FIRST question. At the same time you note and remember this question, which is the next you will answer. Look at the billet and make the mis-reading convincing. Smile as though to say "well I was almost dead right!" Immediately screw up the paper again and drop it into your pocket with indifference.</p>
+      <p>Point to number two on the table, the only real billet left, and tell her to hold that one to her forehead. During the reading of this one, which is done on similar lines to the first, you exchange number one for number two in your pocket and drop the first question on to the table. Do this as though you are not thinking.</p>
+      <p>When you end the second reading, do the same stunt, open it and misread the question thus learning the third question. At the end she will be holding a blank piece of paper to her forehead, but for the climax we add a nice touch.</p>
+      <p>When the reading has finished, have number three question in your hand. Take the dummy as though you intended to read it aloud like the other two, but change your mind and giving it back to the lady say, "read it out and tell me what you wrote." You switch the dummy for the third question at this point and give her back the proper slip of paper. The other two questions lie on the table in case she should look and you have the dummy back in your pocket.</p>
+      <div class="nested-box nested-gold">
+        <strong>🏆 It's the One Ahead System</strong>: one of the oldest and one of the best. The effect will do you more justice than fifty card tricks. You won't find much better anywhere and it's nothing: a rigmarole with a few bits of paper and lots of spiel. That is Mentalism.
+      </div>
+    </div>
+  </div>
+
+  <!-- TRICK 3: IT'S A RECORD -->
+  <div class="trick-header">
+    <p class="trick-author">✦ CORINDA ✦</p>
+    <h3 class="trick-title">"It's a Record!" 🎵</h3>
+  </div>
+  <div class="trick-body">
+    <span class="effect-badge">✨ The Effect</span>
+    <p>A gramophone record is seen displayed. A catalogue of records is produced, any page selected and that page torn into small pieces. Any piece is selected and the title of any record taken from that piece. The title is announced, and when the record is played, it is the same one as was selected. Nothing more than a prediction like a newspaper test disguised as a coincidence.</p>
+
+    <span class="method-badge">🔍 The Method</span>
+    <div class="box box-peach" style="margin-top:0.5rem;">
+      <p>Obtain a catalogue of gramophone records which can be got from any dealers for nothing. Sort through your records and find one that most people will recognise when they hear it. Locate the title of this record in the catalogue and remove that page. Tear out the section with the title until you get a piece of paper about one sixteenth the size of the original page. Fold this twice and have it in your pocket; this piece shall be the dummy billet.</p>
+      <p>To perform, have a gramophone ready and one record on show. Take the catalogue and explain what it is and that it contains no fewer than seven thousand different titles. Count them if you wish to be exact! Hand the book to someone and tell them to tear out one page. Take it from them as soon as it has been torn out.</p>
+      <p style="margin-bottom:0;">Tear it in halves and in halves again, once more tear and again until you have a handful of pieces. Go to another person and ask them to take any piece and fold it twice. Drop the other bits aside and then take the chosen piece and hold it up whilst you explain that the choice was one in thousands... switch this piece for the piece in your pocket (by any of the methods given) and hold it yourself. Go to a spectator and open it up; hold your thumbnail right under the title of your record and say to him, "Will you read that title out loud please." He does. Leave the paper with him, return to the gramophone, show the only record and play the first few bars...</p>
+    </div>
+  </div>
+
+  <!-- TRICK 4: LIVING AND DEAD -->
+  <div class="trick-header">
+    <p class="trick-author">✦ CORINDA ✦</p>
+    <h3 class="trick-title">Presenting the Living &amp; Dead Test 💀</h3>
+  </div>
+  <div class="trick-body">
+    <p>As Dr. Jaks says: "Living and Dead Tests are not everybody's favourite effect," but this presentation does make any of the standard methods amusing and interesting. You have four living names written on slips of paper, and one dead name written on another. By marking the dead name billet you keep track of it. Now we come to the location of the dead name.</p>
+    <div class="box box-rose" style="margin-top:0.5rem;">
+      <p style="margin-bottom:0;">The five billets are mixed and laid in a row. You get one of those novelty key-chain skulls that are on the market and have it on a chain. Much the same as the sex detector trick, you use that, acting as a Pendulum to locate the dead name. It's a nice touch, appropriate and a bit better than the usual "deep trance" revelation.</p>
+    </div>
+  </div>
+
+  <!-- TRICK 5: GREAT MINDS -->
+  <div class="trick-header">
+    <p class="trick-author">✦ PUNX ✦</p>
+    <h3 class="trick-title">"Great Minds Think Alike" 🧠</h3>
+  </div>
+  <div class="trick-body">
+    <div class="callout callout-lemon" style="margin-bottom:1rem;">
+      <span class="callout-icon">🌟</span> In every hundred or so new tricks that come along each year, one finds that ten of them are really any good. Out of that ten, we are fortunate if we find one that is distinct and really exceptional. This is one in a hundred. I would go further and say, one in a thousand. A veritable miracle of mental magic and a secret that up to now, four people in the world know.
+    </div>
+
+    <span class="effect-badge">✨ The Effect</span>
+    <p>Two strangers are used. One leaves the room and one stays with you. You ask him to think of anything he likes, a word, a number, a drawing. He has a free choice. He writes down what he thinks of, rolls the paper into a ball and drops it into his pocket. YOU DO NOT TOUCH HIS PAPER. The other person is called into the room, given a sheet of blank paper and told to gaze at it and try to get an inspiration of something. You don't suggest anything. If he sees anything, and he must not guess, he is to write it down and roll the paper into a ball. He does as he is told. Both subjects now exchange their papers, open them and read them. THEY ARE THE SAME. No known method is used. It is a new development by Punx.</p>
+
+    <div class="callout callout-lavender">
+      <span class="callout-icon">🤯</span> Never mind about the method for a moment. Can I ask you quite honestly: do you know of a better effect for Mentalism? What is there so near to the real thing, so clear and unbelievable? There is nothing. This is one of the best, a classic.
+    </div>
+
+    <span class="method-badge">🔍 The Method</span>
+    <div class="box box-sky" style="margin-top:0.5rem;">
+      <p>I have promised Punx that every detail of working will be given so that his trick will not be ruined by bad workmanship. I ask you to follow the details and be sure you stick to the book. No unnecessary moves are made.</p>
+      <div class="nested-box nested-sky">
+        <strong>🎓 The Special Paper:</strong> First you require a special type of paper. The best is called "Art Paper" and it is a matt white finish, like paper coated with white poster paint. The second best is a cheap grade white duplicating paper. The special paper is such that if you run your fingernail over the surface, it leaves a shiny line which becomes visible when the paper is tilted to the light. The paper must be white; coloured art papers are too effective and should not be used. When you get the right paper, test it to be sure it is alright and then cut a few sheets and put them in your wallet. The size should be about 3 × 5 inches and the surfaces must be undamaged.
+      </div>
+      <p>Get your two subjects and explain that you want to perform a test. Two total strangers are best. Tell one of them to go away and return when you call him. He can go into another room or stand a good distance away.</p>
+      <p>Bring out your wallet and open it. Pull out the papers and take one sheet. With your pencil draw a small circle about ¼" diameter in the middle and put a wee dot in the centre of the circle. Do exactly this; do not put a cross which is sometimes misconstrued as the Roman numeral for ten.</p>
+      <p>Hand this paper to the subject with you and ask him to look at the dot and to try and get a picture from it. Suggest that he may be able to see a number, say "like 983 or 46, anything." Wait a moment and then say, "What can you see?" If he says "Nothing" say to him: "Well imagine you can; what do you see now?" He tells you what he can see, and we will suppose he replies "Seventy two." "Right," you say, "well take that pencil and write a big seven and a two like that..." Now this is it. As you speak to him, telling him how to do it, you draw on another piece of the paper a big "72" using your fingernail (either thumb or forefinger). You are actually writing his number under his nose, but he cannot see it and thinks you are showing him what to do. He will never remember that you did this. Because the paper leaves the shiny line, you have marked it perfectly. Don't hurry, behave just as you would if you were showing him with a pencil in your hands. When you come to mark the second paper, see that it does not rest on any other sheets or a carbon may be suspected.</p>
+      <p>When he has written his number over the small circle and dot, tell him to roll the paper into a tight ball and drop it in his pocket. Note please, a tight ball and not folded. Call the next person over and ask him if he knows what has happened. He will say no. Tell him you want to try an experiment, something which may or may not work.</p>
+      <p>Take the second sheet lying in front of you and repeat the same preparation as before. Draw the small circle and put a dot in the middle. Hand this sheet to him and tell him to go and look at the dot from all points of view, and to try and get an inspiration of a number. Emphasise that he must not guess. If he sees nothing, to say so, and yet, if he sees a number, a distinct number, to write it down and then screw the paper into a tight ball.</p>
+      <p>When you put the dot on the paper it serves two good purposes. It is good misdirection and it makes them look at the right side of the paper. The writing becomes easier to see in artificial light so send the subject to a spot where he will stand under an electric light. It will work in daylight but artificial light is better.</p>
+      <p>Be sure to watch him and if he seems in doubt tell him to look at it from all points of view: "sideways, tilt it about, the numbers will slowly appear..." Sooner or later he sees the shine and then realises that a number is to be seen. He writes this down and screws the paper into a ball as told. He returns and you have them exchange papers and open them to read.</p>
+      <p>It is a strange thing, but the person who sees the number on the second sheet does not seem to know why. No doubt you are thinking: well he knows how it works, but they don't. Sometimes they get an idea that you must have written the number and the second man is partly wise, but the first man never knows and more often than not they are both lost. I have asked the second subject afterwards, "What did you see" and a common reply is "Nothing at first, and then the numbers slowly came out of the dot."</p>
+      <div class="nested-box nested-gold">
+        <strong>✨ The Perfect Finish:</strong> When they open their paper and read them, they know that both are the same, but they can never prove why, because if you screw the paper into a ball, it destroys the surface and the number on the second sheet then disappears! They can take both slips home with them... it's too late.
+      </div>
+    </div>
+  </div>
+
+  <!-- TRICK 6: FLAMES OF ZOR -->
+  <div class="trick-header">
+    <p class="trick-author">✦ CHEMICAL REACTION ✦</p>
+    <h3 class="trick-title">"The Flames of Zor" 🔥</h3>
+  </div>
+  <div class="trick-body">
+    <p>This is an old principle that has been applied in many shapes and forms for both mental and magical mysteries.</p>
+
+    <span class="effect-badge">✨ The Effect</span>
+    <p>Five slips of paper are given out and on each one is written a name. One is dead. The slips are rolled into small balls, and then dropped one at a time into a glass of water. Four of them burst into flame and disintegrate when they are in the water. One remains; that one bears the dead name. The effect may be modified to any type of trick, where one billet is located from a number of other billets. It is a method of enhancing the presentation and not so much an effect in itself.</p>
+
+    <div class="warning-banner" style="margin-top:0.8rem;">
+      ⚠️ <strong>Important safety note:</strong> The answer is very simple. You have four prepared billets ready rolled into small balls of paper to look like the proper ones. Each of the prepared ones is made from a small slip of Flash Paper and inside is a SMALL pellet of sodium. When the pellet hits the water, after a few seconds the sodium ignites and the flash paper goes up in flames. Alternatively, you may use potassium metal in place of sodium, but whichever you use, take great care as both are dangerous in any quantity when exposed to air. If you wish to perform the effect without using water, you may resort to phosphorus, which will ignite when dry. <strong>Never use any more than a piece the size of a very small pea, because these metals are liable to explode in larger quantities.</strong>
+    </div>
+  </div>
+
+  <!-- TRICK 7: CARD AND BILLET -->
+  <div class="trick-header">
+    <p class="trick-author">✦ CORINDA &amp; FOGEL ✦</p>
+    <h3 class="trick-title">"A Card and Billet Routine" 🎯</h3>
+  </div>
+  <div class="trick-body">
+    <span class="effect-badge">✨ The Effect</span>
+    <p>The performer hands out about ten slips of paper. He goes to each person with a slip and fans a pack of cards before them, telling them to look at them and mentally note any one. He stands back and asks all to write on their slips the name of the card they saw. Whilst this is done, he arranges the cards on a cork board so that the backs face outwards.</p>
+    <p>The billets are folded and collected. A lady is invited to choose any one and then to impale it on a dart. She does this. Next she is invited to stand in front of the board and to throw the dart at any card. This she does. She removes that card (which now imprisons the billet on the dart) and shows it. Then she opens the selected paper and reads the name of the card. They are the same. A chance in a million!</p>
+
+    <span class="method-badge">🔍 The Method</span>
+    <div class="box box-sage" style="margin-top:0.5rem;">
+      <p>The first step is to impress upon the audience that all the cards are different, and yet to do so without drawing attention in an obvious manner. The slips are a convenient size for a billet switch. Hand out ten slips and then go to each person and fan the cards showing the faces. Now and then bring the fan up to let everybody see the different faces.</p>
+      <p>Stand back and tell the people with the slips to write the name of the card they selected. Whilst this is done, go to the board and prepare to place the cards on the simple wooden racks made to hold them. However, just before you start you switch the complete pack for any forcing deck (say Nine of Clubs). You make nothing of this. Simply put the deck in your pocket, move the board a bit using both hands, and then remove the forcing pack. As an alternative switch, have two "Terry" clips on the back of the board. As you move it a bit, put one deck in a clip and take the other from the second clip. Have the board made of cork so that the dart is sure to impale into it.</p>
+      <p>In your pocket have one folded billet and on that billet have the name of your forcing card, i.e. Nine of Clubs. Collect the ten billets when they have been folded, mix them and give them all to the lady. Ask her to choose one and take that one. Draw attention to a dart and at that point, perform a billet switch returning the prepared billet and now the dart to the lady. Tell her to stick it on the dart, and from now on it is obvious.</p>
+      <p style="margin-bottom:0;">Should the lady miss a card on any throw, tell her to collect the dart and throw again. She can hardly miss. After the billet switch you do not touch anything. You don't have to!</p>
+    </div>
+  </div>
+
+  <!-- TRICK 8: INEXPLICABLE -->
+  <div class="trick-header">
+    <p class="trick-author">✦ AL KORAN ✦</p>
+    <h3 class="trick-title">"Inexplicable" 🌍</h3>
+  </div>
+  <div class="trick-body">
+    <span class="effect-badge">✨ The Effect</span>
+    <p>One person is given a slip of paper and told to think of a name. The name should be a place, a town or city, village, in any country in the world. To create a vivid picture of that name in their mind, they are told to write it down and then fold the slip.</p>
+    <p>You take the slip and put it in a clip on display. Attention is now drawn to a Brandy Glass standing on a table. It is seen to hold several small pieces of folded paper. The performer tips these out and invites another spectator to choose any three. Then to hold a lighted cigarette to them all, and in doing so, he finds that two disappear in a flash and one remains.</p>
+    <p>All that remains now is for the performer to open the slip on display and read out the name for all to hear. The writer confirms that was his choice. Now the other spectator opens the last billet on the table and reads out a name written by you before you started. It is the name of the chosen place.</p>
+
+    <span class="method-badge">🔍 The Method</span>
+    <div class="box box-lavender" style="margin-top:0.5rem;">
+      <p>Fold up about six small billets of Flash Paper and drop them in a glass which you stand aside on a table ready for use later. Have a display clip that pins on to your lapel, as described in this book. Hand the slip to the spectator who is to decide the name of a place. Choose a person that is seated some way from the glass on the table. The slip you hand him is pre-folded in readiness for the One Hand Centre Tear (described in this book).</p>
+      <p>Have the name written and the billet folded. Take it and under cover of putting it on display in the clip, steal the end. Patter a while and cause sufficient distraction to allow you to open the end tear, glimpse the word and refold the paper. This done, go to the glass and in picking it up and tipping out the slips drop the end tear amongst the other flash paper slips. Have three chosen and see that your end tear is one of them. If there is any indecision, they may all be used. Invite the spectator who is, of course, a different person from the writer of the slip, to hold his cigarette to the slips. The one that does not burn is the end tear. Tell him to hold it for a moment.</p>
+      <p>Come away and take the billet from the clip. It will be in two pieces so you must take care to make it look whole. Open one of the sections and appear to read out what is written on it. In actual fact, call out the name you glimpsed on the end tear. Ask for confirmation that this was written and then tell the other man to open his slip and read out what you wrote earlier that evening! Naturally he reads what the other man wrote, but who suspects that is the case? They have just seen you read the slip!</p>
+      <p style="margin-bottom:0;">For obvious reasons, you would be wise to select two people who are seated far apart. Another point is that you may, if you like, have fewer slips in the glass. The only thing is that with six or seven, it is quite impossible that any observant person may have counted the number there at the start. With two or three it is probable.</p>
+    </div>
+  </div>
+
+  <!-- CLOSING -->
+  <div class="summary-box" style="margin-top:3rem;">
+    <div class="box-title">✦ End of Step Six: Billets ✦</div>
+    <p style="margin-bottom:0.5rem; color: var(--gold-light);">From Corinda's "Thirteen Steps to Mentalism." No part of this publication may be reproduced without permission.</p>
+    <p style="margin-bottom:0; font-family: 'DM Sans', sans-serif; font-size:13px; color:#C8B896; font-style:italic;">Every hour you work to study the use of Billets, will reward you with years of pleasure. 🎩✨</p>
+  </div>
+
+</main>
+</body>
+</html>

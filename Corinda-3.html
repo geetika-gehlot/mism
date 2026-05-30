@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mnemonics and Mental Systems — Corinda</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #37352f;
+    background: #fff;
+    padding: 0 1rem;
+  }
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem 1rem 5rem;
+  }
+  /* Header */
+  .series-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    color: #9b59b6;
+    background: #f5eef8;
+    border-radius: 4px;
+    padding: 3px 10px;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.2rem;
+    line-height: 1.2;
+  }
+  .subtitle {
+    font-size: 18px;
+    color: #6b6b6b;
+    margin-bottom: 2rem;
+    font-weight: 400;
+  }
+  /* Dividers */
+  hr {
+    border: none;
+    border-top: 1px solid #e8e8e6;
+    margin: 2.5rem 0;
+  }
+  /* Table of Contents */
+  .toc {
+    background: #f7f6f3;
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0 2.5rem;
+  }
+  .toc-header {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9b9b9b;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+  .toc-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 14px;
+    padding: 5px 0;
+    border-bottom: 1px solid #e8e8e6;
+    color: #37352f;
+  }
+  .toc-row:last-child { border-bottom: none; }
+  .toc-page { color: #9b9b9b; font-size: 13px; flex-shrink: 0; margin-left: 1rem; }
+
+  /* Headings */
+  h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 2.5rem 0 0.6rem;
+    padding-top: 0.25rem;
+  }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: #37352f;
+    margin: 1.75rem 0 0.5rem;
+  }
+  h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #37352f;
+    margin: 1.25rem 0 0.4rem;
+  }
+
+  /* Body text */
+  p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #37352f;
+    margin-bottom: 1rem;
+  }
+
+  /* Callout boxes */
+  .callout {
+    display: flex;
+    gap: 12px;
+    background: #f7f6f3;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin: 1.25rem 0;
+  }
+  .callout.blue { background: #eaf0fb; }
+  .callout.purple { background: #f5eef8; }
+  .callout.green { background: #edfaf1; }
+  .callout.yellow { background: #fef9ec; }
+  .callout.red { background: #fdecea; }
+  .callout-icon { font-size: 20px; flex-shrink: 0; line-height: 1.6; }
+  .callout-body { font-size: 15px; line-height: 1.75; color: #37352f; }
+  .callout-body p { margin: 0; font-size: 15px; }
+
+  /* Rhyme / key lists */
+  .rhyme-block {
+    background: #f7f6f3;
+    border-radius: 8px;
+    padding: 1.1rem 1.4rem;
+    margin: 1rem 0 1.5rem;
+  }
+  .rhyme-item {
+    font-size: 15px;
+    line-height: 2;
+    color: #37352f;
+    display: flex;
+    gap: 0;
+  }
+  .rhyme-num {
+    font-weight: 600;
+    color: #9b59b6;
+    display: inline-block;
+    min-width: 3rem;
+    font-size: 14px;
+  }
+
+  /* Number badge grid */
+  .num-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin: 1rem 0 1.5rem;
+  }
+  .num-card {
+    background: #f7f6f3;
+    border-radius: 8px;
+    padding: 10px 6px;
+    text-align: center;
+    border: 1px solid #e8e8e6;
+  }
+  .num-card .n { font-size: 20px; font-weight: 700; color: #9b59b6; }
+  .num-card .l { font-size: 14px; color: #6b6b6b; margin-top: 2px; font-family: monospace; }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 1rem 0 1.5rem;
+  }
+  th {
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    color: #9b9b9b;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 7px 10px;
+    border-bottom: 2px solid #e8e8e6;
+    background: #f7f6f3;
+  }
+  td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #f0f0ee;
+    vertical-align: top;
+    color: #37352f;
+    line-height: 1.6;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #f9f9f8; }
+
+  /* Code/mono blocks */
+  .code-block {
+    font-family: 'SF Mono', 'Fira Code', Consolas, monospace;
+    font-size: 13px;
+    background: #f7f6f3;
+    border: 1px solid #e8e8e6;
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    margin: 1rem 0;
+    line-height: 1.8;
+    color: #37352f;
+    overflow-x: auto;
+    white-space: pre;
+  }
+
+  /* Section emoji headers */
+  .section-emoji {
+    font-size: 28px;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  /* Inline em/strong */
+  strong { font-weight: 600; }
+  em { font-style: italic; color: #555; }
+
+  /* Summary steps */
+  .step-list {
+    counter-reset: steps;
+    list-style: none;
+    margin: 0.75rem 0 1.25rem;
+    padding: 0;
+  }
+  .step-list li {
+    counter-increment: steps;
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+    font-size: 15px;
+    padding: 7px 0;
+    border-bottom: 1px solid #f0f0ee;
+    line-height: 1.65;
+  }
+  .step-list li:last-child { border-bottom: none; }
+  .step-list li::before {
+    content: counter(steps);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #9b59b6;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* Highlight */
+  mark {
+    background: #fff3bf;
+    border-radius: 3px;
+    padding: 0 3px;
+    color: inherit;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <span class="series-tag">📖 Thirteen Steps to Mentalism</span>
+  <h1>Mnemonics and Mental Systems</h1>
+  <p class="subtitle">Step Three — by Corinda</p>
+
+  <div class="toc">
+    <div class="toc-header">Contents</div>
+    <div class="toc-row"><span>Introduction to Mnemonics</span><span class="toc-page">p. 59</span></div>
+    <div class="toc-row"><span>🎩 The Amazing Memory Test</span><span class="toc-page">p. 61</span></div>
+    <div class="toc-row"><span>⚡ Quick Calculations</span><span class="toc-page">p. 63</span></div>
+    <div class="toc-row"><span>🟥 The Magic Square</span><span class="toc-page">p. 65</span></div>
+    <div class="toc-row"><span>♞ The Knight's Tour</span><span class="toc-page">p. 67</span></div>
+    <div class="toc-row"><span>♟️ Chess Trickery</span><span class="toc-page">p. 68</span></div>
+    <div class="toc-row"><span>📅 A Day for Any Date</span><span class="toc-page">p. 71</span></div>
+    <div class="toc-row"><span>🃏 Simple Card Systems</span><span class="toc-page">p. 73</span></div>
+    <div class="toc-row"><span>🔢 The Mnemonic Number Code</span><span class="toc-page">p. 77</span></div>
+    <div class="toc-row"><span>📚 Corinda's "Fourteenth Book Test"</span><span class="toc-page">p. 79</span></div>
+    <div class="toc-row"><span>📸 The Photographic Memory</span><span class="toc-page">p. 80</span></div>
+  </div>
+
+  <hr>
+
+  <h2>🧠 Introduction</h2>
+
+  <p>To the mentalist, memory systems are indispensable; they are part of his equipment and the means whereby he can be called upon to perform at any time and give an impressive demonstration. They are the best type of equipment you can have, as there is nothing to carry and no apparatus to prepare. The skill lies in the training of the mind, in conditioning the mind to operate to maximum advantage, and once trained, that skill remains with you for life, ever ready to be applied.</p>
+
+  <p>Before we concern ourselves with individual systems, we should understand at least to some extent the whole art of mnemonics. To get a general picture we may consider the mind and look upon it for the moment as a machine. The history of mankind has shown that there are great thinkers and there are imbeciles; it has not shown whether the difference between the two is brought about by two types each in possession of vastly different minds, or two types having the same mind, but one applies his to thinking whilst the other does not.</p>
+
+  <p>If the mind happened to be a machine, a vastly intricate machine, perhaps something like an electronic brain, it would be rational to suppose that the output of the machine would be governed by how it was operated and, of course, its ultimate potential. We need not involve ourselves with the ultimate potential of the human mind, as it is far beyond our requirements and we are in no position to estimate such a factor. We do however concern ourselves with how to use the mind, and the reason is that we shall use our machine more than does the average person. This does not mean that we can add to the mind anything more than is there already. Practically everybody has the ability to apply memory systems and it amounts to a very simple thing: getting to know new methods of using your natural ability.</p>
+
+  <div class="callout purple">
+    <div class="callout-icon">💡</div>
+    <div class="callout-body"><p>Fortunately, not everybody knows about mnemonics, and since they exist in the mind only it is difficult to tell when they are being used, which of course makes it a good thing for the mentalist. Your protection against discovery is to make every effort to keep the science a secret.</p></div>
+  </div>
+
+  <p>It is tempting at times to tell your audience that you have not used trickery as they suppose, but used a memory system which you have developed in the mind. Let me put it this way. You will have seen the well-known effect called the "Giant Memory" where some twenty or thirty objects called out by the audience have been memorised by the performer. This is a wonderful thing; it is very impressive, it appears incredible, but if every member of your audience knew that given a week's practice they could do the same, how good would be the effect?</p>
+
+  <p>Don't try and fool yourself that the ability to do the "Giant Memory" is an outstanding achievement. It is not. Any person of average intelligence could do it with twenty words after a few hours' study. The only thing that you have got that they have not is the knowledge of how to do it, and if you keep that a secret the effect remains as it is: <strong>a masterpiece.</strong></p>
+
+  <p>The word "mnemonics" is derived from a Greek word meaning "to recollect." If you have read <em>The Republic of Plato</em> you will know that the science of mnemonics was well known to the Greeks, and if you care to search further you will find that mnemonic principles have been used for as long as man has been civilised. There have been many claims by magicians and mentalists to the invention of mnemonics; some of the claimants have been world-famous performers, and none of them have a right to their claims.</p>
+
+  <p>A large number of the systems developed by the magical fraternity have drawn their material in one way or another from the work done by Gregor von Feinaigle of Baden, who specialised in the science and lectured throughout Europe around 1807. Some more sincere magicians have certainly developed and improved the old systems and deserve credit for their improvements; as, for example, Al Baker, who published in <em>Magical Ways and Means</em> a mnemonic system which happens to be a modern application of the Feinaigle System published in 1812.</p>
+
+  <p>An effect in Al Baker's book called "The Polish Psychic" is a creditable example of the application of mnemonics for two-person telepathy. This effect shows how you may use the system for other purposes than straightforward memory feats; it is in fact used as a code system. Another example is the Nikola Card System. Here we have a basic mnemonic principle being applied in an original fashion, and there are many more examples that could be given.</p>
+
+  <p>It is the work of these sincere magicians that makes it possible for me to give you in "Step Three" a selection of mnemonic principles and mental systems that will serve you well as a performing mentalist. You must understand that the science of mnemonics has been developed to such an advanced state that this work cannot be expected to cover the subject in its entirety. "Step Three" aims at giving you a wide selection of various principles, covering many different fields and dealing with the systems which are of most use to the mentalist and which are usually most popular with the audience. There will be nothing new or sensational in the selection given; each one is a time-tested, audience-appealing effect. Most of them are very simple to learn and appear complex on paper only.</p>
+
+  <p>The mentalist would be well advised to learn as many different systems as possible, and he will then find that they can be used in conjunction with each other. This does not mean that you should learn two ways of doing the same thing; it means you learn several systems, one for each field of mentalism or mathemagic. I would go so far as to say that it is dangerous to learn two ways to do the same thing; you are very liable to confuse your mind. Once you have developed your system, stick to it for good, which means you should consider very carefully what system you intend to use before you learn it.</p>
+
+  <div class="callout yellow">
+    <div class="callout-icon">✨</div>
+    <div class="callout-body"><p>If you are working in a drawing room to a private gathering and you perform a demonstration of memory wherein you are given long numbers and succeed in remembering them, you will be credited with "an amazing knack for remembering numbers." If, however, you then proceed to deal with twenty objects and perhaps conclude with a few rapid calculations, there can be no question of "a knack"; you are a genius, the owner of a phenomenal mind! You convey the impression that you could go on all night, and after what they have seen, their imagination will have you doing things which even mnemonics could not achieve. With mentalism, like magic, it is an important feature of presentation to convey the impression that it is not so much what you have done as what you could do, if you had the time!</p></div>
+  </div>
+
+  <hr>
+
+  <h2>🎩 The Amazing Memory Test</h2>
+
+  <p>This is probably the most popular application of a memory system in use today. It has every qualification you could hope for as a mentalist: no props to carry, do it anywhere, on stage, cabaret, the drawing room, office, or walking down the high road. It can be performed before any size of audience, one or two or thousands; it is positively sure to work, is easy to learn, and last, and most important of all, it has a terrific effect on the audience. What more could you want?</p>
+
+  <p>There are about six standard methods by which you may perform the Amazing Memory Test. The idea of the test is to have the audience call out some twenty or thirty objects and for you to remember those objects and their order. I do not propose to give you more than one method, as first it is confusing and second it is unnecessary; the technique I have chosen is the one most used and the one which I find has served me well for years.</p>
+
+  <h3>🔑 Stage 1: The Key</h3>
+
+  <p>To learn the system, the first stage is to memorise a "key" for all the numbers from one to thirty. The "key" is an object which you, in your mind, can always associate with a certain number. To make this easy we choose objects which have something to do with the number, more often than not an object which rhymes with the number. The following table is an example; it can be used but there is no reason why you should not compile your own table, for what sounds logical to one person does not always make sense with the next. The table given is the one that I use:</p>
+
+  <div class="rhyme-block">
+    <div class="rhyme-item"><span class="rhyme-num">1</span> Number one is a <strong>gun</strong> 🔫</div>
+    <div class="rhyme-item"><span class="rhyme-num">2</span> Number two is a <strong>shoe</strong> 👟</div>
+    <div class="rhyme-item"><span class="rhyme-num">3</span> Number three is a <strong>flea</strong> 🦟</div>
+    <div class="rhyme-item"><span class="rhyme-num">4</span> Number four is a <strong>saw</strong> 🪚</div>
+    <div class="rhyme-item"><span class="rhyme-num">5</span> Number five is a <strong>hive</strong> 🐝</div>
+    <div class="rhyme-item"><span class="rhyme-num">6</span> Number six is a <strong>trick</strong> 🎩</div>
+    <div class="rhyme-item"><span class="rhyme-num">7</span> Number seven <strong>goes to heaven</strong> 😇</div>
+    <div class="rhyme-item"><span class="rhyme-num">8</span> Number eight is a <strong>gate</strong> 🚪</div>
+    <div class="rhyme-item"><span class="rhyme-num">9</span> Number nine is <strong>out of line</strong> ↩️</div>
+    <div class="rhyme-item"><span class="rhyme-num">10</span> Number ten is a <strong>pen</strong> 🖊️</div>
+    <div class="rhyme-item"><span class="rhyme-num">11</span> Number eleven <strong>comes from Devon</strong> 🏡</div>
+    <div class="rhyme-item"><span class="rhyme-num">12</span> Number twelve is a <strong>shelf</strong> 📚</div>
+    <div class="rhyme-item"><span class="rhyme-num">13</span> Number thirteen is <strong>skirting</strong> 🪵</div>
+    <div class="rhyme-item"><span class="rhyme-num">14</span> Number fourteen is <strong>courting</strong> 💑</div>
+    <div class="rhyme-item"><span class="rhyme-num">15</span> Number fifteen is <strong>lifting</strong> 🏋️</div>
+    <div class="rhyme-item"><span class="rhyme-num">16</span> Number sixteen is <strong>sweet sixteen</strong> 🍯</div>
+    <div class="rhyme-item"><span class="rhyme-num">17</span> Number seventeen <strong>cannot be seen</strong> 🔬</div>
+    <div class="rhyme-item"><span class="rhyme-num">18</span> Number eighteen is <strong>baiting</strong> 🎣</div>
+    <div class="rhyme-item"><span class="rhyme-num">19</span> Number nineteen is <strong>pining</strong> 🗂️</div>
+    <div class="rhyme-item"><span class="rhyme-num">20</span> Number twenty is <strong>sentry</strong> 💂</div>
+    <div class="rhyme-item"><span class="rhyme-num">21</span> Number twenty-one is <strong>in the sun</strong> ☀️</div>
+    <div class="rhyme-item"><span class="rhyme-num">22</span> Number twenty-two is <strong>painted blue</strong> 🖌️</div>
+    <div class="rhyme-item"><span class="rhyme-num">23</span> Number twenty-three is <strong>out at sea</strong> 🌊</div>
+    <div class="rhyme-item"><span class="rhyme-num">24</span> Number twenty-four is <strong>on the shore</strong> 🏖️</div>
+    <div class="rhyme-item"><span class="rhyme-num">25</span> Number twenty-five is <strong>buried alive</strong> ⚰️</div>
+    <div class="rhyme-item"><span class="rhyme-num">26</span> Number twenty-six is <strong>on two sticks</strong> 🥢</div>
+    <div class="rhyme-item"><span class="rhyme-num">27</span> Number twenty-seven <strong>goes back to Devon</strong> 📦</div>
+    <div class="rhyme-item"><span class="rhyme-num">28</span> Number twenty-eight <strong>arrives late</strong> ⏰</div>
+    <div class="rhyme-item"><span class="rhyme-num">29</span> Number twenty-nine is <strong>on the line</strong> 🚂</div>
+    <div class="rhyme-item"><span class="rhyme-num">30</span> Number thirty is <strong>dirty</strong> 🧼</div>
+  </div>
+
+  <h3>🎬 Stage 2: The Action Key</h3>
+
+  <p>This is the next stage. Having memorised the code, you then create a "picture" to go with the number so that it is impressed even more into the mind. It is what I call the "action key," and means doing something, always the same thing, with the key. For example, let us take No. 6. The key is "Number six is a trick." We could stop at that, but we can improve the system considerably by adding an action, so: number six is a trick, and whenever we have this number, we always think of a magician pulling something out of a top hat. The "trick" suggests a top hat and should always be remembered.</p>
+
+  <p>Other action keys to reinforce the number code are as follows:</p>
+
+  <table>
+    <thead><tr><th>No.</th><th>The Action Key</th></tr></thead>
+    <tbody>
+      <tr><td><strong>1</strong></td><td>Always shooting at something.</td></tr>
+      <tr><td><strong>2</strong></td><td>Always putting something into a shoe.</td></tr>
+      <tr><td><strong>3</strong></td><td>Always an object with a flea hopping about on it.</td></tr>
+      <tr><td><strong>4</strong></td><td>Always something being sawed into two pieces.</td></tr>
+      <tr><td><strong>5</strong></td><td>Always a hive, with bees swarming over an object.</td></tr>
+      <tr><td><strong>6</strong></td><td>Always a top hat with something being produced.</td></tr>
+      <tr><td><strong>7</strong></td><td>Always two angels carrying an object to heaven.</td></tr>
+      <tr><td><strong>8</strong></td><td>Always an object standing on a farmyard gate.</td></tr>
+      <tr><td><strong>9</strong></td><td>Always three objects, and you find yourself trying to look down a row and get them in line, but one is always out of line.</td></tr>
+      <tr><td><strong>10</strong></td><td>Always writing something on an object with a pen.</td></tr>
+      <tr><td><strong>11</strong></td><td>Always unpacking a box which contains something.</td></tr>
+      <tr><td><strong>12</strong></td><td>Always something standing on a shelf on its own.</td></tr>
+      <tr><td><strong>13</strong></td><td>Always something hanging on a nail knocked into the wooden skirting that runs around a room at floor level.</td></tr>
+      <tr><td><strong>14</strong></td><td>Two people trying to kiss; always something comes between their lips!</td></tr>
+      <tr><td><strong>15</strong></td><td>Always an object which you try to balance on the outstretched finger.</td></tr>
+      <tr><td><strong>16</strong></td><td>Always pouring treacle or honey (sweet) over an object.</td></tr>
+      <tr><td><strong>17</strong></td><td>Always looking down a microscope to try and see something very small.</td></tr>
+      <tr><td><strong>18</strong></td><td>Always pulling a fishing line out of the water to see an object hanging on the hook.</td></tr>
+      <tr><td><strong>19</strong></td><td>Always at the Lost Property Office reporting the loss of an object.</td></tr>
+      <tr><td><strong>20</strong></td><td>Always a sentry standing on guard with an object in place of his rifle.</td></tr>
+      <tr><td><strong>21</strong></td><td>Always covering something with sun-tan lotion.</td></tr>
+      <tr><td><strong>22</strong></td><td>Always painting with a large brush an object in bright blue.</td></tr>
+      <tr><td><strong>23</strong></td><td>Always something floating on some high waves out at sea.</td></tr>
+      <tr><td><strong>24</strong></td><td>Always an object lying on the beach at the seaside.</td></tr>
+      <tr><td><strong>25</strong></td><td>Always something being ceremoniously buried in a coffin.</td></tr>
+      <tr><td><strong>26</strong></td><td>Always something balanced on two matchsticks.</td></tr>
+      <tr><td><strong>27</strong></td><td>Something you must always parcel up to send back to Devon.</td></tr>
+      <tr><td><strong>28</strong></td><td>"Arrive late": an object always standing on top of a big clock on the mantelpiece.</td></tr>
+      <tr><td><strong>29</strong></td><td>Always an object placed in front of an oncoming train on a railway line.</td></tr>
+      <tr><td><strong>30</strong></td><td>Always something which you must give a good wash with detergent.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>📣 Application of the Amazing Memory System</h3>
+
+  <p>For stage work, have everything written on a big blackboard so that all the audience can see; for small audiences, simply have the objects written on a sheet of paper.</p>
+
+  <p>Take a piece of paper and write a column of figures from one to thirty down the left-hand edge. Now invite anybody to call out any object they like for "Number One." The audience should remember their objects. As soon as you hear what object is chosen, you quickly work out your "key" for "Number One" (that is, "Number one is a gun") and immediately associate your key with their object in your mind. Don't worry about being sensible; the more stupid the picture you create, the better it will be.</p>
+
+  <div class="callout green">
+    <div class="callout-icon">🐭</div>
+    <div class="callout-body"><p>Suppose we were given as the first object a <strong>mouse</strong>. We could think of a little white mouse standing in a begging position whilst we tried to shoot at it with a gun. Having created a vivid picture associating your key with their object, you immediately forget it and go on to the next, number two, and do the same.</p></div>
+  </div>
+
+  <p>Every time you get an object, taking them in correct order of course, you make up this mental picture and then forget it, until finally you have completed the thirty. Each object given by the audience is recorded as it is given on the sheet; a task which may be given to any member of the audience to do. Be sure you remember the "action keys" and always do the right action with the object selected by the audience. This will make it a lot easier for you when you come to the next stage.</p>
+
+  <h4>Calling the Objects Back</h4>
+
+  <p>When you have "accepted" the thirty objects, hand the sheet to someone who acts as "Scorer." He is to tick off every time you are right. The audience are now invited to call out any number from one to thirty. You immediately call back the name of the object given for whatever number they say. It is very easy. As soon as you hear the number, think of your "key," and the very moment you remember your key you will find you also remember their object! When you do this for the first time, you will be amazed that it really works.</p>
+
+  <p>That is all there is to it, and a very good effect can thus be performed. To conclude the performance, you may if you wish run through the complete list of objects backwards, starting from thirty. You may also have an object called here and there and you give the correct number.</p>
+
+  <div class="callout yellow">
+    <div class="callout-icon">😄</div>
+    <div class="callout-body"><p>One aspect of presentation that improves the effect is to enlarge in detail on one or two objects as they are given. For example, suppose at Number 8 we were asked to accept "cat" as the object. We could say: "Any particular type of cat?" And even though you are told it is "a Cheshire cat wearing a yellow spotted cravat and dancing the Hornpipe," you will still get it! Moreover, it adds comedy to the presentation. Such is the Amazing Memory.</p></div>
+  </div>
+
+  <hr>
+
+  <h2>⚡ Quick Calculations: Mental Arithmetic</h2>
+
+  <p>There are several methods whereby the mentalist can render an impressive demonstration of his ability by a show of rapid calculations. The business of mentally squaring or cubing a number, or extracting the square or cube root, can cause quite a stir amidst intelligent people.</p>
+
+  <h3>(1) Squaring</h3>
+
+  <p>Since it is very easy to square small numbers in the head we shall not bother to deal with anything under twenty-five. Most people, having to square say 15, could do so with little trouble. However, dealing with numbers from twenty-five and up to a hundred (which is more than enough):</p>
+
+  <p><strong>For numbers from 25 to 50:</strong> First take the difference between the number and 25 for the hundreds and square the difference between the number and 50 for the tens and units. As for example, to square 39: the difference between 25 and 39 is 14; the number 14 gives the first two numbers of the answer. The difference between 50 and 39 is 11, which when squared gives 121. To 121, we add fourteen hundred from the first step, and the answer 1521 equals 39 squared.</p>
+
+  <p><strong>For numbers from 50 to 100:</strong> First take twice the difference between the number given and fifty for the hundreds and then square the difference between the given number and 100 for the tens and units.</p>
+
+  <h3>(2) Extraction of Square Roots</h3>
+
+  <p>The performer must first memorise the following table, which shows the square of the digits one to nine:</p>
+
+  <table>
+    <thead><tr><th>Digit</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th></tr></thead>
+    <tbody><tr><td><strong>Square</strong></td><td>1</td><td>4</td><td>9</td><td>16</td><td>25</td><td>36</td><td>49</td><td>64</td><td>81</td></tr></tbody>
+  </table>
+
+  <p>Suppose we are asked to extract the square root of the number 3136. First we consider only the two starting figures; the number nearest to 31 in the above table is 25. It must be more than 25 but not greater than 36. The table shows that 25 is represented by 5; hence 5 will be the first figure of the square root of 3136. The last digit of this number is 6. There are two squares terminating with 6 in the above table, and the number opposite them is one that will end the answer. However, we must be able to tell which of the sixes to use, since one represents six and the other four. Take the answer to the first step, which was 5, multiply this by itself giving 25, deduct this from the first two figures in the original number (31), and six remains. This figure six is larger than the one we have multiplied (5), so select from the above table the larger of the two numbers terminating with six. The figure opposite then gives the second number in the root: <mark>the root of 3136 is 56.</mark></p>
+
+  <h3>(3) Cubing</h3>
+
+  <p>To find the cube of any two-figure number, you must first know or work out the cube of the units one to nine. It will pay you to learn these because they can be used for other calculating effects shown later:</p>
+
+  <table>
+    <thead><tr><th>Digit</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th></tr></thead>
+    <tbody><tr><td><strong>Cube</strong></td><td>1</td><td>8</td><td>27</td><td>64</td><td>125</td><td>216</td><td>343</td><td>512</td><td>729</td></tr></tbody>
+  </table>
+
+  <p>Suppose now you are requested to find the cube of the number 62. Cube the first figure, 6, and put it down in thousands to the left of the cube of two. That is: of six, 216, and of two, 8, which equals 216,008. To this add the product of 62 × 6 × 2 × 3, i.e. 62 × 36 = 2,232. Place this under the first number, moving the units figure one step to the left, and add the two lines together:</p>
+
+  <div class="code-block">    216,008
+  +   2,232  ← (62 × 6 × 2 × 3)
+  ─────────
+  = 238,328  ← 62 cubed ✓</div>
+
+  <h3>(4) Extraction of Cube Roots</h3>
+
+  <p>Of the various calculating systems given so far, this is probably the most effective and, oddly enough, the easiest. The table shown for cubing numbers is used and it can be made to reveal the cube root of any number from one to a hundred. For higher numbers, the extraction of cube roots of numbers resulting in more than a hundred, it is only necessary to add noughts to the cubes accordingly.</p>
+
+  <p>Ask a member of your audience to work out the cube of any number (say "two-figure number") under one hundred. Suppose their answer came to 804,357. To find the number cubed is very simple. Refer to the table for cubing. The first three figures are 804, greater than 729, the highest possible number. 729 represents the unit 9, so this will be the first figure in the answer. Next take the last number in the total given by the audience: 7. Find the cube which ends with seven in the table; it is 27, represented by three, so 3 will be the last figure of the answer. <mark>Therefore the cube root of 804,357 is 93.</mark></p>
+
+  <hr>
+
+  <h2>🟥 The Magic Square</h2>
+
+  <p>I am obliged to say in the first place that the magic square has nothing to do with the magician who doesn't like rock and roll! It is in fact a very, very old form of brain-teaser that is worth knowing. Of the various sizes of magic squares that can be used, we shall concern ourselves with the five by five square. The problem is to draw out a square containing twenty-five divisions and to insert in each division a number. When totalled across and down, the sum of five divisions in a row must all be the same. To make it more complicated, the answer or total of the rows of five can be determined by a member of the audience.</p>
+
+  <p>Draw out a square and divide it so that you have twenty-five equal squares, five across and five down. Have a member of the audience choose a number (it must be above sixty and under five hundred) and write it down outside the square. You must now fill in a series of numbers to add up finally to their choice. This has to be done quickly for effect, and can be done quickly if you know how.</p>
+
+  <p>Suppose the audience select the number 65. You must find the starting figure, the lowest number that goes in first. This is easy: deduct sixty from their figure and divide by five. Hence: 65 chosen number for total, we deduct 60 leaving 5, and divide by 5 to get 1. We must therefore start with the number 1.</p>
+
+  <p>Begin with the first figure inserting it in the middle square of the top line, and then proceed to fill in 2, 3, 4, 5, 6 etc., travelling diagonally upwards to the right. Imagine that it is possible to arrange the square in cylindrical form in both directions. Where the square upwards and diagonally to the right is occupied, and the square below is free, take that for the next number. This takes very little practice as you will see and you will soon reach a high speed.</p>
+
+  <div class="callout blue">
+    <div class="callout-icon">⭐</div>
+    <div class="callout-body"><p>When the number given has had sixty deducted and cannot equally be divided by five, the remainder must be added en route to certain "key squares." If you use the key squares, say you were given 248: you first subtract 60, which gives you 188, divide this by 5 giving you 37, which means you are left with a remainder of 3. You start at 37 and go on to 38, 39 and 40, continuing until you reach a key square where you add the remainder each time. Continue as normal otherwise.</p></div>
+  </div>
+
+  <p>Examples of the five by five magic square given here are as shown by Fred Barlow in his excellent book called <em>Mental Prodigies</em>. This publication is strongly recommended to those seeking accurate detail of history and technique of the science of mnemonics. I am indebted to Mr. Barlow for adding considerably to my knowledge of the subject.</p>
+
+  <hr>
+
+  <h2>♞ The Knight's Tour</h2>
+
+  <p>The American magician Harry Kellar made this startling trick popular many years ago, and today it remains as good as ever. The effect is that the mentalist must call out numbers which represent the squares of a chessboard. Every time a number is called, a knight is moved to that square and the tour from square to square is such that the knight must cover once only every square of the board (64) without touching the same square twice. Additionally, the knight must always be moved in the correct fashion for the knight's move in the game of chess. As most of you will know, this is regarded as the most complicated move of all the chessmen, being one forward and two to the side in any direction. All other men and pawns move in a straight line in one direction or another.</p>
+
+  <p>The feat therefore becomes more than just a demonstration of your ability to memorise sixty-four numbers in a given sequence (which is quite something) but adds to this the knowledge of a "path" or "route" which weaves intricately around the board. To the mentalist this may not mean much, but to chess-players it means a great deal, and to any intelligent lay audience (non-chess-players) the feat appears incredible. The audience need not have knowledge of the game of chess to appreciate your accomplishment. If they do, the effect is doubled.</p>
+
+  <p>I have been a keen chess-player for many years and know that this effect performed before a chess club or group is nothing short of dumbfounding. It has been done by pure skill on the part of one or two outstanding chess masters, but you will be able to do it without so much as having to learn a thing!</p>
+
+  <p>To present the effect you need only a piece of paper which is ruled off into a square divided into sixty-four sections (8×8) representing the chessboard. Starting from the top left-hand corner, number the small squares from one to sixty-four. (For large audiences you may use a blackboard.) Next inform the audience what you intend to do; emphasise the incredible number of variations and diverse paths for the knight's tour, and how you must remember sixty-four squares and so on. Next designate a member of the audience to mark off the squares as you call them out. You do not actually need a knight; it is enough to make a small tick to show that "the knight" passed that way.</p>
+
+  <p>To add to the presentation, we now permit the audience to decide which square shall be used as the starting point for the tour. They can pick any square on the board; simply call out the chosen number which is encircled to show it as the first square. From then on it is easy; you turn your back (so that you cannot cheat and cannot be seen!) and stand well away from the chessboard. To perform the knight's tour, all that remains is to call out a string of numbers reading them from the chart given in the illustration. It is as well to copy this chart out onto a small card which can be concealed in the hand when in use.</p>
+
+  <div class="callout purple">
+    <div class="callout-icon">🕶️</div>
+    <div class="callout-body"><p>Eric Mason has the numbers written on the edge of his spectacles!</p></div>
+  </div>
+
+  <p>As soon as you receive the starting number, look it up quickly and then read off down the rows, and as you reach the end of one row, start again at the top of the next. When you reach number 18, you start at the top of the first row again, number 1. So, for example, if we were told to start at number 54, we look it up and then call out 48, 63, 46, 56, 62, etc. You should remember the starting number so that you know when all sixty-four have been called.</p>
+
+  <div class="code-block"> 1  60  37  53  23  32  62  49
+ 8  47  52  34  11  45  20  43
+21   4  10  25  35  50  39  29
+12   6  16  31  26  36  30  13
+28  38  33  14  64  58  17  27
+24  54  41   2  44   7  48  51
+19  61  22  63  57   9  55   5
+46  42   3  40  15  56  59  18</div>
+
+  <div class="callout green">
+    <div class="callout-icon">🎭</div>
+    <div class="callout-body"><p>Add to the presentation towards the end by quickly counting the remaining numbers and saying: "I see we have nine squares to go; it's getting really difficult now!"</p></div>
+  </div>
+
+  <hr>
+
+  <h2>♟️ Chess Trickery</h2>
+
+  <p>Aside from the "Knight's Tour" there are other swindles concerning the game of chess that are of use to the mentalist. The next two items are extracts from my publication "Chess Trickery," which has been on sale for some years now. Neither of the items require any skilled knowledge of the game of chess.</p>
+
+  <h3>The Foolproof System at Chess</h3>
+
+  <p>The origin of this principle is somewhat remote and subject to argument. I know that the effect was used by a little girl playing against Dr. A. Alekhine (ex-world champion) and another player of good strength, and the little girl forced a draw. However, having published the effect and used it as part material for my "Chess Trickery," it then appears that the effect is credited to a magician. I discussed the subject with Dai Vernon on one occasion and he told me that Martin Gardner had worked on it some time ago. Although magicians may have improved the presentation, I do not think they can claim the right of invention in this case.</p>
+
+  <p><strong>The effect:</strong> The mentalist is able to play as many games of chess simultaneously as he likes, and although having no knowledge whatsoever of the game, is able to guarantee a draw on the complete match. This must have a profound impact on chess-players because, first, since they must know the game in order to play you, they will appreciate the difficulty of playing several games at once. Second, it makes little difference what strength of play or opposition you meet; in other words, you could play against a panel of twenty people, all international champions, and still draw. Under these circumstances, a draw is a notable accomplishment and in the game of chess, the title holder is considered the winner in the event of a draw, since his opponent must do better than to equalise the tournament.</p>
+
+  <p><strong>The method:</strong> To simplify the explanation we shall describe the technique of playing just two games at once. Later we shall deal with more than two. It is very easy: to play two people at once, you would have two chessboards, two tables and two sets of chessmen. On one board (which we shall call "A") you are supposed to play with the white pieces. On the other board ("B") you play with the black. Both opponents sit opposite you.</p>
+
+  <p>Now the rules of chess demand that the player holding the white pieces ("A") must always make the first move. So when you are ready to commence the match, you wait until your opponent on board "B" (playing the white against you) makes his move. As soon as he has made it, you make exactly the same move on board "A." After a while the opponent on this board makes a reply, and this reply you duplicate on board "B." In effect, instead of playing the opponents yourself, you have turned the tables on them and set them playing against each other!</p>
+
+  <div class="callout blue">
+    <div class="callout-icon">🏆</div>
+    <div class="callout-body">
+      <p>Now if you consider for a moment, you will realise that the outcome of this match can only be three possibilities:</p>
+      <p><strong>(1)</strong> "A" wins; so "B" must lose; you win on one board and lose on another, therefore it is a draw.</p>
+      <p><strong>(2)</strong> "B" wins; so "A" must lose and the same as above occurs.</p>
+      <p><strong>(3)</strong> "A" and "B" draw; you draw on both boards, which equals a draw as tournament result.</p>
+      <p>There can be no other possibilities. Even if one player resigns the outcome would equal a draw, hence you cannot lose.</p>
+    </div>
+  </div>
+
+  <p>It is practically out of the question that the players will discover this ruse as, first and foremost, there is no suspicion of trickery. Second, the players are, or should be, seated quite a way apart. Third, the position on one board is in reverse to the position in the other, and it takes a chess master to glance at a board from white's point of view, then again from black's, and say immediately they are the same on both boards. Fourth, you must remember that chess is a gruelling game and takes the undivided attention of the players. Fifth, you may say that it will be obvious in the opening stages of the games as only one or two pieces will be moved out of position. It will not, because chess-players more often than not resort to standard openings and gambits and similarity in the opening play between several games is commonplace. (I have looked up the Hastings Chess Matches of 1947 and find that out of some two hundred games the opening P-K4 or P-Q4 took place 87% of the time.)</p>
+
+  <h3>To Play Unlimited Games at Once</h3>
+
+  <p>If you have more than two opponents (multiples of two are required) you seat them in a long row and mentally number the boards from one onwards. Now instead of playing two opponents sitting next door to each other against themselves, you play them against another person some boards down the row, which makes it quite out of the question that they can see what's going on.</p>
+
+  <p>The system I used to use was this: the boards (twelve) are divided into three groups of four. The colour set-up from one to twelve should be (your men) first two black, next two white, next two black, next two white, and so on. As you will see, at the start you go to the first board and await your opponent's opening move. When he makes this, you do not reply (make your move) yet; you pass to the next board. Again you have black so you wait for the first move to be made. Now you reach board three where you have the white and must move first, so you simply duplicate the first move as was made by board one. On the next board, four, you make the move from board two, and so it goes on. Outside of remembering a couple of moves for a few seconds and being observant enough to make the correct moves, there is no skill required at all. If you forget the move, you can always look back a couple of boards and check.</p>
+
+  <div class="callout">
+    <div class="callout-icon">📝</div>
+    <div class="callout-body"><p>Do not allow the matches to be recorded by chess notation as they sometimes are during tournaments. If you do so, your ruse will be discovered as six games will be alike. If you are moving quickly and you arrive at a board (say No. 5) and your opponent has not yet decided his move, simply miss him out and also miss out his partner (No. 7) on that time down the row. You only make one move each time you move along the row, and each time you reach board number twelve, you then go back to number one and start over again.</p></div>
+  </div>
+
+  <h3>The Mate in One Problem ♔</h3>
+
+  <p>Many years ago Tartakower, a famous chess-player, walked into "The Gambit," a well-known chess club and restaurant in London, and bet with all present that he could show them a mate-in-one problem that they couldn't solve. He won.</p>
+
+  <p>Chess problems for a mate in two, three or four are commonplace, but mate in one is unheard of. It is taken for granted that the position would be so simple that it would be obvious. However, this position, although painfully simple, will defy the brains of the greatest chess master, as the answer is a trick! It is well worth knowing as it makes a very good publicity stunt to perform when you meet a chess-player.</p>
+
+  <div class="callout red">
+    <div class="callout-icon">♟️</div>
+    <div class="callout-body"><p><strong>The answer:</strong> The rules of chess at the time when Tartakower made his bet stated quite clearly that "a pawn advanced to the 8th rank could be exchanged for any other piece excepting a king." There was no mention of what colour that piece should be! Consequently, white plays his pawn on one square (P-N8 = Black N) and calls a black knight, which is mate in one.</p><p>Forsythe Notation: r7/kPR5/8/1K6/8/8/8/8. (White to move and mate in one; P-N8bn+)</p></div>
+  </div>
+
+  <hr>
+
+  <h2>📅 A Day for Any Date</h2>
+
+  <p><strong>The effect:</strong> The performer invites members of his audience to call out any date they like; upon hearing the date, the performer gives the exact day of the week that that date falls on and delivers his reply within seconds. Everything is achieved by a quick calculating mental system.</p>
+
+  <p>Before we deal with the technique, a few words of introduction are required. First of all, the system given can be used only for periods within the range of the Gregorian Calendar (i.e. from 1753), as prior to this the Julian Calendar was in force. The only real difficulty in the system is the learning of the values to represent each month. Mnemonics are recommended to overcome this problem. It is first necessary to learn a simple code whereby each month of the year is represented by a number:</p>
+
+  <table>
+    <thead><tr><th>Month</th><th>Value</th></tr></thead>
+    <tbody>
+      <tr><td>June</td><td><strong>0</strong></td></tr>
+      <tr><td>September and December</td><td><strong>1</strong></td></tr>
+      <tr><td>April and July</td><td><strong>2</strong></td></tr>
+      <tr><td>January and October</td><td><strong>3</strong></td></tr>
+      <tr><td>May</td><td><strong>4</strong></td></tr>
+      <tr><td>August</td><td><strong>5</strong></td></tr>
+      <tr><td>February, March and November</td><td><strong>6</strong></td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout yellow">
+    <div class="callout-icon">⚠️</div>
+    <div class="callout-body"><p>Exception to this code is made in leap years, when January and February values are reduced by one.</p></div>
+  </div>
+
+  <p>Now suppose the mentalist is asked to name the day for the date October 5th, 1888. If the method is fully understood, the reply can be given in seconds... "Friday." Moreover, although the method looks complex it is indeed very simple. We shall take October 5th, 1888, as an example.</p>
+
+  <p>Start by taking the last two digits of the year (in this case 88) and add a quarter (22), making the total 110. Next add the value for the month (October is 3) bringing the total to 113, and to this add the day of the month ("5th"), giving us 118. This number we divide by seven and we then get a remainder of 6. We now have a code number for each day:</p>
+
+  <table>
+    <thead><tr><th>Day</th><th>Value</th></tr></thead>
+    <tbody>
+      <tr><td>Sunday</td><td>1</td></tr>
+      <tr><td>Monday</td><td>2</td></tr>
+      <tr><td>Tuesday</td><td>3</td></tr>
+      <tr><td>Wednesday</td><td>4</td></tr>
+      <tr><td>Thursday</td><td>5</td></tr>
+      <tr><td><mark>Friday</mark></td><td><mark>6</mark></td></tr>
+      <tr><td>Saturday</td><td>0</td></tr>
+    </tbody>
+  </table>
+
+  <p>When our calculation was made we were left with a total of six, and this represents the day: in this case Friday, as will be seen in the above table. When the last two digits of the year given by the spectator cannot be divided exactly by four, take the nearest lowest number divisible by four. As for example, the year 1827: we take 24 as the lowest number and add a quarter of this (6) to 27, giving the answer 33, to which the value of the month is then added.</p>
+
+  <div class="callout blue">
+    <div class="callout-icon">🗓️</div>
+    <div class="callout-body"><p>The sample given has been for the nineteenth century, 1801–1900. When the date occurs in the <strong>twentieth century</strong> you must deduct two from the final remainder, and when the date occurs in the <strong>eighteenth century</strong> you must add two to the final remainder.</p></div>
+  </div>
+
+  <h3>📋 Summary of the System</h3>
+
+  <ol class="step-list">
+    <li>Take the last two digits of the year and add a quarter again.</li>
+    <li>Next add to this total the code value for the month.</li>
+    <li>To this add the day of the month.</li>
+    <li>Divide the total by seven.</li>
+    <li>The remainder tells you the day according to the day code number.</li>
+  </ol>
+
+  <h3>Further Examples</h3>
+
+  <p><strong>April 4th, 1931:</strong> Equals 31 + 7 (one quarter) + 2 (for April) + 4 = 44. Divided by 7 gives a remainder of 2, less 2 for the twentieth century, leaves us with 0, which indicates a <mark>Saturday.</mark></p>
+
+  <p><strong>January 8th, 1900:</strong> Equals 8 + 3 = 11. This minus 2 gives 9, which divided by 7 leaves a remainder of 2, which indicates a <mark>Monday.</mark></p>
+
+  <p><strong>August 5th, 1752:</strong> Last two digits of the year are 52. Divided by 4 gives us 13, which added to 52 equals 65. To this we add the code value for the month (August is 5) and we add another 2 for an eighteenth century date: 65 + 5 + 2 = 72. To this we add the day of the month (the fifth): 72 + 5 = 77. We then divide by 7, which goes exactly, so we have "0" for the remainder, and "0" from the day code represents a <mark>Saturday.</mark></p>
+
+  <h3>🎤 Performance of the Effect</h3>
+
+  <p>The best method of presentation is to build the effect up slowly. Start off by giving an introductory talk in which you explain how quickly the average person forgets time. Ask how many people can remember exactly what they were doing on January 23rd, 1957, or how many people can even remember what day of the week it was. You would like to prove that it is possible to keep a mental record of what you do and when you do it and will demonstrate, for example, by calling out any day for any date of the present year. All members of the audience are asked to take out their diaries and to turn to any page and call out a date; you will attempt to name the exact day for that date.</p>
+
+  <p>You run through about half a dozen dates in this fashion, which is a good way of proving to a large number of people at the same time that you are right. Now you invite those people with diaries to turn to the small page at the front or back that gives you a calendar for last year and next year. You run through a few of these and you will find that people in the audience who call out dates are those people who know what day it was because invariably it was a day of some importance to them. Having dealt with the diaries you now invite anybody to call out their birth date, their date of marriage, the date of their twenty-first birthday, or any other date as long as they are quite sure what day that date fell on. So you progress through the ages!</p>
+
+  <div class="callout yellow">
+    <div class="callout-icon">😏</div>
+    <div class="callout-body"><p>To add amusement to the presentation you can inject asides and witticisms which give an element of comedy. For example the patter might go: "Now what date did you want? January 8th, 1900. Right! Now if I remember rightly that was a wet and windy day; it was a Monday and it was the same day as the famous Leeds Convention..." The asides or apparent "facts" are utter nonsense, but you go so quick and make such non-committal remarks that no one is in a position to dispute your suggestions. This adds considerably to the effect.</p></div>
+  </div>
+
+  <p>Another point is to keep an eye open for special dates like December 25th (Christmas Day), November 5th (Guy Fawkes), and so on; you will gain a lot of material from these. Watch out for the "wise guy" who sits in every audience. When you get "I want February 30th, 1942," you have met him. Get to know how many days are in each month (including leap years) and watch out for catch-questions. The best thing is to have a ready-made answer for these, something which makes a fool of the spectator and gets a laugh at his expense. He has asked for it. I said: get a laugh, don't be rude, please.</p>
+
+  <div class="callout green">
+    <div class="callout-icon">😄</div>
+    <div class="callout-body"><p><strong>Example:</strong> "What day was June 31st, 1905?" You could reply: "That's an easy one! It was the same day as the famous haunting by the Ghost of Cowley, right?" And in no time back will come the answer: "Oh no it wasn't, because June the 31st never existed." To which you may reply: "Exactly what I meant; neither did the ghost!"</p><p>Or: "What day was September 31st, 1952?" Reply: "Were you born on April 1st?"</p></div>
+  </div>
+
+  <hr>
+
+  <h2>🃏 Simple Card Systems</h2>
+
+  <h3>(1) The Stacked Deck</h3>
+
+  <p>The "stacked deck" is a pack of cards that has been arranged in a special order according to a system which enables you to know the position of every card in the deck. This may be applied to a few cards or to the complete pack of 52, according to requirements. The principle in itself is well known to magicians and it is incorporated here for the benefit of the newcomer, who will find it quite invaluable.</p>
+
+  <p>To arrange a pack of cards in some specific order presents a bit of a problem. If the system or order is simple, something straightforward like arranging the cards in numerical order, then it becomes obvious to the spectator. On the other hand, if you use a "mixed" system which is not obvious, then you have to find a way of remembering it and it must also be one that functions quickly in use (i.e. you can work out where any card is within reasonable time.)</p>
+
+  <p>To overcome this little problem we resort to our old friend the "memory system" and in order to remember the "key" to the system, we utilise the following rhyme:</p>
+
+  <div class="rhyme-block" style="text-align:center;">
+    <p style="font-size:19px; font-weight:700; color:#1a1a1a; line-height:1.7; margin-bottom:0.75rem;">"Eight Kings threaten to save, nine fair ladies for one sick knave."</p>
+    <p style="font-family:monospace; font-size:14px; color:#9b59b6; letter-spacing:0.1em;">8 · K · 3 · 10 · 2 · 7 · 9 · 5 · Q · 4 · A · 6 · J</p>
+  </div>
+
+  <p>You will notice that the words in the rhyme have a phonetic resemblance to the numbers printed underneath. The queen is represented by "Ladies," which should be pretty easy to remember! Now that we have allowed for the thirteen card values, we must deal next with the suits. To do this, we bear in mind the word <strong>CHaSeD</strong> and you will note that the four consonants represent Clubs, Hearts, Spades and Diamonds, and since we must keep them in a fixed order, we take them as they appear in the word CHASED.</p>
+
+  <p>Using the value rhyme and the suit order as given, we now "stack" the complete deck. Start with the 8 of Clubs and place it face upwards on the table; on top of this, always face upwards, place next the King of Hearts and then the 3 of Spades. You will see that each time we move along the words of the rhyme, we move to the next suit. We go on like this until every card is in its proper position. When the pack is completely assembled in order you will note that every fourth card is the same suit and every 13th card is the same value. Just one thing more: every time you reach the end of the rhyme (the Jack) you start again at the beginning (Eight).</p>
+
+  <p>Now that the deck is stacked it must be kept in this order very carefully. To do this you handle the pack with reasonable care, see that cards removed are replaced in the right position (see below), and always cut the pack and complete the cut properly to mix. In actual fact, cutting the pack will not disturb the stack at all as long as it is a normal method. You may false shuffle but you must be pretty sure of yourself in order to do this.</p>
+
+  <p>Let us deal with a simple trick in order to illustrate how to handle the stacked deck and how to work it properly. The pack is pre-arranged. After it has been given one or two completed cuts it is fanned face downwards and a spectator is invited to remove a card, say from the centre. As soon as they remove their card, break the fan just above the position of their card and casually put the top half of the fan on the bottom half; in effect, dividing the pack in two for an instant and putting the top half on the bottom. Having done this, the bottom card of the pack will naturally be the card that preceded the one that was removed by the spectator.</p>
+
+  <p>Suppose we see the Two of Hearts on the bottom; we can quickly run through the rhyme and find that the two is always followed by a seven ("...threaten to save") and since the bottom card is a heart, the next suit in the order CHASED would be a spade, so we now know that the spectator holds the Seven of Spades. With a bit of practice you will be able to work all this out in a matter of seconds; it becomes almost automatic.</p>
+
+  <p>Once you know the card you are in a position to do one of many good tricks, and it is best to build it up into an effect before you declare what the name of the card may be. It is not enough simply to have a card chosen and then to name it; throughout this series you will find dozens of tricks that can be performed once you know what card a spectator has chosen.</p>
+
+  <div class="callout purple">
+    <div class="callout-icon">🪄</div>
+    <div class="callout-body"><p>Before we deal with one or two more tricks, it might be as well to point out that when you look at the bottom card some sort of misdirection should be used. If you just turn the pack over and glare at it, you are asking for trouble. One method is to casually place the deck aside, placing it face upwards on the table and hardly giving it a glance. Another is to "accidentally" drop the bottom card on the floor and look at it when you pick it up. Another technique is to use anything that reflects, such as a mirror, highly polished table knife, or spoon, cigarette case or lighter; the pack need not be reversed at any time.</p></div>
+  </div>
+
+  <p>Last but not least, a method using powerful misdirection: the spectator holds his card; you tell him to look at it and remember it, then you say, "Now so that I cannot possibly see your card, hold it flat against your chest like this..." and holding the pack in the left hand you bring it up to your chest to demonstrate the position and note the bottom card as you do so.</p>
+
+  <p>Having revealed the name of the chosen card you take it back. Now it stands to reason that this card cannot be pushed at random into the pack if the order is to be maintained. It must go on the bottom or the top, bringing it back into sequence. If you have had several cards removed, pick them up from the table in the right order and drop them one at a time on top, setting the stack as you go.</p>
+
+  <h3>Some More Tricks Using the Eight Kings Stack 🎴</h3>
+
+  <p><strong>(a)</strong> Cut a queen, any queen, to the bottom of the deck and then deal out a "Pontoon" hand for two people, the spectator and yourself. You deal out from the top two cards each in the order: him, you, then him, you. He will get a six and a four and you will get "Pontoon," an Ace and a Jack, the top winning hand! If he wants to "twist" on his hand of six and four he gets an Eight, and if he twists again he gets a King and must lose.</p>
+
+  <p><strong>(b)</strong> Hand the pack to the spectator and tell him to do exactly as you say. Take the cards behind his back and cut them, completing the cut. Then take the top card and reverse it anywhere in the pack, square up the cards, and then place them face up on the table. You will see the face card of the pack and can therefore name the card he reversed somewhere in the middle; since the spectator does not know himself it will seem a real miracle.</p>
+
+  <p><strong>(c)</strong> Have the spectator take any three cards in a row. These he places in his pockets; each goes in a separate pocket. Cut the pack as he takes his group of cards and note the bottom card when placing the pack aside. Turn your back on the spectator and tell him to remove any card from one of his pockets. You now know that this card must be one of three; to find out which one, you work by a method known as "pumping."</p>
+
+  <p>Suppose he took the following three cards: Eight of Clubs, King of Hearts, and Three of Spades. You start off by saying, "You are holding a black card..." and make it sound as though you were telling him and not asking him. If he says "No," you can reply immediately: "Sorry, I always have trouble with court cards; it is a red king, the King of Hearts. Take out another please. This time you most certainly have a black one; I think it is a spade?" If he says "Yes," straight away you say, "And it is the three, which leaves the last card still in your pocket, and that is the Eight of Clubs." Or, if he said "No," you reply: "You are, you know! You are holding it in your pocket: the Three of Spades. I thought I would tell you that first before naming the one in your hand: the Eight of Clubs!"</p>
+
+  <h3>(2) Si Stebbins Stack</h3>
+
+  <p>This is another system of arranging a full pack of cards in order. You may prefer it to the Eight Kings System, although by nature they are very similar. The cards are arranged in the following order:</p>
+
+  <div class="code-block">3C  6H  9S  QD  2C  5H  8S  JD  AC  4H  7S 10D
+KC  3H  6S  9D  QC  2H  5S  8D  JC  AH  4S  7D
+10C KH  3S  6D  9C  QH  2S  5D  8C  JH  AS  4D
+7C 10H  KS  3D  6C  9H  QS  2D  5C  8H  JS  AD
+4C  7H 10S  KD
+
+(Top card = Three of Clubs, face down)</div>
+
+  <p>The suits rotate in the order Clubs, Hearts, Spades and Diamonds (see "Eight Kings") and to work out the value, all you have to do is add three to the last card. You value a Jack as eleven, a Queen as twelve, and a King as thirteen. To operate the Si Stebbins stack, proceed the same way as for Eight Kings and when you see the bottom card, simply add three to the value and rotate the suit forward one.</p>
+
+  <h3>(3) The Fourteen/Fifteen Set Up</h3>
+
+  <p>First discard the Ace of Hearts and the Ace of Spades. Now set up the remaining 50 cards in this order:</p>
+
+  <div class="code-block">7C, 8C, 6D, 9S, 5C, 10H, 4D, JS, 3C, QS, 2D, KS,
+AC, KH, 2H, 3D, JH, 4S, 10C, 5D, 9C, 6S, 8S, 7S,
+8D, 6H, 9H, 5H, 10D, JD, 3S, QH, 2S, KD, AD, KC,
+2C, QD, 3H, JC, 4H, 10S, 9D, 6C, 8H, 7H, 7D, QC,
+4C, 5S  (Bottom)</div>
+
+  <p>There is no "CHASED" suit order in this set-up as it is not possible. Now if the pack is cut anywhere, the two cards at the cut will always total either fourteen or fifteen. The deck may be given as many complete cuts as you like before using. This can be of considerable use when it is necessary to force a number; as for example, for a book test. If you know the fourteenth and fifteenth word on a page, by having two cards removed (together) from somewhere in the deck, you force those numbers.</p>
+
+  <h3>(4) The Odd and Even Set Up</h3>
+
+  <p>As a magician you will have spent many hours handling a pack of cards. I wonder if you know how many odd cards there are in a pack? Twenty-six? No! There are twenty-eight, and there are twenty-four even cards; you work it out! This is a very simple set-up and it is almost impossible to see at a casual glance. Put all the odd cards (King is 13 and Jack is 11) on top of the pack and put all the even cards (Queen is 12) below. Any cards removed from the top half and replaced in the bottom half will be clearly visible. This may also be done by having all the blacks at the top and all the reds at the bottom, but it is of course more obvious.</p>
+
+  <hr>
+
+  <h2>🔢 The Mnemonic Number Code</h2>
+
+  <p>One field of mnemonics, sometimes called the Science of Artificial Memory, deals with a system for remembering numbers. This system can be invaluable to the mentalist. One of the early pioneers of this system was Gregor von Feinaigle of Baden, who published a treatise dealing with it in 1812. Since then it has been dealt with in several magical works. The system, like the Amazing Memory with objects, is based on the "association of ideas" principle, and consonants of the alphabet are used as the "keys" to represent numbers.</p>
+
+  <p>The first step is to learn the following code, wherein each number is allotted a letter:</p>
+
+  <div class="num-grid">
+    <div class="num-card"><div class="n">1</div><div class="l">d</div></div>
+    <div class="num-card"><div class="n">2</div><div class="l">n</div></div>
+    <div class="num-card"><div class="n">3</div><div class="l">m</div></div>
+    <div class="num-card"><div class="n">4</div><div class="l">w</div></div>
+    <div class="num-card"><div class="n">5</div><div class="l">f</div></div>
+    <div class="num-card"><div class="n">6</div><div class="l">s</div></div>
+    <div class="num-card"><div class="n">7</div><div class="l">v</div></div>
+    <div class="num-card"><div class="n">8</div><div class="l">g</div></div>
+    <div class="num-card"><div class="n">9</div><div class="l">p</div></div>
+    <div class="num-card"><div class="n">0</div><div class="l">z</div></div>
+  </div>
+
+  <p>In order that they may be committed to memory with ease, we have additional "keys" to assist us:</p>
+
+  <table>
+    <thead><tr><th>No.</th><th>Memory key</th></tr></thead>
+    <tbody>
+      <tr><td><strong>1</strong></td><td>The letter "d" has one stroke.</td></tr>
+      <tr><td><strong>2</strong></td><td>The letter "n" has two strokes.</td></tr>
+      <tr><td><strong>3</strong></td><td>The letter "m" has three strokes.</td></tr>
+      <tr><td><strong>4</strong></td><td>The letter "w" is made up of four lines.</td></tr>
+      <tr><td><strong>5</strong></td><td>The letter "f" begins "five."</td></tr>
+      <tr><td><strong>6</strong></td><td>The letter "s" begins "six."</td></tr>
+      <tr><td><strong>7</strong></td><td>The letter "v" appears only in the spelling of "seven."</td></tr>
+      <tr><td><strong>8</strong></td><td>The letter "g" appears only in the spelling of "eight."</td></tr>
+      <tr><td><strong>9</strong></td><td>The letter "p" gives a mirror image of that number.</td></tr>
+      <tr><td><strong>0</strong></td><td>The letter "z" starts "zero."</td></tr>
+    </tbody>
+  </table>
+
+  <p>Having mastered the above code, you are ready to work. To use, simply take whatever number you wish to remember and mentally work out what consonants represent that number. Suppose you wanted to deal with the number 6731: the consonants are S-V-M-D. Now we are allowed to insert as many vowels as we like, in any position we like, in order to make those consonants into a word or several words. We must however keep the consonants in their proper order. We could make S-V-M-D into "Save Mud," two small words. It is not necessary to make sense or find sensible long words; in fact, the more absurd your efforts, the better it will be. You find the "key word" as quickly as possible and commit it to memory. Should you be dealing with a lot of these key words then you can utilise the Amazing Memory system to remember them. Nevertheless, for one or two simple words it is hardly necessary. Remember: the secret to this system is to find short simple words as quickly as you can.</p>
+
+  <div class="callout purple">
+    <div class="callout-icon">✍️</div>
+    <div class="callout-body"><p>"Oh what a tangled web we weave, when first we practice to deceive." The consonants of this sentence equal the number <strong>4281444742564917</strong> by the above method.</p></div>
+  </div>
+
+  <p>If you consider for a moment, you will realise that the speed with which you can translate the numbers into words is dependent upon two things: first, complete familiarity with the letters representing the numbers, and second, the range of letters available. Obviously, the more letters you can use, the easier it will be to compile the words. Suppose therefore that we enlarge our code:</p>
+
+  <table>
+    <thead><tr><th>No.</th><th>Primary</th><th>Extended</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td><strong>1</strong></td><td>d</td><td>l</td><td>One stroke.</td></tr>
+      <tr><td><strong>2</strong></td><td>n</td><td>b</td><td>Phonetic: "to be or not two b."</td></tr>
+      <tr><td><strong>3</strong></td><td>m</td><td>k</td><td>Composed of three strokes.</td></tr>
+      <tr><td><strong>4</strong></td><td>w</td><td>r</td><td>The last letter of "four."</td></tr>
+      <tr><td><strong>5</strong></td><td>f</td><td>q</td><td>Five precedes the queen in the Eight Kings stack.</td></tr>
+      <tr><td><strong>6</strong></td><td>s</td><td>x</td><td>The last letter of "six."</td></tr>
+      <tr><td><strong>7</strong></td><td>v</td><td>y</td><td>Has the written appearance of "seven."</td></tr>
+      <tr><td><strong>8</strong></td><td>g</td><td>t</td><td>The last letter of "eight."</td></tr>
+      <tr><td><strong>9</strong></td><td>p</td><td>c</td><td>"c" stands for cat with nine lives.</td></tr>
+      <tr><td><strong>0</strong></td><td>z</td><td>h</td><td>The letter "h" appears in "nought."</td></tr>
+    </tbody>
+  </table>
+
+  <p>You do not have to adopt the letter I suggest; if you can sort out the alphabet in such a way that you find a code more suited to yourself, then use it of course. The difference that the extra set of letters makes to the code can be seen by translating the sentence I gave at the beginning of this code; originally we had sixteen numbers, now we get thirty: <mark>040882814244740254684949898197.</mark></p>
+
+  <p>Moreover, taking the original example number (which was 6731), instead of having four consonants to work with (S-V-M-D) we now have eight: S &amp; X, V &amp; Y, M &amp; K, D &amp; L. Our first effort working with four consonants was "Save Mud." This time it could easily be: "Say Kid," "Sieve Mad," "Axe Yokel," "Suave Mole," or "Save Mud." So as you will see, we are able to form the number into a wider range of words, and the little extra time it takes to learn the second set of key letters makes all the difference in the long run.</p>
+
+  <hr>
+
+  <h2>🔗 Application of the Mnemonic Number Code</h2>
+
+  <p><strong>(1)</strong> When performing "lightning calculations," instead of trying to overburden the mind with numerous sub-totals, convert them to a word which can be quickly brought to mind when required.</p>
+
+  <p><strong>(2)</strong> For "telephone" tricks, have a number written by a spectator; convert this into a word which will pass as a name. Send the spectator to telephone your medium and tell them what name to ask for. When the medium hears what name you have called her, she immediately knows the number chosen. The friend or medium can have a written copy of the system ready to work it out. A clever application of this principle, that is, using the Feinaigle System in reverse making numbers indicate letters, will be found in a fine book, <em>Magical Ways and Means</em> by Al Baker; the effect is called "The Celebrity Feat."</p>
+
+  <p><strong>(3)</strong> The performer works with an assistant. The latter is seated and blindfolded. On a blackboard are written about two dozen numbers, with at least one of each from 1 to 9 (and "0" included). The performer takes a stick, says nothing but points to a number; the assistant calls it out. He then begins to point in rapid succession to various numbers and each time the assistant calls out the correct one. On one occasion he points to part of the blackboard that is blank; the assistant calls out "there is nothing there!" In the course of about two minutes, the assistant has called out perhaps fifty to one hundred numbers accurately. This is very impressive.</p>
+
+  <p>To conclude, the performer points to one number and says, "What is this added to this?" and points to another. Then he goes on: "And multiply this by this; subtract this from this; add up these three," etc. Both performer and assistant have memorised the complete order of numbers to be used for the act. When the performer points to a number, it is the number pre-arranged in the mental system and the assistant calls it out. It is literally impossible to make a mistake, and since the assistant does not have to see the board, he should sit with his back to it and make no effort to turn during the performance.</p>
+
+  <div class="callout blue">
+    <div class="callout-icon">🎯</div>
+    <div class="callout-body"><p>As a very good climax to this effect you can have a spectator come up to the blackboard and write down two rows of figures and then add them up. As soon as the total is seen by you, you declare to the audience: "And now, ladies and gentlemen, we will conclude with the [name] test..." Whatever name you call the test tells your assistant the total on the blackboard.</p></div>
+  </div>
+
+  <h3>📚 Corinda's "Fourteenth Book Test"</h3>
+
+  <p>This was an effect that I used to use and it went over very well. It is necessary for both performers to know the mnemonic number system, and when you get a team working on a double mental act, it certainly pays in many ways to learn this system. One of the team, called "the medium," leaves the room. The audience decide on a word in any book, note the page number and the line, and then the position of the word in that line. Your medium now comes in, picks up the book, and locates the chosen word. It is done by a code method.</p>
+
+  <p>When the medium comes in, you turn to the spectator that chose the word and say, "Now we will not mention the word, but suppose it was 'dog'; imagine you are writing that word on a blackboard." The word "DOG" keys your assistant: page 18. Your medium turns to page 18 and then appears to have some difficulty. You turn to the spectator again and say, "Your conscious mind is confusing the picture. I want you to rub out the imaginary word and write something else, like Bat, or just a letter like K..." Now you have coded the line number (Bat equals 28) and the position of the chosen word in the line (K equals 3). Because the conversation is so natural, devoid of such usual classics as "Please now this, what is it?!", there is never a suspicion that a code system has been used.</p>
+
+  <h3>Take My Word 🗣️</h3>
+
+  <p>Another effect I have used with this system: have about ten words thought of by the audience whilst your medium is outside. Then have one of them chosen (they should be written in a long list). Suppose the fifth word down the list is selected. Just before you leave the room by another door, or go and stand quietly in the corner, say, "I'll just add a couple more to make it difficult," and add any two words to the bottom of the list; but the very last word starts with the same letter that indicates the chosen word from the top of the list. For five you may use "f" or "q," so you add something like "fig" or "quality" to the bottom of the list.</p>
+
+  <p>It may then be taken a step in advance of this by having very many words written on a list and still doing it. Several words can be chosen and as long as you and your assistant both know the key word, you have a good effect on your hands. Remember that not a word is said or a sign given, and that you can be out of the room. If you cannot leave the room, there is nothing to stop you sending the list out to the medium.</p>
+
+  <hr>
+
+  <h2>📸 The Photographic Memory</h2>
+
+  <p>This effect is the application of the mnemonic number system in all its glory. You will have to be well practised to do it, but the trick is really fabulous. You have a blackboard and work alone. You invite people in the audience to take out a ten-shilling or one-pound note and hold it up. You point to any one and ask them to call out the number on their note; you write it on the blackboard and ask them to check that what you have written is right. Whilst you write it, you gain a few seconds to translate their note number into a word or two. You then ask for their initials and quickly form a word with them in your mind. Now the number key and the initials key are associated with No. 1 in the Amazing Memory System, and then everything is forgotten.</p>
+
+  <p>This takes a long time to describe, but the well-practised mentalist will be able to do it in about three to five seconds. Suppose the bank note number was 347531: immediately we know the key letters are MK, WR, VY, FQ, MK, DL, and something like "Mary Female" soon springs to mind. Then our spectator tells us his initials are B.N.; we then make up any word very quickly. There is nothing to think about: B.N. We will say "bun." Now we instinctively know "Number one is a gun" in the Amazing Memory Code, so we associate Mary, Female, and Bun with Gun. An absurd picture is created: a woman named Mary, unmistakably female(!), is trying her skill at shooting a bun through the middle. We create the picture and then we forget it.</p>
+
+  <p>You turn back to the spectator in the audience and say, "I will call you number one; will you remember that please?" Then do just the same with another person, calling him number two, and another, number three, until you have covered about ten or twelve. By that time you have a pretty formidable list on show on the blackboard. Now you give a brief explanation about the so-called "photographic memory," pretend to study the board carefully for the first time, turn it round, and call out: "Number One! Will you hold your note up please? Let me see: your initials are B.N. and the number on your note is 347531. Correct?"</p>
+
+  <p>Would anybody now like to call out the number I gave them and we will see if we can recognise you? Be sure the audience call out the last six numbers on the note, and if you "accept" twelve altogether the blackboard will show seventy-two numbers all in special order and about twenty-four to thirty letters (some initials may be three letters), and to add to this you have given each spectator a number and also remember that!</p>
+
+  <div class="callout green">
+    <div class="callout-icon">🌟</div>
+    <div class="callout-body"><p>If you have never handled mnemonics, this sort of effect will quite possibly scare you! Believe me, you have no idea until you try just how easy and effective it is. When you start to learn and apply mnemonics, the first person to be amazed is always yourself. As I said at the very beginning, the best equipment that the mentalist can have is knowledge carried in the mind; there is more magic in your mind than there is in all the dealers' catalogues put into one volume!</p></div>
+  </div>
+
+</div>
+</body>
+</html>

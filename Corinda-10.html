@@ -1,0 +1,480 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);color:var(--color-text-primary);background:transparent}
+.page{max-width:680px;margin:0 auto;padding:2rem 1rem}
+.hero{background:#EEEDFE;border:0.5px solid #AFA9EC;border-radius:var(--border-radius-lg);padding:2rem;margin-bottom:2rem;text-align:center}
+.hero-title{font-size:13px;font-weight:500;letter-spacing:.12em;color:#534AB7;text-transform:uppercase;margin-bottom:.5rem}
+.hero-h1{font-size:26px;font-weight:500;color:#3C3489;margin-bottom:.4rem}
+.hero-sub{font-size:14px;color:#534AB7;margin-bottom:1rem}
+.hero-badge{display:inline-block;background:#534AB7;color:#EEEDFE;font-size:12px;padding:4px 14px;border-radius:99px;font-weight:500}
+.toc-box{background:#E1F5EE;border:0.5px solid #5DCAA5;border-radius:var(--border-radius-lg);padding:1.5rem;margin-bottom:2rem}
+.toc-title{font-size:13px;font-weight:500;color:#085041;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:6px}
+.toc-item{display:flex;align-items:flex-start;gap:8px;padding:6px 8px;border-radius:6px;background:#fff;border:0.5px solid #9FE1CB;font-size:13px;color:#0F6E56;line-height:1.4}
+.toc-pg{font-size:11px;color:#1D9E75;font-weight:500;min-width:28px;text-align:right;padding-top:1px}
+.section{margin-bottom:2rem}
+.rule-box{background:#E6F1FB;border:0.5px solid #85B7EB;border-radius:var(--border-radius-lg);padding:1.25rem 1.5rem;margin-bottom:1rem}
+.rule-box-title{font-size:12px;font-weight:500;color:#0C447C;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.75rem}
+.rule{display:flex;gap:10px;margin-bottom:.75rem;align-items:flex-start}
+.rule:last-child{margin-bottom:0}
+.rule-num{background:#378ADD;color:#E6F1FB;font-size:11px;font-weight:500;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.rule-text{font-size:14px;color:#185FA5;line-height:1.6}
+.trick-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.25rem 1.5rem;margin-bottom:1.25rem}
+.trick-header{display:flex;align-items:center;gap:10px;margin-bottom:.75rem}
+.trick-emoji{font-size:22px}
+.trick-name{font-size:15px;font-weight:500;color:var(--color-text-primary)}
+.trick-author{font-size:12px;color:var(--color-text-secondary);margin-top:1px}
+.trick-body{font-size:14px;color:var(--color-text-secondary);line-height:1.7}
+.tag{display:inline-block;font-size:11px;font-weight:500;padding:2px 10px;border-radius:99px;margin-right:4px;margin-bottom:.75rem}
+.tag-effect{background:#FAEEDA;color:#633806}
+.tag-method{background:#FAECE7;color:#4A1B0C}
+.tag-stage{background:#EEEDFE;color:#26215C}
+.tag-closeup{background:#EAF3DE;color:#173404}
+.divider{border:none;border-top:0.5px solid var(--color-border-tertiary);margin:1.5rem 0}
+.section-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--color-text-secondary);margin-bottom:1rem}
+.intro-box{background:#FBEAF0;border:0.5px solid #ED93B1;border-radius:var(--border-radius-lg);padding:1.25rem 1.5rem;margin-bottom:1.5rem}
+.intro-text{font-size:14px;color:#4B1528;line-height:1.75}
+.nested{background:#FAECE7;border:0.5px solid #F0997B;border-radius:8px;padding:1rem 1.25rem;margin-top:.75rem}
+.nested-text{font-size:13px;color:#4A1B0C;line-height:1.65}
+.highlight-box{background:#FAEEDA;border-left:3px solid #EF9F27;border-radius:0 8px 8px 0;padding:.85rem 1rem;margin:.75rem 0}
+.highlight-text{font-size:14px;color:#412402;line-height:1.65}
+.method-box{background:#EAF3DE;border:0.5px solid #97C459;border-radius:8px;padding:1rem 1.25rem;margin-top:.75rem}
+.method-title{font-size:11px;font-weight:500;color:#173404;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem}
+.method-text{font-size:13px;color:#27500A;line-height:1.65}
+.warn-box{background:#FCEBEB;border:0.5px solid #F09595;border-radius:8px;padding:.85rem 1rem;margin:.75rem 0}
+.warn-text{font-size:13px;color:#501313;line-height:1.65}
+.ref-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px}
+.ref-item{background:#F1EFE8;border:0.5px solid #B4B2A9;border-radius:8px;padding:.6rem .85rem;font-size:12px;color:#2C2C2A;line-height:1.5}
+.ref-step{font-weight:500;color:#5F5E5A;font-size:11px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px}
+.pg-chip{display:inline-block;background:#D3D1C7;color:#2C2C2A;font-size:10px;font-weight:500;padding:1px 7px;border-radius:99px;margin-right:3px;margin-top:2px}
+</style>
+<div class="page">
+
+<div class="hero">
+  <div class="hero-title">✨ Thirteen Steps to Mentalism</div>
+  <div class="hero-h1">🃏 Step Ten: Card Tricks</div>
+  <div class="hero-sub">The complete mentalist's guide to cards... done right 🎩</div>
+  <div class="hero-badge">by Corinda</div>
+</div>
+
+<div class="toc-box">
+  <div class="toc-title">📋 Contents</div>
+  <div class="toc-grid">
+    <div class="toc-item"><span>🌟 Introduction</span><span class="toc-pg">307</span></div>
+    <div class="toc-item"><span>📸 Photo-Memory — Hans Trixer</span><span class="toc-pg">308</span></div>
+    <div class="toc-item"><span>🪄 Incredible Slate Test — Corinda</span><span class="toc-pg">309</span></div>
+    <div class="toc-item"><span>💰 Million Dollar Test — J.G. Reed</span><span class="toc-pg">312</span></div>
+    <div class="toc-item"><span>🎂 Birthday Card Trick — Jack Avis</span><span class="toc-pg">312</span></div>
+    <div class="toc-item"><span>🔮 E.S.P. Test — J.G. Reed</span><span class="toc-pg">313</span></div>
+    <div class="toc-item"><span>🎭 The Trio — Sidney Lawrence</span><span class="toc-pg">314</span></div>
+    <div class="toc-item"><span>👁️ Before Your Very Eyes</span><span class="toc-pg">314</span></div>
+    <div class="toc-item"><span>⚡ Gamma Location</span><span class="toc-pg">315</span></div>
+    <div class="toc-item"><span>🌫️ Beyond the Veil — Patrick Page</span><span class="toc-pg">316</span></div>
+    <div class="toc-item"><span>🔄 Card Exchange — Terry Guyatt</span><span class="toc-pg">317</span></div>
+    <div class="toc-item"><span>🎯 Blind Coincidence — Michael Mence</span><span class="toc-pg">318</span></div>
+    <div class="toc-item"><span>🧠 Mental Card Trick — Terry Guyatt</span><span class="toc-pg">318</span></div>
+    <div class="toc-item"><span>👯 Two of a Kind — Terry Guyatt</span><span class="toc-pg">319</span></div>
+    <div class="toc-item"><span>🐦 Birds of a Feather — Corinda</span><span class="toc-pg">320</span></div>
+    <div class="toc-item"><span>🌐 Teleprognos — Corvelo</span><span class="toc-pg">323</span></div>
+    <div class="toc-item"><span>🔴 Red Card Prediction</span><span class="toc-pg">326</span></div>
+    <div class="toc-item"><span>🌌 Across the Void — Paul Marcus</span><span class="toc-pg">327</span></div>
+    <div class="toc-item"><span>🔙 Back to Back</span><span class="toc-pg">329</span></div>
+    <div class="toc-item"><span>🎰 Coincimental — Dr. Thornton</span><span class="toc-pg">330</span></div>
+    <div class="toc-item"><span>📚 References in Other Steps</span><span class="toc-pg">332</span></div>
+  </div>
+</div>
+
+<hr class="divider">
+<div class="section-label">🌟 Introduction to Mentalism with Cards</div>
+
+<div class="intro-box">
+  <div class="intro-text">It has been argued by my friends and colleagues that there is no place for card tricks in the Thirteen Steps to Mentalism, on the grounds that playing cards are suggestive of trickery, in as much that they are so commonly associated with conjuring. With this argument on my hands I have been forced to form an opinion once and for all on this troublesome question, and I have decided to make a stand and stick by my guns. The answer is the existence of Step Ten.</div>
+  <div class="nested">
+    <div class="nested-text">I firmly believe that it does not matter what you use for a mental effect as long as you use it correctly. In the first place it is no excuse to condemn playing cards in the mental field because they are solely suggestive of trickery. It may be as well to recollect that playing cards were used for divination, prophecy, and for occult purposes as much as they were used for games, and indeed today cards are widely used for fortune telling.</div>
+  </div>
+</div>
+
+<div class="highlight-box">
+  <div class="highlight-text">⚠️ On the other hand there is no doubt at all that playing cards can be devastatingly dangerous to the mentalist. They could be his undoing, as they could also be his making, and it all depends on what you do and how you do it.</div>
+</div>
+
+<div class="intro-box">
+  <div class="intro-text">We must therefore pay a certain amount of attention to the best way in which playing cards may be used for mentalism. We need not concern ourselves too much with cards other than playing cards because, for example, a set of E.S.P. cards or Zenna cards are such that although in shape they resemble playing cards, their very designs help to keep them in a class of their own. Something that is not suggestive of the apparatus of the ordinary conjuror. So let us concern ourselves solely with playing cards for the moment.</div>
+</div>
+
+<div class="rule-box">
+  <div class="rule-box-title">📐 The Golden Rules: Cards & Mentalism</div>
+  <div class="rule">
+    <div class="rule-num">1</div>
+    <div class="rule-text">Probably the most important point of all is this first one, and that is to handle the cards in an unskilful manner. Never make a neat pressure fan, never shuffle the cards with digital dexterity using some fancy flourish. Even go so far as to avoid the weave shuffle. Use, and be satisfied with a common, somewhat clumsy overhand mixing of the cards. In other words aim to register psychologically with your audience that to you a pack of cards is a foreign thing. Set out and succeed in creating the impression that you are by no means able to manipulate playing cards even if you wanted to. In order to achieve this do not be too proud to look really clumsy at times. For example drop a card or two when shuffling. Make an occasional deliberate mistake when naming a card as though the suit was not a familiar thing. Hold the pack in a firm deliberate grasp and not with the delicate air that is to be expected of a manipulator who may be obliged to display the cards poised at the finger-tips.</div>
+  </div>
+  <div class="rule">
+    <div class="rule-num">2</div>
+    <div class="rule-text">Take care of your language when referring to playing cards and what to do with them. Avoid anything that is typical of the magician and try to speak in terms that would be used by anyone just familiar with a pack of cards for the purpose of playing games. For example it is probably better to say "mix the cards" rather than "shuffle them." It is undoubtedly better to call a pack of cards a "pack," rather than use the term "deck" which has all the suggestive characteristics of the professional card man. Never use wording such as: "When I riffle through the deck I would like you to call stop at any time." Phrases such as that can be enough to destroy the illusion and to cause the audience to think in their minds, here is a man at home with a pack of cards, just like a conjuror, he knows what he is doing.</div>
+  </div>
+  <div class="rule">
+    <div class="rule-num">3</div>
+    <div class="rule-text">Never at any time use any of the well-known, clever ways of revealing a chosen card if it involves a flourish or a surprise appearance, for in doing so you make it obvious that magic is there. If a card is mentally selected from a pack that lies on the table, and a spectator is invited to cut the pack and finds that he has reached his card by pure coincidence, you have a mental effect on your hands. But if the same card was made to rise from the pack, although you have a good trick you do not have a mental effect and nobody on earth would ever believe that you did it by mentalism.</div>
+  </div>
+  <div class="warn-box">
+    <div class="warn-text">🚫 So make up your mind whether you want your card effect to be mentalism or a conjuring trick, and whatever you decide stick by it. Don't mix the two because that would be quite fatal. In other words don't suppose that you can do two card tricks as a conjuror, flourishing cards, fanning them beautifully, shuffling them skilfully, and then five minutes later suddenly change your personality to become a mentalist and "manhandle" the cards and alter your patter. You must be consistent all the time. You are either clumsy and unfamiliar with a pack of cards, or you are a manipulator. If you are the latter you cannot succeed in mentalism with playing cards. That is, if you are an obvious manipulator.</div>
+  </div>
+  <div class="rule">
+    <div class="rule-num">4</div>
+    <div class="rule-text">A considerable number of mental effects require that a card is selected and then replaced in the pack. It is a very important thing that you learn to have the chosen card remembered by the audience. When a card is chosen, whenever it is possible within the scope of your particular effect, have the spectator show the card to other people. Sometimes this is not practical because the trick demands that only one person sees the card. But in a case of this nature consider if the card may be marked or signed, so that there may be no question as to its identity.</div>
+  </div>
+</div>
+
+<div class="highlight-box">
+  <div class="highlight-text">💡 With these few things to bear in mind and consider, I think there can be no doubt that by using ordinary common sense and here and there a touch of psychological misdirection, playing cards are as much use to the mentalist as they are to the magician. This step contains a selection of mental effects of all types. Some are for stage, some are for close-up. Whatever they may be, keep in mind all the time the few simple rules mentioned above and always do your best to make card magic mentalism and not mentalism card magic.</div>
+</div>
+
+<hr class="divider">
+<div class="section-label">🎩 The Tricks</div>
+
+<div class="trick-card">
+  <div class="trick-header">
+    <div class="trick-emoji">📸</div>
+    <div>
+      <div class="trick-name">Photo-Memory</div>
+      <div class="trick-author">by Hans Trixer</div>
+    </div>
+  </div>
+  <span class="tag tag-effect">✨ Effect</span><span class="tag tag-closeup">👤 Close-up</span>
+  <div class="trick-body">This is a trick which is a lesson in simplicity itself, and one which suits Mentalism because it is presented as a feat of memory. The effect may be repeated two or three times and it is quick and direct.<br><br>The Mentalist borrows a pack of cards and has them mixed. He takes them back and then ribbon spreads them face upwards on the table or floor. In doing so, an effort is made to display every index. He explains that with a certain amount of training it is possible to memorise the position of every card in the pack, and that when in form, it should take no more than half a minute to do so! Beginning from one end of the spread he moves his finger along the row appearing, to all intents and purposes, to memorise the cards as he goes. Having studied the position of each card in the spread, he picks them up and asks anybody to name a card. As soon as a card is named, he ponders for a fraction of a minute and then declares its exact position in the pack. Suppose it to be the Four of Hearts: he might say "Twenty four" and then counts to the twenty-fourth card and removes it to show it to be the Four of Hearts. The effect may now be repeated with a few more cards, and if need be, the pack can be shuffled again and re-memorised as many times as you wish.</div>
+  <div class="method-box">
+    <div class="method-title">🔑 The Method</div>
+    <div class="method-text">After the cards have been shuffled and spread face up, all you have to do is to note the first card in the spread (the top card of the pack when assembled). Whatever number is called, name the top card. Next count very slowly and deliberately to the chosen number. Suppose it is ten: you hold the pack face down and slowly count nine cards from hand to hand, keeping them in order as you go. When you get to ten you remove that card and drop it on top of the pack. As you do this, turn to the spectator and say "I said ten, and you said 'Three of Hearts'" and, as you name the card, double lift from the top and display the Three of Hearts which was the top card!<br><br>Should you be one of those unlucky people that find all card sleights a problem, then moisten the back of the top card with saliva before you start the count and then you can push off two as one without even doing a Double Lift. If you propose to do the trick three or four times running it is a simple matter to find out what card is next to the top.</div>
+  </div>
+</div>
+
+<div class="trick-card">
+  <div class="trick-header">
+    <div class="trick-emoji">🪄</div>
+    <div>
+      <div class="trick-name">Corinda's Incredible Slate Test</div>
+      <div class="trick-author">by Corinda</div>
+    </div>
+  </div>
+  <span class="tag tag-stage">🎭 Stage</span><span class="tag tag-closeup">🏠 Drawing Room</span>
+  <div class="trick-body">In this trick a spectator selects ten Alphabet Cards (Lexicon Cards will do) and then arranges them into any order he likes without seeing the faces for the moment. When the cards are shown it is seen that the spectator has managed to choose ten cards that make up a word, and that they have arranged them in the right order to spell "INCREDIBLE." But to top it all, you show a slate which predicts the chosen word, and chalked in bold letters is the word "Incredible."</div>
+  <div class="highlight-box">
+    <div class="highlight-text">🤯 If you study the plot you will observe that it is composed of three impossibilities! First it is phenomenal that out of some fifty cards, the ten that can be used to spell "Incredible" are selected. Next it is remarkable that the spectator should manage to arrange them in order without seeing their faces, and at the close, your Prediction. The effect is therefore reinforced from all points of view...</div>
+  </div>
+  <div class="method-box">
+    <div class="method-title">🔑 The Method: Building the Slate</div>
+    <div class="method-text">To make the Slate take a board of 5-ply wood and cover it with black "Contact Adhesive Plastic" which resembles the colour of a genuine slate. For the sake of appearance, a border of grained "passe partout" may be run round the edge to act as substitute for the frame. This "artificial" slate appears very much like the real thing at very close quarters and it is by no means essential that it should be perfect.<br><br>On one side of the slate affix two lengths of white elastic (about ¼ in. wide elastic will do) and have these placed so that they run right down one long edge of the slate with a distance of two inches between them. The elastic is easily fixed with staples or small nails.<br><br>Take ten alphabet cards that spell the word "Incredible" and arrange them in order. Now cut about one inch off the end of each card so that the centre portion which bears the letter is of a width just a little less than the distance between the two elastic bands. These centre portions of the alphabet cards are now stuck with glue to the underside of the elastic bands and then small pins are placed between each card to form a guide to the real cards which are inserted behind the fakes during performance.<br><br>The slate lies face down on your table. You must have some soft white chalk (which writes best on the plastic material) and the Alphabet pack (which is best composed of 52 cards, two of every letter in the alphabet). With these things you are set to perform.<br><br>First pick up the cards and hand them to a spectator asking him to look through the pack to satisfy himself that there is a good selection of letters. Next he is asked to mix the cards himself to give them a thorough mixing. In the meantime, you pick up the slate, and without displaying the fake side take the chalk and write the numbers 1 to 10 in a row along the top edge on the back of the slate.<br><br>Tell him to reverse the pack and remove any ten cards without looking at them. When ten cards have finally been chosen the others are placed aside or preferably left with the spectator for a while! Once more the spectator is told to mix his cards and when the ten have been shuffled they are taken and laid in a row on the table or floor.</div>
+  </div>
+  <div class="warn-box">
+    <div class="warn-text">⚠️ If they are left with the spectator, he is liable to cheat half way through the routine and look at a card thus exposing the ruse. You have every excuse for taking the cards from him as the trick depends on the fact that he has no idea what cards he chooses or where they go.</div>
+  </div>
+  <div class="nested">
+    <div class="nested-text">💬 I think it fair to say that this effect as a mental trick is one that is outstanding in quality and simplicity. Because of the mechanics it is one of those rare items that could be performed almost without practice; however, no matter how sure-fire the apparatus, there is always scope for a blunder somewhere and it is therefore as well to rehearse the routine at least a few times before you put it in your next T.V. show!</div>
+  </div>
+</div>
+
+<div class="trick-card">
+  <div class="trick-header">
+    <div class="trick-emoji">💰</div>
+    <div>
+      <div class="trick-name">The Million Dollar Test</div>
+      <div class="trick-author">by J. G. Reed</div>
+    </div>
+  </div>
+  <span class="tag tag-stage">🎭 Stage</span>
+  <div class="trick-body">The "medium" helping the magician adjourns temporarily to an adjoining room. The magician displays six E.S.P. cards and a spectator points to one of them. The spectators are asked to concentrate on the chosen design, the magician snaps his fingers and the medium shouts out (from the next room) the chosen card. The effect is repeated over and over again, and each time the medium is 100 per cent correct.</div>
+  <div class="method-box">
+    <div class="method-title">🔑 The Method: Synchronised Watches ⌚</div>
+    <div class="method-text">The medium and the magician are each equipped with a watch which has a large second hand. Before the show both watches are wound up and the second hands are synchronised. The watch face is mentally divided up into six portions, each portion representing one of the E.S.P. cards:<br><br>
+    🕛 12–2 o'clock: Circle &nbsp;|&nbsp; 🕑 2–4 o'clock: Cross<br>
+    🕓 4–6 o'clock: Triangle &nbsp;|&nbsp; 🕕 6–8 o'clock: Square<br>
+    🕗 8–10 o'clock: Star &nbsp;|&nbsp; 🕙 10–12 o'clock: Spots<br><br>
+    Consequently when the second hand is in the portion representing the chosen card the magician snaps his fingers and codes the design to the medium who reads it off her watch.</div>
+  </div>
+</div>
+
+<div class="trick-card">
+  <div class="trick-header">
+    <div class="trick-emoji">🎂</div>
+    <div>
+      <div class="trick-name">Birthday Card Trick</div>
+      <div class="trick-author">by Jack Avis</div>
+    </div>
+  </div>
+  <span class="tag tag-closeup">👤 Close-up</span>
+  <div class="trick-body">Arrange the following cards on top of the pack (X denotes any card). Top card: X, X, X, X, X, X, X; Queen of Clubs; Jack of Clubs; Ten of Clubs; Nine of Clubs; Eight of Clubs; Seven of Clubs; Six of Clubs; Five of Clubs; Four of Clubs; Three of Clubs; Two of Clubs; Joker. See that the Four Aces are in the lower section of the pack.<br><br>Explain to your spectators that, as a change from the normal run of "take a card" effects, you will attempt something a little different. In fact you are going to have a card selected making use of the physical and the mental faculties.<br><br>Here you remove the four aces from four suits, and by physical means you are going to have one of the suits selected. Turn the four aces face downwards, and in the action of mixing them control the Ace of Clubs to the top position. Hand the four aces in a face-down packet to a spectator and ask him to place the top card on the bottom of the packet, the next card he is to place face-down on the table, next card to the bottom, then a card to the table etc., until he is left with just one card. This last card he is to place, still face down, to one side of the table. This card represents the physical choice of the suits.</div>
+  <div class="highlight-box">
+    <div class="highlight-text">🎯 Ask your assistant for the month and date of his birth. From his reply appear to make a mental calculation and announce that his guide number is twenty. Ask your assistant that as you deal the cards onto the table, for every card dealt he is to add one to his secretly-chosen number until he reaches his guide number of twenty, at the count of twenty he is to call "Stop." Combining his physical and mental choices gives us a value of a playing card... revealed to be the Six of Clubs! 🃏</div>
+  </div>
+</div>
+
+<div class="trick-card">
+  <div class="trick-header">
+    <div class="trick-emoji">🔮</div>
+    <div>
+      <div class="trick-name">E.S.P. Test</div>
+      <div class="trick-author">by J. G. Reed</div>
+    </div>
+  </div>
+  <span class="tag tag-stage">🎭 Stage</span>
+  <div class="trick-body">Half a dozen or more spectators are each given an envelope. A display stand holding a number of design cards is shown. The spectators are asked, whilst the magician's back is turned, to select one of the design cards and each seal it in his envelope. The envelopes are then mixed up. Tearing one of the envelopes open the mentalist removes the card and openly displays it. Eventually he manages to "guess" who originally selected this card and hands it back to them! This is repeated with all the envelopes.</div>
+  <div class="method-box">
+    <div class="method-title">🔑 The Method</div>
+    <div class="method-text">This trick requires a small amount of showmanship and given this it will be a big hit. The method is very simple because the envelopes are marked. The mentalist knows who gets the various envelopes and consequently when he tears them open he looks at the marking and returns the contents to the original owner. The method you use for marking is a matter of personal preference but pencil dots take a bit of beating. Although the method is simple if you put plenty of showmanship into the trick then to the audience it will appear to be an astounding effect.</div>
+  </div>
+</div>
+
+<div class="trick-card">
+  <div class="trick-header">
+    <div class="trick-emoji">🎭</div>
+    <div>
+      <div class="trick-name">The Trio: Two Minds, a Single Thought</div>
+      <div class="trick-author">by Sidney Lawrence</div>
+    </div>
+  </div>
+  <span class="tag tag-closeup">👤 Close-up</span>
+  <div class="trick-body">Two spectators are asked to assist the mentalist; they each cut themselves a packet of cards from a freely-shuffled deck. Whilst this is done the performer turns his back and remains so whilst each spectator counts the number of cards in their separate packets. Our performer does not know how many cards are chosen. This completed, the performer takes both groups of cards and places them together in one packet. He now proceeds to pass the cards one at a time from hand to hand showing the first spectator the face of each card as he does so. He instructs the spectator to watch out for the card which appears at his number (i.e. the number according to the amount of cards that were in his packet at the start.) The spectator has simply to look for this card, and is asked to say nothing when he spots which one it is. The same process is repeated with the second spectator, who is asked to note which card falls at the number accrued by the total cards in his packet at the start. However, when he sees the card, he is to remove it and place it face-down on the table without saying what it is. The performer now asks the first spectator to name his mentally-noted card and the second spectator states that his was the same card. The result is proved when the card on the table is shown to be the one named by both spectators.</div>
+  <div class="method-box">
+    <div class="method-title">🔑 The Method</div>
+    <div class="method-text">As the performer takes the two packets from the spectators, he places them together in his left hand with the face of the packet to the audience. He then transfers the cards slowly from left hand to right, showing them to the first spectator. The cards are placed one behind the other in the right hand except for the last card which is placed in front of the packet. The effect is now self-working.</div>
+  </div>
+</div>
+
+<div class="trick-card">
+  <div class="trick-header">
+    <div class="trick-emoji">👁️</div>
+    <div>
+      <div class="trick-name">Before Your Very Eyes</div>
+    </div>
+  </div>
+  <span class="tag tag-closeup">👤 Close-up</span>
+  <div class="trick-body">This is a trick with 52 cards. First of all you take the cards in your hand and ask the person to select as many cards as he likes; you don't have to know the number of them. But let us say for example that they have taken a number of cards and are going to count them. Let us say for example 12 cards. Now he has selected any number of cards. You ask him to think of any number he likes and say he thinks of three: he looks at the third card down from the top of the pack that he has counted out before. You take the cards away from him and cut the cards. When you cut the cards from the bottom to the top remember how many cards you are cutting. This time, for example, four cards from the bottom of the pack to the top.</div>
+  <div class="highlight-box">
+    <div class="highlight-text">🔍 To make sure you do not know where his card is, request him to take the cards behind his back and think of the number he thought of. If it was three he is to take three cards off the top and place them onto the bottom of the pack. He does this, brings the cards forward and then you ask him to hold them before his eyes. While he is concentrating on it you go over, and without looking at the cards, select his card. The key number is four: all you have to do is take the fourth card out. That will be his card. ✨</div>
+  </div>
+</div>
+
+<div class="trick-card">
+  <div class="trick-header">
+    <div class="trick-emoji">⚡</div>
+    <div>
+      <div class="trick-name">Gamma Location</div>
+    </div>
+  </div>
+  <span class="tag tag-closeup">👤 Close-up</span>
+  <div class="trick-body">The pack of cards is given to someone to shuffle. Being satisfied that they are thoroughly mixed they select a number of cards. Let us say they select five cards. You ask them to put the selected cards in their pocket and ask them to give the same number of cards (without telling you how many) to the person on the left. Thus he also has five cards. The rest of the cards he has in his hand you ask him to shuffle. After doing so he looks at the top card, in this case the Ten of Spades. You must make sure at this point and you ask him to agree that you could not know his card. After he has looked at the card you then ask him to select any pack he likes (his pack or his friend's pack). These cards are then taken and placed on top of the pack.</div>
+  <div class="method-box">
+    <div class="method-title">🔑 The Method</div>
+    <div class="method-text">You moisten your thumb and count off the top of the pack any number you like, e.g. fourteen. You shuffle the fourteen cards: in other words you reverse the cards as you count them. One, two, three... thirteen, fourteen, and you place them back on top of the pack. You now take the cards from the other gentleman's pocket and place those on top. You do not know how many cards the gentleman had in his pocket but your key number is fourteen. Your card is still now the fourteenth from the top.<br><br>You can then ask a person to name any town he likes, e.g. Birmingham. Now he counts Birmingham, dealing the cards as he spells. You silently count the cards: ten. So you have four more cards until your fourteenth card. You now ask the gentleman if he knows any person in Birmingham, e.g. Philip, Phil for short. You then ask him to spell Phil onto the table which brings us now to our card (the fourteenth card). He turns it over and there is the Ten of Spades! 🏆</div>
+  </div>
+</div>
+
+<div class="trick-card">
+  <div class="trick-header">
+    <div class="trick-emoji">🌫️</div>
+    <div>
+      <div class="trick-name">Beyond the Veil</div>
+      <div class="trick-author">by Patrick Page</div>
+    </div>
+  </div>
+  <span class="tag tag-stage">🎭 Stage</span>
+  <div class="trick-body">The performer allows a spectator to select one of two packs of cards. The spectator is then invited to cut his pack anywhere and name the card of his choice. This done, the performer takes the other pack and spells out the name of the card. At the end of the count the card reached is shown and is found to be perfectly correct! The effect can be repeated as often as the performer likes, yet he is always able to find the correct card at the correct spot. The performer explains that as soon as the spectator selects a card, "unseen forces" from Beyond the Veil will arrange the cards so that his card will always be at the right spot.</div>
+  <div class="method-box">
+    <div class="method-title">🔑 The Method: The Special Setup</div>
+    <div class="method-text">Two packs of cards are used, both of which are arranged in a special order. The first pack used by the spectator is made up of fifty-two regular cards half of which are short cards, and the remainder normal. The cards are all different but should be arranged with one long then one short from top to bottom. It does not matter what order the "pairs" are in, and the pack can be shuffled like a Svengali deck if necessary.<br><br>The performer's pack from top to bottom (back upwards): 10D; 5H; 8C; 10C; AH; 6S; AC; AS; 4D; 2H; 3H; 2D; 3D; 6H; 5D; 6D; 7D; 10H; 9D; QH; KH; QD; JH; AD; KD; 9H; 4C; 8S; QS; 4S; 2S; KS; KC; JS; JC; 9S; 9C; 7S; 7C; 5S; 5C; 3S; 3C; 2C; 8H; 6C; QC; 7H; JD; 4H; 8D; 10S.<br><br>If the selected card is a Heart or Diamond: count from the top, turning the cards over onto the table. If the selected card is a Spade or Club: count from the bottom, turning cards over onto the table. Whatever the card, always count its value first (eleven for a Jack, twelve for a Queen, thirteen for a King), follow this with two more cards spelling out "of," and then finally spell out the correct suit.</div>
+  </div>
+</div>
+
+<div class="trick-card">
+  <div class="trick-header">
+    <div class="trick-emoji">🔄</div>
+    <div>
+      <div class="trick-name">Card Exchange (Guyatt Exchange)</div>
+      <div class="trick-author">by Terry Guyatt</div>
+    </div>
+  </div>
+  <span class="tag tag-method">🛠️ Technique</span>
+  <div class="trick-body">This card exchange is not in itself an effect; it is fundamentally the means to perform many effects. It will be agreed that a considerable number of mental effects become possible if the mentalist is in a position to exchange one card for another without the audience knowing that he has done so. Moreover the more effective the exchange or the more deceptive, the wider the range of tricks that become possible. This particular one, the Guyatt Card Exchange, is one that I have seen used on several occasions by Terry Guyatt himself and I consider it to be a remarkable switch.</div>
+  <div class="method-box">
+    <div class="method-title">🔑 The Method: Seated Exchange</div>
+    <div class="method-text">You must be seated at a table in a relaxed position and leaning backwards slightly, the body about a foot from the table-edge upon which both fists, loosely clenched, are placed. The card to be exchanged, say the King of Diamonds, lies face-down on the table with one long side nearest yourself. It should be about ten inches from the table-edge. Another card, say the Ace of Spades, lies (unknown to the spectators) face-down in your lap.<br><br>Bring your body slightly forward and raise your right hand about three inches in a casual gesture as you make a remark about the card on the table. Now forget all about your right hand as you look at the King of Diamonds on the table and reach for it with your left hand, letting your right hand drop unobtrusively into your lap. Pick up the King by the nearest left-hand corner with the left first and second fingers on the back and the thumb underneath, drawing it towards the edge of the table and turning the face of the card to yourself. During this movement the left first finger moves from the back of the card to join the thumb on the face. The card is now clipped between the left first and second fingers. The thumb takes no part in the grip, but remains touching the tip of the first finger.<br><br>Meanwhile the right hand has secured the Ace of Spades in your lap, taking it by the right hand corner nearest the body with the thumb underneath and the first finger on top and raising it to a vertical position with the face of the card towards yourself. One long side should be parallel to the floor. The card is moved up until it's just out of sight of the spectators, below the table edge and at right angles to the tabletop. There should be no suspicious movement or stiffening of the right arm or shoulder.</div>
+  </div>
+  <div class="highlight-box">
+    <div class="highlight-text">⏱️ The card should be out of sight for a split second only; and, if the misdirection is applied correctly, that split-second is when the spectator looks at your face. By the time he has looked back at the card the exchange has been made, and, except for the card, the hands are empty and in view. The whole action should be performed casually and without haste, and should take about three seconds from beginning to end.</div>
+  </div>
+</div>
+
+<div class="trick-card">
+  <div class="trick-header">
+    <div class="trick-emoji">🎯</div>
+    <div>
+      <div class="trick-name">Blind Coincidence</div>
+      <div class="trick-author">by Michael Mence</div>
+    </div>
+  </div>
+  <span class="tag tag-closeup">👤 Close-up</span>
+  <div class="trick-body">A spectator is asked to shuffle the pack and then cut it into two parts, handing one to the performer and retaining the other for himself. Both the performer and the spectator take the packets behind their backs, take a card at random, and bring face-down card and packet into view (one in each hand). At this point the performer and the spectator exchange their unknown and face-down cards, take them behind their backs, reverse them and place them in the packets which are face-down behind their backs. The two squared-up packets are then brought to view again, both fanned through simultaneously face-down, and the two reversed cards are both found to be kings: "Blind Coincidence." 👑👑</div>
+  <div class="method-box">
+    <div class="method-title">🔑 The Method</div>
+    <div class="method-text">Before the performance place two kings (it is more effective if they are both red or both black) behind your back clipped under your belt which is of course masked by the suit-coat. This means that the effect can be performed at any time during the act, provided that the incomplete pack does not have to be used previously. If you intend to repeat the effect then of course you must have two pairs clipped under your belt.<br><br>The first time the performer's hands go behind his back, he takes out one of the kings from his belt and brings it out face-down as his card. The performer and the spectator now exchange cards. Both sets of cards disappear from view again and the performer places the spectator's card back in the pack, steals the second king, reverses it and pushes it into the pack. For the greatest effect the two packets should be brought to view face-up, the cards then fanned simultaneously until the appearance of the face-down cards. Only then should the fans be turned over to reveal the "Blind Coincidence."</div>
+  </div>
+</div>
+
+<div class="trick-card">
+  <div class="trick-header">
+    <div class="trick-emoji">🧠</div>
+    <div>
+      <div class="trick-name">Mental Card Trick</div>
+      <div class="trick-author">by Terry Guyatt</div>
+    </div>
+  </div>
+  <span class="tag tag-closeup">👤 Close-up</span>
+  <div class="trick-body">From an unprepared pack give four people six cards each face down. Do this without appearing to count the cards and without drawing attention to the number each receives. Each spectator fans his cards and thinks of any one he sees. Then he shuffles his packet so that his card is lost among the others. Place the balance of the pack aside. Take back the cards from the spectators in the reverse order to that in which you gave them out: taking No. 4's first face down; putting No. 3's face down on top of these; then No. 2's; and lastly No. 1's on top of all. You should now hold 24 cards face down, the top six are No. 1's, and the next six are No. 2's and so on.</div>
+  <div class="method-box">
+    <div class="method-title">🔑 The Method: Perfect Shuffles</div>
+    <div class="method-text">Say that you will mix all the hands together, cut below the twelfth card and make a perfect shuffle, retaining top and bottom identity. Again cut below the twelfth card and make another perfect shuffle, still retaining top and bottom identity. Place these 24 cards back on top of the balance of the pack. Pick up the pack and cut below the 26th card, making a perfect shuffle, again retaining top and bottom identity. Give the pack a false cut, and, holding it face down, fan off the top eight cards without appearing to count them.<br><br>Show the faces of these eight fanned cards to the spectators and ask if anyone can see his card. If anyone says "Yes" you immediately know his card: the first card to the left of the fan belongs to spectator No. 1, the next card is an indifferent one, the next belongs to No. 2, the next is an indifferent card, and so on through the fan. The first, third, fifth and seventh cards were all in the original hands. Put these cards on the bottom of the pack and fan off the next eight.</div>
+  </div>
+</div>
+
+<div class="trick-card">
+  <div class="trick-header">
+    <div class="trick-emoji">👯</div>
+    <div>
+      <div class="trick-name">Two of a Kind</div>
+      <div class="trick-author">by Terry Guyatt</div>
+    </div>
+  </div>
+  <span class="tag tag-stage">🎭 Stage</span><span class="tag tag-closeup">👤 Close-up</span>
+  <div class="trick-body">This trick is a mental card effect which we can classify as a coincidence. Two packs of cards are used, one red, one blue. What appears to happen is that the performer has one pack and the spectator another, both mix their cards and then go through the same manoeuvre. Both parties hold their cards in a fan face downwards, extract any one card, turn the fan face upwards and replace the card anywhere in the pack. Both packs have been in full view all the time, and now when a check is made to find which cards were chosen and reversed at random, it is seen that by some strange coincidence the performer has reversed the identical card as the spectator and vice versa. Not only does it match in colour of course, but the suit and value are the same.</div>
+  <div class="method-box">
+    <div class="method-title">🔑 The Method: Si Stebbins Setup</div>
+    <div class="method-text">As stated, two packs are used. One of these packs, e.g. the blue-backed pack, is stacked in Si Stebbins order (see Step 3). Produce the two packs of cards and if you like give them a shuffle making sure however that if you shuffle the blue pack you use a false shuffle that will not disturb the set-up. See that the spectator gets the blue pack which of course has the set-up.<br><br>As a nice touch at the opening stage when you produce the two packs give him the red pack and ask him to shuffle it whilst you take the blue pack and give it a false shuffle. This having been done you can point out that you don't know the position of the cards in his pack since he has just mixed them, and that he does not know the position of the cards in your pack. Therefore you exchange packs.<br><br>Hold the cards face-down as for dealing. Then both of you cut the cards and then complete the cut and then remove the top card holding it still face-downwards. The deck is now turned face-up and the card is pushed into the deck at any particular point. When he turns his deck face-up you will note the bottom card and will therefore be able to calculate quite quickly what is the top card, or, what really is the reversed card. You then simply perform the Top-change whilst he is busy turning over his own fan to locate his reversed card. The cards are "Two of a Kind." 🃏🃏</div>
+  </div>
+</div>
+
+<div class="trick-card">
+  <div class="trick-header">
+    <div class="trick-emoji">🐦</div>
+    <div>
+      <div class="trick-name">Birds of a Feather</div>
+      <div class="trick-author">by Corinda</div>
+    </div>
+  </div>
+  <span class="tag tag-closeup">👤 Close-up</span>
+  <div class="trick-body">The performer has somewhere in the region of fifty to sixty small pieces of cardboard spread out on the table or on a tray. These small pieces of card are in fact quarters of ordinary playing cards and they are made by taking a score of cards from an old pack and simply cutting them in half and half again. The pieces are all face-down on the tray and are all well mixed. The effect is one that should be called a coincidence, in actual fact a quadruple coincidence. From the quite substantial number of small pieces of card, four are selected quite freely by members of the audience and when they are examined it is somewhat amazing that by sheer coincidence four different people have each selected a corner from one card and when the four corners are assembled together they match perfectly making it once more a complete card.</div>
+  <div class="highlight-box">
+    <div class="highlight-text">♠️ Pro tip: Use the Ace of Spades from a pack for the finale. When you cut this card into four you will notice that all four corners are different and cannot be matched together in any other way except in the original way no matter how you change around the corners. It makes for a truly convincing revelation! ✨</div>
+  </div>
+  <div class="method-box">
+    <div class="method-title">🔑 The Method: The Billet Switch</div>
+    <div class="method-text">The four pieces of card that the spectators choose are not the same pieces of card that they later on examine and find that they will fit together to make up one complete card, and the reason for this is because you switch them. Have the pieces spread out on the table face-down, mixed well. Ask any four people to just reach forward and touch any particular piece that takes their fancy. When they have done this ask them to draw the pieces out from the main pile keeping their fingers on them, and then, making it casual and as though it is not particularly important, remove a paper clip from your pocket and take the four pieces one by one, clip them together. Then, still holding them, invite the four people to turn all the other pieces on the table over and to satisfy themselves that indeed they had quite a wide range of odds and ends to choose from. Then, when they go to do this, their attention for one brief second is diverted from the paper clip in your hand to the cards on the table and, in this instant you perform the billet switch described clearly to you on Page 179.</div>
+  </div>
+  <div class="nested">
+    <div class="nested-text">📌 Variation No. 2: Start with a pack of cards and have one of them chosen and initialled in the four corners. This having been done it is torn into quarters and then the spectator is invited to take another dozen or so cards from the pack, and likewise tear them into quarters. Whilst he does this you have previously got ready in your pocket another card already torn into quarters (it does not matter what it is) and with his attention diverted with the tearing of the ordinary cards you exchange his signed card for the four pieces you had in readiness. Those pieces with his initials on them are discreetly clipped together with a paper clip in readiness for the Billet Pull Switch a little later.</div>
+  </div>
+</div>
+
+<div class="trick-card">
+  <div class="trick-header">
+    <div class="trick-emoji">🌐</div>
+    <div>
+      <div class="trick-name">Teleprognos</div>
+      <div class="trick-author">by Corvelo (Holland)</div>
+    </div>
+  </div>
+  <span class="tag tag-stage">🎭 Stage</span>
+  <div class="trick-body">By combining some well-known principles in magic you sometimes get an excellent effect. With this introduction you will have already got the idea that you will not learn something really new in principle, but I still urge you to try out the following effect just once and you will be rewarded by the good reception it will receive.<br><br>The mentalist asks two spectators to assist him and while the spectators are coming up onto the stage he shuffles a pack of cards. After that he asks spectator No. 1 to take a card and to remember it well. This card he has to place into a small envelope which is then sealed. Both he and the other spectator each take three more cards, but they do not have to remember the identity of these cards but simply place them into separate envelopes. The envelopes are now mixed by the second spectator and he is asked to hold up the envelopes one at a time while the mentalist stands a little way away from him. Suddenly the mentalist calls "Stop" and tells the spectator that he now holds the envelope which contains the Three of Clubs, the card the first spectator had thought of. The first spectator acknowledges this and when the envelope is opened it is really found to contain the Three of Clubs.</div>
+  <div class="method-box">
+    <div class="method-title">🔑 The Method: Marked Envelopes + Duplicates</div>
+    <div class="method-text">The pack of cards that is used is arranged in the Si Stebbins set-up or any other system which you prefer. You also need six duplicate cards, e.g. Nine of Diamonds. These six cards are put in pay envelopes. Seven more similar envelopes are also required. One of these envelopes is marked by cutting a small piece from the flap so you are able to recognise this particular envelope. A slate and a piece of chalk complete the apparatus.<br><br>The six envelopes which contain the duplicate cards are placed in your left coat pocket, which is divided by a piece of cardboard. Ask the first spectator to take a card. When he has done so you cut the cards at the break you have held at the place from which his card was taken. By noting the bottom card you will know from the set-up what card has been taken. From the group of seven envelopes hand him the marked one and ask him to seal his card in it.<br><br>When the spectator has verified that the envelope really contains the card you tell the audience that because this experiment was successful you will try something more difficult with the remaining six envelopes. You make a prediction which you write on the slate. Of course it does not matter when he calls "Stop" because all the envelopes contain the same card. When the word is given you hand over the envelope and ask one of the spectators to open up the envelope and announce loudly the name of the card that is in it. When that is done you turn over your slate and your prediction proves 100 per cent correct! 🎯</div>
+  </div>
+</div>
+
+<div class="trick-card">
+  <div class="trick-header">
+    <div class="trick-emoji">🔴</div>
+    <div>
+      <div class="trick-name">The Red Card Prediction</div>
+    </div>
+  </div>
+  <span class="tag tag-closeup">👤 Close-up</span>
+  <div class="trick-body">The performer has ten playing cards which he places in a row on the table, some face-up, some face-down. He takes a slip of paper, writes a prediction which states: "I predict you will choose the red card." He gives the prediction to the spectator but does not say what it is as yet. He then invites the spectator to give him any number he likes from 1 to 10 inclusive and the spectator has a free choice. This having been done the performer counts to the chosen card and, having arrived there, it is found that by some strange coincidence it is indeed the only red card out of the ten on the table.</div>
+  <div class="method-box">
+    <div class="method-title">🔑 The Method: The Spelling Table</div>
+    <div class="method-text">The following cards are required and are placed in the order given: No. 1: Queen of Clubs, face-down. No. 2: Ten of Clubs, face-up. No. 3: Nine of Diamonds, face-down. No. 4: Eight of Spades, face-up. This fourth card is the only one that has a red back; all the others are blue-backed cards. No. 5: Two of Clubs, face-down. No. 6: Five of Clubs, face-up. No. 7: Ten of Spades, face-down. No. 8: Four of Spades, face-up. No. 9: Seven of Clubs, face-down. No. 10: Jack of Clubs, face-up.<br><br>No matter what number is given, you can reach either the third or fourth card (the one with the red face or the one with the red back) by a perfectly free count. Vary the method according to the number given:
+    <br><br>1: Spell o-n-e &nbsp;|&nbsp; 2: Spell t-w-o &nbsp;|&nbsp; 3: Count 1, 2, 3<br>
+    4: Count 1, 2, 3, 4 or spell &nbsp;|&nbsp; 5: Spell f-i-v-e<br>
+    6: Spell s-i-x &nbsp;|&nbsp; 7: Count from right end, 1,2,3,4,5,6,7<br>
+    8: Same as for seven &nbsp;|&nbsp; 9: Spell n-i-n-e &nbsp;|&nbsp; 10: Spell t-e-n</div>
+  </div>
+  <div class="highlight-box">
+    <div class="highlight-text">💡 Should it be that the card you arrive at is the third card (the Nine of Diamonds), simply turn over all the cards that are face-down so that the spectator can see clearly that there is only one red card there. On the other hand if they arrive at the fourth card you simply turn that card over and show the red back, and turn the others over to show all the backs are blue. In doing so you discreetly hide the face of the only red pip card, the Nine of Diamonds. In other words you have enough "get-outs" to be on the winning end no matter what the spectator may decide. 🏆</div>
+  </div>
+</div>
+
+<div class="trick-card">
+  <div class="trick-header">
+    <div class="trick-emoji">🌌</div>
+    <div>
+      <div class="trick-name">Across the Void</div>
+      <div class="trick-author">by Paul Marcus (New Zealand)</div>
+    </div>
+  </div>
+  <span class="tag tag-stage">🎭 Stage</span>
+  <div class="trick-body">After speaking of his medium's ability to receive thoughts from a distance, the mentalist writes her name and telephone number on a business card which he places beside a telephone. One card is now mentally selected by a spectator. The identity of this card is not recorded in any way and it is known only to the spectator until the completion of the effect. A card is selected by a second spectator who shows it to the audience if he so wishes. Any spectator rings the medium who names both cards.</div>
+  <div class="method-box">
+    <div class="method-title">🔑 The Method: Three Packs</div>
+    <div class="method-text">Pack No. 1 consists of 44 cards in a specific sequence with eleven duplicated cards. Pack No. 2 is a one-way forcing pack consisting of any low heart, other than the three (in this description, the Five of Hearts). Pack No. 3 is an ordinary pack of cards which you have loose in your left coat pocket.<br><br>After setting the scene, remove Pack No. 1, hold it face-down and give it several false cuts. Turn it face-up and fan it casually, keeping the cards slightly in motion so the duplicates of some will not be noticed. Ask a spectator to cut the pack, run through a dozen or so cards, and think of any one. "Please do not select the Joker or a court card; they are very difficult to transmit mentally." Because of the instructions given for the mental selection, the choice is limited to one of ten cards: 3H; 8H; 9H; 2D; 5D; 8D; 4S; 7S; 10S; 6C.<br><br>The medium learns first the colour, then the suit, finally the value of the mentally-selected card by means of statements that double as questions. Each statement is confirmed or denied by the first spectator saying only "Yes" or "No." As the medium knows the identity of the second card, she need not wait for one statement to be confirmed before making the next.</div>
+  </div>
+</div>
+
+<div class="trick-card">
+  <div class="trick-header">
+    <div class="trick-emoji">🔙</div>
+    <div>
+      <div class="trick-name">Back to Back</div>
+    </div>
+  </div>
+  <span class="tag tag-closeup">🏠 Drawing Room</span>
+  <div class="trick-body">The mentalist explains that it is possible to develop the sense of feeling to a very fine degree. To illustrate this the mentalist bends over, his feet about two and a half feet apart, and his hands on his knees. He asks any spectator to shuffle a pack of cards, select one at random, show it to the rest of the audience, and place it face-up on the performer's back, resting on the part of the spine between the shoulder blades. (The mentalist explains that the spine is one of the most sensitive nerve centres of the body.) After a few seconds contemplation he names correctly both the suit and value of the chosen card.</div>
+  <div class="method-box">
+    <div class="method-title">🔑 The Method: Foot Signals 👣</div>
+    <div class="method-text">When this effect is performed a friend of the mentalist is standing four or five feet directly behind him. As soon as the card is selected, the friend notes its identity and codes the selection to the mentalist in the following way. Because of the mentalist's position he is able to see the feet of his friend who is standing directly behind him. The friend only needs to move his feet inside the shoes very slightly to code the value and suit of the card. For example a single movement inside the left shoe represents Hearts and two movements Diamonds. One inside the right shoe Spades, two Clubs. The value can then be given in the same manner with either foot. To prevent a mis-reading with the value, it is better to use the foot which has not been used to code the suit.</div>
+  </div>
+</div>
+
+<div class="trick-card">
+  <div class="trick-header">
+    <div class="trick-emoji">🎰</div>
+    <div>
+      <div class="trick-name">Coincimental</div>
+      <div class="trick-author">by Dr. Thornton, by permission of Ed Mellon</div>
+    </div>
+  </div>
+  <span class="tag tag-stage">🎭 Stage</span>
+  <div class="trick-body">The performer shows and shuffles two packs of Alphabet cards. From one pack he chooses four cards and arranges them backs out in full view of the audience. A spectator is allowed to choose cards from the other pack and from them form any four letter word he desires. As soon as the spectator's letters are arranged, the performer turns his around... Coincidence number one: they have both chosen the same letters! Coincidence number two: they have both formed the same word! Yes, any of several words could have been formed; the spectator can even change his mind if he likes. There are no confederates, no switches and no sleight of hand. It is as direct as that.</div>
+  <div class="method-box">
+    <div class="method-title">🔑 The Method: The Stacked Deck</div>
+    <div class="method-text">Two packs of Alphabet cards. One is an ordinary pack of 26 letter cards, one for each letter of the alphabet. The other pack contains only 25 cards and consists of five "E" cards, five "S" cards, five "P" cards, five "T" cards, and five "F" cards. They are arranged in this order: T, E, P, S, F, repeated five times.<br><br>Notice that when the spectator has chosen five of these cards and is requested to form a word with four of them, he will lay aside the "F" as it is impossible to make a word using the "F" with this combination of letters. This leaves the letters T, E, P, S. It is possible to form several words from these letters. The most frequently formed is STEP. The next most frequently formed word is PETS. The third possibility, though not often formed, is PEST.<br><br>If he made the word STEP, you simply pick up the stand in which your cards rest and turn the whole thing around. If he made the word PETS, you begin at the left (facing the backs of your cards) turning around one card at a time replacing each on the stand. If he has made the word PEST, you begin at the left and turn the "P" and the "E" around separately and remark "Well, it seems that we have chosen the same letters." Then you pick up the last two cards at the same time and swing them around at the same time (which reverses them for your climax), "And it seems that we have thought of the same word!!!" 🤯</div>
+  </div>
+</div>
+
+<hr class="divider">
+<div class="section-label">📚 Reference to Card Tricks in Other Steps</div>
+
+<div class="ref-grid">
+  <div class="ref-item"><div class="ref-step">Step One</div><span class="pg-chip">p.19</span> A Card Trick (No. 7)<br><span class="pg-chip">p.21</span> The Card in Glass (No. 13)</div>
+  <div class="ref-item"><div class="ref-step">Step Two</div><span class="pg-chip">p.35</span> Lip reading cards<br><span class="pg-chip">p.39</span> Sound reading cards<br><span class="pg-chip">p.41</span> Tapping card location<br><span class="pg-chip">p.41</span> Paranormal precognition<br><span class="pg-chip">p.42</span> Clean cut card trick<br><span class="pg-chip">p.43</span> Sujan location; touch reading<br><span class="pg-chip">p.45</span> Marked playing cards<br><span class="pg-chip">p.45</span> The ghost deck; touch reading<br><span class="pg-chip">p.47</span> Colour conscious<br><span class="pg-chip">p.48</span> Princess card trick variation</div>
+  <div class="ref-item"><div class="ref-step">Step Three</div><span class="pg-chip">p.73</span> Simple card systems; Stacked deck</div>
+  <div class="ref-item"><div class="ref-step">Step Four</div><span class="pg-chip">p.88</span> Pocket index for cards<br><span class="pg-chip">p.96</span> Switch of pack of cards<br><span class="pg-chip">p.103</span> Quadruplication<br><span class="pg-chip">p.111</span> Mentalists four ace trick<br><span class="pg-chip">p.113</span> Mentalists card in balloon<br><span class="pg-chip">p.114</span> Mind over matter<br><span class="pg-chip">p.114</span> Psi function<br><span class="pg-chip">p.116</span> The third choice<br><span class="pg-chip">p.119</span> The prophesy<br><span class="pg-chip">p.120</span> The informative joker<br><span class="pg-chip">p.122</span> X marks the spot<br><span class="pg-chip">p.122</span> Nicely suited</div>
+  <div class="ref-item"><div class="ref-step">Step Five</div><span class="pg-chip">p.137</span> Marked cards<br><span class="pg-chip">p.137</span> Annemann's one way deck<br><span class="pg-chip">p.146</span> Psychical research test<br><span class="pg-chip">p.148</span> X-ray eyes<br><span class="pg-chip">p.155</span> Card stab<br><span class="pg-chip">p.157</span> The three cards</div>
+  <div class="ref-item"><div class="ref-step">Step Six</div><span class="pg-chip">p.195</span> Card and Billet routine</div>
+  <div class="ref-item"><div class="ref-step">Step Seven</div><span class="pg-chip">p.229</span> Fogel on playing cards</div>
+  <div class="ref-item"><div class="ref-step">Step Eight</div><span class="pg-chip">p.246</span> Verbal card code<br><span class="pg-chip">p.256</span> Light signals for cards<br><span class="pg-chip">p.259</span> Pre-arranged code orders<br><span class="pg-chip">p.260</span> Positional codes<br><span class="pg-chip">p.260</span> Time codes<br><span class="pg-chip">p.263</span> Smoke gets in your eyes<br><span class="pg-chip">p.267</span> Wrist watch code</div>
+  <div class="ref-item"><div class="ref-step">Step Nine</div><span class="pg-chip">p.288</span> Telekinecards by Punx</div>
+</div>
+
+<div style="margin-top:2rem;text-align:center;font-size:12px;color:var(--color-text-secondary);padding-bottom:1rem">No part of this publication may be reproduced without written permission. 🃏</div>
+
+</div>

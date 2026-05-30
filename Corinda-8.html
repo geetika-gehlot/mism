@@ -1,0 +1,1002 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);color:var(--color-text-primary);line-height:1.7;font-size:15px}
+.page{padding:2rem 1.5rem}
+h1{font-size:26px;font-weight:500;margin-bottom:.25rem}
+h2{font-size:19px;font-weight:500;margin:2rem 0 .75rem}
+h3{font-size:16px;font-weight:500;margin:1.25rem 0 .5rem}
+p{margin-bottom:.9rem;color:var(--color-text-primary)}
+.tag{display:inline-block;font-size:11px;font-weight:500;padding:3px 10px;border-radius:20px;margin-bottom:.5rem;letter-spacing:.03em}
+.tag-purple{background:#EEEDFE;color:#3C3489}
+.tag-teal{background:#E1F5EE;color:#0F6E56}
+.tag-coral{background:#FAECE7;color:#993C1D}
+.tag-amber{background:#FAEEDA;color:#854F0B}
+.tag-blue{background:#E6F1FB;color:#185FA5}
+.tag-pink{background:#FBEAF0;color:#993556}
+.tag-green{background:#EAF3DE;color:#3B6D11}
+.box{border-radius:12px;padding:1.25rem 1.5rem;margin:1rem 0}
+.box-purple{background:#EEEDFE;border:0.5px solid #AFA9EC}
+.box-teal{background:#E1F5EE;border:0.5px solid #5DCAA5}
+.box-coral{background:#FAECE7;border:0.5px solid #F0997B}
+.box-amber{background:#FAEEDA;border:0.5px solid #FAC775}
+.box-blue{background:#E6F1FB;border:0.5px solid #85B7EB}
+.box-pink{background:#FBEAF0;border:0.5px solid #ED93B1}
+.box-green{background:#EAF3DE;border:0.5px solid #97C459}
+.box-gray{background:#F1EFE8;border:0.5px solid #B4B2A9}
+.box p,.box li{color:#3C3489}
+.box-teal p,.box-teal li{color:#085041}
+.box-coral p,.box-coral li{color:#712B13}
+.box-amber p,.box-amber li{color:#633806}
+.box-blue p,.box-blue li{color:#0C447C}
+.box-pink p,.box-pink li{color:#72243E}
+.box-green p,.box-green li{color:#27500A}
+.box-gray p,.box-gray li{color:#444441}
+.box-title{font-size:14px;font-weight:500;margin-bottom:.5rem}
+.box-title-purple{color:#26215C}
+.box-title-teal{color:#04342C}
+.box-title-coral{color:#4A1B0C}
+.box-title-amber{color:#412402}
+.box-title-blue{color:#042C53}
+.box-title-pink{color:#4B1528}
+.box-title-green{color:#173404}
+.box-title-gray{color:#2C2C2A}
+.nested{border-radius:8px;padding:1rem 1.25rem;margin:.75rem 0}
+.nested-white{background:rgba(255,255,255,0.7);border:0.5px solid rgba(0,0,0,0.08)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin:1rem 0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:1rem 0}
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:1rem 0}
+.card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:12px;padding:1rem 1.25rem}
+.divider{border:none;border-top:0.5px solid var(--color-border-tertiary);margin:2rem 0}
+.num-badge{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;font-size:12px;font-weight:500;flex-shrink:0}
+.num-purple{background:#CECBF6;color:#26215C}
+.num-teal{background:#9FE1CB;color:#04342C}
+.num-coral{background:#F5C4B3;color:#4A1B0C}
+.num-amber{background:#FAC775;color:#412402}
+.num-blue{background:#B5D4F4;color:#042C53}
+.row-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:.6rem}
+.code-table{width:100%;border-collapse:collapse;font-size:13px;margin:.5rem 0}
+.code-table th{text-align:left;padding:6px 10px;font-weight:500;font-size:12px;border-bottom:1px solid rgba(0,0,0,0.08)}
+.code-table td{padding:5px 10px;border-bottom:0.5px solid rgba(0,0,0,0.05)}
+.code-table tr:last-child td{border-bottom:none}
+.code-word{font-family:var(--font-mono);font-size:12px;background:rgba(255,255,255,0.6);padding:1px 6px;border-radius:4px;border:0.5px solid rgba(0,0,0,0.1)}
+.big-quote{font-size:18px;font-weight:500;line-height:1.5;margin:1rem 0;color:#3C3489}
+.section-hero{background:linear-gradient(135deg,#EEEDFE 0%,#E1F5EE 100%);border-radius:16px;padding:2rem;margin-bottom:2rem;border:0.5px solid #AFA9EC}
+.emoji-lead{font-size:22px;margin-right:6px}
+.warn-box{background:#FAEEDA;border-left:3px solid #EF9F27;border-radius:0 8px 8px 0;padding:.75rem 1rem;margin:.75rem 0}
+.warn-box p{color:#633806}
+.tip-box{background:#E1F5EE;border-left:3px solid #1D9E75;border-radius:0 8px 8px 0;padding:.75rem 1rem;margin:.75rem 0}
+.tip-box p{color:#085041}
+.highlight{background:#FAEEDA;padding:1px 5px;border-radius:4px;color:#633806;font-weight:500}
+ul{padding-left:1.2rem;margin-bottom:.9rem}
+ul li{margin-bottom:.3rem}
+ol{padding-left:1.2rem;margin-bottom:.9rem}
+ol li{margin-bottom:.4rem}
+.part-header{display:flex;align-items:center;gap:12px;margin:2.5rem 0 1rem}
+.part-label{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:20px}
+.effect-card{border-radius:12px;padding:1.25rem;margin:.75rem 0;border:0.5px solid}
+.toc-item{display:flex;align-items:center;gap:8px;padding:.4rem 0;border-bottom:0.5px solid rgba(0,0,0,0.06)}
+.toc-item:last-child{border-bottom:none}
+.toc-num{font-size:11px;color:var(--color-text-secondary);min-width:20px}
+.toc-title{font-size:14px;color:var(--color-text-primary)}
+.toc-tag{margin-left:auto}
+</style>
+
+<div class="page">
+
+<div class="section-hero">
+  <span class="tag tag-purple">Corinda's Thirteen Steps to Mentalism</span>
+  <h1 style="color:#26215C;margin-top:.5rem">🎩 Two Person Telepathy</h1>
+  <p style="color:#3C3489;font-size:16px;margin-bottom:0">Step Eight. The most advanced, most exciting, most <em>rewarding</em> form of mentalism there is.</p>
+</div>
+
+<div class="box box-gray">
+  <div class="box-title box-title-gray">📋 Contents at a glance</div>
+  <div class="grid2" style="margin-top:.5rem">
+    <div>
+      <div class="toc-item"><span class="toc-num">I</span><span class="toc-title">Introduction</span><span class="toc-tag"><span class="tag tag-purple">essential</span></span></div>
+      <div class="toc-item"><span class="toc-num">II</span><span class="toc-title">Part One: Major Systems</span><span class="toc-tag"><span class="tag tag-teal">method</span></span></div>
+      <div class="toc-item"><span class="toc-num">III</span><span class="toc-title">Walford Taylor's Full Code</span><span class="toc-tag"><span class="tag tag-blue">code</span></span></div>
+      <div class="toc-item"><span class="toc-num">IV</span><span class="toc-title">Radio, Electrical &amp; Light</span><span class="toc-tag"><span class="tag tag-amber">tech</span></span></div>
+    </div>
+    <div>
+      <div class="toc-item"><span class="toc-num">V</span><span class="toc-title">Part Two: Minor Systems</span><span class="toc-tag"><span class="tag tag-coral">clever</span></span></div>
+      <div class="toc-item"><span class="toc-num">VI</span><span class="toc-title">Part Three: Routines</span><span class="toc-tag"><span class="tag tag-pink">performance</span></span></div>
+      <div class="toc-item"><span class="toc-num">VII</span><span class="toc-title">Effects from Other Steps</span><span class="toc-tag"><span class="tag tag-green">reference</span></span></div>
+      <div class="toc-item"><span class="toc-num">VIII</span><span class="toc-title">Conclusion</span><span class="toc-tag"><span class="tag tag-purple">final</span></span></div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<h2>🌟 Introduction</h2>
+
+<p>Well on the way now, in our course of step by step mentalism, we arrive at one of the major subjects in the series. To compile a book which allowed for all the methods for performing two-person mental acts would take more space than five steps. Here, we can but hope to give a selection of good material and with a bit of luck, we shall manage to sift the best from the not so good. At least, we will have sufficient material to enable any two people to start cold and end up with a two person act; that is the basic requirement of this step.</p>
+
+<div class="grid2">
+  <div class="box box-purple">
+    <div class="box-title box-title-purple">🎭 Type 1: The Full Act</div>
+    <p>A complete act; generally an application of a two person code of some type or other.</p>
+  </div>
+  <div class="box box-teal">
+    <div class="box-title box-title-teal">✨ Type 2: The Party Piece</div>
+    <p>Two person telepathy where partners do one or two effects together, either on stage or as a party piece.</p>
+  </div>
+</div>
+
+<p>Following the usual pattern of the steps, we shall deal first with method and then with application. Before we get down to dealing with various methods, let us consider how very important is this field of mentalism. Moreover, let us acknowledge that it is probably the most advanced and most difficult to learn.</p>
+
+<div class="box box-amber">
+  <div class="box-title box-title-amber">💡 A word of history...</div>
+  <p>If you cast your mind back over the brief history of mentalism you will find that when you come to think of outstanding performers, a lot of them will be two person teams that got to the top. The use of a code wasn't new when the famous Zancigs were making a mountain out of a molehill. It's old, very old, but anyone who tells you it's out of date is talking through their hat.</p>
+  <div class="nested nested-white">
+    <p style="color:#633806;font-style:italic;">"Last night in London I saw two people perform the same type of act as was performed by the Zancigs, and it went like a bomb. The reason was, they had done the job properly, and the audience didn't know they were using a code."</p>
+  </div>
+</div>
+
+<p>That's where the fault lies, if any. Today, very few teams seem to take the trouble to work as hard at it as did the others who made this form of mentalism so successful.</p>
+
+<div class="warn-box">
+  <p><strong>⚠️ Fair warning:</strong> It is by no means an easy task and if you are half-hearted about working out a two person mental routine, then for the sake of mentalism don't do it at all. Commonsense tells you there is twice as much work to be done as there would be with a solo act.</p>
+</div>
+
+<p>Two people have to be successful instead of one and the only consolation is that although it may be twice as hard, when you get there and do it right, it's twice as good!</p>
+
+<div class="box box-pink">
+  <div class="box-title box-title-pink">🤝 Three Golden Rules for Choosing a Partner</div>
+  <div class="row-item"><span class="num-badge num-purple" style="background:#F4C0D1;color:#4B1528">1</span><p style="color:#72243E">Another thing is that both partners must be good, very good. If one is an expert and the other not, it will spoil the act. Both are performers with equal status and importance; neither could do without the other, therefore both should receive the kudos.</p></div>
+  <div class="row-item"><span class="num-badge num-purple" style="background:#F4C0D1;color:#4B1528">2</span><p style="color:#72243E">The essential requirement is a partner and it would be an easy mistake at the beginning to choose the wrong one. Don't be short-sighted in your outlook; bear in mind that you must have someone who will be with you for a long time.</p></div>
+  <div class="row-item"><span class="num-badge num-purple" style="background:#F4C0D1;color:#4B1528">3</span><p style="color:#72243E">It is going to take a long time to get the code into working order. Bear in mind also that you will have to be with your partner a lot in the early stages, as the more often you are together, the more you can practice.</p></div>
+</div>
+
+<div class="box box-coral">
+  <div class="box-title box-title-coral">💍 The "Marry Your Partner" Argument</div>
+  <p>Without any doubt, the best person if you are a married man is your wife, as long as she has the ability and the desire. There's more in this than meets the eye! Bring the wife into the act and you avoid many of the common home troubles caused when you devote too much time to mentalism! Added to that, you can practise a lot, and most important of all, having worked for six months on a code, you are not in danger of having the partner walk off leaving you to start again with a new pupil.</p>
+  <div class="nested nested-white">
+    <p style="color:#712B13;font-style:italic;">Practically all the successful two person code acts were man and wife, and most of those working today are as well. There must be something in it; marriage is a high price to pay for a code act, but it's the safest!!</p>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="part-header">
+  <span class="part-label" style="background:#E1F5EE;color:#0F6E56">Part One</span>
+  <h2 style="margin:0">Major Systems 🔬</h2>
+</div>
+
+<h3>1. The Code Act: Verbal 🗣️</h3>
+
+<p>There is nothing harder in mentalism than a two person code act worked on a verbal exchange. You have quite a lot to learn and memorise; in the beginning you have to spend hours and hours at rehearsal and you have to be a performer to put it over. It has to be performed really well, being one of those routines that dies horribly if it's anything but good.</p>
+
+<div class="box box-teal">
+  <div class="box-title box-title-teal">📌 What makes it good or bad?</div>
+  <div class="row-item"><span class="num-badge num-teal">a</span><p style="color:#085041">Both partners must know the code inside out and be able to translate it at a high speed.</p></div>
+  <div class="row-item"><span class="num-badge num-teal">b</span><p style="color:#085041">The code must be up to date and comprehensive. By "up to date," it is meant that the code allows for modern day objects such as plastic materials, as an example. You should be able to send any word or any number.</p></div>
+  <div class="row-item"><span class="num-badge num-teal">c</span><p style="color:#085041">The code must be indetectable. If the audience know you are using a code it's no good.</p></div>
+  <div class="row-item"><span class="num-badge num-teal">d</span><p style="color:#085041"><strong style="color:#04342C">SPEED.</strong> It's got to be fast, almost too fast for the audience to keep up with it all.</p></div>
+  <div class="row-item"><span class="num-badge num-teal">e</span><p style="color:#085041">Outside of using the code, both performers should have the ability to add to the presentation by injecting humorous asides and a gag now and then. A few laughs are important and keep things going happily along.</p></div>
+</div>
+
+<p>In a few paragraphs' time, we are going to give you a complete two person code, one that has been tested and found excellent. The system devised by Walford Taylor is reprinted by permission from <em>Telepathy for Two</em>. It allows you to gain all of the above requirements but like any other verbal code, it is but a framework upon which you build the routine.</p>
+
+<h3>How to Present the Verbal Code Act 🎪</h3>
+
+<p>Before we give the system, we will say a word or two about the way to present this type of act. One good method is better than six potentially good ideas. We therefore choose the method that is usually practised. Two people, usually a man and a woman (though not necessarily) perform the act. The man acts as compere/performer and the woman as medium or mindreader. Both enter together and the man gives a short but direct preliminary lecture.</p>
+
+<div class="box box-blue">
+  <div class="box-title box-title-blue">🎬 The Standard Setup</div>
+  <p>Without wasting much time, the medium is blindfolded and sits or stands. Whilst the performer goes down into the audience and moves quickly amid the people, taking or touching various objects that they take from their pockets. To be sure that there is a plentiful supply of objects to be named, the performer tells the members of the audience to "take objects from the pocket," such things as coins, ornaments, wallets, and if they have anything unusual, so much the better.</p>
+  <div class="nested nested-white">
+    <p style="color:#0C447C;">If such an announcement is made before the performer leaves the stage, practically everyone will have something ready before he arrives. This has two advantages; it saves time and equally as important, it offers the performer the chance to look around and pick which objects he wants.</p>
+  </div>
+</div>
+
+<div class="tip-box">
+  <p><strong>💡 Pro tip:</strong> Quite obviously, there is little fun in it if every time you are offered a coin. You should seek as wide a variety of objects as you can. When you get a wallet or anything which holds printed matter, make the most of it.</p>
+</div>
+
+<p>For example, should you receive a railway season ticket, don't stop at coding "Season Ticket." Work on it so that on one small item you run up a quickfire cross question exchange of words with the medium: have her call the colour, the serial number, when it expires, what it cost to buy and what stations it covers. All this information is printed on such a ticket.</p>
+
+<p>Remember that no matter what you are given, you are reasonably safe. Even if you should be handed something quite rare, maybe you don't even recognise it, you can still ask "what colour is this?" and "what is this made of?" Now and then when you do get something very unusual it pays to transmit the full word if it is outside the code, and letter by letter name the object for the medium. The audience are naturally more impressed with the ability to determine the unusual rather than the commonplace; therefore don't be afraid to accept odd objects.</p>
+
+<div class="warn-box">
+  <p><strong>⚠️ Stage craft note:</strong> It is a bad policy for any performer to leave the view of his audience. When you go down into the audience, head for the main gangway and work to people who are within easy reach. Never get tangled in a row of seats; you don't have time to move along rows as it takes too long getting in and out.</p>
+</div>
+
+<p>If there is a gallery avoid going too far to the back of the house or you become a voice and nothing more. Working to the first three seats on either side of the gangway, going back ten to twelve rows from the front, means you can deal with some fifty to sixty people, which is more than enough as a rule.</p>
+
+<div class="box box-purple">
+  <div class="box-title box-title-purple">⚡ The Speed Principle</div>
+  <p>Speed, as we have said, is the great thing with this type of work. It's got to be done at a breakneck rate to be really good. The slower you go, the more time you give them to think. Whilst the medium is calling back one object the performer, not wasting time, is rapidly looking ahead and getting ready to code the next. The medium should always commence talking the very moment the performer stops.</p>
+  <div class="nested nested-white">
+    <p style="color:#3C3489;">Even if she cannot name the object immediately, she can come in with a standard patter line whilst in the mind she works out the code. Therefore a good stock of parrot-phrases like "I get the impression of..., this is going to be..., as far as I can tell it is..." just simple words that fill in the precious seconds before the mind clicks to name the object. There is no silence.</p>
+  </div>
+</div>
+
+<div class="box box-coral">
+  <div class="box-title box-title-coral">🏁 Ending the Act</div>
+  <p>You need some sort of a climax to end this sort of performance and since the performer must be on the stage for the finale, the introduction of one good closing mental effect is recommended. Make it in keeping with the type of act, a simple, straight to the point E.S.P. test with a good punch finish. There are many such tricks printed in this series.</p>
+  <p>Lastly, take great care to avoid the temptation of over-running on the code routine. Know when to stop. It's good up to a point and then it becomes so repetitive that it will head for boredom. Stop when they still want more; that's a good rule for any aspect of entertainment.</p>
+</div>
+
+<hr class="divider">
+
+<div class="box box-purple" style="padding:1.5rem">
+  <div class="box-title box-title-purple" style="font-size:17px">📖 "Telepathy for Two" by Walford Taylor</div>
+  <p>The basis of this system is old, but it has been carefully revised and elaborated in order that all unnatural phrases should be eliminated, and for the sake of easy memorisation, the code words are cut down to a minimum. Even so, every effort has been made to make the sequence of code words logical as will be seen; thus the code is essentially practical, leaving nothing for the reader to work out or alter for himself. It is advisable to read through the system once quickly and then master each section in the correct order.</p>
+  <div class="tip-box">
+    <p>One more word: at first sight there may appear to be a lot of memory work involved. There is not. Learn the ten code words in Section 1 and the position of each letter of the alphabet and the hard work is done.</p>
+  </div>
+</div>
+
+<h3>Section 1: The Basic Number Code 🔢</h3>
+
+<div class="box box-blue">
+  <div class="box-title box-title-blue">The Core Ten Words</div>
+  <p style="color:#0C447C;font-size:12px;margin-bottom:.5rem;font-style:italic;">Note: where practicable the number of letters in the code word corresponds with the figure it represents!</p>
+  <table class="code-table">
+    <thead><tr><th style="color:#042C53">Signal Word</th><th style="color:#042C53">Means</th><th style="color:#042C53">Notes</th></tr></thead>
+    <tbody>
+      <tr><td><span class="code-word">I</span></td><td style="color:#0C447C;font-weight:500">1</td><td style="color:#185FA5">1 letter</td></tr>
+      <tr><td><span class="code-word">TRY</span> or <span class="code-word">GO</span></td><td style="color:#0C447C;font-weight:500">2</td><td style="color:#185FA5">3 letters / 2 letters</td></tr>
+      <tr><td><span class="code-word">CAN</span></td><td style="color:#0C447C;font-weight:500">3</td><td style="color:#185FA5">3 letters</td></tr>
+      <tr><td><span class="code-word">WILL</span></td><td style="color:#0C447C;font-weight:500">4</td><td style="color:#185FA5">4 letters</td></tr>
+      <tr><td><span class="code-word">WOULD</span></td><td style="color:#0C447C;font-weight:500">5</td><td style="color:#185FA5">5 letters</td></tr>
+      <tr><td><span class="code-word">PLEASE</span></td><td style="color:#0C447C;font-weight:500">6</td><td style="color:#185FA5">6 letters</td></tr>
+      <tr><td><span class="code-word">PERHAPS</span> or <span class="code-word">QUICKLY</span></td><td style="color:#0C447C;font-weight:500">7</td><td style="color:#185FA5">7 letters</td></tr>
+      <tr><td><span class="code-word">NOW</span></td><td style="color:#0C447C;font-weight:500">8</td><td style="color:#185FA5">3 letters</td></tr>
+      <tr><td><span class="code-word">NOW THEN</span></td><td style="color:#0C447C;font-weight:500">9</td><td style="color:#185FA5"></td></tr>
+      <tr><td><span class="code-word">SEE NEXT</span></td><td style="color:#0C447C;font-weight:500">0 or 10</td><td style="color:#185FA5">Also: repeat last figure</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="box box-teal">
+  <div class="box-title box-title-teal">💬 Examples in action</div>
+  <div class="nested nested-white">
+    <p style="color:#085041;"><strong style="color:#04342C">Q:</strong> "What is the number of this gentleman's house, <span class="highlight">PLEASE</span>?"</p>
+    <p style="color:#085041;"><strong style="color:#04342C">A:</strong> "The gentleman lives at number 6." <em style="color:#0F6E56">(The medium finds PLEASE = 6.)</em></p>
+  </div>
+  <div class="nested nested-white" style="margin-top:.5rem">
+    <p style="color:#085041;"><strong style="color:#04342C">Q:</strong> "<span class="highlight">WOULD</span> you tell me the number of people in this row?"</p>
+    <p style="color:#085041;"><strong style="color:#04342C">A:</strong> "There are five people sitting in the row."</p>
+  </div>
+</div>
+
+<h3>Ages, Ticket Numbers &amp; Dates 📅</h3>
+
+<div class="grid2">
+  <div class="box box-purple">
+    <div class="box-title box-title-purple">🎂 Telling a Person's Age</div>
+    <p>The performer codes the age using two code words in one sentence in the correct order:</p>
+    <div class="nested nested-white">
+      <p style="color:#3C3489;font-size:13px;"><strong>Q:</strong> "I'd like you to tell me this gentleman's age, <span class="highlight">NOW</span>."</p>
+      <p style="color:#3C3489;font-size:13px;"><strong>A:</strong> "The gentleman's age is 18." (<span class="code-word">I</span>=1, <span class="code-word">NOW</span>=8)</p>
+    </div>
+  </div>
+  <div class="box box-amber">
+    <div class="box-title box-title-amber">🎟️ Ticket Numbers (e.g. 1427)</div>
+    <p>"I want you to tell me the first two numbers, if you <span class="code-word">WILL</span>."</p>
+    <p>The medium says: 1, 4.</p>
+    <p>"<span class="code-word">GO</span> on, <span class="code-word">PERHAPS</span> you know the last two numbers as well." (GO=2, PERHAPS=7)</p>
+  </div>
+</div>
+
+<div class="box box-green">
+  <div class="box-title box-title-green">📆 Days of the Week</div>
+  <div class="grid4" style="margin-top:.5rem">
+    <div class="nested nested-white"><p style="color:#27500A;font-size:13px;font-weight:500">1: Sunday</p></div>
+    <div class="nested nested-white"><p style="color:#27500A;font-size:13px;font-weight:500">2: Monday</p></div>
+    <div class="nested nested-white"><p style="color:#27500A;font-size:13px;font-weight:500">3: Tuesday</p></div>
+    <div class="nested nested-white"><p style="color:#27500A;font-size:13px;font-weight:500">4: Wednesday</p></div>
+    <div class="nested nested-white"><p style="color:#27500A;font-size:13px;font-weight:500">5: Thursday</p></div>
+    <div class="nested nested-white"><p style="color:#27500A;font-size:13px;font-weight:500">6: Friday</p></div>
+    <div class="nested nested-white"><p style="color:#27500A;font-size:13px;font-weight:500">7: Saturday</p></div>
+  </div>
+  <p style="margin-top:.5rem"><strong style="color:#173404">Q:</strong> "<span class="code-word">CAN</span> you tell me what day of the week this was issued on?" <br><strong style="color:#173404">A:</strong> "It was issued on a Tuesday." (CAN=3, 3rd day = Tuesday.)</p>
+</div>
+
+<div class="box box-teal">
+  <div class="box-title box-title-teal">🗓️ Months of the Year (each month coded by its number in the year)</div>
+  <div class="grid4">
+    <div class="nested nested-white"><p style="color:#085041;font-size:12px">1: January<br>2: February<br>3: March</p></div>
+    <div class="nested nested-white"><p style="color:#085041;font-size:12px">4: April<br>5: May<br>6: June</p></div>
+    <div class="nested nested-white"><p style="color:#085041;font-size:12px">7: July<br>8: August<br>9: September</p></div>
+    <div class="nested nested-white"><p style="color:#085041;font-size:12px">10: October<br>11: November<br>12: December</p></div>
+  </div>
+</div>
+
+<h3>Section 2: Coins 🪙</h3>
+
+<div class="box box-amber">
+  <div class="box-title box-title-amber">Each coin = a number (mostly logical!)</div>
+  <table class="code-table">
+    <thead><tr><th style="color:#412402">Number</th><th style="color:#412402">Coin</th><th style="color:#412402">Logic</th></tr></thead>
+    <tbody>
+      <tr><td style="color:#633806;font-weight:500">1</td><td style="color:#854F0B">1/- piece</td><td style="color:#633806"></td></tr>
+      <tr><td style="color:#633806;font-weight:500">2</td><td style="color:#854F0B">2/-</td><td style="color:#633806"></td></tr>
+      <tr><td style="color:#633806;font-weight:500">3</td><td style="color:#854F0B">3d. piece</td><td style="color:#633806"></td></tr>
+      <tr><td style="color:#633806;font-weight:500">4</td><td style="color:#854F0B">1/4d.</td><td style="color:#633806">4 farthings in 1d.</td></tr>
+      <tr><td style="color:#633806;font-weight:500">5</td><td style="color:#854F0B">Halfcrown</td><td style="color:#633806">5 sixpences in 2/6d.</td></tr>
+      <tr><td style="color:#633806;font-weight:500">6</td><td style="color:#854F0B">Sixpence</td><td style="color:#633806"></td></tr>
+      <tr><td style="color:#633806;font-weight:500">8</td><td style="color:#854F0B">A penny</td><td style="color:#633806">(7 not used — "PERHAPS" too obvious!)</td></tr>
+      <tr><td style="color:#633806;font-weight:500">9</td><td style="color:#854F0B">Halfpenny</td><td style="color:#633806"></td></tr>
+      <tr><td style="color:#633806;font-weight:500">SEE</td><td style="color:#854F0B">10/- Note</td><td style="color:#633806"></td></tr>
+      <tr><td style="color:#633806;font-weight:500">SEE, NEXT</td><td style="color:#854F0B">£1 Note</td><td style="color:#633806">10/- note repeated</td></tr>
+    </tbody>
+  </table>
+  <div class="tip-box" style="margin-top:.5rem">
+    <p>Note: for a foreign coin, no code word is included in the performer's question. The country is signalled separately later.</p>
+  </div>
+</div>
+
+<h3>Section 3: Colours 🎨</h3>
+
+<div class="box box-pink">
+  <div class="box-title box-title-pink">The first three are RED, WHITE and BLUE. Then alphabetical order!</div>
+  <div class="grid4">
+    <div class="nested nested-white"><p style="color:#72243E;font-size:13px"><strong>1:</strong> Red</p></div>
+    <div class="nested nested-white"><p style="color:#72243E;font-size:13px"><strong>2:</strong> White</p></div>
+    <div class="nested nested-white"><p style="color:#72243E;font-size:13px"><strong>3:</strong> Blue</p></div>
+    <div class="nested nested-white"><p style="color:#72243E;font-size:13px"><strong>4:</strong> Black</p></div>
+    <div class="nested nested-white"><p style="color:#72243E;font-size:13px"><strong>5:</strong> Brown</p></div>
+    <div class="nested nested-white"><p style="color:#72243E;font-size:13px"><strong>6:</strong> Green</p></div>
+    <div class="nested nested-white"><p style="color:#72243E;font-size:13px"><strong>7:</strong> Grey</p></div>
+    <div class="nested nested-white"><p style="color:#72243E;font-size:13px"><strong>8:</strong> Orange</p></div>
+    <div class="nested nested-white"><p style="color:#72243E;font-size:13px"><strong>9:</strong> Yellow</p></div>
+  </div>
+</div>
+
+<h3>Section 4: Materials 🧵</h3>
+
+<div class="box box-gray">
+  <div class="box-title box-title-gray">What is it made of?</div>
+  <div class="grid4">
+    <div class="nested nested-white"><p style="color:#444441;font-size:13px"><strong>1:</strong> Gold</p></div>
+    <div class="nested nested-white"><p style="color:#444441;font-size:13px"><strong>2:</strong> Silver</p></div>
+    <div class="nested nested-white"><p style="color:#444441;font-size:13px"><strong>3:</strong> Chromium plated</p></div>
+    <div class="nested nested-white"><p style="color:#444441;font-size:13px"><strong>4:</strong> Metal</p></div>
+    <div class="nested nested-white"><p style="color:#444441;font-size:13px"><strong>5:</strong> Cloth</p></div>
+    <div class="nested nested-white"><p style="color:#444441;font-size:13px"><strong>6:</strong> Glass</p></div>
+    <div class="nested nested-white"><p style="color:#444441;font-size:13px"><strong>7:</strong> Paper</p></div>
+    <div class="nested nested-white"><p style="color:#444441;font-size:13px"><strong>8:</strong> Plastic</p></div>
+    <div class="nested nested-white"><p style="color:#444441;font-size:13px"><strong>9:</strong> Leather</p></div>
+    <div class="nested nested-white"><p style="color:#444441;font-size:13px"><strong>10:</strong> Wood</p></div>
+  </div>
+</div>
+
+<h3>Section 5: The Alphabet Code 🔤</h3>
+
+<div class="box box-purple">
+  <div class="box-title box-title-purple">🔑 The Master Key: "EJOTY"</div>
+  <p>These letters are the 5th, 10th, 15th, 20th and 25th respectively. From this it is a simple matter to work out the position of any letter, and of course, with ten minutes' practice there will be no need even to have to think about it.</p>
+  <div class="nested nested-white">
+    <p style="color:#3C3489;font-size:13px;">Thus, if the letter S is stated, the performer must know immediately that it is the 19th letter of the alphabet. To signal a letter, its number is transmitted to the medium.</p>
+  </div>
+</div>
+
+<div class="box box-blue">
+  <div class="box-title box-title-blue">Full Alphabet Reference</div>
+  <div class="grid2">
+    <table class="code-table">
+      <thead><tr><th style="color:#042C53">#</th><th style="color:#042C53">Letter</th><th style="color:#042C53">Code Signal</th></tr></thead>
+      <tbody>
+        <tr><td style="color:#185FA5">1</td><td style="color:#0C447C;font-weight:500">A</td><td><span class="code-word">I</span></td></tr>
+        <tr><td style="color:#185FA5">2</td><td style="color:#0C447C;font-weight:500">B</td><td><span class="code-word">TRY / GO</span></td></tr>
+        <tr><td style="color:#185FA5">3</td><td style="color:#0C447C;font-weight:500">C</td><td><span class="code-word">CAN</span></td></tr>
+        <tr><td style="color:#185FA5">4</td><td style="color:#0C447C;font-weight:500">D</td><td><span class="code-word">WILL</span></td></tr>
+        <tr><td style="color:#185FA5">5</td><td style="color:#0C447C;font-weight:500">E</td><td><span class="code-word">WOULD</span></td></tr>
+        <tr><td style="color:#185FA5">6</td><td style="color:#0C447C;font-weight:500">F</td><td><span class="code-word">PLEASE</span></td></tr>
+        <tr><td style="color:#185FA5">7</td><td style="color:#0C447C;font-weight:500">G</td><td><span class="code-word">PERHAPS / QUICKLY</span></td></tr>
+        <tr><td style="color:#185FA5">8</td><td style="color:#0C447C;font-weight:500">H</td><td><span class="code-word">NOW</span></td></tr>
+        <tr><td style="color:#185FA5">9</td><td style="color:#0C447C;font-weight:500">I</td><td><span class="code-word">NOW, THEN</span></td></tr>
+        <tr><td style="color:#185FA5">10</td><td style="color:#0C447C;font-weight:500">J</td><td><span class="code-word">SEE</span></td></tr>
+        <tr><td style="color:#185FA5">11</td><td style="color:#0C447C;font-weight:500">K</td><td><span class="code-word">I, NEXT</span></td></tr>
+        <tr><td style="color:#185FA5">12</td><td style="color:#0C447C;font-weight:500">L</td><td><span class="code-word">I, TRY/GO</span></td></tr>
+        <tr><td style="color:#185FA5">13</td><td style="color:#0C447C;font-weight:500">M</td><td><span class="code-word">I, CAN</span></td></tr>
+      </tbody>
+    </table>
+    <table class="code-table">
+      <thead><tr><th style="color:#042C53">#</th><th style="color:#042C53">Letter</th><th style="color:#042C53">Code Signal</th></tr></thead>
+      <tbody>
+        <tr><td style="color:#185FA5">14</td><td style="color:#0C447C;font-weight:500">N</td><td><span class="code-word">I, WILL</span></td></tr>
+        <tr><td style="color:#185FA5">15</td><td style="color:#0C447C;font-weight:500">O</td><td><span class="code-word">I, WOULD</span></td></tr>
+        <tr><td style="color:#185FA5">16</td><td style="color:#0C447C;font-weight:500">P</td><td><span class="code-word">I, PLEASE</span></td></tr>
+        <tr><td style="color:#185FA5">17</td><td style="color:#0C447C;font-weight:500">Q</td><td><span class="code-word">I, PERHAPS/QUICKLY</span></td></tr>
+        <tr><td style="color:#185FA5">18</td><td style="color:#0C447C;font-weight:500">R</td><td><span class="code-word">I, NOW</span></td></tr>
+        <tr><td style="color:#185FA5">19</td><td style="color:#0C447C;font-weight:500">S</td><td><span class="code-word">I, NOW, THEN</span></td></tr>
+        <tr><td style="color:#185FA5">20</td><td style="color:#0C447C;font-weight:500">T</td><td><span class="code-word">TRY/GO, SEE</span></td></tr>
+        <tr><td style="color:#185FA5">21</td><td style="color:#0C447C;font-weight:500">U</td><td><span class="code-word">TRY/GO, I</span></td></tr>
+        <tr><td style="color:#185FA5">22</td><td style="color:#0C447C;font-weight:500">V</td><td><span class="code-word">TRY/GO, NEXT</span></td></tr>
+        <tr><td style="color:#185FA5">23</td><td style="color:#0C447C;font-weight:500">W</td><td><span class="code-word">TRY/GO, CAN</span></td></tr>
+        <tr><td style="color:#185FA5">24</td><td style="color:#0C447C;font-weight:500">X</td><td><span class="code-word">TRY/GO, WILL</span></td></tr>
+        <tr><td style="color:#185FA5">25</td><td style="color:#0C447C;font-weight:500">Y</td><td><span class="code-word">TRY/GO, WOULD</span></td></tr>
+        <tr><td style="color:#185FA5">26</td><td style="color:#0C447C;font-weight:500">Z</td><td><span class="code-word">TRY/GO, PLEASE</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tip-box" style="margin-top:.75rem">
+    <p>Memory tips: L has two strokes = No. 12. M has three down strokes = 13. W is M upside-down = 23. U is all in one line = 21. V is two strokes = 22.</p>
+  </div>
+  <div class="warn-box">
+    <p><strong>Important:</strong> To signal two or more letters, SEPARATE SENTENCES MUST BE USED FOR EACH LETTER THAT IS CODED.</p>
+  </div>
+  <div class="nested nested-white">
+    <p style="color:#0C447C;font-size:13px;"><strong>Example:</strong> "I am thinking of two letters <span class="code-word">NOW</span>. <span class="code-word">TRY</span> and tell me what they are. <span class="code-word">CAN</span> you?"</p>
+    <p style="color:#185FA5;font-size:13px;"><strong>A:</strong> "The letters are R and W." (18 and 23)</p>
+  </div>
+</div>
+
+<h3>Section 6: Objects 🎁</h3>
+
+<p>In the first place, each letter of the alphabet is assigned an object which begins with that letter. E.g. H stands for Handkerchief. Thus to signal a handkerchief it is only necessary to transmit the letter H, in other words by coding the number 8 to the medium (H is the 8th letter). The list below has been very carefully compiled and is capable of being mastered in about 10 minutes. When this has been done, 26 common objects may be coded by signalling one letter only.</p>
+
+<div class="box box-coral">
+  <div class="box-title box-title-coral">The 26 Core Objects (one signal each)</div>
+  <div class="grid4">
+    <div class="nested nested-white"><p style="color:#712B13;font-size:12px"><strong>1 (A):</strong> Aspirin</p></div>
+    <div class="nested nested-white"><p style="color:#712B13;font-size:12px"><strong>2 (B):</strong> Badge</p></div>
+    <div class="nested nested-white"><p style="color:#712B13;font-size:12px"><strong>3 (C):</strong> Coin</p></div>
+    <div class="nested nested-white"><p style="color:#712B13;font-size:12px"><strong>4 (D):</strong> Diary</p></div>
+    <div class="nested nested-white"><p style="color:#712B13;font-size:12px"><strong>5 (E):</strong> Ear-ring</p></div>
+    <div class="nested nested-white"><p style="color:#712B13;font-size:12px"><strong>6 (F):</strong> Fountain pen</p></div>
+    <div class="nested nested-white"><p style="color:#712B13;font-size:12px"><strong>7 (G):</strong> Glasses</p></div>
+    <div class="nested nested-white"><p style="color:#712B13;font-size:12px"><strong>8 (H):</strong> Handkerchief</p></div>
+    <div class="nested nested-white"><p style="color:#712B13;font-size:12px"><strong>9 (I):</strong> Insurance</p></div>
+    <div class="nested nested-white"><p style="color:#712B13;font-size:12px"><strong>10 (J):</strong> Jewel</p></div>
+    <div class="nested nested-white"><p style="color:#712B13;font-size:12px"><strong>11 (K):</strong> Key</p></div>
+    <div class="nested nested-white"><p style="color:#712B13;font-size:12px"><strong>12 (L):</strong> Lighter</p></div>
+    <div class="nested nested-white"><p style="color:#712B13;font-size:12px"><strong>13 (M):</strong> Matchbox</p></div>
+    <div class="nested nested-white"><p style="color:#712B13;font-size:12px"><strong>14 (N):</strong> kNife</p></div>
+    <div class="nested nested-white"><p style="color:#712B13;font-size:12px"><strong>15 (O):</strong> Postal order</p></div>
+    <div class="nested nested-white"><p style="color:#712B13;font-size:12px"><strong>16 (P):</strong> Pencil</p></div>
+    <div class="nested nested-white"><p style="color:#712B13;font-size:12px"><strong>17 (Q):</strong> cheQue book</p></div>
+    <div class="nested nested-white"><p style="color:#712B13;font-size:12px"><strong>18 (R):</strong> Ring</p></div>
+    <div class="nested nested-white"><p style="color:#712B13;font-size:12px"><strong>19 (S):</strong> Stamp</p></div>
+    <div class="nested nested-white"><p style="color:#712B13;font-size:12px"><strong>20 (T):</strong> Ticket</p></div>
+    <div class="nested nested-white"><p style="color:#712B13;font-size:12px"><strong>21 (U):</strong> tUbe</p></div>
+    <div class="nested nested-white"><p style="color:#712B13;font-size:12px"><strong>22 (V):</strong> Visiting card</p></div>
+    <div class="nested nested-white"><p style="color:#712B13;font-size:12px"><strong>23 (W):</strong> Watch</p></div>
+    <div class="nested nested-white"><p style="color:#712B13;font-size:12px"><strong>24 (X):</strong> Cross / Crucifix</p></div>
+    <div class="nested nested-white"><p style="color:#712B13;font-size:12px"><strong>25 (Y):</strong> A bag</p></div>
+    <div class="nested nested-white"><p style="color:#712B13;font-size:12px"><strong>26 (Z):</strong> Cigarette case</p></div>
+  </div>
+</div>
+
+<h3>Section 7: The Final Object List 📜</h3>
+
+<p>All objects not included in the list above must obviously be coded by 2 or more letters. The list which follows has again been carefully compiled. It is <strong>comprehensive</strong> and <strong>not difficult</strong> to learn.</p>
+
+<div class="box box-gray" style="max-height:320px;overflow-y:auto">
+  <div class="box-title box-title-gray">Extended Objects (two-letter codes)</div>
+  <div class="grid2" style="font-size:12px;gap:4px">
+    <div>
+      <p style="color:#444441"><span class="code-word">Al</span> Almanac / Calendar &nbsp; <span class="code-word">Ba</span> Bangle (Bracelet) &nbsp; <span class="code-word">Bi</span> Bill &nbsp; <span class="code-word">Bl</span> Bootlace &nbsp; <span class="code-word">By</span> Bicycle-clip &nbsp; <span class="code-word">Bo</span> Bottle &nbsp; <span class="code-word">Bk</span> Book &nbsp; <span class="code-word">Bx</span> Box &nbsp; <span class="code-word">Br</span> Brooch &nbsp; <span class="code-word">BP</span> Business papers &nbsp; <span class="code-word">Bt</span> Button &nbsp; <span class="code-word">Cs</span> Case &nbsp; <span class="code-word">Cd</span> Card &nbsp; <span class="code-word">Ch</span> Charm &nbsp; <span class="code-word">Ct</span> Certificate &nbsp; <span class="code-word">Cg</span> Cigarette &nbsp; <span class="code-word">Ci</span> Cigar &nbsp; <span class="code-word">Cl</span> Clip &nbsp; <span class="code-word">Cb</span> Comb &nbsp; <span class="code-word">Cp</span> Compact &nbsp; <span class="code-word">Cn</span> Coupon &nbsp; <span class="code-word">En</span> Envelope &nbsp; <span class="code-word">FC</span> Face cream &nbsp; <span class="code-word">Fl</span> Flower &nbsp; <span class="code-word">Fm</span> Film &nbsp; <span class="code-word">Ft</span> Flint &nbsp; <span class="code-word">Gl</span> Gloves &nbsp; <span class="code-word">Hp</span> Hairpin &nbsp; <span class="code-word">Hs</span> Hairslide &nbsp; <span class="code-word">Ja</span> Jar &nbsp; <span class="code-word">Nt</span> Knitting &nbsp; <span class="code-word">KW</span> Key wallet</p>
+    </div>
+    <div>
+      <p style="color:#444441"><span class="code-word">Le</span> Letter &nbsp; <span class="code-word">Lp</span> Lipstick &nbsp; <span class="code-word">Lk</span> Locket &nbsp; <span class="code-word">Lc</span> Licence &nbsp; <span class="code-word">MG</span> Magnifying glass &nbsp; <span class="code-word">Md</span> Medicine &nbsp; <span class="code-word">MM</span> Membership card &nbsp; <span class="code-word">Mn</span> Money &nbsp; <span class="code-word">Mi</span> Mirror &nbsp; <span class="code-word">MT</span> Manicure tool &nbsp; <span class="code-word">Ml</span> Medal &nbsp; <span class="code-word">MZ</span> Measure &nbsp; <span class="code-word">NI</span> Nailfile &nbsp; <span class="code-word">Na</span> National savings &nbsp; <span class="code-word">Nk</span> Necklace &nbsp; <span class="code-word">Nd</span> Needle case &nbsp; <span class="code-word">Ng</span> Negative &nbsp; <span class="code-word">Nt</span> Note &nbsp; <span class="code-word">Np</span> Newspaper &nbsp; <span class="code-word">Nv</span> Nail-varnish &nbsp; <span class="code-word">Ph</span> Photo &nbsp; <span class="code-word">Pi</span> Pin &nbsp; <span class="code-word">Pp</span> Pipe &nbsp; <span class="code-word">Pc</span> Postcard &nbsp; <span class="code-word">Pf</span> Powder puff &nbsp; <span class="code-word">Pm</span> Programme &nbsp; <span class="code-word">Pr</span> Purse &nbsp; <span class="code-word">Ps</span> Pastille &nbsp; <span class="code-word">Pz</span> Puzzle &nbsp; <span class="code-word">Ra</span> Razor &nbsp; <span class="code-word">Rg</span> Rouge &nbsp; <span class="code-word">Ru</span> Rubber &nbsp; <span class="code-word">Ri</span> Ribbon &nbsp; <span class="code-word">Rb</span> Rubber band &nbsp; <span class="code-word">Rz</span> Razor blade &nbsp; <span class="code-word">Sc</span> Scissors &nbsp; <span class="code-word">Sg</span> Saccharin &nbsp; <span class="code-word">SP</span> Safety pin &nbsp; <span class="code-word">St</span> String &nbsp; <span class="code-word">Sw</span> Sweet &nbsp; <span class="code-word">Sh</span> Sharpener &nbsp; <span class="code-word">Sk</span> Scarf &nbsp; <span class="code-word">Tg</span> Telegram &nbsp; <span class="code-word">Th</span> Thimble &nbsp; <span class="code-word">Tn</span> Tin &nbsp; <span class="code-word">Tb</span> Tobacco &nbsp; <span class="code-word">Tw</span> Tweezers &nbsp; <span class="code-word">To</span> Torch &nbsp; <span class="code-word">Um</span> Umbrella &nbsp; <span class="code-word">Vg</span> Veganin &nbsp; <span class="code-word">Wa</span> Wallet &nbsp; <span class="code-word">Wh</span> Whistle &nbsp; <span class="code-word">B.D.C</span> Blood Donor's Card!</p>
+    </div>
+  </div>
+  <div class="tip-box" style="margin-top:.75rem">
+    <p>If you are thinking that the list is extremely long, I can only say that the effort made in memorising it is more than repaid in the added confidence which one gains by having a comprehensive object list.</p>
+  </div>
+</div>
+
+<p>Again it is stressed that each letter is coded by a separate sentence. The first sentence asks what the object is and the second asks for a description or for the size, shape, etc. Alternatively, the first sentence is addressed to the helper and the second asks what the object is.</p>
+
+<div class="box box-teal">
+  <div class="box-title box-title-teal">💬 Two-letter coding in practice (Wallet = Wa)</div>
+  <div class="nested nested-white">
+    <p style="color:#085041;font-size:13px;"><strong>Q:</strong> "<span class="code-word">TRY</span> and say what this is, <span class="code-word">CAN</span> you? I wonder if you know what it's used for?"<br>(TRY=W, CAN=A)</p>
+    <p style="color:#085041;font-size:13px;"><strong>A:</strong> "It is used for carrying things in the pocket; it is a wallet."</p>
+  </div>
+  <div class="nested nested-white" style="margin-top:.5rem">
+    <p style="color:#085041;font-size:13px;"><strong>Q (to helper):</strong> "Concentrate on your object <span class="code-word">PLEASE</span>," <strong>(to Medium)</strong> "<span class="code-word">CAN</span> you say what this is?" (FC = Face Cream)</p>
+    <p style="color:#085041;font-size:13px;"><strong>A:</strong> "That is some face cream."</p>
+  </div>
+</div>
+
+<h3>Section 8: Playing Cards 🃏</h3>
+
+<div class="box box-purple">
+  <div class="box-title box-title-purple">Suits first (remember: CHaSeD), then value</div>
+  <div class="grid2">
+    <div>
+      <div class="box-title box-title-purple" style="font-size:13px;margin-bottom:.5rem">Suits</div>
+      <table class="code-table">
+        <tbody>
+          <tr><td style="color:#3C3489;font-weight:500">1 (I)</td><td style="color:#534AB7">♣ Clubs</td></tr>
+          <tr><td style="color:#3C3489;font-weight:500">2 (GO/TRY)</td><td style="color:#534AB7">♥ Hearts</td></tr>
+          <tr><td style="color:#3C3489;font-weight:500">3 (CAN)</td><td style="color:#534AB7">♠ Spades</td></tr>
+          <tr><td style="color:#3C3489;font-weight:500">4 (WILL)</td><td style="color:#534AB7">♦ Diamonds</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <div class="box-title box-title-purple" style="font-size:13px;margin-bottom:.5rem">Special values</div>
+      <table class="code-table">
+        <tbody>
+          <tr><td style="color:#3C3489;font-weight:500">JUST</td><td style="color:#534AB7">Jack</td></tr>
+          <tr><td style="color:#3C3489;font-weight:500">Medium's name</td><td style="color:#534AB7">Queen</td></tr>
+          <tr><td style="color:#3C3489;font-weight:500">No signal</td><td style="color:#534AB7">King</td></tr>
+          <tr><td style="color:#3C3489;font-weight:500">SEE</td><td style="color:#534AB7">10</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="nested nested-white" style="margin-top:.75rem">
+    <p style="color:#3C3489;font-size:13px;"><strong>5 of Hearts:</strong> "<span class="code-word">TRY</span> and tell me what this card is, <span class="code-word">WOULD</span> you." (TRY=Hearts, WOULD=5)</p>
+    <p style="color:#3C3489;font-size:13px;"><strong>King of Clubs:</strong> "I'd like you to tell me what this card is." (I=Clubs, no value signal=King)</p>
+    <p style="color:#3C3489;font-size:13px;"><strong>Queen of Spades:</strong> "<span class="code-word">CAN</span> you tell me the name of this card, Walford?" (CAN=Spades, name=Queen)</p>
+  </div>
+</div>
+
+<h3>Section 9: Countries 🌍</h3>
+
+<div class="box box-teal">
+  <div class="box-title box-title-teal">Continent first, then initial letter of country</div>
+  <div class="grid4">
+    <div class="nested nested-white"><p style="color:#085041;font-size:12px"><strong>1:</strong> England<br><strong>2:</strong> Scotland<br><strong>3:</strong> Wales</p></div>
+    <div class="nested nested-white"><p style="color:#085041;font-size:12px"><strong>4:</strong> Ireland<br><strong>5:</strong> Europe<br><strong>6:</strong> Asia</p></div>
+    <div class="nested nested-white"><p style="color:#085041;font-size:12px"><strong>7:</strong> Africa<br><strong>8:</strong> The Americas<br><strong>9:</strong> Canada</p></div>
+    <div class="nested nested-white"><p style="color:#085041;font-size:12px"><strong>10:</strong> Australasia<br><strong>11:</strong> The Arctic</p></div>
+  </div>
+  <div class="nested nested-white" style="margin-top:.5rem">
+    <p style="color:#085041;font-size:13px;"><strong>Example (Austria, made in...):</strong> "<span class="code-word">WOULD</span> you concentrate on where this object was made. I want to know the country." (WOULD=5=Europe, then A=Austria)</p>
+    <p style="color:#085041;font-size:13px;"><strong>A:</strong> "It was made in Austria."</p>
+  </div>
+</div>
+
+<h3>Section 10: Christian Names 🙋</h3>
+
+<div class="grid2">
+  <div class="box box-blue">
+    <div class="box-title box-title-blue">Gentlemen</div>
+    <p style="color:#0C447C;font-size:12px;">A: Alan, Ar: Arthur, B: Bert, Bi: Bill, C: Charles, D: David, Dg: Douglas, E: Edward, F: Frank, Fd: Fred, G: Geoffrey, Gg: George, H: Harry/Henry, I: Ian, J: James/Jim, Jo: John, M: Michael, P: Peter, R: Richard/Dick, Rg: Roger, Rn: Ronald, S: Sam, T: Tom, To: Tony, Sd: Sidney, V: Vic, W: Walter</p>
+  </div>
+  <div class="box box-pink">
+    <div class="box-title box-title-pink">Ladies</div>
+    <p style="color:#72243E;font-size:12px;">A: Anne, B: Beryl, Bt: Betty, D: Daphne, Dr: Doris, Dy: Dorothy, Dn: Doreen, E: Eileen, H: Heather, Hl: Helen, J: Jean, Jn: Joan, Jy: Joy, Jf: Jennifer, M: Mary, Ma: May, Mg: Margaret, R: Rosemary</p>
+  </div>
+</div>
+
+<div class="box box-gray">
+  <div class="box-title box-title-gray">🏁 Conclusion to Walford Taylor's System</div>
+  <p>With the information contained in this system, it is possible to give a really mystifying performance of telepathy. It is up to the reader to make his performance entertaining. Although the basis of the system is old, let me again say that I hope that I have made the code words far more natural than those sometimes heard in the halls today and have kept it within the reach of amateurs who, like myself, have little time to learn complicated codes and yet appreciate the need for a comprehensive system. Learn a little at a time.</p>
+  <div class="nested nested-white">
+    <p style="color:#444441;font-size:15px;font-weight:500;text-align:center;">Let your motto be: Practise... practise... then entertain!</p>
+  </div>
+</div>
+
+<h3>Appendix: Further Sub-codes 🔍</h3>
+
+<div class="grid2">
+  <div class="box box-gray">
+    <div class="box-title box-title-gray">⚙️ Metals (via material code)</div>
+    <p style="font-size:12px;color:#444441">A: Aluminium, B: Brass, C: Copper, I: Iron, S: Steel, T: Tin</p>
+  </div>
+  <div class="box box-gray">
+    <div class="box-title box-title-gray">🌸 Designs</div>
+    <p style="font-size:12px;color:#444441">A: Animal, B: Bird, F: Flower, L: Letter</p>
+  </div>
+  <div class="box box-gray">
+    <div class="box-title box-title-gray">🎟️ Tickets</div>
+    <p style="font-size:12px;color:#444441">B: Bus, R: Railway, Rf: Raffle, W: Weight</p>
+  </div>
+  <div class="box box-gray">
+    <div class="box-title box-title-gray">🖊️ Pens</div>
+    <p style="font-size:12px;color:#444441">B: Biro, C: Conway, M: Mentmore, P: Parker, S: Swan, Sc: Scroll, W: Watermans</p>
+  </div>
+</div>
+
+<div class="box box-blue">
+  <div class="box-title box-title-blue">📋 Recommended Performance Procedure</div>
+  <div class="row-item"><span class="num-badge num-blue">1</span><p style="color:#0C447C">Commence with a short demonstration of telepathy with cards (Section 8).</p></div>
+  <div class="row-item"><span class="num-badge num-blue">2</span><p style="color:#0C447C">Follow with signalling the name of any country written by a spectator on the blackboard.</p></div>
+  <div class="row-item"><span class="num-badge num-blue">3</span><p style="color:#0C447C">Keep the telepathy of objects until the end of the show.</p></div>
+  <div class="row-item"><span class="num-badge num-blue">4</span><p style="color:#0C447C">Don't forget that the performer should at all times talk in a natural manner and, if possible, introduce amusing asides, all the time coding the objects to the medium.</p></div>
+  <div class="row-item"><span class="num-badge num-blue">5</span><p style="color:#0C447C">Don't forget that with the owner's permission the contents of a wallet are always interesting. So also are tickets, driving licences (dates of expiry, etc.), cheque books, stamps and designs on brooches.</p></div>
+  <div class="row-item"><span class="num-badge num-blue">6</span><p style="color:#0C447C">If you should get a difficult object then at least get your partner to say what it is made of, the colour, where made, and any initials on it, if nothing else!</p></div>
+  <div class="row-item"><span class="num-badge num-blue">7</span><p style="color:#0C447C">Try and end on a strong note, and don't go on too long.</p></div>
+</div>
+
+<hr class="divider">
+
+<h2>📡 2. Sub-Miniature Radio Equipment</h2>
+
+<p>There is nothing new about the use of radio equipment for mental magic. However, there are many new developments in this particular field and although space does not permit technical details, we can offer a few hints and practical suggestions.</p>
+
+<div class="box box-amber">
+  <div class="box-title box-title-amber">How it works</div>
+  <p>Modern day two-person radio equipment consists of a double unit. One is a very small transmitter and the other a very small receiver. The latest improvements on this type of apparatus include transistorised apparatus which considerably reduce the weight and size. Such appliances are available, as for example, the Corinda new "Mastergimmick" and Nelson's "Secret Invention." If you know a lot about the subject you can make your own, but for reliability it is advisable to get a dealer model which is guaranteed to work all the time. This is not sales talk, but sound advice to anybody who contemplates the use of this apparatus. You have to bear in mind that when you are using it, there's no "get out" if it fails; it's got to work all the time.</p>
+</div>
+
+<div class="box box-blue">
+  <div class="box-title box-title-blue">The apparatus works like this...</div>
+  <p>Your medium or performer has a miniature receiver which is usually about the size of an English penny. This is carried on the person and allows the holder to hear anything that is broadcast by the assistant who speaks into the microphone plugged into the transmitter. The two are not connected and complete freedom of movement is obtainable. The range on good models is often as far as a quarter of a mile when worked properly.</p>
+</div>
+
+<div class="grid3">
+  <div class="box box-teal">
+    <div class="box-title box-title-teal">Type 1: Direct Volume</div>
+    <p>You hear like as though listening to a miniature wireless set.</p>
+  </div>
+  <div class="box box-purple">
+    <div class="box-title box-title-purple">Type 2: Bone Conduction</div>
+    <p>Allows you to hear by a process of vibrations carried on the bone (usually the collar bone or the bone behind the ear).</p>
+  </div>
+  <div class="box box-coral">
+    <div class="box-title box-title-coral">Type 3: Pulse Unit</div>
+    <p>No sound; the "receiver" attached to the leg or arm indicates by pulse signals what is being sent. Needs a code; cannot be used for direct voice transmission.</p>
+  </div>
+</div>
+
+<p>The majority of these sub-miniature radios are "one way" sending units. That is to say, the assistant can speak to the performer but the performer cannot speak back to the assistant. However, two way models can be made. Nevertheless, a fantastic amount can be achieved with the one way unit, and more often than not the assistant is in the wings or very nearby the stage and can hear what is said.</p>
+
+<div class="warn-box">
+  <p><strong>⚠️ Big caution:</strong> The use of radio equipment presents a lot of problems and requires a lot of skill. The apparatus may well be perfect, but it doesn't end there. You have to be well trained and have thoroughly reliable assistance. You have to work out a really good application of the equipment, a thing which might appear very easy, but which is in fact remarkably hard. The great difficulty is deciding what to do. There is so much that you can do that you tend to lose your head a bit and find yourself bringing in absolute miracles which are too good. So good that any intelligent member of the audience will say to himself: that man is using a radio, or he's psychic!</p>
+</div>
+
+<div class="box box-gray">
+  <div class="box-title box-title-gray">✅ Checklist before using radio equipment</div>
+  <div class="row-item"><span class="num-badge" style="background:#D3D1C7;color:#2C2C2A">a</span><p style="color:#444441">Find out if the equipment is a battery or mains model and if it is the latter be sure you get the right voltage for your locality. It won't work on the wrong voltage. If it is a battery model, be sure you can get replacements and have spares with you at all times.</p></div>
+  <div class="row-item"><span class="num-badge" style="background:#D3D1C7;color:#2C2C2A">b</span><p style="color:#444441">Remember you cannot work it alone (except for very few effects) and that you must have reliable assistants. Always teach the assistant how to work the controls so that they can cope with any emergency (i.e. turning up the volume, switching on and checking the microphone plugs).</p></div>
+  <div class="row-item"><span class="num-badge" style="background:#D3D1C7;color:#2C2C2A">c</span><p style="color:#444441">Don't think that a transistorised radio will make you a mentalist. Nothing but the ability to perform and the talent of showmanship will do that. It will give you wonderful effects that you can do, but you still have to present them.</p></div>
+  <div class="row-item"><span class="num-badge" style="background:#D3D1C7;color:#2C2C2A">d</span><p style="color:#444441">Before entering this field, if you are a newcomer to the subject of radio-mentalism, get some practical advice from somebody who knows; you can waste a lot of money if you try and find out the hard way.</p></div>
+  <div class="row-item"><span class="num-badge" style="background:#D3D1C7;color:#2C2C2A">e</span><p style="color:#444441">No matter what model you decide to try, or what is claimed of it, always have a check just before you are ready to use it to see that there is no interference from outside sources. Certain types are badly jammed by electric shavers, electric lifts in nearby buildings, other radio equipment and the like. If you should be using one for a programme at a broadcasting studio, be sure to see that their equipment does not "receive" from your transmitter.</p></div>
+</div>
+
+<div class="tip-box">
+  <p>The future radio mentalist must therefore aim at convincing his audience that he is not using one of those things they have heard about!</p>
+</div>
+
+<hr class="divider">
+
+<h2>💡 3. Improved Light Communicator by Corinda</h2>
+
+<p>The efficiency of the Thompson electrical unit was without doubt one hundred per cent good. One snag existed, since it utilised one light bulb; a time factor limited its use for any elaborate routine. For example, to signal the number fourteen, it took fourteen individual flashes, which was asking too much. Likewise, a fairly complicated code had to be devised to cover everything that could be signalled in single flashes.</p>
+
+<p>Working on the idea for quite a time, I finally devised a unit which, although it retained the basic principle, gave in addition many more possibilities and cut out the time loss and need for complicated codes. The unit I describe now is really four of the electric light outfits built into one system. It is very simple and inexpensive to make, an excellent appliance for two person mentalism and enables you to perform some outstanding effects.</p>
+
+<div class="box box-coral">
+  <div class="box-title box-title-coral">🔧 How to build it</div>
+  <p>A cardboard frame is used as the base because it is pliable and will bend under the coat to take the shape of the body. Fairly thick card is used and a square is cut to size 10 x 10 inches. From Woolworth's you get four small adapters and four 2.5 volt torch batteries. Fix one adapter to each corner of the board so that they are evenly spaced with nine inches between each one. To the centre of the board fix a strap which will hold a 4.5 volt flat torch battery. You also require a supply of thin bell wire and four push buttons similar to those used on most front doors.</p>
+  <div class="nested nested-white">
+    <p style="color:#712B13;font-size:13px;">The four push buttons are mounted in a row on a small strip of wood (3-ply) to make what we call the control unit. To the strip of wood one fixes four safety pins which hold the unit in position on the coat when in use. The complete control unit is about four inches long, the buttons being quite near together.</p>
+  </div>
+</div>
+
+<div class="box box-amber">
+  <div class="box-title box-title-amber">The circuit</div>
+  <p>It is now necessary to wire the circuit so that when the first push button (I) is depressed, light (I) on the board goes on. Similarly, when two is pressed, the light bulb at II goes on, III with III and IV with IV. But the circuit should also be wired so that any combination of I, II, III and IV can be flashed. For example, pressing II and IV brings those two lights on together, or I, II, III and IV bring all on at one time.</p>
+  <p>Four tapes are fixed to the board so that it can be tied to the back. If elastic is let into the tape, a comfortable and steady hold is obtained.</p>
+  <div class="tip-box">
+    <p>To use the apparatus it is necessary to have the right coat. A thick material will restrain the light which appears normally as a mere pin point at a certain position. To allow for this, you can either wear a thin coat or cut out a small circle of the lining at the point where the bulbs will be positioned. A tailor could make a neat job of this without any damaging effect to your best suit.</p>
+  </div>
+</div>
+
+<div class="box box-teal">
+  <div class="box-title box-title-teal">⚙️ Putting it on and using it</div>
+  <p>To fix the apparatus ready for use, remove your jacket and strap the board on to your back. Button the coat so that the material is then drawn fairly tight over the bulbs; there is no danger of them burning your coat. Lead the main wire down to your right side and pin the control unit just under the coat at the point behind the right jacket pocket, where the hand can reach it easily if the arm is dropped to a natural position, hanging at the side.</p>
+  <p>The control unit is pinned to the lining of the coat with the push buttons facing your body. You will find that if you slip your right hand just under the edge of the coat, slightly curl the fingers and feel for the buttons, you will be able to put one finger on each button. With the hand in this position you can press any one or any combination of buttons without any danger of pressing the wrong one. You just have to think which finger or fingers to use. The pressure of the finger on the button is taken up by the palm of the hand on the outside of the jacket.</p>
+</div>
+
+<div class="box box-blue">
+  <div class="box-title box-title-blue">💡 How to Code with the Light Communicator</div>
+  <p>Remember: practically all the coding that you do is <strong style="color:#042C53">silent.</strong> Not a word is said. To simplify the coding, all that need be known is the type of subject to be transmitted. For example, is it a word, a number, a card or what? If the medium expects a word, she goes on to the alphabet code and if she expects a card, then she starts looking for card code signals.</p>
+</div>
+
+<div class="grid3">
+  <div class="box box-purple">
+    <div class="box-title box-title-purple">🔢 Numbers</div>
+    <p>We have four lights and can work no fewer than twenty different combinations. Each bulb is designated a counting unit:</p>
+    <ul style="color:#3C3489;font-size:13px">
+      <li>Bulb I: units of 1</li>
+      <li>Bulb II: units of 2</li>
+      <li>Bulb III: units of 3</li>
+      <li>Bulb IV: units of 4</li>
+      <li>Diagonals I+IV: units of 5</li>
+      <li>Diagonals II+III: units of 10</li>
+    </ul>
+    <div class="nested nested-white">
+      <p style="color:#3C3489;font-size:12px;">Example: "14" in just two presses. Flash "ten" once, flash "four" bulb once.</p>
+    </div>
+  </div>
+  <div class="box box-coral">
+    <div class="box-title box-title-coral">🃏 Playing Cards</div>
+    <p>Each bulb is designated a suit (signalled first), then the value is sent on the same code as numbers (Jack=11, Queen=12, King=13).</p>
+    <p>Any card in the pack can be signalled with a maximum of three flashes. Any three bulbs lighted at the start signal the Joker.</p>
+  </div>
+  <div class="box box-teal">
+    <div class="box-title box-title-teal">🔤 The Alphabet</div>
+    <p>Both performer and medium learn the position of every letter in the alphabet. Using the number code, they signal letter by letter.</p>
+    <div class="nested nested-white">
+      <p style="color:#085041;font-size:12px;">Example: "BEAK" = flash 2, pause; flash 5, pause; flash 1, pause; flash 10+1. All lights on for 3 seconds = end of word.</p>
+    </div>
+    <p>Any letter can be signalled in three flashes maximum, except Z (four).</p>
+  </div>
+</div>
+
+<div class="box box-green">
+  <div class="box-title box-title-green">🔁 The Repeat / Correction Signal</div>
+  <p>An often occurrence is the need for a "repeat signal." Either you make a mistake and want to correct it, or the medium missed the signal so coughs to ask for a repeat. In this case, at anytime during the signalling you can offer the "correction repeat key signal," which is four flashes of all four lights at once.</p>
+</div>
+
+<div class="box box-gray">
+  <div class="box-title box-title-gray">Summary of the Light Communicator</div>
+  <p>Considering the small expense involved in making this apparatus, it is really worthwhile. It requires quite an amount of handling and practice, but it works over a wide range with its capabilities and I consider it one of the best known methods for two person code acts. Worked on the lines suggested in the previous text, it becomes practical for stage or cabaret work and although the original model was invented for a more or less "mediumistic stunt," the improved apparatus has the scope for use in a full act. In view of the fact that it is silent against the alternative verbal code, I would say it was better and probably involves a lot less hard work.</p>
+</div>
+
+<hr class="divider">
+
+<h2>🎛️ More Major Systems: Brief Outlines</h2>
+
+<div class="grid2">
+  <div class="box box-amber">
+    <div class="box-title box-title-amber">🕹️ Radio-Controlled Pulse Unit</div>
+    <p>During recent years toy manufacturers have developed ingenious small devices for the purpose of remote control over model ships, engines and aeroplanes. Today it is possible to buy such a remote control unit for a matter of a few pounds. It has a working range of about 1,000 yards under good conditions, it is nearly always worked from batteries and with very little modification it can be adapted to make a perfect two person communicator for mentalism.</p>
+    <p>The stop and start mechanism is all that we require. When the unit is switched on it operates a small lever at the receiving end; we can fix a lightweight hammer to this lever and by strapping the "receiver" to the leg, a code can be rapped out by constant off and on working of the control. The code will be silent and will work by feel alone.</p>
+    <div class="tip-box">
+      <p>With two such units, two people could work wonders since it would be possible for both to send and both receive; the only possible disadvantage is that the wife can answer you back!</p>
+    </div>
+  </div>
+  <div class="box box-purple">
+    <div class="box-title box-title-purple">🚶 Action Signals</div>
+    <p>Given a lot of study it is possible to work out a silent code (non-speaking) by developing a series of visible signs and signals. The code will exclude any obvious and unusual movements and will incorporate such finer moves as the well-timed flick of an eyelash.</p>
+    <p>Any false pose or movement of any kind should be eliminated; the best way to do this sort of coding is to keep on the move all the time, but send the code signal at a prearranged moment so that the movement becomes part of a movement in itself. With this added subtlety, you move naturally before and after the signal and the code becomes literally impossible to detect.</p>
+    <div class="nested nested-white">
+      <p style="color:#3C3489;font-size:13px;">Moreover, when working on this type of code, bear in mind that every movement can be utilised. The feet: which way they point. The head, hands and body. The objects you hold and where you put them. The number of steps you take when you walk. Use the simple, natural movements of the body; you have more than enough opportunity.</p>
+    </div>
+  </div>
+</div>
+
+<div class="box box-blue">
+  <div class="box-title box-title-blue">🔊 Sound Reading</div>
+  <p>We have already dealt with the principles of sound reading in Step Two and it will be agreed that with lots of hard work at the start, an act which will defy beating can be designed. The application of sound reading will be somewhat easier than the practical examples given in Step Two. The reason is that you do all the writing and can make it easy for the medium to hear.</p>
+  <div class="nested nested-white">
+    <p style="color:#0C447C;">A blindfolded medium sitting six feet away from a blackboard can tell any number, any word and any of the standard E.S.P. signs that are written on the boards. All this is achieved by nothing less than the noise made by the chalk as it writes on the board.</p>
+  </div>
+  <div class="tip-box" style="margin-top:.75rem">
+    <p>Just think: all that is done is to seat the medium six feet away from the board, with her back to it. A spectator whispers any number in the performer's ear, he writes it on the board for all to see, the medium duplicates it on her slate. Not a word is said; the medium can be blindfolded; it makes no difference. Only those people who try this will believe me; it is too easy to be true.</p>
+  </div>
+  <p>To put people right off the scent, the spectator himself can be left to draw some of the simple E.S.P. designs which are so easy to detect by sound reading via chalk on the blackboard.</p>
+  <div class="nested nested-white">
+    <p style="color:#0C447C;font-size:13px;"><strong>A subtle example:</strong> The spectator is invited to write any number on the board, one single number so that all (but the medium) can see. This having been done, you rub it out. The medium duplicates on her slate that very number. The method is again natural and based on sound. When you rub out the number, the coarse cloth you use makes a distinct swishing noise on the board. The medium counts the number of strokes you use to rub out the number!</p>
+  </div>
+</div>
+
+<div class="box box-green">
+  <div class="box-title box-title-green">🏁 Conclusion of Major Code Systems</div>
+  <p>Enough has been said about major codes! If you can't find a method of working an act out of the systems already given, you wouldn't get anywhere on another fifty ideas. Whatever your choice may be, remember this: the secret to success is natural behaviour, talking, walking and moving as you would if you were not doing a communication act.</p>
+  <p>The wise performer will not stick at any one system; he will learn one major code and then two or three minor ones that can be introduced to divert from the main theme. The most successful two person teams have been people who could switch quickly from one channel to another, keeping at least one ahead of the audience all the time.</p>
+  <div class="nested nested-white">
+    <p style="color:#27500A;font-style:italic;">If you intend to work a two person communication routine, it is your job to be able to communicate with each other under almost any condition, utilising verbal codes, action signals and sound. With one or two of the minor code systems given next, you will beat the best brains. May you never say a word out of place!</p>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="part-header">
+  <span class="part-label" style="background:#FAECE7;color:#993C1D">Part Two</span>
+  <h2 style="margin:0">Minor Systems 🧩</h2>
+</div>
+
+<p>This part of Step Eight deals with a few of the methods that can be used to signal from one person to another. There are very many methods that have been devised for a single effect or two or three tricks, and we need only cover a few which will be illustrative of the common principle.</p>
+
+<div class="grid2">
+  <div class="box box-coral">
+    <div class="box-title box-title-coral">7. Pre-Arranged List of Objects or Numbers 📋</div>
+    <p>This method of communication is not really a code, although one or two signals may have to be incorporated during the routine. It is a simple system which can be just as fooling as some of the more advanced ones.</p>
+    <p>Both performer and medium learn a list of objects, about thirty to forty, and both learn them in the same order as they appear on the list. The objects chosen for the list will be items that are commonplace in any audience: such things as coins, combs, standard equipment from a ladies' handbag, cigarettes and matches, etc. The performer must select objects from the audience that correspond to those on his list. The medium never really knows what he is holding; she only knows the order by the list and calls that out.</p>
+  </div>
+  <div class="box box-amber">
+    <div class="box-title box-title-amber">8. Playing Cards in Pre-Arranged Order 🃏</div>
+    <p>Again in Step Three we have explained the basic principles of the stacked deck. Many two person effects will be possible by virtue of having a pack of cards in pre-arranged order. The signal is easy and deceptive. The medium is allowed to glimpse one card and knowing the arrangement, can tell that the chosen one is one ahead in the stack. This may be applied to any number of cards.</p>
+  </div>
+</div>
+
+<div class="box box-purple">
+  <div class="box-title box-title-purple">9. Time Codes ⏱️</div>
+  <p>This particular class of code is not adaptable to full two person performances but it has many uses for single effects or tests. It is particularly deceiving and is therefore a good code for challenge test conditions.</p>
+  <div class="nested nested-white">
+    <p style="color:#3C3489;font-size:13px;"><strong>How it works (sending "4"):</strong></p>
+    <p style="color:#3C3489;font-size:13px;">Performer sits at one end of a table and medium at the other. A number is written on a piece of paper which is handed to the performer; he transmits that number to his medium who writes it down. When the performer receives the paper he looks at it and sees the number. When ready to begin the signal, he blinks once. As he blinks, he counts "one" to himself and the medium, seeing the signal, does the same.</p>
+    <p style="color:#3C3489;font-size:13px;">Now both parties count silently and with a regular beat until the performer blinks again. His second signal is given on the count representing the chosen number. Mentally you are counting "one, two, three," etc. but between each number you count, you say to yourself "Concentrated," which has the effect of regulating the count on both sides.</p>
+  </div>
+  <div class="nested nested-white" style="margin-top:.5rem">
+    <p style="color:#3C3489;font-size:13px;font-family:var(--font-mono);">(Blink) "ONE - concentrated - TWO - concentrated - THREE - concentrated - FOUR (Blink)"</p>
+  </div>
+  <p>The only requirement for this code system is good balance of timing between two people and key signals for starting and stopping.</p>
+</div>
+
+<div class="grid2">
+  <div class="box box-teal">
+    <div class="box-title box-title-teal">10. Positional Codes 📍</div>
+    <p>This is a very old system but still good. You mentally divide the table top into squares and whichever square you use indicates the value of the card. The suit is signalled by the rest of the pack placed to one side.</p>
+    <p>The principle can be developed to a high degree. Bringing in pencils of different colour or length, paper, visiting cards, cigarettes and matches, etc., it is possible to signal quite an amount of information.</p>
+  </div>
+  <div class="box box-blue">
+    <div class="box-title box-title-blue">11. Graph or Chart Codes 📊</div>
+    <p>There are a diversity of code systems based on what is called a "code chart." Under the section dealing with tricks in Step Ten, we find an effect called "Card Code" by Punx, the German mentalist. This is a card-transmission two person stunt or routine and the method of transmission, although partly a verbal code, is also considerably improved by the use of a key chart.</p>
+  </div>
+</div>
+
+<div class="box box-pink">
+  <div class="box-title box-title-pink">12. White Elastic Indicator 🎽</div>
+  <p>A small piece of white elastic is pinned under the back of the collar (coat) or, alternatively, under the back of the jacket hem. A piece of fine thread is tied to the elastic which is then led either through the legs and attached to the vest button at the front, or into one of the trouser pockets, or any other convenient position as may suit you.</p>
+  <p>When the thread is pulled slightly, the white elastic comes into view with about half an inch showing. As soon as the tension is released, it pops back under the collar with the result that by developing a code of longs and shorts (i.e. dots and dashes) you can transmit to the medium with your back turned.</p>
+  <div class="nested nested-white">
+    <p style="color:#72243E;font-size:13px;">Again it is silent and so deserves consideration. It is quite surprising to find that at a considerable distance, this small tail of elastic is clearly visible. Since the merest touch is required to pull it into view, no conspicuous movement will be necessary and it will operate faster than you will want to use it. Another old, simple, but reliable method.</p>
+  </div>
+</div>
+
+<div class="box box-gray">
+  <div class="box-title box-title-gray">🎭 The Stooge Signal System</div>
+  <p>Sufficient has been said to illustrate the basic simplicity of most systems of communication. In general we have tried to stick to methods which are known to be practical and although the selection is by no means comprehensive, it is more than enough to start you on the right road.</p>
+  <p>The stooge signal system is one of the most powerful weapons for the two person routine. Everybody naturally centres their attention on the performer and medium which means that a third person, apparently a member of the audience, is in a remarkably strong position to give the signals.</p>
+  <div class="nested nested-white">
+    <p style="color:#444441;font-size:13px;">I don't think it's a matter of ethics; I wouldn't think twice about using a stooge for any mental effect that I considered was worth it. I consider the extra person an added assistant who takes part in the act. Decent ethics are generally impractical in the field of mentalism; you must be a first rate liar, cheat at least opportunity and stoop to any level which brings about a first class trick that entertains all and harms no one. Idealism is one thing, but the higher you go, the further you have to fall!</p>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="part-header">
+  <span class="part-label" style="background:#FBEAF0;color:#993556">Part Three</span>
+  <h2 style="margin:0">Routines 🎪</h2>
+</div>
+
+<div class="box box-purple" style="margin-bottom:1.5rem">
+  <div class="box-title box-title-purple">1. "The Lady is a Mindreader" by Corinda ✨</div>
+  <div class="nested nested-white" style="margin-bottom:.75rem">
+    <p style="color:#3C3489;font-weight:500;font-size:13px">The Effect</p>
+    <p style="color:#3C3489;font-size:13px">Performer introduces his assistant who, he claims, has the ability to read thoughts. As an example of her powers she will conduct a test. The lady holds a card and pencil; one person in the audience is asked to stand for a moment and to concentrate on the date of any coin taken from their pocket. This person now sits, but keeps the coin in his hand. Another spectator stands and thinks merely of their date of birth. On a second card, the medium writes her impressions once more. Taking a third card, the medium writes the thoughts of a third spectator who has been asked to stand and think of any three numbers that enter his head.</p>
+    <p style="color:#3C3489;font-size:13px">The performer now takes the first card from the medium, explains that although any coin was selected, the medium has written a date. "Would the spectator who thought of the date please stand and tell all what were his thoughts?" As soon as he names the date, the performer reads aloud the date written by the medium and immediately hands the card into the audience for examination. It is correct: the medium is right!</p>
+    <p style="color:#3C3489;font-size:13px">Next he takes the second card, asks the person in the audience to confirm his date of birth, or more important, the one he thought of, and again the performer reads what was written by the medium before handing the card into the audience. Once more the medium has read a mind!</p>
+    <p style="color:#3C3489;font-size:13px">Lastly, the performer rightly explains that for the medium to have divined a date on a coin and a person's birthdate was quite an achievement, although not entirely beyond natural forces because by some strange means the medium may have known the coin and could, by a large stretch of imagination, have discovered the gentleman's birthdate. However, the last test will prove beyond all doubt the medium's powers, as now we deal with a set of three numbers, selected at random as they were; there could be no way of knowing beforehand what they were going to be. The performer takes the last card asking if the gentleman who thought of the numbers will stand. He asks if the gentleman will tell everybody his choice; immediately he does this, the performer hands the card to a person in the front and says "And will you call out loud the number received by the medium"... it is the same.</p>
+  </div>
+  <div class="nested nested-white">
+    <p style="color:#3C3489;font-weight:500;font-size:13px">The Method</p>
+    <p style="color:#3C3489;font-size:13px">Medium writes nothing; performer writes the answers with a Swami Gimmick as they are called by the audience. Two dozen methods of doing this are given in Step One; further instruction would be repetitive.</p>
+  </div>
+</div>
+
+<div class="box box-teal" style="margin-bottom:1.5rem">
+  <div class="box-title box-title-teal">2. "Smoke Gets in Your Eyes" by Corinda 🚬</div>
+  <p>A few pages back we were talking about positional codes; this is one and it is used to good effect for a two person stunt suitable for drawing room.</p>
+  <div class="nested nested-white" style="margin-bottom:.75rem">
+    <p style="color:#085041;font-weight:500;font-size:13px">The Effect</p>
+    <p style="color:#085041;font-size:13px">Medium leaves the room and during her absence, a card is chosen by one spectator who puts it in one of his pockets. This having been done, the medium is called in and proceeds to divine the name of the chosen card. First she finds the person with the card, next she names which pocket it is in and finally she names the card!</p>
+  </div>
+  <div class="nested nested-white">
+    <p style="color:#085041;font-weight:500;font-size:13px">The Method</p>
+    <p style="color:#085041;font-size:13px">We have three factors to deal with: which person chooses the card, which pocket he puts it in and what card it is. The first factor is best done by pre-arrangement; you both agree (secretly) who will be used for the test and when you come to offer the card, you go to the selected spectator. The next factor is equally as easy. When the medium returns she moves from person to person apparently trying to locate the bearer of the card. Whilst this goes on, you blow your nose and when you put away your handkerchief, return it to the similar pocket as was chosen by the spectator when he put a card in his pocket.</p>
+    <p style="color:#085041;font-size:13px">Lastly, the card. On the table you have an ashtray and you are smoking a cigarette when the card is chosen. Each corner of the table represents a suit and you move the ashtray to the corner required to designate the chosen suit. The ashtray is now regarded as a clock dial. You put your cigarette in the tray pointing to a certain time. If it is a King, keep the cigarette in the hand.</p>
+    <p style="color:#085041;font-size:13px">So that you both know where to start from, rotate the suits anticlockwise, H.S.D.C. starting from the corner of the table nearest to the door, and have position 12 o'clock on the ashtray-clockdial the point also nearest the door, moving around the ashtray anticlockwise.</p>
+  </div>
+</div>
+
+<div class="box box-coral" style="margin-bottom:1.5rem">
+  <div class="box-title box-title-coral">3. "All in Order" by Corinda 🗂️</div>
+  <p>This is the application of the pre-arranged list of objects. To illustrate the principle we shall concern ourselves in this instance with an effect for drawing room. Two people, namely performer and assistant or medium, are ready to demonstrate a power of mental communication.</p>
+  <div class="nested nested-white" style="margin-bottom:.75rem">
+    <p style="color:#712B13;font-weight:500;font-size:13px">The Effect</p>
+    <p style="color:#712B13;font-size:13px">The medium sits on a chair in the corner of the room; she is blindfolded and faces the wall. The company is told to take objects from their pockets and hold them in their hands. The performer moves rapidly around the room; en route he touches many articles of furniture, he picks up ornaments and odd things that come to hand. Every now and then he takes an object from one of the onlookers and that too is "transmitted." Each time he chooses an object, he calls out loud "What's this?" using the same words and tone every time. The medium replies, naming the object and he then answers "That's Right" or "That's Wrong." Again there is no deviation from the wording or tone used.</p>
+  </div>
+  <div class="nested nested-white">
+    <p style="color:#712B13;font-weight:500;font-size:13px">Suggested Pre-Arranged List for Drawing Room</p>
+    <div class="grid2" style="font-size:12px;color:#712B13;margin-top:.5rem">
+      <div>
+        <p>1. Clock<br>2. Ashtray<br>3. "Dustbin Lid" (That's Wrong! "Sorry, a Penny, I knew it was round.")<br>4. Gentleman's pocket hankie<br>5. Table leg<br>6. 1st KEY OBJECT<br>7. Cushion<br>8. Wallet (How much in it? "Not enough!")<br>9. Clock (We've had that once!)<br>10. Curtain<br>11. Key<br>12. Powder compact<br>13. Envelope<br>14. Nailfile<br>15. 2nd KEY OBJECT<br>16. More money. ("There's a lot about tonight.")<br>17. A rabbit. That's Wrong. ("Sorry, a human hair.")<br>18. Tenth stitch down the right-hand seam of a gentleman's jacket coat!</p>
+      </div>
+      <div>
+        <p>19. Button<br>20. Dust<br>21. Bootlace<br>22. Lampshade<br>23. Pen<br>24. Ladies' handbag. What colour? ("The lady is white!")<br>25. 3rd KEY OBJECT<br>26. Book<br>28. Page 32 in the book!<br>29. Gentleman's tie<br>30. Performer holds up an imaginary object. ("Two inches of nothing.")<br>31. Ring<br>32. Buckle<br>33. Wrist watch. ("What time does it say? I can't hear it speaking.")<br>34. Glass<br>35. Disgusting! (Dirty hankie, book, etc.)<br>36. Cigarette lighter. What type? ("Bryant and Mays!")<br>37. Performer holds up someone's left arm. Which hand is this? ("That's Left!") That's Right. ("No, That's Left!") Left's Right!<br>38. Bracelet<br>39. Picture<br>40. 4th KEY OBJECT</p>
+      </div>
+    </div>
+    <div class="tip-box" style="margin-top:.5rem">
+      <p>Before the performance is started, both parties examine any four objects and learn them in order for the "Key Objects." When you come to these, you give added detail, i.e. "Ronson lighter engraved with D.G. 1949; needs a new wick."</p>
+    </div>
+  </div>
+</div>
+
+<div class="box box-amber" style="margin-bottom:1.5rem">
+  <div class="box-title box-title-amber">5. "Misdirectional Womentalism" by Eric Mason 👠</div>
+  <p>I have never made up my mind whether this success is the outcome of a good mental effect or the high sex appeal of the presentation!</p>
+  <div class="nested nested-white" style="margin-bottom:.75rem">
+    <p style="color:#633806;font-weight:500;font-size:13px">The Effect and Working</p>
+    <p style="color:#633806;font-size:13px">Three people freely choose a number, any city and a card. They are all found to have been predicted in advance and are discovered under novel and impossible conditions.</p>
+  </div>
+  <div class="nested nested-white" style="margin-bottom:.75rem">
+    <p style="color:#633806;font-weight:500;font-size:13px">Requirements</p>
+    <p style="color:#633806;font-size:13px">A beautiful girl with legs. The girl is attractively dressed and wears nylon stockings and she is "prepared" by having a white card approximately 3 x 4 in. concealed in the top of her stocking. Another card of the same size, but painted the same colour as the stocking, is placed within the foot of the young lady's stocking; white side outwards so that it can be seen when the foot is lifted. A third card, same size and white, is left on the table with a short pencil standing nearby. Lastly, a Brainwave Deck is tucked gently down the front of her dress and two handkerchiefs gimmicked to materialise a brassiere. You will see that everything is simple in preparation with only the girl to carry around and it all looks indecently impromptu!</p>
+  </div>
+  <div class="nested nested-white">
+    <p style="color:#633806;font-weight:500;font-size:13px">Presentation</p>
+    <p style="color:#633806;font-size:13px">Three people are asked to co-operate. One to say a number that comes into his head, two names any city of the world, and three to stand by and simply concentrate on any playing card that comes into the mind. Make a few introductory remarks appropriate for the occasion and then introduce your assistant. She stands in front of the table, turns round and bends slightly and you lift her skirt and clearly remove the card from the top of her stocking. Ask for the "thought of number" and as soon as you hear it, write it on the card with your thumbwriter. Hand the card out for verification.</p>
+    <p style="color:#633806;font-size:13px">The first subtlety comes when the girl bends over the table. With her back to the audience, she quickly picks up the pencil and writes the name of the city on the card and then palms the card. No one will question the misdirection!</p>
+    <p style="color:#633806;font-size:13px">The girl turns back to face the audience. You ask her to remove her shoe and she does so, holding her foot to display the card in her stocking. She is asked to remove her stocking and take out the card; to do this she has to balance on one foot, so you "support" her. Under cover of this action, you hold her hand and she gives you the palmed card. She removes her stocking and hands it to you bunched up. All you have to do is to turn the coloured side of the card outwards leaving it in the stocking and show the palmed white card bearing the name of the chosen city, as though it had come from her stocking.</p>
+    <p style="color:#633806;font-size:13px">For the last part of the "routine" you pick up the two prepared handkerchieves and tie together saying that you will now attempt to produce the "thought of" card between these two hankies. You tuck them down the front of her dress. Have the card named for the first time and then pull out the ends of the hankies to disclose the brassiere! Apologise to your partner, dive down again and come out with the Brainwave Deck and finish in the orthodox manner.</p>
+    <p style="color:#633806;font-size:13px">The writer considered the present routine valuable because it accomplishes mentalism when all the action is invisible and not suspected. Misdirection is used in the first part of the routine to produce the written word (whatever the subject matter). That word appearing on the card will be a mystery of the finest kind.</p>
+  </div>
+</div>
+
+<div class="box box-blue" style="margin-bottom:1.5rem">
+  <div class="box-title box-title-blue">6. Wrist Watch Code by Corinda ⌚</div>
+  <p>This is another subtle way in which a card is signalled to the medium. The lady (your assistant) turns her back or leaves the room whilst a card is chosen. She returns when all is ready and examines the hand of the spectator who chose the card. Apparently, by way of palmistry, she is able to divine the card.</p>
+  <div class="nested nested-white">
+    <p style="color:#0C447C;font-weight:500;font-size:13px">The Method</p>
+    <p style="color:#0C447C;font-size:13px">You use your wrist watch as a means to signal the medium. When the card is chosen you must know which one it is. You then patter a moment giving yourself time to set the hands of your watch to indicate a card thus:</p>
+    <ul style="color:#0C447C;font-size:13px">
+      <li>Hour hand shows the suit, dividing the clock dial into four; each section represents a suit: 12 to 3 = Hearts, 3 to 6 = Clubs, 6 to 9 = Diamonds, 9 to 12 = Spades.</li>
+      <li>The value is indicated by the minute hand pointing to the number equal to the value of the card.</li>
+      <li>Eleven o'clock = Jack, twelve o'clock = Queen, King = added signal of fingers of the hand open.</li>
+    </ul>
+    <p style="color:#0C447C;font-size:13px">Having set the watch, it should be fixed on the wrist face on the inner side of the wrist. The medium enters and you turn to the spectator and say: "Kindly show your palm like this" (illustrate how) "and let my assistant look at it." As you demonstrate you hold your hand out in front of the medium, who has nothing more to do than to look at the face of your wrist watch and note the time which tells her the card. You will have two and a half minutes' delay time before the hands move out of position, which is more than enough for this purpose.</p>
+  </div>
+  <div class="tip-box">
+    <p>This principle may be utilised for signalling any two numbers to the medium. It will be found of use for book tests and similar experiments.</p>
+  </div>
+</div>
+
+<div class="box box-teal" style="margin-bottom:1.5rem">
+  <div class="box-title box-title-teal">7. The Third Man by Corinda 👤</div>
+  <p>I consider this to be an outstanding effect. It packs a real punch, literally flabbergasts an audience and is just right for large audiences.</p>
+  <div class="nested nested-white" style="margin-bottom:.75rem">
+    <p style="color:#085041;font-weight:500;font-size:13px">The Effect</p>
+    <p style="color:#085041;font-size:13px">Medium is seated on the stage and turns her back to the audience. The performer has two telephone directories, both the same. He gives one to the medium and hands one to a member of the audience. The performer then gives the instructions. First, he explains that the medium will try and duplicate the action of the spectator. He tells the spectator to open the book at any page he likes, but first to examine the book to see that it is quite normal and contains some two thousand pages. The spectator finally settles on a page; the medium likewise chooses a page and writes her page number in white chalk on a slate. Performer takes the slate, asks the spectator to call out what page he chose and then shows that the medium has written the same number. He does the same effect again with that spectator and again the medium is right. The book is now passed along the row a bit; another spectator chooses a page; again the medium is right. Finally the book is handed to a third spectator; he is told not to open it yet. This time the medium writes a number before the book is opened; then the spectator chooses a page, calls it out and has people on either side of him verify it, and the climax comes when the performer turns the slate around and shows that the medium has gone as far as she can and predicted quite accurately the number that has just been selected!</p>
+  </div>
+  <div class="nested nested-white">
+    <p style="color:#085041;font-weight:500;font-size:13px">The Method</p>
+    <p style="color:#085041;font-size:13px">Seated in the front row of the audience you have an assistant. He can hardly be called a stooge because of the amount of work he does! By any of the various code systems given, this "third man" is able to signal numbers to you. When you first hand the book into the audience, you give it to the spectator seated on his right. Naturally he looks over their shoulder and sees the chosen page. He signals the number to you and you signal it to the medium. When you have finished with the first man in the audience, tell him to pass the book along the row; without much delay, your assistant grabs the book from the chap next to him and passes it to the man or woman on his left. Again he is seated next to the spectator. Finally, you ask that "someone else should take the book," whereupon the plant again acts lively and takes the book and keeps it himself.</p>
+    <p style="color:#085041;font-size:13px">All that remains is to make the best out of the advantageous position. You have pre-arranged a page for the finale and the plant chooses that page after the medium has written the agreed number on the slate. By this time the plant is above suspicion as several spectators have already taken part and "Madam" has been quite successful.</p>
+    <div class="tip-box" style="margin-top:.5rem">
+      <p>I don't think the method matters one iota; the effect is more than worth the price of a third man.</p>
+    </div>
+  </div>
+</div>
+
+<div class="box box-purple" style="margin-bottom:1.5rem">
+  <div class="box-title box-title-purple">8. Musical Mindreading 🎹</div>
+  <div class="nested nested-white" style="margin-bottom:.75rem">
+    <p style="color:#3C3489;font-weight:500;font-size:13px">The Effect</p>
+    <p style="color:#3C3489;font-size:13px">On the stage is a piano, preferably a grand for the sake of appearance. Seated at the piano is the "Musical Mindreader," your partner, who is able to play reasonably well a pretty wide selection of musical excerpts. You, as the performer, go down into the audience with a large slate. You approach various people and ask them to whisper the name of any composer, preferably a well-known one. No sooner do they tell you their choice than the pianist starts to play something composed by that musician. Whilst this goes on, you quickly write the chosen name on the slate in bold letters and after a few bars have been played, the pianist stops and you hold up the slate. The bulk of the audience will have recognised the tune played and will know the composer; now they see what was given and find that the pianist has by some strange means found it possible to find the composer. This is repeated for a selection of some ten composers and each time the pianist is right.</p>
+  </div>
+  <div class="nested nested-white">
+    <p style="color:#3C3489;font-weight:500;font-size:13px">The Method</p>
+    <p style="color:#3C3489;font-size:13px">Choose one hundred composers dealing with those which are best known first. Choose one piece of music for each of the composers; the one piece that is most likely to be recognised. The pianist and you both arrange a list of the composers and form them in alphabetical order before numbering the list from one to a hundred. You write the composer list in pencil on your large slate; the pianist writes them on a music sheet and adds to his list a brief note alongside the composer which tells him the title of the piece he must play. You don't have to know the titles.</p>
+    <p style="color:#3C3489;font-size:13px">You will see now that it boils down to a code system where, by signalling any of the numbers from one to a hundred, the pianist knows what to play. The code system has to be an action signal; the effect would be ruined if you spoke directly to the pianist. In actual fact, you pay little attention to your hard working assistant.</p>
+    <p style="color:#3C3489;font-size:13px">You have the slate, a duster, the chalk, the spectator and yourself as materials for action codes; more than enough. Just one thing though: bearing in mind that the pianist has to see your signals from quite some distance, the signs should be bold and clearly definable.</p>
+  </div>
+  <p>This routine is a time-tested winner. It always appeals to an audience and it is a very fine presentation of mentalism. The musical mentalism principle has been used on stage, in the drawing room and occasionally for cabaret. It can be an act in itself; the scope is there for two hard working mentalists.</p>
+</div>
+
+<div class="box box-green">
+  <div class="box-title box-title-green">📚 Reference: Effects in Other Steps</div>
+  <div class="grid2" style="font-size:13px">
+    <div>
+      <p style="color:#27500A;"><strong>Step One:</strong> "Two Person Telepathy" (Trick No. 10, p.19); "A Mediumistic Effect" (Trick No. 11, p.20)</p>
+      <p style="color:#27500A;"><strong>Step Two:</strong> "Sound Reading" (p.38)</p>
+      <p style="color:#27500A;"><strong>Step Three:</strong> Use of the Mnemonic Number Code (Tricks 2, 3 &amp; 4); "Take My Word" (p.79)</p>
+    </div>
+    <div>
+      <p style="color:#27500A;"><strong>Step Five:</strong> Psychical Research Versus Mentalism (p.146); Blindfold Noughts and Crosses (p.155); The Blackboard Test (p.157)</p>
+      <p style="color:#27500A;"><strong>Step Nine:</strong> Mediumistic Stunts</p>
+      <p style="color:#27500A;"><strong>Step Eleven:</strong> Question &amp; Answer Effects</p>
+      <p style="color:#27500A;"><strong>Step Twelve:</strong> Publicity Stunts</p>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="box box-purple" style="padding:2rem;text-align:center">
+  <div style="font-size:24px;margin-bottom:.5rem">🎩</div>
+  <p style="font-size:18px;font-weight:500;color:#26215C">Conclusion on Two Person Telepathy</p>
+  <p style="color:#3C3489">To summarise the entire subject of two person telepathy, using the utmost brevity, we can say first and foremost that it is one of the finest fields of mental magic, that it is probably the most complicated and difficult to learn (outside of mental systems and mnemonics) and that it takes at least twice as much rehearsal to make it successful.</p>
+  <div class="nested nested-white" style="margin:.75rem auto;max-width:420px">
+    <p style="color:#26215C;font-size:16px;font-weight:500;">In a line: it's good enough to be worth all the trouble you go to, and all the time you invest. ✨</p>
+  </div>
+</div>
+
+</div>

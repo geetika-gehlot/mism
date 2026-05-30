@@ -1,0 +1,869 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans)}
+.page{padding:2rem 1.5rem;max-width:860px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#EEEDFE,#E1F5EE);border-radius:var(--border-radius-lg);padding:2rem 2rem 1.5rem;border:0.5px solid #AFA9EC;margin-bottom:2rem}
+.hero-tag{font-size:12px;font-weight:500;color:#534AB7;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.5rem}
+.hero-title{font-size:28px;font-weight:500;color:#26215C;line-height:1.25;margin-bottom:0.4rem}
+.hero-sub{font-size:15px;color:#3C3489;margin-bottom:1rem}
+.hero-quote{background:#fff;border-left:4px solid #7F77DD;border-radius:0 var(--border-radius-md) var(--border-radius-md) 0;padding:1rem 1.25rem;font-size:14px;color:#444441;line-height:1.8}
+.hero-quote span{color:#534AB7;font-weight:500}
+.section-label{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-text-tertiary);margin:2rem 0 0.75rem}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:2rem}
+.toc-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:0.75rem 1rem;cursor:pointer;transition:border-color 0.15s}
+.toc-card:hover{border-color:var(--color-border-secondary)}
+.toc-card-num{font-size:11px;color:var(--color-text-tertiary);margin-bottom:3px}
+.toc-card-title{font-size:13px;font-weight:500;color:var(--color-text-primary)}
+.toc-card-badge{display:inline-block;font-size:10px;font-weight:500;padding:2px 7px;border-radius:20px;margin-top:5px}
+.badge-purple{background:#EEEDFE;color:#3C3489}
+.badge-teal{background:#E1F5EE;color:#085041}
+.badge-coral{background:#FAECE7;color:#712B13}
+.badge-blue{background:#E6F1FB;color:#0C447C}
+.badge-amber{background:#FAEEDA;color:#633806}
+
+.section-box{border-radius:var(--border-radius-lg);margin-bottom:1.5rem;overflow:hidden}
+.sb-purple{background:#EEEDFE;border:0.5px solid #AFA9EC}
+.sb-teal{background:#E1F5EE;border:0.5px solid #5DCAA5}
+.sb-coral{background:#FAECE7;border:0.5px solid #F0997B}
+.sb-blue{background:#E6F1FB;border:0.5px solid #85B7EB}
+.sb-amber{background:#FAEEDA;border:0.5px solid #FAC775}
+.sb-pink{background:#FBEAF0;border:0.5px solid #ED93B1}
+.sb-green{background:#EAF3DE;border:0.5px solid #97C459}
+.sb-gray{background:#F1EFE8;border:0.5px solid #B4B2A9}
+
+.sb-header{padding:0.9rem 1.25rem 0.75rem;display:flex;align-items:center;gap:10px}
+.sb-header-icon{font-size:20px}
+.sb-header-text{}
+.sb-title{font-size:15px;font-weight:500}
+.sb-title-purple{color:#26215C}
+.sb-title-teal{color:#04342C}
+.sb-title-coral{color:#4A1B0C}
+.sb-title-blue{color:#042C53}
+.sb-title-amber{color:#412402}
+.sb-title-pink{color:#4B1528}
+.sb-title-green{color:#173404}
+.sb-title-gray{color:#2C2C2A}
+.sb-subtitle{font-size:12px;margin-top:2px}
+.sb-subtitle-purple{color:#534AB7}
+.sb-subtitle-teal{color:#0F6E56}
+.sb-subtitle-coral{color:#993C1D}
+.sb-subtitle-blue{color:#185FA5}
+.sb-subtitle-amber{color:#854F0B}
+.sb-subtitle-pink{color:#993556}
+.sb-subtitle-green{color:#3B6D11}
+.sb-subtitle-gray{color:#5F5E5A}
+.sb-body{background:var(--color-background-primary);margin:0 0.75rem 0.75rem;border-radius:var(--border-radius-md);padding:1rem 1.25rem;font-size:14px;color:var(--color-text-primary);line-height:1.75}
+.sb-body p{margin-bottom:0.75rem}
+.sb-body p:last-child{margin-bottom:0}
+
+.nested-box{border-radius:var(--border-radius-md);padding:0.75rem 1rem;margin:0.75rem 0;font-size:13px;line-height:1.7}
+.nb-purple{background:#EEEDFE;border:0.5px solid #AFA9EC;color:#3C3489}
+.nb-teal{background:#E1F5EE;border:0.5px solid #5DCAA5;color:#085041}
+.nb-coral{background:#FAECE7;border:0.5px solid #F0997B;color:#712B13}
+.nb-blue{background:#E6F1FB;border:0.5px solid #85B7EB;color:#0C447C}
+.nb-amber{background:#FAEEDA;border:0.5px solid #FAC775;color:#633806}
+.nb-pink{background:#FBEAF0;border:0.5px solid #ED93B1;color:#72243E}
+.nb-green{background:#EAF3DE;border:0.5px solid #97C459;color:#27500A}
+.nb-gray{background:#F1EFE8;border:0.5px solid #B4B2A9;color:#444441}
+.nb-label{font-size:11px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;margin-bottom:5px;opacity:0.8}
+
+.tip-box{display:flex;gap:10px;align-items:flex-start;background:#FAEEDA;border:0.5px solid #FAC775;border-radius:var(--border-radius-md);padding:0.75rem 1rem;margin:0.75rem 0;font-size:13px;color:#412402;line-height:1.65}
+.tip-icon{font-size:18px;flex-shrink:0;margin-top:1px}
+.warn-box{display:flex;gap:10px;align-items:flex-start;background:#FAECE7;border:0.5px solid #F0997B;border-radius:var(--border-radius-md);padding:0.75rem 1rem;margin:0.75rem 0;font-size:13px;color:#4A1B0C;line-height:1.65}
+.info-box{display:flex;gap:10px;align-items:flex-start;background:#E6F1FB;border:0.5px solid #85B7EB;border-radius:var(--border-radius-md);padding:0.75rem 1rem;margin:0.75rem 0;font-size:13px;color:#042C53;line-height:1.65}
+.secret-box{display:flex;gap:10px;align-items:flex-start;background:#EEEDFE;border:0.5px solid #AFA9EC;border-radius:var(--border-radius-md);padding:0.75rem 1rem;margin:0.75rem 0;font-size:13px;color:#26215C;line-height:1.65}
+
+.numbered-steps{counter-reset:step;margin:0.5rem 0}
+.step{display:flex;gap:12px;align-items:flex-start;margin-bottom:0.6rem;font-size:13px;color:var(--color-text-primary);line-height:1.65}
+.step-num{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:500;flex-shrink:0;margin-top:2px}
+.step-num-purple{background:#EEEDFE;color:#534AB7}
+.step-num-teal{background:#E1F5EE;color:#0F6E56}
+.step-num-coral{background:#FAECE7;color:#993C1D}
+.step-num-blue{background:#E6F1FB;color:#185FA5}
+.step-num-amber{background:#FAEEDA;color:#854F0B}
+
+.rule-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;margin:0.75rem 0}
+.rule-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:0.65rem 0.9rem}
+.rule-card-icon{font-size:18px;margin-bottom:4px}
+.rule-card-text{font-size:12px;color:var(--color-text-primary);line-height:1.6}
+
+.divider{border:none;border-top:0.5px solid var(--color-border-tertiary);margin:2rem 0}
+.part-header{display:flex;align-items:center;gap:12px;margin:2rem 0 1rem}
+.part-pill{font-size:11px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:4px 12px;border-radius:20px}
+.part-pill-1{background:#EEEDFE;color:#534AB7}
+.part-pill-2{background:#E1F5EE;color:#0F6E56}
+.part-pill-3{background:#FAECE7;color:#993C1D}
+.part-title{font-size:20px;font-weight:500;color:var(--color-text-primary)}
+
+.blindfold-types-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:0.75rem 0}
+.bt-card{border-radius:var(--border-radius-md);padding:0.85rem 1rem;border:0.5px solid}
+.bt-card-name{font-size:13px;font-weight:500;margin-bottom:4px}
+.bt-card-desc{font-size:12px;line-height:1.6;opacity:0.85}
+
+.trick-header{display:flex;align-items:center;gap:8px;margin-bottom:0.5rem}
+.trick-num-badge{font-size:11px;font-weight:500;padding:2px 8px;border-radius:20px}
+
+.summary-row{display:flex;gap:10px;flex-wrap:wrap;margin:0.75rem 0}
+.sum-chip{font-size:12px;font-weight:500;padding:5px 12px;border-radius:20px;display:flex;align-items:center;gap:5px}
+</style>
+
+<div class="page">
+
+<div class="hero">
+  <div class="hero-tag">✨ Step Five in Corinda's Thirteen Steps to Mentalism</div>
+  <div class="hero-title">Blindfolds &amp; X-Ray Eyes 👁️</div>
+  <div class="hero-sub">by Corinda — the definitive guide to sightless vision on stage</div>
+  <div class="hero-quote">
+    <span>"Mummy, what's that man doing up there?"</span> "He's putting on a Blindfold, my dear."<br>
+    <span>"What's a Blindfold, Mummy?"</span> "Something you wear so that you cannot see."<br>
+    <span>"Why's he wearing one, Mummy?"</span> "So that he can tell us what he's looking at..."
+    <div style="margin-top:8px;font-size:12px;color:#888780;font-style:italic">— Corinda</div>
+  </div>
+</div>
+
+<div class="section-label">📋 Table of Contents</div>
+<div class="toc-grid">
+  <div class="toc-card">
+    <div class="toc-card-num">Part One</div>
+    <div class="toc-card-title">Types of Blindfolds</div>
+    <span class="toc-card-badge badge-purple">9 types covered</span>
+  </div>
+  <div class="toc-card">
+    <div class="toc-card-num">Part Two</div>
+    <div class="toc-card-title">Technique</div>
+    <span class="toc-card-badge badge-teal">12 methods</span>
+  </div>
+  <div class="toc-card">
+    <div class="toc-card-num">Part Three</div>
+    <div class="toc-card-title">Tricks &amp; Routines</div>
+    <span class="toc-card-badge badge-coral">12 tricks</span>
+  </div>
+</div>
+
+<div class="part-header">
+  <span class="part-pill part-pill-1">Part One</span>
+  <span class="part-title">Types 🎭</span>
+</div>
+
+<div class="section-box sb-purple">
+  <div class="sb-header">
+    <span class="sb-header-icon">🎯</span>
+    <div class="sb-header-text">
+      <div class="sb-title sb-title-purple">Introduction</div>
+      <div class="sb-subtitle sb-subtitle-purple">Why the blindfold matters... and what really matters more</div>
+    </div>
+  </div>
+  <div class="sb-body">
+    <p>There can be no doubt that the use of the blindfold considerably adds to the presentation of many mental effects. It is one of the few ways of dramatising the performance of mentalism and, if anything, it is perhaps not fully exploited in these times.</p>
+    <p>Aside from the fact that it adds to the impact of the effect, the blindfold can of course be the modus operandi of many good tricks and because of this, I feel justified in devoting a full "Step" to the subject.</p>
+    <div class="info-box">
+      <span class="tip-icon" aria-hidden="true"><i class="ti ti-info-circle"></i></span>
+      <span>In this Step we shall deal first with a few types of blindfolds, then with various aspects of technique, which will cover the finer points of technical detail, and we shall end with tricks and routines. No attempt has been made to give a detailed account of every available blindfold; there would be conflict with dealer items, repetition and space wasted on impractical ideas.</span>
+    </div>
+    <p>The emphasis has been placed on a selection of standard models with the overall consideration of how they can be used for effect. <strong>The most important thing is the tricks you do, not the blindfold.</strong></p>
+    <div class="nb-teal nested-box">
+      <div class="nb-label">🙏 Acknowledgement</div>
+      Personal acknowledgement should be given to Will Dexter for allowing reference to his book <em>Sealed Vision</em> and for the considerable advice he has so freely given.
+    </div>
+  </div>
+</div>
+
+<div class="section-label">🪄 The 9 Types of Blindfolds</div>
+<div class="blindfold-types-grid">
+  <div class="bt-card" style="background:#EEEDFE;border-color:#AFA9EC">
+    <div class="bt-card-name" style="color:#26215C">① The Unfaked Mask</div>
+    <div class="bt-card-desc" style="color:#3C3489">Black velvet, double thickness. Elastic band, no tapes. Peek down the nose only. Best for stage work. 😌</div>
+  </div>
+  <div class="bt-card" style="background:#E1F5EE;border-color:#5DCAA5">
+    <div class="bt-card-name" style="color:#04342C">② Reverse Crease</div>
+    <div class="bt-card-desc" style="color:#085041">Three layers of felt, deliberately creased. Fits snug on the spectator, opens a gap for you. Cunning! 🔄</div>
+  </div>
+  <div class="bt-card" style="background:#FAECE7;border-color:#F0997B">
+    <div class="bt-card-name" style="color:#4A1B0C">③ Felt Mask Faked</div>
+    <div class="bt-card-desc" style="color:#712B13">Singed flat with hot iron. Two red-hot pin pinholes for each eye. Do not let anyone examine it! 📌</div>
+  </div>
+  <div class="bt-card" style="background:#E6F1FB;border-color:#85B7EB">
+    <div class="bt-card-name" style="color:#042C53">④ Folded Silk</div>
+    <div class="bt-card-desc" style="color:#0C447C">18-inch silk square folded so the centre is one layer thin. Nearly zero obstruction. Start here if new! 🧣</div>
+  </div>
+  <div class="bt-card" style="background:#FAEEDA;border-color:#FAC775">
+    <div class="bt-card-name" style="color:#412402">⑤ The Bag</div>
+    <div class="bt-card-desc" style="color:#633806">Fits over entire head. Double-wall principle. Great for specs-wearers. Gets very hot. 🥵</div>
+  </div>
+  <div class="bt-card" style="background:#FBEAF0;border-color:#ED93B1">
+    <div class="bt-card-name" style="color:#4B1528">⑥ Sheet / Blanket</div>
+    <div class="bt-card-desc" style="color:#72243E">Medium seated &amp; covered. Audience more disadvantaged than the medium! 🛏️</div>
+  </div>
+  <div class="bt-card" style="background:#EAF3DE;border-color:#97C459">
+    <div class="bt-card-name" style="color:#173404">⑦ The Bucket</div>
+    <div class="bt-card-desc" style="color:#27500A">Inverted bucket over the head. Convincing? Yes. Dangerously funny? Also yes. 🪣😂</div>
+  </div>
+  <div class="bt-card" style="background:#F1EFE8;border-color:#B4B2A9">
+    <div class="bt-card-name" style="color:#2C2C2A">⑧ Cotton Wool / Dough etc.</div>
+    <div class="bt-card-desc" style="color:#444441">Surgical plaster, dough, bandages. Great for publicity stunts; messy for a normal act. 🩹</div>
+  </div>
+  <div class="bt-card" style="background:#EEEDFE;border-color:#AFA9EC">
+    <div class="bt-card-name" style="color:#26215C">⑨ Summary</div>
+    <div class="bt-card-desc" style="color:#534AB7">It's not what blindfold you use; it's HOW you use it. Act, don't explain. 🎬</div>
+  </div>
+</div>
+
+<div class="section-box sb-teal" style="margin-top:1.5rem">
+  <div class="sb-header">
+    <span class="sb-header-icon">😎</span>
+    <div class="sb-header-text">
+      <div class="sb-title sb-title-teal">① The Unfaked Mask — in detail</div>
+      <div class="sb-subtitle sb-subtitle-teal">The everyday workhorse of blindfold performance</div>
+    </div>
+  </div>
+  <div class="sb-body">
+    <p>This is used for effects where a blindfold is used simply because "it looks good," or where you need only peek "down the nose" to see, or rely on sound or touch. You cannot see straight through the mask; it is very comfortable to wear and can be donned and removed very quickly.</p>
+    <div class="nested-box nb-teal">
+      <div class="nb-label">📐 Specs</div>
+      Double thickness of black velvet. About 4 inches wide and eight to ten inches long. Should NOT cover the ears, as it would make hearing difficult. Should NOT have ribbon for the purpose of fixing; it should have elastic sewn firmly in a complete band.
+    </div>
+    <div class="warn-box">
+      <span class="tip-icon" aria-hidden="true">⚠️</span>
+      <span>I recently attended a show where a good friend of mine was using a blindfold with tapes which had been tied so tightly that at the end the knots could not be undone, and he was compelled to finish his act with the blindfold pushed up on to his forehead like a turban! It might happen once in fifty performances, but with elastic it can never happen.</span>
+    </div>
+    <p>With this blindfold on you can see from your chest downwards, a complete table top when standing, and about a yard in front of you on the floor. That's enough for many miracles.</p>
+    <div class="tip-box">
+      <span class="tip-icon" aria-hidden="true">💡</span>
+      <span>When wearing it, if you want to look you glance downwards keeping your head upright, not tilted back or forward. If you do not have to look, you shut your eyes and keep them shut, thereby effecting a more natural performance of loss of vision. You always close your eyes before you put it on, and you always have your eyes closed when it is taken off. That applies to all blindfolds.</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-box sb-coral">
+  <div class="sb-header">
+    <span class="sb-header-icon">🔄</span>
+    <div class="sb-header-text">
+      <div class="sb-title sb-title-coral">② Reverse Crease Blindfold — in detail</div>
+      <div class="sb-subtitle sb-subtitle-coral">One blindfold, two very different experiences</div>
+    </div>
+  </div>
+  <div class="sb-body">
+    <p>This works on the same principle as the unfaked mask, excepting that the material is three thicknesses of felt which have been deliberately creased down the middle so that one way the blindfold fits snugly to the face, allowing practically no vision downwards, and the other way it doubles the gap by the nose allowing extra space for seeing.</p>
+    <div class="secret-box">
+      <span class="tip-icon" aria-hidden="true">🤫</span>
+      <span>Should you wish to have the blindfold tested, you put it on a spectator in the snug-fitting position, but reverse it when you yourself come to wear it! A cunning and practical idea; easy to construct and easy to work with.</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-box sb-blue">
+  <div class="sb-header">
+    <span class="sb-header-icon">🧣</span>
+    <div class="sb-header-text">
+      <div class="sb-title sb-title-blue">④ The Folded Silk — in detail</div>
+      <div class="sb-subtitle sb-subtitle-blue">The one Annemann used. Start here if you're new.</div>
+    </div>
+  </div>
+  <div class="sb-body">
+    <p>There is much to be said for this type of blindfold. Probably the simplest form there is, it consists of an eighteen-inch square of silk folded in such a manner that vision is possible both by peeking down the nose and, more importantly, through the material. A fine silk or nylon is used; sometimes a good-grade handkerchief will suffice.</p>
+    <div class="nested-box nb-blue">
+      <div class="nb-label">📖 How to fold it</div>
+      Lay the silk out in a square, take two opposite corners and begin to fold inwards in steps about 2 to 3 inches on each fold. The centre of the silk remains one thickness which enables you to see through with ease. Bring the two outside folds right up to the centre and just before donning the blindfold, push back the folds allowing about half an inch gap.
+    </div>
+    <div class="tip-box">
+      <span class="tip-icon" aria-hidden="true">💡</span>
+      <span>Rather than allow people to see you fold the silk in some special manner, it is better to have it ready folded in the pocket and carefully unrolled when required. Will Dexter advocates that you hold the blindfold across the outstretched palms of the hands and bend the head forward when coming to place it on. If you bring the blindfold to the face, the folds are liable to fall out of position.</span>
+    </div>
+    <p>Annemann made use of this blindfold quite a bit for both stage and close-up work. For stage work, I recommend thin black silk material; for close-up, thin white silk, looking as though you had improvised with your pocket handkerchief.</p>
+    <div class="nested-box nb-purple">
+      <div class="nb-label">✅ Key rules</div>
+      Have the square large enough to enable you to tie the ends behind your head (no tapes are used). Make the choice of material with care so that it gives you maximum transparency without looking unduly thin. And most importantly: ACT BLINDFOLDED when wearing it.
+    </div>
+    <p>With a good light you can see many yards ahead, see downwards and obtain a substantial glimpse to each side. In reality, your vision is hardly obscured at all!</p>
+  </div>
+</div>
+
+<div class="section-box sb-amber">
+  <div class="sb-header">
+    <span class="sb-header-icon">🥵</span>
+    <div class="sb-header-text">
+      <div class="sb-title sb-title-amber">⑤ The Bag Blindfold — in detail</div>
+      <div class="sb-subtitle sb-subtitle-amber">Good in theory; sweaty in practice</div>
+    </div>
+  </div>
+  <div class="sb-body">
+    <p>As the name suggests, this is a bag made large enough to fit completely over the head. It is made from fairly thin black material and is designed so that there are really two bags, one inside the other. If the head is put into the centre bag, because of the double thickness of material all around, nothing can be seen. If the head is placed between bags one and two, so that you get three thicknesses behind the head and only one in front of the face, then you have a reasonable vision if the material is thin enough.</p>
+    <div class="warn-box">
+      <span class="tip-icon" aria-hidden="true">⚠️</span>
+      <span>Frankly, I don't like this type at all. The idea behind the double-wall principle is supposed to be that the bag blindfold could be tested. In actual fact it may be tested, but anyone with an ounce of common sense would soon see how it worked.</span>
+    </div>
+    <div class="nested-box nb-green">
+      <div class="nb-label">🤓 Spectacles tip!</div>
+      This type has one major asset over others: it may be used by performers who have to wear spectacles to see. The glasses can be in the bag beforehand, put on when the head is in the bag, and removed and left in the bag before it is taken off. No one knows that you were wearing spectacles! Many people have said to me that they cannot do blindfold work because they wear glasses; well, here's the answer. It is not just an idea; it has been tried and proven successful.
+    </div>
+  </div>
+</div>
+
+<div class="section-box sb-gray">
+  <div class="sb-header">
+    <span class="sb-header-icon">🛏️</span>
+    <div class="sb-header-text">
+      <div class="sb-title sb-title-gray">⑥ Sheet or Blanket Cover</div>
+      <div class="sb-subtitle sb-subtitle-gray">Simplest method; most convincing conditions</div>
+    </div>
+  </div>
+  <div class="sb-body">
+    <p>In many respects, this, though simple, is one of the most convincing methods. The medium or mentalist's partner is seated on a chair and is then completely covered with a large blanket. Under such conditions it is quite impossible for the medium to see, and so effects are chosen carefully so that in actual fact there is no need to be able to see.</p>
+    <div class="secret-box">
+      <span class="tip-icon" aria-hidden="true">🔦</span>
+      <span>At times, this can be very convenient, especially when the medium wants to do something and not be seen doing it! For example, under the blanket, by the light of a pocket torch she is able to read sealed messages. It would be safe to say that when a blanket is used, the audience are at a disadvantage more so than the medium. The simple things are usually best in the long run.</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-box sb-green">
+  <div class="sb-header">
+    <span class="sb-header-icon">🪣</span>
+    <div class="sb-header-text">
+      <div class="sb-title sb-title-green">⑦ The Bucket</div>
+      <div class="sb-subtitle sb-subtitle-green">Undeniably convincing. Undeniably ridiculous.</div>
+    </div>
+  </div>
+  <div class="sb-body">
+    <p>From time to time, those in search of new ways to convince their fans that it is possible to see without looking have resorted to wearing a bucket. To add to the general authenticity of the experiment, the bucket is first filled with water and, as no fluid escapes, it is implied that there are no holes.</p>
+    <div class="tip-box">
+      <span class="tip-icon" aria-hidden="true">😂</span>
+      <span>Now the bucket is to be worn, but first it is advisable to remove the water, and since most stages do not have drains it is as well to have another bucket nearby. In an emergency, you could drink it, which of course would prove it was water! Having thus emptied the tested bucket, you invert it over your head and, looking somewhat like a hybrid of a Martian crossed with a Robot, you do your party piece.</span>
+    </div>
+    <p>I am of the honest opinion that, although doubtlessly convincing, the bucket blindfold is dangerously funny. I am sure that it would look so ridiculous that half the audience would snigger throughout the act.</p>
+  </div>
+</div>
+
+<div class="section-box sb-pink">
+  <div class="sb-header">
+    <span class="sb-header-icon">🩹</span>
+    <div class="sb-header-text">
+      <div class="sb-title sb-title-pink">⑧ Cotton Wool, Dough, Coins, Plaster &amp; Suchlike</div>
+      <div class="sb-subtitle sb-subtitle-pink">For publicity stunts only, please</div>
+    </div>
+  </div>
+  <div class="sb-body">
+    <p>In general, I dislike the use of the above-named means of blindfolding. Rarely it can be said that there is justification for their use. It depends very much on what you are doing. For a simple blindfold effect, perhaps part of a mental routine where you do a spot of X-ray eye work or psychometry, there is no need for imposing what appear to be test conditions fit for experiments in psychical research.</p>
+    <div class="nested-box nb-coral">
+      <div class="nb-label">📣 Challenge stunts only</div>
+      For a challenge blindfold test, yes; use everything you can. Have the eyes first sealed with surgical plaster, then covered with baker's dough, padded with cotton wool and have the head mummified with bandages. But use this sort of restraint for publicity stunts, where the effect is specific, based entirely on the fact that you will do something when beyond all doubt you are blindfolded.
+    </div>
+    <p>The mentalist who wants to make sightless vision part of his act cannot afford the time for these elaborate and often messy procedures. For if they are to be done properly, a committee must be called to examine the materials and to take part in the blindfolding, and this means time; valuable time during a mental act.</p>
+    <div class="tip-box">
+      <span class="tip-icon" aria-hidden="true">🧠</span>
+      <span>I would be prepared to argue that a good actor wearing an ordinary black velvet mask would be just as convincing as anyone who used dough and plaster. There is no need to get carried away with enthusiasm and forget the underlying feature; you are there to perform effects, not to demonstrate varieties of blindfolds.</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-box sb-purple">
+  <div class="sb-header">
+    <span class="sb-header-icon">✨</span>
+    <div class="sb-header-text">
+      <div class="sb-title sb-title-purple">⑨ Summary</div>
+      <div class="sb-subtitle sb-subtitle-purple">The golden rule of blindfold work</div>
+    </div>
+  </div>
+  <div class="sb-body">
+    <p>We have considered a few methods of blindfolding and have said enough to imply that it is not so much what type of blindfold you use as HOW YOU USE IT. The wise performer would devote more time to handling and presentation of the blindfold than to elaborate techniques which theoretically prove he cannot see. It is far better to convince your audience psychologically that you cannot see than it is to try and do so physically.</p>
+    <p>Little twists of presentation and subtleties during performance will register psychologically and will be remembered by the onlookers.</p>
+    <div class="nested-box nb-purple">
+      <div class="nb-label">🫴 The best teacher</div>
+      If you are really keen on using blindfolds and you want to learn a lot very quickly, get hold of the one man who can teach you more than any book or magical society: have a heart-to-heart talk with a man who is really blind. You will be amazed at what he can teach you. Moreover, if the matter is dealt with tactfully, your blind teacher will enjoy offering his services.
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="part-header">
+  <span class="part-pill part-pill-2">Part Two</span>
+  <span class="part-title">Technique 🧠</span>
+</div>
+
+<div class="section-box sb-teal">
+  <div class="sb-header">
+    <span class="sb-header-icon">👀</span>
+    <div class="sb-header-text">
+      <div class="sb-title sb-title-teal">① Downward Glimpse</div>
+      <div class="sb-subtitle sb-subtitle-teal">The most powerful tool in your blindfolded arsenal</div>
+    </div>
+  </div>
+  <div class="sb-body">
+    <p>We are concerned at this point in Step Five with the finer points of presentation and technique. Consequently, we must consider the proper use of the downward glimpse. Undoubtedly, it can be misused; a fault which is commonly caused by bad timing.</p>
+    <div class="nested-box nb-teal">
+      <div class="nb-label">🎭 Example: reading a word on a card</div>
+      Imagine that part of your blindfold routine calls for the reading of a word written on a card. The card is taken and held to the forehead, or well up in the air. By acting you appear to see the word and begin the patter which leads up to the naming of the word. THEN you drop the hand to the chest position for glimpsing and find out what it really is, at a time when the attention of the audience is on the off-beat.
+    </div>
+    <div class="tip-box">
+      <span class="tip-icon" aria-hidden="true">💡</span>
+      <span>Alternatively, you glimpse the word and bide your time before revealing what it is. Never make the mistake of holding the card at chest level whilst you tell the word. Work "one-behind" or "one-ahead" and get the glimpse when it is not expected. In practice, I have found it better to create the impression that I know the word long before I do, and glimpse when the timing calls for a visible relaxation. This is a very deceptive form of misdirection.</span>
+    </div>
+    <div class="nested-box nb-blue">
+      <div class="nb-label">🗝️ Classic example: six objects on a table</div>
+      On a table you have six objects placed there by members of the audience. You are blindfolded and approach the table near enough to get a good look at the objects. These you memorise. Next you move well away and request that a spectator bring any object to you. When you receive it you hold it high above your head, in such a position that it would be impossible to see even if you were not blindfolded, and from this position you divine the object.
+    </div>
+    <div class="secret-box">
+      <span class="tip-icon" aria-hidden="true">🤯</span>
+      <span>Suppose you are given a key which you hold up; when you name the object as a key, people are a little impressed but some say to themselves "so he felt the shape." These people sit bolt upright when you add "A Yale key, and it has the number 432 on it." Can you imagine how much less effective this would be if you stood over the table inviting the suspicion that you are "peeping"?</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-box sb-blue">
+  <div class="sb-header">
+    <span class="sb-header-icon">🃏</span>
+    <div class="sb-header-text">
+      <div class="sb-title sb-title-blue">② One Ahead System</div>
+      <div class="sb-subtitle sb-subtitle-blue">Paired with the downward glimpse: unstoppable</div>
+    </div>
+  </div>
+  <div class="sb-body">
+    <p>After some thought, it will be realised that the one-ahead system used in conjunction with the downward glimpse forms a very powerful combination. Working with a stack of envelopes, say giving answers to sealed messages, it is obvious that by holding one envelope in the air and appearing to read its contents, you have every opportunity to read others held casually in the hand at chest level. Attention on the part of the audience is naturally focused on the envelope in the air and you have ample misdirection for your work.</p>
+    <p>You are not left to find out how to read sealed envelopes; it is explained in this series. Apart from envelopes, we have cards, and an effect by Hans Trixer illustrates the application of the one-ahead system and downward glimpse used together (Step Ten). We may therefore conclude that the one-ahead system and the downward glimpse have homologous qualities for blindfold work.</p>
+  </div>
+</div>
+
+<div class="section-box sb-purple">
+  <div class="sb-header">
+    <span class="sb-header-icon">🧲</span>
+    <div class="sb-header-text">
+      <div class="sb-title sb-title-purple">③ The Magnetic Blindfold</div>
+      <div class="sb-subtitle sb-subtitle-purple">A beautiful idea from Punx, the German mentalist</div>
+    </div>
+  </div>
+  <div class="sb-body">
+    <p>I consider that it is my good fortune to know Punx the German mentalist. Mr. Punx is responsible for many simple, yet highly practical ideas, and this is one of them. Working with Type 1, the unfaked mask, and preparing first by sewing a small powerful magnet in the blindfold, you can perform many effects. The magnet is set so that it fits into the socket of the eye when the blindfold is worn, which disposes of any visible "bumps" showing through the blindfold.</p>
+    <div class="nested-box nb-purple">
+      <div class="nb-label">🎩 Example effect: the odd envelope</div>
+      You have five paypacket-size envelopes and one of them has a pin stuck in the bottom. Four people write a name of a girl and the fifth writes the name of a boy. Each person is given an envelope and told to seal their card inside. The person who writes the boy's name is given the envelope that contains the pin. All envelopes are then collected and mixed by a spectator. You are blindfolded and hold them one at a time to your forehead, eventually locating the odd card bearing the boy's name.
+    </div>
+    <div class="tip-box">
+      <span class="tip-icon" aria-hidden="true">✨</span>
+      <span>If you can visualise the position adopted by the performer when he holds an envelope to his forehead, and at the same time checking for a slight yet detectable magnetic pull from the envelope with the pin, you will appreciate the beauty of the mechanics. The position is natural, holding something to the forehead as if obtaining some impulse or psychometric vibration, and it visibly precludes all suspicion of glimpsing or markings.</span>
+    </div>
+    <div class="nested-box nb-coral">
+      <div class="nb-label">🔬 Other applications</div>
+      Four paper clips, four made of brass with a nickel-plate finish and one of ordinary steel. The brass ones are non-magnetic and yet all look identical. The same can be applied to keys for performing a variation of The Seven Keys to Baldpate. It is possible to insert shim-steel (about 2 thou' thick) into a playing card by stripping the card in two and then sticking the thin steel inside with an anhydrous adhesive such as "Evostick." Use ordinary glue that contains water and the steel will rust inside the card, causing yellow rust spots to appear on the surface.
+    </div>
+  </div>
+</div>
+
+<div class="section-box sb-coral">
+  <div class="sb-header">
+    <span class="sb-header-icon">🪞</span>
+    <div class="sb-header-text">
+      <div class="sb-title sb-title-coral">⑦ Mirrors, Reflectors &amp; Shiners</div>
+      <div class="sb-subtitle sb-subtitle-coral">Use what's already there</div>
+    </div>
+  </div>
+  <div class="sb-body">
+    <p>When performing in a drawing room and use is being made of a see-through type of blindfold, it should not be overlooked that a mirror can be of considerable use. Mirrors are generally to be found on the walls of a drawing room and they are not liable to be suspected when you perform blindfolded.</p>
+    <div class="warn-box">
+      <span class="tip-icon" aria-hidden="true">⚠️</span>
+      <span>I have spent quite a bit of time exploring the use of shiners and have examined most basic types such as miniature mirrors built into finger rings, pipes, brooches, etc. Of these, I cannot say that any have proved really successful. In my experience, the use of such deliberately faked equipment causes one too much concern when performing. You get over-worried about someone seeing the gimmick and spend more time hiding it than using it.</span>
+    </div>
+    <div class="nested-box nb-green">
+      <div class="nb-label">🍴 The everyday alternative</div>
+      Knowing that shiners can be of great use, I decided to try out new methods and after quite a bit of trial and error I find a well-polished cigarette lighter gives me all that is required by way of a reflected picture. Other very good and inconspicuous items include a well-polished spoon and table knife. A heavy chrome table knife resting on the blade edge gives you a terrific amount of scope and in it one can tell with ease: playing cards, bold writing, dates on coins (with a bit of practice) and obtain a pretty wide view of the room.
+    </div>
+    <div class="secret-box">
+      <span class="tip-icon" aria-hidden="true">🤫</span>
+      <span>I consider it far better to utilise such things as knives and spoons than the specially prepared gadgets. No one ever looks twice at a knife lying on a table. It is generally a good rule to suppose that with any type of reflector, if you can see it, so can the audience. In view of this, I maintain that it is best to use things which, although seen, are not suspected.</span>
+    </div>
+    <div class="nested-box nb-amber">
+      <div class="nb-label">🤹 Fooling fellow magicians: a swindle!</div>
+      To perform it, you must both be seated at opposite sides of the table and you must not have anyone standing too near you. You borrow his cards and mix them. You don your blindfold and then have him choose any card from the middle of the pack, which he places face down on your hand. You feel the back of the card with the fingertips of your other hand and finally name it correctly. You do not turn the card over. He knows they are not marked because they are his cards. Your only requirement is a sixpenny birdcage mirror from Woolworths. This you place on your knee when seated and that affords you the reflection of the card index seen through the open fingers of the hand. There is nothing to it, but you can make a lot of it!
+    </div>
+  </div>
+</div>
+
+<div class="section-box sb-amber">
+  <div class="sb-header">
+    <span class="sb-header-icon">👁️</span>
+    <div class="sb-header-text">
+      <div class="sb-title sb-title-amber">⑩ Prior Observation</div>
+      <div class="sb-subtitle sb-subtitle-amber">The skill that never stops paying</div>
+    </div>
+  </div>
+  <div class="sb-body">
+    <p>A skilled performer is always wide awake, ever on the lookout for something that can be used to cause that extra little miracle. When you visit a drawing room or club, there are dozens of things lying about that can be casually examined before you perform. Get a good look at one or two items and remember any outstanding features.</p>
+    <div class="nested-box nb-amber">
+      <div class="nb-label">🎩 Example: cups and a ten-shilling note</div>
+      The magical effect conceived by Bob Hummer and improved by Al Koran: locate a ten-shilling note under one of three ordinary cups without looking under the cups. First, obtain three cups. Place them in a row on the table and look at any one; detect a marking which will identify that cup from the others. Every cup has imperfections: a small crack, a one-way trademark on the base, or some obvious feature. Having located your mark, remember the position of that cup. The other two do not matter.
+    </div>
+    <div class="nested-box nb-blue">
+      <div class="nb-label">🧮 The logic: from position A, B or C</div>
+      <div class="numbered-steps">
+        <div class="step"><span class="step-num step-num-blue">A</span><span>Marked cup remains at A: it was not moved, so the other two were exchanged. The note is under A.</span></div>
+        <div class="step"><span class="step-num step-num-blue">B</span><span>Marked cup now at B: A and B were both moved; the unmoved cup must be C. The note is under C.</span></div>
+        <div class="step"><span class="step-num step-num-blue">C</span><span>Marked cup now at C: C and A were moved; B was not moved. The note is under B.</span></div>
+      </div>
+    </div>
+    <div class="tip-box">
+      <span class="tip-icon" aria-hidden="true">👠</span>
+      <span>Another aspect of prior observation worth mention: you cannot always identify a person by their faces when you are blindfolded, but very often you can by their boots or shoes. Watch the spectators' shoes when you are blindfolded; you can tell which way he's facing. Watch an assistant's shoes and you have as good a code system as you will ever need for fake muscle reading. Last but not least, I have no doubt that you know patent leather shoes make a reasonable reflector. Or did you?!</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-box sb-pink">
+  <div class="sb-header">
+    <span class="sb-header-icon">🎤</span>
+    <div class="sb-header-text">
+      <div class="sb-title sb-title-pink">⑫ Patter and Movement During Performance</div>
+      <div class="sb-subtitle sb-subtitle-pink">What you say and how you move are the real blindfold</div>
+    </div>
+  </div>
+  <div class="sb-body">
+    <p>This is a very important aspect of the technique of blindfold work. Probably too little attention is paid to it and nothing is more likely to lead to a second-rate performance than inattention to presentation. You must watch your wording pretty carefully.</p>
+    <div class="warn-box">
+      <span class="tip-icon" aria-hidden="true">🚫</span>
+      <span>I recollect seeing one blindfold act where the performer, doing a book test, insisted on the ridiculous phrase "I can't see the word very clearly; it's becoming visible now" and "I can see the word 'Cardiac'; is that right?" If you are blindfolded you cannot see. Period! The mediumistic gambit "I see" is well used by mentalists and often with good reason and effect. However, you must avoid it and similar absurdities during blindfold performances.</span>
+    </div>
+    <div class="nested-box nb-pink">
+      <div class="nb-label">🎭 Subtleties that sell the act</div>
+      When you need a pack of cards from a table and you stand blindfolded to one side of the stage, you say to the assistant, "there is a table over there and on it a pack of cards; will you please take them and remove them from the case?" Through your blindfold you watch him do just that and wait until he has them and starts to remove them before you add "they are in the middle of the table; have you found them yet?" You know he's got them, but the question at the right time helps to show that you do not know.
+    </div>
+    <div class="nested-box nb-purple">
+      <div class="nb-label">🚶 Movement</div>
+      On this subject a lot could be said. In brief, one should always behave with dignity whether blindfolded, unblindfolded or even doing a fan-dance! To move with dignity and grace and still appear blindfolded is not easy. You have to mix the need to walk cautiously with the need to appear graceful. To fall head over heels over a chair would be a positive way to prove you couldn't see, and would also reduce you to a ridiculous level as a performer. To extend the hand feeling for a chair just as you arrive at it is just about enough acting.
+    </div>
+    <div class="nested-box nb-teal">
+      <div class="nb-label">🎯 The right stance</div>
+      When you are talking to the spectator while wearing the blindfold, you do not turn your face to him. It is as though you have misplaced the point at which he is standing and you appear to address an empty space nearby the spectator. When you refer to a table "over there," point, but make the pointing a casual wave which misses the exact spot where the table stands. When you approach a blackboard or any piece of apparatus, create the impression that you are feeling for it; the hands go ahead, fingers outstretched feeling for the impact telling you that the board is there.
+    </div>
+    <div class="secret-box">
+      <span class="tip-icon" aria-hidden="true">😂</span>
+      <span>Don't be afraid to make a deliberate mistake. Some mentalists are inclined to aim at absolute success with every effect, and if anything, this is by no means essential or good. There are times when one mistake is worth a hundred successes! To be right most of the time and nearly right now and then is perhaps the very best. Nothing seems to give greater assurance that the whole thing is genuine than a few mistakes.</span>
+    </div>
+    <div class="nested-box nb-coral">
+      <div class="nb-label">😄 A perfect example</div>
+      You have two assistants from the audience, a lady and a gentleman. At one point in the routine, you turn to the gentleman and say "Now Madam!" As one line of print in a book it looks cold and weak. Put the same line in patter at the right point in the performance and it can be your greatest success.
+    </div>
+    <div class="nested-box nb-amber">
+      <div class="nb-label">🃏 Dropped card recovery</div>
+      You are mixing some cards; one drops to the floor. If you look downwards and pick it up, you are finished. You drop the card, you pause as though you know something has happened, allow one of the assistants to pick it up and hand it to you, and as this is done, refuse it saying "did I drop one? Never mind; we don't want that one. It's the Ace of Spades!"
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="part-header">
+  <span class="part-pill part-pill-3">Part Three</span>
+  <span class="part-title">Tricks &amp; Routines 🎩</span>
+</div>
+
+<div class="section-box sb-coral">
+  <div class="sb-header">
+    <span class="sb-header-icon">🌟</span>
+    <div class="sb-header-text">
+      <div class="sb-title sb-title-coral">"Sightless Vision" — A Complete Routine by Joe Elman</div>
+      <div class="sb-subtitle sb-subtitle-coral">Performed thousands of times with great success</div>
+    </div>
+  </div>
+  <div class="sb-body">
+    <p>For many years I, Joe Elman, have been presenting my "Sightless Vision" to audiences under all conditions, and to specially invited members of the medical profession, wherever possible borrowing all the requirements from the audience, yet making no claims other than that this could be done by anyone who has had the benefit of the proper training.</p>
+    <p>I wish to acknowledge that my first contact with this subject was through the instruction of LENZ (Len Allen) and that I still use the original method shown to me, not having found anything which is so convincing to a lay audience.</p>
+    <div class="nested-box nb-coral">
+      <div class="nb-label">📋 Requirements</div>
+      A chair for the performer to sit on. One or more newspapers, menu cards or programmes to form the first stage of the blindfold. Two table napkins (large), tea towels or scarves to form the second stage of the blindfold. A tray for collection of objects. A writing pad or menu back, as large as possible, to be used for the written word test. A crayon pencil, or at the worst a ball-pen. Plenty of showmanship.
+    </div>
+    <div class="numbered-steps">
+      <div class="step"><span class="step-num step-num-coral">1</span><span>The chair is placed in a position which is well lit from above, as this makes the task much easier. The tray with the requirements in order, from the bottom upwards, is on the chair: pad and crayon pencil; table napkins; newspapers.</span></div>
+      <div class="step"><span class="step-num step-num-coral">2</span><span>The performer tells the audience that he wishes to demonstrate the powers of "Sightless Vision," using some rather technical language about physical phenomena, without becoming facetious, and then invites two members of the audience to come up and assist, laying stress on the fact that members of the medical profession are particularly welcome.</span></div>
+      <div class="step"><span class="step-num step-num-coral">3</span><span>The performer takes the newspaper and separates it into sheets, folding them to make three pads: one twelve by six inches; two six by six inches. These are then handed back to the assistants to be further examined.</span></div>
+      <div class="step"><span class="step-num step-num-coral">4</span><span>The performer closes his eyes and places one small pad over each eye, making the edges overlap over the nose, but the bottom corner can come below the nose. The long pad is then placed over the two smaller pads so that at least two layers of pad cover each eye; the bottom edge should come to the tip of the nose.</span></div>
+      <div class="step"><span class="step-num step-num-coral">5</span><span>Whilst this is being done, but before the long pad is placed in position, the performer lowers his eyebrows and screws up his eyes and keeps them in this position until the blindfold has been completed and examined by the assistants.</span></div>
+      <div class="step"><span class="step-num step-num-coral">6</span><span>The two table napkins are then tied by the assistants across the face: one napkin over the left eye and round the right ear, the other over the right eye and round the left ear, and the assistants are asked to make sure that the knots are really tight.</span></div>
+    </div>
+    <div class="secret-box">
+      <span class="tip-icon" aria-hidden="true">🤫</span>
+      <span>At this moment the performer raises his eyebrows whilst turning his head from side to side and ensures that he has a clear "peep" down one side of his nose. This is quite easy with practice, and the tighter the blindfold the easier it is to get the "peep." It is essential that the performer does not touch the blindfold with his hands at any time during the following demonstrations.</span>
+    </div>
+    <div class="warn-box">
+      <span class="tip-icon" aria-hidden="true">⚠️</span>
+      <span>At this stage the showmanship must come in to convince the audience that the objects are identified whilst held by the performer in front of his blindfolded eyes, and I advise anyone trying to get up an act of this nature to rehearse, rehearse and rehearse before trying it out even in front of the family.</span>
+    </div>
+    <div class="nested-box nb-teal">
+      <div class="nb-label">🎬 The finish</div>
+      The pad and pencil are handed to the assistant and the applause, which is never missing if this is done properly, is cut short by the performer raising his arms sideways and in a loud voice requesting the assistants to remove the blindfold. At this moment the performer must close his eyes very tightly and keep them closed until the blindfold is completely removed, so that his reaction to light will be that of a person who has been in the dark for a long time.
+    </div>
+    <div class="tip-box">
+      <span class="tip-icon" aria-hidden="true">💡</span>
+      <span>To gain the maximum effect of "Sightless Vision" it should not be part of a conjuring show but rather included in a demonstration of mental magic or pseudo-psychic phenomena. A word of warning: if there is a chance that the audience will be able to experiment and try to reproduce your miracle immediately after your performance, be careful to finish the show with something quite away from "Sightless Vision," or the observant will be showing their friends how you did it.</span>
+    </div>
+    <p>I contend that the chief requirement for a good presentation of "Sightless Vision" is showmanship accompanied by a thorough knowledge of what you are going to do and the methods you wish to employ. In this particular field the know-how is the least important requirement and every effort must be made to convince the audience that you too are convinced that you are demonstrating a power which they all have.</p>
+  </div>
+</div>
+
+<div class="section-box sb-blue">
+  <div class="sb-header">
+    <span class="sb-header-icon">🔬</span>
+    <div class="sb-header-text">
+      <div class="sb-title sb-title-blue">① Psychical Research vs. Mentalism</div>
+      <div class="sb-subtitle sb-subtitle-blue">How Corinda exposed a "scientific" telepathy test</div>
+    </div>
+  </div>
+  <div class="sb-body">
+    <p>For many years I have dabbled in what is called "psychical research" and during that time I have encountered many people and societies concerned with the subject. About two years ago I met with one group of investigators who called themselves by a name that suggested they would prove the existence of supernatural phenomena.</p>
+    <div class="warn-box">
+      <span class="tip-icon" aria-hidden="true">🧐</span>
+      <span>A well-trained magician will soon baffle a well-trained scientist! The only man to do the job is someone skilled in both fields: magic and research.</span>
+    </div>
+    <div class="nested-box nb-blue">
+      <div class="nb-label">🃏 The setup</div>
+      Two subjects sat at opposite ends of a table with a plywood screen across the middle. The "transmitter" was given one of five ESP cards (circle, cross, triangle, square, star). The recipient, blindfolded, had to draw her impression. Score: twenty-three correct out of twenty-five.
+    </div>
+    <div class="secret-box">
+      <span class="tip-icon" aria-hidden="true">🔊</span>
+      <span>The method is a code system. But I wouldn't mind a little gamble that it would fool you if you did not know. The code was made by the playing card being placed on the table! The table top was hard polished wood. The five designs can be remembered as 1, 2, 3, 4 or 5 by their construction. If it was No. 1, the card was placed on the table without any noise. If No. 2, it was caused to make one click simply by bending slightly as it is put down. No. 3 makes two clicks by putting the index finger in the middle, holding both short ends with fingers and thumb and letting one end go after the other. If it was No. 4, the card is put down without noise, then picked up again in such a way that it makes a sliding noise and one click, then looked at and again replaced quietly. No. 5 was the same as No. 4 for the start, but instead of replacing it without noise it was put down with a single click.</span>
+    </div>
+    <div class="tip-box">
+      <span class="tip-icon" aria-hidden="true">💡</span>
+      <span>There were times during the experiment when the silence of the room seemed to be broken by the deafening crash of a little card hitting the table, but no one could hear the noise because THEY were not listening for it. It is a method which embodies an essential of good mentalism: natural behaviour.</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-box sb-purple">
+  <div class="sb-header">
+    <span class="sb-header-icon">🎩</span>
+    <div class="sb-header-text">
+      <div class="sb-title sb-title-purple">② "Mental Masterpiece" by Maurice Fogel</div>
+      <div class="sb-subtitle sb-subtitle-purple">Showmanship that turns a trifle into a sensation</div>
+    </div>
+  </div>
+  <div class="sb-body">
+    <p>Anyone who has had the good fortune to witness "The Amazing Fogel" performing a series of mental miracles will know that it is not so much what he does as how he does it. With showmanship almost unrivalled throughout the world, Fogel will slay an audience with the mere trifle of a trick. This effect is one that he has used with great success.</p>
+    <div class="nested-box nb-purple">
+      <div class="nb-label">🎭 The effect</div>
+      A prediction is performed partly whilst blindfolded. Two persons are invited on stage: one is given a sealed envelope containing a predicted word. On one table is a pile of about twenty different newspapers. You make a careful note of which paper is chosen. Blindfolded, you guide the spectator to underline any word in pencil, which you also glimpse. You then find the correct newspaper among the pile, and finally appear to copy your prediction onto a blackboard, actually writing the chosen word. When the spectator reads out the underlined word, it matches. Lastly, Fogel suggests you tell the serial number of the note!
+    </div>
+  </div>
+</div>
+
+<div class="section-box sb-teal">
+  <div class="sb-header">
+    <span class="sb-header-icon">🃏</span>
+    <div class="sb-header-text">
+      <div class="sb-title sb-title-teal">③ "X-Ray Eyes" by Corinda</div>
+      <div class="sb-subtitle sb-subtitle-teal">Location by negative reasoning; astounding when seen</div>
+    </div>
+  </div>
+  <div class="sb-body">
+    <p>This is another one of those little things that it's nice to know because you can use it impromptu and it has an astounding effect upon onlookers. A pack of cards are borrowed; any seven are removed and any one is chosen for the experiment. The seven are taken by a spectator and mixed, given to you, and then your hands are immediately covered completely with a handkerchief. Your hands are in the middle of the table away from the lap! You appear to have "X-ray" eyes because from under the handkerchief you will pull out one card and that one is the chosen one. It can be examined microscopically as it is not marked in any way. The effect can be repeated indefinitely with those cards or with another seven from the deck.</p>
+    <div class="secret-box">
+      <span class="tip-icon" aria-hidden="true">🤫</span>
+      <span>The method is a principle I call location by "negative reasoning." You have seven cards and must locate one. The one you must locate is the centre of attraction so you leave it alone and mark the other six! By negative reasoning you have no idea which is his card, but you can soon find out which it is NOT!</span>
+    </div>
+    <div class="nested-box nb-teal">
+      <div class="nb-label">🔬 The marking method</div>
+      In Step Two, writing about a trick pack called the "Ghost Deck," drawings show a fingernail running down the edge of a card. This is the marking method. At the same spot on each of the six cards you press slightly with the nail directly on the edge. The pressure causes the edge to expand very slightly, but not enough to be seen. To read the marking, the card is run through the ball of first finger and thumb and if it is marked a distinct bump is felt, against a smooth edge if it is unmarked.
+    </div>
+    <div class="tip-box">
+      <span class="tip-icon" aria-hidden="true">💡</span>
+      <span>Somehow the average man does not think to look at the others; logic makes him examine the card you found and it is beyond reason to think that you really found six and the one left was the chosen one. The marking can be done so quickly and with such natural handling that six cards can be marked as they are dealt onto the table one by one.</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-box sb-amber">
+  <div class="sb-header">
+    <span class="sb-header-icon">✍️</span>
+    <div class="sb-header-text">
+      <div class="sb-title sb-title-amber">④ A Gem of Mental Magic by Corinda</div>
+      <div class="sb-subtitle sb-subtitle-amber">The centre tear: possibly the greatest thing in mentalism</div>
+    </div>
+  </div>
+  <div class="sb-body">
+    <p>For many years one principle has been exploited by my enthusiasm from every conceivable point of view. It is the principle of the centre tear or torn centre. I would say that this is one of the greatest things of mentalism, if not the greatest. I have encountered many good ways of doing and using the centre tear and it is used to grand effect in this trick. Step Six on billets gives you all the basic technique for doing the centre tear. Once the timing and misdirection is mastered the steal is perfect. So easy in fact that it can be done with your eyes closed or blindfolded, and that is what you have to do for this trick.</p>
+    <div class="nested-box nb-amber">
+      <div class="nb-label">🎭 The effect</div>
+      The spectator is given a small square of paper and told to think of any word or person's name; to wait until you are blindfolded and then to PRINT it down; to fold the paper and give it to you. Whilst blindfolded you take the paper slip and hold it undamaged to your forehead, attempting to "read" the name. After what appears to be a mental struggle you shrug your shoulders and proclaim, "Sorry; somehow I am getting interference from another place. It is your handwriting and not another person's?" When you started you said "print it," not "write it," so you can argue that it should have been handwritten and not printed. Appear to give up.
+    </div>
+    <div class="secret-box">
+      <span class="tip-icon" aria-hidden="true">🤫</span>
+      <span>Say "Never mind; take another bit of paper and do it again, but please be sure to use your own handwriting..." As you talk you casually tear up the other billet and do the centre tear as you go. He thinks it is done with, so for a moment his attention is off the billet. Drop the scraps in front of you on the table and whilst he writes the second billet, read the first. When he is ready, tell him to ROLL his paper into a ball and hold it against your forehead. Now you tell him what he has written when the billet is in his own hands, and then you have done something!</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-box sb-green">
+  <div class="sb-header">
+    <span class="sb-header-icon">🍺</span>
+    <div class="sb-header-text">
+      <div class="sb-title sb-title-green">⑤ The Bartender's Nightmare!</div>
+      <div class="sb-subtitle sb-subtitle-green">Works at the pub, the guild tea party... or croquet with the vicar</div>
+    </div>
+  </div>
+  <div class="sb-body">
+    <p>It does not take a census poll to discover that quite a lot of magic is done by performers who are supported by the saloon bar. Quick tricks that can be done for light entertainment in "the pub" are worth knowing. This one you could also do at the Townswomen's Guild Tea Party or, for that matter, whilst playing croquet with the vicar on the parish lawns.</p>
+    <div class="nested-box nb-green">
+      <div class="nb-label">🎩 The effect</div>
+      You blindfold yourself with a handkerchief. You ask the barman to take a pound note from his pocket and roll it into a ball, then give it to you. You take it and for a moment hold it to your forehead, then immediately give it back. Still blindfolded you reach into your pocket and remove your visiting card and a pencil. On this you jot down three numbers. You whip off the blindfold, ask the barman to unroll the note and call out the last three numbers. This done, you hand him the card and let him see that you have written those three numbers on it.
+    </div>
+    <div class="secret-box">
+      <span class="tip-icon" aria-hidden="true">🤫</span>
+      <span>The method? Swami Gimmick, Step One!</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-box sb-coral">
+  <div class="sb-header">
+    <span class="sb-header-icon">💰</span>
+    <div class="sb-header-text">
+      <div class="sb-title sb-title-coral">⑦ Corinda's "Money Box"</div>
+      <div class="sb-subtitle sb-subtitle-coral">The trick so good they think there's a stooge</div>
+    </div>
+  </div>
+  <div class="sb-body">
+    <p>A small black money box stands on a table and it contains an amount of real money. One spectator is asked to take part. The performer is blindfolded and stands about ten feet away from the box. The spectator opens the box and removes as much money as he likes; that is, he can take it all, leave any amount, or if he likes take none and leave it all. He closes the box and locks it and then tells the performer that he is ready. Remaining at a distance of ten feet away from the box and spectator and without asking any questions, the performer correctly names how much money has been taken and then tells the exact date on every coin held in the spectator's hand.</p>
+    <div class="nested-box nb-coral">
+      <div class="nb-label">⚙️ The mechanism</div>
+      A box is so designed that when coins are placed in it, they form an electrical contact across two terminals. This contact lights a small torch bulb which shows a pin-point of light through a hole in the back of the box. Altogether there are four sets of these terminals and four coins are used to make contact. Inside the box, on the base at the back, is stuck a strip of wood one quarter inch square. This strip has four holes drilled through it, each of sufficient diameter to accommodate a small 2.5-volt torch bulb. In line with the centre of these holes, running right through the back of the box, are four pin-holes made with a 1/32 inch drill or a hot needle. The pin-holes are so small that they are practically invisible, and yet when the light shines through them it can be clearly seen.
+    </div>
+    <div class="nested-box nb-blue">
+      <div class="nb-label">🔌 Wiring</div>
+      First use one piece of wire to join every other tack-head terminal together and lead that wire to any one of the battery terminals. Next join every other adapter terminal with one length of wire and lead this to the other battery terminal. You are now left with four tack-terminals and four adapter terminals. Using four separate pieces of wire, join these together so that you have one of each linked, a tack-terminal with an adapter terminal.
+    </div>
+    <div class="nested-box nb-amber">
+      <div class="nb-label">🪙 The four coins</div>
+      Use four coins: a two-shilling piece, one shilling, one penny and one halfpenny. Put them in order of value so that you can remember with ease. Copy the dates of the coins with biro-ink on to your thumb, or remember them.
+    </div>
+    <div class="secret-box">
+      <span class="tip-icon" aria-hidden="true">🎯</span>
+      <span>Set the box on a table in such a position that the back faces you only. The spectator approaches from the front of the box. Because the pin-lights are so minute, you have little to worry about and unless you are dead in line with the holes the lights cannot be seen even from the back. From the top, bottom, front or sides there is no chance of seeing the lights.</span>
+    </div>
+    <div class="warn-box">
+      <span class="tip-icon" aria-hidden="true">🤣</span>
+      <span>The Money Box has one outstanding snag, something which is difficult to overcome. The effect is so good that it is hard to believe that it was achieved without the use of a stooge. That is the price one has to pay for being clever!</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-box sb-pink">
+  <div class="sb-header">
+    <span class="sb-header-icon">🕯️</span>
+    <div class="sb-header-text">
+      <div class="sb-title sb-title-pink">⑧ "Evidence" by Corinda</div>
+      <div class="sb-subtitle sb-subtitle-pink">A borrowed £1 note, four decoy envelopes, and a knitting needle</div>
+    </div>
+  </div>
+  <div class="sb-body">
+    <p>We have said sufficient when dealing with technique to make it clear that it is not so much the nature of the trick that makes for success; it is the showmanship used to perform it. This plot is quite strong and has a dramatic element which tends to become evidence that the performer cannot see, and yet proves he must have some power (only if it be skill) as he cannot afford to make a mistake.</p>
+    <div class="nested-box nb-pink">
+      <div class="nb-label">🎭 The effect</div>
+      A one-pound note is borrowed from the audience and the last three figures remembered. It is sealed by the spectator into an envelope. Likewise, four other envelopes have pieces of newspaper of the same size as the note sealed in them. The five envelopes are brought onto the stage. The performer is blindfolded. The spectator is told to light the candle standing on the table and then to pick up the long needle (use a knitting needle). One at a time the performer hands him an envelope and each time he gets one he sticks it on the needle and immediately sets it afire. Let the ash drop into a bowl on the table and say when it is fully burnt! There will be considerable scope for humorous remarks, false apologies and excuses to the spectator who originally lent the note.
+    </div>
+    <div class="secret-box">
+      <span class="tip-icon" aria-hidden="true">🤫</span>
+      <span>One envelope, the one in which the £1 note is sealed, is marked in the corner with a bead, which you can easily feel. The rest is showmanship and making the most out of a situation which offers plenty of scope to a talented performer.</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-box sb-gray">
+  <div class="sb-header">
+    <span class="sb-header-icon">🔪</span>
+    <div class="sb-header-text">
+      <div class="sb-title sb-title-gray">⑨ Card Stab by Hans Trixer</div>
+      <div class="sb-subtitle sb-subtitle-gray">The best card stab method there is</div>
+    </div>
+  </div>
+  <div class="sb-body">
+    <p>Until I saw this method, shown to me by my good friend Hans Trixer, I always thought the best card stab trick was to use a Svengali deck and be done with it! However, I am obliged to admit that this is it as far as the "stab" trick goes, and I think you will agree that the method is very subtle.</p>
+    <div class="nested-box nb-gray">
+      <div class="nb-label">🎩 The effect</div>
+      The mentalist shows a pack of cards which are all there and all different. He wraps the pack in a one-pound note and then asks the spectator to name ANY CARD. He takes a knife and stabs through the note. The cards are cut at the point where the knife divides and there is the chosen card! The effect may be presented as an "X-ray Eye" trick, the performer seeing into the deck.
+    </div>
+    <div class="secret-box">
+      <span class="tip-icon" aria-hidden="true">🤫</span>
+      <span>The pack is stacked and you have prepared a £1 note in such a way that to miss the card would be improbable. You find out just where the note will touch the pack at the edges when it is used to wrap the deck. At this point you mark out very fine pencil lines to graduate the deck. In other words, the £1 is a ruler and when you go to stab you have calculated where the card will be (because the deck is stacked) so you look at the graduations and stab in the right position. To save continuous calculations, Hans has developed a master chart: a small piece of celluloid cut out with grooves. Each groove represents a line of the graduations. The chart is put on any £1 and a pencil is run through the grooves; in no time a note is prepared.</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-box sb-purple">
+  <div class="sb-header">
+    <span class="sb-header-icon">⭕</span>
+    <div class="sb-header-text">
+      <div class="sb-title sb-title-purple">⑩ Blindfold "Noughts and Crosses"</div>
+      <div class="sb-subtitle sb-subtitle-purple">A silent finger code and a spectator who hasn't a clue</div>
+    </div>
+  </div>
+  <div class="sb-body">
+    <p>This makes a neat item for a two-person telepathy stunt. Your assistant, who acts as medium, is seated on a chair and blindfolded. In front of her to the right is a blackboard. A member of the audience comes up to play "Madam" a game of "Noughts and Crosses," but to make it interesting Madam is blindfolded and will not be told what moves are made by the spectator! The performer stands by the blackboard and fills in the "Crosses" when called by the medium. The spectator fills in his own "Noughts." Each square is numbered and the medium calls out the number of the square she wants to use.</p>
+    <div class="secret-box">
+      <span class="tip-icon" aria-hidden="true">🤫</span>
+      <span>A silent code is used. When the performer stands by the blackboard he stands to the right and has his right hand on the edge, thumb at the front and fingers behind. Madam can see his fingers through a fake blindfold and whatever number he signals Madam calls out. The performer, in actual fact, does all the playing in the game and, to be quite honest, Madam hasn't got a clue what's going on!</span>
+    </div>
+    <div class="nested-box nb-purple">
+      <div class="nb-label">🖐️ The finger signals</div>
+      <div class="numbered-steps">
+        <div class="step"><span class="step-num step-num-purple">1</span><span>Show index finger; curl other three.</span></div>
+        <div class="step"><span class="step-num step-num-purple">2</span><span>Show 1 and 2; curl 3 and 4.</span></div>
+        <div class="step"><span class="step-num step-num-purple">3</span><span>Show 1, 2 and 3; curl 4.</span></div>
+        <div class="step"><span class="step-num step-num-purple">4</span><span>Show all 1, 2, 3, 4 but keep them together.</span></div>
+        <div class="step"><span class="step-num step-num-purple">5</span><span>Show all; divide between 1 and 234.</span></div>
+        <div class="step"><span class="step-num step-num-purple">6</span><span>Show all; divide between 12 and 34.</span></div>
+        <div class="step"><span class="step-num step-num-purple">7</span><span>Show all; divide between 123 and 4.</span></div>
+        <div class="step"><span class="step-num step-num-purple">8</span><span>Curl all.</span></div>
+        <div class="step"><span class="step-num step-num-purple">9</span><span>Remove hand from the board.</span></div>
+      </div>
+    </div>
+    <div class="tip-box">
+      <span class="tip-icon" aria-hidden="true">💡</span>
+      <span>It will only take a few minutes' practice to become fast and accurate at the code. One important thing: when the spectator has made his move, the performer should let the medium know by giving one loud knock on the blackboard. He does not say anything which could spoil the effect.</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-box sb-blue">
+  <div class="sb-header">
+    <span class="sb-header-icon">🔢</span>
+    <div class="sb-header-text">
+      <div class="sb-title sb-title-blue">⑪ The Blackboard Test</div>
+      <div class="sb-subtitle sb-subtitle-blue">Ridiculously simple. Terrific when performed.</div>
+    </div>
+  </div>
+  <div class="sb-body">
+    <p>The performer, or his medium, blindfolded, has members of the audience write simple sums on the board which he successfully works out and writes in the answers. It is amazing how anything so ridiculously simple can be made to appear so terrific when performed. Of course you use a fake blindfold and simply fill in the answers.</p>
+    <div class="tip-box">
+      <span class="tip-icon" aria-hidden="true">😄</span>
+      <span>Now and then you make a mistake to build things up, and you can do some weird stunts like writing the answer backwards or upside down, which make people wonder. (I also wonder what they wonder!) You have to bear in mind all the time that you are supposed to be without vision and it is natural that the minor feats seem miracles under the conditions.</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-box sb-teal">
+  <div class="sb-header">
+    <span class="sb-header-icon">🃏</span>
+    <div class="sb-header-text">
+      <div class="sb-title sb-title-teal">⑫ The Three Cards by Corinda</div>
+      <div class="sb-subtitle sb-subtitle-teal">Simplicity and a flap box; all the applause you want</div>
+    </div>
+  </div>
+  <div class="sb-body">
+    <p>Again we resort to simplicity and think about the effect rather than method. This trick, fitted into a blindfold routine, will give you all the applause you want.</p>
+    <div class="nested-box nb-teal">
+      <div class="nb-label">🎩 The effect</div>
+      The performer hands a pack of cards to his assistant who takes them to any person in the audience. They examine the pack and then remove three after they have been mixed. These three are dropped into a box which is locked and again examined. The box is taken to the performer who is by now blindfolded and waiting to receive it. He holds it to his forehead, names three cards, and then hands the box back, still locked. The spectator removes the three cards he named, and they are correct.
+    </div>
+    <div class="secret-box">
+      <span class="tip-icon" aria-hidden="true">🤫</span>
+      <span>The pack is ordinary. Have it examined and then mixed. After that have any three cards freely chosen whilst the deck is face downwards. These three are dropped into a box. It is an ordinary flap changing card box, loaded on the other side of the flap with three cards known to the performer. It is locked with a small padlock AND THEN EXAMINED by the spectator, who really is concerned with holes, trapdoors, etc., and not what is inside. That's all there is to it; not much to worry about and yet it's good material for a man who knows what he's doing.</span>
+    </div>
+  </div>
+</div>
+
+<div style="background:#EEEDFE;border:0.5px solid #AFA9EC;border-radius:var(--border-radius-lg);padding:1.25rem 1.5rem;margin-top:2rem;text-align:center">
+  <div style="font-size:22px;margin-bottom:6px">🎩✨👁️</div>
+  <div style="font-size:16px;font-weight:500;color:#26215C;margin-bottom:4px">End of Step Five</div>
+  <div style="font-size:13px;color:#534AB7">Blindfolds &amp; X-Ray Eyes — Thirteen Steps to Mentalism by Corinda</div>
+</div>
+
+</div>

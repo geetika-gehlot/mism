@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Step Eleven: Question & Answer Readings — Corinda's Thirteen Steps to Mentalism</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FDFBF7;
+    --warm-white: #FAF8F2;
+    --text-dark: #1C1A16;
+    --text-mid: #3D3A32;
+    --text-muted: #6B6760;
+
+    --box-yellow: #FFFDE7;
+    --box-yellow-border: #F9E04B;
+    --box-yellow-text: #4A3F00;
+
+    --box-mint: #E8F8F2;
+    --box-mint-border: #4FC591;
+    --box-mint-text: #0D4A30;
+
+    --box-lavender: #F0EDFE;
+    --box-lavender-border: #9B8EE8;
+    --box-lavender-text: #2E2570;
+
+    --box-peach: #FFF0E8;
+    --box-peach-border: #F4895A;
+    --box-peach-text: #5C1F00;
+
+    --box-sky: #E6F4FF;
+    --box-sky-border: #5AAEF5;
+    --box-sky-text: #073B70;
+
+    --box-rose: #FFF0F4;
+    --box-rose-border: #F06C8A;
+    --box-rose-text: #5C0020;
+
+    --box-sage: #EEF6E8;
+    --box-sage-border: #7BBF55;
+    --box-sage-text: #1A4200;
+
+    --box-lilac: #F8EDFE;
+    --box-lilac-border: #C47AE8;
+    --box-lilac-text: #430068;
+
+    --box-gold: #FFF8E1;
+    --box-gold-border: #E8B400;
+    --box-gold-text: #4A3000;
+
+    --box-teal: #E2F7F4;
+    --box-teal-border: #2DBCAA;
+    --box-teal-text: #0A3B35;
+
+    --box-coral: #FFF0EC;
+    --box-coral-border: #FF6B47;
+    --box-coral-text: #5C1500;
+
+    --box-steel: #EEF3FA;
+    --box-steel-border: #6B95D6;
+    --box-steel-text: #102250;
+  }
+
+  body {
+    background: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text-dark);
+    font-size: 16px;
+    line-height: 1.75;
+    padding: 0;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 60px 40px 120px;
+  }
+
+  /* ── HEADER ── */
+  .hero {
+    background: linear-gradient(135deg, #1C1A16 0%, #2E2A1E 100%);
+    color: #F5F0E0;
+    border-radius: 20px;
+    padding: 52px 48px;
+    margin-bottom: 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '🎩';
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    font-size: 72px;
+    opacity: 0.18;
+  }
+  .hero .eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #C9B97A;
+    margin-bottom: 14px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    line-height: 1.2;
+    color: #FAF4E2;
+    margin-bottom: 16px;
+  }
+  .hero .subtitle {
+    font-size: 15px;
+    color: #B5AC8E;
+    max-width: 520px;
+  }
+  .hero .byline {
+    margin-top: 24px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: #8A8068;
+    letter-spacing: 1px;
+  }
+
+  /* ── TOC ── */
+  .toc-box {
+    background: var(--box-lavender);
+    border: 1.5px solid var(--box-lavender-border);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 48px;
+  }
+  .toc-box h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--box-lavender-text);
+    margin-bottom: 16px;
+  }
+  .toc-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 32px;
+  }
+  .toc-item {
+    font-size: 13.5px;
+    color: var(--box-lavender-text);
+    padding: 3px 0;
+    border-bottom: 1px dashed #C3B8F0;
+    display: flex;
+    justify-content: space-between;
+  }
+  .toc-item .pg { opacity: 0.55; font-family: 'DM Mono', monospace; font-size: 12px; }
+
+  /* ── SECTION HEADERS ── */
+  h2.section-head {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    color: var(--text-dark);
+    margin: 56px 0 8px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #E8E0CC;
+  }
+  h3.sub-head {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--text-mid);
+    margin: 36px 0 12px;
+  }
+  h4.mini-head {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 28px 0 10px;
+  }
+
+  p { margin-bottom: 16px; color: var(--text-mid); }
+
+  /* ── GENERIC BOX ── */
+  .box {
+    border-radius: 14px;
+    padding: 22px 26px;
+    margin: 22px 0;
+    border-left: 5px solid;
+  }
+  .box p { margin-bottom: 10px; }
+  .box p:last-child { margin-bottom: 0; }
+  .box.yellow  { background: var(--box-yellow);   border-color: var(--box-yellow-border);   color: var(--box-yellow-text); }
+  .box.mint    { background: var(--box-mint);     border-color: var(--box-mint-border);     color: var(--box-mint-text); }
+  .box.lavender{ background: var(--box-lavender); border-color: var(--box-lavender-border); color: var(--box-lavender-text); }
+  .box.peach   { background: var(--box-peach);    border-color: var(--box-peach-border);    color: var(--box-peach-text); }
+  .box.sky     { background: var(--box-sky);      border-color: var(--box-sky-border);      color: var(--box-sky-text); }
+  .box.rose    { background: var(--box-rose);     border-color: var(--box-rose-border);     color: var(--box-rose-text); }
+  .box.sage    { background: var(--box-sage);     border-color: var(--box-sage-border);     color: var(--box-sage-text); }
+  .box.lilac   { background: var(--box-lilac);    border-color: var(--box-lilac-border);    color: var(--box-lilac-text); }
+  .box.gold    { background: var(--box-gold);     border-color: var(--box-gold-border);     color: var(--box-gold-text); }
+  .box.teal    { background: var(--box-teal);     border-color: var(--box-teal-border);     color: var(--box-teal-text); }
+  .box.coral   { background: var(--box-coral);    border-color: var(--box-coral-border);    color: var(--box-coral-text); }
+  .box.steel   { background: var(--box-steel);    border-color: var(--box-steel-border);    color: var(--box-steel-text); }
+
+  /* ── CALLOUT BOX (icon + text) ── */
+  .callout {
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin: 24px 0;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .callout .icon { font-size: 26px; line-height: 1; flex-shrink: 0; margin-top: 2px; }
+  .callout .body { flex: 1; }
+  .callout .body strong { display: block; font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+  .callout .body p { margin: 0; font-size: 14.5px; line-height: 1.65; }
+  .callout.yellow  { background: var(--box-yellow);  border: 1.5px solid var(--box-yellow-border);  color: var(--box-yellow-text); }
+  .callout.mint    { background: var(--box-mint);    border: 1.5px solid var(--box-mint-border);    color: var(--box-mint-text); }
+  .callout.peach   { background: var(--box-peach);   border: 1.5px solid var(--box-peach-border);   color: var(--box-peach-text); }
+  .callout.sky     { background: var(--box-sky);     border: 1.5px solid var(--box-sky-border);     color: var(--box-sky-text); }
+  .callout.rose    { background: var(--box-rose);    border: 1.5px solid var(--box-rose-border);    color: var(--box-rose-text); }
+  .callout.sage    { background: var(--box-sage);    border: 1.5px solid var(--box-sage-border);    color: var(--box-sage-text); }
+  .callout.lavender{ background: var(--box-lavender);border: 1.5px solid var(--box-lavender-border);color: var(--box-lavender-text); }
+  .callout.gold    { background: var(--box-gold);    border: 1.5px solid var(--box-gold-border);    color: var(--box-gold-text); }
+  .callout.teal    { background: var(--box-teal);    border: 1.5px solid var(--box-teal-border);    color: var(--box-teal-text); }
+  .callout.coral   { background: var(--box-coral);   border: 1.5px solid var(--box-coral-border);   color: var(--box-coral-text); }
+
+  /* ── NESTED BOX ── */
+  .nested-outer {
+    border-radius: 16px;
+    padding: 22px 24px;
+    margin: 24px 0;
+    border: 1.5px solid;
+  }
+  .nested-outer .nest-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  .nested-inner {
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 10px 0;
+    border: 1px solid;
+  }
+  .nested-inner .inner-title {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .nested-inner p { font-size: 14px; line-height: 1.6; margin: 0; }
+
+  /* outer/inner combos */
+  .nest-yellow  { background: var(--box-yellow);   border-color: var(--box-yellow-border);   color: var(--box-yellow-text); }
+  .nest-inner-yellow { background: #FFFDE7; border-color: #D4B800; color: #3A2E00; }
+  .nest-mint    { background: var(--box-mint);     border-color: var(--box-mint-border);     color: var(--box-mint-text); }
+  .nest-inner-mint   { background: #D4F5E8; border-color: #2A9668; color: #0A3A22; }
+  .nest-sky     { background: var(--box-sky);      border-color: var(--box-sky-border);      color: var(--box-sky-text); }
+  .nest-inner-sky    { background: #D2EBFF; border-color: #2E7EC8; color: #042050; }
+  .nest-lavender{ background: var(--box-lavender); border-color: var(--box-lavender-border); color: var(--box-lavender-text); }
+  .nest-inner-lavender { background: #E4DFFD; border-color: #7568D8; color: #221A60; }
+  .nest-sage    { background: var(--box-sage);     border-color: var(--box-sage-border);     color: var(--box-sage-text); }
+  .nest-inner-sage   { background: #DCF0D0; border-color: #52952A; color: #122E00; }
+  .nest-peach   { background: var(--box-peach);    border-color: var(--box-peach-border);    color: var(--box-peach-text); }
+  .nest-inner-peach  { background: #FFE0CC; border-color: #C85A22; color: #440F00; }
+  .nest-teal    { background: var(--box-teal);     border-color: var(--box-teal-border);     color: var(--box-teal-text); }
+  .nest-inner-teal   { background: #C8EEE9; border-color: #1A9080; color: #062B26; }
+
+  /* ── NUMBERED LIST ── */
+  .num-list { list-style: none; counter-reset: num-list; margin: 16px 0; }
+  .num-list li {
+    counter-increment: num-list;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: var(--text-mid);
+  }
+  .num-list li::before {
+    content: counter(num-list);
+    background: #1C1A16;
+    color: #FAF0CC;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+
+  /* ── BULLET LIST ── */
+  .bul-list { list-style: none; margin: 16px 0; }
+  .bul-list li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: var(--text-mid);
+  }
+  .bul-list li::before { content: '›'; font-size: 20px; line-height: 1.3; color: #9B8EE8; flex-shrink: 0; }
+
+  /* ── Q&A BLOCK ── */
+  .qa-block { margin: 10px 0; }
+  .qa-q {
+    background: var(--box-peach);
+    border-radius: 10px 10px 0 0;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--box-peach-text);
+    border: 1px solid var(--box-peach-border);
+    border-bottom: none;
+  }
+  .qa-a {
+    background: var(--box-mint);
+    border-radius: 0 0 10px 10px;
+    padding: 10px 16px;
+    font-size: 14px;
+    color: var(--box-mint-text);
+    border: 1px solid var(--box-mint-border);
+    border-top: 1px dashed var(--box-mint-border);
+    margin-bottom: 14px;
+  }
+
+  /* ── DIVIDER ── */
+  .divider { border: none; border-top: 2px dashed #DDD6C0; margin: 40px 0; }
+
+  /* ── TABLE ── */
+  .prob-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+  .prob-table th {
+    background: #1C1A16;
+    color: #FAF0CC;
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .prob-table td { padding: 9px 14px; border-bottom: 1px solid #EAE4D2; color: var(--text-mid); vertical-align: top; }
+  .prob-table tr:nth-child(even) td { background: #F8F4EB; }
+  .prob-table tr:hover td { background: #FFF8E1; }
+
+  /* ── TAG PILLS ── */
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+  .tag {
+    font-size: 12px; font-weight: 500; letter-spacing: 0.5px;
+    padding: 4px 12px; border-radius: 20px; border: 1px solid;
+    white-space: nowrap;
+  }
+  .tag.yellow  { background: var(--box-yellow);  border-color: var(--box-yellow-border);  color: var(--box-yellow-text); }
+  .tag.mint    { background: var(--box-mint);    border-color: var(--box-mint-border);    color: var(--box-mint-text); }
+  .tag.sky     { background: var(--box-sky);     border-color: var(--box-sky-border);     color: var(--box-sky-text); }
+  .tag.rose    { background: var(--box-rose);    border-color: var(--box-rose-border);    color: var(--box-rose-text); }
+  .tag.sage    { background: var(--box-sage);    border-color: var(--box-sage-border);    color: var(--box-sage-text); }
+  .tag.lavender{ background: var(--box-lavender);border-color: var(--box-lavender-border);color: var(--box-lavender-text); }
+  .tag.gold    { background: var(--box-gold);    border-color: var(--box-gold-border);    color: var(--box-gold-text); }
+  .tag.peach   { background: var(--box-peach);   border-color: var(--box-peach-border);   color: var(--box-peach-text); }
+  .tag.teal    { background: var(--box-teal);    border-color: var(--box-teal-border);    color: var(--box-teal-text); }
+  .tag.coral   { background: var(--box-coral);   border-color: var(--box-coral-border);   color: var(--box-coral-text); }
+
+  /* ── PART BANNER ── */
+  .part-banner {
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin: 48px 0 32px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .part-banner .part-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 4px;
+  }
+  .part-banner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    line-height: 1.2;
+  }
+  .part-banner .big-icon { font-size: 52px; flex-shrink: 0; }
+  .part-1-banner { background: var(--box-sky);  border: 1.5px solid var(--box-sky-border);  color: var(--box-sky-text); }
+  .part-2-banner { background: var(--box-teal); border: 1.5px solid var(--box-teal-border); color: var(--box-teal-text); }
+
+  /* ── SUMMARY GRID ── */
+  .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+  .sum-card {
+    border-radius: 12px;
+    padding: 18px 20px;
+    border: 1.5px solid;
+  }
+  .sum-card h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .sum-card ol { padding-left: 20px; font-size: 14px; line-height: 1.7; }
+  .sum-card ol li { margin-bottom: 6px; }
+  .sum-card.priv { background: var(--box-lavender); border-color: var(--box-lavender-border); color: var(--box-lavender-text); }
+  .sum-card.plat { background: var(--box-teal);     border-color: var(--box-teal-border);     color: var(--box-teal-text); }
+
+  /* ── OBSERVATION GRID ── */
+  .obs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 16px 0; }
+  .obs-item {
+    background: var(--warm-white);
+    border: 1px solid #E2D9C2;
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 13.5px;
+    color: var(--text-mid);
+  }
+  .obs-item .obs-label { font-weight: 600; font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 3px; }
+
+  /* ── YES CHAIN ── */
+  .yes-chain { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; align-items: center; }
+  .yes-chain .yes-bubble {
+    background: var(--box-mint);
+    border: 1px solid var(--box-mint-border);
+    color: var(--box-mint-text);
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 13.5px;
+    font-style: italic;
+  }
+  .yes-chain .arrow { font-size: 18px; color: #8A8068; }
+  .yes-chain .yes-badge {
+    background: #1C6B40;
+    color: #E8F8F0;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: 'DM Mono', monospace;
+  }
+
+  /* ── OBJECTIVES GRID ── */
+  .obj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 20px 0; }
+  .obj-card {
+    border-radius: 12px;
+    padding: 16px;
+    font-size: 13.5px;
+    line-height: 1.6;
+    border: 1.5px solid;
+  }
+  .obj-card .obj-num { font-family: 'DM Mono', monospace; font-size: 20px; font-weight: 500; margin-bottom: 6px; opacity: 0.6; }
+  .obj-card .obj-title { font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
+
+  /* responsive */
+  @media (max-width: 640px) {
+    .page { padding: 30px 20px 80px; }
+    .toc-columns, .summary-grid, .obs-grid, .obj-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 28px; }
+    .hero { padding: 36px 28px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="eyebrow">Corinda's Thirteen Steps to Mentalism &nbsp;·&nbsp; Step Eleven</div>
+    <h1>Question &amp; Answer Readings ✨</h1>
+    <p class="subtitle">The ultimate art in mentalism. No higher standard exists. No better system has been found. This is where raw experience beats every gimmick in the box. 🎭</p>
+    <div class="byline">Written by Dave Hoy &nbsp;&nbsp;|&nbsp;&nbsp; Annotated &amp; Presented for the Modern Mentalist</div>
+  </div>
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc-box">
+    <h2>📖 What's Inside</h2>
+    <div class="toc-columns">
+      <div>
+        <div class="toc-item"><span>Introduction</span><span class="pg">339</span></div>
+        <div class="toc-item"><span>Table of Probabilities</span><span class="pg">355</span></div>
+        <div class="toc-item"><span>Part One: Questions Known</span><span class="pg">343</span></div>
+        <div class="toc-item"><span>How to Get Information</span><span class="pg">344</span></div>
+        <div class="toc-item"><span>Stooges &amp; Plants</span><span class="pg">345</span></div>
+        <div class="toc-item"><span>Conveying Information</span><span class="pg">348</span></div>
+        <div class="toc-item"><span>Answering Known Questions</span><span class="pg">349</span></div>
+        <div class="toc-item"><span>Use of Flattery</span><span class="pg">350</span></div>
+      </div>
+      <div>
+        <div class="toc-item"><span>Sure-Fire Predictions</span><span class="pg">352</span></div>
+        <div class="toc-item"><span>Catch Questions</span><span class="pg">354</span></div>
+        <div class="toc-item"><span>Summary: Platform Readings</span><span class="pg">355</span></div>
+        <div class="toc-item"><span>Part Two: Questions Unknown</span><span class="pg">356</span></div>
+        <div class="toc-item"><span>Objectives of Cold Reading</span><span class="pg">357</span></div>
+        <div class="toc-item"><span>Observation of Detail</span><span class="pg">357</span></div>
+        <div class="toc-item"><span>Timing in Cold Reading</span><span class="pg">359</span></div>
+        <div class="toc-item"><span>Conclusion</span><span class="pg">359</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTRODUCTION -->
+  <h2 class="section-head">Introduction 🌟</h2>
+
+  <p>Millions of pounds and dollars have been made by people who have acquired the knack of telling others what they want to know. Mindreaders and mediums have spent a lot of time and study on the psychology of answering questions that are put to them by members of the public, who, supposing that the mindreader is gifted with some divine insight, presume he has the ability to foretell the future and see the past and present.</p>
+
+  <div class="callout yellow">
+    <div class="icon">💡</div>
+    <div class="body">
+      <strong>Here's the jaw-dropper.</strong>
+      <p>It is possible to tell the future and see the past and present! What is more, anybody who cares to do so can do so; the qualifications required are few, although their application may be harder than one might at first suppose.</p>
+    </div>
+  </div>
+
+  <p>In order that you may consider time in a person's life, thereby providing the means to answer a question, you require experience of life, which we shall call worldliness; you must be skilled in observation of detail and you need a good memory, along with the mentalist's best friend: the ability to talk.</p>
+
+  <div class="callout mint">
+    <div class="icon">⚡</div>
+    <div class="body">
+      <strong>Armed with these few qualifications, you are a powerful person.</strong>
+      <p>You can deal with people and, what is equally as important, people want to deal with you!</p>
+    </div>
+  </div>
+
+  <h3 class="sub-head">Why Do People Ask Questions? 🤔</h3>
+
+  <p>Shall we consider why there has ever been a demand for people who can answer questions? If we understand why the questions are asked, we understand what sort of reply must be given, and that is a most important thing to bear in mind at all times.</p>
+
+  <div class="nested-outer nest-sky">
+    <div class="nest-title">🧭 The Problem: Who Do You Turn To?</div>
+    <div class="nested-inner nest-inner-sky">
+      <div class="inner-title">🏥 Health problems</div>
+      <p>We go to a doctor because we know he can answer our questions.</p>
+    </div>
+    <div class="nested-inner nest-inner-sky">
+      <div class="inner-title">⚖️ Legal problems</div>
+      <p>We go to a solicitor.</p>
+    </div>
+    <div class="nested-inner nest-inner-sky">
+      <div class="inner-title">💭 Intangible problems</div>
+      <p>Indecision, uncertainty, doubt, fear, and hope... who is best qualified to deal with these emotional twists of our human makeup? Some people go to mediums, some go to mindreaders, and some go mad!</p>
+    </div>
+  </div>
+
+  <p>Most people who seriously ask our mindreader to render his professional advice do so because they hope (and occasionally believe) that his unusual abilities give him something the others have not got. In the first place they presume he has something more than others because, in general, the approach to the interview is something quite extraordinary; in fact, considered in cold daylight, it is more than extraordinary: it is absurd.</p>
+
+  <div class="box peach">
+    <p>The character with a problem wants to come up to our mindreader and sit in front of him with perhaps three words of greeting. From then on (in theory) our gifted seer reveals past, present, and future, states facts right, left, and centre, and ends up with the perfect answer to all problems!</p>
+    <p>It is not so. That is what they want and that is what they think they get, but by half a million miles it is not so.</p>
+  </div>
+
+  <h3 class="sub-head">The Two-Answer Principle 🎯</h3>
+
+  <p>Very shortly, we shall see what diabolical deceit is used to make something so hard seem so simple; it is the art of giving answers to questions. To boil it down to a few words, when someone asks you a question there are two replies you can give.</p>
+
+  <div class="summary-grid">
+    <div style="background: var(--box-mint); border: 1.5px solid var(--box-mint-border); color: var(--box-mint-text); border-radius: 12px; padding: 20px;">
+      <div style="font-size: 22px; margin-bottom: 8px;">✅</div>
+      <div style="font-weight: 700; font-size: 15px; margin-bottom: 8px;">What they WANT to happen</div>
+      <p style="font-size: 14px; margin: 0; color: var(--box-mint-text);">They will believe in you and like you.</p>
+    </div>
+    <div style="background: var(--box-rose); border: 1.5px solid var(--box-rose-border); color: var(--box-rose-text); border-radius: 12px; padding: 20px;">
+      <div style="font-size: 22px; margin-bottom: 8px;">❌</div>
+      <div style="font-weight: 700; font-size: 15px; margin-bottom: 8px;">What they do NOT want</div>
+      <p style="font-size: 14px; margin: 0; color: var(--box-rose-text);">They will doubt you and dislike you.</p>
+    </div>
+  </div>
+
+  <div class="callout gold">
+    <div class="icon">🏆</div>
+    <div class="body">
+      <strong>It's as simple as that. Or is it?</strong>
+      <p>The trouble starts when you find out what they want and yet to advise it would be doing what you know to be ethically or legally wrong. People don't always want to do the right thing; very often they want the opposite, and if you encourage them, do you not become a party to their guilt?</p>
+    </div>
+  </div>
+
+  <p>Your first objective is to find out what they want, that is to say, when dealing with a serious question. Having done that, you call on your experience of life and work out within reason whether or not you are in a position to give any advice at all.</p>
+
+  <div class="nested-outer nest-yellow">
+    <div class="nest-title">🧩 The Decision Framework</div>
+    <div class="nested-inner nest-inner-yellow">
+      <div class="inner-title">✅ If no harm can be done</div>
+      <p>Go ahead and say what common sense tells you to say, keeping your advice as near as possible to their secret wishes.</p>
+    </div>
+    <div class="nested-inner nest-inner-yellow">
+      <div class="inner-title">⚠️ If harm can be done</div>
+      <p>Fall back on the old friend to mediums: deliver a warning carefully worded, but above all shroud the answer in ambiguity. Admit nothing, suggest nothing, and insinuate nothing. Give out a long-winded spiel that seems to answer everything and answers nothing.</p>
+    </div>
+    <div class="nested-inner nest-inner-yellow">
+      <div class="inner-title">🩺 Health questions specifically</div>
+      <p>Many of the questions that people ask are concerned with medical problems. Never presume you can advise on all matters; leave technical problems to those qualified to handle them. The answer? Suggest a visit to the doctor.</p>
+    </div>
+  </div>
+
+  <h3 class="sub-head">This Is NOT Bunk 💬</h3>
+
+  <p>For a long time I have frowned on mitt-readers, pseudo-psychologists, and the Tarot divinators. It took me quite a while to wake up to the fact that they do more good than harm, and I have by now enough personal experience of people made happy by them.</p>
+
+  <div class="callout sage">
+    <div class="icon">🤝</div>
+    <div class="body">
+      <strong>More often than you think.</strong>
+      <p>Half the visitors to a friend of mine went there not because they wanted advice or solutions to problems, but simply because they just wanted someone with whom they could discuss their headaches. Having talked things over, they were quite relieved, and nothing more than that did a lot more good than harm.</p>
+    </div>
+  </div>
+
+  <h3 class="sub-head">The Three Big Topics 📊</h3>
+
+  <p>Those experienced in answering questions know that if you were to invite ten thousand people to ask a personal question, the bulk of the questions received could be classed very quickly into a very limited number of groups or types of questions.</p>
+
+  <div class="callout peach">
+    <div class="icon">🔥</div>
+    <div class="body">
+      <strong>The overwhelming majority.</strong>
+      <p>If you decided to remove all questions that dealt with money, health, and sex in any shape or form(!), you would have very few left from your ten thousand. These three things are predominant interests in the average life.</p>
+    </div>
+  </div>
+
+  <div class="tags">
+    <span class="tag rose">💕 Sex</span>
+    <span class="tag mint">💰 Money</span>
+    <span class="tag sky">🏥 Health</span>
+    <span class="tag sage">...and very little else.</span>
+  </div>
+
+  <p>Without recourse to trickery with apparatus (i.e., clip boards) you determine the question or problem by a process of verbal conjuring called "pumping." This is a skilled art. It means you have to make them tell you what they want to know, and yet they must not know that they have told you. All very ridiculous when you think of it, but part of the game nevertheless!</p>
+
+  <div class="callout lavender">
+    <div class="icon">🕵️</div>
+    <div class="body">
+      <strong>What is Cold Reading?</strong>
+      <p>"Cold reading" means you start off without the slightest knowledge about the person and end up telling them a long list of personal data. Is that not clever? Maybe you will disagree, but one thing you can't argue about is that it's commercial.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PART ONE BANNER -->
+  <div class="part-banner part-1-banner">
+    <div class="big-icon">📋</div>
+    <div>
+      <div class="part-num">Part One</div>
+      <h2>Dealing with Questions That Are Known</h2>
+    </div>
+  </div>
+
+  <p>To clarify exactly what we mean by "questions that are known," let us regard any question or problem that is written, conveyed directly, or spoken outright as a known question. Starting off with knowledge of the problem on hand makes it all much easier for you, although you must not forget that if they tell you their question, it is less impressive than when they do not.</p>
+
+  <div class="callout coral">
+    <div class="icon">🎯</div>
+    <div class="body">
+      <strong>The golden rule of known questions.</strong>
+      <p>Find out what they want to know, right at the beginning, and if you can, keep it a secret that you have discovered what they want to know.</p>
+    </div>
+  </div>
+
+  <h3 class="sub-head">How to Get Information 🔍</h3>
+
+  <h4 class="mini-head">(A) Reference to Technique in Other Steps</h4>
+
+  <div class="tags">
+    <span class="tag lavender">Pencil Reading — Step 2</span>
+    <span class="tag sky">Billet Switching — Step 6</span>
+    <span class="tag mint">The Centre Tear — Step 6</span>
+    <span class="tag gold">Three Little Questions — Step 6</span>
+    <span class="tag peach">The Clip Book — Step 7</span>
+    <span class="tag sage">Pellet Switching — Step 6</span>
+  </div>
+
+  <h4 class="mini-head">(B) Other Methods</h4>
+
+  <!-- Alcohol -->
+  <div class="nested-outer nest-peach">
+    <div class="nest-title">🥃 (1) Alcohol or Chemicals</div>
+    <div class="nested-inner nest-inner-peach">
+      <div class="inner-title">The Nightclub Story</div>
+      <p>A story is told of a well-known professional reader who worked nightclubs. He had people write questions and seal them in envelopes, these were then collected in a bunch and thrown into a pile on the table. Throughout his act, the performer swigged liberal quantities of whisky and in fact appeared very nearly drunk.</p>
+    </div>
+    <div class="nested-inner nest-inner-peach">
+      <div class="inner-title">🔬 The method</div>
+      <p>He kept his glass well topped with whisky and "rested" an envelope on the mouth of the glass from time to time. With the proof spirit contained in whisky, the envelope was rendered transparent enough for him to read the message inside. I don't know a better excuse for drinking whisky!!</p>
+    </div>
+    <div class="nested-inner nest-inner-peach">
+      <div class="inner-title">⚠️ Recommendation</div>
+      <p>Coming back to sobriety: chemicals that render an envelope transparent can be used, but these methods are messy and not worth the trouble. Carbon tetrachloride achieves the same effect with less smell. But with the option to use alternative, equally effective methods, I recommend you do not involve yourself with chemical techniques unless you enjoy performing troubles.</p>
+    </div>
+  </div>
+
+  <!-- Light -->
+  <div class="box sky">
+    <p><strong>💡 (2) Light</strong></p>
+    <p>Again we are dealing with reading a question sealed in an envelope, with the intention of returning it to the writer. Light is simply another method of making most envelopes transparent. Nelson Enterprises market a gimmick which is suitable when you are using a stack of envelopes, and there is a model of a light-screening unit built into a book which hides the apparatus successfully. However, although you may choose the right cards and right envelopes for this technique, you will always get someone who fails in your instructions and folds their card before sealing it in the envelope. Once more, there are easier methods.</p>
+  </div>
+
+  <!-- Window Envelope -->
+  <div class="nested-outer nest-mint">
+    <div class="nest-title">🪟 (3) The Window Envelope</div>
+    <div class="nested-inner nest-inner-mint">
+      <div class="inner-title">The Setup</div>
+      <p>It is generally the case that anything simple is good, and the window envelope is both. You have a stack of a dozen envelopes and the top one has been treated with a razor blade: a large section has been cut from the back.</p>
+    </div>
+    <div class="nested-inner nest-inner-mint">
+      <div class="inner-title">♟️ The Execution</div>
+      <p>The questions are written on postcards and envelopes are given out to all people excepting one. You ask him to turn his card face downwards before taking it yourself and sliding it into the window envelope, as if showing the others what to do. There is no need for more than one window envelope: with the facility of knowing one question, you are in a position to work the Washington-Irving-Bishop Test, which, as you all know, is the One Ahead System!</p>
+    </div>
+  </div>
+
+  <!-- Clip Board -->
+  <div class="box lavender">
+    <p><strong>📎 (4) The Clip Board</strong></p>
+    <p>A clip board is simply a square wooden board which has several sheets of paper held in position, ready for writing, by means of a bulldog clip at the top. It is so constructed that a carbon impression is made and can be removed or seen after the top sheet used by the spectator has been removed and retained by him. Some clip boards are very simple and some are cunningly designed with trick mechanisms that open panels, and they range from a few inches to two feet in size.</p>
+    <p>Another appliance was designed by the English mentalist Eric Mason and is now a marketed item called "Dubbul." This is a wallet-type pocket writing case made in leather, and it gains the information by means of a direct carbon impression. It is very easy to read the impression with this wallet and so it is a very good idea.</p>
+  </div>
+
+  <!-- Record Card -->
+  <div class="nested-outer nest-yellow">
+    <div class="nest-title">🗂️ (5) The Record Card</div>
+    <p style="font-size: 14px; margin: 0 0 14px; color: var(--box-yellow-text);">This is a trick of the trade, usually confined to use where a reader is dealing with one person at a time, but suitable for more than one when required. ANY information is an asset when dealing with questions and answers, so when the visitor calls, he is asked to fill out a "record card" which is handed to him.</p>
+    <div class="nested-inner nest-inner-yellow">
+      <div class="inner-title">📋 Card Type "XX"</div>
+      <p>Asks outright: what is the question you want to ask? Blunt, but handled rightly, there is no danger or even a suspicion as to its actual purpose.</p>
+    </div>
+    <div class="nested-inner nest-inner-yellow">
+      <div class="inner-title">📋 Card Type "ZZ"</div>
+      <p>Less conspicuous. Gets you off to a good start with lots of personal data: Name, Address, Date of Birth, Telephone No. A less presumptuous hybrid.</p>
+    </div>
+    <p style="font-size: 14px; margin: 14px 0 0; color: var(--box-yellow-text);">It has been known for many years that one professional reader gave her clients a foolscap questionnaire that, by the time completed by the sitter, gave the reader enough personal data to sit back and write a biography on the client! If you possess the impudence, you can get away with murder. (Without prejudice!)</p>
+  </div>
+
+  <!-- Stooge -->
+  <div class="callout rose">
+    <div class="icon">🎭</div>
+    <div class="body">
+      <strong>(6) The Stooge</strong>
+      <p>Here we go again! Every time I say "stooge" I get fifty letters telling me it's all wrong. Stooges are there to be used if you want to use them, and need not be used if you don't want to use them. Working a hall or from stage, the mindreader hands out envelopes and cards for questions. All are sealed by the audience before they are collected by the performer. On his way round he gathers up the envelopes and takes one from his stooge seated in the audience. As soon as he gets it from the stooge, he looks back at him and asks "Did you sign your name?" The stooge opens it, reads the question, copies it quickly on the outside of the envelope, and reseals it in another envelope. The performer collects it and is now set for a perfect One Ahead Routine with Sealed Envelopes.</p>
+    </div>
+  </div>
+
+  <!-- Switching -->
+  <div class="box teal">
+    <p><strong>🔄 (7) Switching of Envelopes</strong></p>
+    <p>For work with large audiences, it is a practical proposition to collect a lot of sealed envelopes into some sort of basket or bowl, and then to switch the lot, lock, stock, and barrel. Quite a number of professional theatre-workers have found it quite an easy matter to have questions written in the foyer by incoming patrons. An attendant is used to collect the full box and take it to the stage, where it is dumped in full view of the audience. En route from the foyer to the stage, there are a dozen opportunities to switch the complete box for a duplicate box which has been ready loaded with dummy envelopes or slips.</p>
+    <p>Clip boards used in the foyer enable you to bring the real questions on to the stage and work with the information gained from the carbon copy questions when this procedure is adopted. It is a good method.</p>
+  </div>
+
+  <!-- Planting -->
+  <div class="box sage">
+    <p><strong>🌱 (8) Planting of Envelopes and Slips</strong></p>
+    <p>Another rather subtle dodge is to have many envelopes collected but to ADD a few of your own to the supply. It is such an easy matter to do this that we need hardly bother with it here. Nearly all question and answer acts for large audiences should consider the addition of one or two (at least) "spicy" questions which are going to guarantee a stir in the audience.</p>
+    <p>You can always come up with the old spiel: "The next question is one that I think is far too personal, and since it involves stolen money, I will not embarrass the writer by identification now..." With such an introduction, which sounds plausible, everybody is dead keen to know who is the crook, and they are interested before you start the answer! What is more important: the whole thing is fictitious and there is no danger of being prosecuted for slander.</p>
+  </div>
+
+  <hr class="divider">
+
+  <h3 class="sub-head">How to Convey Information 📡</h3>
+
+  <p>On many occasions a question and answer routine is based on the old principles of stealing envelopes and opening them, getting carbon copies, or sneaking information by way of personal interviews. Generally, when this is so, it is a matter of getting the information from an off-stage backroom to the reader who is on stage working, or ready to work.</p>
+
+  <div class="callout yellow">
+    <div class="icon">✏️</div>
+    <div class="body">
+      <strong>The coding system.</strong>
+      <p>Questions must be analysed, abridged to the minimum of context without losing any vital facts (i.e., names, dates), and written clearly though in very small letters. Fogel suggested a sample code to reduce the context of the question to a minimum of writing. For example: "D!!MOORE/Mr/Tr/1907" would code the question "I have travelled as a soldier during the war and I am now fifty-two years old; do you think I will go back to where I was stationed?" signed D. Moore. About twenty questions could be coded on to the back of a postage stamp, although this economy is hardly called for!</p>
+    </div>
+  </div>
+
+  <h4 class="mini-head">General Means of Conveying Information Secretly 🤫</h4>
+
+  <div class="obs-grid">
+    <div class="obs-item"><div class="obs-label">(1) Hand Rollers</div>Gimmicked apparatus operated by hand movement, bringing questions into view and taking away those already dealt with.</div>
+    <div class="obs-item"><div class="obs-label">(2) Pencilled Slate</div>Many questions written on a slate with ordinary pencil, hardly visible from a short distance. A blackboard serves the same purpose.</div>
+    <div class="obs-item"><div class="obs-label">(3) The Thumbnail</div>Quite a few questions abridged and written on your thumbnails. Your hands are then free of cumbersome apparatus. Ink can be used.</div>
+    <div class="obs-item"><div class="obs-label">(4) Cigarette Holder</div>Questions written along the stem of a cigarette holder which, in the hands, is easily seen.</div>
+    <div class="obs-item"><div class="obs-label">(5) Roller on Microphone</div>A Fogel dodge: a simple hand roller clipped on to the stage microphone, made to look like part of that apparatus!</div>
+    <div class="obs-item"><div class="obs-label">(6) Watchface</div>A small piece of paper stuck over your wristwatch face gives you another handy source of supply.</div>
+    <div class="obs-item"><div class="obs-label">(7) Cuff</div>Notes made on your shirt cuff, just where the Victorian toff played noughts and crosses when teacher wasn't looking!</div>
+    <div class="obs-item"><div class="obs-label">(8) Small Card</div>Questions coded and neatly printed on a visiting card, not hard to conceal in the folds of a handkerchief or black velvet drape.</div>
+    <div class="obs-item"><div class="obs-label">(9) Large Card or Blackboard</div>Questions written in large handwriting and displayed on a card concealed in the footlights, or chalked on a blackboard you can see in the wings.</div>
+    <div class="obs-item"><div class="obs-label">(10) Written on Glass</div>Questions written on a drinking glass in ink, or on the water jug brought on stage. Every time you take a sip, you glimpse another question.</div>
+  </div>
+
+  <hr class="divider">
+
+  <h3 class="sub-head">Answering Questions That Are Known 🎤</h3>
+
+  <p>Primarily, there are two species of answers to questions: the answer that entertains and interests everybody, and the personal reply that usually remains of interest to one person only.</p>
+
+  <div class="summary-grid">
+    <div style="background: var(--box-lavender); border: 1.5px solid var(--box-lavender-border); color: var(--box-lavender-text); border-radius: 12px; padding: 20px;">
+      <div style="font-size: 22px; margin-bottom: 8px;">🔒</div>
+      <div style="font-weight: 700; font-size: 14px; margin-bottom: 8px;">Private Reading</div>
+      <p style="font-size: 14px; margin: 0; color: var(--box-lavender-text);">No need to be entertaining; the audience is one, and that one is far more concerned with personal attention than amusement.</p>
+    </div>
+    <div style="background: var(--box-sky); border: 1.5px solid var(--box-sky-border); color: var(--box-sky-text); border-radius: 12px; padding: 20px;">
+      <div style="font-size: 22px; margin-bottom: 8px;">🎪</div>
+      <div style="font-weight: 700; font-size: 14px; margin-bottom: 8px;">Platform / Stage Reading</div>
+      <p style="font-size: 14px; margin: 0; color: var(--box-sky-text);">Entertainment is the prime object; your answers must appeal to the mass, and that is why you carefully choose the right questions in the first place.</p>
+    </div>
+  </div>
+
+  <h4 class="mini-head">Private Readings: The Core Rules</h4>
+
+  <div class="nested-outer nest-lavender">
+    <div class="nest-title">🔐 The Private Reading Playbook</div>
+    <div class="nested-inner nest-inner-lavender">
+      <div class="inner-title">💬 Ambiguity is your friend</div>
+      <p>Ambiguity is the very essence of personal reading. Speak in broad terms; never specialise or pin-point your suggestions too much. Allow the subject to create a meaning to your words, as they will if you do it rightly.</p>
+    </div>
+    <div class="nested-inner nest-inner-lavender">
+      <div class="inner-title">🌷 Flattery as a tool</div>
+      <p>Flattery can be a sin, a deadly weapon, and a medicine depending upon how it is used and when. An obstinate client can be inflated to an endless degree of self-importance, and then become quite a chatterbox when the tongue has been loosened with a few flattering remarks! Very, very few people are immune to the effect of flattery.</p>
+    </div>
+    <div class="nested-inner nest-inner-lavender">
+      <div class="inner-title">🧠 Find out what they've already decided</div>
+      <p>Nearly all clients ask a question which has already been considered by them, and they have invariably formed their own opinions as to what to do. More often than not, if you advise against the decision they have already formed in their mind, you are conflicting with their wishes, and they don't like that.</p>
+    </div>
+    <div class="nested-inner nest-inner-lavender">
+      <div class="inner-title">🏆 The ultimate slogan</div>
+      <p>"Tell them what they want to know." If you keep that in mind, you will be successful. The only time to break this rule is when you know without any doubt that it will cause lots of trouble, if it is illegal, or extremely dangerous.</p>
+    </div>
+  </div>
+
+  <h4 class="mini-head">Platform Readings: The Yes Chain Method 🎭</h4>
+
+  <p>There are numerous styles of presentation for the stage reader. Some performers prefer to start off by calling out the initials of the person who wrote the questions; others answer the question first and have the spectator identify his question afterwards. The very best: mix a bit of each and everything.</p>
+
+  <div class="callout gold">
+    <div class="icon">⭐</div>
+    <div class="body">
+      <strong>Get them saying YES as often as possible!</strong>
+      <p>Frame your reply so that it appeals to everybody. Learn to infer that you know much more than you say. Keep the spectator saying "YES" as much as you can, even in reply to statements of fact.</p>
+    </div>
+  </div>
+
+  <p>For example, a written question: "Will my daughter become engaged to the Doctor...? Mrs. Freeman." You can score at least five "yesses" out of this alone, without a few lucky hits on the road.</p>
+
+  <div class="yes-chain">
+    <div class="yes-bubble">"We have a lady here who is concerned with her daughter and a professional man..."</div>
+    <div class="arrow">→</div>
+    <div class="yes-badge">YES ✓</div>
+    <div class="yes-bubble">"I believe you are a married woman..."</div>
+    <div class="arrow">→</div>
+    <div class="yes-badge">YES ✓</div>
+    <div class="yes-bubble">"Your problem does concern marriage, although it has not yet taken place?"</div>
+    <div class="arrow">→</div>
+    <div class="yes-badge">YES ✓</div>
+    <div class="yes-bubble">"There is in fact an engagement with a view to marriage in the air?"</div>
+    <div class="arrow">→</div>
+    <div class="yes-badge">YES ✓</div>
+    <div class="yes-bubble">"The man we have in mind is a doctor, isn't he?"</div>
+    <div class="arrow">→</div>
+    <div class="yes-badge">YES ✓</div>
+  </div>
+
+  <p>From this example we see that everybody is drawn into the question. We do not make cryptic replies that mean something to the writer alone. We let the audience hear, by a continuous stream of yes, yes, yes, that you are right!</p>
+
+  <div class="callout teal">
+    <div class="icon">🌀</div>
+    <div class="body">
+      <strong>The universal sure-fire line.</strong>
+      <p>You can always scrape a few more "yesses" by such statements as "might I say that you have indeed been concerned with money of late?" Just think about it: how many people can honestly say "No"? Whip them in quick and get on to something else before people stop to think how blessed silly it is!</p>
+    </div>
+  </div>
+
+  <h3 class="sub-head">Sure-Fire Predictions 🔮</h3>
+
+  <p>The sure-fire prediction is the emergency exit of every reader. When he can't get along with any spectator, the facts are few and acknowledgements less; you fall back on time-honoured policy and talk about the future, which cannot be denied there and then.</p>
+
+  <div class="nested-outer nest-sage">
+    <div class="nest-title">🔮 Your Prediction Arsenal</div>
+    <div class="nested-inner nest-inner-sage">
+      <div class="inner-title">✉️ The Letter</div>
+      <p>You can always call upon the "letter soon to be received with surprisingly pleasant news."</p>
+    </div>
+    <div class="nested-inner nest-inner-sage">
+      <div class="inner-title">✈️ The Journey</div>
+      <p>"A journey to meet a strange man, something to do with your father's side of the family."</p>
+    </div>
+    <div class="nested-inner nest-inner-sage">
+      <div class="inner-title">🦵 The Scar</div>
+      <p>"I see you have a scar on your knee," said to males, nearly always causes astonishment because few stop to think that most every male does have a scar on his knee. Try it!</p>
+    </div>
+    <div class="nested-inner nest-inner-sage">
+      <div class="inner-title">☀️ The Bright Future</div>
+      <p>Blossom forth with visions of money, promotion, travel, and friendship. Paint the future bright and keep them happy. When you are right, they remember what you said; when you are wrong, they forget.</p>
+    </div>
+  </div>
+
+  <h3 class="sub-head">The Power of Inference 🌫️</h3>
+
+  <p>Make use of fake questions; don't just sling them in to fill space. If you are playing safe (and you are with a fake), make it hot. Here is an example of a fake question and how you would create interest with the audience as a whole:</p>
+
+  <div class="box peach" style="font-style: italic; border-radius: 12px; padding: 20px 24px;">
+    <p>"This next question is something which I don't like to handle. It is very risky for me to offer any advice at all, but I can see that the writer needs help and so I will offer a few strong opinions. This is a very personal question, so I will not ask 'G.D.S.' to raise his hand. You have asked me to help you with your weakness. I'm going to be very strict on this and say I don't approve of any forms of unnatural behaviour. You are not even trying to help yourself. You should go to a psychiatrist for professional treatment, and I think there is no doubt that you will become involved with the law if you don't stop these activities. Now you know what I mean; make an effort. You are in great danger the longer you leave it."</p>
+  </div>
+
+  <div class="callout yellow">
+    <div class="icon">🎩</div>
+    <div class="body">
+      <strong>Why this works.</strong>
+      <p>If I wrote that paragraph on a slip of paper and asked fifty people to read it and say what they thought was the trouble, I would get many different opinions. It has the suggestion of seriousness, of scandal (the police and the law), of sex (although you don't say it; our word is "behaviour"): it has everything and yet when you read it as it is, there is NOTHING in it. Everything is inference. It is an accepted licence that you use inference to dramatise a question and answer.</p>
+    </div>
+  </div>
+
+  <h3 class="sub-head">Catch Questions and Hecklers 🥊</h3>
+
+  <p>The answer to hecklers is simple. Keep calm and remember all the time: your first obligation is to be polite, and you are there to entertain everybody, not argue with one nark. Nine times out of ten they will try something that has been tried so many times before that we know the answer by experience.</p>
+
+  <div class="box rose">
+    <p><strong>⚠️ The warning topics: always avoid these from platform.</strong></p>
+    <ul class="bul-list">
+      <li>Legal matters: by law you could become involved in a case simply by what you say.</li>
+      <li>Religion: steer very, very clear.</li>
+      <li>Politics: it is one thing to entertain and it is another to do ten years for opening your mouth at the wrong moment!</li>
+    </ul>
+  </div>
+
+  <h4 class="mini-head">Sample Catch Questions with Proven Replies 😄</h4>
+
+  <div class="qa-block">
+    <div class="qa-q">Q: "What will be the name of my wife when I marry?"</div>
+    <div class="qa-a">A: "A gentleman wants to know the name of his wife when he marries. Who asked that, please? Ah, you, sir; may I call you by your name? Who are you? Mr. Henry Coates, thank you. Well, Mr. Coates, it may come as a surprise to you, but there seems to be little doubt that when you marry, your wife's name will be Mrs. Coates. Thank you!" 😂 He swallows the bait and tells you his name; you get a laugh and you are out of trouble.</div>
+  </div>
+  <div class="qa-block">
+    <div class="qa-q">Q: "What are Streptococci?"</div>
+    <div class="qa-a">A: "Well, ladies and gentlemen, I do not claim to be a qualified bacteriologist, a subject which I believe deals with streptococci, but if the writer is that keen to know, he should turn to Volume Eleven, page 1,325 of the Encyclopaedia Britannica and there, on the right-hand page, left column, seven rows down, is given a most comprehensive explanation!" 📚</div>
+  </div>
+  <div class="qa-block">
+    <div class="qa-q">Q: "How can I win lots of money on the pools?"</div>
+    <div class="qa-a">A: "Very simple: get eight draws correct on the Treble Chance for six weeks running."</div>
+  </div>
+  <div class="qa-block">
+    <div class="qa-q">Q: "Are you really a mindreader?"</div>
+    <div class="qa-a">A: "No! Actually I'm a millionaire, but I do this to pay my taxes!" 💸</div>
+  </div>
+  <div class="qa-block">
+    <div class="qa-q">Q: "M.H. asks: Can you lend me five shillings?"</div>
+    <div class="qa-a">A: "Only just!"</div>
+  </div>
+  <div class="qa-block">
+    <div class="qa-q">Q: "G.Y. asks: I've got lots of little troubles; can you help me?"</div>
+    <div class="qa-a">A: "Have you tried insecticides?" 🐜</div>
+  </div>
+  <div class="qa-block">
+    <div class="qa-q">Q: "Am I good looking? H.B."</div>
+    <div class="qa-a">A: "In reply to H.B. who asks if he is good looking: can I say he's the prettiest bricklayer I've seen in a fortnight." 😄</div>
+  </div>
+  <div class="qa-block">
+    <div class="qa-q">Q: "Can I stop smoking?"</div>
+    <div class="qa-a">A: "Give me your cigarettes and I'll try for you!" 🚬</div>
+  </div>
+  <div class="qa-block">
+    <div class="qa-q">Q: "Which of my teeth are filled with gold?"</div>
+    <div class="qa-a">A: "If you give them to me for a moment I'll soon tell you!" 😁</div>
+  </div>
+  <div class="qa-block">
+    <div class="qa-q">Q: "I'm troubled at home; what's good for mice?"</div>
+    <div class="qa-a">A: "Cheese is about the best thing I can think of!" 🧀</div>
+  </div>
+
+  <h3 class="sub-head">Summary: Part One 📝</h3>
+
+  <div class="summary-grid">
+    <div class="sum-card priv">
+      <h4>🔒 Private Readings</h4>
+      <ol>
+        <li>Avoid dealing with legal matters.</li>
+        <li>Avoid, if you can, religion and politics.</li>
+        <li>Make the reading happy.</li>
+        <li>Weaken the subject with flattery.</li>
+        <li>Discover their interests and tell them what they want to know.</li>
+        <li>Be ambiguous: say nothing committal unless it is a sure-fire prediction.</li>
+        <li>Never say word for word the exact text of the question, showing you have read it.</li>
+      </ol>
+    </div>
+    <div class="sum-card plat">
+      <h4>🎪 Platform Readings</h4>
+      <ol>
+        <li>Strictly avoid any legal matters and don't chance politics and religion.</li>
+        <li>Use plants (stooges) in audience and use fake questions to enliven the show.</li>
+        <li>Pick questions which offer appeal to everybody, not one person.</li>
+        <li>Use inference to create a situation that may not truly exist.</li>
+        <li>Vary the way in which questions are acknowledged from the audience.</li>
+        <li>Get the spectator to say "Yes" as often as possible.</li>
+        <li>Use wit and cleverness to deal with trouble; not temper and argument.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h3 class="sub-head">Table of Probabilities 📊</h3>
+
+  <p>The table is designed to show what subject is most likely to be encountered, and in what order subjects most frequently occur. By knowing what subject is most probable, our time is saved and we refrain from wild and unsystematic guesses. We always tackle the most probable first and then work down the list.</p>
+
+  <table class="prob-table">
+    <thead>
+      <tr>
+        <th>Major Category</th>
+        <th>Subdivisions</th>
+        <th>Further Detail</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>💕 Sex</td>
+        <td>Single: Engagement, Marriage, Personal Appearance, Inferiority Complex, Psychiatric</td>
+        <td>Married: Husband, Wife, Children, Relatives, Legal, Outsiders</td>
+      </tr>
+      <tr>
+        <td>🏥 Health</td>
+        <td>Own Health: Pathological, Psychological</td>
+        <td>Others' Health: Close Relative, Friend, Medical Occupation</td>
+      </tr>
+      <tr>
+        <td>💰 Money</td>
+        <td>Loss: Domestic, Business, Hire Purchase, Travel, Debts</td>
+        <td>Gain: Gambling, Investment, Property, Loans, Savings, Theft</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout mint">
+    <div class="icon">📌</div>
+    <div class="body">
+      <strong>The key insight from the table.</strong>
+      <p>There is more likelihood of a question dealing with a physical complaint of health than a mental complaint. More people ask questions on gambling than do people ask questions on savings. A question on mental illness could fall under several headings: it could be personal illness, it could be concerned with sex, and it could simply be that the question writer was employed in a mental hospital.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PART TWO BANNER -->
+  <div class="part-banner part-2-banner">
+    <div class="big-icon">🧊</div>
+    <div>
+      <div class="part-num">Part Two</div>
+      <h2>Dealing with Questions Unknown: Cold Reading</h2>
+    </div>
+  </div>
+
+  <p>We are concerned now with one of the highest forms of mental magic; it is the art of cold reading, a process of mental analysis with a subject that leads you to discover their problems without having any direct information conveyed to you. Nothing is written, nothing is asked outright as a question, nothing is told to you by a third person. You do not know the subject at the start, you have no idea what they are, who they are, and what they want to know. You find out, and deal with the information obtained, to give them what we call a "Reading."</p>
+
+  <div class="callout teal">
+    <div class="icon">🧠</div>
+    <div class="body">
+      <strong>The secret advantage you already hold.</strong>
+      <p>This one is about the three thousandth client. I already know what they want: they have a problem, otherwise they wouldn't be here now! What is more, I know what problems are most probable and what are most unlikely. They do not suspect that I am going to adopt a subtle cross-questioning system, so they will not be on guard. I also know that if I flatter them, they will talk about themselves and tell me what I can tell them! Then I shall remember what they say and, when I tell them the same thing a little later, they will have forgotten that they told me, because they are not prepared to remember words of conversation as I am.</p>
+    </div>
+  </div>
+
+  <h3 class="sub-head">The Seven Main Objectives of Cold Reading 🎯</h3>
+
+  <div class="obj-grid">
+    <div class="obj-card" style="background: var(--box-lavender); border-color: var(--box-lavender-border); color: var(--box-lavender-text);">
+      <div class="obj-num">01</div>
+      <div class="obj-title">Observe</div>
+      Develop a high degree of observation. Look for personal details.
+    </div>
+    <div class="obj-card" style="background: var(--box-mint); border-color: var(--box-mint-border); color: var(--box-mint-text);">
+      <div class="obj-num">02</div>
+      <div class="obj-title">Voice</div>
+      Learn to use your voice so that you can ask a question in such a way that you seem to be stating a fact.
+    </div>
+    <div class="obj-card" style="background: var(--box-sky); border-color: var(--box-sky-border); color: var(--box-sky-text);">
+      <div class="obj-num">03</div>
+      <div class="obj-title">Deduce</div>
+      Learn to put two and two together. A black tie suggests death.
+    </div>
+    <div class="obj-card" style="background: var(--box-yellow); border-color: var(--box-yellow-border); color: var(--box-yellow-text);">
+      <div class="obj-num">04</div>
+      <div class="obj-title">Listen</div>
+      Be a good listener as well as a good talker. Give them a chance to tell you.
+    </div>
+    <div class="obj-card" style="background: var(--box-peach); border-color: var(--box-peach-border); color: var(--box-peach-text);">
+      <div class="obj-num">05</div>
+      <div class="obj-title">Remember</div>
+      Never forget a fact. Remember names, places, and dates especially.
+    </div>
+    <div class="obj-card" style="background: var(--box-sage); border-color: var(--box-sage-border); color: var(--box-sage-text);">
+      <div class="obj-num">06</div>
+      <div class="obj-title">Escape</div>
+      Always be prepared with a twist of conversation to change the topic when you are wrong. Never leave yourself without a "get-out."
+    </div>
+  </div>
+
+  <div class="callout coral">
+    <div class="icon">⏱️</div>
+    <div class="body">
+      <strong>Objective 07: Timing.</strong>
+      <p>Give them time to forget what they have said, before you tell them the same.</p>
+    </div>
+  </div>
+
+  <h3 class="sub-head">The Art of Observation 👁️</h3>
+
+  <p>From observation we can tell no end, and yet we do not accept anything we see until it has been checked. We are careful, for example, when we see a wedding ring on the correct finger, and we check that our subject is married. It is a strong guide, not a fact. It is a start for conversation, and that is a priceless gift to the cold reader.</p>
+
+  <div class="nested-outer nest-teal">
+    <div class="nest-title">🔎 What to Look For</div>
+    <div class="nested-inner nest-inner-teal">
+      <div class="inner-title">(a) Fingernails</div>
+      <p>Bitten: suggestive of nervous trouble, especially in adults.</p>
+    </div>
+    <div class="nested-inner nest-inner-teal">
+      <div class="inner-title">(b) Maker's Tab on Overcoat</div>
+      <p>The information is unlimited: have a look!</p>
+    </div>
+    <div class="nested-inner nest-inner-teal">
+      <div class="inner-title">(c) Jewellery</div>
+      <p>Real or artificial. Real jewellery suggests financial standing.</p>
+    </div>
+    <div class="nested-inner nest-inner-teal">
+      <div class="inner-title">(d) Condition of Heels on Shoes</div>
+      <p>Quality of clothing, particularly the condition of heels on shoes, speaks for itself.</p>
+    </div>
+    <div class="nested-inner nest-inner-teal">
+      <div class="inner-title">(e) Condition of Hands</div>
+      <p>Clean, dirty, groomed, workers' hands.</p>
+    </div>
+    <div class="nested-inner nest-inner-teal">
+      <div class="inner-title">(f) Articles Carried</div>
+      <p>A carrier bag marked "Hamley's of Regent Street, London."</p>
+    </div>
+    <div class="nested-inner nest-inner-teal">
+      <div class="inner-title">(g) The Voice</div>
+      <p>Vocabulary, cultured attitude or otherwise.</p>
+    </div>
+    <div class="nested-inner nest-inner-teal">
+      <div class="inner-title">(h) Badges Worn</div>
+      <p>Membership of some organisation.</p>
+    </div>
+    <div class="nested-inner nest-inner-teal">
+      <div class="inner-title">(i) Engraved Property</div>
+      <p>A cigarette case, ring, watch, lighter, initialled handbag.</p>
+    </div>
+    <div class="nested-inner nest-inner-teal">
+      <div class="inner-title">(j) Age</div>
+      <p>Very few people of ninety are concerned with marriage!</p>
+    </div>
+    <div class="nested-inner nest-inner-teal">
+      <div class="inner-title">(k) Condition of Health</div>
+      <p>Thin, fat, limping: anything which implies medical disability.</p>
+    </div>
+    <div class="nested-inner nest-inner-teal">
+      <div class="inner-title">(l) Manner of Approach</div>
+      <p>"Confidential" or "curious"?</p>
+    </div>
+  </div>
+
+  <h3 class="sub-head">Using Your Voice to Pump Information 🎙️</h3>
+
+  <p>Many times you will want to know something about the subject, and if you know how, you can literally ask her simply by the way you do it. You want to know perhaps if the subject is married. You do not say "Are you married?" because you are supposed to be able to tell that!</p>
+
+  <div class="box lavender">
+    <p><strong>🧪 Example pump:</strong> "There's a certain illness 'in the family' that has been causing you some concern: have you been worried? Do you understand what I mean?"</p>
+    <p>Your victim has only to mention "husband, son, daughter" and you have solved that one. Because you are a cold reader, you don't have to show it. Be subtle and, as a magician uses misdirection with apparatus, you use misdirection with words.</p>
+  </div>
+
+  <div class="callout gold">
+    <div class="icon">🔦</div>
+    <div class="body">
+      <strong>Use your loaf!</strong>
+      <p>When you see a lady with a wooden leg, you do not suppose that she is troubled with problems concerning mountaineering. Gold teeth don't grow in rice fields. Where there's a bruise, there's a blow. Those who relax are those who don't worry. By what you are told and by what you can see, with half an ounce of worldliness, you can put two and two together and get a pretty good idea of what it's all about.</p>
+    </div>
+  </div>
+
+  <h3 class="sub-head">The Importance of Timing ⏳</h3>
+
+  <p>A skilled performer knows what is meant by "time" in cold reading. He gets to know how long it takes for the subject to tell you something and then forget it. He also knows the crucial moment when it is best to use what information he has got.</p>
+
+  <div class="callout rose">
+    <div class="icon">⚠️</div>
+    <div class="body">
+      <strong>The danger of bad timing.</strong>
+      <p>Our subject tells us they have just bought a house. Two minutes later we tell them they are concerned with buying property... almost immediately they turn back and say "Well you know that; I told you just now I had bought a house." You see, the time factor is all wrong. You must give them time to forget what they have told you, or cleverly force the pace so that so much is said, it is too much to be remembered in detail. Information is useless to you unless you can use it as though it was NEWS to them!</p>
+    </div>
+  </div>
+
+  <h3 class="sub-head">Cold Reading: The Continuous Flow 🌊</h3>
+
+  <p>Cold reading goes on like this all the time. You are as a detective of the mind, and it becomes a continuous stream of pumping, finding, checking, stating, and rejecting.</p>
+
+  <div class="nested-outer nest-mint">
+    <div class="nest-title">♻️ The Cold Reading Loop</div>
+    <div class="nested-inner nest-inner-mint">
+      <div class="inner-title">🎭 When you're wrong</div>
+      <p>Learn the value of the simple phrase: "Well, if it hasn't happened yet, it will do so very shortly..." Such a phrase turns your blunder into a prediction and leaves you still master of the situation. Never admit defeat.</p>
+    </div>
+    <div class="nested-inner nest-inner-mint">
+      <div class="inner-title">🏆 When you're right</div>
+      <p>Needless to say, you are not going to be wrong all the time, and when you do get a right: don't waste it. Enlarge upon your discovery, exaggerate now to make it seem quite clear that you said it was so, and not that you tried to find out!</p>
+    </div>
+    <div class="nested-inner nest-inner-mint">
+      <div class="inner-title">👀 Watch for reactions</div>
+      <p>Watch for any sign that says "No" and any that say "Yes." Watch the hands, watch the eyes, and it will not be so hard. Half of the time they tell you yes or no anyway, so you have nothing to worry about.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CONCLUSION -->
+  <h2 class="section-head">Conclusion 🎩</h2>
+
+  <p>This is a small book compared with the giant volumes that could be written about the art of questions and answers in mentalism. However, I have tried to include all the major points and, although very brief, you have here the essence and very foundation of the art.</p>
+
+  <div class="callout yellow">
+    <div class="icon">🌍</div>
+    <div class="body">
+      <strong>The half-qualification nobody talks about.</strong>
+      <p>No writer or teacher can ever give you as much as actual experience from practice. I would assert that half the qualification you require for success is worldliness, and that comes from meeting people and going places. A reader cannot be a dreamer; he is a man who knows the facts of life, and he has to be prepared to drop any Victorian niceties and admit, at least to himself, that sometimes, some people do nasty things.</p>
+    </div>
+  </div>
+
+  <p>We have seen that there are two approaches to reading. We can get information or get a question and, by trickery, find out what it is. We can be more presumptuous and start cold. The latter, being the hardest, should be the last to try if you are a learner.</p>
+
+  <div class="callout teal">
+    <div class="icon">🗺️</div>
+    <div class="body">
+      <strong>The recommended path.</strong>
+      <p>Perhaps a good plan is to start with gimmicks that get you information and then to drop their use bit by bit until you finally work with nothing but skill. A wise reader will always know a couple of ways of getting information by trickery so that at any time when things get really tough, he can fall back on the Centre Tear (Step Six) or any other classic method.</p>
+    </div>
+  </div>
+
+  <div class="box lavender" style="border-radius: 16px; padding: 28px 32px; margin-top: 32px; text-align: center;">
+    <p style="font-family: 'Playfair Display', serif; font-size: 20px; color: var(--box-lavender-text); margin-bottom: 12px;">"It is a paradox that entertainers seek to create a fantasy and yet the fantasy of this art is reality."</p>
+    <p style="font-family: 'DM Mono', monospace; font-size: 12px; color: #7568D8; letter-spacing: 1px; margin: 0;">— Dave Hoy, Step Eleven, Corinda's Thirteen Steps to Mentalism</p>
+  </div>
+
+  <p style="text-align: center; margin-top: 48px; font-family: 'DM Mono', monospace; font-size: 11px; color: #B0AA96; letter-spacing: 2px;">END OF STEP ELEVEN &nbsp;·&nbsp; RONNIE GANN</p>
+
+</div>
+</body>
+</html>

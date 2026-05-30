@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thirteen Steps to Mentalism — Step Two</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --cream: #faf6ef;
+    --parchment: #f2ead8;
+    --gold: #c9973a;
+    --gold-light: #e8c876;
+    --rose: #c0392b;
+    --teal: #1a6b6b;
+    --teal-light: #e8f4f4;
+    --violet: #5b3a8c;
+    --violet-light: #ede8f8;
+    --amber: #d4691e;
+    --amber-light: #fdf0e0;
+    --sage: #3d6b4f;
+    --sage-light: #e8f4ec;
+    --navy: #1a2d5a;
+    --navy-light: #e8ecf8;
+    --ruby: #8b1a2d;
+    --ruby-light: #fce8ec;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    padding: 0 0 80px;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 80px 40px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(201,151,58,0.04) 40px, rgba(201,151,58,0.04) 41px);
+  }
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 6vw, 72px);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .hero h1 span { color: var(--gold); font-style: italic; }
+  .hero-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(250,246,239,0.6);
+    letter-spacing: 0.05em;
+    margin-bottom: 40px;
+  }
+  .hero-toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+  .toc-pill {
+    background: rgba(201,151,58,0.15);
+    border: 1px solid rgba(201,151,58,0.3);
+    color: var(--gold-light);
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .toc-pill:hover { background: rgba(201,151,58,0.3); }
+
+  /* LAYOUT */
+  .content {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* PART HEADER */
+  .part-header {
+    margin: 64px 0 0;
+    padding: 40px 40px 32px;
+    border-radius: 16px;
+    position: relative;
+  }
+  .part-header.pencil  { background: var(--amber-light); border-left: 6px solid var(--amber); }
+  .part-header.lip     { background: var(--rose-light, #fce8ec); border-left: 6px solid var(--rose); }
+  .part-header.sound   { background: var(--teal-light); border-left: 6px solid var(--teal); }
+  .part-header.touch   { background: var(--violet-light); border-left: 6px solid var(--violet); }
+  .part-header.muscle  { background: var(--navy-light); border-left: 6px solid var(--navy); }
+
+  .part-number {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 8px;
+  }
+  .part-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+  .part-emoji { font-size: 36px; margin-bottom: 12px; display: block; }
+
+  /* PROSE BLOCKS */
+  .prose { margin: 28px 0; }
+  .prose p { margin-bottom: 18px; }
+  .prose p:last-child { margin-bottom: 0; }
+
+  /* CALLOUT BLOCKS */
+  .callout {
+    margin: 28px 0;
+    padding: 24px 28px;
+    border-radius: 12px;
+    font-size: 15px;
+  }
+  .callout.gold    { background: #fef9ec; border: 1.5px solid var(--gold); }
+  .callout.teal    { background: var(--teal-light); border: 1.5px solid var(--teal); }
+  .callout.violet  { background: var(--violet-light); border: 1.5px solid var(--violet); }
+  .callout.rose    { background: var(--ruby-light); border: 1.5px solid var(--rose); }
+  .callout.navy    { background: var(--navy-light); border: 1.5px solid var(--navy); }
+  .callout.sage    { background: var(--sage-light); border: 1.5px solid var(--sage); }
+  .callout.amber   { background: var(--amber-light); border: 1.5px solid var(--amber); }
+  .callout-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    margin-bottom: 8px;
+  }
+  .callout p { margin-bottom: 10px; }
+  .callout p:last-child { margin-bottom: 0; }
+
+  /* QUOTE BLOCK */
+  .blockquote {
+    margin: 32px 0;
+    padding: 28px 32px;
+    background: var(--parchment);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 12px 12px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+  .blockquote cite {
+    display: block;
+    margin-top: 12px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-style: normal;
+    letter-spacing: 0.1em;
+    opacity: 0.6;
+  }
+
+  /* SECTION HEADING */
+  .section-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 44px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--parchment);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* SUBSECTION */
+  .subsection-heading {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin: 32px 0 12px;
+    color: var(--amber);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* TWO COLUMN */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  @media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+
+  .col-block {
+    padding: 20px 22px;
+    border-radius: 12px;
+    font-size: 14.5px;
+  }
+  .col-block h4 {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    opacity: 0.6;
+  }
+  .col-block.green { background: var(--sage-light); }
+  .col-block.red   { background: var(--ruby-light); }
+  .col-block ul    { padding-left: 18px; }
+  .col-block li    { margin-bottom: 8px; line-height: 1.5; }
+
+  /* TRICK CARD */
+  .trick-card {
+    margin: 24px 0;
+    padding: 28px 32px;
+    border-radius: 14px;
+    background: white;
+    box-shadow: 0 2px 16px rgba(26,20,16,0.07);
+    border: 1px solid rgba(26,20,16,0.06);
+  }
+  .trick-number {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.45;
+    margin-bottom: 6px;
+  }
+  .trick-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  .trick-card p { margin-bottom: 14px; font-size: 15px; }
+  .trick-card p:last-child { margin-bottom: 0; }
+
+  /* INLINE HIGHLIGHT */
+  .hl { background: var(--gold-light); padding: 1px 5px; border-radius: 4px; font-weight: 500; }
+  .hl-teal { background: #b2e0e0; padding: 1px 5px; border-radius: 4px; }
+  .hl-violet { background: #d8cff4; padding: 1px 5px; border-radius: 4px; }
+
+  /* DIVIDER */
+  .divider {
+    margin: 60px 0;
+    text-align: center;
+    color: var(--gold);
+    font-size: 20px;
+    letter-spacing: 0.3em;
+    opacity: 0.5;
+  }
+
+  /* NUMBERS LIST */
+  .num-list { counter-reset: item; list-style: none; padding: 0; }
+  .num-list li {
+    counter-increment: item;
+    padding: 12px 0 12px 48px;
+    position: relative;
+    border-bottom: 1px solid rgba(26,20,16,0.06);
+    font-size: 15px;
+  }
+  .num-list li:last-child { border-bottom: none; }
+  .num-list li::before {
+    content: counter(item);
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 30px;
+    height: 30px;
+    background: var(--ink);
+    color: var(--cream);
+    border-radius: 50%;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* BADGE */
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  .badge.tip   { background: var(--sage-light); color: var(--sage); }
+  .badge.warn  { background: var(--ruby-light); color: var(--ruby); }
+  .badge.key   { background: #fef9ec; color: var(--amber); }
+
+  /* STEP TAG */
+  .step-tag {
+    display: inline-block;
+    background: var(--ink);
+    color: var(--gold);
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+
+  /* TOGGLE summary */
+  details {
+    margin: 16px 0;
+    border: 1.5px solid rgba(26,20,16,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  summary {
+    padding: 14px 20px;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 14.5px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--parchment);
+  }
+  summary::-webkit-details-marker { display: none; }
+  details[open] summary { border-bottom: 1px solid rgba(26,20,16,0.1); }
+  .details-body { padding: 20px 20px; font-size: 14.5px; }
+  .details-body p { margin-bottom: 12px; }
+  .details-body p:last-child { margin-bottom: 0; }
+
+  /* DIAGRAM / NOTCH */
+  .diagram-block {
+    margin: 24px 0;
+    padding: 24px;
+    background: var(--parchment);
+    border-radius: 12px;
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    text-align: center;
+  }
+  .diagram-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    opacity: 0.5;
+    margin-top: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* FOOTER */
+  footer {
+    margin-top: 80px;
+    padding: 40px;
+    background: var(--ink);
+    color: rgba(250,246,239,0.4);
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  a { color: inherit; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Corinda's Series · Step Two</div>
+  <h1>Pencil, Lip, Sound,<br>Touch <span>&amp; Muscle</span> Reading</h1>
+  <p class="hero-sub">Thirteen Steps to Mentalism &nbsp;·&nbsp; Part Two of the Series</p>
+  <div class="hero-toc">
+    <a class="toc-pill" href="#pencil">✏️ Pencil Reading</a>
+    <a class="toc-pill" href="#lip">👄 Lip Reading</a>
+    <a class="toc-pill" href="#sound">🔊 Sound Reading</a>
+    <a class="toc-pill" href="#touch">🤲 Touch Reading</a>
+    <a class="toc-pill" href="#muscle">💪 Muscle Reading</a>
+  </div>
+</div>
+
+<div class="content">
+
+<!-- ===== PART ONE: PENCIL READING ===== -->
+<div class="part-header pencil" id="pencil">
+  <div class="step-tag">Part One</div>
+  <span class="part-emoji">✏️</span>
+  <div class="part-number">The Art</div>
+  <div class="part-title">Pencil Reading</div>
+</div>
+
+<div class="prose">
+  <p>Pencil Reading is the art of standing some distance away from a person who is writing with a pencil, and being able to discern from the visible movement of the pencil what is being written. A simplified explanation of the art is that, by keeping a careful eye on the movement of a pencil used in writing, adding to that the movement of the hand and elbow, you can very often tell what is being written.</p>
+  <p>The art of Pencil Reading is not new; its existence has been realised for many years. But its application is by no means extensive. In fact, it would be reasonable to say that the average well-read mentalist knows about pencil reading, but has never tried it.</p>
+  <p>The reason why the average mentalist has never tried it is because, first and foremost, it sounds like hard work, and that is enough to scare him. Secondly, in so much as that it is known to be uncertain, the element of risk deters any who may otherwise be interested.</p>
+</div>
+
+<div class="callout gold">
+  <div class="callout-label">💡 The Honest Truth</div>
+  <p>To some extent, both of these things are true: it is hard work, but not terribly hard; and it is liable to fail. But you can, by certain measures, increase the odds for success substantially in your favour.</p>
+  <p>In order to satisfy yourself that this is perfectly true, now is the time to prove the point. Before you read on and find out how to make the work easier, and how to eliminate the danger of failure, get someone to sit down some ten feet away from you and write a few numbers on a piece of paper. See how many numbers you can get by watching the movement of the pencil as they write!</p>
+  <p>When you have done that, you may be more inclined to agree that it is not easy and that, shall we say politely, "you slipped up just a little"? 😅</p>
+</div>
+
+<div class="prose">
+  <p>It occurs to me that, in case there should be any misunderstanding at this early stage, I should state that when the art of Pencil Reading is being applied, you do not see the actual writing. If you were able to see what was written, either during or after, you would have no need to resort to pencil reading.</p>
+</div>
+
+<div class="callout teal">
+  <div class="callout-label">🎯 Why It Matters</div>
+  <p>Before we concern ourselves with how to do it, shall we see if it is worthwhile anyway? Let us have a look at the virtues of the art and see if time spent on a little study will be rewarded with something of practical gain to our knowledge.</p>
+  <p>I invite you to consider for a moment that, to an enormous extent, mentalism relies on something being written. Half the apparatus available to the mentalist is concerned with something written. Think of clip boards, billets, fake envelopes, slates, and so on. Invariably, these appliances are contrived to convey to the mentalist the word or sentence written by the spectator. We must therefore agree that the importance of the written word in mentalism is very great.</p>
+  <p>Now think: wouldn't it be wonderful if you could tell what was written, without any appliance? If we have someone simply think of a word, write it down, fold the paper and drop it in their pocket, then, without touching the paper or handling any apparatus, you tell them what they have chosen?</p>
+</div>
+
+<div class="blockquote">
+  I am a perfectionist; or I like to think I aim at the very best, and to achieve this sort of thing, to my mind, is approaching perfection in mentalism. Let us be honest: if you could go one step, and one step only further, get it to the point where they do not have to write, but just think, then you would not be a mentalist. You would be a genuine thought reader.
+  <cite>— Corinda</cite>
+</div>
+
+<div class="prose">
+  <p>If Pencil Reading will do this for you, do you think it is worth your time and trouble? I do. That's why I am going to tell you how! 🪄</p>
+</div>
+
+<!-- TECHNIQUE -->
+<div class="section-heading" id="technique">🔧 Technique of Pencil Reading</div>
+
+<!-- (1) When to do it -->
+<div class="subsection-heading">(1) &nbsp; When to Do It</div>
+
+<div class="prose">
+  <p>On the face of it, the title "when to do it" seems a bit silly. You would easily suppose that you do it when you want, but no; you do it when you are in a position to do it, which is not always when you would very much like to do it.</p>
+  <p>Pencil Reading is governed by conditions, and without the favourable condition you cannot afford to try it. As you will see, it involves a chance of failure and, if you should be unwise enough to attempt it under unfavourable conditions, you naturally increase the chance of failure and must blame it on what amounts to nothing less than your bad judgement.</p>
+  <p>I propose to analyse the favourable and unfavourable conditions in order to keep your chances of failure to a minimum.</p>
+</div>
+
+<div class="two-col">
+  <div class="col-block green">
+    <h4>✅ Favourable Conditions</h4>
+    <ul>
+      <li>When you are performing at close quarters with the audience; at home, in the drawing room, etc.</li>
+      <li>When you have an excuse to hand the spectator a pencil to use, because we have a special type of pencil that makes it all much more certain.</li>
+      <li>When you have an excuse to hand the spectator the right type of card to write on, because we have a special card which helps.</li>
+      <li>When the spectator is seated and you are standing.</li>
+      <li>When the spectator and audience have no indication whatsoever of the effect they are to expect, and when the writing of the word seems to be the least important part of the proceedings.</li>
+      <li>When you can get at least four to five feet away from the spectator whilst he writes, making it clear that you do not see what he is writing; or so it would seem.</li>
+      <li>When you are sufficiently practised to be in a position to try it.</li>
+    </ul>
+  </div>
+  <div class="col-block red">
+    <h4>❌ Unfavourable Conditions</h4>
+    <ul>
+      <li>When the spectator is so near to you that there may be good reason to suspect you saw what he wrote.</li>
+      <li>When he is so far away you cannot see the pencil used in writing.</li>
+      <li>When there is a mirror behind the spectator (many people wrongly suppose that every mentalist is quite capable of reading in the mirror).</li>
+      <li>When the spectator uses the wrong type of pencil or pen and writes on something which screens the pencil from view (i.e. rests on a large book).</li>
+      <li>When the spectator is standing.</li>
+      <li>When the audience or the spectator suspects or anticipates that the writing is of the greatest importance to the effect.</li>
+      <li>When you are not practised enough to inflict your immature skill on the public.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="callout sage">
+  <div class="callout-label">💬 The Golden Rule</div>
+  <p>Having propounded various "when's" and "when not's", I feel I should add that you are not obliged to wait for favourable conditions to occur, although they do very often; thank goodness! You can make them.</p>
+  <p>If you have a large audience and you would not be able to see someone write if they stood up in the back row, you can bring them on to the stage, seat them down (favourable position) out of "politeness," hand them your pencil out of "courtesy," and give them the card for "convenience." All very satisfactory steps to getting the favourable condition, and everybody will conclude you are a very nice chap for making your assistant comfortable and seeing that you have your equipment at the ready! Which prompts me to slip in here that a golden rule of mentalism is to be natural; and you have just accomplished a hell of a lot in a natural manner. 😄</p>
+  <p>After all, instead of seating the spectator, you could stand on a chair yourself to achieve the height difference, and instead of bringing him on to the stage, you could use a telescope to watch his pencil. This, gentlemen, would be unnatural!</p>
+  <p>To summarise the position of "when to do it": if the favourable conditions are existent, do it. If they are not and you can change them, change them. If you cannot change unfavourable conditions, don't do it.</p>
+</div>
+
+<!-- (2) The Pencil -->
+<div class="subsection-heading">(2) &nbsp; The Pencil Used for Writing</div>
+
+<div class="prose">
+  <p>Let's start with the best and work down to the worst. The very best pencil for experiments and performance is undoubtedly what is called a <span class="hl">carbon drawing pencil</span> (the grade HB made by Wolff's I find entirely satisfactory). You will have to use this pencil to realise why it is so good, and yet the way in which it helps you immensely is not obvious.</p>
+</div>
+
+<div class="callout amber">
+  <div class="callout-label">🔑 The Secret Advantage</div>
+  <p>The carbon drawing pencil has no lead; in place it has a thick black carbon centre. It writes a good thick black on white paper, but this is the important part: being carbon, it drags considerably on the surface of the paper and it is virtually impossible to write quickly with this pencil.</p>
+  <p>I claim full rights for this discovery which, to my mind, alters Pencil Reading from a risky dodge to a reliable principle. When you hand a pencil to someone and tell them to write a number, you have no idea (most of the time) how quickly they will write their number. No matter how good at the art you may be, the quicker they write, the harder it is to read. <strong>Slowing down the writing by such subtle means gives you an enormous advantage over the average worker.</strong> It is one of those quietly simple little secrets that make all the difference between success and failure. As the reader you have a right to know, but join me and keep it quiet. 🤫</p>
+</div>
+
+<div class="prose">
+  <p>The carbon drawing pencil may be obtained quite cheaply from any good shop which supplies artists' materials. It looks like an ordinary pencil in every respect, and having used it for the purpose of pencil reading, I have never yet had a comment from the one person who may realise it is not ordinary lead. The rest of the audience should never know. In two minutes you will be able to think up ten good excuses should you ever get a query. I do not make excuses!</p>
+  <p>The size of the pencil is the next thing to consider. After quite a bit of trial and error, I find that a pencil <span class="hl">five inches long</span> is most suitable. It is a bit tricky deciding what is best: if you have it very short, almost a stub, you get much more hand movement, which helps a lot. But the pencil itself may become screened from view. If you have it full size, normally six and a half inches long, you are almost sure to see the pencil, but not so sure to see hand movement, which is restricted. The answer is to meet it halfway; five inches may be regarded as the optimum length.</p>
+  <p>Having read this, you will appreciate that if you allow the spectator to take out his own pen or pencil, you involve the chance of failure because he may well come out of his pocket with a pencil some two inches long. On the other hand, having practised pencil reading (and pen) with a five-inch pencil, you have at least trained yourself to read the most probable length of pencil that may be procured at random.</p>
+  <p>Have a look in Woolworths and see how many ball pens, which are commonly used, are about five inches long; then you will appreciate what I mean.</p>
+  <p>If you are an expert, within reason any writing appliance used by the public can be "read" by you. However, faced with a degree of uncertainty during an important reading, the expert will resort to the safety checks I recommend in section (5) of Pencil Reading Technique, and eliminate the degree of uncertainty by a confirmation of fact process.</p>
+</div>
+
+<!-- (3) The Card -->
+<div class="subsection-heading">(3) &nbsp; The Card Used When Writing Is Done</div>
+
+<div class="prose">
+  <p>I am taking trouble to give you these painstaking details because you can take my word for it that a lot of headaches can be avoided by doing the right thing. When you have the chance you should hand the spectator a card to write on. This card should be thick enough to remove the necessity of resting on anything else whilst writing. You could not hand a sheet of paper to a spectator and expect them to write on it without resting on something.</p>
+  <p>The size of the card is very important, since it may well screen the pencil from view if it is too large. The maximum size should be postcard size, and from that you may work down to a normal visiting card. You will find the spectator invariably rests the visiting card in the palm of their hand, but the pencil remains clearly in view.</p>
+  <p>The alternative is to use paper, but restrict the size, or better, the danger of screening, by providing a rest for the spectator. Suppose you do not have a card with you and you want to pencil read: tear a piece of paper into a piece about 4 x 3 inches in size, then pick up something small for a rest and hand it to the spectator. Your wallet is about the right size, but your wallet or anything similar suggests a carbon impression apparatus; so preferably select something like a small book from their bookshelf, their wallet, their cigarette packet, etc. In any event, do not approach the resting apparatus when you have no need to do so.</p>
+</div>
+
+<!-- (4) Distance -->
+<div class="subsection-heading">(4) &nbsp; The Distance Between You and the Spectator</div>
+
+<div class="prose">
+  <p>Here again it is a matter of proficiency and discretion. It should be obvious that the further away you are from the spectator who writes, the better it looks and the harder it is to do. Once you get the hang of it, you will amaze yourself that from some twenty feet away you can pencil read. I work more or less according to conditions, but when I have the choice I prefer a distance of <span class="hl">ten to twelve feet</span> away from the writer. You will also find that it is much easier to pencil read when the spectator is facing you, although you can do it from a side-on view.</p>
+</div>
+
+<!-- (5) Safety Checks -->
+<div class="subsection-heading">(5) &nbsp; Safety Checks to Eliminate Errors</div>
+
+<div class="prose">
+  <p>When you get down to work at pencil reading, one of the first things you will do will be to study the pattern made by the hand and pencil when writing numbers. You will then find that there are cases where two numbers have very like patterns, such as, for example, six and nought.</p>
+</div>
+
+<div class="callout violet">
+  <div class="callout-label">🔢 The Checking System</div>
+  <p>In order to combat this difficulty, I have devised a system of checking what was written, by means that do not inform the spectator what is happening. It is very simple, but practical.</p>
+  <p>Suppose we are pencil reading. We hand the card and pencil to the spectator and request that he thinks of any number of three digits and writes them down. We watch in a casual manner and we think we see the number 356 written down. But shall we say that the last figure was doubtful; there is a suspicion that it could have been a "0"? We know the first two are correct; they happen to be almost unmistakable. But we are stuck on the last.</p>
+  <p>So you proceed: "Now I would like you to do a bit of simple mental arithmetic please; simply add seven to the number you have chosen and then write down that total." Again you watch as the total is written, and by that total you will know all the facts. If the spectator writes "363" you know it must have been 356; if they write "357" it must have been 350.</p>
+  <p>Bear in mind also that since they can only write one of two figures for the total and you know them both before they start, it makes pencil reading a very simple matter to say the least.</p>
+  <p>You may think that by telling the spectator to add a number you are impairing the effect. If so, you have the option of turning to another spectator and asking them to call out the first number they think of, which is then added to the original figure. It would be obvious to any audience that the original figure could in no way be discovered by simply adding one digit at random. On top of this, you do not ask for the result of the addition; you tell it! 😏</p>
+</div>
+
+<!-- (6) Numbers -->
+<div class="subsection-heading">(6) &nbsp; Pencil Reading of Numbers</div>
+
+<div class="prose">
+  <p>If you have never done pencil reading, take my advice and start by working with numbers only. Get as many different people as you can to help you practise; it is no good working with one person only, you become accustomed to their style and very few people write the same way.</p>
+  <p>Study the patterns made by writing the following numbers: 1, 2, 3, 4, 5, 6, 7, 8, 9, 0. Of these, pay particular attention to the numbers 2, 6, 7, and "0"; these numbers have the most variations. Number nine is found to have two variations: one when it is drawn by one continuous curved line, and two, a composite of curves and straight line. Both are easy to detect.</p>
+  <p>Both four and five have the asset that they are invariably drawn in two stages, the pencil leaving the paper to complete the number. With most other numbers this does not happen, and very, very few people draw four or five in one line.</p>
+  <p>In general, watch for curves and straight lines; bear in mind the time, as for example it takes less time to write "1" than it does "8." And last but not least, do not make the mistake of assuming that everybody writes as you do yourself.</p>
+</div>
+
+<!-- (7) Words -->
+<div class="subsection-heading">(7) &nbsp; Pencil Reading Words</div>
+
+<div class="prose">
+  <p>This is not easy; in fact it is very hard for a normal person, but it can be done. To attempt to read any word written in any manner would be foolhardy. You have far too many odds against you from the start: the word may be written or printed, may be one of millions, and unlike our numbers you have 26 patterns to cope with and a much more extensive range of variations.</p>
+  <p>If you are going to pencil read words, you must first alter the odds in your favour. The first thing is to have the word printed in block letters, not written. The next thing is to confine the range of words so that to some extent you know what to expect. For example, ask your assistant to think of a girl's name and print it on the card. You have thereby limited the choice from millions to maybe a hundred.</p>
+  <p>And let us suppose that you asked for a girl's name and that your first sighting showed you the letter "M." Before the next letter is written you can anticipate names like Mary, Maude, Muriel, Mavis, May, and so forth, which has restricted the hundred down to perhaps a dozen. Now the odds are in your favour! ✨</p>
+  <p>Another important approach to pencil reading words is to make a habit of counting the number of letters as you go. Knowledge of the number of letters in the word can very often help to reveal what the word is. Suppose you were reading and were doubtful about the girl's name: was it "May" or was it "Mary"? If you had counted the letters, you would know.</p>
+</div>
+
+<!-- (8) Position -->
+<div class="subsection-heading">(8) &nbsp; Pencil Reading by Position</div>
+
+<div class="prose">
+  <p>This will be a lot easier to demonstrate than to tell you, so draw the numbers one to ten on a postcard in two rows of five and get a pencil. The numbers, by the way, should be evenly spaced, running more or less along the top and bottom edge of the card. Now hand the card to someone and tell them to look at the numbers and then to encircle any one they like. You will be able to tell which number they choose by the <span class="hl">position</span> of the pencil on the card during writing.</p>
+  <p>That is the principle; now we may progress it a step further. Make a long list of say twenty cities of the world and memorise it, or have a duplicate list. After a bit of practice, you will be able to tell any city that is underlined simply by watching carefully the position of the pencil when used.</p>
+</div>
+
+<!-- SUMMARY -->
+<div class="blockquote">
+  "This is one of the most valuable accomplishments in the Mental Field. It takes practice, but is worth every minute spent."
+  <cite>— Annemann, One Man Mental &amp; Psychic Routine</cite>
+</div>
+
+<div class="callout sage">
+  <div class="callout-label">📌 Summary</div>
+  <p>Annemann, as usual, is right. I have tried to make it a lot easier for you by giving all the important features of the art. I honestly hope you will take the trouble to study and perform pencil reading, because I know you will be very pleased with the trouble you have taken.</p>
+  <p>As a last line on technique, I think it important to summarise the most likely means of success: that is, practice. 🎯</p>
+</div>
+
+<!-- TRICKS -->
+<div class="section-heading">🃏 Tricks Accomplished by the Art of Pencil Reading</div>
+
+<div class="trick-card">
+  <div class="trick-number">Trick 01</div>
+  <div class="trick-title">Get-Outs Galore 🚪</div>
+  <p>If you want to do a trick where it must work, or when you happen to be nervous that one method may fail, you may like to try this effect, or principle, that I have used. The trick can be a very simple plot: a person thinks of a word and writes it down. From thereon you must be sure to find out what that word is.</p>
+  <p>Stage one: you hand them any of the popular carbon impression apparatus to rest on while writing. Stage two: you tell them to write their word and try to pencil read what is written. If you fail, you tell them to fold the paper in half and in half again, and then proceed to perform the centre tear (Step Six on Billets tells you all about this), which brings you to Stage three: you blunder this and fail to read the billet, so you pick up the carbon impression apparatus and read what they wrote!</p>
+  <p>And when you pick that up and find the carbon paper was missing so it didn't work, you calmly take out your Swami (Step One) and... Stage four: pretend to write their word on a card, ask what it was, then fill it in!!!</p>
+  <p>If the Swami lead breaks, you go back to magic and learn up ways and means to vanish people; particularly mentalists! 😂</p>
+</div>
+
+<div class="trick-card">
+  <div class="trick-number">Trick 02</div>
+  <div class="trick-title">Strange Coincidence 🤯</div>
+  <p>You and the spectator each have a card and a pencil. You suggest that for a change, he must try and read your mind. You pretend to write down a number and ask him to write down what he thinks you thought of, but watch to see what he writes. You fill in the number he has just written, which you see by pencil reading; then say you have written another. Actually, as we say, you were writing his first. He writes his next number and you record that as your third, and so on. You are in fact one behind him all the way.</p>
+  <p>I credit this effect to Annemann, who to my knowledge was the first to publish it.</p>
+</div>
+
+<div class="trick-card">
+  <div class="trick-number">Trick 03</div>
+  <div class="trick-title">The Total Result 🧮</div>
+  <p>This particular effect I have devised is good for those wishing to use pencil reading without the necessity of staring at the writer all the time. You hand a card to one spectator and tell him to write any number at the top, then to pass it on to the next who adds a number underneath. It is passed like this from four to five spectators and finally handed to one who adds the total.</p>
+  <p>Whilst the card is en tour from spectator to spectator, you have no need to look; and when it reaches the final person, you turn and watch for the total to be written. By this time, the audience will have noted that you are not interested in what is being written and will be off guard at the last spectator.</p>
+</div>
+
+<div class="trick-card">
+  <div class="trick-number">Trick 04</div>
+  <div class="trick-title">A Debt Repaid 💰</div>
+  <p>This makes a good item for drawing room work. It is quite easy to do and the plot is strong and amusing. Hand a spectator the card and pencil; tell him to imagine that you owe him a sum of money. It can be as much as he likes, but since you are not a very rich man, suggest it be under £1,000. Tell him to write down the amount you owe him so that later you can sign it as an I.O.U. Note what he writes.</p>
+  <p>Now tell him he is absent-minded, and that he has forgotten to allow for some money you paid him back. Tell him how much and have that deducted from his bill. Now you tell him to drop the bill in his pocket and come over to you. When he arrives, you hold out your hand, the fingers holding something which cannot be seen, and ask him how much you owe. He will say two shillings and a halfpenny; whereupon you open your hand and there it is in hard cash, which you give to him for his trouble!</p>
+  <p>The method, in case you can't see it, is very easy. See what he writes in the first place and then mentally subtract from that amount enough to leave 2/0½d as the amount outstanding. Call out the sum he must subtract and there you are.</p>
+</div>
+
+<div class="trick-card">
+  <div class="trick-number">Trick 05</div>
+  <div class="trick-title">The Swami and the Pencil 🔮</div>
+  <p>Using pencil reading in conjunction with a Swami Gimmick, you can achieve some incredible effects. You hold a card up and write something on it, but do not show it for a moment. You hand the pencil with another card to a spectator and tell him this is silent thought transmission.</p>
+  <p>You will ask him to think of various places in the world, preferably places he has visited; to watch you, and when he sees you hold your hand up, to write down immediately the name of the place he has in mind. You stand still for a moment, then hold up your hand; he writes, you pencil read, then fill in on your card with the Swami Gimmick. You have a miracle on your hands. ✨</p>
+</div>
+
+<div class="divider">· · · ✦ · · ·</div>
+
+<!-- ===== PART TWO: LIP READING ===== -->
+<div class="part-header lip" id="lip">
+  <div class="step-tag">Part Two</div>
+  <span class="part-emoji">👄</span>
+  <div class="part-number">The Art</div>
+  <div class="part-title">Lip Reading</div>
+</div>
+
+<div class="prose">
+  <p>Lip Reading is the art of watching a person's lips move when they are talking and, by doing so, telling what they say. You do not hear what is said; you only see. You know as well as I do that there are hundreds of incapacitated people in the world today who are able to lip read with a very high degree of skill. I refer to deaf people who have been forced to learn lip reading; and some of these people have reached an amazing standard, up to the point where it is not infrequent for a good lip reader to be able to read from anybody they meet and at a considerable distance away from the speaker.</p>
+  <p>In the general run of things, it would not occur to a person gifted with the normal senses to attempt lip reading. However, from the point of view of the mentalist, it can be another means to an end. You need not be concerned with learning to lip read up to the high standard we have just mentioned, but it is very handy to be able to decipher numbers and simple names.</p>
+  <p>I think you will be surprised how much information you can acquire simply by watching two people talk. You have every chance to practise, since there is no shortage of people who talk! 😄</p>
+</div>
+
+<div class="callout rose">
+  <div class="callout-label">📋 Getting Started</div>
+  <p>Study the way the lips move when the numbers one to nine are spoken, and in no time you will be in a position to perform effects achieved by lip reading. Just one final tip: practise with a friend who acts as the speaker and learn to lip read from full face and profile positions. Most of the time you will be using the profile or side view position.</p>
+  <p>Do not allow your friend to try and help you by slowing up his speech or exaggerating his lip movements. You must learn to read the movements as they would be done naturally.</p>
+</div>
+
+<div class="prose">
+  <p>In Part One, speaking about pencil reading, we stated that you can make your job a lot easier by limiting the choice, bringing the odds of success into your favour. The same applies to Lip Reading: by confining the subject you can anticipate to a large extent what may be said. The Lip Reading then becomes confirmation of your ideas and you are not obliged to guess wildly. The first effect will elucidate.</p>
+</div>
+
+<!-- LIP TRICKS -->
+<div class="section-heading">🃏 Tricks Accomplished by the Art of Lip Reading</div>
+
+<div class="trick-card">
+  <div class="trick-number">Trick 01</div>
+  <div class="trick-title">Any Card Called For 🃏</div>
+  <p>Somewhere in the vast mass of magic in print, this effect has been published. I read about it quite a long time ago, and it was in fact the very thing that inspired me to try lip reading in the first place. I wish I could give full acknowledgement to the original source, but unfortunately I have lost trace of it, so will state that to whosoever invented the idea, I hand my sincere thanks.</p>
+  <p>The effect is this: you have in your hands a pack of cards. A spectator thinks of any card; he does not have to see the pack, whispers his choice to another spectator so as to confirm his selection, then tells you he has made a final decision and has a card in mind. You do a "mental act" on him! After looking for all the world as though you were counting the brain cells in his cranium, you take from the pack one card and hold it high. You put the rest of the pack down. You now say, "For the first time will you say what card you chose?" (It is not the first time; it is the second, but obviously you do not say so.) Whereupon you show the only card you hold, and that is it!</p>
+  <p>Since you can do this anywhere, at any time, with a borrowed pack and no preparation at all, we might fairly consider it to be a first class mental effect. What do you think? 🤩</p>
+  <p>The method, as you will have guessed, is observation. You wait until the spectator turns to whisper his choice to the next spectator, and at that point you lip read. Really this is quite simple. To start with, you have limited the choice to fifty-two; fifty-three with the joker. And in all you have only to cope with eighteen possibilities: ten numbers, then Jack, Queen, or King, and four suits, which amount to seventeen; the joker being the last.</p>
+  <p>Remember that people always say the value first, then "of," and end with the suit. When you find someone that says "Diamonds the four," you have met a magician! Fifty per cent of the people will say "The" in front of the value; don't mistake this for three.</p>
+  <p>An analysis of this effect would not be complete without mention of the means that may be introduced to cut out any number you find difficult to lip read. Suppose you keep slipping on six; just for example, well all you have to do is take out all the sixes from the deck, which is then handed to the spectator who is asked to look at any card he sees. As long as the pack does not appear unusual, it doesn't matter how many duplicates or missing cards you have. There is no justification for having the deck examined.</p>
+</div>
+
+<div class="trick-card">
+  <div class="trick-number">Trick 02</div>
+  <div class="trick-title">Reconstructed Evidence 🔬</div>
+  <p>Effect: two spectators take part. One thinks of a geometric shape and the other thinks of a colour. The shape is then drawn in that colour on a slate. After it has been drawn it is shown to the audience, but not to you. The slate is then well cleaned and people are invited to see that no trace of the original drawing remains. You are blindfolded and the slate is given to you (you may prefer to do away with the blindfold and have it held behind your back). The test now is for you to try and reconstruct the picture that was on the slate; and as you run the fingers over the surface, you get impressions of shape and colour; eventually you name correctly the original design.</p>
+  <p>The method calls for several delicate steps. Provide two spectators with a slate and a piece of white chalk. Start off by telling one of them to think of a simple geometric design, suggesting in other words the square, triangle, circle, rectangle, and so forth. If you say "any" geometrical design, you invite something like a "tetrahexagon," whereupon the other fellow has to work out just how many sides that monster should have! Make the suggestion of a simple design in an offhand, almost indifferent manner, as though it is of no importance.</p>
+  <p>When the first spectator has thought of one (don't give him much time), tell him to whisper it to the second man, who should draw that shape on the slate. This having been done, you now tell the chap with the slate to hand it to number one, and then ask him to think of a colour. When he has done this, he whispers that colour to number one, the fellow with the slate, who takes up the chalk and writes the name of the colour in the design.</p>
+  <p>You may turn your back whilst this is done and explain to the audience who are waiting that white chalk is used because you could easily see what colour was "thought of" if you had coloured chalks on the table.</p>
+  <p>By now you know all the facts you have to know, having managed to lip read the design spoken to number two and the colour spoken to number one. You can therefore pay very little attention to the next stage of cleaning the slate and having it examined. It is more convincing if you have the design obliterated first by scribbling with chalk then rubbed out, but you must remember to say that you "feel a lot of scribbling, but there is a distinct design underneath..." 👁️</p>
+</div>
+
+<div class="trick-card">
+  <div class="trick-number">Trick 03</div>
+  <div class="trick-title">The Whispering Buddha 🪬</div>
+  <p>For this you will require, simply as a matter of presentation, a brass Buddha. You will find the "Made in Birmingham" variety can be purchased in England quite cheaply, or from abroad as "originals" quite expensively! If you cannot get a brass Buddha, you can use any small statue in place.</p>
+  <p>You must give this effect a great deal of build-up. Before, during, and after the trick, you do what professional mentalists call "spiel," that is, churn out a load of verbal nonsense that sounds good. Tell the story about the mystery of the Buddha; how people confess their sins and make their wishes to the Buddha (which is true up to a point); tell how it always seems as though Buddha sees all, hears all, and says nothing. (By the way, it was a brass Buddha, not a brass monkey!!)</p>
+  <p>Now with uncouth wickedness you infer that the Buddha may well talk, but only those who know how can hear what it says. Suggest an experiment:</p>
+  <p>"In a moment I will let you make a wish; no matter how silly this might appear to you, please do as I say. Take the Buddha and hold it in your left hand. It must be the left hand because that is the hand of fate and fortune; the hand which governs your destiny and the hand which is your success in life. Now I want you to tell the Buddha a few facts, but these facts are private; they concern your life and you personally, so you need only whisper into one ear of the Buddha. First introduce yourself; tell your name and what city of the world you were born in. Then give the Buddha an outline of your personal and occult likings; whisper your favourite colour, tell what you think is your lucky number. Buddha will want to know your occupation, so whisper the name of the work you do and how long you have been doing it. I think Buddha knows enough about you to be able to give a reasonable answer to any wish you have to make; if you have a personal trouble, worry, or need, whisper it to the Buddha and we will see if you can get an answer."</p>
+  <p>Up to now the inference has been that the brass Buddha is going to do the talking at the end. Well, it is! Only it is going to tell you the answers! 😈</p>
+  <p>You ask to listen to what the Buddha has to say, and from the substantial amount you have learnt about your victim, you dish him up with a very bright future and weave in the facts he has presented as though they were told to you by Buddha. You have been lip reading his talk to the Buddha, and know at least something about the spectator. You should know his name, the city where he was born and therefore his nationality, his favourite colour, his lucky number, his job, and how long he has been at it; from which you may judge his position. And you may know his wish or trouble. The latter, being the most he had to say, may have been missed, but this makes no difference since a sure-fire prediction covers that angle. Make the answer to his wish or trouble strictly favourable. Tell him "things are around the corner; he will soon know what you mean," and be careful that you do not commit yourself to stating any facts.</p>
+  <p>I have used the word "him" referring to this effect, but it may equally as well be performed on a "her." In fact, most ladies would love it. 😊</p>
+</div>
+
+<div class="divider">· · · ✦ · · ·</div>
+
+<!-- ===== PART THREE: SOUND READING ===== -->
+<div class="part-header sound" id="sound">
+  <div class="step-tag">Part Three</div>
+  <span class="part-emoji">🔊</span>
+  <div class="part-number">The Art</div>
+  <div class="part-title">Sound Reading</div>
+</div>
+
+<div class="prose">
+  <p>Sound reading is the art of listening to the noises made by something being done, and telling from those noises what it is. This may apply to an action or to something being written. You do not see what the action is.</p>
+</div>
+
+<div class="subsection-heading">(1) &nbsp; Written Information Discovered by Sound Reading</div>
+
+<div class="callout teal">
+  <div class="callout-label">📖 An Origin Story</div>
+  <p>A few years ago I was holding a séance to demonstrate fraudulent mediumship at the Magic Circle Headquarters in London. I was half way through the programme and had reached a point where "E.S.P." tests were being conducted. I was under what may honestly be called "test conditions": blindfolded, seated in a chair some distance from a blackboard upon which members of the gathering were to draw various E.S.P. designs.</p>
+  <p>The test conditions as such didn't worry me very much because I had made preparation to use a special electronic apparatus to convey the information to me. The first design was drawn and I "received" it; before the next was selected, my electronic apparatus was inadvertently disconnected from the mains and I was stuck. It was the fault of my negligence and not the apparatus, which was foolproof if allowed to work properly.</p>
+  <p>Anyway, I thought the next best thing to saying I was due to go wrong was to guess; so I waited. The next committeeman went to the board and on it he drew a square. Without thinking how I knew, I also duplicated his design, and immediately realised I could hear; and from what I could hear, I could tell which of the five possible designs they would choose. 🎧</p>
+</div>
+
+<div class="prose">
+  <p>I relate this story because I would like you to know that I am not suggesting "grand theory" when I write about Sound Reading; it is very easy, very practical, and it has been tried and tested with favourable results.</p>
+  <p>Since the days when I first encountered sound reading by accident, I have made a careful study of the art, and the following facts will help you to do it the easiest way with the best results:</p>
+</div>
+
+<div class="callout navy">
+  <div class="callout-label">📋 Best Practices</div>
+  <ul style="padding-left: 20px; line-height: 2;">
+    <li>Have the writing done with chalk on a blackboard.</li>
+    <li>As with Pencil Reading and Lip Reading, confine the subject.</li>
+    <li>Have the designs drawn very big.</li>
+    <li>Stick to using designs which make different noises when being written.</li>
+    <li>Keep within a sensible hearing distance of the blackboard (or slate).</li>
+    <li>Confine your attempts to reading certain designs and numbers only.</li>
+  </ul>
+</div>
+
+<div class="subsection-heading">The Designs to Use 🔵🔺</div>
+
+<div class="prose">
+  <p>When you sound read, you listen for three things. First you listen for curves, which make a different sound from straight lines. Second, you listen for straight lines, which make a different sound from curves. And last, you listen for "breaks" or pauses in the writing; in order to draw the number 4, for instance, most people start by drawing an "L," then remove the chalk and come back again to cross it downwards to complete the figure. You get the break in between the two stages.</p>
+  <p>On a piece of paper draw the following designs: a circle, a cross, a triangle, a square, and a star. Observe that the following analysis is correct:</p>
+</div>
+
+<div class="callout amber">
+  <div class="callout-label">🔍 Design Analysis</div>
+  <p>The <strong>circle</strong> is composed of one line, more often than not drawn in one continuous movement. The <strong>cross</strong> is composed of two lines, which makes it necessary to make a break when drawing (it can be drawn without the break, but only by going over the same line twice, which is not done). The <strong>triangle</strong> is composed of three straight lines, drawn in continuation or with two breaks; you will however get audible pauses at each corner. The <strong>square</strong> has four straight lines, drawn continuously or with three breaks; sometimes the square is drawn with two breaks, effected by drawing two letter "L"s. The <strong>star</strong> is recognised by the time it takes to be drawn, which is more than the others, and by the considerable amount of drawing involved.</p>
+  <p>Now, if you care to get out a slate and a piece of chalk and have a friend draw any of these designs whilst you turn your back and listen, you will find that without any practice you will score a good <span class="hl">75% correct</span>. With practice you can get 99% correct. 🎯</p>
+</div>
+
+<div class="subsection-heading">The Numbers to Use 🔢</div>
+
+<div class="prose">
+  <p>If you have to rely on the differentiation between the sound of curves and straight lines coupled with breaks, you cannot use all the numbers available because some sound too much alike. Those which are not likely to sound similar are: <span class="hl">1, 3, 4, 5, 6, 7, 8</span>. Two is omitted because it sounds like seven when written, and nine because it sounds like six or seven depending on how you write it.</p>
+  <p>Fortunately, you can tell after some practice the following letters of the alphabet: C, H, S, D. Which means that numbers, although incomplete, are of use; since playing cards can be used to confine the choice and, of the fifty-two available, only eight number or spot cards have to be removed, and a simple instruction covers the court cards which can be left in the deck: "Choose any card you like, but to avoid complexity, I advise you to ignore the court cards."</p>
+</div>
+
+<div class="subsection-heading">(2) &nbsp; Sound Reading Applied to Action — Not Writing</div>
+
+<div class="prose">
+  <p>In addition to using sound reading to discover a written number or shape drawn on a board, there are other principles which are of use to the mentalist. When we have a trick which is accomplished by sound reading something that is done by the spectator, we call it action.</p>
+</div>
+
+<div class="callout violet">
+  <div class="callout-label">📄 Archie Byford's Living and Dead Test</div>
+  <p>For example, one of the tricks on the market today is based on the sound caused by paper being unfolded. Archie Byford has invented a Living and Dead test which goes as follows: five pieces of paper are handed to the spectator; on four he writes the names of living people, and on the fifth the name of a dead person. The spectator then screws up each piece into a small ball and mixes them before handing to another. That second person unfolds the paper balls one at a time and holds each slip to their forehead. At one point you stop them and declare that they are holding the dead name slip in their hand at that moment. This second spectator does not know which is the dead name so could not help you, and the other confirms it to be correct. At no time have you handled the paper slips after the effect was commenced.</p>
+  <p>The method, which I am able to tell you by courtesy of Archie Byford the inventor and L. Davenport &amp; Co. who supply the special papers required, is very simple and is a good example of action sound reading. Four slips of paper are the same and one is different. The difference is that the two types of paper used make a clearly definable sound when unfolded, and the two types make different sounds. In fact four unfold quietly, and one, being of different texture, makes considerable noise. It is the noise of this one, which has the dead name on it, that enables you to perform the trick.</p>
+</div>
+
+<div class="prose">
+  <p>Then we have another aspect of action sound reading. Three boxes are on a table; the performer turns his back whilst a spectator drops a coin into any box and then locks it. You know which box contains the coin. This time the method is sound reading of "clicks," either one, two, or three, which are made by each box being especially constructed or "designed" for that purpose. As the box is locked it makes a clicking noise; the first box will click once as the key turns, the next twice, and so on.</p>
+  <p>A poor man's version of this effect may be constructed by having three boxes which are respectively lined in their bases with tin, wood, and baize. You are able to tell from the noise of the coin falling onto the base into which box it has been locked.</p>
+  <p>In fact it may be as well to mention that with sufficient practice, it is possible to tell the value of any English coin by the noise it makes when it is placed on a hard surface, such as a polished table. 🪙</p>
+</div>
+
+<div class="callout gold">
+  <div class="callout-label">🪙 The Spinning Coin</div>
+  <p>Another application of sound reading is one that is quite well known and some writers have claimed that it has been used extensively. I refer to spinning a coin into the air and telling by sound whether it will fall heads or tails. The coin, in this country a penny, is faked with a small nick at the edge on one side only. If the nick is made on the tail side, after the coin has slowed down and just before it stops spinning, it will give off a different tone when it is going to land tail side up. The variation in sound is caused by the coin beginning to spin or travel on the imperfect edge.</p>
+  <p>It is better to spin the coin on a hard flat surface rather than throw it into the air, which does not assure the correct spinning position required. You will have to accustom yourself to the "head" noise and the "tail" noise and be able to tell the difference, which is not so difficult. Even if you slip up once or twice, you will change the odds of a fifty-fifty gamble to 90 to 1 in your favour. Not bad gambling odds! 🎰</p>
+</div>
+
+<div class="prose">
+  <p>Last but not least, we have a considerable range of code systems for two-person telepathy which are based on the transmission of sound. To mention two of the applicable ones: signals given by way of a chair that creaks, and the well-known "finger-click" transmission, caused by pressing the first fingernail against the thumbnail. However, we shall not deal too deeply with these things as they are not regarded as true examples of sound reading.</p>
+  <p>To summarise Sound Reading as a principle of mentalism: we can say that, like seeing for Pencil Reading and Lip Reading, it is a question of using your natural ability to advantage. The essential thing is to practise, experiment, and always try to improve your ability.</p>
+</div>
+
+<!-- SOUND TRICKS -->
+<div class="section-heading">🃏 Tricks Accomplished by the Art of Sound Reading</div>
+
+<div class="trick-card">
+  <div class="trick-number">Trick 01</div>
+  <div class="trick-title">Tapping Card Location 🎴</div>
+  <p>Three people devised this effect: Alex Elmsley, Jon Tremaine, and myself. We were discussing sound reading and, as a result of the conversation, we devised the following effect.</p>
+  <p>A deck of cards is borrowed and given a mix. During the mixing you note the bottom card. You then proceed to do the Hindu shuffle, but hold a break with four cards on the bottom of the deck. The spectator calls stop during the shuffle and you show the bottom card, which we shall say is the queen of hearts. As soon as you have shown this card and the spectator has been asked to remember it, you complete the shuffle and end by throwing the four "controlled" cards on top of the deck. By this action you have forced the queen of hearts and positioned it four cards down from the top. The deck may now be given a false shuffle or false cut before it is handed to the spectator.</p>
+  <p>When he is given the pack, he is told to deal cards face down from the top in a row on the table. After seven cards have been dealt, you stop him casually by saying, "I think that will be sufficient." Next you hand him a pencil and instruct him very clearly to wait until you turn your back, then to start from either end of the row he likes and to tap on the cards with the pencil; two or three times on each card.</p>
+  <p>You turn your back and wait. From the handling of the cards you know that the queen of hearts is in the middle of the row of seven, from either end. However, you must stop him when he is actually tapping that card; and since he is allowed to tap as often as he likes, it is not a question of counting, but rather a matter of listening for the distinct "sound breaks" that occur as he stops tapping on one card and starts on the next. That is why it is important that he taps down the row without missing any cards.</p>
+  <p>You listen carefully and wait until you have heard three breaks, and the tapping which follows must be done on the face-down queen. When he reaches this card, you call: "Tap that one again please," (as though it mattered) and then say: "Drop the pencil on that card please, to mark it for a moment." You turn round, gather up the other six cards first, to make it less obvious that his card was central from either end; ask him to name the card "he thought of" (which you forced) and turn over the queen to show that it is his card.</p>
+  <p>The effect takes much longer to describe than to perform, and it will withstand some pretty shrewd thinking before the means is discovered. 🧠</p>
+</div>
+
+<div class="trick-card">
+  <div class="trick-number">Trick 02</div>
+  <div class="trick-title">Paranormal Precognition 🌀</div>
+  <p>This is a stage effect which, presented well, will cause quite an amount of controversy as to the means by which it was done. You require a fairly large blackboard, five cards with the designs mentioned on page 38 drawn on them, some white chalk, and a table to rest the board on when performing.</p>
+  <p>Two spectators are asked to take part. One is asked to hold the blackboard upright whilst it stands on, say, a card table, with the edge facing the audience. He should be told to hold it firmly so that writing may be done on both sides at once. Next you take the five sign cards and show them to the audience as all different. You then hand them to the second spectator and give him a piece of chalk. He is then told to stand on one side of the board whilst you go and stand on the other; the audience can see both of you.</p>
+  <p>You start by telling the spectator to take any of the five cards and to draw the chosen design in the middle of the board. Next he chooses another card and adds that design on top of the one he has just drawn, then another which he puts underneath, and drawn so that it just joins the middle drawing; then one more to his right (your left), and finally to his left. All designs have therefore been drawn in an order chosen by the spectator. When it comes to the last one, which you know before he draws, draw it to the right and then stand back and give the final instruction.</p>
+  <p>The complex structure of the finished drawing helps considerably to misdirect from the fact that only five designs were offered. In many cases your audience will presume by forgetfulness that you duplicated a compound geometrical drawing. 🎨</p>
+</div>
+
+<div class="trick-card">
+  <div class="trick-number">Trick 03</div>
+  <div class="trick-title">A Pocket Trick 🎩</div>
+  <p>This is a very old effect which is still good enough to fool those unacquainted with the secret. You have two small coloured pencils, say red and blue. One of them is hollow inside and has a small piece of solder or a little mercury in it. The hole is sealed at the end so that the fake pencil looks the same as the real one. Both pencils are given to a spectator who is asked to drop any one into a matchbox (they just fit) and close it, then to hide the other one from view.</p>
+  <p>You can always tell what colour is in the box simply by picking it up and turning the box the other way up. If it is the fake pencil, you will hear a little noise as the weight falls to the other end of the pencil, and you will get the feel of the impact, which, although very little, is easily detectable. With the genuine pencil, nothing happens of course.</p>
+  <p>It is considered necessary to use some misdirection when handling the matchbox so, if, when you turn round he has it in his hands, take it and place it on the table, reading as you do so; or if it is on the table, place it in his hands, reading again during the necessary movement.</p>
+</div>
+
+<div class="trick-card">
+  <div class="trick-number">Trick 04</div>
+  <div class="trick-title">Clean Cut Card Trick 🔪</div>
+  <p>A deck of cards is fanned and a spectator told to look at any card he likes and remember it. He is then handed a slate and told to write the name of his card on it. You pick up the pack and remove one card; he then shows his slate and you show the card. They are the same. ✨</p>
+</div>
+
+<div class="divider">· · · ✦ · · ·</div>
+
+<!-- ===== PART FOUR: TOUCH READING ===== -->
+<div class="part-header touch" id="touch">
+  <div class="step-tag">Part Four</div>
+  <span class="part-emoji">🤲</span>
+  <div class="part-number">The Art</div>
+  <div class="part-title">Touch Reading</div>
+</div>
+
+<div class="prose">
+  <p>Touch Reading is the art of gaining information by feel or sense of touch. The art is used quite a lot by mentalists and magicians in one way or another, but it is not always recognised as being touch reading. A good example of this is, of course, the common pocket index for playing cards.</p>
+  <p>Since the basis of touch reading is the same in all cases, and the technique only varies, we will content ourselves with a selection of tricks which utilise the principle, so that a fair indication of its value may be given.</p>
+</div>
+
+<!-- TOUCH TRICKS -->
+<div class="section-heading">🃏 Tricks Accomplished by the Art of Touch Reading</div>
+
+<div class="trick-card">
+  <div class="trick-number">Trick 01</div>
+  <div class="trick-title">Sujan Location 🎨</div>
+  <p>This principle may be applied to several tricks. It is already used for two or three items on the market. Obtain five pieces of coloured card which are all of the same thickness. Each of the five pieces should be of a different colour. Make up a solution of starch in water and mix to a fairly thick paste. Then with a clean brush, paint across each card in a straight line about half an inch wide from any two opposing diagonals; that is, for example, from the top left corner in line through the middle to the bottom right corner. Allow each card thus treated to dry, whereupon the starch will become invisible.</p>
+  <p>The effect of this treatment is that two corners of the card will become stiff, while the remaining two are normal or soft. The cards may now be trimmed to a convenient size, say playing card size. If you like the effect which can be done with these cards, you would be advised to purchase a good supply from your favourite dealer; those marketed by dealers are of a high standard compared with the usual home-made jobs.</p>
+  <p>If you take the top right-hand corner of any card and bend it back very slightly, you will feel a certain tension: either stiff or soft. Arrange all the cards with the stiff corners at top right and bottom left. Place the cards in a row on the table and invite any person to turn one over while you turn your back. Now it makes no difference which way they turn it; that is, from top to bottom or left to right, because either way will bring the soft corner of that card into the position just occupied by the stiff corner.</p>
+  <p>The cards are now gathered up by the spectator (to prove that the effect is not achieved by noting special positions) and handed to you after they have been carefully mixed. Your job is to locate the card that was reversed. Take them all and deal them in a row once more; and as you do so, hold each card by the top right corner and bend it back a bit as you place it down. You will find it very easy to tell which one is their card because of the tension on the odd card against the other four.</p>
+  <p>Now take the spectator by the hand and move his fingertips along the row several times, passing his card but eventually stopping at it and declaring that it is the one he selected. After this, the first suspicion to enter the mind of any onlooker is that the cards are marked, which would be a solution. You therefore do it again, but this time seal each card in a pay-packet. Even though the cards are in the envelope, the stiff and soft corner principle is easy to detect. 🎯</p>
+  <p>Finally, if you like the principle, you should get in touch with the Supreme Magic Co. in Devon, England, who have a very clever effect called "The Ultimate Living and Dead Test" which is based on this principle.</p>
+</div>
+
+<div class="trick-card">
+  <div class="trick-number">Trick 02</div>
+  <div class="trick-title">With a Pinch of Salt! 🧂</div>
+  <p>There are dozens of tricks based on this principle; we will give you a new one to demonstrate the technique. The effect is a version of "Just Chance," but it has features which, as a mentalist, you may find attractive. It is not likely to be copied by any who do not understand the handling properly, because one slip and you lose your money. No slips, and you are as safe as you will ever be.</p>
+  <p><em>Impromptu "Just Chance" by Corinda:</em> when you arrive somewhere and someone asks you to perform a trick, and you have nothing with you, of the fifty or so good tricks you could do, this is one. Borrow three envelopes. Request the help of two sporting people to take part in a gamble in which they cannot lose. From your wallet remove a £5 note (or £1, according to your wealth). Seat one spectator to your left and one to the right.</p>
+  <p>Start by explaining to all that you intend to have the five pound note sealed in one of the three envelopes; in the other two will be a piece of newspaper the same size as the note. Once the envelopes are sealed and mixed, no one will know which contains the money. To be sure that you have no choice in the matter, hand the £5 note and the three envelopes with two scraps of newspaper to one of the spectators, and tell them to seal the note in one and put paper in the others. All envelopes should be the same, all are sealed by the spectator, and while this is done, you turn your back!</p>
+  <p>Now we will explain the method so that the last stages can be followed with a complete understanding of the effect. Before you introduce the trick, a few seconds' preparation has to take place. You take a small bead, or break the tip off a pencil and use that; this you fix to one corner of the £5 note with Sellotape. It is held firmly there and cannot be seen, since your thumb covers it when showing both sides of the note at the onset. Having produced the note and shown it to be genuine, fold it in half, as if demonstrating what should be done with the pieces of newspaper. Then fold in half again and be sure that the bead is folded inside. Hand the note and the papers to be placed in envelopes. You will note that, regardless of the fact you cannot see where the note goes, you have a very secure check because when you handle the envelopes, the bead may be felt with ease. Thus touch reading locates the whereabouts of your money. 💷</p>
+  <p>The next step in the routine is to state quite honestly that all the envelopes have been sealed and mixed by the spectator. The second spectator is now given all three and told to choose one; this he keeps and hands you back two. Before giving the first spectator the choice of one of these, feel on both envelopes for the bead; the chances are two to one that you have it in your hands, and if so, you use the simplest possible force you know to make the first spectator take the dud envelope. If you do not have it, then you know who does and must get it.</p>
+  <p>You approach this problem by first and foremost conducting the normal "Just Chance" procedure of advising a change of mind. If this comes off, and you should try and be very convincing, stay put with the one he gives you, having checked by touch reading that you are right and have the fiver. However, rather than end the presentation abruptly, offer the chance for both spectators to change before you settle; that exchange cannot affect you.</p>
+  <p>However, we have one thing more to contend with: what happens if he cannot be persuaded to swap for your dud? Then you have two more options. Maybe you can get him to exchange with the other spectator; then you work on him. Or you perform the bare hand envelope switch advised by Corinda in Step Four.</p>
+  <p>To run through that manoeuvre briefly: approach the spectator in the following manner: "Now, sir, I will give you the chance once more, and this must be your final decision; will you have this envelope in place of yours?" He replies "No thanks." You smile as though very pleased with his reply and answer, "Right, that's it! And to show you how wrong you were, I intend to let you see how I knew this one (yours) had the money in it. Look." You hold your envelope in the right hand and raise it to the light showing the shadow of the contents. "You see the way the contents are folded? Well, that's how you know the note! Now take a look at yours." Here you reach forward and take his from his hand; don't ask, take. You hold his up to the light whilst holding your own in the left hand for a moment. "You see your envelope has a small shadow (immediately bring the hand down, putting the envelope on top of your own, and then lifting that very same one back again) whilst my one has a large one."</p>
+  <p>To all intents and purposes, what happened was this: you showed him yours first, then showed him his, then showed him yours again, and gave him back his. That all sounds very complicated but it takes thirty seconds to do, if that; and any fool could do it. For all that, it is amazingly convincing. By now you have his envelope with the money whether he likes it or not.</p>
+  <p>Again you end with offering both spectators the chance to swap with each other. To climax the proceedings, the envelopes are to be opened. First the spectator on your left, then the one on your right. Whilst this is done, you place your envelope on the floor in front of you. When both newspapers have been shown, invite both spectators to come forward and open your envelope and see that you did indeed leave the five pound note in circulation. You did! 😄</p>
+</div>
+
+<div class="trick-card">
+  <div class="trick-number">Trick 03</div>
+  <div class="trick-title">Marked Playing Cards 🃏</div>
+  <p>According to John Scarne, who may be regarded as good authority, the marking of playing cards so that they can be identified by touch is an old gambler's ruse. The markings are made with a pin or tack; it is only necessary to make a very small prick to mark the card. To read the marking, you must run the finger over the surface of the card and the "bump" will be felt with ease.</p>
+  <p>This process is called "Pegging," and apart from pin-pricks made directly through the card, other methods have been devised. Another, for example, is to make minute notches along the edge of the card. By running the fingernail down the edge it will be found that the notch is easily felt.</p>
+  <p>Several people have worked out systems of marking a complete pack of cards, both by Pegging and Notching, so that every card could be identified by touch reading alone. Further reference to this matter will be found in "Scarne on Cards" by John Scarne.</p>
+</div>
+
+<div class="trick-card">
+  <div class="trick-number">Trick 04</div>
+  <div class="trick-title">Psychic Sorting (Ghost Deck) 👻</div>
+  <p>Take an ordinary pack of playing cards and discard the two jokers. Divide the blacks from the reds. With a razor blade make a minute "V"-shaped notch two-thirds of the way down on the right-hand long edge, and two-thirds of the way up the left-hand edge, on every one of the red cards. This having been done, sort the reds into two piles: hearts and diamonds. Take the hearts only and make on every card another very small notch; this time opposite the other notches, which now take the shape of a square. Finally, divide the thirteen hearts into odd cards and even cards. Regard the Jack as eleven (odd), the Queen as twelve (even), and King as thirteen (odd). Take all the even hearts and make another notch in the middle of the top and bottom short edge.</p>
+  <p>The system of marking given above was originally conceived by me and was intended for the market as a trick pack called The Ghost Deck. Whilst in the experimental stage, I consulted a person whom I regard as a card expert, and it was his opinion that the deck would not be very useful for card magic. In time I learnt to agree; but since then I have found it a very convenient standby for mentalism.</p>
+  <p>It is to be understood that the notches are so small that they are practically imperceptible. You do not have to see them; you feel them. The exact handling is as follows: to read any card it must be held either naturally or out of sight. For natural handling, take the card face downwards in the right hand with thumb on top and face resting on the bended fingers below. With the first finger, you run the nail down the edge of the card; not the ball of the finger, but the nail, as though pointing directly at the edge. And as you pass the notch you will feel a very distinct bump. This "reading" movement may be made in the fraction of time that it takes to deal a card onto the table.</p>
+  <p>Now, to simplify the reading process, you make no attempt to read all the notches at once; this would involve a dangerous amount of finger movement and is by no means essential.</p>
+  <p>The complete deck is used for one or two effects and then handed to a spectator to mix thoroughly. It is as well to do a couple of tricks first, which tends to neutralise the suspicion that a special deck was produced for the effect. As long as the edges of the cards are dirty, the spectator has no chance of seeing the markings. You have no reason to ask for the cards to be examined.</p>
+  <p>When they have been mixed, you take the pack and hold it behind your back. Then you immediately bring forward cards one at a time and place them face up on the table in two piles. Before you actually turn the card to place it on one of the piles, you declare its colour: "This is a red one, and this is a black one," etc. Half way through, you stop, have the remainder reshuffled, and hold them above your head where all but you can see. You continue to sort them into blacks and reds. This should be done with all the speed you can muster without becoming inaccurate.</p>
+  <p>As soon as you have 26 reds in one pile and 26 blacks in another, pick up the red ones and proceed to shuffle them; inviting the spectator to shuffle the blacks. You will not use the blacks, but you do want the spectator to have them in his hands because in a moment, while sorting hearts from diamonds, he will examine those black cards (they do every time!) and he is going to find them all ordinary; because they are all ordinary.</p>
+  <p>"Let me go a step farther; which will you choose next: black or red?" Whatever he answers, you keep the red. "Black," he may say, so you reply, "Right; take the black and try and do as I do with the reds, guess the suits." Or he may reply "Red," whereupon you say, "Very well; let me see if I can find the different suits." The classic phrase "That leaves" does not enter the conversation!</p>
+  <p>When what is necessary for you to decide is one factor, black from red, you had only to concern yourself with the position of one notch. The one that indicated colour; so your finger should have been guided to within half an inch of that point before it actually touched the card. You do not have to go through the unnatural motion of running the finger down the full length of the card.</p>
+  <p>Our next concern is to differentiate between two red suits. The cards are again mixed: first by you, then, after a few have been dealt into two piles, a little more mixing is allowed by the spectator. As a diversion at this point, you may take the deck below table level, bringing the cards up one at a time and naming them before they reach sight. Finally we have two piles, each containing thirteen cards of one suit.</p>
+  <p>By the same means as was used to force the reds from the blacks, you now force the hearts, so that you may divide the odd from the even. You do not encourage the spectator to handle the diamond pile as they are faked. Normally they will have had enough of examination after running through the blacks earlier on; so simply place them on the bottom of the black cards.</p>
+  <p>Run through the odd and even sorting and, when complete, infer that you could now go the last step and name each card individually. By now they will have had enough. But you are in a very favourable position to perform a master move of magic. Pick up the red cards and add them to the bottom of the deck. Take the full pack and give it a good false shuffle. Immediately proceed to perform "Out of this World," which, in the circumstances, could not be a better effect. By the time the spectator has sorted the cards themselves, you have finished a pretty good routine that's going to take a lot more sorting out before the method is uncovered! 😎</p>
+  <p>(Note: Paul Curry's "Out of this World" may be obtained from your favourite dealer; should you be one of the few people who do not know it, my advice is to hasten to get it now.)</p>
+</div>
+
+<div class="trick-card">
+  <div class="trick-number">Trick 05</div>
+  <div class="trick-title">Colour Conscious 🎨</div>
+  <p>Using the Ghost Deck described above, divide the cards into black and red to start. Have any red card chosen and placed by the spectator amid the blacks. Holding the cards under the table, you quickly locate it and then count how many cards are on top of it. Square up the pile and bring it to the table top, putting it down in the middle of the table and saying, "That's funny; I'm sure I could do it. Lend me a bit of paper. I must see where I went wrong." Take any bit of paper and quickly jot down a few meaningless calculations, ending up with the announcement: "I cannot understand it; my calculations show it must be the fifteenth card from the top." (For fifteen, insert however many cards were above the red.) "Would you check it once more please?" Hand the pile to the spectator who counts down to the fifteenth card and finds it is the red one.</p>
+  <p>Within five seconds you are going to have everyone who can add two and two trying to work out how you can calculate the position of the red! 🧮</p>
+  <p>I should mention that the cards, when dealt by the spectator, should be placed face down on the table; the last one of the count then turned over and shown. If they are dealt face up, it looks very suspicious that you get a run of fourteen blacks before you reach the first red, which happens to be theirs!</p>
+</div>
+
+<div class="trick-card">
+  <div class="trick-number">Trick 06</div>
+  <div class="trick-title">Another Version of The Princess Card Trick 👑</div>
+  <p>From the Ghost Deck remove the following four cards: Ace of Spades, Five of Diamonds, Seven of Hearts, and Eight of Hearts. Make these four cards into a fan and have any one mentally selected. Next have the four cards mixed by the spectator and handed to you in a pile face downwards. Before you start the effect, you should have one extra card in your lap; the rest of the deck is on the table.</p>
+  <p>Take the mixed cards and hold them below table level. Say that you think you can tell two things: the mentally selected card and which of the four it is. Keep all four below but bring up the extra card without showing it, and say that is the one you think was the chosen card. Place it face down in the middle of the table and cover with your handkerchief. Ask now for the chosen card to be named; and while recapping on what has happened, you feel for their card amid the four held below the table. Immediately you find it, drop it in the lap and bring up the left-hand palm upwards and empty. An instant later the right hand brings up the three other cards and drops them on the outstretched left palm in a face-down position. This hand now extends to pass the three cards to the spectator to check.</p>
+  <p>Whilst the left hand goes forward with the cards, the right returns to the lap, picks up the selected card, and palms it; then comes up again, goes to the hankie in the middle of the table, and the left hand, now empty because the spectator has taken the cards, lifts the corner, allowing the right to move under a bit and appear to take out the card. The palmed card is withdrawn and thrown face down to the spectator, who goes to turn it over; allowing you a fraction of time to pick up the hankie and the tabled card and place same into your pocket.</p>
+  <p>There are no sleights in this routine; the moves given are all natural, and the handling is such that both hands have been shown empty at a vital point.</p>
+  <p>The last point is to explain that the four cards we name are each distinctive in the Ghost Deck. To find the Ace of Spades, check immediately for the "red" notch only. For the Five of Diamonds, feel in the "red" and "Hearts" position; if it is "red" only, it must be diamond. For the Seven of Hearts, check the "Hearts" and "even" position only; if it is "Hearts" only, it must be the Seven. For the Eight of Hearts, the only even card, check "Even" only.</p>
+  <p>It is as well to do the checking before you pretend to remove the chosen card (the fifth) so that their order is known; and as soon as the chosen card is named you can drop it to the lap immediately.</p>
+</div>
+
+<div class="trick-card">
+  <div class="trick-number">Trick 07</div>
+  <div class="trick-title">Another Application of the Touch Reading Envelope ✉️</div>
+  <p>It is an easy matter to slip a few grains of sugar (white granulated sucrose) into an envelope, and it is just as easy to feel the sugar grains through the envelope. The ability to identify one envelope by touch puts you in a position to perform many effects. To give you some examples: the envelope can be used for identifying the right key in the "Seven Keys to Baldpate" mental effect; it can be used to identify a "plant" question when performing a series of "Question and Answer" effects; the plant envelope allows you to get a "One-ahead" system in operation. It can be of use for several versions of the "Living and Dead" test, where it contains the only dead name amid several living ones; and it will serve to locate a playing card sealed from view and mixed with other envelopes containing cards.</p>
+  <p>According to the effect I vary the technique of using grains of sugar. If the envelopes are very thick, the heavy manila kind, it is as well to use a small bead in place of sugar; if the envelopes are ordinary, the sugar is quite adequate. To make the touch reading part much easier, I frequently stick the grains inside in one corner with Sellotape. However, some effects require that you tip out the sugar to have the envelope examined, so then it must be loose inside.</p>
+  <p>If you consider it, it would be quite a simple matter to work out an index system with envelopes and sugar. A simple version would be to have grains in four separate corners of four envelopes. You are then able to identify four envelopes by the position of the sugar; and, as we have said, the grains may be fixed in position with Sellotape.</p>
+  <p>As an example of the value of this idea, suppose you were doing an effect which ended in such a way that the spectator would name one of four cards. To cover all possible contingencies, you had four envelopes each containing one of those cards. Suppose it was necessary that you had all four in one pocket; so now we come to the vital point. The card is named and you produce one envelope; that envelope is supposed to contain their card. Can I ask you quite honestly, how many times have you seen a performer go astray here; and because his index system was unreliable or without safety checks, he got the wrong envelope?</p>
+  <p>You need never have the embarrassment of that situation because you can check that you are right by feel. Do not make the error of supposing that a grain of sugar is too small to bother with; the grain touch reading principle is one of the valuable standbys of mental magic. 🧂</p>
+</div>
+
+<div class="callout gold">
+  <div class="callout-label">💬 A Word of Wisdom</div>
+  <p>Moreover, the last example will serve to illustrate my contention that when you are sure a trick will work, you can relax and devote more attention to presentation and less worry to technical points. A mentalist must irradiate an air of confidence which cannot be achieved when you are not confident. You cannot be too fussy when it comes to getting your tricks in working order. Take my advice and always know what you would do if a trick went wrong, before it goes wrong; and better still, work on it to make it so perfect that it can hardly fail.</p>
+  <p>It was my pleasure to witness a failure performed by a well-known mentalist, and I say it was a pleasure because I think that about three people out of many hundreds knew the trick went wrong. When it failed, he continued his presentation, twisting the result so skilfully that the audience presumed that his climax was the climax intended. Such nerve, presence of mind, skill, and knowledge make that man one of the greatest in my opinion. The only time you can appreciate his ability is when you have failed with a trick whilst performing, and know what it is like. Let it be an example, not a story. 🌟</p>
+</div>
+
+<div class="divider">· · · ✦ · · ·</div>
+
+<!-- ===== PART FIVE: MUSCLE READING ===== -->
+<div class="part-header muscle" id="muscle">
+  <div class="step-tag">Part Five</div>
+  <span class="part-emoji">💪</span>
+  <div class="part-number">The Art</div>
+  <div class="part-title">Muscle Reading</div>
+</div>
+
+<div class="prose">
+  <p>There have been a lot of books written about Contact Mind Reading or Muscle Reading; some of them propound absurd theories as to the way in which it works, and others seem to make sense. I do not propose to offer reasons or causes to explain why it works; I would rather content myself with thinking it is a form of suggestion, and, more important, the so-called impulses which guide you are purely physical. As far as I am concerned, it is a variety of touch reading, and I'm not going to do anything more than give you the technique of one method: the method I use and the method which I find works.</p>
+  <p>If you wish to explore the whole field of Contact Mind Reading, you would be advised to consult a specialised work on the subject. Edward Dexter's "Contact Mind Reading" is a good starting place.</p>
+</div>
+
+<div class="subsection-heading">How to Do It 🧑‍🤝‍🧑</div>
+
+<div class="callout navy">
+  <div class="callout-label">🪙 The First Experiment</div>
+  <p>The easiest way to understand Muscle Reading is to try it, so start right away with a couple of experiments. Get a friend to help; an outsider is just as good, if not better. Tell him to hide a penny anywhere he likes in the room, but instruct him that it should be within reasonable reach and not hidden on his person. When he has done that, he should come and stand by the door and call out to you that he is ready. You wait outside and don't peep!!</p>
+  <p>When he calls out "ready," you come in. Some people now say you should look at his feet to see which way they are pointing, to act as a starting guide. In my experience, the subject does his best to face anywhere but where the coin is hidden; so I should forget it.</p>
+  <p>When you arrive, take the subject by the left arm; put his hand with fingers outstretched on your hand. Support the weight of his arm with your other hand and tell him to relax, bend his arm at the elbow, and let you carry the weight. Now position your right hand over his wrist and hold it fairly loose.</p>
+</div>
+
+<div class="callout violet">
+  <div class="callout-label">🗣️ The Mental Propaganda</div>
+  <p>Before you move an inch with him, start the mental propaganda! Tell him you must have his co-operation; that the success of the experiment depends entirely on his will power to make you go to the coin. Tell him that he must not attempt to lead you; just relax the arm and forget about it, but keep saying to himself: "It's under the clock; we must go this way," etc.</p>
+  <p>Proceed to walk him slowly to the middle of the room and, when you get there, say: "Now forget for the moment the exact location; just concentrate on the direction from here. Say to yourself: we must go towards the fireplace," etc. When you have done this, look carefully at his hand and very, very gently push it in one direction; if you feel him resist, try another direction, but if you feel no resistance, go that way.</p>
+  <p>The whole art depends on your ability to tell when he is stopping you or letting you go on. It is not a conscious movement on his part; it is probably the result of autosuggestion. But what matters is that you do get this resistance or encouragement from the subject. When you become an expert, you will be able to tell the path without the gentle push to test the direction; the encouragement will be enough to guide you. But to start with, apply this technique.</p>
+</div>
+
+<div class="prose">
+  <p>Having got some idea of the first direction, you now work on the place. Move him towards the mantelpiece and, when you get there, say: "Now we must deal with an exact area; imagine we are drawing a line from your hand to the penny; will me to move along that line." Almost immediately you will find his hand moves slightly in the desired direction, but frequently it does not indicate the height at which the object is hidden.</p>
+  <p>Suppose you arrive at a bookcase; you now say: "We must deal with the height. Say to yourself: we must go up or we must go down to find the penny; keep saying it." Sometimes it helps if you tell him to close his eyes when he is very near to the object. This confirms that you are on the right trail without asking "Am I hot?"</p>
+  <p>When you finally feel convinced it is within a certain area, say a shelf, use your left hand to touch objects, but do not lift them until the right hand holding his wrist gives you a distinct tug. When you touch anything very near to the coin and he can see you do it, the movement on his part is very strong; then you lift the obstacle and there should be the penny underneath.</p>
+  <p>His eyes should be open for the very last stages; he need only close them whilst he concentrates on telling you where to go.</p>
+</div>
+
+<div class="callout rose">
+  <div class="callout-label">⚠️ On Subject Quality</div>
+  <p>It is almost certain that you will fail to get positive results if your subject treats the matter as a joke. He must do as you say, and should be serious. When you have worked with several people, you will find that there are good and bad subjects. Some seem so sensitive that you find the object at an incredible speed; others are not so good. The worst type is the person who deliberately misleads you; but you will soon learn to spot any fakers. The best subject is a person who believes that you can do it. Like hypnosis: if they believe, half the battle is won.</p>
+  <p>As for the sympathetic subject who thinks you are a crank and helps you with an occasional pull in the right direction; well, they get you out of trouble, but don't do your ego or your personal progress any good, because you cannot learn to do it when you are being guided.</p>
+</div>
+
+<div class="subsection-heading">Special Features of Presentation 🎭</div>
+
+<div class="prose">
+  <p>There is a particular feature of Contact Mind Reading that should appeal to the mentalist. It amounts to this: when you have discovered the hiding place of the object, and you are quite sure it is there, you have no need to say so immediately. In fact, when the chance occurs, you would be wise to wait your time; continue the presentation so that the climax appears to be nothing short of an impossibility.</p>
+  <p>We shall suppose that a penny was concealed in a room, and that you have gone through the preliminary steps and arrived at the "very near" stage. We shall say that your attention becomes directed to one shelf; in moving the hand over the articles you may have noticed that one of them was not standing flat on the shelf. You may even be able to see the edge of the coin. Taking into consideration the places it could be hidden and the places which were improbable or impossible, you could arrive at a pretty firm decision.</p>
+  <p>Instead of making the final move and saying that you have found the penny, you go on. Without showing any signs of your discovery, slowly move away and lead the subject to another spot as though you had missed it. Then lead the subject to the centre of the room and announce that you are having great difficulty; so you will try by another method. Let go of the arm and tell the subject to stand with their eyes closed and to concentrate on the exact spot where the coin is hidden. After due deliberation, and having apparently read their thoughts, you declare the exact spot and allow another person to go and collect the penny and show it to all. 🎩</p>
+</div>
+
+<div class="callout amber">
+  <div class="callout-label">💡 The Threepenny Trick</div>
+  <p>If you would like to make a habit of this form of presentation, and it is indeed a very good method, you may resort to an old dodge which helps very often to see where the article is hidden. You use a threepenny bit instead of a penny; the first being substantially thicker causes a wider gap under the article when it is stood directly over the coin. Of course, this does not affect cases where the coin is dropped into something.</p>
+</div>
+
+<div class="subsection-heading">Advanced Forms of Contact Mind Reading 🧠</div>
+
+<div class="prose">
+  <p>Since this work cannot hope to deal with a comprehensive study of Muscle Reading, we shall give mention to some advanced forms of the art and deal briefly with them.</p>
+</div>
+
+<div class="trick-card">
+  <div class="trick-number">Advanced Form 01</div>
+  <div class="trick-title">The Copper Wire Contact 🔌</div>
+  <p>Some exponents of muscle reading are said to be capable of judging the impulses from the subject when the only contact between you and him is a length of copper wire; you each hold an end. I have not seen this done successfully, but I have it on good authority that it has been done and can be done.</p>
+  <p>One specialist would make a point of going anywhere in town from the theatre, leading the subject to the place where a borrowed ring was hidden. Sometimes he walked; sometimes he sat with the subject in a cab (horse-drawn) and would order the cabby to turn in the desired direction. It is claimed, and I believe it to be true, that his information was gained from the subject via contact mind reading with a copper wire. The distance involved was quite frequently more than a mile. 🤯</p>
+</div>
+
+<div class="trick-card">
+  <div class="trick-number">Advanced Form 02</div>
+  <div class="trick-title">Action with the Chosen Object 🎲</div>
+  <p>Another advanced technique is to have an object chosen for the test and then to have the committee decide upon some specific action that must be done with that object. I can offer first-hand information on this subject, having had the pleasure of watching a well-known mentalist perform the test on quite a number of occasions.</p>
+  <p>On one occasion, in the company of a group of well-known magicians, we decided to try him out. He was sent from the room and did not know what test was proposed and had no assistants. One person acted as the subject. He went fairly quickly to a shelf by one wall; from that shelf he removed three dice, which he carried to a card table across the other side of the room. Here, after much deliberation, he set them in a row with the numbers 4, 5, and 6 uppermost. This was the exact test that was proposed by a visitor who, I can add, did not help the mentalist.</p>
+  <p>The same person has allowed me to underline in my mind a word in a book; he has gone to a bookcase, removed the correct book from about ten or twelve in the case, found the right page and then the exact word on that page; and then, for the first time, actually underlined it in pencil! 📖</p>
+  <p>The result of this advanced form of contact mind reading is often so good that even those "in the know" cannot believe that trickery was not used. However, if you remember that a subject is capable of leading you to an object and does so without any conscious encouragement, then it is not so difficult to understand that he can lead you on to do something with the object. As long as he knows what has to be done, he will indicate whether you are doing right or wrong.</p>
+</div>
+
+<div class="subsection-heading">When to Use Contact Mind Reading 📅</div>
+
+<div class="callout sage">
+  <div class="callout-label">💬 An Honest Opinion</div>
+  <p>I have no doubt that what I am about to say will cause a lot of disagreement. However, my opinion is formed after some pretty careful thinking, performing, and watching others perform; you are not obliged to stand by my opinion.</p>
+  <p>I do not think Muscle Reading is suitable today for stage work. I think it should be used for small gatherings, at home or in the office, for publicity stunts with three or four reporters, or at a party. But when it comes down to using it as it was used, when conditions permitted that sort of entertainment, I think it is out.</p>
+  <p>The last time I saw a mentalist running along the aisle of a theatre, climbing over people in and out of rows of seats to find a pin stuck in somebody's lapel, I made a firm resolution that I would never do it or advise it. The same applies to any place where you have a large number of people seated in such a position that you cannot get at the hiding place without causing an alarming disturbance.</p>
+  <p>Contact mind reading is a wonderful thing; worth every second you give it in practice. But learn not only how to do it, but also when to do it. 🎯</p>
+</div>
+
+<div class="subsection-heading">The Blindfold 🎭</div>
+
+<div class="prose">
+  <p>Some performers like to work whilst they are blindfolded. It is questionable as to whether or not it improves the presentation; there are points for and points against. Nevertheless, if you choose to use one, be sure you can at least see down the nose, or better, have a fake blindfold and be able to see through it. I do quite a bit of contact mind reading and I do not use a blindfold, and I do not think it makes much difference.</p>
+</div>
+
+<div class="subsection-heading">Hellstromism ⚡</div>
+
+<div class="prose">
+  <p>In case you don't know, Contact Mind Reading or Muscle Reading is sometimes called "Hellstromism," after Hellstrom, the professional mentalist. In a book by the name of "Hellstromism," it is claimed that a contact mind reader was able to define the thoughts of a spectator while standing five feet away from him and without any contact whatsoever!</p>
+</div>
+
+<div class="callout rose">
+  <div class="callout-label">😂 Take It with a Pinch of Salt</div>
+  <p>Sounds like the touch reading envelope; it should be taken with a pinch of salt!! 🧂 If anybody cares to make some money doing that on me, let me think of something; stand five feet away from me and tell me what I'm thinking. I'll add fifty pounds to the one thousand pounds they can collect from the Occult Committee of the Magic Circle.</p>
+</div>
+
+<div class="subsection-heading">The Blackboard Test 📋</div>
+
+<div class="prose">
+  <p>This has been a very popular form of demonstrating muscle reading; today it is rarely seen performed. The spectator writes a number on the blackboard for all to see, then rubs it out and you come in. You are blindfolded properly and have to duplicate their number by working on encouragement or resisting impulses from the subject. It is more advanced than straightforward work, but not very hard to do.</p>
+  <p>The easy way out, recommended by S. Edward Dexter in his book on the subject, is to have the digits one to nine written in a row on the board; then all you have to do is run the chalk along the row and you will get a strong impulse on the first number chosen. You do it again for the next, and so on, until the four or five figure number is discovered.</p>
+</div>
+
+<div class="subsection-heading">Conclusion 🎬</div>
+
+<div class="blockquote">
+  I refer once more to S. Edward Dexter's book on Contact Mind Reading, where he makes a very strong point of the fact that you should not, under any circumstances, reveal that you are using contact mind reading. Let the audience form their own conclusion; but keep the technique and the art a strict secret.
+  <cite>— Corinda, endorsing Dexter's counsel</cite>
+</div>
+
+<div class="prose">
+  <p>I have nothing to add to that, other than to wholeheartedly agree. 🤫</p>
+</div>
+
+</div><!-- /content -->
+
+<footer>
+  No part of this publication may be reproduced without permission &nbsp;·&nbsp; Corinda's Thirteen Steps to Mentalism · Step Two
+</footer>
+
+</body>
+</html>

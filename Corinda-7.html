@@ -1,0 +1,1038 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);color:var(--color-text-primary);line-height:1.7;font-size:15px}
+.page{padding:2rem 1.5rem;max-width:760px;margin:0 auto}
+h1{font-size:26px;font-weight:500;margin-bottom:.25rem}
+h2{font-size:19px;font-weight:500;margin:2rem 0 .75rem}
+h3{font-size:16px;font-weight:500;margin:1.25rem 0 .5rem}
+p{margin-bottom:.85rem}
+.tag{display:inline-block;font-size:11px;font-weight:500;padding:3px 10px;border-radius:20px;margin-bottom:.5rem;letter-spacing:.03em}
+.tag-purple{background:#EEEDFE;color:#3C3489}
+.tag-teal{background:#E1F5EE;color:#0F6E56}
+.tag-amber{background:#FAEEDA;color:#854F0B}
+.tag-coral{background:#FAECE7;color:#993C1D}
+.tag-blue{background:#E6F1FB;color:#0C447C}
+.tag-pink{background:#FBEAF0;color:#72243E}
+.tag-green{background:#EAF3DE;color:#3B6D11}
+.box{border-radius:12px;padding:1.25rem 1.5rem;margin:1rem 0}
+.box-purple{background:#EEEDFE;border:0.5px solid #AFA9EC}
+.box-teal{background:#E1F5EE;border:0.5px solid #5DCAA5}
+.box-amber{background:#FAEEDA;border:0.5px solid #EF9F27}
+.box-coral{background:#FAECE7;border:0.5px solid #F0997B}
+.box-blue{background:#E6F1FB;border:0.5px solid #85B7EB}
+.box-pink{background:#FBEAF0;border:0.5px solid #ED93B1}
+.box-green{background:#EAF3DE;border:0.5px solid #97C459}
+.box-gray{background:#F1EFE8;border:0.5px solid #B4B2A9}
+.box-purple p,.box-purple li{color:#26215C}
+.box-teal p,.box-teal li{color:#04342C}
+.box-amber p,.box-amber li{color:#412402}
+.box-coral p,.box-coral li{color:#4A1B0C}
+.box-blue p,.box-blue li{color:#042C53}
+.box-pink p,.box-pink li{color:#4B1528}
+.box-green p,.box-green li{color:#173404}
+.box-gray p,.box-gray li{color:#2C2C2A}
+.box h3{margin-top:0}
+.box-purple h3{color:#3C3489}
+.box-teal h3{color:#085041}
+.box-amber h3{color:#633806}
+.box-coral h3{color:#712B13}
+.box-blue h3{color:#0C447C}
+.box-pink h3{color:#72243E}
+.box-green h3{color:#27500A}
+.box-gray h3{color:#444441}
+.nested{border-radius:8px;padding:.85rem 1.1rem;margin:.75rem 0;border:0.5px solid}
+.nested-white{background:#fff;border-color:#D3D1C7}
+.nested-purple{background:#EEEDFE;border-color:#7F77DD}
+.nested-teal{background:#E1F5EE;border-color:#1D9E75}
+.nested-amber{background:#FAEEDA;border-color:#BA7517}
+.nested-coral{background:#FAECE7;border-color:#D85A30}
+.nested-blue{background:#E6F1FB;border-color:#378ADD}
+.nested-pink{background:#FBEAF0;border-color:#D4537E}
+.nested-green{background:#EAF3DE;border-color:#639922}
+.divider{border:none;border-top:0.5px solid var(--color-border-tertiary);margin:2rem 0}
+.qa-block{margin:.6rem 0}
+.q{font-weight:500;color:#185FA5}
+.a{color:var(--color-text-primary)}
+.perf-line{border-left:3px solid #7F77DD;padding-left:1rem;margin:.6rem 0;font-style:italic;color:#3C3489}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:.75rem 0}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:.75rem 0}
+.pill{display:inline-block;padding:2px 10px;border-radius:20px;font-size:12px;font-weight:500;margin:2px}
+ul,ol{padding-left:1.3rem;margin-bottom:.85rem}
+li{margin-bottom:.3rem}
+.emoji-head{font-size:22px;margin-right:.4rem;vertical-align:middle}
+.chapter-header{display:flex;align-items:center;gap:.5rem;margin-bottom:.25rem}
+.big-num{font-size:36px;font-weight:500;line-height:1;color:#534AB7}
+.accent-bar{width:40px;height:3px;border-radius:2px;margin:.5rem 0 1rem}
+.ab-purple{background:#7F77DD}
+.ab-teal{background:#1D9E75}
+.ab-amber{background:#EF9F27}
+.ab-coral{background:#D85A30}
+.ab-blue{background:#378ADD}
+.ab-pink{background:#D4537E}
+.toc-item{display:flex;align-items:baseline;gap:.5rem;padding:.3rem 0;border-bottom:0.5px solid var(--color-border-tertiary);font-size:14px}
+.toc-num{font-size:12px;color:var(--color-text-secondary);min-width:28px}
+.toc-title{color:var(--color-text-primary)}
+.toc-pg{margin-left:auto;color:var(--color-text-secondary);font-size:12px}
+</style>
+
+<div class="page">
+
+<div class="box box-purple" style="margin-bottom:2rem">
+  <span class="tag tag-purple">📚 Step Seven</span>
+  <h1 style="color:#26215C;font-size:28px;margin-top:.25rem">"Book Tests" <span style="font-size:16px;font-weight:400;color:#534AB7">and Supplement</span></h1>
+  <p style="color:#3C3489;margin:0">By <strong style="color:#26215C">Corinda</strong> · from <em>Thirteen Steps to Mentalism</em></p>
+  <div class="accent-bar ab-purple"></div>
+  <p style="color:#534AB7;margin:0">One good Book Test is as valuable as one good Prediction. Quality over quantity. Always.</p>
+</div>
+
+<div class="box box-gray">
+  <h3>📋 Contents</h3>
+  <div class="toc-item"><span class="toc-num">01</span><span class="toc-title">🎭 Zarkamorta II — The Ceremony of Reincarnation</span><span class="toc-pg">p.201</span></div>
+  <div class="toc-item"><span class="toc-num">02</span><span class="toc-title">🎩 A Classic Swindle — Magazine Test</span><span class="toc-pg">p.206</span></div>
+  <div class="toc-item"><span class="toc-num">03</span><span class="toc-title">⚡ Impromptu Book Test Simplified</span><span class="toc-pg">p.208</span></div>
+  <div class="toc-item"><span class="toc-num">04</span><span class="toc-title">🎲 A Lesson in Mentalism</span><span class="toc-pg">p.209</span></div>
+  <div class="toc-item"><span class="toc-num">05</span><span class="toc-title">✏️ The Crossword Puzzle</span><span class="toc-pg">p.211</span></div>
+  <div class="toc-item"><span class="toc-num">06</span><span class="toc-title">🔥 Novel Revelation of a Word</span><span class="toc-pg">p.212</span></div>
+  <div class="toc-item"><span class="toc-num">07</span><span class="toc-title">📞 Tele-Directory Test</span><span class="toc-pg">p.213</span></div>
+  <div class="toc-item"><span class="toc-num">08</span><span class="toc-title">📼 Ultra-Modern Mentalism</span><span class="toc-pg">p.215</span></div>
+  <div class="toc-item"><span class="toc-num">09</span><span class="toc-title">📎 The Clip Book — by Vivian St. John</span><span class="toc-pg">p.218</span></div>
+  <div class="toc-item"><span class="toc-num">10</span><span class="toc-title">🧩 The Missing Link</span><span class="toc-pg">p.219</span></div>
+  <div class="toc-item"><span class="toc-num">11</span><span class="toc-title">📝 Summary of Book Tests</span><span class="toc-pg">p.220</span></div>
+  <div class="toc-item" style="border:none"><span class="toc-num">12</span><span class="toc-title">🎙️ Supplement: An Interview with Fogel</span><span class="toc-pg">p.222</span></div>
+</div>
+
+<hr class="divider">
+
+<div class="chapter-header">
+  <span style="font-size:28px">🎭</span>
+  <h2 style="margin:0">"Zarkamorta II" — The Ceremony of Reincarnation</h2>
+</div>
+<div class="accent-bar ab-purple"></div>
+<span class="tag tag-purple">Complete Routine</span>
+
+<div class="box box-purple">
+  <h3>✨ Introduction</h3>
+  <p>This is a complete routine and, as such, it must be performed according to the book. The ingredients of this programme are: one third trickery and two thirds presentation.</p>
+  <p>In essence, this is nothing more than a book test. But the dressing makes it such that you could be acclaimed an Ipsissimus of The Left Hand Path, the Status of High Priest in the realms of Black Magic; or, if you prefer, the Master Phenomenalists, Seventh Son of a Psychic Seer and Maker of Miracles.</p>
+  <p>There are no half-measures with this routine. To do it, you go the whole hog: calling upon Spirits, sticking pins in an effigy drawing and casting verbal spells into a cauldron of green flame. This is magic as it really exists in the wild imagination and dreams of those who think of power and supernatural abilities.</p>
+  <p>An artist will make this routine into a miniature play. A dramatic sketch into which he draws the minds of his audience into a realm of phantasy and opens the door to show them what could be... what is... the reincarnation of the past.</p>
+</div>
+
+<div class="grid2">
+  <div class="box box-teal">
+    <h3>✅ What you can do</h3>
+    <ul>
+      <li>Work this routine alone, without trained assistants</li>
+      <li>Master the trickery in ten minutes</li>
+      <li>Perform at next to no cost</li>
+    </ul>
+  </div>
+  <div class="box box-coral">
+    <h3>⚠️ Limitations</h3>
+    <ul>
+      <li>Limited to Drawing Room or close-audience settings</li>
+      <li>Requires hours of practice for patter and presentation</li>
+      <li>Stage performance possible, but intimate atmosphere is essential</li>
+    </ul>
+  </div>
+</div>
+
+<h3>🎬 Performance Script</h3>
+<div class="box box-blue">
+  <h3>Step 1 — The Invitation</h3>
+  <p>The first thing you do is to wait until you are invited to "do some tricks." On the presumption that you are visiting friends as a Mentalist or Magician, it is rational to suppose that this will happen sooner or later.</p>
+  <p>When the invitation takes place, you take your stand and, rather to the surprise of all present, you decline to perform (as usual) and say that this time you would rather tell a story. You allow the audience to force you to do something and get them ready for the story.</p>
+
+  <div class="nested nested-white">
+    <div class="perf-line">"Much as I appreciate your request, tonight I am not really happy about showing you the sort of thing I usually do. I would rather forget about doing things myself and tell you a story. I promise you the story will amuse you: it concerns Magic and Magicians of a sort. Although I suppose I should warn you that I say 'magicians' in a very loose way. I really mean Black Magicians, people that really dabble in Occult Arts. It is the Story of a secret rite, a strange and rather unusual tale. Would you like to hear it?"</div>
+    <div class="perf-line">"Please make yourselves comfortable, relax."</div>
+  </div>
+
+  <p>The story teller pulls up an armchair and seats himself comfortably. He sits in front of the group and begins the tale.</p>
+
+  <div class="nested nested-white">
+    <div class="perf-line">"In some ways, I suppose I'm taking a big chance in telling you this story. However, I might as well and, in any case, I could do with your opinion. You might even be able to help me. It's difficult to know where to begin. It was all so strange and I know you won't believe it. I suppose I should tell you about the Rectory first; then you will understand."</div>
+    <div class="perf-line">"To be brief, it happened about two years ago. I was visiting a friend who, like myself, is interested in Magic and what we call Mentalism. My friend was an expert on what we call Mentalism and happened to be an authority on many other associated arts. He knew a thing or two about Witchcraft and Medieval Practices. He had studied Spiritualism and other cults which concerned themselves with the Living and the Dead."</div>
+    <div class="perf-line">"Regardless of his strange interests in life, he was still capable of shrewd judgment and, in fact, he set himself the task of investigator of all weird and wonderful happenings. He was busy all the time exploring haunted houses, chasing poltergeists and watching luminous green trumpets floating around seance rooms. That was my friend. I say 'was' because he is no longer with us, and so I feel justified in telling this story, which, but for him, would never have been told."</div>
+    <div class="perf-line">"Before I go on — could we have those back lights out please?"</div>
+  </div>
+
+  <p style="color:#042C53;font-style:italic">💡 The lights are switched off leaving one only to play its beams around the story teller. People begin to look at the shadows!</p>
+
+  <div class="nested nested-white">
+    <div class="perf-line">"One day I had arranged to pay him a visit. When I arrived I had hardly been with him for ten minutes before he asked me to step into his 'den' for a word in private. One day I will tell you about this den: it was a fantastic junk heap of old props, weird inventions and apparatus all mixed up with what looked like a laboratory. But that's another story!"</div>
+    <div class="perf-line">"When we arrived at the den he seemed more excited than usual and told me he was 'on to something big.' As a fellow mentalist he always confided in me and he told me that he had 'fixed' it for both of us to get in on a meeting where certain very rare ceremonies were due to be performed. I wasn't too happy about the idea, but eventually he persuaded me to go with him. And that is how we came to visit The Rectory. Shall I go on?"</div>
+    <div class="perf-line">"We went to this meeting. Thirteen people turned up and most of what we saw turned out to be nothing much; that is with the exception of one thing. I don't think it wise to discuss the meeting too much. I can leave it to your imagination, and I might add that I shall never go to anything like it again."</div>
+    <div class="perf-line">"It was one particular ceremony that I cannot forget: something which really is too fantastic to believe. It is really a very simple Rite, nothing obviously supernatural or ghostly. In fact it is done simply with a book and what are supposed to be a few Magic Spells. The whole thing is physical, you see it all. And I have tried it two or three times myself and it always works."</div>
+    <div class="perf-line">"There were of course many strange Rites, but this particular one was called The Ceremony of Reincarnation. And although you will find it hard to believe, it is designed to alter time. Things which are done in the past are moved back in time so that, in fact, they were never done at all!"</div>
+    <div class="perf-line">"I can see you laughing! I don't blame you. I also thought it was a lot of tripe, until I tried it. Really, you know, I should do it, not talk about it. I would like to see your reaction when you examine the evidence. I would like to perform the Ceremony. It takes but a few minutes and it is quite amusing. But I am not sure if I should do this. What do you think? Shall I?"</div>
+  </div>
+</div>
+
+<div class="box box-amber">
+  <h3>🎩 Step 2 — The Props Appear</h3>
+  <p>The story teller now becomes the performer. He reaches for his briefcase and removes a book which he places on a table. With this go two or three sheets of paper, a green pencil, a brass bowl and some matches. All is ready.</p>
+
+  <div class="nested nested-white">
+    <div class="perf-line">"In order to guarantee the success of this experiment, I shall need the help of a few friends here tonight. Stay where you are for the moment. I'll tell you what to do when I am ready. There is nothing to worry about. Everything will be under my control throughout the Ceremony, as long as you do as I say."</div>
+    <div class="perf-line">"Now the first step is to have a sheet drawn with the Personal Outline. I'm going to run through the pages of this book. Will you please hold out your arm? As I run through these pages, I want you to suddenly drop your arm. Imagine that it suddenly becomes as a lump of lead, heavy, too much to support. Wait until I begin to move slowly through the pages, as the movement of your arm will be the signal for me to stop."</div>
+  </div>
+
+  <p>The performer takes a copy of The Reader's Digest from the table and, standing in front of the assistant from the audience, he begins to run slowly through the pages. Suddenly the man at his side drops his arm. Without a second's delay the performer calls out the page number and immediately hands the book to the spectator, telling him to tear out that page.</p>
+
+  <div class="nested nested-white">
+    <div class="perf-line">"Seventy-Two! Here, take the book please and remove the chosen page. Tear out page Seventy-Two, but be careful not to remove any others or damage them. Good, we can forget the book for now. And this page will act as The Scroll for Marking the Personal Outline. Bring the paper to me please."</div>
+    <div class="perf-line">"You have chosen page number Seventy-Two and I have made a crude drawing of a man which, as you will see, is drawn in green: the colour essential to this Ceremony."</div>
+  </div>
+</div>
+
+<div class="box box-pink">
+  <h3>📌 Step 3 — The Pin and the Curse</h3>
+  <div class="nested nested-white">
+    <div class="perf-line">"Next I shall ask another friend to help us. Will you remain please? It takes two assistants to deal with the next step. Will you please hold those two corners of the paper? And you hold the other two. Hold the paper out flat, level with the floor, so that the man in the drawing is lying down."</div>
+    <div class="perf-line">"Now we come to the pin. The next step is for one of us to mark the outline with the Curse of Pain. I think I had better do this, as should there be a mistake, the Curse may well go astray and become diverted from a simple paper drawing against one of us. I must mark the drawing with a pin. Please hold the paper still as I must not look, and I don't want to stick the pin in your hand!"</div>
+  </div>
+
+  <p>The performer closes his eyes. His hand moves to make mystic signs in the air, and then jabs downwards, sticking the pin into the drawing.</p>
+
+  <div class="nested nested-white">
+    <div class="perf-line">"There! It is done. Let us see where the mark has been made. Hold the sheet to the light and find the pinhole. We must remember the exact spot; so tell me if there is a word by the pinhole."</div>
+    <div class="perf-line">"Good. We can remember that. The mark is made on the left arm, just by the elbow, where the word JUDGMENT is to be found on that page. Remember that, all of you please: page Seventy-Two and the word is Judgment."</div>
+  </div>
+</div>
+
+<div class="box box-teal">
+  <h3>🔥 Step 4 — The Destruction</h3>
+  <div class="nested nested-white">
+    <div class="perf-line">"Now we may begin the Ceremony of Reincarnation. First, The Destruction. Fold the paper in four and tear it into exactly four pieces. Keep one quarter yourself, give another to our friend here, and give the other two pieces to any other two members of this gathering."</div>
+  </div>
+
+  <p>Whilst this is done, the performer removes a small packet of powder from his pocket which he drops into the Bowl on the table. This he sets afire and it begins to burn slowly with a Green Flame.</p>
+
+  <div class="nested nested-white">
+    <div class="perf-line">"We are ready to begin the Destruction. For this I must have nothing but the light of the Green Fire. I will have all other lights out please. And when it is so, I want you people with the pieces of the page to come to the Bowl and tear your paper, dropping the pieces into the Green Fire. Please move over here in readiness. It will be hard to see where you are moving in the dark. Be sure that all the pieces go into the fire. None must remain. Are we ready? Then out with the lights."</div>
+  </div>
+
+  <p>The performer stands behind the table. The green fire gives off enough light for the audience to see him moving his hands over the bowl, making mysterious signs, as one by one the spectators come forward to burn their papers. When this is done the lights are again put on and the bowl covered to extinguish the fire.</p>
+
+  <div class="nested nested-white">
+    <div class="perf-line">"Allow me now to remind you all of what we have done. So far you have seen nothing, except that we have provoked a curse which in itself is evil. This must not be left but must be lifted. Everything we have done will now have a reason, and I am about to perform the last Rite. And then you will see something quite incredible. These are the ashes of the papers. The Paper has suffered destruction but the Curse remains. It will be lifted and you will see why."</div>
+  </div>
+
+  <p>The performer takes some of the ashes and places them on a sheet of white paper. The paper he rolls into a small ball which he stands upon the Reader's Digest, which still lies on the table. He next invites one of the assistants to hold a match to the white paper ball. As this is done there is fire and it disappears. All that is left is the closed book.</p>
+
+  <div class="nested nested-white">
+    <div class="perf-line">"Ah! As you see, the Black Ashes have been dissolved in the purity of the White Paper. And so the curse is destroyed. If that is so, then our Ceremony has been successful and we have moved back in time. I cannot say how far we have gone; maybe in part or maybe further than we anticipated."</div>
+    <div class="perf-line">"Will you take the book from the table and do as I say. The book you hold was the one we used for the Ceremony. Our friend there chose Seventy-Two. Our drawing with the pinhole through the word Judgment was through the arm of the figure. Now turn to page Seventy-One and tell me: is the next page STILL MISSING?"</div>
+  </div>
+
+  <div class="nested nested-teal" style="margin-top:1rem">
+    <p style="margin:0;color:#04342C;font-weight:500">✨ The Climax: Page Seventy-Two of The Reader's Digest is back in the book, properly affixed to the binding. The edges of the page are slightly charred, otherwise it is undamaged, with the exception of a pinhole found through the word JUDGMENT on that page.</p>
+  </div>
+</div>
+
+<div class="box box-coral">
+  <h3>🔍 The Method</h3>
+  <p>One of the safest ways to make a good performance is to have tricks which work so easily that mechanics can be forgotten and every attention devoted to presentation. In this routine we do just that. The climax is enough of a trick without trying to introduce more mystification en route. We shall adopt the easiest possible means.</p>
+
+  <div class="nested nested-coral">
+    <p style="color:#4A1B0C;font-weight:500">You have two copies of the same edition of Reader's Digest.</p>
+    <p style="color:#4A1B0C">Page Seventy-Two (or any other you prefer) is selected and prepared. In one book only, the edges of this page are charred by singeing with a match. A drawing which resembles the outline of a man is made on the page with green pencil, and a pinhole is made in some prominent place, right through a distinctive word. You make a similar pinhole on the same page in the other book. Otherwise, that book is untouched.</p>
+  </div>
+
+  <p>At the beginning of the routine, when the performance starts, you have to force that page and word. Remember the force page has to be Seventy-Two. Run through the pages waiting for the spectator to signal stop as given in the presentation.</p>
+
+  <div class="nested nested-white">
+    <p style="color:#2C2C2A;font-style:italic">💡 As he drops his arm, stop properly wherever you are and open the book at that page. Look straight at that page number and, whatever it is, say "Seventy-Two"... in other words, misread the page number. It may be diabolical but it achieves our aim without any trouble. As soon as you have read aloud the page number, close the book and hand it to the chosen spectator, telling him to tear out page Seventy-Two. He will open it at that page for you!</p>
+  </div>
+
+  <p>Take the page back and draw the outline of a man in green, making it as near the same as the other drawing as you can. Having done this, get your two spectators to hold the page by the corners, the paper parallel with the floor. Take a large pin from your lapel. Make one or two mystic passes, after the fashion of a tic-tac man giving the odds at a race meeting, and jab downwards.</p>
+  <p>Before the pin reaches the paper, your fingertip covers the point. This makes quite sure that only one pinhole is going to be found, the one you made before you started. Again, make nothing of it.</p>
+
+  <div class="nested nested-amber">
+    <p style="color:#412402;font-weight:500">🎯 Key insight from Corinda:</p>
+    <p style="color:#412402">Forget about classic methods of forcing and systems which are sure to prove it was a free choice. At no time do you suggest it is a free choice anyway. The audience have no idea what is going on. They only know what you intend to do when it is too late to pay attention to the method of choosing a page and a word.</p>
+    <p style="color:#412402">As a Mentalist, you must become accustomed to perpetrating these outright swindles, without so much as a twinge of conscience.</p>
+  </div>
+
+  <p>Hence we have arrived at a page and a word is marked for the selection. Our next step is to consider how to switch the books ready for the climax. This complicated feat is achieved by putting out the lights and doing it under cover of darkness!</p>
+  <p>You will recollect that in the routine, the page is torn into four pieces and a green-fire bowl is ignited. The lights go out whilst each spectator comes forward to tear his pieces of paper and drop them into the fire. Whilst this is going on, you have more than enough time to pick up the Reader's Digest from the table and stuff it down the back of your trousers belt, taking the other from there and substituting it on the table. After you have done that, the trick is as good as done.</p>
+</div>
+
+<div class="box box-green">
+  <h3>🧪 Green Fire Formula</h3>
+  <p>The making of green fire is simply a chemical mixture which any chemist will prepare for you. The formula is as follows:</p>
+  <div class="grid2">
+    <div class="nested nested-green">
+      <ul style="color:#173404;list-style:none;padding:0">
+        <li>Half a dram of powdered shellac</li>
+        <li>Half a dram of powdered charcoal</li>
+        <li>One dram powdered Mercurous chloride</li>
+      </ul>
+    </div>
+    <div class="nested nested-green">
+      <ul style="color:#173404;list-style:none;padding:0">
+        <li>One and a half drams powdered Sulphur</li>
+        <li>Three drams Potassium chlorate</li>
+        <li>Six drams powdered Borium nitrate C.P.</li>
+      </ul>
+    </div>
+  </div>
+  <p>This mixture is tipped into a nice ornamental brass bowl and will produce Green Fire. To give added effect, you may utilise Joss Sticks for creating a heavy scented smell. A few pieces of smouldering conjurer's rope give out mysterious wisps of smoke.</p>
+  <p>The very last thing is the disappearance of the ashes in the sheet of white paper at the end of the routine. This is flash paper, of course! But no doubt you have guessed. As soon as the paper has burnt away, quickly brush aside any few pieces of ash that remain before the sudden glare fades away, allowing people to see more clearly.</p>
+  <p>That is the working of The Ceremony of Reincarnation: not a lot of work for such an effect.</p>
+
+  <div class="nested nested-white" style="color:#444441;font-style:italic">
+    <p style="margin:0">😈 One thing left to tell you: of course, we don't believe in real Magic, Black, White or Grey. But one day at the end of a performance I opened the book to find the pinhole I had made in the arm now through the head, and the drawing looked remarkably like me. But that's another story!</p>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="chapter-header">
+  <span style="font-size:28px">🎩</span>
+  <h2 style="margin:0">A Classic Swindle — Magazine Test</h2>
+</div>
+<div class="accent-bar ab-coral"></div>
+
+<div class="box box-coral">
+  <h3>🗂️ Preparation</h3>
+  <p>For this you will require six magazines the size of "Life" or "Picture Post." They have to be prepared so that the covers are all different and yet the insides are all the same. For best effects, obtain six copies of the same edition of "Life" and five different magazines of the same size. Choose those which have bold covers which are obviously different from a good distance.</p>
+  <p>Remove five covers from the "Life" Magazines, and recover with those taken from the odd five. With this done you are ready to perform. However, it would be as well to mention that this effect is best performed on a stage, but a drawing room will do as long as you are careful to remove the other magazines afterwards.</p>
+  <p>Lay the six magazines in a pile on the table. Have a spectator come up to help you in an experiment of the mind.</p>
+
+  <div class="nested nested-white">
+    <div class="perf-line">"Now sir, on the table here you will see six various magazines. You have a free choice of any one you care to select. Don't let me influence you in any way. I want you to take one and stand over there so that I cannot see what you do."</div>
+  </div>
+
+  <p>You allow him to take one. But as you are talking at the start, pick the magazines up and display the front covers to the audience, showing that they are all different. When he has made his choice and moved to the spot you indicate, you deliberately pick up a magazine yourself and turn to him and say...</p>
+
+  <div class="nested nested-white">
+    <div class="perf-line">"Now the first thing I want you to do is to think of a number; any number you like, say under fifty. What would you like?"</div>
+  </div>
+
+  <p>He tells you. Then:</p>
+
+  <div class="nested nested-white">
+    <div class="perf-line">"Excellent, number twenty-three! Then do as I say please: turn to page twenty-three, like this..." (casually run through your copy, showing him!) "...and when you get there look at any prominent word, a heading at the top of the page. If there is a picture on that page, remember that also please. And just for good value, have a look at the very last word on that page."</div>
+  </div>
+
+  <div class="nested nested-coral">
+    <p style="color:#4A1B0C;font-weight:500">🎯 The Secret:</p>
+    <p style="color:#4A1B0C">Each time you say what he is to do, you casually gesticulate with a wave at your open magazine. In doing so, you take an outright look at the prominent words at the top of his page, any picture and the last word on the page! Since your copy is the same as his, you must be right.</p>
+  </div>
+
+  <p>After that it becomes a matter of presentation. Drop the magazine on to the table and pick up a slate. Tell him to commit these facts to memory, close the magazine but keep his finger in the chosen page in case he forgets the words.</p>
+
+  <div class="nested nested-white">
+    <div class="perf-line">"The first thing we shall try is to get an impression of a picture... I want you to visualise any pictures you saw. Suppose it was a person's face, imagine you are looking at that person. Try and help me, make the picture strong."</div>
+  </div>
+
+  <p>You quickly sketch something on your slate, a rough outline of the picture, and show it to the spectator saying:</p>
+
+  <div class="nested nested-white">
+    <div class="perf-line">"Say nothing. I get this rather vague shape. It seems like a drawing or a photograph of a building. There is a large square with birds and a statue here."</div>
+  </div>
+
+  <p>Point to the slate and the outline drawing as you patter about the scene. Having delivered enough facts to make it certain that they will appreciate you are on the right trail, say to the spectator:</p>
+
+  <div class="nested nested-white">
+    <div class="perf-line">"Would you be good enough to tell us all which picture you looked at and what was it?"</div>
+  </div>
+
+  <p>When he replies "there was a photograph of St. Peter's Square in Rome"... you have made your point.</p>
+
+  <div class="nested nested-white">
+    <div class="perf-line">"Now let us deal with the headline. You looked at some prominent words... think. Send the words to me, imagine you are drawing the letters on a blackboard."</div>
+  </div>
+
+  <p>Write the prominent words on your slate, and others if you are doubtful, as you can always say: "this is difficult, I get several words mixed up. Is one of these what you have in mind?"</p>
+  <p>Lastly, the sure-fire final word on the page. Here you cannot go wrong as it is one word only. Tell him to look once more at the last word, then to close the book and lay it on the floor. Tell him to concentrate on this word only: nothing more. Write it on your slate and hand the slate to him saying:</p>
+
+  <div class="nested nested-white">
+    <div class="perf-line">"I have written one word on that slate. I want you to turn it round and show it to the audience. But before you do so, don't look: will you please call out loud the word you thought of?"</div>
+  </div>
+
+  <p>He calls out "revolutionary"! Turns the slate and all see the word "Revolutionary" written boldly across your slate. Another miracle is done! 🎉</p>
+</div>
+
+<hr class="divider">
+
+<div class="chapter-header">
+  <span style="font-size:28px">⚡</span>
+  <h2 style="margin:0">Impromptu Book Test Simplified</h2>
+</div>
+<div class="accent-bar ab-blue"></div>
+<span class="tag tag-blue">By Corinda</span>
+
+<div class="box box-blue">
+  <p>It is always as well to know a couple of good effects that can be done on the spur of the moment. In this effect, a Book Test, I have again resorted to the easiest possible means and, I might add, the cleanest. When you talk about impromptu effects you forget about forcing a word with dice, playing cards and what-have-you. Nothing is more likely to make the whole thing appear prepared.</p>
+
+  <h3>🔑 The Effect and Method</h3>
+  <p>Being a Mentalist you will anticipate that sooner or later you will be asked to do something! Prepare for this event a few minutes beforehand by finding a good size book, preferably one from a selection of many that may possibly be found on a book shelf. In an emergency, you can utilise practically anything: a directory, office invoice book, diary, etc. But choose a book if you can.</p>
+  <p>Carry with you at all times a ten shilling note, the serial number of which you have memorised. Here again, if the trick must be done entirely impromptu, you can work from scratch using any ten shilling note, one-pound note or dollar bill. However, you make it easier for yourself if you use the same one each time.</p>
+
+  <div class="nested nested-blue">
+    <p style="color:#042C53;font-weight:500">📟 How to decode the serial number:</p>
+    <p style="color:#042C53">Look at your ten shilling note and note that you have six figures in the serial number. The first two numbers of the six will represent the PAGE number. The next two, the LINE number. And the last two, the position of the word in that line.</p>
+    <p style="color:#042C53">Because of this, you would do best to choose a note with the first two figures around the fifty mark (i.e. 47), the next two around twenty (i.e. 23), and the last two very low, around nine or ten but not more, as there may not be that many words in the line. A serial number like 472305 would be perfect.</p>
+  </div>
+
+  <p>With this foreknowledge, choose a book on the premises and, on the quiet, look up page number Forty-seven, line number Twenty-three and find the Fifth word in that line. Remember this word and then replace the book. Have the ten-shilling note folded to a convenient size for switching. (See Step Six.)</p>
+  <p>When the time arrives to perform, say that you will try something that might be of interest. First ask for the loan of a ten shilling note (or one the same as whatever currency you are using). Next look around for a book and move about a bit before you choose the predetermined one. In moving around the room, obviously getting ready to do something, you have every chance of switching the two notes.</p>
+  <p>When you get the book, hand it to the host and tell them you will try a novel test with their property! Look at the note and say:</p>
+
+  <div class="nested nested-white">
+    <div class="perf-line">"We have six figures on this ten shilling note you have given me. Let's take the first two as a page, the next for a line and the last for the word. Look (show them), the first figures are forty-seven. Turn to page forty-seven. Take the note also because I don't want to be anywhere near you when you see the word."</div>
+  </div>
+
+  <p>Guide them carefully with clear instructions (i.e. "disregard the title heading on the page if there is one") until they find the word. From then on it is just a matter of revealing the word by some dramatic presentation or other.</p>
+
+  <div class="nested nested-amber" style="margin-top:.75rem">
+    <p style="color:#412402;font-weight:500">⚠️ Don't just tell them the word!</p>
+    <p style="color:#412402">Build it up. Write it backwards with lipstick on the mirror, in ash on your arm, spell it out with matchsticks: anything that leads up to something more than just saying "And the word is Mouse," to which the host may justifiably retort "So what!?"</p>
+  </div>
+
+  <p>Last but not least, looking ahead, you will make a sly effort to recover your ten shilling note and replace it with another. I suggest that the easiest way to do this is to follow with any trick which uses a ten shilling note!</p>
+</div>
+
+<hr class="divider">
+
+<div class="chapter-header">
+  <span style="font-size:28px">🎲</span>
+  <h2 style="margin:0">A Lesson in Mentalism</h2>
+</div>
+<div class="accent-bar ab-amber"></div>
+<span class="tag tag-amber">By Corinda</span>
+
+<div class="box box-amber">
+  <p>Is it not true that throughout the career of every performing mentalist, there are constant requests for "show us a trick" and, following that, "show us how it's done"? This time we are concerned with showing how to do an effect of Mentalism!</p>
+  <p>That is why I have titled the routine "A Lesson in Mentalism." It is a standby routine which fits the occasion from every point of view.</p>
+
+  <div class="nested nested-amber">
+    <p style="color:#412402;font-weight:500">🤔 The Ethical Puzzle:</p>
+    <p style="color:#412402">First we must consider the ethical side of the problem of teaching a trick to members of the public. You cannot reveal anything of importance and yet you have to do something which pleases them and perhaps satisfies their demands. I am of the opinion that it is an error to teach anybody anything at anytime, unless they are "one of us."</p>
+    <p style="color:#412402">So we get round the problem in true mentalists' fashion: show them a routine presenting it as a demonstration of Mentalism, and having arrived at a surprise climax we now go further. We explain the methods by running through the trick backwards. But each time you go to illustrate what you did, an even more surprising occurrence is discovered!</p>
+  </div>
+
+  <p>Another name for this routine would have been "A Trick with Two Climaxes!"</p>
+
+  <h3>🎬 The Routine</h3>
+  <p>After a few introductory words in which the performer mentions a few basic principles of "Theoretical Mentalism," speaking about the diversity of ways to perform mindreading, dual-control, long distance telepathy, etc., he prepares to give a demonstration: a single example to show what must be done in order to achieve the results he usually displays!</p>
+  <p>Four things are laid on the table: a slate, a glass, a book and a pack of cards.</p>
+  <p>The performer explains that this type of experiment is called a Book Test, and enlarges the description by explaining that this means a word has to be chosen and the manner must be free of any influence. For scientific purposes the best way to have a word chosen is to isolate the human element and leave it to chance. Which brings us to dice and cards, for what is more chancey than such things?</p>
+  <p>He takes about six dice from his pocket and drops them into the drinking tumbler. Whilst talking, he gives them a good shake. Finally he hands the glass to one onlooker and tells him to give a real good shake and then to add the top numbers and call out the total.</p>
+  <p>The number twenty-one is called and the dice put aside. Taking the cards from the case the performer lays them face down in a pile on the table. He explains that the spectator must count to the twenty-first card and then look at it. Whatever it may be, that card will be used to locate a page and word in the book.</p>
+  <p>The cards are counted off and the twenty-first is turned over and found to be the NINE of diamonds: a NINE. (The performer has explained that the suit will be disregarded. Whatever the value, if it should be a six, for example, we would take the page number six and the sixth word along in the top line.)</p>
+  <p>The spectator takes the book, turns to page Nine and counts to the Ninth word. He reads aloud that word: "Unmentionable."</p>
+  <p>This done, you explain that this is how a mental test is conducted, and add that if done properly the results would be like this... the performer picks up the Slate and turns it over. There is chalked the word "Unmentionable." 🎉</p>
+
+  <div class="nested nested-white">
+    <p style="color:#444441;font-style:italic">Normally of course, the test would end there. But this time you intend to show how the preliminary tests are mentally guided so that you are sure to get good results.</p>
+    <p style="color:#444441;font-style:italic">"Let us go back," says the performer, "Let us see how we arrived at this word which I predicted."</p>
+    <p style="color:#444441;font-style:italic">He takes the book. "This is page Nine, the word is the Ninth word in the line. We arrived at that because you selected a card numbered Nine." He puts the book down and points to the cards. "The Nine was chosen because it happened to be at the twenty-first position in the pack. Had it been any other number it may well have been any other card. Do you agree? The number was twenty-one; again by chance. As with six dice" (he throws them back on to the table) "there could have been any total between six and thirty-six. A pretty good range. Therefore the only real problem was to mentally control the dice to make you arrive at the number twenty-one. This I did."</p>
+    <p style="color:#444441;font-style:italic">"...and of course you will be doubtful, so I may as well prove it. Your card was the twenty-first: it couldn't have been any other card, as now you see" (turns pack face up) "it happened to be the ONLY real card in the pack. All the others are blank!"</p>
+  </div>
+
+  <p>Everything may now be examined. There is nothing to be found.</p>
+
+  <h3>🔍 The Method</h3>
+  <p>Find a book with a good word at the ninth position on page nine and copy that word on to your slate. Have a blank face pack of cards with the Nine of any suit at the twenty-first position from the top. Now you require twelve dice and an ordinary drinking tumbler. Keep six of the dice in one pocket ready for switching at any convenient point in the routine. You have plenty of time.</p>
+  <p>Divide the other six into three sets of two. Take them in pairs and give each the same treatment:</p>
+
+  <div class="box box-green" style="margin:.75rem 0">
+    <h3>🎲 The Dice Secret</h3>
+    <p>With a good strong glue, stick the pairs together with the following numbers matching on each of the four long sides of the block: 5 & 2 / 4 & 3 / 5 & 2 / 4 & 3. On the short ends the numbers 1 and 6 will appear.</p>
+    <p>An alternative combination: 4 & 3 / 6 & 1 / repeated, with 5 & 2 at the short ends.</p>
+    <p>The outcome of the preparation is that no matter how much the dice are shaken, the top number will always be Seven on one set. With three sets it will always come to TWENTY-ONE!</p>
+  </div>
+
+  <p>At the point in the routine where you introduce the dice, you remove the three "doubles" from your pocket and just drop them into the tumbler, shaking them idly as you patter. When it comes to having the spectator shake them, be bold. Don't look twice at the dice. Simply say "put your hand over the mouth of the glass and shake them up."</p>
+  <p>When he has done that (and you will see how unbelievably deceptive the noise and movement makes the force), take back the glass and add the top total, asking somebody to check it. If, after the shake, one pair should settle upright, give the glass a tap before starting the count. When you have had the total checked, simply tip the dice back into your hand and drop them into your pocket. Keep the secret of this dice force up your sleeve.</p>
+
+  <div class="nested nested-green">
+    <p style="color:#173404;font-weight:500">💡 Extended applications:</p>
+    <p style="color:#173404">If you want to use it more extensively, you can obtain an extensive range of numbers by adding one or two single dice, sticking them to the bottom of the glass. The combination of two or three "Doubles" and one or two permanent singles give you a lot of scope for forcing numbers. I have worked on this principle for quite some time and I know that there is much to be done with it yet.</p>
+  </div>
+
+  <p>The end of the routine is, I suppose, obvious. You explain how very easy it would be for them to look up a word, write it on a slate, put one card at a known position in the deck. All that remains is knowing how to Mentally Control six dice. But that's another Lesson!</p>
+</div>
+
+<hr class="divider">
+
+<div class="chapter-header">
+  <span style="font-size:28px">✏️</span>
+  <h2 style="margin:0">The Crossword Puzzle</h2>
+</div>
+<div class="accent-bar ab-purple"></div>
+<span class="tag tag-purple">By Corinda</span>
+
+<div class="box box-purple">
+  <p>This trick draws the basic idea from an effect devised by that master-mentalist, Ted Annemann. In Practical Mental Effects, Annemann describes a clever adaption of The Centre Tear to a Newspaper test. Much as the effect is good and the method reasonable, I have found that getting a spectator to underline a word and then folding the paper so that their word is correctly positioned for the Centre Tear can offer a bit of trouble.</p>
+  <p>Deciding that the effect and method were worth the trouble, I have experimented with the result that the following method makes it quite infallible.</p>
+
+  <h3>✨ The Effect</h3>
+  <p>A spectator chooses any book, preferably one that is his own property, but a cheap one that you can afford to tear. He chooses any page and tears out that page. He is then instructed to rule two lines across the page, right across from corner to corner both ways, forming a large Cross. Next he looks at the word to be found in the middle of the cross at the point where the two lines meet. Having committed the word to memory (no writing), he folds the sheet in half and half again and gives it to you.</p>
+  <p>Upon receiving it, you tear the paper into shreds, drop the pieces into an ashtray and set it alight. After that you are able to reveal the chosen word.</p>
+
+  <div class="nested nested-purple">
+    <p style="color:#26215C;font-weight:500">🎯 Why it works:</p>
+    <p style="color:#26215C">The drawing of two lines guarantees that the word to be selected is going to be near, if not exactly in, the centre of the page. Since this is so, when the page is folded twice, you are sure that the chosen word is precisely where it has to be for the Centre Tear which you do as you tear the page into shreds. (Step Six on Billets gives a detailed account of The Centre Tear.)</p>
+    <p style="color:#26215C">Another thing: you can tell which side of the paper to read when you glimpse the torn centre, as it will be marked with two crossing pencil lines.</p>
+  </div>
+
+  <p>I don't see that the drawing of two lines is any distraction to the effect. No more so than would be underlining a word or drawing a circle around one. It is enough that they can choose any book and any page. And you may excuse the action by explaining that you want them to "navigate" at random to find the position of a word in millions.</p>
+
+  <div class="nested nested-white">
+    <p style="color:#444441;font-style:italic">🃏 This is the sort of trick that I would recommend to you for keeping on one side as a standby for emergencies. As long as you can get a book, you can do it. A valuable effect to any Mentalist.</p>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="chapter-header">
+  <span style="font-size:28px">🔥</span>
+  <h2 style="margin:0">Novel Revelation of a Selected Word</h2>
+</div>
+<div class="accent-bar ab-coral"></div>
+<span class="tag tag-coral">By Corinda</span>
+
+<div class="box box-coral">
+  <div class="nested nested-coral">
+    <p style="color:#4A1B0C;font-weight:500">🌟 A philosophical note first:</p>
+    <p style="color:#4A1B0C">Originality in Presentation will always add to an effect. Method is unimportant compared with dramatic presentation. A superb trick poorly presented will not receive half the ovation that a weak trick will get, if dressed up with showmanship.</p>
+    <p style="color:#4A1B0C;font-weight:500">Your aim should be to learn fifty ways to reveal a word and one way to force it!</p>
+  </div>
+
+  <p>This is another method of revealing a chosen word. A page is torn from a magazine or a book, a number is forced and the word which corresponds with that number is found. You are not supposed to know the number. The page is now mounted on a simple stand, something like a large Billet Stand as described in Step Six. The page is left open wide, hanging from one or two clips.</p>
+  <p>You tell the spectator to imagine that his word, whatever it may be, is written on a slip of paper and then dropped into a glass of water. You take a match and set the page alight. It burns, falling in ashes, with the exception of one small circle of paper. At that point it seems to be fireproof. And when the slip is examined, right in the middle is found the chosen word!</p>
+
+  <div class="nested nested-white">
+    <p style="color:#444441">This effect cannot be performed with a large sheet of paper as there is nothing left to support the small fireproofed area. Alternative to the stand: fold the sheet in half and open out again so that it can be made to stand upright in an ashtray. If the ash is not disturbed during the burning, the unburnt section hangs in position and stands out clearly to be seen.</p>
+    <p style="color:#444441">To prepare: wet about an inch of the paper which surrounds the force word using a fire-proofing solution like Potassium Alum dissolved in water.</p>
+  </div>
+
+  <p>Reading through this myself I find it is one of those effects that looks a bit weak when written on paper. But having done it to try it out, I can assure you that it is well worth knowing.</p>
+</div>
+
+<hr class="divider">
+
+<div class="chapter-header">
+  <span style="font-size:28px">📞</span>
+  <h2 style="margin:0">Tele-Directory Test</h2>
+</div>
+<div class="accent-bar ab-teal"></div>
+<span class="tag tag-teal">By Corinda · Stage Effect</span>
+
+<div class="box box-teal">
+  <p>Another "Booktest," but this time we choose to find more than a word. From any one of the four Volumes in The London Telephone Directories, one subscriber is selected and, via the media of mindreading, you discover their Name, Address, Telephone Exchange and correct Number!</p>
+  <p>There are no forces. The method is an application of a time-tested principle. Basically so simple that people just don't think of it. And yet, when in actual fact, it should be one of the first things that come to mind as an explanation. It has been used in many shapes and forms in Vaudeville. So much so that one professional lady produced and maintained a highly successful act using the very same means as we use in this test. Aside from using the principle in Vaudeville, it finds its application even today in Broadcasting and Film Studios.</p>
+
+  <h3>🎭 Apparatus</h3>
+  <div class="grid2">
+    <div class="nested nested-teal">
+      <ul style="color:#04342C">
+        <li>Two large slates</li>
+        <li>Three volumes of Telephone Directories</li>
+        <li>Three duplicate volumes (different colour covers for easy distance identification)</li>
+      </ul>
+    </div>
+    <div class="nested nested-teal">
+      <ul style="color:#04342C">
+        <li>Chalk</li>
+        <li>A table and chair</li>
+        <li>An assistant in the wings</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>🎬 Stage Setup</h3>
+  <p>The chair is placed to one side of the stage, fairly near to the footlights. The table, centre stage, well back near the backcloth. Three directories are ready on the table along with one slate and your chalk. In the wings stands an assistant. She has a slate, chalk and the duplicate books.</p>
+
+  <h3>🔑 The Method</h3>
+  <p>Any person is invited on to the stage. Having greeted them, seat them on the chair and take the three directories and give them to him. Tell him to have a look at them and then choose any one. Stand nearby his chair and take away the two books which he does not want. Return to the table and place the books there.</p>
+  <p>Because the books are coloured (as they always are nowadays), your assistant can tell immediately from what two are left in sight which directory has been chosen by the spectator. The assistant is in the wings at the same side as the seated spectator but cannot be seen because the volunteer assistant has his back to the wings. She selects the duplicate book to the one he chose.</p>
+  <p>Now, to play safe and enhance the presentation (making the choice of subscriber obviously free of trickery), we ask any audience member to call out a page number, say between One and Five hundred. (If the numbers have to be limited to the selected book, tell them what range they can choose from.)</p>
+  <p>Take your stand near the centre of the stage where, by appearing to look at the seated spectator, your eyes can travel past him to where you can see your own assistant. From his point of view it looks natural, and likewise for the audience.</p>
+
+  <div class="nested nested-teal">
+    <p style="color:#04342C;font-weight:500">🎙️ The selection sequence:</p>
+    <p style="color:#04342C">Holding your slate and chalk ready, repeat aloud the page number called by the audience and instruct him to turn to that page. As soon as he finds it, hurry him so as to avoid delay; say, "and now we have three columns as with every telephone directory. Will anyone please call out: first, second or third?"</p>
+    <p style="color:#04342C">If several people call at once, don't stand for any tomfoolery. Point to one lady and say: "Madam, everybody wants to have their mind read. Let's leave it to you. Which one shall we use?" Whatever she says, repeat it loud (to your assistant) appearing to instruct the seated spectator.</p>
+    <p style="color:#04342C">Finally, the exact position of the subscriber: same thing again. Have any number, say under thirty, called, and tell the spectator to count very carefully to the chosen line.</p>
+  </div>
+
+  <p>When he has it, tell him to think hard of the Subscriber's name. Appear to concentrate, during which time your eyes roam to a slate held high by your assistant in the wings. On that slate, in bold letters, she has chalked the name of the subscriber. As soon as you get it, write the name boldly on your slate and tell him to call out the name. Show your slate as correct.</p>
+  <p>Do the same now with the address. But when it comes to the Exchange and number, we finish slightly differently. Explain that names and places are not so hard to transmit or mindread; they have personal connections which makes it fairly easy. But what is hard is to deal with a few random numbers, like, for example, the Subscriber's Telephone Number.</p>
+  <p>Whilst you are making this explanation, your assistant has time to chalk the Exchange and phone number on the back of her slate and hold it up again for you to see and memorise. A discreet cough signals her that you have it, so she now disappears from view in the wings.</p>
+
+  <h3>🏁 The Climax</h3>
+  <p>The spectator is instructed to look very carefully at the Exchange and phone number, to memorise them, then to lay the book still open, face down on the floor (this is in case he forgets). He comes to centre stage where you stand. He goes to one side of your slate and you stand the other. Each of you hold the slate with one hand and write with the other, starting when you call "go." For your climax, you have the correct Exchange and Number written boldly on both sides of the slate.</p>
+
+  <div class="box box-amber" style="margin:.75rem 0">
+    <h3>⚠️ If Something Goes Wrong</h3>
+    <p>Never show your slate and what you have written before you have told him to call out loud the name only of the subscriber. If it should be wrong, say: "I thought that's what you would say, because you are thinking about the wrong person! Can we have a check please...?"</p>
+    <p>On the re-check your assistant likewise makes sure she is right. However, if she has made a mistake, she rubs out the name and writes now the correct address instead. This signals you to get out of that one!</p>
+    <p>"Right, you say the name is Williams. Good. Now on this slate I have written his address (your slate but don't show!). Just before I show it, will you read his address once more to yourself and let me check that I have it right?" Concentrate, then suddenly say: "Ah! Just as well I checked. I have the district wrong." Immediately clean the slate with your hankie or a duster and quickly write in the correct address of Mr. Williams. THEN show. Don't be afraid to worry about an effect. It gives you grey hairs and makes you look dignified as a mentalist!</p>
+  </div>
+
+  <div class="nested nested-teal">
+    <p style="color:#04342C;font-weight:500">🎯 Key tips to remember:</p>
+    <ul style="color:#04342C">
+      <li>Talk loud when you call back the selected page number, etc., giving your assistant a good chance to check up accurately.</li>
+      <li>Give her time to do her share of the work. Learn some patter and reserve patter for emergencies.</li>
+      <li>See that there is sufficient light in the wings to illuminate her slate for you to read.</li>
+      <li>Use soft chalk which does not talk (i.e. white Artist Crayon), just in case the spectator should hear some scratching going on behind him.</li>
+      <li>A mere glance at the slate held by your assistant will be enough. Let your glance sweep the theatre, passing the wings en route, when you see all you have to see. Don't stand and glare into the wings; it is not necessary.</li>
+      <li>Always be ready for a mistake. It's no good thinking you will deal with that misfortune when it occurs.</li>
+    </ul>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="chapter-header">
+  <span style="font-size:28px">📼</span>
+  <h2 style="margin:0">Ultra-Modern Mentalism</h2>
+</div>
+<div class="accent-bar ab-purple"></div>
+<span class="tag tag-purple">By Corinda · Requires: Tape Recorder</span>
+
+<div class="box box-purple">
+  <p>A few years ago a fellow mentalist wrote to me and said he would give me a terrific trick. It was an idea from the brain of Bob Harbin, who seemed to do nothing else but invent wonderful ideas! The letter read: a terrific trick! All you want is a pencil, a piece of paper and a tape-recorder! The sudden impact of the last unexpected accessory knocked me for six.</p>
+  <p>However, times have altered a bit and these days there are more people who own recorders and they are not so rare that any effect with them would be wasted. Personally, I think the effect is worth the trouble. But you decide before you either buy or make a tape recorder!</p>
+
+  <h3>🎩 The Effect</h3>
+  <p>It's a Booktest Supreme, presented as a knockout Prediction. Out of six books one is chosen. The lady who chooses the book tears out a page and hands it to a gentleman. The gentleman arrives at a word which he underlines. For good value he writes his name across the page and the lady writes her name on the cover of the book.</p>
+  <p>All this has been done whilst, in the centre of the stage, is seen a tape-recorder. It stands on a table alone. Before you switch it on, there is one other thing to be done. You explain that in a moment you will switch on the tape recorder and they will all hear something which should be a surprise. Before that, however, you would like another person to choose any one of a dozen cards you offer. On each one is the title of a well known piece of music.</p>
+  <p>The Blue Danube is chosen!</p>
+
+  <div class="nested nested-purple">
+    <p style="color:#26215C;font-style:italic;font-weight:500">🎵 The recorder speaks:</p>
+    <p style="color:#26215C;font-style:italic">"Fancy asking him if that was right. Did I ever make a mistake? Now let me handle this, will you please. Move aside. No, well away. I want to see the audience!"</p>
+    <p style="color:#26215C;font-style:italic">You stand to one side and shrug.</p>
+    <p style="color:#26215C;font-style:italic">"Good evening Ladies and Gentlemen, you are listening to the only thought-reading tape-recorder this side of Mars. May I deal with the book first. Madam, I'm talking to you. You chose the book out of six, didn't you? I'm sorry, I didn't hear you reply! You did. Good. Well, you nearly cheated, you know. You were told to take the first one that you liked and you changed your mind twice! Never mind, you made a wise decision and you selected a book called 'How to Pick Pockets.' Is that correct?"</p>
+    <p style="color:#26215C;font-style:italic">"And out of the very many words on that page, you have underlined one. Let me see, that would be TRAVELLING. Right? The word you have chosen is Travelling? Well, well, well! That's it, Ladies and Gentlemen. Another successful performance. And I think we should give a big hand to our two assistants. The Lady: by the way your name is Mrs. Watson. Correct? And you sir, thank you, Mr. Harrison. That is your name. Correct?"</p>
+  </div>
+
+  <h3>🔍 The Secret</h3>
+  <div class="nested nested-purple">
+    <p style="color:#26215C;font-weight:500">Like most of the things I work out, there's a swindle in it somewhere! This time it's a piece of cake.</p>
+    <p style="color:#26215C">Any six books can be chosen, any page and any word underlined. It doesn't make any difference. And whatever the names of the two spectators, that too is handled with ease.</p>
+    <p style="color:#26215C">You have been led to think (as the audience will think) that the tape-recorder plays back the message. It does nothing of the kind. The only thing it really plays is a half-minute recording of The Blue Danube; then the spools still run but there is nothing recorded thereafter, so all is quiet.</p>
+    <p style="color:#26215C;font-weight:500">Where does the voice come from? From the tape-recorder! You will find that you can plug in a microphone to your recorder and adjust the output so that the machine works like an amplifying unit. An assistant backstage does all the talking direct into the mike, projecting his voice through the machine.</p>
+  </div>
+
+  <h3>🎬 Working the System</h3>
+  <p>The working at the start has to be quick and straight to the point. Offer six books and whatever is chosen, write the title on a blackboard. Ask the lady to call out any page number and write that on the board whilst she tears it out and gives it to any gentleman. Ask him to name any word on that page and to underline it. Again write it on the board.</p>
+
+  <div class="nested nested-white">
+    <p style="color:#444441;font-weight:500">The writing on the blackboard serves two purposes:</p>
+    <ul style="color:#444441">
+      <li>Your backstage assistant can see what's written and check up the facts, dotting them on a piece of paper ready for his part later.</li>
+      <li>When it comes to the "revelation," everybody can hear what the recorder says and everybody can see it is right. Otherwise just two people are in on the act.</li>
+    </ul>
+  </div>
+
+  <p>Having selected a lady near the front row, you will be able to get near enough to her to say "what is your name please?", speaking in a low voice so that as few people as possible hear. Immediately write it in bold letters on a slip of paper and show it to her, saying "write it like that across the book please." The man will be nearby since the lady passed the page to someone, so do the same with him. Then you have two copies of their names. Screw these papers up and drop them in your pocket.</p>
+  <p>When you go to switch the recorder on, you suddenly see that the off-stage plug is not connected. Picking up the cable you hand it to "someone in the wings." At the same time, pass the two paper slips bearing a copy of the names to your assistant. By this method, the audience are given a very surprising climax when the tape-recorder names the two spectators!</p>
+
+  <div class="nested nested-purple">
+    <p style="color:#26215C;font-weight:500">🃏 The card force:</p>
+    <p style="color:#26215C">Have about twelve small cards. Printed on every one is the title "The Blue Danube." When you come to the card force, simply tell what they are: "About a dozen cards, each with a different title of some well known music; for example, we have..." and you read through about five cards, looking at each one as you read but miscalling for various titles. Finally, fan them face downwards and have the third spectator choose The Blue Danube. Don't work out complicated force systems for this part of the routine: it is not needed.</p>
+  </div>
+
+  <p>That's the routine: full of surprises and with novel presentation which makes it something they haven't seen before.</p>
+
+  <div class="nested nested-amber">
+    <p style="color:#412402;font-weight:500">🧠 Corinda's clever misdirection:</p>
+    <p style="color:#412402">Bear in mind the strength of the trick. You get yes to the book, yes to the line, yes to the word, and yes to the music at the start. AND the two names at the end.</p>
+    <p style="color:#412402">In case you haven't noticed: when I worked out this routine I allowed for anybody in the audience that might have a clue as to how it was done. You see, with music at the start and with the spools moving all the time, you have pretty powerful misdirection. Or do you suppose people think you have the London Philharmonic Orchestra backstage playing The Blue Danube! That is another reason why you draw attention to the moving spools.</p>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="chapter-header">
+  <span style="font-size:28px">📎</span>
+  <h2 style="margin:0">The Clip Book</h2>
+</div>
+<div class="accent-bar ab-blue"></div>
+<span class="tag tag-blue">By Vivian St. John</span>
+
+<div class="box box-blue">
+  <h3>✨ The Effect</h3>
+  <p>A book is handed to a spectator who is told to open it anywhere and look at any word on any page. He is asked to impress that word on his memory by writing it in capitals on a piece of paper you hand to him. He then folds the paper and puts it in his pocket.</p>
+  <p>The performer now produces a dictionary and explains that since it is a comprehensive volume, somewhere on one of the pages will be found the word that was selected quite freely from the other book. He continues, explaining that there is an art called Muscle Reading, and gives a brief outline of what is to happen.</p>
+  <p>The spectator is first to guide the Mentalist to the section of the Dictionary that deals with the first letter of his word, then to the right page. When at the right page, the performer decides that the last step should be done by remote transmission and not direct contact. He asks the spectator to merely think of his word, and he finds it on that page.</p>
+  <p>When the spectator guides the Mentalist by "Muscle Reading," he holds the wrist of the Mentalist's left arm. The Mentalist, using his other hand, moves the pages back and forth, appearing to get a guiding impulse which eventually leads him to the correct page. Suppose the word was "Renegade." He would first arrive at "R" and then turn over the pages until he reaches "Re" and so on. When the word is seen on the right page, he tells the spectator to let go and think of the name of his word, or visualise it in large letters. The Mentalist's finger moves down the page and finally stops at one word: RENEGADE.</p>
+  <p>This is one form of presentation out of many that will be found possible with a very simple and yet practical piece of apparatus.</p>
+
+  <div class="nested nested-blue">
+    <p style="color:#042C53;font-style:italic">The apparatus I am about to describe was first revealed by Vivian St. John, published over fourteen years ago, but still good. The "Cornish Pixie" of May 1945 gives the constructional details of what is called a "Clip Book." It is a simple thing to make and it will be found useful for many routines and effects. Although a Carbon Impression is used, it is well concealed and the apparatus is easy to handle.</p>
+  </div>
+
+  <h3>🔧 Building the Clip Book</h3>
+  <p>Reprinted by permission of Vivian St. John:</p>
+
+  <div class="nested nested-white">
+    <p style="color:#444441">"The word written by the spectator could be obtained by means of one of the many types of Clip Boards or Carbon Methods, but carbon paper even with the best of the clip boards has not been, to me, very satisfactory. So make your own carrier in this way:</p>
+    <p style="color:#444441">Take a book not less than eight by five inches and remove the dust cover. Mark a square out on the front cover leaving about one inch as a border all round, and cut that section right out. You may now do two things:</p>
+    <p style="color:#444441">Stick that cardboard cutout on to the first page inside, in line so that when the book is opened or closed it fits back into the gap and also comes out. Or, discard the cardboard cutout and replace it with one of those permanent carbon note pads; the type that have a carbon sheet (actually a jelly) covered by a sheet of celluloid. When you write on the celluloid the lettering appears. To remove the writing, you pull down a small metal bar which separates the carbon from celluloid again, and the writing disappears.</p>
+    <p style="color:#444441">One of these, the same thickness as the book cover and as near as possible the same size as the gap, is stuck on the first inside page. If the first method was used, a sheet of good quality carbon paper is now stuck inside the dust cover (front). If the second method is used, it is not necessary. The dust cover is replaced in either instance. And if the direct carbon method is used, you must insert a sheet of white paper to take the impression.</p>
+    <p style="color:#444441">The book looks perfectly normal. It is handed to the spectator front side up (the proper way) and he is told: 'Open it somewhere in the middle and look at any word, then close the book.' You give him time to do this and then place a sheet of paper over the front dust cover and say: 'Now write the word in capitals to impress it on your memory.' He does this and folds the paper, putting it into his pocket.</p>
+    <p style="color:#444441">You casually take back the book, glance through the pages and glimpse the word-impression as you do so. From then onwards it is a matter of presentation to reveal the word by some powerful effect. Make this neatly and you have a clip board much better than those you have paid many a dollar for."</p>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="chapter-header">
+  <span style="font-size:28px">🧩</span>
+  <h2 style="margin:0">The Missing Link</h2>
+</div>
+<div class="accent-bar ab-teal"></div>
+<span class="tag tag-teal">By Corinda</span>
+
+<div class="box box-teal">
+  <p>"Book Tests" are generally conceded to be effects wherein a word or line is found in a book. There are countless numbers of them already, and that is why emphasis in this Step has been placed on tests which have a slightly different approach from the normal run of things. This is a trick with a book and it might be called a Test. It does not involve words but numbers: the page numbers of a book.</p>
+
+  <h3>🎩 The Effect</h3>
+  <p>The performer has a glass bowl (or any other container he chooses to use) which is said to contain approximately one thousand small slips of paper. This is true. On the table lies a thick volume, something like a Telephone Directory or an Encyclopaedia. Nothing is said about the book for the moment.</p>
+  <p>A spectator is invited to roll up his sleeve and dip his hand into the bowl, mix all the slips and then remove a handful. Having done this, he is invited to keep any one of the slips he holds and to throw the others away. Hence one is selected at random.</p>
+  <p>Now the book is introduced. It is explained that the Volume is Seven of the Encyclopaedia Britannica, alleged to contain some two thousand pages. He now opens the slip of paper that was selected from those in the bowl and it is seen to hold a printed number. In fact, the paper is the corner torn from the page in a book. Suppose the number was 348. The spectator is told to turn to page 348 in the Encyclopaedia. And when he gets there, lo and behold! The corner of that page is missing. The piece in his hands matches exactly. No other corner is damaged, just that very one.</p>
+  <p>It would seem that out of all the pieces in the bowl, our spectator has selected the one corner that fits a damaged page in the book on the table!</p>
+
+  <h3>🔍 The Method</h3>
+  <p>Get about four old books and give yourself ten minutes' work during which you tear off each and every corner, screw them into a ball or fold them and drop them into a bowl. Next take the key book to be used for the experiment and remove a page corner from somewhere near the middle. The thicker the book, the more impressive the test.</p>
+  <p>This corner treat the same as the others: either roll or fold, but drop it in your pocket where you can get at it quickly and easily. Now all that has to be done (which is practically nothing!) is to switch the corner he chooses from the bowl for the corner in your pocket.</p>
+  <p>Step Six on Billets gives you a good dozen methods of switching so we need not bother about that here. But I will make it easier still for you and tell you how to do it when they least expect it.</p>
+  <p>Have the spectator mix the pieces, choose a handful and then make a final selection of one piece. Up to now, no mention has been made of numbers. You alone know what is happening. You suddenly make an announcement, telling everybody that every piece of paper in the bowl is the corner of a page torn from a book.</p>
+
+  <div class="nested nested-white">
+    <div class="perf-line">"About twenty different books have been used to collect the three or four thousand slips you see in the bowl. Now I want you all to be satisfied that these slips are well mixed, different and that the choice was free. Will you, sir, kindly pick up about three or four slips from the bowl and open them? Read out loud the page numbers as you pick them out."</div>
+    <div class="perf-line">Then add, as though it were an afterthought: "You had better give me that piece in case you get it mixed!" Reach forward and take the selected piece from him!</div>
+  </div>
+
+  <p>Have the other (real corner) ready in your hand to exchange at any time you like during the next half a minute, when all attention is focussed on the spectator calling out numbers. Under these conditions it becomes so easy that you can hardly call it a Billet Switch. You have so much time and so much misdirection that a child could do it.</p>
+  <p>The last touch is to get the corner back into his hands without drawing too much attention to the fact that you have been holding it. As soon as he has checked through about four slips from the bowl, stop him and draw his attention (and the audience) to the book on the table.</p>
+
+  <div class="nested nested-white">
+    <div class="perf-line">"That will do, thank you. Now let me draw your attention to this book on the table. It has been here all the time and has not been touched. Take your paper please and bring the book here."</div>
+  </div>
+
+  <p>Hand him the real corner and wave him towards the book. After that it is left to your personal (and undoubted) talent to make Much Ado About Nothing! 😄</p>
+</div>
+
+<hr class="divider">
+
+<div class="chapter-header">
+  <span style="font-size:28px">📝</span>
+  <h2 style="margin:0">Summary of Book Tests</h2>
+</div>
+<div class="accent-bar ab-purple"></div>
+
+<div class="box box-purple">
+  <p>In this Step, we have been forced to alter our usual approach of dealing with Types and Technique before Tricks, as Book Tests cannot be classified under such general headings as Types; and technique varies in almost every case. However, rather than publish half a dozen bare effects, we have given in this Step ten routines which can be applied as Book Tests. That is more than enough. Quantity means nothing; quality everything.</p>
+
+  <div class="nested nested-purple">
+    <p style="color:#26215C;font-weight:500">💡 The golden rule:</p>
+    <p style="color:#26215C">Any Mental programme is the better for ONE Book Test, provided it is reasonably short, direct and stunning. Anyone who thinks in terms of two or three book tests for one programme is asking for trouble.</p>
+  </div>
+
+  <p>The choice with the Ten Routines given in this Step is pretty wide. And I think it safe to say that if you cannot find at least one Book Test out of this lot that you can do, then any others that exist wouldn't suit you either. There will be one or two more Book Tests to come in further Steps, but they will be specialities, like the big one due for disclosure in Step Twelve (Publicity Stunts).</p>
+  <p>Remember that a good Mental programme must be varied. One good Book Test is as valuable as one good Prediction. However, in choosing which book test you intend to use, bear in mind what sort of effect it looks like from the audience point of view.</p>
+
+  <div class="nested nested-white">
+    <p style="color:#444441">For example, you might do a book test where a word is located and is later revealed written on a Slate. If this is so, you would naturally avoid a Prediction which involved a word written on a slate. Don't excuse repetition by telling yourself "well one is a Book Test and one is a Prediction." As far as the audience are concerned, they are the same.</p>
+  </div>
+
+  <div class="box box-amber" style="margin:.75rem 0">
+    <h3>⚠️ Watch Out For...</h3>
+    <ul>
+      <li>Whenever you do something involving counting to pages, lines and words, there is scope for the human element of error. Your test can be ruined because the Spectator, not understanding your instructions, counts to the wrong word. (See Step Five.)</li>
+      <li>When one man looks at a book and finds a word, he alone can see it and the audience are left to suppose he is telling the truth. Whenever it is practical, get the word in writing on a Board so that all can see, or have someone check it. Remember you are performing to an audience, not one man.</li>
+    </ul>
+  </div>
+
+  <div class="box box-coral" style="margin:.75rem 0">
+    <h3>🚫 Never Say This!</h3>
+    <p>Never use such terminology as "I have here a perfectly ordinary copy of the Reader's Digest." What else is there but a Perfectly Ordinary Copy, unless you have a prepared one? It is amazing how the psychological suggestion of trickery can be "telegraphed" to an audience by trying to "over-prove" that everything is innocent.</p>
+    <p>Unless it is imperative, never have anything examined. That's another point. If something is given for examination in order to prove that it is not prepared, the audience are justifiably liable to think: "well, he didn't find out how it works."</p>
+    <p style="font-weight:500">The most likely time for anybody to think a thing is faked is when you tell them it is ordinary!</p>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="chapter-header">
+  <span style="font-size:28px">🎙️</span>
+  <h2 style="margin:0">Supplement: An Interview with Fogel</h2>
+</div>
+<div class="accent-bar ab-amber"></div>
+<span class="tag tag-amber">Tape-Recorded Discussion</span> <span class="tag tag-gray" style="background:#F1EFE8;color:#444441">Fogel & Corinda on Mentalism</span>
+
+<div class="box box-gray">
+  <p>Some while ago it was considered that a lot of practical advice would be necessary in order to complete the "Steps." The subject of Presentation is dealt with as a specialised topic in the last Step. But when the chance occurred to get some first hand opinions from Maurice Fogel, an interview was arranged and tape-recorded.</p>
+  <p>In the following script, the interview has not been edited in any way. The questions are as given and the replies as recorded on the spot. Bearing in mind that Fogel has been earning his living and doing well for very many years as a Mentalist, I feel that there is a lot to be learnt from his experience.</p>
+  <p>I do not have to introduce Fogel. If you have not seen him work, you have missed something. Those who have seen him perform don't have to be told he's one of the best. We are thankful for the opportunity to publish this interview for the benefit of our Readers.</p>
+</div>
+
+<div class="box box-amber">
+  <h3>🌟 On the Future of Mentalism</h3>
+  <div class="qa-block">
+    <p class="q">Q: Fogel, you have been practising Mentalism for quite some time. I believe as a Professional. Can you tell us how long you have been at it and under what sort of conditions have you worked?</p>
+    <p class="a">A: I've been a professional entertainer for over twenty years. Regarding conditions, I've worked under all sorts of conditions: from small barrack-rooms, small billets to the largest of theatres. Also, of course, Music Halls, Cabaret, Club, Dinners... and you know what!</p>
+  </div>
+  <div class="qa-block">
+    <p class="q">Q: Now have your activities been confined to England?</p>
+    <p class="a">A: No. I've been practically all over the world, excepting Russia and Australia. I've been to Africa, Japan, Malaya, Singapore, Hong Kong, The Continent and I've been over to The States. Naturally I've worked a lot in the British Isles.</p>
+  </div>
+  <div class="qa-block">
+    <p class="q">Q: Right! Well I'm going to ask you some questions on Mentalism which I think will help the readers of this book. Please understand that whatever you say, you say as you like. We don't want to influence you in any way. In other words, let's have it straight!</p>
+    <p class="a">A: Don't worry. You'll get it straight!</p>
+  </div>
+  <div class="qa-block">
+    <p class="q">Q: The first question I have to put to you is a very important one. Do you think there is any future in Mentalism?</p>
+    <p class="a">A: Yes. Definitely a future. It's mystery, and a good mystic effect well presented is always acceptable.</p>
+  </div>
+  <div class="qa-block">
+    <p class="q">Q: Coming down to the actual performer; what outstanding qualities do you think go to make a Mentalist?</p>
+    <p class="a">A: Well that's a very big question really. Foremost, what one has to keep in mind is to be an Entertainer. People want to be entertained, especially today. But I should imagine one of the greatest things to cultivate is a commanding personality. Mentalism naturally calls for that.</p>
+  </div>
+</div>
+
+<div class="box box-blue">
+  <h3>🎩 On Mixing Magic and Mentalism</h3>
+  <div class="qa-block">
+    <p class="q">Q: Now to rather a tricky question. Do you think it is a good thing to mix magic and mentalism during the course of a performance? I think we had better say, during the course of a Mental Act?</p>
+    <p class="a">A: No. I don't think it is a good thing because in presenting Magic, naturally the people, even though you are presenting an apparent miracle, know that you are using trickery. So therefore, if you mixed magic and you come to a Mental Effect, the shine has been taken off by yourself, because the conclusion with a great many of the people would be "well, it's just another form of trickery."</p>
+  </div>
+  <div class="qa-block">
+    <p class="q">Q: But I think I would be right in saying that a magician can of course put in a couple of mental effects to add to his performance. Would you agree to that?</p>
+    <p class="a">A: Yes. Definitely. Because that is exactly the way that I started. That was until I realised that Mentalism was far stronger, or had a stronger appeal than my magic, which was probably no good at all. So therefore I went in and specialised in Mentalism.</p>
+  </div>
+</div>
+
+<div class="box box-teal">
+  <h3>😄 On Comedy in Mentalism</h3>
+  <div class="qa-block">
+    <p class="q">Q: Thank you. Now the next question, again I feel you can give a pretty good answer to this. What about Comedy in Mentalism? Do you think it necessary to have some light relief?</p>
+    <p class="a">A: Yes. This is based again on experience. There was a time when I was the very, very strong Mentalist. But it can reach saturation point and create too high a tension with an audience. And where possible, to bring in Comedy Relief without lowering the dignity of the performance, it can be a very good thing and a great asset.</p>
+  </div>
+</div>
+
+<div class="box box-pink">
+  <h3>🤔 On Being "Genuine" vs. Entertainment</h3>
+  <div class="qa-block">
+    <p class="q">Q: Now what do you think is the best attitude to adopt towards an audience? By that, I mean, do you think you should try and fool them that you are a genuine mindreader, or infer that they must form their own opinions, or what?</p>
+    <p class="a">A: Well, if my experience can help, I would suggest that you do not take on too strongly that you are genuine. That was one of my pitfalls in life. Although I never made the claim, the claim was made for me, and I paid very, very much for it. So if that can be a lesson to any of your Readers and it can be driven home, it would be a good thing for them.</p>
+    <p class="a">So therefore, what it amounts to is: Present Mentalism well. Be the Actor. Same as David Devant always suggested. After all, a magician is an actor. But Mentalism is a very, very tricky subject (no puns meant), so therefore treat it lightly.</p>
+  </div>
+  <div class="qa-block">
+    <p class="q">Q: By that do you mean you should tell the audience that what you are doing isn't in any way Genuine Mindreading? Or do you say that the best thing is to say "You must judge for yourself: is it trickery or is it genuine?"</p>
+    <p class="a">A: I agree with you on that only partly. Meaning, a great deal can be done by inference. You don't have to say openly "now look, I leave it to you to judge what I do." That's been done quite often and to an extent it almost smells apologetic. No: be forthright in your Presentation. Infer as much as you like, but don't come out in the open!</p>
+  </div>
+</div>
+
+<div class="box box-coral">
+  <h3>👻 On Mediumistic Effects</h3>
+  <div class="qa-block">
+    <p class="q">Q: How about mixing Mediumistic effects during a Mental Act? Do you think this is a good thing?</p>
+    <p class="a">A: Again it's dangerous ground. Meaning, you must keep at the back of your mind you're an Entertainer. There are people in this world (including myself) who are great believers in the Hereafter. Although I'm not a Spiritualist, there are people who are; and many are genuine and sincere in their belief. Now for you to come along with the aid of gimmicks and to take advantage of that, and to bring in Mediumistic effects: do so, but be careful.</p>
+  </div>
+</div>
+
+<div class="box box-green">
+  <h3>🎂 On Age and Appearance</h3>
+  <div class="qa-block">
+    <p class="q">Q: Now the next question. Do you think that age matters if you want to be a Mentalist?</p>
+    <p class="a">A: Well for pure Mentalism, naturally, as I said at the beginning, you have to have a commanding personality. Well, straight away that does suggest that you have to be of a mature age. Although the youngster who wants to come into Mentalism, I don't want him to be thrown off because of this. By all means do it. As a youngster you can still present it. And with experience you will learn a lot. For a really good Mentalist Presentation, I would say you should be of ripe mature age, round about thirty and onwards.</p>
+  </div>
+  <div class="qa-block">
+    <p class="q">Q: Actually Fogel, what I had in mind was appearance. That is to say, even if you do get a young chap with a commanding personality (which is possible), do you think the audience will accept his Mentalism if he looks "too young"?</p>
+    <p class="a">A: No. Certainly they will accept it. As I say, primarily, if he remembers he is an Entertainer and his stuff is presented well, neither age nor appearance matter to that extent.</p>
+  </div>
+</div>
+
+<div class="box box-blue">
+  <h3>🎪 On Props in a Mental Act</h3>
+  <div class="qa-block">
+    <p class="q">Q: This more or less goes back to one of our earlier questions but it is a specific question. What about the use of magical looking props in a Mental Act: good or bad?</p>
+    <p class="a">A: In a pure mental act, definitely bad. The whole thing has to have the appearance of impromptu. For instance, you will recollect, and those who have seen me work will know, that even the boards that I use, the blackboards, I could have quite easily had possibly a frame or a plated border, something bizarre. No: it was wise to keep them as plain looking as possible. If you were a genuine thoughtreader you wouldn't need anything. Keep that in mind.</p>
+  </div>
+</div>
+
+<div class="box box-amber">
+  <h3>🏆 On the Most Important Effect in the Act</h3>
+  <div class="qa-block">
+    <p class="q">Q: OK. Now we get on to the next question. Supposing you are doing an act. Which trick do you think is most important: the first or the last?</p>
+    <p class="a">A: Both. I think they are equally important. At the opening you must naturally remember that most of them are seeing you for the first time and you have to create an impression. The audience have to accept you. With your finale you must be very strong, very strong, because you have to leave them with a good finish.</p>
+  </div>
+  <div class="qa-block">
+    <p class="q">Q: In other words, you would say that the first and the last effects of the act are indeed the most important?</p>
+    <p class="a">A: Well I would say in every sphere of entertainment that is so. You'll find it with the juggler, the dancer and the singer just the same.</p>
+  </div>
+  <div class="qa-block">
+    <p class="q">Q: I see. Now what would you say would be an "ideal" running time for an average act? Shall we say the type of act aimed at dinners or maybe club work?</p>
+    <p class="a">A: Fifteen to twenty minutes for a Mental act.</p>
+  </div>
+  <div class="qa-block">
+    <p class="q">Q: Not more?</p>
+    <p class="a">A: Well you can. I've presented Mentalism for a longer time. But experience, which is something that you cannot learn, helps you to present a longer act. At the beginning I would suggest fifteen to twenty minutes.</p>
+  </div>
+</div>
+
+<div class="box box-purple">
+  <h3>🧠 On How Many Tricks to Include</h3>
+  <div class="qa-block">
+    <p class="q">Q: Right, now we get on to rather a difficult question, one which I think you will be quite capable of answering: roughly how many tricks would best make up a ten to fifteen minute act?</p>
+    <p class="a">A: Well, again that's very, very difficult to answer. It is possible, keeping in mind your introductory effect and your finale, to present just three. That is your opening, something in the centre and something to finish with. On the other hand you can present a few quickies. You cannot give a direct answer on that; that's my feelings.</p>
+    <p class="a">The main thing is: get strong effects. Get good strong effects. And then vary them; meaning it would be unwise, for instance, to put in two book tests in one programme. You see, it would be just as silly to put in two Predictions. So we must keep in mind that with Mentalism you are limited. After all, what is Mentalism but reading of the mind or Predicting into the future? So keep the effects strong and allow for variety on the programme.</p>
+  </div>
+  <div class="qa-block">
+    <p class="q">Q: From that I suppose we may conclude that it is not the number of tricks that we do but the strength of the effect that is far more important?</p>
+    <p class="a">A: That's it. Aim at quality and not quantity.</p>
+  </div>
+</div>
+
+<div class="box box-teal">
+  <h3>🚶 On the Opening of the Act</h3>
+  <div class="qa-block">
+    <p class="q">Q: Now I want to get down to analysing the two most important tricks in the act. You have said the first and the last are the prime effects. So can you give us an idea of what essential qualities are needed for a good opening mental effect?</p>
+    <p class="a">A: Essential qualities? Well you must aim to establish yourself. And although it might appear contradictory to what I said earlier, get away from the idea that an effect is necessary. I think in mentalism the approach: from the moment you walk on, with the majority of audiences you are treated with a certain amount of suspicion. It's something they don't know whether to believe in or not. So right from the beginning, from your walk on, you are meeting your audience. That is your opening, especially in mentalism, more so than with magic.</p>
+  </div>
+  <div class="qa-block">
+    <p class="q">Q: So the first thing is to establish yourself with the audience?</p>
+    <p class="a">A: Yes. I mean, consider your patter. This might seem exaggerated, but I don't think you can establish a great deal. The way you walk, the slight nod, the slight bow: it's all production. Regarding effect, if you can get over something good, quick, snappy, so much the better. But the main thing to keep in mind is your impact, the opening as you walk on. Remember all the time that they are looking at you.</p>
+  </div>
+  <div class="qa-block">
+    <p class="q">Q: So it's the way you walk and what you say that are equally as important as the first trick you do?</p>
+    <p class="a">A: Yes.</p>
+  </div>
+</div>
+
+<div class="box box-coral">
+  <h3>🎯 On the Finale</h3>
+  <div class="qa-block">
+    <p class="q">Q: Thank you. Now let's get to the other end of the act. What about the closing effect? What are the important things to try and achieve for your finale?</p>
+    <p class="a">A: Well, to leave a good impression, a good mystery is essential. Right, so we are dealing now on the finale. Let's take it that you have your opening and you have established yourself well. Your centre material, which for want of a better word we will call "padding," but it should not be padding, not thrown away stuff. (Everything today, especially, has got to be strong.) And we are coming on to your finale.</p>
+    <p class="a">Now, what's got to be the finale? The only way I feel I can help you is: imagine a chart in front of you. You start off, for argument's sake, at fifty per cent. That has got to work up like a barometer until you reach a peak. And once you reach that peak, that is it. So therefore, as far as I'm concerned, I'm not worried about what your finale is; I couldn't care less. But get everything possible so that first you leave a very good impression. It's got to be sold to the utmost. That's what I mean when I talk about presentation. Every ounce, everything within you has got to come up to a peak. And remember that barometer chart! When it gets to the top, that's when you leave them. And you can't go wrong.</p>
+  </div>
+</div>
+
+<div class="box box-green">
+  <h3>💡 On Originality</h3>
+  <div class="qa-block">
+    <p class="q">Q: Now a question about tricks. How important is it to try and be original?</p>
+    <p class="a">A: Again let's be worldly on this. In every sphere in life originality counts a great deal; it pays off. But let us be fair with ourselves. Rather, let me be personal and be fair with myself. For myself, I try my utmost to present effects; some of them original ideas. But very, very few, because I'm limited. I admit this openly.</p>
+    <p class="a">But even so, there are effects on the market. Get them, play with them for some time and try and get an original approach. It will pay off in the end. Once in a blue moon, it's very rare, but you'll get someone who can be entirely original. Personally I've never come across such a performer.</p>
+    <p class="a">But there are ways of disguising effects, and you get a great deal of personal satisfaction if you get an original approach. It does not always mean the patter; say you, but a trick, and you can't find anything better than the patter they suggest. Work on it. Remember that it's elementary in dramatics that a line in a play can be read in dozens of different ways. One line; pauses, inflection in voice. Do that with your effects.</p>
+  </div>
+
+  <div class="nested nested-green">
+    <p style="color:#173404;font-weight:500">🚫 Fogel's firm warning:</p>
+    <p style="color:#173404">I do suggest strongly that if you do see a performer working an effect and getting away with it, I know there's a great temptation to pinch it. Don't. It's sinful. On this I'm very superstitious: you will never have any luck with it. That is definite. But if that performer has inspired you, by all means be inspired and let that be a help to you.</p>
+  </div>
+
+  <div class="nested nested-white">
+    <p style="color:#444441;font-weight:500">🎭 Where to find inspiration:</p>
+    <p style="color:#444441">Some time ago I had to give a lecture on this and my suggestion was again based on personal experience. I advise: go down to the markets, watch the market people working, you will learn a lot from them. Remember, they have to earn a living. Watch two stalls selling the same product, for argument's sake, crockery or china. One fellow is taking a lot of money and the other fellow isn't. Analyse it. Why? They are selling the same product, possibly the same price. And possibly the fellow who is not taking so much is selling his stuff cheaper? Why? Yet the other fellow can sell it. And the reason is showmanship. Again, inflection of voice, there's that en rapport with the public. Also experience.</p>
+    <p style="color:#444441">Another thing: don't go and watch entirely Magical performances. Those who know me intimately will tell you that I see very, very few magicians, because I know that temptation of wanting to take something that is really good, and I would rather fight shy of that. But I can learn a lot by going and watching the Ballet or going to a good Opera. You will learn a great deal about showmanship and presentation.</p>
+  </div>
+  <div class="qa-block">
+    <p class="q">Q: I think that's very good. But I think you must also agree that it's not much good introducing mental effects into a production of Swan Lake!</p>
+    <p class="a">A: I agree with you, Corinda. And in the same voice, somehow I don't think a chappy dressed up in tights would look well as a Mentalist. But what I'm trying to tell your Readers is to get the inspiration from these Classical productions. Go and see a really excellent show away from magic; you'll learn a great deal. Watch all the time: the newspaper men selling papers, shop workers, everybody. Watch and learn.</p>
+  </div>
+</div>
+
+<div class="box box-amber">
+  <h3>🎭 On Judging a Trick's Quality</h3>
+  <div class="qa-block">
+    <p class="q">Q: Still another on tricks. This time I want to ask you: how can you tell if a trick is good or bad?</p>
+    <p class="a">A: Well my answer to that, Corinda, is this. There are very, very few indeed in the category of bad tricks. Meaning, there are tricks which appeal to people; so naturally you buy them. But like clothing apparel, what suits one man does not necessarily suit another. The same with tricks. What you think is a bad trick, another fellow will make a miracle with it. Although I do agree there are some alleged tricks which should never have come on the market. They're no good at all. But there are very few. In the majority, a trick is a trick. It may not suit you but it might suit somebody else.</p>
+  </div>
+  <div class="qa-block">
+    <p class="q">Q: Don't you think that the acid test would surely be to try it out on an audience and then judge the reaction by the audience?</p>
+    <p class="a">A: That's all right to a point. I'll only go with you part of the way on that. So let's start from the beginning. You get your catalogue or you visit a magical dealer's place and there's something that appeals to you. You like it and in your mind you can see yourself presenting it. Well, you have gone more than half way. I do suggest you buy it.</p>
+    <p class="a">Now when you suggested a moment ago that you try it out on the audience to see the reaction, and you base it on that reaction as to whether the trick is good or bad, that is not the acid test. Again I'm talking from personal experience, and I find that there are several tricks and effects which have taken me a long, long time to find out where and how it could be presented properly. Sometimes it was a matter of a word: again presentation, and inflection of voice; or sometimes to stop sooner than you originally intended, or work it a bit longer. Therefore you cannot judge it on one, two or three showings. If you like the effect, keep at it.</p>
+  </div>
+</div>
+
+<div class="box box-blue">
+  <h3>⚡ On Impromptu Mentalism</h3>
+  <div class="qa-block">
+    <p class="q">Q: Now to change the subject. Can you give us an example of a good effect that a Mentalist could do if called upon to do something on the spur of the moment?</p>
+    <p class="a">A: Well, outside of the dealers' items which we won't mention, the greatest standby for absolutely impromptu stuff has been Muscle Reading. But of course you have all the advantages of Billets and, say, the Centre Tear, if you can use the necessary materials. There's a lot of fun and valuable experience to be gained from finding out for yourself. I don't think I should advertise or spoil the fun for your readers.</p>
+  </div>
+  <div class="qa-block">
+    <p class="q">Q: Perhaps you are right. If I may say so, I have always got along with the Centre Tear. And when no apparatus has been allowed, I have just used my natural psychic powers. As you know, I'm mediumistic!</p>
+    <p class="a">A: (At this point Mr. Fogel came out with some quaint old English phrases which might not look so good in print.)</p>
+  </div>
+</div>
+
+<div class="box box-purple">
+  <h3>🃏 On Playing Cards in Mental Effects</h3>
+  <div class="qa-block">
+    <p class="q">Q: Now another question, this time on a much debated topic. How do you feel about using Playing Cards for Mental Effects? Or for that matter, anything that is easily associated with conjuring: for example a magician's wand, silks, boxes and so forth?</p>
+    <p class="a">A: Well, first of all I'll say straight away: the Magic wand is out. Definitely out. That's elementary; we all realise that. Other than that, any gaudy looking props that are definitely the property of a magician, they should be out. Such things won't be a help to you; they will be a deterrent, which should be obvious.</p>
+    <p class="a">However, regarding Playing Cards, handled properly they can be an asset. Because remember this: there's a great mystery regarding Playing Cards. Although they are used a great deal by magicians, remember that your Fortune Tellers, Seers, Tarot Readers, some of them use cards as their mainstay and they are accepted for that purpose. So therefore you need not be afraid to use Playing Cards. But handle it right. Don't do anything which is obviously manipulation. There is a wide space between juggling and thoughtreading!</p>
+  </div>
+</div>
+
+<div class="box box-pink">
+  <h3>👥 On Getting Audience Assistants</h3>
+  <div class="qa-block">
+    <p class="q">Q: I think the next question is one that few people could answer properly. I'm putting it to you. Most mental acts call for an assistant or two from the audience. Can you give us any tips on handling this situation? In other words, how do you go about a sure method to get people to come up?</p>
+    <p class="a">A: This is again a very important question and is hard to explain. But what has to be done has to come from within you. Again we must start from the beginning. Possibly I missed it earlier on. One of the greatest things is to be sincere. We go back to Houdini again, who says a Magician is an actor acting magic. And remember, as a Mentalist you are an Actor presenting Mentalism, and you've got to be sincere about it.</p>
+    <p class="a">Furthermore, if your whole presentation is sincerity, you should have no difficulty in getting people to help you. I have found that this has helped me a great deal. And to give you an example: on occasion, in Music Halls (which as you know are suffering a great deal), I had in large theatres very few people in the audience. Most of the artists backstage felt it and could not gain an atmosphere. You can imagine my feeling before coming on the stage: when I depend on audience participation, I'm wondering in my mind how I'm going to get a committee! But I've never failed, and I do put this down to being sincere. It will ooze out of you and you'll attract people to you.</p>
+    <p class="a">You must have the complex that you are not going to fail. Once I get on the stage, that feeling goes immediately. I'm the Mentalist. And this is the only secret: inwardly think, "I'm going to succeed," and you will. Occasionally the response won't be as quick as usual. Well, don't be lost for words. Always have something to say. And always at the back of your mind have the complex that you are going to have your committee and that you will succeed in your mentalism. All this wrapped up together means that you must succeed. That is my experience.</p>
+  </div>
+
+  <div class="qa-block">
+    <p class="q">Q: I'm going to go a bit further with this, Fogel. Suppose I'm doing my Mental Act and after a few introductory remarks I ask for two assistants and find that they do not appear to be coming. What do you think I should do: stand there and talk, or move about and be seen doing something, trying not to appear worried about the situation?</p>
+    <p class="a">A: Obviously you have learnt your lesson already in saying those words. But to deal with that situation from a personal angle: let's start. "Ladies and Gentlemen I would like two people to come up," etc., etc. We find the response is not too good. So now's the time to get in a bit of light relief. Let me give you an idea: something which I have done on these occasions.</p>
+    <p class="a">The first thing is to play for time. Talk about the way up: "the stairs to the stage are on my right. Come along up the steps there." Look expectantly and smile, saying: "now don't all rush up together!" Continue: "Just take it easy, one at a time please." And by that time you'll find that you have broken the ice. But if not, you can continue: "I'd rather you came of your own accord, because if I singled anybody out there would be even more suspicion than there is right now." Phrases of that nature, light friendly remarks, will soon solve the problem.</p>
+    <p class="a">Never be insulting. Remember: be commanding and yet remain humble. Such a thing is possible. Take Sir Winston Churchill, one of the greatest orators of our time. He was commanding, and when occasion demanded he was humility itself.</p>
+  </div>
+
+  <div class="qa-block">
+    <p class="q">Q: Do you think it's a good or bad thing to do what is often done: when the Mentalist has asked for assistants and they don't come up, he turns to the audience and says "Well, if somebody doesn't come up I can't get on with my act, I've got to have assistants"?</p>
+    <p class="a">A: Well, I don't think anything of it. You want to keep your book off the "X Certificate" so I won't say exactly what I've got in mind at the moment. But never confess defeat; that's idiotic. And remember, whoever has engaged you has done so because you are supposed to succeed. You should never be there if you are going to use those sort of words. Never insult your audience in any way. Be the master and be humble, the perfect gentleman, and be courteous. Remember that.</p>
+  </div>
+</div>
+
+<div class="box box-coral">
+  <h3>😤 On Handling Difficult Spectators</h3>
+  <div class="qa-block">
+    <p class="q">Q: Another hard question. Suppose you do get a couple of people up OK. But what happens if one of them turns out to be an awkward so-and-so? What's the best way to handle that?</p>
+    <p class="a">A: Naturally that's happened to me. It happens to everybody, and I have my tricks of the trade on that. One of the things is that you must remember again: you must succeed. And the audience are with you; they are there to be entertained. And if you've got someone with you who is going to spoil it, they are on your side. You have to remain the master. On occasion I've held him by the hand and asked him to step back. I'm smiling to the audience, but the heel of my foot has crushed on to his toes, my fingernails have dug deeply into his hand, and under my breath to him, on the side, I've used the worst of barrack room language. And that has sobered them up. Believe me, that is definite!</p>
+  </div>
+</div>
+
+<div class="box box-teal">
+  <h3>💪 Fogel's Parting Wisdom</h3>
+  <p>To round off this interview: because Mentalism is really a very big subject and is well worth discussing, I enjoyed this interview very much. But to finish it off, the thing that comes to my mind right now is: let's imagine a situation that has happened to me, one that can be dire.</p>
+  <p>In mental magic a great deal depends on getting information. We agree on that? Now imagine that everything has gone wrong; your gimmicks have failed you and you haven't got a clue as to what the fellow has in mind. Can you imagine anything more disastrous for a Mentalist?</p>
+  <p>Well my last point will deal with that. And again my answer is based on experience. The first thing is: be brave. It might sound simple or seem easy to read, but believe me you have to be brave and do this.</p>
+
+  <div class="nested nested-teal" style="text-align:center">
+    <p style="font-size:22px;font-weight:500;color:#085041;margin:0">Say "I don't know."</p>
+    <p style="color:#085041;margin:.5rem 0 0">Admit it.</p>
+  </div>
+
+  <p>This took me a long time to realise. And on occasion I've had everything fail and I've tried to get out of it somehow. You know the old saying in Magic: "if a trick fails you show them something to distract their attention." Well naturally I have tried that approach because I know my magic, but I don't think it scores in Mentalism.</p>
+  <p>The great thing is that you can admit in three small words "I don't know." And although you have failed, if done properly you will get applause. This is not given because the audience are entirely sympathetic, but more so because you are genuine and sincere. So take it from me: this is a wonderful tip, small as it might seem. Have the courage to admit you are wrong if ever you are in trouble. But then, I hope you never will be.</p>
+
+  <div class="nested nested-teal" style="margin-top:1rem">
+    <p style="color:#04342C;font-style:italic">"Well thank you Fogel for your opinions and impressions. I'm pretty sure that much of what you have said will be useful to my readers. And although some of the things you say are subject to argument, I don't think there's much doubt that at any time, anywhere, you can practise what you preach." — Corinda 🎩</p>
+  </div>
+</div>
+
+<div style="text-align:center;padding:2rem 0;color:var(--color-text-secondary);font-size:13px">
+  <p style="margin:0">Step Seven · Thirteen Steps to Mentalism · Corinda</p>
+  <p style="margin:.25rem 0 0">No part of this Publication may be Reproduced without written Permission.</p>
+</div>
+
+</div>

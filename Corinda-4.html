@@ -1,0 +1,1699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Predictions by Corinda — Step Four</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #c8922a;
+    --gold-light: #fdf3e0;
+    --gold-mid: #f5d98b;
+    --purple: #4a2d7a;
+    --purple-light: #ede6f8;
+    --purple-mid: #c4a8f0;
+    --teal: #0d6e6e;
+    --teal-light: #e0f5f5;
+    --teal-mid: #7fd4d4;
+    --coral: #c1392b;
+    --coral-light: #fdecea;
+    --coral-mid: #f5a89a;
+    --mint: #1a7a4a;
+    --mint-light: #e3f7ec;
+    --mint-mid: #7fd4a4;
+    --blue: #1a4a8a;
+    --blue-light: #e6f0fc;
+    --blue-mid: #8ab4e8;
+    --ink: #1a1a2e;
+    --warm-white: #fdfaf4;
+    --paper: #f9f5ee;
+    --border: #e8dfc8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.75;
+    padding: 0 0 80px 0;
+  }
+
+  /* HERO HEADER */
+  .hero {
+    background: var(--ink);
+    color: #f9f3e8;
+    text-align: center;
+    padding: 60px 40px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(200,146,42,0.04) 40px, rgba(200,146,42,0.04) 41px);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--ink);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 16px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 700;
+    color: #f9f3e8;
+    margin-bottom: 8px;
+    line-height: 1.1;
+  }
+  .hero h1 span { color: var(--gold-mid); }
+  .hero-sub {
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(249,243,232,0.55);
+    margin-bottom: 28px;
+  }
+  .hero-desc {
+    max-width: 560px;
+    margin: 0 auto;
+    font-size: 15px;
+    color: rgba(249,243,232,0.75);
+    line-height: 1.7;
+  }
+
+  /* MAIN LAYOUT */
+  .page { max-width: 860px; margin: 0 auto; padding: 40px 24px; }
+
+  /* PART HEADERS */
+  .part-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 48px 0 28px;
+  }
+  .part-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background: var(--ink);
+    color: var(--gold-mid);
+    padding: 6px 16px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .part-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 4vw, 32px);
+    font-weight: 700;
+    color: var(--ink);
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 8px;
+    flex: 1;
+  }
+
+  /* SECTION HEADERS */
+  .section-header {
+    margin: 40px 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .section-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    background: var(--gold-light);
+    color: var(--gold);
+    border: 1px solid var(--gold-mid);
+    padding: 3px 10px;
+    border-radius: 4px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  /* PROSE */
+  p { margin-bottom: 14px; font-size: 15.5px; }
+  p:last-child { margin-bottom: 0; }
+
+  /* BOXES — MAIN TYPES */
+  .box {
+    border-radius: 10px;
+    padding: 20px 22px;
+    margin: 20px 0;
+    border: 1.5px solid transparent;
+  }
+  .box-gold {
+    background: var(--gold-light);
+    border-color: var(--gold-mid);
+    color: #5a3a00;
+  }
+  .box-purple {
+    background: var(--purple-light);
+    border-color: var(--purple-mid);
+    color: #2a1550;
+  }
+  .box-teal {
+    background: var(--teal-light);
+    border-color: var(--teal-mid);
+    color: #083a3a;
+  }
+  .box-coral {
+    background: var(--coral-light);
+    border-color: var(--coral-mid);
+    color: #6b1a12;
+  }
+  .box-mint {
+    background: var(--mint-light);
+    border-color: var(--mint-mid);
+    color: #0d3d22;
+  }
+  .box-blue {
+    background: var(--blue-light);
+    border-color: var(--blue-mid);
+    color: #0c2a55;
+  }
+  .box-ink {
+    background: var(--ink);
+    border-color: #333;
+    color: #f9f3e8;
+  }
+  .box-paper {
+    background: var(--paper);
+    border-color: var(--border);
+    color: var(--ink);
+  }
+  .box-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    opacity: 0.65;
+    margin-bottom: 8px;
+  }
+  .box-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .box-emoji { font-size: 20px; }
+
+  /* NESTED BOX */
+  .nested-box {
+    border-radius: 7px;
+    padding: 14px 18px;
+    margin: 12px 0 0;
+    border: 1px solid rgba(0,0,0,0.08);
+    background: rgba(255,255,255,0.45);
+  }
+  .nested-box p { margin-bottom: 8px; font-size: 14.5px; }
+  .nested-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.55;
+    margin-bottom: 6px;
+  }
+
+  /* EFFECT / METHOD SPLIT BOX */
+  .effect-method {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 20px 0;
+  }
+  @media (max-width: 600px) {
+    .effect-method { grid-template-columns: 1fr; }
+  }
+
+  /* HIGHLIGHT QUOTE */
+  .pull-quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 20px;
+    line-height: 1.5;
+    border-left: 4px solid var(--gold);
+    padding: 12px 20px;
+    margin: 24px 0;
+    background: var(--gold-light);
+    border-radius: 0 8px 8px 0;
+    color: #5a3a00;
+  }
+
+  /* NUMBERED LIST */
+  .num-list { list-style: none; margin: 0; padding: 0; }
+  .num-list li {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 10px;
+    align-items: flex-start;
+    font-size: 15px;
+  }
+  .num-list .n {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    min-width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: var(--gold-mid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* TABLE OF CONTENTS */
+  .toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+    margin: 20px 0;
+  }
+  .toc-item {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--ink);
+  }
+  .toc-item .toc-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    background: var(--gold-light);
+    color: var(--gold);
+    border: 1px solid var(--gold-mid);
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  /* TECHNIQUE TAG */
+  .technique-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-right: 6px;
+    margin-bottom: 6px;
+  }
+  .tag-gold { background: var(--gold-light); color: #7a4a00; border: 1px solid var(--gold-mid); }
+  .tag-purple { background: var(--purple-light); color: #3a1a6a; border: 1px solid var(--purple-mid); }
+  .tag-teal { background: var(--teal-light); color: #085050; border: 1px solid var(--teal-mid); }
+  .tag-coral { background: var(--coral-light); color: #7a2015; border: 1px solid var(--coral-mid); }
+  .tag-mint { background: var(--mint-light); color: #0d4a22; border: 1px solid var(--mint-mid); }
+
+  /* STEP BOXES (a, b, c, d) */
+  .steps { margin: 14px 0; }
+  .step-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 14px;
+    align-items: flex-start;
+  }
+  .step-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    min-width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .step-a { background: var(--gold-light); color: #7a4a00; border: 1px solid var(--gold-mid); }
+  .step-b { background: var(--purple-light); color: #3a1a6a; border: 1px solid var(--purple-mid); }
+  .step-c { background: var(--teal-light); color: #085050; border: 1px solid var(--teal-mid); }
+  .step-d { background: var(--coral-light); color: #7a2015; border: 1px solid var(--coral-mid); }
+  .step-e { background: var(--mint-light); color: #0d4a22; border: 1px solid var(--mint-mid); }
+  .step-body { flex: 1; font-size: 15px; }
+
+  /* DIVIDER */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 36px 0;
+  }
+  .divider-line { flex: 1; height: 1px; background: var(--border); }
+  .divider-ornament { color: var(--gold); font-size: 18px; }
+
+  /* TRICK CARD */
+  .trick-card {
+    border: 2px solid var(--ink);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 28px 0;
+  }
+  .trick-card-header {
+    background: var(--ink);
+    color: var(--gold-mid);
+    padding: 14px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .trick-card-header .trick-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #f9f3e8;
+  }
+  .trick-card-header .trick-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    background: rgba(200,146,42,0.2);
+    color: var(--gold-mid);
+    padding: 4px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .trick-card-body {
+    padding: 20px 22px;
+    background: var(--warm-white);
+  }
+
+  /* WARNING BOX */
+  .warn-box {
+    background: #fff8e6;
+    border: 1.5px solid #f5c842;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 16px 0;
+    color: #6b4a00;
+    font-size: 14.5px;
+  }
+  .warn-box strong { color: #7a4a00; }
+
+  /* SUMMARY GRID */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+  }
+  .summary-card {
+    border-radius: 10px;
+    padding: 16px 18px;
+    text-align: center;
+    border: 1.5px solid transparent;
+  }
+  .summary-card .sc-emoji { font-size: 26px; margin-bottom: 8px; }
+  .summary-card .sc-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .summary-card .sc-desc { font-size: 12px; opacity: 0.75; line-height: 1.4; }
+
+  /* INLINE CODE STYLE */
+  code {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    padding: 1px 6px;
+    border-radius: 4px;
+    color: var(--coral);
+  }
+
+  /* WIDE BOX */
+  .wide-box {
+    background: var(--ink);
+    color: var(--gold-mid);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .wide-box::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: rgba(200,146,42,0.07);
+    pointer-events: none;
+  }
+  .wide-box .wb-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #f9f3e8;
+    margin-bottom: 10px;
+  }
+  .wide-box p { color: rgba(249,243,232,0.8); font-size: 15px; margin-bottom: 10px; }
+
+  /* SPOILER-STYLE REVEAL */
+  .reveal-box {
+    border: 2px dashed var(--gold-mid);
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin: 18px 0;
+    background: var(--gold-light);
+    color: #5a3a00;
+  }
+  .reveal-box .rb-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 8px;
+  }
+
+  /* COMPARISON ABC */
+  .abc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 18px 0;
+  }
+  @media (max-width: 580px) { .abc-grid { grid-template-columns: 1fr; } }
+  .abc-card {
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+  .abc-card .abc-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  /* FOOTNOTE / SMALL TEXT */
+  .footnote {
+    font-size: 13px;
+    color: rgba(26,26,46,0.55);
+    font-style: italic;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+  }
+  hr.fancy {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    margin: 40px 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">✦ Thirteen Steps to Mentalism ✦</div>
+  <h1>PREDICTIONS<br><span>by Corinda</span></h1>
+  <div class="hero-sub">Step Four in Corinda's Series</div>
+  <p class="hero-desc">The most powerful form of mental magic. Because predictions work in the future. Not the present. Not the past. <em>The future.</em> 🔮</p>
+</div>
+
+<div class="page">
+
+<!-- TABLE OF CONTENTS -->
+<div class="box box-paper" style="margin-top: 32px;">
+  <div class="box-label">📋 What's Inside</div>
+  <div class="box-title"><span class="box-emoji">🗂️</span> Contents at a Glance</div>
+  <div class="toc-grid">
+    <div class="toc-item"><span class="toc-num">Part 1</span> Introduction to Predictions</div>
+    <div class="toc-item"><span class="toc-num">Part 2</span> Technique</div>
+    <div class="toc-item"><span class="toc-num">Part 3</span> Predictions for the Stage</div>
+    <div class="toc-item"><span class="toc-num">Part 4</span> Predictions for the Drawing Room</div>
+  </div>
+  <div style="margin-top: 14px;">
+    <div class="toc-grid">
+      <div class="toc-item"><span class="toc-num">(1)</span> The Billet Pencil</div>
+      <div class="toc-item"><span class="toc-num">(2)</span> The Billet Knife — Dr. Jaks</div>
+      <div class="toc-item"><span class="toc-num">(3)</span> Billet Knife — Sackville</div>
+      <div class="toc-item"><span class="toc-num">(4)</span> Impromptu Billet Knife</div>
+      <div class="toc-item"><span class="toc-num">(5)</span> Pocket Index for Cards</div>
+      <div class="toc-item"><span class="toc-num">(6)</span> The Billet Index</div>
+      <div class="toc-item"><span class="toc-num">(7)</span> Cigarette Packet Pellet Index</div>
+      <div class="toc-item"><span class="toc-num">(8)</span> The Body Index</div>
+      <div class="toc-item"><span class="toc-num">(9)</span> The Swami Gimmick</div>
+      <div class="toc-item"><span class="toc-num">(10)</span> The Switch &amp; The Force</div>
+      <div class="toc-item"><span class="toc-num">(11)</span> The Prediction Chest</div>
+      <div class="toc-item"><span class="toc-num">(12)</span> Trickery with Envelopes</div>
+      <div class="toc-item"><span class="toc-num">(13)</span> Stooges</div>
+    </div>
+  </div>
+</div>
+
+<!-- STAGE TRICKS -->
+<div class="box box-teal" style="margin-top: 16px;">
+  <div class="box-label">🎭 Stage Predictions</div>
+  <div class="toc-grid">
+    <div class="toc-item" style="background: rgba(255,255,255,0.5); border-color: rgba(0,0,0,0.1);"><span class="toc-num">(1)</span> "A Million to One"</div>
+    <div class="toc-item" style="background: rgba(255,255,255,0.5); border-color: rgba(0,0,0,0.1);"><span class="toc-num">(2)</span> "Quadruplication"</div>
+    <div class="toc-item" style="background: rgba(255,255,255,0.5); border-color: rgba(0,0,0,0.1);"><span class="toc-num">(3)</span> "De Profundis"</div>
+    <div class="toc-item" style="background: rgba(255,255,255,0.5); border-color: rgba(0,0,0,0.1);"><span class="toc-num">(4)</span> The £75,000 Test</div>
+    <div class="toc-item" style="background: rgba(255,255,255,0.5); border-color: rgba(0,0,0,0.1);"><span class="toc-num">(5)</span> "Astronomical"</div>
+    <div class="toc-item" style="background: rgba(255,255,255,0.5); border-color: rgba(0,0,0,0.1);"><span class="toc-num">(6)</span> The Mentalist Four Ace Trick</div>
+    <div class="toc-item" style="background: rgba(255,255,255,0.5); border-color: rgba(0,0,0,0.1);"><span class="toc-num">(7)</span> Card in Balloon</div>
+    <div class="toc-item" style="background: rgba(255,255,255,0.5); border-color: rgba(0,0,0,0.1);"><span class="toc-num">(8)</span> "Psi Function"</div>
+  </div>
+</div>
+
+<!-- DRAWING ROOM TRICKS -->
+<div class="box box-purple" style="margin-top: 0;">
+  <div class="box-label">🪄 Drawing Room Predictions</div>
+  <div class="toc-grid">
+    <div class="toc-item" style="background: rgba(255,255,255,0.5); border-color: rgba(0,0,0,0.1);"><span class="toc-num">(9)</span> Effects from Step One</div>
+    <div class="toc-item" style="background: rgba(255,255,255,0.5); border-color: rgba(0,0,0,0.1);"><span class="toc-num">(10)</span> "Mind Over Matter"</div>
+    <div class="toc-item" style="background: rgba(255,255,255,0.5); border-color: rgba(0,0,0,0.1);"><span class="toc-num">(11)</span> "My Word!"</div>
+    <div class="toc-item" style="background: rgba(255,255,255,0.5); border-color: rgba(0,0,0,0.1);"><span class="toc-num">(12)</span> "The Third Choice"</div>
+    <div class="toc-item" style="background: rgba(255,255,255,0.5); border-color: rgba(0,0,0,0.1);"><span class="toc-num">(13)</span> "The Lottery Routine"</div>
+    <div class="toc-item" style="background: rgba(255,255,255,0.5); border-color: rgba(0,0,0,0.1);"><span class="toc-num">(14)</span> "The Prophesy"</div>
+    <div class="toc-item" style="background: rgba(255,255,255,0.5); border-color: rgba(0,0,0,0.1);"><span class="toc-num">(15)</span> "The Informative Joker"</div>
+    <div class="toc-item" style="background: rgba(255,255,255,0.5); border-color: rgba(0,0,0,0.1);"><span class="toc-num">(16)</span> "Double-Impact Prediction"</div>
+    <div class="toc-item" style="background: rgba(255,255,255,0.5); border-color: rgba(0,0,0,0.1);"><span class="toc-num">(17)</span> "The Matchbox Mystery"</div>
+    <div class="toc-item" style="background: rgba(255,255,255,0.5); border-color: rgba(0,0,0,0.1);"><span class="toc-num">(18)</span> "Mystery of the Chest"</div>
+    <div class="toc-item" style="background: rgba(255,255,255,0.5); border-color: rgba(0,0,0,0.1);"><span class="toc-num">(19)</span> "X Marks the Spot"</div>
+    <div class="toc-item" style="background: rgba(255,255,255,0.5); border-color: rgba(0,0,0,0.1);"><span class="toc-num">(20)</span> "Nicely Suited"</div>
+  </div>
+</div>
+
+<!-- ===== PART ONE ===== -->
+<div class="part-header">
+  <div class="part-num">Part One</div>
+  <div class="part-title">Introduction to Predictions 🔮</div>
+</div>
+
+<div class="box box-gold">
+  <div class="box-label">📖 Definition</div>
+  <div class="box-title"><span class="box-emoji">🔑</span> What Is a Prediction?</div>
+  <p>To predict is to tell beforehand: to prophesy. In order to avoid any confusion we should understand right from the beginning what is, and what is not, a prediction. What the Oxford English Dictionary means by "Prediction" and what mentalists mean by "Prediction" are two things far apart.</p>
+  <div class="nested-box" style="border-color: rgba(200,146,42,0.25); background: rgba(255,255,255,0.5);">
+    <div class="nested-label">⚠️ Important Distinction</div>
+    <p>A mentalist may put the Ace of Spades in an envelope and give it to someone. He may then force that person to select the Ace of Spades, and when the envelope is opened and the matching card is found, it appears that a prediction has been made; moreover, it is claimed that a prediction has been made. But nothing of the kind has been done. It was a force presented as a prediction.</p>
+  </div>
+  <p style="margin-top: 12px;">We are not concerned with dictionary definitions. We are concerned with what is meant by a prediction in the magical sense of the word. To cover this, we might say that any effect wherein the performer makes it appear he knew what was going to happen, before it happened, is an effect called a prediction.</p>
+</div>
+
+<div class="pull-quote">"Predictions are one of the strongest forms of mental magic, because they work in the future, and not in the present or past." ✨</div>
+
+<p>To understand this, let us take an example of the same trick presented three ways:</p>
+
+<div class="abc-grid">
+  <div class="abc-card box-gold">
+    <div class="abc-label">🕰️ (a)</div>
+    <strong>The Past</strong>
+    <p style="margin-top: 6px; font-size: 13.5px;">The spectator is told to think of any place he has visited during the last two years, and the performer names it correctly.</p>
+  </div>
+  <div class="abc-card box-teal">
+    <div class="abc-label">⏱️ (b)</div>
+    <strong>The Present</strong>
+    <p style="margin-top: 6px; font-size: 13.5px;">The spectator is told to think of the town he lives in, or the city, and by some means or other this is named.</p>
+  </div>
+  <div class="abc-card box-purple">
+    <div class="abc-label">🌟 (c)</div>
+    <strong>The Future</strong>
+    <p style="margin-top: 6px; font-size: 13.5px;">The spectator is told to think of any place he would like to visit one day, and by some means or other that is named.</p>
+  </div>
+</div>
+
+<div class="box box-mint">
+  <div class="box-title"><span class="box-emoji">💡</span> Why "The Future" Wins Every Time</div>
+  <p>There can be no doubt that the best presentation is the last one, (c). It is plausible that you know where he has been and where he lives at the moment. But beyond any doubt, you cannot say where he will go in the future!</p>
+</div>
+
+<p>It is somewhat easy to overlook that some forms of mentalism are more powerful than others. With so many tricks to choose from, and such a wide variety of methods, the mentalist is liable to be confused himself and cannot see the forest for the trees. The only way to evaluate an effect is to judge it by the impact it has on an audience. What might seem very clever to you may well be an utter bore to the spectators.</p>
+
+<p>The abstract nature of predictions makes them a subtlety of presentation; we can judge their value on the audience by comparison of technique using a pack of cards. You can shuffle a pack and following time-honoured technique say, "Take a card, look at it, and put it back." Because the technique is time-honoured and the audience have seen the approach so often, all that remains to be known in their mind is by what method you will reveal the card this time. The trick has degenerated to a puzzle before it is half done.</p>
+
+<div class="box box-coral">
+  <div class="box-title"><span class="box-emoji">🃏</span> A Stronger Approach</div>
+  <p>On the other hand, if you tell the spectator you know what card he will choose before he takes it, run through the cards face upwards and tell him to touch one, and then show that his card is the only red-backed card in a blue-backed pack... then you are using a more powerful technique. Hence predictions are of great value to the mentalist.</p>
+</div>
+
+<p>The art of predicting is by no means a newcomer to mentalism. The human race seems to have a lust to know what is going to happen before it happens. Millions of pounds and dollars have been made out of telling the future. Throughout the ages we have been "gifted" with prophets, seers, soothsayers, astrologists, crystal-ball readers, sand-readers, Tarot readers and clairvoyant mediums. We have records of predictions in religion (The Bible) and in classic literature (Shakespeare's <em>Macbeth</em>).</p>
+
+<p>However, the mentalist likes to operate a different way from the horoscope-worker. He likes to see his prediction proved correct in a short space of time, which brings us to the subject of trickery! 😈</p>
+
+<hr class="fancy">
+
+<!-- ===== PART TWO ===== -->
+<div class="part-header">
+  <div class="part-num">Part Two</div>
+  <div class="part-title">Technique 🛠️</div>
+</div>
+
+<!-- (1) BILLET PENCIL -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">✏️ The Billet Pencil</div>
+    <div class="trick-num">Technique (1)</div>
+  </div>
+  <div class="trick-card-body">
+    <div class="box box-gold" style="margin-bottom: 16px;">
+      <div class="box-label">⚙️ The Apparatus</div>
+      <p>The apparatus consists of a hollow metal tube six inches long with a slit partly down one side. Inside the tube is a small plunger operated from the outside by a button making contact through the slit. At one end of the hollow tube, the tip of an ordinary pencil is fixed; the other end is left open. The complete job is finished to look exactly like an ordinary pencil. You cannot tell the difference unless you handle it. (Marketing rights are reserved on this apparatus.)</p>
+    </div>
+    <p>To load the billet pencil, a piece of thin paper about the size of a ten shilling note is rolled tightly into a tube and then inserted after the plunger has been pulled back. Another method of dealing with the paper is to fold it in zig-zag fashion, like a continuous letter "W" (WWWW), so that when it comes out it expands. If tightly rolled, a £1 note can be loaded into the pencil.</p>
+    <div class="box box-teal">
+      <div class="box-label">🎩 How It Works: The Headline Prediction</div>
+      <p>The mentalist leaves a sealed envelope with a newspaper editor and tells him to keep it safe and unopened until he calls about a week later. When he arrives a week later, he asks for the envelope, verifies that it has not been opened and then slits along the top, and hands it to the editor asking him to remove the contents and read it. Inside is found a piece of paper which predicts word for word the headlines of the newspaper for that day. The editor himself did not know what the headline would be until twenty-four hours previous! It appears that the prediction was written a week ago.</p>
+      <div class="nested-box" style="border-color: rgba(0,100,100,0.15);">
+        <div class="nested-label">🔓 The Secret</div>
+        <p>The method is to have nothing in the envelope, and to shoot the billet in when you use the pencil to slit along the edge. If the billet is folded in the zig-zag manner, when it is in the envelope, if you run your fingers along the outside pressing slightly, you will find the billet practically comes out flat.</p>
+      </div>
+    </div>
+
+    <p style="margin-top: 16px;">If you use the rolled method you must adopt some form of misdirection to excuse the appearance of the billet and to overcome the danger that the editor may well feel the sealed envelope and find or feel nothing in it:</p>
+
+    <div class="steps">
+      <div class="step-item">
+        <div class="step-letter step-a">a</div>
+        <div class="step-body">The billet may be rolled and then placed in a very small rimless test tube, which is then corked or sealed. The test tube and billet complete are loaded into the pencil and when desired the "message sealed in a little bottle" is shot into the envelope. It is natural for the paper to be rolled if it is in a small bottle, and the fact that it is in a bottle gives extra conviction to the fact that all was sealed beforehand.</div>
+      </div>
+      <div class="step-item">
+        <div class="step-letter step-b">b</div>
+        <div class="step-body">In the presence of the editor you write something (calling it a prediction) on a slip of paper and then roll it up and seal it in the envelope. He watches you roll it, so later when he sees the billet in rolled form, it is nothing more than he expected. When it comes to opening the envelope, obviously you have two billets. You use the pencil to open the envelope and shoot the second one in then. However, as you do so you grip the first through the envelope, and having slit it open, you appear to tip out the rolled billet on to the table or the editor's hand. Whilst he unrolls that one to read it, you quietly remove the first and then put the envelope on the table for examination.</div>
+      </div>
+      <div class="step-item">
+        <div class="step-letter step-c">c</div>
+        <div class="step-body">
+          The first billet, a piece of paper the same size as the second, is written with the message: <em>"I certify that the prediction enclosed in this envelope was written by me on May 16th, 1958, signed Corinda."</em>
+          <div class="box box-purple" style="margin-top: 10px; font-size: 14px;">
+            <div class="box-label">✂️ The "S" Rolled Billet</div>
+            <p>This is very important: this piece of paper is rolled into two little rods, one piece of paper shaped like the letter "S" with one roll at the top and one at the bottom. When this is in the envelope it feels like two pieces of rolled paper. Actually it is one. Later, when the real prediction goes in, you tip out (or they take out) two. They are told to read the "S" message first, and then to see if you have made a correct prediction from the other slip! 😮</p>
+          </div>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-letter step-d">d</div>
+        <div class="step-body">
+          <strong>One of the best methods 🏆</strong> as it removes all danger of anyone tampering with the envelope in your absence. You start by simply showing the envelope sealed and telling the editor that inside is a prediction concerning something that will happen in a week's time. You have him put his signature on the flap and then you lock it in a steel cash box and keep the key yourself.
+          <div class="box box-mint" style="margin-top: 10px;">
+            <div class="box-label">💡 Pro Tip</div>
+            <p>This steel cash box is simply one of those strongly made cash boxes that cost about ten shillings, obtainable from many office equipment companies and stationers. He cannot feel the envelope if it is locked in a cash box, and the sealing of the message under such elaborate conditions makes the trick so much more impressive. If you use this method, call the cash box "a safe deposit box," which sounds much more impressive; and should the trick receive any publicity in the press, the wording "safe deposit" could easily be misconstrued as "locked in the vaults of a bank!" I mention this because that is exactly what happened to me on one occasion. 😄</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pull-quote">"The billet pencil is a beautiful thing. It is the very essence of natural behaviour, using natural apparatus. That is mentalism." ✨</div>
+  </div>
+</div>
+
+<!-- (2) BILLET KNIFE DR JAKS -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">🔪 The Billet Knife — Dr. Jaks</div>
+    <div class="trick-num">Technique (2)</div>
+  </div>
+  <div class="trick-card-body">
+    <p>This is a dealer-item on the market so I am not in a position to give you constructional details. However, I can say that for occasions when you are able to use a paper knife as an excuse to open an envelope, this is a very good appliance. It works on the same principle as my billet pencil: that is, shooting the prediction into the envelope. But it has the drawback that you cannot carry a paper-knife as an everyday object in the pocket. The billet is unloaded from the tip of the knife, and it has been made in wood and metal.</p>
+  </div>
+</div>
+
+<!-- (3) BILLET KNIFE SACKVILLE -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">🔪 The Billet Knife — Sackville</div>
+    <div class="trick-num">Technique (3)</div>
+  </div>
+  <div class="trick-card-body">
+    <p>This is a variation of the Dr. Jaks Billet Knife which shoots the billet from the side instead of the tip of the knife. It will accommodate a much larger billet and there is much less finger movement during operation than there is with both the billet pencil and Jaks knife. The mechanism was designed by Neville Sackville and it works by a series of cross levers which operate from a button.</p>
+    <div class="box box-teal">
+      <p>When the operating button is pushed about one quarter of an inch, it forces out the billet which may be anything up to the size of a one pound note. Again it has the drawback that a paper knife is not commonplace as a pocket item. Like the billet pencil, this item is in my catalogue as a magical dealer and so I have had every opportunity of examining the knife in detail.</p>
+      <div class="nested-box">
+        <p>It is absolutely amazing how by moving one little lever a fraction of an inch, the knife shoots out a billet about three inches long; the principle is very ingenious and yet very simple. It is so powerful that the billet can be shot out for a distance of two or three feet when the ejection mechanism is operated. 😲</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- (4) IMPROMPTU BILLET KNIFE -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">🍴 The Impromptu Billet Knife</div>
+    <div class="trick-num">Technique (4)</div>
+  </div>
+  <div class="trick-card-body">
+    <div class="warn-box">⚡ <strong>Emergency Use Only!</strong> This is not something that you will use as a standard technique, but it is well worth knowing for an emergency.</div>
+    <p>Any fairly wide table knife can be used as a billet knife. On one side of the blade you must have something sticky to hold the folded billet. Chewing gum works like a charm, and in my experience is equally as good as any magician's wax I have encountered. The billet is stuck on the knife and the knife is used to open the envelope; after which, the billet is retained by finger pressure and the knife removed.</p>
+    <p>If you must show both sides of the knife, you can use the "Paddle move." But there is no reason to show both sides of the knife.</p>
+  </div>
+</div>
+
+<!-- (5) POCKET INDEX -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">📇 The Pocket Index for Cards</div>
+    <div class="trick-num">Technique (5)</div>
+  </div>
+  <div class="trick-card-body">
+    <p>This piece of apparatus consists of several bits of cardboard stuck together to form a miniature filing cabinet for the pocket. It is used to hold playing cards in a known order, and little tabs sticking up make it possible for you to count by feel to the position of any card in the index. The pocket index is a very useful piece of apparatus; it can be the modus operandi for many mental miracles.</p>
+
+    <div class="box box-coral">
+      <div class="box-title"><span class="box-emoji">😤</span> The Problem with Dealer Indexes</div>
+      <p>However, if you have ever bought one from a dealer, the chances are you got an instruction sheet which said something like: "Put the cards in the index and when you want to remove one, count along the tabs and pull it out." That is an easy thing to write, and a very hard thing to do. Bearing in mind that more often than not, speed of location and accuracy are vital to the success of your trick, it stands to reason that your index must be well constructed and that you must be well practised.</p>
+    </div>
+
+    <div class="effect-method" style="margin-top: 16px;">
+      <div class="box box-paper">
+        <div class="box-label">📐 Standard Type</div>
+        <div class="box-title" style="font-size: 15px;">The Standard Model</div>
+        <p style="font-size: 14px;">Two main sections, each with seven compartments (some models have only six on one side). One card per compartment. The tabs stick up one above the other so that by feeling along the row and counting the tabs you can find any card. To reach the <em>4 of Spades</em>... 6-5-4: three counts.</p>
+      </div>
+      <div class="box box-mint">
+        <div class="box-label">⭐ Recommended</div>
+        <div class="box-title" style="font-size: 15px;">The Q.5 Index (Patrick Page)</div>
+        <p style="font-size: 14px;">Three sections plus a separate partition at the back. Each section has four individual compartments (12 cards); the King goes in the separate compartment. To reach the <em>4 of Spades</em>... ONE count. To reach the <em>7</em>: at most TWO counts. No more.</p>
+      </div>
+    </div>
+
+    <div class="box box-gold">
+      <div class="box-title"><span class="box-emoji">🔨</span> How to Build the Q.5 Pocket Index</div>
+      <p>Use thick strong paper or board. The thickness should be a little more than that of a playing card. The index will have to take a lot of wear and tear in the pocket and unless it is strongly made it will soon fall to pieces. To index a full pack of cards you require two pocket indexes, so make two whilst you are in production.</p>
+
+      <div class="nested-box">
+        <div class="nested-label">📏 Materials Per Index</div>
+        <p>Each index requires fourteen pieces of card cut to a size 2¾ × 5½ inches.</p>
+      </div>
+      <div class="nested-box" style="margin-top: 8px;">
+        <div class="nested-label">🏗️ Block 1: Middle Section</div>
+        <p>Take five pieces and spread them out so that each piece overlaps the next by about a quarter of an inch, longways. Cut right across the last section to overlap. Now you have five pieces of card each one a quarter of an inch shorter than the next; put the very shortest one to the back (this is the King section) and then bind those five cards together with sellotape by running a strip about half an inch wide around the bottom.</p>
+      </div>
+      <div class="nested-box" style="margin-top: 8px;">
+        <div class="nested-label">🏗️ Block 2: Right-Hand Section</div>
+        <p>Take four of the cards left and stack them in the overlapping position again. This time cut out a large corner which is two-thirds the width of the cards and 1½ inches deep. Bind those four together with tape just as you did for the first block.</p>
+      </div>
+      <div class="nested-box" style="margin-top: 8px;">
+        <div class="nested-label">🏗️ Block 3: Left-Hand Section</div>
+        <p>Take the remaining five cards and stack them with the quarter-inch overlap. Cut out a large corner on the opposite side this time two-thirds the width of the card and, note carefully, 1¼ inches deep (a quarter of an inch less than the previous block). Bind these cards like the others.</p>
+      </div>
+      <div class="nested-box" style="margin-top: 8px;">
+        <div class="nested-label">🔧 Assembly</div>
+        <p>Assemble the three blocks in order: the first one you made goes at the back, the second in the middle and the last on the face. Square up all three and then staple them at their base together and bind over the staples with more tape. You should hammer the staples out flat before putting on the tape and then you will not get any bumps sticking up.</p>
+      </div>
+    </div>
+
+    <div class="box box-purple" style="margin-top: 16px;">
+      <div class="box-title"><span class="box-emoji">🃏</span> Loading the Index</div>
+      <p>Pair off the cards into two groups. In one index you put the Hearts and Clubs, and in the other the Diamonds and Spades. In the first compartment in Index One, you put the Ace of Hearts and the Ace of Clubs. Two cards go together in the same compartment. However, you must be sure that you can tell which is which, so we always put the red card to the back: in other words, the Club on top of the Heart.</p>
+      <div class="nested-box">
+        <div class="nested-label">📌 Tips for Use</div>
+        <ul class="num-list" style="margin-top: 6px;">
+          <li><div class="n">1</div><span>Put them with the Kings nearest to the body, which makes it easier to reach the tabs for counting.</span></li>
+          <li><div class="n">2</div><span>Unless you have to, do not have two indexes in one pocket as they cause too much bulk.</span></li>
+          <li><div class="n">3</div><span>When not in use keep a strong elastic band around each index to retain it in compact condition.</span></li>
+          <li><div class="n">4</div><span>Face the cards in the index so that when they are removed from the pocket they come out showing the back of the card; you can see it first to be sure you are right.</span></li>
+          <li><div class="n">5</div><span>It sometimes pays to seal every card in a small pay-packet so that it is produced in an envelope; mark each envelope with a small dot to tell you which card is inside.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="reveal-box">
+      <div class="rb-label">✨ Example Effect</div>
+      <p>The mentalist shows a small sealed envelope and puts it in his wallet which he lays on the table. He tells the spectator that in the envelope is sealed a card, one card that he thinks will be the same as the one that the spectator will now choose. To obviate any trickery, he suggests that the spectator merely thinks of a card and tells his choice to everybody so that there can be no disputes. When he names his card, you reach into your pocket and take out the card named, which is already sealed in an envelope the same as is in your wallet...</p>
+      <p style="margin-top: 10px;">If you do the "card in wallet" effect using the slit wallet principle, this is a wonderful version. Have the card thought of by the spectator, take it from the index and load it into your wallet as you take it from the pocket. Hand the wallet to the spectator who removes the only envelope inside, which contains a card he thought of. A stunning prediction. 🤯</p>
+    </div>
+  </div>
+</div>
+
+<!-- (6) BILLET INDEX -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">📄 The Billet Index</div>
+    <div class="trick-num">Technique (6)</div>
+  </div>
+  <div class="trick-card-body">
+    <p>This is also a pocket index; but to avoid confusion with the index used to hold playing cards, I will refer to it as the billet index as it is used to hold billets (small pieces of paper) in a fixed order.</p>
+    <div class="box box-blue">
+      <p>There are several types of billet indexes. It all depends on how many pieces of paper you want to arrange in order. The first use of an index to hold pieces of paper bearing the names of cards is attributed by Annemann to Al Baker. The early models were blocks of wood with holes drilled in rows and billets stuck in the holes.</p>
+    </div>
+    <p>The method I suggest for working with billets to cover playing cards is a smaller version of the Q.5 Pocket Index. However, in some cases you will require an index to deal with only a few billets and the easiest way to do this is to put one billet in each pocket and remember which pocket contains which billet. (See "The Body Index System.")</p>
+    <p>The Q.5 Billet Index can be used for a wide range of things. The billets can cover numbers, cards, colours, names and so on. Fifty-two possibilities cover a pretty wide range if you consider some of the things you can use.</p>
+
+    <div class="box box-paper" style="margin-top: 12px;">
+      <div class="box-label">📝 Loading Notes</div>
+      <p>Each billet (size 3 × 2 in.) is first folded once each way and since they are smaller than cards, we stack one upright and one sideways in each compartment, so that the two suits do not become mixed. It is important to push each billet well down into the index so that it is held tightly in position. You must remember that if the billets are written in pencil, to use pencil when performing; and if in ink, to use ink.</p>
+    </div>
+  </div>
+</div>
+
+<!-- (7) CIGARETTE PACKET PELLET INDEX -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">🚬 The Cigarette Packet Pellet Index</div>
+    <div class="trick-num">Technique (7) — Tremaine-Corinda</div>
+  </div>
+  <div class="trick-card-body">
+    <div class="box box-coral">
+      <div class="box-title"><span class="box-emoji">🏆</span> A Masterpiece!</div>
+      <p>Under the title "Mind over Matter" in Part IV of this book, you will find a prediction effect that is in a class on its own. The trick seems so utterly impossible that it cannot fail to bewilder those who see it. In order to perform this masterpiece, you will have to prepare a special pellet index. However, you will be able to put this to good use for other effects so your time will not be wasted.</p>
+    </div>
+
+    <p>The theme is very ingenious. It is presumed that in order to "index" fifty-two pellets, which are very small pieces of paper, the first problem is to find some means to keep them in order and second, how to find any one quickly. Both of these difficulties are nicely removed in the cigarette packet pellet index: the papers are held firmly in position and since you are able to remove any pellet <em>whilst looking</em> (instead of working by feel), you can hardly fail to locate the correct one in a matter of seconds.</p>
+
+    <div class="box box-gold">
+      <div class="box-title"><span class="box-emoji">🔧</span> Construction</div>
+      <p>You require two Players cigarette packets, the twenty size. Remove both drawers and from one cut off the bottom flap and the very top flap. On the other drawer you line out four columns in ink (a drawing pen is best) and then divide each column into thirteen sections. For each of these sections you make a small slit with a razor blade and into these slits you place a small unfolded slip of paper, size about ¾ × ½ in., leaving just the top of each slip sticking out of the slit.</p>
+      <div class="nested-box">
+        <div class="nested-label">✍️ Labelling Each Slip</div>
+        <p>On each slip is written the name of one card. Write "2 of" along the top edge, and the suit diagonally below. This means that each slip will show the name of the card it represents as it sticks out of the slit. You also write the name of each slip alongside the slit actually on the packet and arrange it so that you have all the hearts in one column running from Ace to King, then the Diamonds and so forth.</p>
+      </div>
+      <div class="nested-box" style="margin-top: 8px;">
+        <div class="nested-label">🔒 The Cover</div>
+        <p>When you have the slips in place, you stick the second drawer (with the missing flaps) over the back of the index drawer. The sticking is done at the top only and this now forms a flap which keeps all the pellets in place, and yet it may be lifted when you want to reload the index.</p>
+      </div>
+    </div>
+
+    <div class="box box-teal" style="margin-top: 12px;">
+      <div class="box-title"><span class="box-emoji">🎭</span> In Performance</div>
+      <p>When the packet is properly set up, one cigarette is placed inside and it is under cover of removing this and lighting it that you steal the pellet. A natural move in itself and the apparatus (a cigarette packet) is hardly subject to suspicion! 😏</p>
+    </div>
+
+    <div class="box box-paper" style="margin-top: 12px; padding: 14px 18px;">
+      <div class="box-label">📌 Terminology Clarification</div>
+      <p style="font-size: 14px;">To avoid confusion: when referring to an index for playing cards, we call it "a Pocket Index." For billets (paper slips size about 3 × 2 in.) we call it "a Billet Index." And for very small papers, "a Pellet Index."</p>
+    </div>
+  </div>
+</div>
+
+<!-- (8) BODY INDEX -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">🧍 The Body Index</div>
+    <div class="trick-num">Technique (8) — Corinda</div>
+  </div>
+  <div class="trick-card-body">
+    <p>Later on in this series we shall be discussing a "mentalists pack," which is a pack of cards containing duplicates so that the maximum number of different spot cards is only ten. With such a pack, or with any trick where the possibilities can be confined to ten, we are able to index the cards by distribution on our persons and since this requires no apparatus whatsoever, we will find it a good standby for emergencies.</p>
+
+    <div class="box box-purple">
+      <div class="box-title"><span class="box-emoji">✨</span> The Effect</div>
+      <p>A pack is handed to a spectator to mix; they are then fanned and the spectator told to remember any card he can see. The deck is placed aside and then the mentalist asks that the card be named. No sooner is the chosen card declared than the spectator is asked to reach into the mentalist's jacket pocket and pull out the contents. He removes one card: the only card in the pocket and the same one as he thought of a moment ago.</p>
+    </div>
+
+    <div class="box box-gold" style="margin-top: 16px;">
+      <div class="box-title"><span class="box-emoji">🗺️</span> The Body Map: Where Each Card Lives</div>
+      <ul class="num-list">
+        <li><div class="n">1</div><span>Lowest value card: down the left-hand side of your left ankle (tuck it into the sock, facing the leg).</span></li>
+        <li><div class="n">2</div><span>Next card (in value order): down the right-hand side of the left ankle.</span></li>
+        <li><div class="n">3</div><span>Third card: down the left side of the right ankle.</span></li>
+        <li><div class="n">4</div><span>Fourth card: down the right side of the right ankle.</span></li>
+        <li><div class="n">5</div><span>Fifth card: left trouser pocket.</span></li>
+        <li><div class="n">6</div><span>Sixth card: right trouser pocket.</span></li>
+        <li><div class="n">7</div><span>Seventh card: left outside jacket pocket.</span></li>
+        <li><div class="n">8</div><span>Eighth card: right outside jacket pocket.</span></li>
+        <li><div class="n">9</div><span>Ninth card: top jacket pocket (the handkerchief pocket).</span></li>
+        <li><div class="n">10</div><span>Tenth card: wallet in the inside pocket, or just that pocket itself.</span></li>
+      </ul>
+    </div>
+
+    <div class="box box-mint" style="margin-top: 12px;">
+      <div class="box-title"><span class="box-emoji">💡</span> Showing the Ankle Cards</div>
+      <p>Suppose it was to be the Ace, situated down the left side of the left ankle. You would turn the body to face the left side to the audience, make sure the left leg was pointing directly at them, then slowly pull up the trouser leg and raise just enough for all to see a card stuck in your sock! Since they cannot see through your leg, they will not get a chance to see Number Two on the other side.</p>
+    </div>
+
+    <p>It takes you two seconds to think where any card may be found and if you present the effect correctly, no one will suspect that you ever had anything but one card. Some performers may prefer to have each card sealed in a pay-packet or to use index cards that have a different coloured back to the deck in use.</p>
+  </div>
+</div>
+
+<!-- (9) SWAMI GIMMICK -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">💍 The Swami Gimmick</div>
+    <div class="trick-num">Technique (9)</div>
+  </div>
+  <div class="trick-card-body">
+    <div class="box box-teal">
+      <p>A survey of the technique of predictions would be incomplete without mention of the Swami Gimmick. However, Step One of this series gives you precise details of this small apparatus and further writing would be superfluous. There are many good predictions included in the Step One book, and you would be advised to run through them. 📚</p>
+    </div>
+  </div>
+</div>
+
+<!-- (10) THE SWITCH AND THE FORCE -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">🔄 The Switch &amp; The Force</div>
+    <div class="trick-num">Technique (10)</div>
+  </div>
+  <div class="trick-card-body">
+    <div class="box box-coral">
+      <div class="box-title"><span class="box-emoji">📌</span> The Golden Rule</div>
+      <p>Many predictions rely on the technique of switching an envelope or forcing a card or other things. There are very many methods by which this may be done, but there is no necessity whatsoever to know them all. The most you should try and master is <strong>one</strong> good way to switch (or exchange) a billet, <strong>one</strong> good way to switch an envelope, <strong>one</strong> good way to switch a pack of cards and so on.</p>
+      <div class="nested-box">
+        <p>Never mind about variations. There is no necessity to search constantly for new and better ways. If you work hard enough on any solitary method, you will get it down to a fine art. The same applies to forcing. Learn one good card force and use it; it is better to find different ways to present an effect by forcing a card, than it is to find different forces to present the same old effect. 💪</p>
+      </div>
+    </div>
+
+    <!-- SCARNE PELLET SWITCH -->
+    <div class="section-header">
+      <div class="section-num">a</div>
+      <div class="section-title">The Scarne Pellet Switch</div>
+    </div>
+    <p>The Scarne pellet switch is an ideal way of exchanging two pellets. It is easy to do, hard to detect, almost impossible to do wrong and is not widely known.</p>
+
+    <div class="effect-method">
+      <div class="box box-blue">
+        <div class="box-label">👁️ The Move</div>
+        <p style="font-size: 14px;">You have one small rolled pellet (a cigarette paper) on the table. You have one in the hand. Hold the hand pellet (Pellet "X") pinched between the second finger and ball of the thumb; the first finger extends a bit. Go to Pellet "Z" and pick it up with the first finger and ball of thumb and at the same time drop "X." In effect you swap over fingers on the ball of your thumb and at the same time pick up and drop a pellet.</p>
+      </div>
+      <div class="box box-gold">
+        <div class="box-label">⏱️ The Timing</div>
+        <p style="font-size: 14px;">If you drop the pellet on to the table, immediately cover it with a card and then without so much as a pause lift it out and put it on top of the card, you will have to work out why the card was placed over the pellet in the first place. You must allow time to pass to make the move logical, and then, accompanied by suitable patter and action, all in the right tempo, you make the move.</p>
+      </div>
+    </div>
+
+    <div class="pull-quote">"When you get the switch, it is the one which suits you and your style as no other switch can, because no other switch was made for you." 🎯</div>
+
+    <p>Bear in mind that misdirection comes in many shapes and forms: in patter, sound, action, facial expressions, especially the eyes. And if you use misdirection you will be able to perform anything equal to the most complicated sleight in existence.</p>
+
+    <!-- SWITCH OF A PACK -->
+    <div class="section-header">
+      <div class="section-num">—</div>
+      <div class="section-title">The Switch of a Pack of Cards</div>
+    </div>
+    <div class="box box-purple">
+      <p>We shall deal with this from a purely theoretical point of view. The spectator has seen the deck and we want him to hold it, but at the same time we desire to switch the deck so that he really holds another pack. We have the second pack in our left jacket pocket. We take the pack he has seen and say "Now I want you to put the cards in your jacket pocket and hold your hand over the flap like this..." following the action to the words you show him what you want, put the pack in the left pocket, let go, take out the hand and hold down the flap apparently securing the cards in the pocket. Reach back, take out pack No. 2 and give it to him, whereupon he immediately puts it in his pocket.</p>
+      <div class="nested-box">
+        <p>If the action was performed in a natural manner, it would not seem unnatural that you should show the spectator what to do. That is why the right patter with the right movements is of the greatest importance. There is a degree of boldness in this type of work, and boldness should not be scorned. As long as the switch is not blatant, you can be as cheeky as you like. 😏</p>
+      </div>
+    </div>
+
+    <!-- BARE HAND ENVELOPE SWITCH -->
+    <div class="section-header">
+      <div class="section-num">—</div>
+      <div class="section-title">The Bare Hand Envelope Switch</div>
+    </div>
+    <div class="box box-mint">
+      <div class="box-title"><span class="box-emoji">🤯</span> The Height of Boldness</div>
+      <p>This serves as another theoretical example. It is a case of having two envelopes on show and wanting to switch one for the other. The technique is the height of boldness; you literally exchange them under their noses! But it works.</p>
+      <p>You have no stack of envelopes, no mechanical apparatus or gimmicks. The only requirement is the mentalist's best friend: personal ability.</p>
+      <div class="nested-box">
+        <p>The spectator holds envelope "X"; you hold "Z" and want to swap. You go up to him and ask him to be sure that he still has the folded paper sealed inside, and instinctively he begins to feel the envelope. Immediately you reach forward and take, I repeat, take it from him, saying "Look, if I hold it up to the light you can see the shadow of the paper inside, right?" You hold his envelope "X" in your right hand and "Z" in the left. Without much waiting you continue, "and the same with this one: you see the shadow again?" Timing the move (if it can be called a move since you do nothing) you bring down his envelope and for a second bring the two together, one on top of the other; then show him "X" again, but at the same time you say "and you see the shadow again," as though you were showing number two. You cannot detect when the envelopes are together whether they are switched or not... and to prove it, you will see the spectator's eyes go straight back to your left hand which he honestly thinks holds his envelope. This one you give him. 😎</p>
+      </div>
+    </div>
+
+    <!-- FORCING -->
+    <div class="section-header">
+      <div class="section-num">b</div>
+      <div class="section-title">Forcing 🃏</div>
+    </div>
+    <div class="box box-coral">
+      <div class="box-title"><span class="box-emoji">🔥</span> A Controversial Opinion</div>
+      <p>I will step out of line from other writers and probably make a few enemies by advocating that you discard some accepted methods of forcing. I refer to such methods as those which involve weird and wonderful apparatus and quaint sayings. I refer to such classics as the Drawer Box and the Changing Bag. Doubtlessly these items were good in their day, but their day is past and outside of doing a mental act in a cathedral I wouldn't go within a mile of a changing bag. 😂</p>
+    </div>
+    <p>If apparatus has to be used to perform a force or a switch, it is essential that it is in keeping with mentalism and that it does not in any way resemble a conjuring appliance.</p>
+    <div class="box box-gold" style="margin-top: 12px;">
+      <div class="box-title"><span class="box-emoji">🗑️</span> Discard the "That Leaves" Line</div>
+      <p>Aside from unsuitable apparatus, we are bound to reject the peculiar approach which always ends with the tag line "That leaves." This is an utter waste of time and a lot of nonsense. Suppose you have to force one of three books. You lay them all in a row on the table and say "kindly select any two," and if they leave the force book, go straight ahead without saying "that leaves this one." What else could it do?</p>
+    </div>
+    <p>As for cards, the easiest way to force a card is to use a forcing pack and after that there are many methods. As long as you know one good way, that is all you need to know. As a general guide to forcing: make it quick, clean and simple and above all, make it convincing. 🎯</p>
+  </div>
+</div>
+
+<!-- (11) PREDICTION CHEST -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">📦 The Prediction Chest</div>
+    <div class="trick-num">Technique (11)</div>
+  </div>
+  <div class="trick-card-body">
+    <p>This is usually a costly affair. A special box bestowed with the title "Prediction Chest," and if you can afford the luxury it is a good thing to have. There are two or three types available; Nelson Enterprises (Magical Dealers, U.S.A.) market one variety, and there are others you can buy or make. The principles vary. Sometimes the billet is shot from the key into the chest when the lock is undone; sometimes the billet is written on whilst it is in the chest; and sometimes the billet is switched although the chest is locked. If you want a really reliable model you would do best to buy one rather than risk a home-made model.</p>
+  </div>
+</div>
+
+<!-- (12) TRICKERY WITH ENVELOPES -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">✉️ Trickery with Envelopes</div>
+    <div class="trick-num">Technique (12)</div>
+  </div>
+  <div class="trick-card-body">
+    <div class="effect-method">
+      <div class="box box-teal">
+        <div class="box-label">✉️ Method A</div>
+        <div class="box-title" style="font-size: 16px;">The Carbon Prediction Envelope</div>
+        <p style="font-size: 14px;">The idea is to have a specially prepared envelope. Inside the envelope is stuck a sheet of black carbon paper; it goes on the address side with the glossy side outwards so that when you put a card in the envelope and then impress from outside, the writing is duplicated by carbon impression on the card inside.</p>
+        <p style="font-size: 14px; margin-top: 8px;">However, it is as well to dress the plot a little more and to have a letter or fully worded prediction in place of a plain card in the envelope. If you "line up" the wording inside so that you know the exact spot above the spaces in the prediction, you can write on the envelope and fill in as you go.</p>
+      </div>
+      <div class="box box-purple">
+        <div class="box-label">✉️ Method B</div>
+        <div class="box-title" style="font-size: 16px;">The Nest of Envelopes</div>
+        <p style="font-size: 14px;">There are three ways to use the nest of envelopes:</p>
+        <ul class="num-list" style="margin-top: 8px;">
+          <li><div class="n" style="min-width:22px; height:22px; font-size:11px;">1</div><span style="font-size: 13.5px;">Have them all sealed at the start and press hard with a ball pen to get the writing-copy on a prediction in the middle of the nest.</span></li>
+          <li><div class="n" style="min-width:22px; height:22px; font-size:11px;">2</div><span style="font-size: 13.5px;">Have them all nested but open, ready to drop the small card into the middle one and then seal quickly. Use a Swami to write on the card.</span></li>
+          <li><div class="n" style="min-width:22px; height:22px; font-size:11px;">3</div><span style="font-size: 13.5px;">Transfer a carbon impression of some writing into the centre envelope.</span></li>
+        </ul>
+        <p style="font-size: 13.5px; margin-top: 8px;">Three nesting envelopes are usually considered sufficient, although Robert-Houdin describes an effect which uses six. To seal them all quickly you may use rubber cement along the edges, or the "Seal-easy" type pay-packet which requires no preparation; you just press the flap down to seal, no licking required!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- (13) STOOGES -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">🤝 Stooges</div>
+    <div class="trick-num">Technique (13)</div>
+  </div>
+  <div class="trick-card-body">
+    <div class="warn-box">😄 <strong>Honest disclosure:</strong> This is no place for an argument about whether or not you should use stooges. All I'm going to say is this: I use them, quite a lot, and I'll list a few of the dodges that come in useful; and if you want to copy them good luck, and if not, suit yourself.</div>
+
+    <p>You can classify stooges into two groups: those who volunteer and those who have no choice. I rather like the second group as they act normally up to the last minute! 😈</p>
+
+    <div class="box box-gold">
+      <div class="box-title"><span class="box-emoji">🃏</span> The "Four of Clubs" Stooge Trick</div>
+      <p>This is a simple effect that was taught to me by "Teddy" Love in a lecture some time ago; I believe he credited it to Al Koran. The effect literally paralyses an audience. It's incredible.</p>
+      <div class="nested-box">
+        <div class="nested-label">🎭 The Effect</div>
+        <p>You ask for any two people to help and any two come on to the stage. You have three packs of cards and give each person a free choice of one pack. They stand behind you and both are told to open their cases and to remove any card from the pack and put it in their top jacket pocket back outwards. You do the same with a card from your pack. You then take each deck and fan to show that every pack is made up of different cards. Then you turn to the left spectator and say "and what did you choose?" He shows the Four of Clubs. You turn to the one on the right: "and what did you choose?" He also chose the Four of Clubs. And you then show the one card in your pocket: the Four of Clubs! 🤯</p>
+      </div>
+      <div class="nested-box" style="margin-top: 8px;">
+        <div class="nested-label">🔓 The Method</div>
+        <p>The face card in every pack is a joker which has a gummed label reading "LOOK! Help me to fool the others. Take the Four of Clubs and keep this a secret between us. Thanks." The label is stuck over the face of the joker. You glance back to see that both spectators are reading the joker-fake when they take their cards out. To make it easy for them to find the black Four of Clubs quickly, you put it near the face of the pack and surround it with all red cards so that it stands out clearly. Finally, you avoid showing the fake-joker when fanning the cards to the audience.</p>
+      </div>
+    </div>
+
+    <div class="box box-teal" style="margin-top: 14px;">
+      <div class="box-title"><span class="box-emoji">⌚</span> A Similar Approach: The Pocket Watch</div>
+      <p>A similar technique has been used by various people including Annemann when a pocket watch is handed out to the audience: one spectator gets it and is asked to set it at any time. You have predicted that time. On the face of the watch is a small label reading "Please set the watch to 8.45 and keep this a secret." The label is such that it can be removed easily, and any of the self-adhesive variety will do.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SUMMARY OF TECHNIQUE -->
+<div class="wide-box">
+  <div class="wb-title">📋 Summary of Technique</div>
+  <p>It may well be said that no mental act is really complete without at least one prediction. The importance of this type of trick has been stressed in the opening. We have seen that there are many ways and means to produce this type of effect and we have covered a selection of apparatus generally used for this work.</p>
+</div>
+
+<div class="box box-coral" style="margin-top: 16px;">
+  <div class="box-title"><span class="box-emoji">⚠️</span> The Three Common Failings in Predictions</div>
+  <div class="nested-box" style="border-color: rgba(200,80,50,0.2); background: rgba(255,255,255,0.5);">
+    <div class="nested-label">❌ Failing #1: A Confusing Plot</div>
+    <p>Unless it is easy to understand, the audience cannot fully appreciate the achievement at the end. It is very easy to slip into a complex, involved preparation that so confuses the audience that they forget what has occurred. Keep the plot clear and if possible, quick. Avoid unnecessary distractions; misdirection is the only excuse for diverting attention.</p>
+  </div>
+  <div class="nested-box" style="margin-top: 10px; border-color: rgba(200,80,50,0.2); background: rgba(255,255,255,0.5);">
+    <div class="nested-label">❌ Failing #2: Poor Timing</div>
+    <p>Far too many magicians and mentalists do not pay sufficient attention to the tempo of the trick. With every prediction effect there is always one crucial moment when you are in the best position to end the trick. You do not necessarily end the trick just as soon as you have completed the mechanics; you always end when interest is at its maximum. Remember that varied tempo makes presentation interesting and that never-changing rate is like never-changing speech: monotonous. No book can really convey a proper understanding of perfect timing; it is a thing which experience alone can teach.</p>
+  </div>
+  <div class="nested-box" style="margin-top: 10px; border-color: rgba(200,80,50,0.2); background: rgba(255,255,255,0.5);">
+    <div class="nested-label">❌ Failing #3: The Recap Complex</div>
+    <p>Unless it adds to the impact of the effect or simplifies the understanding of the trick, try and talk about something other than that which everybody knows you have done. It is as well to remember that the audience have nothing better to do than to sit and watch you perform, so you should expect them to know what is happening. If they do not, your trick is due for reconstruction.</p>
+  </div>
+</div>
+
+<hr class="fancy">
+
+<!-- ===== PART THREE: STAGE ===== -->
+<div class="part-header">
+  <div class="part-num">Part Three</div>
+  <div class="part-title">Predictions for the Stage 🎭</div>
+</div>
+
+<!-- (1) A MILLION TO ONE -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">🗺️ "A Million to One"</div>
+    <div class="trick-num">Stage Trick (1) — Corinda</div>
+  </div>
+  <div class="trick-card-body">
+    <div class="box box-blue">
+      <div class="box-label">🌟 Origin</div>
+      <p>If ever a book on mentalism was named appropriately, the Cook &amp; Buckley effort called "Gems of Mental Magic" was rightly named. The book is indeed full of gems, and it was from an effect called "It's a small world" published in the book that gave me the original idea of this trick. The original effect, as an effect, was excellent. However, the method required the use of an assistant and a large globe of the world, which could be costly. I so much liked the plot that I decided to work a little harder to try and simplify the mechanics.</p>
+    </div>
+
+    <div class="effect-method" style="margin-top: 16px;">
+      <div class="box box-gold">
+        <div class="box-label">✨ The Effect</div>
+        <p style="font-size: 14px;">The performer asks for the assistance of a member of the audience who comes on to the stage. He then writes something on a card, which in turn is sealed in an envelope and signed by the spectator. The envelope is then handed to the spectator on the stage, who is told to put it in his pocket and on no account let you touch it again.</p>
+        <p style="font-size: 14px; margin-top: 8px;">You draw attention to a large board upon which is pinned a map. You blindfold the spectator, who then jabs a pin anywhere into the map. The spectator takes off the blindfold and calls out the nearest town or city to the pin-pointed position. The envelope is opened: it reads "It's a million to one if you do it, but I think you will arrive at Birmingham."</p>
+      </div>
+      <div class="box box-mint">
+        <div class="box-label">🔓 The Method</div>
+        <p style="font-size: 14px;">Be warned: this is mentalism. There's nothing to it, the working is absurdly simple and yet bold. If you are a bit weak-hearted, this is not a trick for you!</p>
+        <p style="font-size: 14px; margin-top: 8px;">Gentlemen, the means by which this trick is achieved is... another pin. Before you laugh at me, all I ask is that you try what I am about to say. Get a map and stick it on the wall. In the middle stick a pin, just an ordinary 1 in. long pin. Stand five feet away and you will not see the pin. So what chance have the audience, when they are not even looking for it? 😄</p>
+        <p style="font-size: 14px; margin-top: 8px;">You prepare by sticking a pin into the map, making sure it goes right into some town or city. This place you record in the prediction. When you have the spectator come up, keep him at the other end of the stage, away from the board. When he is due to go near the board: you blindfold him! He is the only person likely to see the second pin.</p>
+      </div>
+    </div>
+
+    <div class="reveal-box">
+      <div class="rb-label">🎩 The Final Moment</div>
+      <p>You stand him right in front of the map with his back to the audience; now they cannot see through him so until he stands aside they can't see where the pin goes, and he can't see because he's blindfolded. The swindle ends when, as he sticks in his pin, you quickly bring out the torch with the left hand and shine it on to your pin. For a second the right hand rests on the map as you lean forward to look closely at the position. The right hand now pulls his pin out of the board and all that remains is to allow the spectator, who by now has disentangled himself from the well-knotted blindfold, to read out the name of the pin-pointed town. 🎉</p>
+      <p style="margin-top: 10px; font-size: 13.5px; font-style: italic;">As a last word, should the two-million-to-one event occur and the spectator sticks his pin on top of yours, you then leave them both there and show how great minds think alike...</p>
+    </div>
+  </div>
+</div>
+
+<!-- (2) QUADRUPLICATION -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">🎴 "Quadruplication"</div>
+    <div class="trick-num">Stage Trick (2) — Corinda</div>
+  </div>
+  <div class="trick-card-body">
+    <div class="warn-box">⚡ <strong>For skilled performers only!</strong> This is a trick for a skilled performer. The methods (there are several) involve a certain amount of skill and work. The effect is well worth the trouble in my opinion, but you judge for yourself.</div>
+
+    <div class="box box-purple">
+      <div class="box-label">✨ The Effect</div>
+      <p>A spectator is asked to go to the table and choose any card from a pack which lies there, ribbon-spread face upwards. Just before he goes, however, you hand him a small envelope and tell him to stick it in his top jacket pocket. He takes a card. You ask him to replace the others in the case and then to sign his initials on the card he chose. This done, he sticks it back into the pack which he drops into his pocket.</p>
+    </div>
+
+    <div class="box box-gold" style="margin-top: 14px;">
+      <div class="box-label">🎭 The Four-Stage Revelation</div>
+      <ul class="num-list">
+        <li><div class="n">1</div><span><strong>The Slate Gag:</strong> "Now sir! Is the card you chose the Nine of Spades? It is? Funny thing that, because it also happens to be the only card I took from another pack before I came this evening." (Performer reaches into pocket, removes one card; turns out the lining to show the pocket is otherwise empty.)</span></li>
+        <li><div class="n">2</div><span><strong>The Body Index:</strong> "And what is more odd than that is the fact that I gave you a small envelope, remember? May I have it? Inside here is a card. I would like you to read it out loud... (it reads) 'I've a sneaking suspicion you will select the 9 of S.'"</span></li>
+        <li><div class="n">3</div><span><strong>The Swami-Written Prediction</strong> in the envelope given earlier.</span></li>
+        <li><div class="n">4</div><span><strong>The Odd-Backed Card:</strong> "You happen to have chosen the only card with a black back in this pack. Look..." (Performer shows all the backs; only the nine is black.) "Which more or less proves that I knew which card you would choose."</span></li>
+      </ul>
+    </div>
+
+    <div class="box box-teal" style="margin-top: 14px;">
+      <div class="box-label">⚙️ The Method (Summary)</div>
+      <p>You require a pack of black-backed cards made up of any ten cards repeated five times. You require a duplicate set of these ten set out in the Body Index System. You require an ordinary pack of 52 cards with red backs but the case should be the same as is used for the ten-card set-up pack. You require a prediction written on a card set in a window envelope ready for use with a Swami Gimmick. A slate and some chalk, a pencil, a table and a chair.</p>
+      <div class="nested-box">
+        <p>You time it so that you remember the envelope just after he has pulled out his card, so that you may see what he takes as you approach to give him the envelope. You must now play for time, so first get him to place the remaining cards in the case which you take. You ask him to put his initials on his card, and whilst searching in various pockets for a pencil, simply exchange the blue-backed pack for the ordinary red-backed one.</p>
+      </div>
+    </div>
+
+    <div class="pull-quote">"The comedy gets you off to a good start and the index card revelation introduces the first signs of what may be called skill. There is no necessity for a pompous declaration that reads like the Riot Act." 😂</div>
+  </div>
+</div>
+
+<!-- (3) DE PROFUNDIS -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">🔮 "De Profundis" — Out of the Depths</div>
+    <div class="trick-num">Stage Trick (3) — Corinda</div>
+  </div>
+  <div class="trick-card-body">
+    <p>From an idea applied by Dunninger, from a title used by Oscar Wilde and by the help of Maurice Fogel: De Profundis, or "Out of the Depths."</p>
+
+    <div class="effect-method">
+      <div class="box box-purple">
+        <div class="box-label">✨ The Effect</div>
+        <p style="font-size: 14px;">A spectator assists in the experiment. They are told to hold one end of a length of rope, perhaps some five feet long. On to the rope is threaded a ring which has a clip attached to hold a crystal clear box. Inside the box is seen an envelope. The performer holds the other end of the rope and slides the crystal box to the middle where it remains suspended in full view of the audience.</p>
+        <p style="font-size: 14px; margin-top: 8px;">The performer counts out loud from one to ten and tells the spectator to call stop whenever he feels that he gets a "mental vibration" on any number. This is repeated three times so that a number something like 854 is finally selected. Following this, the performer runs quickly through a list of colours and then names of cities throughout the world, and each time the spectator calls stop. Suppose we end with the selection "854, Green, Paris." When the envelope is opened, the prediction reads exactly that. 🤯</p>
+      </div>
+      <div class="box box-gold">
+        <div class="box-label">🔓 The Method</div>
+        <p style="font-size: 14px;">Again I shall have to ask you to try this out before you laugh at the modus operandi and see for yourself that it really works.</p>
+        <p style="font-size: 14px; margin-top: 8px;">It is a force. Inside the rope is a plate-lifter (one of those joke things made out of a long thin rubber tube with a rubber bulb at each end) and you each hold an end. When you call over the numbers from one to ten, if you want to force say number five, as you reach that number you squeeze hard at your end and the spectator immediately reacts, more often than not with a jump!</p>
+        <p style="font-size: 14px; margin-top: 8px;">Oddly enough, they do not always associate the "vibration" with the rope, and even if they do, they don't know why, and the audience have no idea that anything like it is happening. 😏</p>
+      </div>
+    </div>
+
+    <div class="box box-teal" style="margin-top: 14px;">
+      <div class="box-label">🔧 Making the Apparatus</div>
+      <p>Buy the best quality plate-lifter you can get, and an extra length of fine rubber tubing. Take one bulb off and push the tubing through the rope and then replace the bulb. You will now find that the bulb can be drawn back into the rope (fray it out a bit to loosen) and although this restricts the full expansion of the bulb, it still acts enough to give a decent "pulse" when the other end is pressed.</p>
+      <p style="margin-top: 8px;">From Woolworths for two or three shillings you can buy a neat food container which is a box made in clear plastic. Fix a clip to the top so that it may be hung from the ring you thread on the rope. Tie the box with the prediction inside with a neat bow of red ribbon. 🎀</p>
+    </div>
+  </div>
+</div>
+
+<!-- (4) £75,000 TEST -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">💷 "The £75,000 Test"</div>
+    <div class="trick-num">Stage Trick (4) — Corinda</div>
+  </div>
+  <div class="trick-card-body">
+    <p>We shall use this effect to illustrate the application of the carbon envelope technique which was described on page 98 of this book.</p>
+
+    <div class="box box-gold">
+      <div class="box-label">🎭 The Opening Address</div>
+      <p style="font-style: italic; font-size: 14.5px;">"Ladies and Gentlemen, for many years I have applied the simple laws of para-psychology to demonstrate that it is, to some extent, possible to predict the future. It is natural therefore that I am constantly asked: why don't I win the pools and make a fortune? Now I appeal to your good sense of judgment. Do you think I wouldn't do that if I could? Of course I would. And by predicting say the Treble Chance pool correctly, you know as well as I do that I would acquire something like £75,000, and I'm not ashamed to say that it would come in handy! No, I'm afraid the matter is more complicated than it seems..."</p>
+    </div>
+
+    <div class="box box-teal" style="margin-top: 14px;">
+      <div class="box-label">🎲 The Eight-Point Finale</div>
+      <p>As the spectator calls out each number and yours matches, the exclamations from you increase in surprise:</p>
+      <ul class="num-list" style="margin-top: 10px;">
+        <li><div class="n">1</div><span>"That's luck!"</span></li>
+        <li><div class="n">2</div><span>"That's coincidence!"</span></li>
+        <li><div class="n">3</div><span>"That's extraordinary!"</span></li>
+        <li><div class="n">4</div><span>"That's incredible!"</span></li>
+        <li><div class="n">5</div><span>"That's fabulous!"</span></li>
+        <li><div class="n">6</div><span>"That's phenomenal!"</span></li>
+        <li><div class="n">7</div><span>"That's impossible!"</span></li>
+        <li><div class="n">8</div><span>"That's a miracle!!" 🎉</span></li>
+      </ul>
+    </div>
+
+    <div class="box box-purple" style="margin-top: 14px;">
+      <div class="box-label">⚙️ The Method</div>
+      <p>You must first prepare a carbon-envelope (see page 98) and next insert a football coupon carefully folded so that the Treble Chance Pool is uppermost to the carbon paper, which incidentally should be jet black. Before the envelope is sealed it is essential to line up another coupon on the outside, so that both Treble Chance Pools lie directly in line. The easiest way to do this is to make three pin holes on the inner coupon and then by holding the envelope up to the light you will be able to see through the pin holes and line up on the light.</p>
+    </div>
+  </div>
+</div>
+
+<!-- (5) ASTRONOMICAL -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">🔢 "Astronomical"</div>
+    <div class="trick-num">Stage Trick (5) — Corinda</div>
+  </div>
+  <div class="trick-card-body">
+    <div class="effect-method">
+      <div class="box box-mint">
+        <div class="box-label">✨ The Effect</div>
+        <p style="font-size: 14px;">An envelope is handed to one of four spectators. You stand in the middle with two spectators seated on either side of you. Each person jots down a row of five figures; the third person adds another row. The fourth person adds the total and writes it below. He is then told to take out the envelope and open it. Inside is another envelope, inside that another. When the third and last envelope is opened, a £1 note is removed and written on it is: "The number of this note will be the same as the total of your figures. Please check." It is. 🤯</p>
+      </div>
+      <div class="box box-coral">
+        <div class="box-label">🔓 The Method</div>
+        <p style="font-size: 14px;">This is a very easy prediction to perform and mostly it is a matter of presentation, the only work being a simple switch. Take a one pound note and copy out the serial number. The six numbers that follow the serial letters are used. You must now work out four sets of figures that add to this number. Simply divide the serial number by four and write the answer out four times; now to conceal the similarity between the four figures, subtract a few hundreds and units for one group and add them to another.</p>
+        <p style="font-size: 14px; margin-top: 8px;">The switch is remarkably convincing and the last person hasn't got a chance. He is handed the card by another spectator, not you; he has no idea what numbers were written by the others; and the card he holds bears the signature of the third spectator. What has taken ten minutes to describe takes ten seconds to do. 😄</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- (6) MENTALIST FOUR ACE TRICK -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">🂡 "The Mentalist's Four Ace Trick"</div>
+    <div class="trick-num">Stage Trick (6) — Corinda-Tremaine</div>
+  </div>
+  <div class="trick-card-body">
+    <div class="box box-gold">
+      <div class="box-label">✨ The Effect</div>
+      <p>On the stage is a card table, standing on which are four drinking tumblers and two packs of cards. The mentalist explains that he will attempt an experiment to demonstrate "sympathetic relationship between two minds." He shows his red-backed pack: all different. He moves four cards, placing one in each tumbler with the backs facing the audience. The spectator then pushes out any four cards from the blue-backed pack, spread face down on the table, and drops one into each tumbler.</p>
+      <p style="margin-top: 10px;">From the first glass: both the Ace of Diamonds. From the second: both the Ace of Clubs. Third: both the Ace of Hearts. Fourth: both the Ace of Spades. The cards are handed immediately to the spectator for examination. 😲</p>
+    </div>
+
+    <div class="box box-teal" style="margin-top: 14px;">
+      <div class="box-label">⚙️ The Method</div>
+      <p>Take two packs of cards, one with red backs and one with blue backs. From the blue-backed pack remove the four aces and stack them: Diamonds, Clubs, Hearts and Spades, with the Diamond on top. Put these four cards down the right side of your right foot by tucking them into the shoe; the trouser turn-up may be allowed to cover them until you are ready.</p>
+      <div class="nested-box">
+        <div class="nested-label">🎩 The Key Move</div>
+        <p>When the spectator is busy showing the cards to the audience, you lean forward on the table and "accidentally" knock the red-backed case to the floor. The left thumb catches it as you lean forward, a natural motion. You immediately stoop to pick up the deck and as you bend down the left hand picks up the case, but the right hand, containing his four cards, goes to the right foot. Here you quickly drop his four cards sideways into your turn-up and pull out the four aces from the shoe! You stand upright again, casually drop the four aces face down in a pile in front of the spectator and wait. 😏</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- (7) CARD IN BALLOON -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">🎈 Novel Adaption of the "Card in Balloon"</div>
+    <div class="trick-num">Stage Trick (7) — Corinda</div>
+  </div>
+  <div class="trick-card-body">
+    <div class="effect-method">
+      <div class="box box-purple">
+        <div class="box-label">✨ The Effect</div>
+        <p style="font-size: 14px;">An opening trick: the performer walks on holding an inflated balloon which is on a small stand. He points to one person in the audience and calls "Give me one number," then to another and another. "6-3-5: six hundred and thirty-five has been chosen. How strange." He pulls a pin from his lapel and bursts the balloon. Inside is seen a card standing at the top of the frame. The audience see a big query drawn on the card. He walks forward and invites somebody to take the card and turn it over. It reads "6-3-5." ✨</p>
+      </div>
+      <div class="box box-mint">
+        <div class="box-label">🔓 The Method</div>
+        <p style="font-size: 14px;">You require one of those self-working card-in-balloon appliances, and it must be the type that has a tray at the base designed to hold a pack of cards. You draw a big question mark on a plain white card, turn the card upside down and load it into the tray. You have a Swami Gimmick on the right thumb and hold the apparatus in the right hand. The construction of the apparatus is such that you have a ready-made platform to hold the card in a perfect writing position, and the hand is completely screened from view.</p>
+        <p style="font-size: 14px; margin-top: 8px;">Since the trick will take no more than fifteen seconds to perform from start to finish, it makes a good, quick opening number that goes off with a bang! 💥</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- (8) PSI FUNCTION -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">🧠 "Psi Function"</div>
+    <div class="trick-num">Stage Trick (8) — Corinda</div>
+  </div>
+  <div class="trick-card-body">
+    <div class="effect-method">
+      <div class="box box-blue">
+        <div class="box-label">✨ The Effect</div>
+        <p style="font-size: 14px;">A blackboard stands on an easel in the middle of the stage, facing away from the audience. A spectator comes on to the stage to assist. He is told to go to the blackboard and await your instructions. A member of the audience takes any card, looks at it, and tries to convey an impression of it to the man behind the board. When the board is turned round, the same card has been sketched by the other spectator! 🤯</p>
+      </div>
+      <div class="box box-coral">
+        <div class="box-label">🔓 The Method</div>
+        <p style="font-size: 14px;">We are going to use the easiest possible means, and if you don't like the method then don't do the trick; that's all there is to it. 😄</p>
+        <p style="font-size: 14px; margin-top: 8px;">On the board is written a message in chalk: "Be a sport. Draw a large picture of the Two of Diamonds and then rub this out when you have finished. Keep this secret please!" Hanging on the blackboard in readiness is a duster. You hand him the chalk in full view of the audience when you say "Go and stand behind the blackboard, I want you to do a simple drawing in a moment."</p>
+        <p style="font-size: 14px; margin-top: 8px;">Next you force the Two of Diamonds. You have a forcing pack: all Two of Diamonds. The Two of Diamonds is chosen as the card for this trick as a diamond is the easiest suit to draw, and the two can be drawn pretty quickly.</p>
+      </div>
+    </div>
+    <div class="pull-quote">"I am one of those quaint people that think the effect is twice as important as the means. Whether you like the means or not, you will agree that in this case the effect is sensational." ⭐</div>
+    <div class="box box-mint" style="margin-top: 8px;">
+      <p>If you feel so inclined, you could write the "be a sport" message on a ten shilling note which ends the message with "keep this for being a sport." You then place the spectator under a moral obligation to cooperate. In mentalism, honesty was never a good policy! 😈</p>
+    </div>
+  </div>
+</div>
+
+<hr class="fancy">
+
+<!-- ===== PART FOUR: DRAWING ROOM ===== -->
+<div class="part-header">
+  <div class="part-num">Part Four</div>
+  <div class="part-title">Predictions for the Drawing Room 🏠</div>
+</div>
+
+<div class="box box-paper">
+  <p>It would be an error to suppose that every prediction is suitable for presentation on the stage, and likewise suitable for the drawing room. The "Million to One" effect, for example, is strictly a stage trick. Performed in the drawing room where you can expect to be at close quarters with the audience, there is every chance that the trick would fail because they see the first pin.</p>
+  <p>When we consider tricks that are suitable for the drawing room, we find that the use of billets, playing cards and various indexes are more suited. The size of the apparatus becomes reasonably proportionate to the size of the gathering, a point which is clearly understood if you consider what it would look like if you tried an effect using pellets on the stage.</p>
+</div>
+
+<!-- (10) MIND OVER MATTER -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">🧠 "Mind Over Matter"</div>
+    <div class="trick-num">Drawing Room (10) — Corinda</div>
+  </div>
+  <div class="trick-card-body">
+    <div class="effect-method">
+      <div class="box box-teal">
+        <div class="box-label">✨ The Effect</div>
+        <p style="font-size: 14px;">A pack of cards is taken and shuffled, then dealt face down on the table into a big square: every card being separate. The mentalist writes a prediction on a small slip of paper which he rolls into a ball and hands to any spectator. The spectator is invited to place the pellet under any card he likes. This having been done, the card is turned over and the pellet read aloud by the spectator: it names correctly the chosen card; a prediction has been made! All the other cards are different and a complete pack is used. 🤯</p>
+      </div>
+      <div class="box box-purple">
+        <div class="box-label">🔓 The Method</div>
+        <p style="font-size: 14px;">You require a stacked deck (see Step Three) or a marked deck. You also require the Tremaine-Corinda Pellet Index as described in this book. Tell the audience you are going to make a prediction and write "3 of Hearts" on a slip. Roll up the paper and give it to the spectator telling him to place it under any card.</p>
+        <p style="font-size: 14px; margin-top: 8px;">If he puts it under the Three of Hearts, which could happen, you allow him to remove it for the climax, making the most of your good luck. If not, which is somewhat more likely, you take the correct pellet from the index, roll it and switch it as you reach forward to turn the card face up. It's a case of mind over matter: "You don't mind and I don't matter!" 😄</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- (11) MY WORD! -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">📚 "My Word!"</div>
+    <div class="trick-num">Drawing Room (11) — Corinda</div>
+  </div>
+  <div class="trick-card-body">
+    <div class="warn-box">💡 <strong>Note before reading:</strong> Before I describe the effect I would like to say that this is a creditable example of simplicity and boldness. You might think it too simple to work, but if you do as I have done and try it out, you will find that the obvious is not always apparent! You cannot judge any effect from paper. It must be performed before you can really tell whether or not it is any good. Tricks that look like miracles in print sometimes flop badly in practice. This is the reverse: it looks silly in print and works like a charm. 🪄</div>
+
+    <div class="effect-method">
+      <div class="box box-gold">
+        <div class="box-label">✨ The Effect</div>
+        <p style="font-size: 14px;">A spectator is given a sheet of paper which bears three words: "Page, Line and Position." He is asked to imagine that he has a book in his hands and that he opens it to a page, sees the number at the top, and fills it in. He then imagines that he counts down to any line, and counts along the line to any word.</p>
+        <p style="font-size: 14px; margin-top: 8px;">All this is done in imagination. Whilst this is going on, you hand a book to another spectator. The book is opened at the selected page number, the word at the given position is called out, and you turn round a large slate which has been on show all the time: on the back is seen written the chosen word! 🤯</p>
+      </div>
+      <div class="box box-mint">
+        <div class="box-label">🔓 The Method</div>
+        <p style="font-size: 14px;">Take a piece of paper and in ink write at the top "Page," below this write "Line," and below this write "Position." Now take a good thick book and open it anywhere in the middle. With a pencil and in different handwriting, fill in that page number on your form. Count down seven lines and put Line 7 on the form and finally count along three words and fill in a three alongside Position.</p>
+        <p style="font-size: 14px; margin-top: 8px;">Prepare a second form with the three headings written in ink, but leave it blank. Look to be quite sure what word is at the third position on the selected page and write that in bold letters on your slate.</p>
+        <p style="font-size: 14px; margin-top: 8px;">You have so much time to perform this essential move, that there is no call for complicated switching of papers: simply exchange them and put the other one in your pocket. Be sure that you hand a pencil to the spectator who decides upon the numbers. 😏</p>
+      </div>
+    </div>
+
+    <div class="box box-blue" style="margin-top: 12px;">
+      <div class="box-title"><span class="box-emoji">💎</span> A Bonus Tip</div>
+      <p>If you don't mind hard work, look carefully through many books and sooner or later you will find the same word in the same position in three different books. You may then give the second spectator a choice of any of three books, which adds to the effect. The occurrence of three words the same in identical positions is not as unlikely as it sounds. You can find "and, of, the," etc. in many books, but try and find something better than anything so commonplace as these words.</p>
+    </div>
+  </div>
+</div>
+
+<!-- (12) THE THIRD CHOICE -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">🂡 "The Third Choice"</div>
+    <div class="trick-num">Drawing Room (12) — Corinda</div>
+  </div>
+  <div class="trick-card-body">
+    <div class="warn-box">😄 <strong>A note on credit:</strong> Perhaps I should have called this trick "The Trick with a Thousand Inventors!" Because after I put it on the market about three years ago, along came countless people to tell me that they had invented it. I will therefore make a timid plea that this is my presentation of the trick which I was first to sell; and by the way, having sold a few hundred by demonstration, I can rightly suppose it fools some of the people some of the time. I like it; I hope you will also.</div>
+
+    <div class="effect-method">
+      <div class="box box-coral">
+        <div class="box-label">✨ The Effect</div>
+        <p style="font-size: 14px;">You lay five cards in a row face up. You look intently at the chap who stands in front of you and then write a prediction, fold it and give it to him. You next seal each card in an envelope and mix them. You then hand all the envelopes to the spectator and tell him to throw away four. The last one you open and show the card; he then reads the prediction which names that card. 😮</p>
+      </div>
+      <div class="box box-gold">
+        <div class="box-label">🔓 The Method</div>
+        <p style="font-size: 14px;">You require five Aces of Spades and four ordinary cards. Strip the four ordinary cards and four of the aces by soaking in warm water for twenty minutes and then peeling them in half. Next stick them together again with an ace facing one side and an ordinary card on the other side. You have made four double-faced cards and they will be the same thickness as an ordinary card. When they are dry, iron them to make them nice and flat and if needed, polish them.</p>
+        <p style="font-size: 14px; margin-top: 8px;">To perform: lay the genuine ace face up in the middle of the five cards. On either side put two of the double-face cards with the ace side downwards. As you reach the middle card (the real ace) you cough and whilst politely bringing the hand to the mouth, accidentally show the one and only back of the real ace! Don't say anything; it registers psychologically.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- (13) THE LOTTERY ROUTINE -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">🎟️ "The Lottery Routine"</div>
+    <div class="trick-num">Drawing Room (13) — Corinda</div>
+  </div>
+  <div class="trick-card-body">
+    <div class="box box-mint">
+      <p>This is an exceptionally good routine. It is extremely baffling, interesting to watch and adds to your popularity at the climax; there are few tricks which have so many virtues as this and I strongly recommend it for those interested in entertaining the audience. 🌟</p>
+    </div>
+
+    <div class="box box-gold" style="margin-top: 14px;">
+      <div class="box-label">✨ The Effect</div>
+      <p>Standing on a table is a glass with an envelope inside. This is on show all the time the routine takes place. You patter about raffles and lotteries suggesting that sometimes it is possible to know what will win before the draw. You have a book of 200 raffle tickets which you throw into the audience asking that two or three people will examine them to be sure that they are all numbered properly from one to two hundred.</p>
+      <p style="margin-top: 8px;">After a reasonable examination, you ask the person left with the book to tear out the tickets and drop them into a large goldfish bowl. To save time, they are not folded as is usual. A spectator takes the bowl to any three people in the audience; each one reaches in and without looking, removes a ticket. The number is read out and returned to the person who selected it. This is repeated three times.</p>
+      <p style="margin-top: 8px;">You then call for your own assistant to bring in a tray upon which stand three prizes. Since these are to be given away, they should be reasonably cheap and suitable for male or female. Chocolates and cigarettes are two good ones and I always use a cheap ball pen as the third.</p>
+      <p style="margin-top: 8px;">The envelope is opened; inside are three tickets of a different colour from those used by the audience. Each one corresponds to a ticket held by the three spectators. They are all winners! And as you hand the prizes to the spectator to give back to the winners, you also hand him a packet of cigarettes "for his valuable services." 🎉</p>
+    </div>
+
+    <div class="box box-teal" style="margin-top: 14px;">
+      <div class="box-label">⚙️ The Method</div>
+      <p>Standing outside the open door to the drawing room is your own assistant who has a tray containing the three prizes. She also has a book of raffle tickets numbered from 1 to 200. They are a different colour from the other book that you have. With this, she has Corinda's billet pencil (see earlier), and as soon as she hears the numbers called by the spectator, she removes their duplicates from her book and loads them into the pencil. She lays the pencil on the tray and when she comes in you call for the envelope and slit it open, shooting the three tickets inside.</p>
+      <div class="nested-box">
+        <p>You must give your assistant time to load the pencil, so that is the point when you really explain what is happening; timing is very important. This trick costs you two books of lottery tickets and four prizes, an outlay of about 7/- ($1.00), which, for what it costs, is a winner. You try it! 😄</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- (14) THE PROPHESY -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">🔮 "The Prophesy"</div>
+    <div class="trick-num">Drawing Room (14) — Corinda</div>
+  </div>
+  <div class="trick-card-body">
+    <div class="box box-purple">
+      <div class="box-label">✨ The Effect</div>
+      <p>A pack of cards is shuffled and handed to a spectator who is told to deal about twenty cards in a row on the table. The mentalist speaks about the art of fortune-telling and of seeing into the future as practised by Romany Gypsies. He asserts that a friend of his, a gypsy, wrote a prophecy naming something that would happen tonight.</p>
+      <p style="margin-top: 8px;">Her prophecy was written and sealed in an envelope, and that envelope is now produced and placed on the table. Following the instructions given by the gypsy, the performer stands back and invites the spectator to pick up any card and put it in his pocket without looking at it. When the envelope is opened, the prophecy reads: "This is the prophecy of Gypsy Nialo. The man of dark complexion will choose a card of fate. A red card with the number that governs destiny: a three. The suit will bring that man a money gain during the next three days. It is a Diamond. The card will be the Three of Diamonds." The spectator removes the card from his pocket: the Three of Diamonds. 🤯</p>
+    </div>
+
+    <div class="box box-gold" style="margin-top: 14px;">
+      <div class="box-label">🔓 The Method</div>
+      <p>To use a current colloquialism, this is a "diabolical liberty!" However, for all that it is quite a reasonable effect and the story adds to the presentation. Take twenty cards and arrange them in any order you like; simply A-2-3-4-5 etc. will do, or "Si Stebbins" order. Stack them on top of a deck. False-shuffle a bit, mixing the bottom cards but leaving the stack intact, and put the cards on the table. Tell the spectator to deal them face down in a row; see that they go in order from left to right and when twenty are down say "that will do, thank you."</p>
+      <div class="nested-box">
+        <div class="nested-label">🔑 The Key Insight</div>
+        <p>Now introduce the envelope which in actual fact contains a prediction written on the lines given, naming any one of the twenty cards. It does not matter which one! Having explained what is to happen, stand well back and turn round facing your back to the table. Tell the spectator to choose a card and put it in his pocket and not to look at it for the moment. When you turn round, say "Right, done that? Good, now push the other cards back on the pack please." As you point to the "other cards," look for the blank position which shows where his card was! By this you know which one he chose.</p>
+      </div>
+      <div class="nested-box" style="margin-top: 8px;">
+        <div class="nested-label">🎭 The Bold Move</div>
+        <p>Now for the prediction: suppose his card was the Nine of Spades and your prophecy covers the Three of Diamonds. Without batting an eyelid, you open the envelope and mis-read the name of the card, wording the prediction as you go with suitable spiel to cover his card! To do this with utter conviction, pretend you have a wee bit of trouble deciphering the writing at some point and for goodness sake look at the card when you are supposed to be reading it. After that, turn the card and wave it casually so that all may see it has something written on it, but no one will be able to see what! 😏</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- (15) THE INFORMATIVE JOKER -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">🃏 "The Informative Joker"</div>
+    <div class="trick-num">Drawing Room (15) — Corinda</div>
+  </div>
+  <div class="trick-card-body">
+    <div class="warn-box">📌 This is a quick card trick which ends on a lighthearted note. It is a novel idea for close-up card workers: not suitable for performance as an effect for large audiences.</div>
+    <div class="box box-teal">
+      <div class="box-label">✨ The Effect &amp; Method</div>
+      <p>You force the Three of Clubs and have it returned to the pack. I said this effect was for card workers, so you do not need me to tell you how to force a card! You now explain that the joker is the one card that sees all, hears all and tells everything! You take out the joker and pretend to listen to him. Suddenly your eyes light up: "He tells me you took the Three of Clubs." You look at the spectator and wave the joker at him: "Is that correct?" He will probably smile and say yes, and you then look very serious and say, "You don't believe it, I can tell that. But let me tell you that he told me and showed me. Look, he knew what card you would choose!" You drop the joker on the table and it is seen that in one hand he holds a card: it is the Three of Clubs! 😄</p>
+      <div class="nested-box">
+        <div class="nested-label">🖊️ Preparation</div>
+        <p>Some jokers are pictured as a clowned man standing with one arm in the air. Draw with ink a small card in this hand and let it resemble the Three of Clubs. When you wave the joker to show it during the routine, put your thumb over the drawing to conceal the card in his hand.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- (16) DOUBLE-IMPACT PREDICTION -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">💥 "Double-Impact Prediction"</div>
+    <div class="trick-num">Drawing Room (16) — Corinda</div>
+  </div>
+  <div class="trick-card-body">
+    <div class="box box-purple">
+      <div class="box-label">✨ The Effect</div>
+      <p style="font-style: italic; font-size: 15px;">"I want you to imagine that I have a pack of playing cards and that I am showing them to you now. (Make an imaginary fan and show.) You look along the cards and you see one that you fancy. What do you see? Good. Now would you count along from the start here (indicate an imaginary starting place) and tell me the position of your card? Fourteen? Thank you, and the card was the Eight of Spades, correct? That is a very odd thing, because here I have an envelope and on it, as you will see, is the number fourteen. Have a look and see what's inside." He takes out the Eight of Spades! 🤯</p>
+    </div>
+    <div class="box box-mint" style="margin-top: 12px;">
+      <div class="box-label">🔓 The Method</div>
+      <p>Please don't rush to tell me it's a good effect; I've been doing it for years and I know it's good! Use a pocket index and a Swami Gimmick; all this I have discussed before! 😄</p>
+    </div>
+  </div>
+</div>
+
+<!-- (17) THE MATCHBOX MYSTERY -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">🔥 "The Matchbox Mystery"</div>
+    <div class="trick-num">Drawing Room (17) — Corinda</div>
+  </div>
+  <div class="trick-card-body">
+    <div class="effect-method">
+      <div class="box box-gold">
+        <div class="box-label">✨ The Effect</div>
+        <p style="font-size: 14px;">The performer writes a prediction on a small slip of paper which he folds and drops into an empty cup. He then throws a box of matches on to the table and invites anybody to remove as many as they like. This done, the remainder are counted and then the prediction is read. It tells the exact number of matches that will be left in the box, and is correct. 🤯</p>
+      </div>
+      <div class="box box-teal">
+        <div class="box-label">🔓 The Method</div>
+        <p style="font-size: 14px;">Write a prediction, fold it twice and appear to drop it into a cup. In actual fact you palm it out, leaving the cup empty. Have a box of matches with no more than 52 matches in it and drop it on the table. When the total of the matches left is declared, reach into a billet index where you have in readiness 52 predictions and palm out the appropriate one. Pick up the cup and drop the billet in as you do so, passing the cup to a spectator to read the billet inside.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- (18) MYSTERY OF THE CHEST -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">🗝️ "The Mystery of the Chest"</div>
+    <div class="trick-num">Drawing Room (18) — Corinda</div>
+  </div>
+  <div class="trick-card-body">
+    <div class="box box-coral">
+      <div class="box-title"><span class="box-emoji">🏆</span> A Special Routine</div>
+      <p>This is one of those rare effects where most of the work is done by the assistants and practically none by the performer. In this case, our performer stands well to one side and calls out his instructions to the committee.</p>
+    </div>
+
+    <div class="box box-gold" style="margin-top: 14px;">
+      <div class="box-label">✨ The Effect</div>
+      <p>On a table stands a nicely decorated chest and beside it stands a drinking glass. To the left are seven keys and seven numbered tags. A committee of seven people come on to the stage or to one end of the room. The mentalist explains that the box is a chest containing something which will surprise everybody; you do not say what it is. On the table are seven keys and only one of them will open the chest, which at the moment is locked.</p>
+      <p style="margin-top: 8px;">Each member of the committee goes to the table, selects any number tag they like (running from 1 to 7) and pins it on their lapel; then chooses any key, tests it in the chest, and drops it into the glass whether it fits or not. This is done until all seven keys are in the glass. They are then shaken up and each person removes one.</p>
+      <p style="margin-top: 8px;">One at a time they come to the table and see if their key fits; since all the keys look alike, there is no way of telling until they are tested in the lock. No matter who has the key that fits, every key is tried to prove that six do not unlock the chest. The assistant who takes the right key stands aside. Now you approach the box for the first time, ask that it be unlocked, remove an envelope from inside and ask the assistant to read the card aloud: "It is my prediction that whoever chooses to call himself number three will also choose the only key to open this chest. Corinda." Everybody can see that the assistant standing beside you wears a tag No. 3, and you have not influenced their choice in any way. 🤯</p>
+    </div>
+
+    <div class="box box-mint" style="margin-top: 14px;">
+      <div class="box-label">🔓 The Method</div>
+      <p>In the chest is an envelope. It is a window envelope as described in Step One and it is prepared with a pre-worded prediction. The trick is painfully simple: when you see who gets the key that opens the lock, you look at his number. When you take the envelope out of the chest, with a Swami Gimmick, fill in his number so that the full prediction reads accordingly!</p>
+      <p style="margin-top: 8px;">To do this, even though you are not proficient with a Swami Gimmick, is child's play. You must be able to write any one of the numbers from one to seven. Is that hard? 😄</p>
+      <div class="nested-box">
+        <p>In view of the method you will understand that the chest is unfaked, the lock ordinary, the keys ordinary, there is no force of the number tags and it does not matter who takes part. If anyone criticises this, I will send them a pint of my blood! 😂</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- (19) X MARKS THE SPOT -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">✖️ "X Marks the Spot"</div>
+    <div class="trick-num">Drawing Room (19)</div>
+  </div>
+  <div class="trick-card-body">
+    <div class="effect-method">
+      <div class="box box-blue">
+        <div class="box-label">✨ The Effect</div>
+        <p style="font-size: 14px;">The mentalist writes a prediction naming a card. He folds it and gives it to the spectator, telling him to drop it in his pocket. A pack of cards is taken and shuffled. The spectator is told to hold the cards behind his back and to mark any one on the face with a cross. When the cards are examined and the marked one is found, the prediction is opened by the spectator and read: it names what card has been chosen. 🤯</p>
+      </div>
+      <div class="box box-coral">
+        <div class="box-label">🔓 The Method</div>
+        <p style="font-size: 14px;">This is an adaption of a trick given in Thurston's Book of Magic and there are many uses for the principle. The secret is very simple: it is the pencil. Although it looks absolutely normal, it will not write. It is just a dowel rod painted up to look like a pencil, or a real pencil with a gimmicked tip.</p>
+        <p style="font-size: 14px; margin-top: 8px;">On the sly, you mark one card on the face with a cross. That card you predict. You mix the cards and give them to the spectator with suitable instructions so that he will apparently draw on the face of a card. Give him the fake pencil and be sure to recover it afterwards. As an added touch, you could switch the fake pencil for a real one, just in case! 😏</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- (20) NICELY SUITED -->
+<div class="trick-card">
+  <div class="trick-card-header">
+    <div class="trick-title">♠️ "Nicely Suited"</div>
+    <div class="trick-num">Drawing Room (20)</div>
+  </div>
+  <div class="trick-card-body">
+    <div class="box box-gold">
+      <div class="box-label">✨ The Effect</div>
+      <p>The performer shuffles a pack of cards and places them on the table. He declares that he knows what card is most likely to be chosen before it is chosen! This he proves to be true; a card is chosen and in a striking manner it is revealed.</p>
+    </div>
+
+    <div class="box box-purple" style="margin-top: 14px;">
+      <div class="box-label">🔓 The Method</div>
+      <p>I have found this of great use to me with card effects. It is a definite improvement on the old verbal force which was used to make the spectator take any card you wanted him to take. Prepare by putting the Three of Clubs on top of the pack; the Three of Hearts you reverse in the middle; the Three of Spades goes to the bottom of the deck; and the Three of Diamonds you put into your pocket. By this arrangement you will observe that whatever suit is chosen, you have what is called a "get-out," or a suitable card.</p>
+
+      <div class="nested-box">
+        <div class="nested-label">🃏 The Verbal Force</div>
+        <p>The deck is placed on the table in this condition and you must now force (verbally) the number three. To do this quickly, suggest court cards are ignored; deal first with "odds or evens," force the odds and eliminate to the three. At this point you stop to explain that there may be some doubt as to the method of selection, so you will give the spectator a chance to call out any suit he likes and whatever suit is called will be accepted.</p>
+      </div>
+      <div class="nested-box" style="margin-top: 8px;">
+        <div class="nested-label">🎯 The Four Suit Reveals</div>
+        <ul class="num-list" style="margin-top: 4px;">
+          <li><div class="n" style="background: var(--teal); min-width:22px; height:22px;">♥</div><span style="font-size: 14px;">Hearts: Spread the deck face down and show that the only card reversed is the Three of Hearts.</span></li>
+          <li><div class="n" style="background: var(--teal); min-width:22px; height:22px;">♣</div><span style="font-size: 14px;">Clubs: Simply turn over the top card.</span></li>
+          <li><div class="n" style="background: var(--teal); min-width:22px; height:22px;">♠</div><span style="font-size: 14px;">Spades: Pick up the deck and show the bottom card.</span></li>
+          <li><div class="n" style="background: var(--teal); min-width:22px; height:22px;">♦</div><span style="font-size: 14px;">Diamonds: Have the spectator reach into your pocket and remove one card: his card! 🤯</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pull-quote">"Sometimes the little things make a lot of difference, and somebody once said 'Long live the little difference.'" ✨</div>
+  </div>
+</div>
+
+<!-- FINAL SUMMARY CARDS -->
+<hr class="fancy">
+<div class="summary-grid">
+  <div class="summary-card box-gold" style="border-color: var(--gold-mid);">
+    <div class="sc-emoji">🔮</div>
+    <div class="sc-title">Always Work the Future</div>
+    <div class="sc-desc">Past and present are guessable. The future is impossible. That's your power.</div>
+  </div>
+  <div class="summary-card box-teal" style="border-color: var(--teal-mid);">
+    <div class="sc-emoji">🎯</div>
+    <div class="sc-title">One Force, Perfected</div>
+    <div class="sc-desc">Learn one method. Master it completely. Repeat it until it's art.</div>
+  </div>
+  <div class="summary-card box-purple" style="border-color: var(--purple-mid);">
+    <div class="sc-emoji">⏱️</div>
+    <div class="sc-title">Timing Is Everything</div>
+    <div class="sc-desc">End when interest is at its peak, not when the mechanics are done.</div>
+  </div>
+  <div class="summary-card box-coral" style="border-color: var(--coral-mid);">
+    <div class="sc-emoji">🚫</div>
+    <div class="sc-title">Never Re-Cap</div>
+    <div class="sc-desc">If the audience didn't follow, reconstruct the trick. Don't explain it twice.</div>
+  </div>
+</div>
+
+<div class="footnote" style="text-align: center; margin-top: 40px; padding-top: 20px;">
+  <em>Step Four in Corinda's "Thirteen Steps to Mentalism" series ✦ Page 85</em>
+</div>
+
+</div>
+</body>
+</html>

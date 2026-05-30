@@ -1,0 +1,508 @@
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: transparent; }
+  .page { max-width: 680px; padding: 2rem 0; font-family: var(--font-sans); color: var(--color-text-primary); line-height: 1.7; font-size: 16px; }
+  .cover { margin-bottom: 3rem; }
+  .cover-tag { font-size: 12px; font-weight: 500; letter-spacing: 0.08em; color: var(--color-text-secondary); text-transform: uppercase; margin-bottom: 0.5rem; }
+  .cover-title { font-size: 32px; font-weight: 500; line-height: 1.2; margin-bottom: 0.75rem; }
+  .cover-sub { font-size: 16px; color: var(--color-text-secondary); margin-bottom: 1.5rem; }
+  .cover-divider { height: 0.5px; background: var(--color-border-tertiary); margin-bottom: 1.5rem; }
+  .toc-item { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 0.5px solid var(--color-border-tertiary); font-size: 15px; cursor: default; }
+  .toc-num { font-size: 12px; color: var(--color-text-secondary); min-width: 24px; }
+  h1 { font-size: 22px; font-weight: 500; margin: 2.5rem 0 0.5rem; }
+  h2 { font-size: 18px; font-weight: 500; margin: 2rem 0 0.5rem; }
+  h3 { font-size: 16px; font-weight: 500; margin: 1.5rem 0 0.4rem; }
+  p { margin-bottom: 1rem; }
+  .callout { background: var(--color-background-secondary); border-left: 3px solid var(--color-border-primary); border-radius: 0; padding: 0.85rem 1rem; margin: 1.25rem 0; font-size: 15px; }
+  .tag { display: inline-block; font-size: 12px; font-weight: 500; padding: 3px 10px; border-radius: var(--border-radius-md); background: var(--color-background-secondary); color: var(--color-text-secondary); border: 0.5px solid var(--color-border-tertiary); margin-bottom: 0.5rem; }
+  .tag-blue { background: #E6F1FB; color: #0C447C; border-color: #B5D4F4; }
+  .tag-teal { background: #E1F5EE; color: #085041; border-color: #9FE1CB; }
+  .tag-amber { background: #FAEEDA; color: #633806; border-color: #FAC775; }
+  .tag-coral { background: #FAECE7; color: #712B13; border-color: #F5C4B3; }
+  .tag-purple { background: #EEEDFE; color: #3C3489; border-color: #CECBF6; }
+  .writer-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; margin-bottom: 1rem; }
+  .writer-card-head { display: flex; align-items: center; gap: 10px; margin-bottom: 0.75rem; }
+  .writer-letter { width: 36px; height: 36px; border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 500; flex-shrink: 0; }
+  .writer-title { font-size: 15px; font-weight: 500; }
+  .writer-subtitle { font-size: 13px; color: var(--color-text-secondary); }
+  .checklist { list-style: none; padding: 0; margin: 0.5rem 0 1.25rem; }
+  .checklist li { display: flex; align-items: flex-start; gap: 8px; padding: 5px 0; font-size: 15px; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .checklist li:last-child { border-bottom: none; }
+  .check-icon { color: #1D9E75; margin-top: 3px; font-size: 15px; flex-shrink: 0; }
+  .warn-icon { color: #BA7517; margin-top: 3px; font-size: 15px; flex-shrink: 0; }
+  .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-text-secondary); margin: 2.5rem 0 0.75rem; }
+  .numbered-step { display: flex; gap: 12px; margin-bottom: 1.25rem; align-items: flex-start; }
+  .step-num { width: 26px; height: 26px; border-radius: 50%; background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 500; flex-shrink: 0; margin-top: 2px; }
+  .step-body { flex: 1; }
+  .step-title { font-size: 15px; font-weight: 500; margin-bottom: 0.3rem; }
+  .step-desc { font-size: 15px; color: var(--color-text-secondary); }
+  .trick-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; margin-bottom: 0.75rem; }
+  .trick-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem; }
+  .trick-num { font-size: 12px; color: var(--color-text-secondary); }
+  .trick-title { font-size: 15px; font-weight: 500; }
+  .trick-desc { font-size: 14px; color: var(--color-text-secondary); line-height: 1.6; }
+  .quote-block { border-left: 3px solid var(--color-border-primary); padding: 0.75rem 1rem; margin: 1.5rem 0; font-size: 15px; color: var(--color-text-secondary); font-style: italic; }
+  .divider { height: 0.5px; background: var(--color-border-tertiary); margin: 2rem 0; }
+  .two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin: 1rem 0; }
+  .info-card { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 0.85rem 1rem; font-size: 14px; }
+  .info-card-label { font-size: 12px; color: var(--color-text-secondary); margin-bottom: 4px; }
+  .masters-entry { display: flex; gap: 12px; padding: 12px 0; border-bottom: 0.5px solid var(--color-border-tertiary); align-items: flex-start; }
+  .masters-avatar { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 500; flex-shrink: 0; }
+  .masters-name { font-size: 15px; font-weight: 500; margin-bottom: 2px; }
+  .masters-desc { font-size: 14px; color: var(--color-text-secondary); }
+  @media (prefers-color-scheme: dark) {
+    .tag-blue { background: #0C447C; color: #B5D4F4; border-color: #185FA5; }
+    .tag-teal { background: #085041; color: #9FE1CB; border-color: #0F6E56; }
+    .tag-amber { background: #633806; color: #FAC775; border-color: #854F0B; }
+    .tag-coral { background: #712B13; color: #F5C4B3; border-color: #993C1D; }
+    .tag-purple { background: #3C3489; color: #CECBF6; border-color: #534AB7; }
+  }
+</style>
+
+<div class="page">
+
+  <div class="cover">
+    <div class="cover-tag">Tony Corinda</div>
+    <div class="cover-title">🃏 The complete swami gimmick guide</div>
+    <div class="cover-sub">Everything a mentalist needs to know: types, technique, effects, and the masters who perfected them.</div>
+    <div class="cover-divider"></div>
+    <div class="toc-item"><span class="toc-num">01</span> 🔩 Different types of writers</div>
+    <div class="toc-item"><span class="toc-num">02</span> 🧠 How to use your swami gimmick</div>
+    <div class="toc-item"><span class="toc-num">03</span> ⚙️ Special techniques</div>
+    <div class="toc-item"><span class="toc-num">04</span> 🎩 Modesty and mentalism mixed</div>
+    <div class="toc-item"><span class="toc-num">05</span> 🎭 Tricks with a swami gimmick</div>
+  </div>
+
+  <div class="section-label">Section one</div>
+  <h1>🔩 Different types of writers</h1>
+  <p>When contemplating the use of a swami gimmick, the first essential is to discover the type of writer that suits you best. You should examine each variety and test it for your own requirements; assess the value of any particular model according to the ease with which you can use it. That is the governing factor. Then concern yourself with the other important considerations:</p>
+
+  <ul class="checklist">
+    <li><span class="check-icon">◦</span> Does it fit comfortably?</li>
+    <li><span class="check-icon">◦</span> Does it write legibly?</li>
+    <li><span class="check-icon">◦</span> Can you get it on and off inconspicuously?</li>
+    <li><span class="check-icon">◦</span> Is it firmly held when on the nail or in position?</li>
+    <li><span class="check-icon">◦</span> Can the lead be replaced?</li>
+    <li><span class="check-icon">◦</span> Will the lead break in use?</li>
+  </ul>
+
+  <p>The only really satisfactory way to find out is to try each model, and for what it costs to buy one of each type at the start, it is nothing compared with the value of what you get for your pains. The following list gives examples of all the major types of writers; any that have been omitted are regarded as "special" models that have been the particular fancy of a single performer and not accepted as a standard item.</p>
+
+  <div class="section-label">The six types</div>
+
+  <div class="writer-card">
+    <div class="writer-card-head">
+      <div class="writer-letter" style="background:#EEEDFE;color:#3C3489;">A</div>
+      <div>
+        <div class="writer-title">The swami gimmick 🪄</div>
+        <div class="writer-subtitle">The original, early-model writer</div>
+      </div>
+    </div>
+    <span class="tag tag-purple">Classic</span>
+    <p style="font-size:15px;">Described as "The Swami Gimmick." This variety has been appended the title "The" as it is one of the very early models which was used extensively by "Swami's" and Mediums. In general, Mediums made use of writers far more than magicians; it was quite a common thing for a writer to be the only apparatus used to earn a substantial income as a medium. Slade, the famous fraudulent medium, worked a great deal with "spirit writing" produced by trick methods with chalk, and by billet switching and use of a writer. Some examples of his technique were, in our opinion, classics of mentalism.</p>
+    <p style="font-size:15px;">The Swami Gimmick is the smallest type of lead holder you can get. It can be used on the thumbnail or first finger, but usually the first. It is a very small square shaped metal holder which has the lead held in a metal tube mounted on the holder or clamp. It has a leading and important advantage over all other types: its size. Being the smallest, it is the type which is least visible, but unfortunately it also has a strong disadvantage; due to its compactness, it is easily pulled off the thumbnail and may fall off accidentally. Moreover, the absence of "wings" (see later types) make it unsteady when writing. Provided that you have a fairly long nail upon which it may be fixed firmly, this type will be found practical. The leads can be replaced when used.</p>
+  </div>
+
+  <div class="writer-card">
+    <div class="writer-card-head">
+      <div class="writer-letter" style="background:#E1F5EE;color:#085041;">B</div>
+      <div>
+        <div class="writer-title">"C" type / the undernail writer 🔧</div>
+        <div class="writer-subtitle">The most widely used variety</div>
+      </div>
+    </div>
+    <span class="tag tag-teal">Most popular</span>
+    <p style="font-size:15px;">Described as "C" type. Otherwise, and more commonly called "the undernail writer." This title is not strictly correct as it is, if you consider, misleading. The lead fits on the holder which jams on the thumb. Part of the holder goes under the finger nail but the lead stays on top. Hence the term given should only be applied to the variety of writers that project the lead actually under the nail, such as do exist. We would prefer to call it "C" type because it is shaped like the letter "C." Or, as you might say in modern times, this is the "Delta Wing Swami Gimmick." It appears very much like a delta wing aircraft, though not as large!</p>
+    <p style="font-size:15px;">The "C" type is probably the most used variety. It features reliability when working, fits comfortably and rigidly by virtue of its two wings which project outwards from the main holder, and, running under the thumbnail, lock the gimmick firmly on. The addition of wings has to a large extent improved the old type of gimmick. They spread the strain over a wider "gripping area" of thumbnail and in consequence, cut out practically all unwanted movement of the gimmick when in use. Most "C" types are designed to take new leads for refilling but not all. The best are made of a fairly pliable metal which allows you to bend the gimmick to fit your thumbnail with exactness. They should be flesh coloured or made of dull metal, not because they are liable to be seen by the audience, but because they will make you feel happier.</p>
+    <p style="font-size:15px;">The "C" type is made in several sizes allowing for both short and wide nails. It also comes in two types of lead (disregarding colour): the ordinary medium-soft lead and then a rather extra-special class with thick heavy black lead which has, as an additional improvement, a machined tip carefully rounded to give thick letters or numbers in use. The difficulty with this type is making new leads.</p>
+  </div>
+
+  <div class="writer-card">
+    <div class="writer-card-head">
+      <div class="writer-letter" style="background:#FAEEDA;color:#633806;">C</div>
+      <div>
+        <div class="writer-title">The band writer 🩹</div>
+        <div class="writer-subtitle">No nail required</div>
+      </div>
+    </div>
+    <span class="tag tag-amber">Short-nail friendly</span>
+    <p style="font-size:15px;">Described as The Band Writer. In reply to the question "Do you use a Swami Gimmick?" I have frequently received the answer, "I can't, my nails are too short." It is somewhat surprising how many magicians and mentalists are unaware that several writers exist that do not fit on the nail at all. The Band Writer is an example. This is a pliable metal clip or band that fits on the ball of the thumb or any finger. The band is designed to hold a small tube into which fits the lead. This type suffers from lead breakage in use if you do not take care; it would not be dangerous if you were proficient. The size is much larger than models already mentioned, but being flesh-coloured as it must be, it is no more visible than a common thumbtip.</p>
+    <div class="callout">💡 Best for fixing on a toe to write on a card in your shoe; funny as it may seem, this is quite easy and very practical. Band Writers rarely have facility for replacement of the lead. Be warned: never use a band writer that has the lead simply stuck to the clip. Examine it and be sure it is mounted in a tube which goes through the clip, holding it firmly in position.</div>
+  </div>
+
+  <div class="writer-card">
+    <div class="writer-card-head">
+      <div class="writer-letter" style="background:#E6F1FB;color:#0C447C;">D</div>
+      <div>
+        <div class="writer-title">The overnail writer 🔒</div>
+        <div class="writer-subtitle">Firm, three-winged thumbnail lock</div>
+      </div>
+    </div>
+    <span class="tag tag-blue">Very secure</span>
+    <p style="font-size:15px;">Described as the Overnail Writer. This model is not widely known but has been in existence for about twenty years. It really is a "C" type plus a clamp which gives just a bit more lock to the nail. It fits only the thumbnail and is very firm in use as it features three wings as supports. Two go under the nail and one comes out over the top of the nail. It has a slight drawback in that it cannot be quickly got into position or removed without considerable force. The leads can usually be replaced when exhausted.</p>
+  </div>
+
+  <div class="writer-card">
+    <div class="writer-card-head">
+      <div class="writer-letter" style="background:#FAECE7;color:#712B13;">E</div>
+      <div>
+        <div class="writer-title">Adhesive writer — "Boon" 🔴</div>
+        <div class="writer-subtitle">Invented by Eric Mason</div>
+      </div>
+    </div>
+    <span class="tag tag-coral">Innovative</span>
+    <p style="font-size:15px;">Described as an "Adhesive writer." This variety, invented by my good friend Eric Mason and sold under the name of "BOON," is a later innovation in the family of Swami Gimmicks. It is a small circular disc which has the lead mounted in the centre. The disc is prepared with an everlasting adhesive which sticks to the thumb or finger. The principle of sticking lead to the finger has been used before, but at no time has a suitable holder been available until the researches of Mr. Mason.</p>
+    <p style="font-size:15px;">The Boon is practical both in size and working. It stays put when stuck on by virtue of continued pressure caused by writing or pressing the lead against paper. It does in fact become more firmly fixed as you progress. It is very easy to remove and there is no restriction as to the place of fixture. Generally speaking it is used on the tip of the ball of the thumb and preparation for getting it on simply involves a quick lick of that part of your anatomy. It is not messy as those unacquainted might suppose. For general use there is no need for this type to be flesh coloured and although the leads can be replaced, its cheapness makes it an unnecessary task.</p>
+  </div>
+
+  <div class="writer-card">
+    <div class="writer-card-head">
+      <div class="writer-letter" style="background:#F1EFE8;color:#444441;">F</div>
+      <div>
+        <div class="writer-title">The thumbtip nailwriter 👍</div>
+        <div class="writer-subtitle">Novelty more than standard tool</div>
+      </div>
+    </div>
+    <p style="font-size:15px;">Described as The Thumbtip Nailwriter. As a magician you will be familiar with a thumbtip and probably with its use as a nailwriter. It is in fact an ordinary thumbtip with a lead mounted in the end for writing. It is obvious that a good fitting tip gives complete control over the lead and the only drawbacks of this method are: you do not have the same essential mobility as with others and you lose the "feel" gained when writing almost directly with the thumb, as with most other types. It is however a simple matter to get it on and off quickly. In truth, the Thumbtip Nailwriter is regarded more as a novelty than as a widely used Swami-type gimmick, although mention of this style is made in Annemann's Practical Mental Effects.</p>
+  </div>
+
+  <div class="section-label">Critical checks for all types</div>
+  <div class="callout">
+    <strong>Points to consider with all types:</strong><br><br>
+    (1) Make a very careful examination of the construction of any swami you intend to use. Be quite sure that when a tube is used to hold the lead, it is very firmly affixed to the clip part.<br><br>
+    (2) Be quite certain that the lead is not so long that it could easily break under pressure and see that it is well fixed in the tube. If need be, stick it into the tube with a good strong glue.<br><br>
+    (3) See that your lead cannot be pushed right through the tube. If you press as though writing and it simply pushes the lead back into the tube, it is useless. You must stick the lead in and seal the end of the tube with strong glue.
+  </div>
+
+  <div class="divider"></div>
+  <div class="section-label">Section two</div>
+  <h1>🧠 How to use your swami gimmick</h1>
+  <p>As soon as you have inspected the family of Swami Gimmicks and found the type that you think will suit you, the work begins. Long before you go rushing off to show your friends a new field of miracles, you should get well acquainted with the tools of the trade. Start off by forgetting all about effects and concerning yourself with the really important things.</p>
+
+  <h2>a) Getting the gimmick into position for use 🎯</h2>
+  <p>If you can't get it on, you can't use it! First deal with your "hiding place," the spot where the gimmick is kept ready for use. If you intend to use it for an opening effect, the best thing is to put it on the nail or in position just before you are due to perform. This way means you know it's on just right. If this cannot be done, you must steal it, magically speaking, just before you want to use it; although in many cases you can wear it throughout your act.</p>
+  <p>It does not matter where you hide the gimmick as long as you can get at it without attracting attention and as long as it cannot get lost. It may be as well to mention here that a spare gimmick on your person gives you considerable confidence and accidents can always happen. I have always carried two and have not yet had cause to resort to the emergency one, but one day I shall be very grateful. (That's a prediction! 🔮)</p>
+
+  <div class="callout">💼 The magical fraternity, being blessed with magical dealers having nothing but the desire to further your success, has at its disposal what are known as "Holdouts." A Swami holdout is anything that inconspicuously hides the gimmick and yet delivers it to you when required. Usually a pencil is used. The gimmick fits into a slit designed to hold it conveniently for getting on. Two holdouts designed especially for Boon are presented by Mr. Mason: the first is a small pad which you hold when writing your predictions, and the second is a magnetic holdout built into a pencil.</div>
+
+  <p>Other holdouts have been fashioned with finger rings, pens (where a special writer that writes in ink is used), a rubber, and so forth. These appliances are by no means essential but most have one useful feature: they enable you to see yourself fitting the gimmick on, whereas putting it on in the pocket means you work by feel alone. Outside of holdouts, you can't go far wrong with having it in a pocket. A waistcoat pocket is quite good because it looks very natural when you stick both thumbs in the pockets — one in each, of course.</p>
+  <p>I use my trouser pocket and have nothing else therein. Fancy places have been suggested which no doubt appeal to the mind as clever, but are, more often than not, impractical. The lapel sounds clever because who would think you had a Swami Gimmick hidden behind your lapel? And who the devil knows you have one anyway? Don't try and fool yourself. In the long run, simplicity pays where complication fails.</p>
+  <p>If you cannot use your pockets and it is not always convenient, put it on a chair or table and pick it up when you want it. A final suggestion that I have considered but not tried over any period, but think it suitable: have the gimmick on the wrist watch strap, then you may acquire it whilst looking at the time or winding the watch a bit. It is perfectly natural, which is what it should be.</p>
+
+  <div class="callout">⚠️ All this is recorded although it may well be taken for granted that you get the gimmick on secretly. However, I have seen many performers look as though they were having a manicure during the process of getting it off and on. You are excused a glimpse whilst getting it on, just to check all is in order, but getting it off is different. You are fully aware of the location of your thumb and must therefore know the position of the gimmick without looking, and so you take it off, if you must take it off, without looking.</div>
+
+  <p>Annemann had a suggestion for this and I have another. He used to run his hands through his hair and leave it there, and occasionally I have left it in my mouth and removed it with the teeth under cover of the natural position of thumb nail just inside mouth, fist clenched, as do so many people when adopting a "let me think" air. You cough it into your hand later. They are indigestible and should not be swallowed.</p>
+
+  <h2>b) How to handle the gimmick when it is on 🤫</h2>
+  <p>The most impressive demonstration of handling a swami when it's on can be given if you forget all about it until it is actually used. Weigh the odds in your favour:</p>
+  <ul class="checklist">
+    <li><span class="check-icon">①</span> No one but you is aware that you have something stuck on your thumb.</li>
+    <li><span class="check-icon">②</span> It is very small or flesh coloured and is barely visible.</li>
+    <li><span class="check-icon">③</span> The audience do not know what you are going to do, until you have done it, with very few exceptions.</li>
+    <li><span class="check-icon">④</span> You are performing and distracting attention from the hands.</li>
+  </ul>
+  <p>Once you have acquired the art of ignoring the gimmick when you have it on, you may attend to the finer points of handling. We will suppose for the moment that you must write a number on a card. In order to achieve this simple feat, you must have everything just so. The card should be of the right thickness — that is very important. Then it must be of a certain size, which also matters considerably; on top of this, the card must be held in the correct position during the writing process and, last but not least, at no time must the audience suspect you have written right under their noses. All points may be regarded as details, but I would prefer to consider each one a major operation if one chooses to progress to perfection.</p>
+
+  <h2>c) What to write on: the right type of card 📋</h2>
+  <p>With a Swami Gimmick and a lot of trouble and risk, you can write on practically anything. With very little trouble you can do it right and take no risks. The very best thing to use is an ordinary white visiting card of fairly thick texture, about double the thickness of common cartridge paper.</p>
+
+  <div class="two-col">
+    <div class="info-card"><div class="info-card-label">Recommended size</div>3½ × 2½ inches; not smaller.</div>
+    <div class="info-card"><div class="info-card-label">Why thickness matters</div>Rigid surface when writing; paper on a rest is not as good.</div>
+    <div class="info-card"><div class="info-card-label">Best source</div>Any good stationer: 2/- per hundred, ready cut, unprinted visiting cards.</div>
+    <div class="info-card"><div class="info-card-label">Pro tip</div>Have a few cards blank on both sides, as sometimes you require two free sides.</div>
+  </div>
+
+  <p>The size recommended is such that it nicely covers the thumb or finger during the writing process and at the same time is very easy to hold in the hand in the correct position. You must take it that exceptions will occur. Should you be using one of the special gimmicks known as a "Stylus Writer," which is used to impress writing via a carbon sheet sealed in an envelope, naturally you must write on the envelope, and the card by virtue of its thickness would be most unsuitable. However, with or without exceptions, it is a wise policy to adopt one technique and stick to it. I recommend a thick white card of the size given and advise you to use the same thing all the time.</p>
+  <p>There is nothing strategically wrong in the use of visiting cards printed on one side with your name and address, a constant reminder to the audience and a good advertisement for you.</p>
+
+  <h2>d) How to hold the card before, during and after writing ✋</h2>
+  <p>We will start with a conclusion! The best way to hold the card is naturally. Idiotically simple as that may sound, it is quite a difficult thing to do unless you train yourself. A fault generally develops because you cannot forget that in a moment you must have the card in a certain position and then write on it. This you must do to be natural: you must forget and regard the card with the same indifference that you hold for the swami, until the vital second when it is in use. The easiest approach to this is to practise mirror-wise without the gimmick on; just practise holding, waving, passing from hand to hand, and see what looks natural and what looks unnatural.</p>
+
+  <div class="callout">🎭 I prefer to operate this way and give you the effect to show the construction of the plot step by step. An opening effect of mentalism: I stand central facing the audience and point directly with the right hand (which has a swami on the thumb) at a person who is seated over to my right. The card I hold is held between the thumb and finger tips of the left hand, held in view without waving it like a Union Jack on Coronation Day. I point to a person and say dramatically, "You sir! Would you please stand for just a brief moment — thank you." (He stands.) "Sir, will you please point to any member of the audience anywhere you like." As the last few words are said, the card is transferred without looking to the right hand to allow the left to wave at the left side of the audience. "Thank you sir! Madam, the gentleman has pointed to you. He could have chosen anyone here tonight, but for some unknown reason he has asked you to take part, and all I ask you to do is to call out loud, very loud and clear please, the very first number that comes into your head — now!"</div>
+
+  <p>As the last few lines are spoken, the card in the right hand is manoeuvred into the "writing position." The lady calls out her number and immediately you call back, "Will you repeat that a little louder please?" And the time it takes you to say those words is the time it takes you to write her number on your card. Then instantly spin it out into the audience at the lady and, "Catch! Take this card please. Read out loud everything that is written on it, thank you!"</p>
+  <p>It reads: "I Corinda predict that the first number you will think of will be 732 and that you will not change your mind." (You had better use your own name!) It remains only to mention that during the writing, the card completely screens the thumb from all angles, which is achieved by holding it almost against the chest when writing. You should note that the "writing position" is such that most of the card is in view of the audience and it is not obscured in the hand like a palmed playing card. It is held in the writing position for the least possible time. Immediately the work is done, the arm shoots out to full length. The card comes to the absolute fingertips; it is not even given a glance.</p>
+  <p>If the person to whom the card must be given is near to you, within reach, it is a good thing to hand it to them. You do this with your right hand and to hide the Swami Gimmick, hold the card between the thumb and second finger and cover the gimmick with the tip of the first. Alternatively, you may clip the card between the first and second fingers whilst they are outstretched, and hide the thumb nail under the other fingers which are bent, exactly as is required for the two-fingered Clubs salute (Boy Scouts). Unless it is quite unavoidable, do not change the card from one hand just to give it away.</p>
+
+  <h2>e) The technique of writing ✍️</h2>
+  <p>According to what you must write, the technique will vary. Fundamentally it amounts to the same principle each time: gaining time to write inconspicuously or without the audience knowing. In nine cases out of ten you will be able to resort to verbal misdirection by asking a question or giving an instruction: "Will you repeat that out loud please?" Or an old dodge is to repeat the number given, incorrectly. They might call "sixty four," whereupon you call back "did you say sixty-five?" and whilst doing so write sixty four. This is best used only when the number given has a phonetic resemblance to another number, as for example, fifty-four and sixty-four.</p>
+  <p>For longer numbers or words I have developed my own technique which I offer you and promise is very practical and makes a difficult job easy: "Think of a number, a number of several digits: two, three, four, five; you have a free choice." (Do not invite more than five!) "I want you to imagine the number written in the air, in great big numbers." (Or letters for a word.) "Have you done that? What did you imagine? Did you actually see the number like this?" As you reach this point, whatever number was given, with the card in the writing position, inscribe their number slowly and deliberately in the air, doing each number separately and, as you do so, writing each number on the card! Believe me, it's so blessed easy you can't go wrong! The numbers you draw in the air should be (in imagination) about two feet high. The move is absolutely natural and not only does it help you to form the written number, but it allows you every chance to look at what you are writing. This is one technique that helps to overcome clumsy misformed numerals and letters.</p>
+
+  <h2>f) The style of writing and what to write 🖊️</h2>
+  <p>Without considerable practice and experience, you will find it hard to create written numerals that look nicely written. The numbers are badly formed and are not the same size or maybe out of line. These are imperfections which use of a Swami Gimmick over a long period will overcome. However, you must not worry about this side of it too much; in truth it matters very little as long as your writing is legible.</p>
+  <p>You can do several things to improve the faults. First, as you will realise, the complete prediction is not written with the Swami Gimmick. The "lead up" is filled in on the card and a gap left where the vital facts (such as the thought of number) are inserted. Aiming at a uniform appearance throughout, you write the general prediction or lead-up in shaky writing. Some performers even write it beforehand with a swami! The bad writing then conceals the bad figures. Another dodge is to write the lead-up with your left hand or, if you normally write with the left, with the right. (And should you be awkward and be ambidextrous, with the teeth. Don't think that can't be done either!)</p>
+  <p>Slade, mentioned earlier, fooled Professor Hyslop by writing a message of some twenty lines on a slate whilst both his hands were held. He held the chalk in his teeth, and with a gag he would have done it with his feet with the slate on the floor. He was an exponent of all fakery with writing. The other aids to improved writing are: first, write as slowly as you can when learning to use the swami; second, ascertain the best size figures for yourself and stick to that size; adjust the swami to the right or the left of the nail until the lead in it points in the direction which you find works best. Again, stick to that position once you find it. Last but not least, take it easy, and by that I mean, control ambition. In the early stages of your work, stick to writing numbers, the shorter the better, or to making a simple cross against a list of names and so on. In time you may write sentences with a swami, but, as I say, first avoid all forms of digital dexterity and stick to that which is practical and of use.</p>
+
+  <h2>g) Alternative methods of holding the card 🔄</h2>
+  <p>We have explored one method of holding the card, and the chosen one has been that which we found best after considerable experiment. You may discover the technique unsuitable and prefer another:</p>
+  <ul class="checklist">
+    <li><span class="check-icon">1.</span> You can write on the card with your arms crossed.</li>
+    <li><span class="check-icon">2.</span> You can write on the card when it is held behind your back.</li>
+    <li><span class="check-icon">3.</span> You can write with it in the hand hanging at the side.</li>
+    <li><span class="check-icon">4.</span> You can write whilst holding it in two hands.</li>
+    <li><span class="check-icon">5.</span> You can write with the card in your pocket.</li>
+  </ul>
+  <p>The method we have given, that is, one-handed writing whilst the card is held in view at chest height, is the best. It is also the hardest to do. If you want more information about techniques 1 to 5, you may refer to a very good publication called "20 Stunners with a Nailwriter," by Chapman.</p>
+
+  <p>I am critical of the alternative methods because:</p>
+  <ul class="checklist">
+    <li><span class="warn-icon">1.</span> Crossed arms is a natural but still ungainly pose for a performer on stage.</li>
+    <li><span class="warn-icon">2.</span> Card behind the back. It is not good to have it from view unless sealed in an envelope. Theoretically you could be using an index, exchanging, and so forth. The card in view is, to my mind, an essential of presentation.</li>
+    <li><span class="warn-icon">3.</span> Hand at the side is not angle proof.</li>
+    <li><span class="warn-icon">4.</span> Two hands used to hold one small card... why?</li>
+    <li><span class="warn-icon">5.</span> Pocket writing has nothing wrong with it, but a pencil stub is as good as a swami and even then it's not on view.</li>
+  </ul>
+  <p>For the reasons given I would advise you to work on the single-handed method and do it properly. If you are not prepared to work hard and practise, you may as well forget all about Swami Gimmicks because they involve hard work.</p>
+
+  <h2>h) The visible pencil 🖋️</h2>
+  <p>Quite frequently you will want to pretend that you are writing a prediction whilst the audience wait. You take out a pencil and appear to write on the card. Sometimes you may actually write; sometimes you only pretend to write. The important thing is to make clear to the audience that the pencil is not in your hands when the chosen number is revealed. To do this, you make a lot of fuss and bother over the visible pencil.</p>
+  <p>First, make it a conspicuous pencil, a long white painted one. Then have some trouble finding it, searching through the pockets for a moment. This is good psychology; it convinces the audience you have written the full prediction in full view, and then it remains only to put the pencil away with great deliberation. Never use a short pencil which could suggest you have it in the hand out of sight. A good move once the pencil has been used is to throw it on a table nearby; do it with a "don't want that any more" attitude.</p>
+  <p>Some performers make a point of borrowing a pencil, in theory proving that they have arrived without any means of writing. I am of the opinion that this is being too clever. You are liable to be handed a purple copy pencil, a red one, a pen, or anything other than a matching pencil to your gimmick. You must then get yourself out of that fix, when it is all unnecessary trouble. Stick to your own pencil.</p>
+  <div class="callout">💡 Another tip with regard to pretending to write: to do this in a convincing manner is not as easy as it would appear. One concrete solution is to stick a wee bit of Sellotape over the pencil lead, which prevents it from marking and cannot be seen. You may then write properly, and if that's not natural — what is? Finally, if you are supposed to be writing numbers only in pencil on a card, do not give them the chance to "Pencil Read." Other people than magicians know of this principle.</div>
+
+  <div class="divider"></div>
+  <div class="section-label">Section three</div>
+  <h1>⚙️ Special techniques</h1>
+  <p>To summarise the position so far, we have dealt with types of Swami Gimmicks, where to conceal them, how to use them, and when to use them. We shall now deal with different methods that have been designed to improve the effects created by way of the writer unseen.</p>
+
+  <h2>a) The use of different colours 🎨</h2>
+  <p>Occasionally one may add to the perplexity of an effect by writing in a colour such as red. It takes little time to change your normal black lead for a red one. However, as with the black leads, you should select a good quality soft red and, as mentioned earlier, make certain that it is fixed properly. I will give you one good effect with coloured Swami Gimmicks; you will find it quite difficult to do, but once you have mastered the trick you have a very good effect at your disposal for life. It will cost you ten Swami Gimmicks to do.</p>
+  <div class="callout">🎭 "Madam! Call out the first colour that comes into your head! Red? Thank you, and now you sir! Let me have the first figure that you think of: 134? Sorry! 154 — I thought you said thirty-four. Right sir, take this card please and tell us if you can see anything unusual on it! You can? What? On it is written the number you thought of... ah! That was luck, but there's more than that. Madam, can you remember what colour you chose? Red. That's right, and what colour is your number written in, sir? Red? So you chose red and you chose 154, both are right, which can't be luck!"</div>
+  <p>There are two methods: the perfect one gives each spectator a free choice and the imperfect limits the selection of colours. For the perfect, you will find that if you approach a serious person (try and choose an elderly lady) and ask that person to name a colour, it will be one of the following. These colours are given in order of the frequency with which they occur: red, blue, green, yellow, violet or mauve, orange, brown, pink, grey, and maroon.</p>
+  <p>You buy a box of coloured pencils and make up one swami with each colour, then buy a small pocket notebook for sixpence from Woolworths, and down one edge (the right-hand edge) stick a strip of tape on the top page to make it thick. On this thick edge you "index" your swami gimmicks; simply stick them on the edge as though it were the thumb. The card is lying on the top page. As the colour is called you are holding the book and have plenty of time to look for the correct swami and take it out with the card. As the number is called you have the card only in the right hand with the swami on and write it in. You will very rarely get the minor colours, or last five called, and should you be given "black" or "white," immediately reply, "No — a proper colour if you please, black and white are not true colours," which is correct.</p>
+  <p>The other method is to limit the colour choice. Have four cards: one red, one blue, one green, and one yellow. On each card have the swami of the same colour! Give them a free choice of cards, holding them up for display, and discard the three which are not wanted. Suppose red was selected: steal the gimmick from the red card, put the card dramatically on show and pick up the white card, which can be stuck in the top jacket pocket where it is on view all the time until it is actually used. The effect seems long, but in effect it is quite snappy, and aside from the speed it qualifies as good mental magic by virtue of the very simple plot. Every member of the audience can understand what has happened.</p>
+
+  <h2>b) The window envelope ✉️</h2>
+  <p>Annemann used this method quite frequently and I am very fond of it because, first, it is simple, and second, it is what I call "cheeky." The idea is to have a card in an envelope which has an opening on the address side. The writing is done directly on to the card through the window and the impression which you convey is that the message or prediction was sealed all the time!</p>
+  <p>Mention of this technique in various books on mentalism invariably refer to the envelope as "a window envelope," which naturally conveys the idea of the full-size standard model. This is not best. I work with home-made envelopes, or rather, home-made windows. I purchase quite cheaply small white envelopes (brown are just as good if not better) which are supplied to accommodate wedding cards. With a razor blade or Stanley trimmer I cut out a small window on the address side only. (Insert a playing card into the envelope to avoid cutting right through.) I cut the window just where I want it, no larger than is required to write five numbers, and just where those numbers fill into the rest of the prediction already worded on the card. My window is about 1" × ½" and is central two-thirds of the way down. The envelope is sealed and is slit open when needed with a nail file. A spectator pulls out the card after you pull it out a bit to start with. Obviously it is held flap side upwards.</p>
+
+  <h2>c) The carbon impression technique 🖤</h2>
+  <p>Until quite recently I have not considered this method to be worth the trouble because I have always thought the window envelope technique achieves much the same result by easier means. However, having now at our disposal new types of carbon paper, we can, if we choose, iron out the original weakness and make the technique of practical use.</p>
+  <p>The old method was quite simple: a white card sealed in an envelope and inside the envelope, stuck on the inner surface, was a sheet of carbon paper. By using a Swami Gimmick (or sharp fingernail) one wrote on the outside of the envelope making a carbon impression on the card inside. The swami was the Stylus type or one which had a ball tip in place of the usual lead. Nothing clearly visible was to be seen on the outside of the envelope.</p>
+  <p>Today we have on the market a variety of carbon paper called "NCR," or in full, "No Carbon Required" paper. Sometimes this is called "white carbon." It is a chemically treated paper supplied in two white sheets which we shall call "A" and "B." Both papers look like normal typing paper, but when "A" is placed on "B" and anything written on the top sheet, a blue impression is formed on "B" underneath. The colour of the impression can be matched with blue artists' pencils. The paper is quite sensitive, does not require heavy pressure, and its only fault is that with age it decolourises at the edges and turns a faint blue. This takes a long time. The process is entirely chemical; the writing forms visibly immediately the impression is made and no developers are required or anything like it.</p>
+  <p>To utilise "NCR" you must make an envelope out of "A" and inside the envelope have a slip of "B" which is to bear the prediction. Be sure you get the order of "A" and "B" right, or you will have writing back to front appear on the inside of the envelope and not the right way round on the inner paper. "NCR" is obtainable from most magical dealers and is supplied in pads. The advantage and improvement of this technique is that the sealed envelope can be given to any spectator who opens it and takes out the inner sheet, and you have no worries about carbon paper stuck inside. If you must use a sealed envelope method, this is probably best, but if you have any option I recommend the easier and foolproof way: the window envelope.</p>
+
+  <h2>d) The ink writer 🖊️</h2>
+  <p>To my knowledge, no satisfactory Swami Gimmick that writes in ink has, as yet, been developed. I have seen two types available and cannot honestly recommend either. The first is a version of the Overnail Writer which holds a very short ball pen and reserve ink tube. To my mind the appliance is cumbersome and is not satisfactory. The second, a Thumbtip Writer which also had a ball pen tip inserted. I am told a version of this writing in real ink has been made but I have yet to see it. The tip method, of the two, was best because you could put a new refill in and it was steady and less visible, but for all that it did not warrant the trouble.</p>
+  <p>In my opinion it makes very little difference whether the prediction is written in pencil, ink, or, for that matter, blood. The Swami Gimmick as it is offers you everything you require without the necessity of so-called "improvements" which flatter the ingenuity but not the effect.</p>
+
+  <h2>e) Preparation of the prediction 📝</h2>
+  <p>It is a good policy to have a full message on the card bearing the prediction. You could content yourself with just the number or word, but a "lead up" is a subtle form of misdirection. People are obliged to think that you couldn't possibly write "all that" in a few seconds... and true too! The best place to insert the fact (that is the number) in the prediction is in the middle. You could have it at the end or at the beginning, but the middle is best. Then you have words before and after the fact. The lead-up should be brief: six to ten words is quite adequate, and the words should be placed so that the spot where you insert the fact is placed in the exact position convenient for writing with the swami. The spot should also line up with the window if you have an envelope in use.</p>
+  <p>For a straightforward "think of a number" effect, the prediction can be, for example: "YOU WILL THINK OF THE NUMBER AND WILL NOT CHANGE YOUR MIND — CORINDA." Below will be found a diagram which shows a typical layout of the wording, showing the spacing of words in the prediction and written so that the "fact" space is conveniently situated and in place for the window envelope. The card size is 3⅝" × 2⅜." The fact is written in letters or numerals equal in size to the rest of the writing. The writing is badly done to offset the like writing with the Swami Gimmick.</p>
+  <p>The next essential in the preparation of the prediction is to use a pencil which has the same lead as your swami and which writes with the same thickness of letters. You should keep one pencil especially for this purpose. I always round the tip of the swami lead and the pencil by rubbing on fine glass paper or, in an emergency, using a nail file. The pencil and the swami lead should be soft. Medium HB is not enough and although soft pencils have thick leads, it is worth the trouble to file down a small piece of soft lead for the swami. I recommend a 2 or 3B lead. This writes thick and black, moves easily across the surface of the card and, being soft, makes no scratching noise. A round tip to the lead is better than a point or sharp cut-off finish. Conrad Haden in America can supply De Luxe Swami Gimmicks which have special soft/black leads with machined leads. You will appreciate the importance of having a pencil to write the prediction that is of the same class as your swami lead.</p>
+
+  <h2>f) The fingernail 💅</h2>
+  <p>You are not overdoing the issue if you pay attention to the thumbnail or fingernail that is to be used to hold the gimmick. It is easy to forget that the fingernail grows and that it varies in size in doing so.</p>
+  <div class="callout">📏 The best length for the nail for most Swami Gimmicks is one-eighth of an inch long. Moreover, you should keep the important nail at that length: do not cut it shorter and do not let it grow longer. A slightly square tip to the nail helps to hold.</div>
+
+  <div class="divider"></div>
+  <div class="section-label">Section four</div>
+  <h1>🎩 Modesty and mentalism mixed</h1>
+  <p>You have come this far through the subject of Swami Gimmicks or trickery at writing and must therefore be interested. It is now my intention to give you a very brief idea of what can be done in the field of trick writing (to give you encouragement) and to tell what others have achieved (to keep you modest). Whenever you feel you are the world's greatest trick-writer, come back to this paragraph and see how you compare with the following masters.</p>
+
+  <div class="masters-entry">
+    <div class="masters-avatar" style="background:#EEEDFE;color:#3C3489;">SL</div>
+    <div>
+      <div class="masters-name">Slade 🖋️</div>
+      <div class="masters-desc">Inventor of spirit slate writing. Could write on slate with chalk with his feet (both) or his mouth. Could write a letter back to front to be read in a mirror and write it as fast as you could dictate it.</div>
+    </div>
+  </div>
+  <div class="masters-entry">
+    <div class="masters-avatar" style="background:#E1F5EE;color:#085041;">DD</div>
+    <div>
+      <div class="masters-name">Madam Diss Debar 🎨</div>
+      <div class="masters-desc">Exponent of spirit writing and spirit painting. Outwitted the famous magician Carl Hertz in court when she was being "exposed." Was able to draw a picture in colour with her feet in secrecy and could use both hands writing something different at the same time.</div>
+    </div>
+  </div>
+  <div class="masters-entry">
+    <div class="masters-avatar" style="background:#FAEEDA;color:#633806;">CF</div>
+    <div>
+      <div class="masters-name">Carl Franks 🤲</div>
+      <div class="masters-desc">Still alive at time of writing. Can write with a swami on either hand, write neatly, and write full sentences. The only person known to use the method of writing in the shoe by having a gimmick on his toe.</div>
+    </div>
+  </div>
+  <div class="masters-entry">
+    <div class="masters-avatar" style="background:#E6F1FB;color:#0C447C;">KE</div>
+    <div>
+      <div class="masters-name">Keeler 🪄</div>
+      <div class="masters-desc">Described as the Greatest Living King of Slate Writers. Wrote legibly on a slate or with pencil on paper held behind his back with his hands tied. Wrote messages backwards for mirror reading and did them in the dark.</div>
+    </div>
+  </div>
+  <div class="masters-entry">
+    <div class="masters-avatar" style="background:#FAECE7;color:#712B13;">CS</div>
+    <div>
+      <div class="masters-name">Chung Ling Soo 📖</div>
+      <div class="masters-desc">Used a swami extensively and mentions it in his book "Slate Writing and Kindred Phenomena," published in 1898.</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <div class="section-label">Conclusion</div>
+  <div class="quote-block">"The greatest little gimmick in the world." — Mr. Eric Mason, inventor of Boon</div>
+  <p>Mr. Mason is right, and his statement applies to all good varieties of the Swami Family. Nothing so small can be of so great a use to the mentalist. Its potential uses are incredible. The restriction of its application is on the part of the performer alone; if he is willing to work hard and practise constantly, the result will be something really worth having. To be successful, you must stick at it. Few tricks are worth having that can be done as soon as you pick them up; technique is vital but is not everything — presentation is the other half.</p>
+  <p>I will conclude with my personal feeling which is, to me, a Swami Gimmick is worth fifty pounds. What it's worth to you is what you make it. I wish you every success. — Tony Corinda 🎩</p>
+
+  <div class="divider"></div>
+  <div class="section-label">Section five</div>
+  <h1>🎭 Tricks with a swami gimmick</h1>
+
+  <div class="trick-card">
+    <div class="trick-head"><span class="trick-num">No. 1</span><span class="tag tag-purple">Reversal effect</span></div>
+    <div class="trick-title">The spectator as the telepathist 🔮</div>
+    <p class="trick-desc" style="margin-top:0.5rem;">This is a principle that may be applied to several effects. It is one of the finest tricks you can use as the plot reverses the normal procedure of mental magic and makes it appear that the spectator reads your mind, instead of you, as normal, reading theirs. It is best performed after one or two effects of mentalism have been shown. It is offered to the audience as "conclusive evidence" that thought reading must be possible, and proved when they read your thoughts.</p>
+    <p class="trick-desc">After suitable opening spiel, you take the card and pretend to write on it four numbers. The spectator is asked to try and "receive" these numbers as you "send" them one at a time. You hand them another card and a pencil. If you are an exponent of Pencil Reading, you have a miracle on your hands, simply by reading each number as they write and filling it in with the swami. If not, you can work one of two different ways. After you say "I'm sending the first number now," you pause, then enquire "Have you got it? What have you written?" and when the answer is received, gaze at your card and knowingly state "Hmm... not bad, let's try the next." You can fill that number in while you gaze or, send the four numbers and finally ask as you walk towards the spectator "and what did you get?" so that by the time you get there, ready to hand over your card, the same numbers are written on your one. The Pencil Reading method is by far the hardest, but by far the best, as you do not ask any questions at any time! (Corinda's "Step Two" deals with Pencil Reading.)</p>
+  </div>
+
+  <div class="trick-card">
+    <div class="trick-head"><span class="trick-num">No. 2</span><span class="tag tag-teal">Variation</span></div>
+    <div class="trick-title">First variation of the No. 1 principle 🔤</div>
+    <p class="trick-desc" style="margin-top:0.5rem;">With the same principle of having the spectator read your mind, to get away from numbers (if you want to; there is nothing really wrong with using them), you may work on a name, sending it letter by letter. To add to the value of the effect it is a good thing to have the two cards handed to another spectator to check.</p>
+  </div>
+
+  <div class="trick-card">
+    <div class="trick-head"><span class="trick-num">No. 3</span><span class="tag tag-teal">Variation</span></div>
+    <div class="trick-title">Second variation of the No. 1 principle 📅</div>
+    <p class="trick-desc" style="margin-top:0.5rem;">A date is to be transmitted; as a precaution that you cannot exchange coins once the experiment is started, you record on a small slip of paper the date you have in mind. This is then sealed between two pennies and held at the fingertips. You adopt the same sending procedure as for No. 1. To perform this effect you will require a special penny that I believe was invented by B. Hull. It is like one coin from a stack of pence, having a round hole cut from the centre. You place the written slip on an ordinary penny and cover it with the fake. You can then write on the slip through the hole.</p>
+  </div>
+
+  <div class="trick-card">
+    <div class="trick-head"><span class="trick-num">No. 4</span><span class="tag tag-amber">Quickie</span></div>
+    <div class="trick-title">Straight to the point ⚡</div>
+    <p class="trick-desc" style="margin-top:0.5rem;">The next few tricks are more or less "quickies." They come straight to the point and therefore make good opening effects. Before I deal with the tricks, I would like to point out that there are numerous variations of this principle and there is no necessity whatsoever to copy effects used by other people. A leading mentalist in this country makes a point of using a variation of this principle and I am constantly disgusted that so many must copy the one effect he uses when there are so many equally as good variations. Try and be different.</p>
+    <p class="trick-desc">As soon as you have finished your "Good evening, ladies and gentlemen," point straight at one person. Shout "You sir, close your eyes, call out the first number to enter your head!" Write that on a card you are holding in view and toss it to him to read and call out loud. That effect should take about 15 seconds. As variations of this technique, you can call for colours, names, words, and so on. Another slightly longer variation is the Change in the Pocket. You ask a person to count how much they have in loose change and that amount is predicted. The same "straight to the point" technique can be used when several spectators are involved; one man is asked to stand and add up mentally any numbers called by the audience (digits). After about six to ten are called he declares the total, which you have on your card as a prediction.</p>
+  </div>
+
+  <div class="trick-card">
+    <div class="trick-head"><span class="trick-num">No. 5</span><span class="tag tag-blue">Stage</span></div>
+    <div class="trick-title">A stage trick 🎪</div>
+    <p class="trick-desc" style="margin-top:0.5rem;">You have three cards; on each one you pretend to write something and then put them aside in full view of the audience, but not showing your supposed writing. The backs of the cards which the audience see can be numbered 1, 2, and 3. You have nothing visible in your hands. Point to any person and call for any colour; point to another and call for a city; point to the last and ask for a date. In the time it takes you to pick up the card and say "You sir, were number one and you called out the colour red," you have the answer "swamiéd" on!</p>
+  </div>
+
+  <div class="trick-card">
+    <div class="trick-head"><span class="trick-num">No. 6</span><span class="tag tag-purple">Stooge eliminator</span></div>
+    <div class="trick-title">Ping pong selection 🏓</div>
+    <p class="trick-desc" style="margin-top:0.5rem;">The impact of the Swami Gimmick used in mentalism is so strong that at times it appears you must be using a stooge. You can help to eliminate this hypothesis by making it obvious your assistants are selected by chance. A method is to have numerous ping pong (table tennis) balls, each numbered differently from one to ten. Throw them into the audience and ask a person who has not caught a ball to call out a number; whoever has that number is used. This is quite a useful dodge when you are getting paid for the time you are on!</p>
+    <p class="trick-desc">Throw the balls out; when you have the spectator chosen, ask him to gaze at the ball and imagine it to be a globe, a globe of the world. Tell him he can see places: countries, cities, towns, and villages. Tell him to travel in his mind and keep moving until you call stop. At the moment when your showmanship thinks best, call "stop!" and then quickly "Name the place where you stopped." That place you record gracefully on a card sealed within a window envelope.</p>
+  </div>
+
+  <div class="trick-card">
+    <div class="trick-head"><span class="trick-num">No. 7</span><span class="tag tag-coral">Card trick</span></div>
+    <div class="trick-title">A card trick 🃏</div>
+    <p class="trick-desc" style="margin-top:0.5rem;">In the normal course of things I would not offer you a card trick for mentalism; I feel however that you will agree this earns its place as a mental effect. A deck of cards is borrowed. Ask someone to assist you and ask their name. You make a show of writing their initials on one card; fan them and appear to put it on the face of a card — don't write anything really. Have the card replaced anywhere without showing its value. Have the pack truly shuffled by two people, or one if in a hurry. Ribbon spread them on a table if you have a table and if you can ribbon spread, or, if not, fan face downwards before the spectator who gave his initials. Ask him to touch any card and remove the one he touches yourself, holding it back towards him and stating "Somehow I knew you were going to touch this one; that's why I put your initials on it before we started!" As you speak you jot on the card his initials. The full value of this effect is gained when you do not have the cards in your hands when he is told to touch any one. Otherwise your audience may suspect you forced the card at that point.</p>
+  </div>
+
+  <div class="trick-card">
+    <div class="trick-head"><span class="trick-num">No. 8</span><span class="tag tag-purple">Classic</span></div>
+    <div class="trick-title">Living and dead 💀</div>
+    <p class="trick-desc" style="margin-top:0.5rem;">To be quite honest, I am not overwhelmed with Living and Dead tests. To me, they seem clever but morbid for general use with entertaining outside of the seance room. However, I am obliged to include this item because it is a classic example of simplicity and to my mind is one of the top class Living and Dead Tests. The idea is a product of that great man Al Baker.</p>
+    <p class="trick-desc">On your visiting card, down the left-hand side write the numbers 1, 2, 3, 4, and 5. Hand the card to someone you do not know and tell him to fill in the name of a dead person against any number. Turn your back whilst this is done or, if you cannot or should not, get him to turn round. Next, tell him to write the name of a living person against each of the other four numbers. Take back the card, take out your pencil, and seem to be making a tick against one name. Actually you mark nothing. Put the pencil away very deliberately and then, and only then, tell him you have marked the dead person's name with a tick, and for the first time will he tell everybody what that name was. As soon as you hear, tick it off on the right and hand the card quickly to another person and say "And what name have I marked as dead?"</p>
+  </div>
+
+  <div class="trick-card">
+    <div class="trick-head"><span class="trick-num">No. 9</span><span class="tag tag-amber">Close-up</span></div>
+    <div class="trick-title">A close-up quickie 🪙</div>
+    <p class="trick-desc" style="margin-top:0.5rem;">This is an effect that I have used quite a lot and can assure you that it goes over very well. It is quick, simple to understand, and looks impossible. Ask an onlooker to take any coin from his pocket and to hold it from sight in his clenched fist. Then for a moment to hold his fist containing the coin against your forehead. Think a bit and look intelligent. Tell him to take it away and then bring out your pencil and jot (apparently) a date on your card. Holding the card in view and putting the pencil away, tell him to show the coin to another person and to say what date it is. You write that on the card and will find you have time to lay it on the table face downwards and step away for them to pick it up and read.</p>
+    <div class="callout" style="margin-top:0.75rem;">📝 Note: For this, do not have a full prediction. The effect is not a prediction; it is more of the X-Ray Eye class and the date alone is used.</div>
+  </div>
+
+  <div class="trick-card">
+    <div class="trick-head"><span class="trick-num">No. 10</span><span class="tag tag-teal">Two-person</span></div>
+    <div class="trick-title">Two person telepathy 👫</div>
+    <p class="trick-desc" style="margin-top:0.5rem;">The principle used in this effect is based on an idea given in that excellent booklet "20 Stunners with a Nailwriter." I think it is most ingenious and that it is just right for mentalism. In a friend's home you ask him to take any book he likes and, whilst your "medium" wife, girlfriend, or grandmother is out of the room, to choose any page, then any word on that page, and to underline it. You lend him your only pencil to do that! When he is satisfied, you, in telling him to mark it clearly and showing him how, note the word. You then step well away, take out a packet of cigarettes and a book of matches. Light one and put the word inside the book of matches on the cover. Drop it on the table and leave the room by another door or go into a corner and be quiet. In comes your medium who ponders a bit, asks the spectator to draw a cross on a bit of paper, has a good look at it, decides it reveals all that is needed, so tears it up and burns it. When your medium burns the paper using the matches from the table, she will have a hell of a job not seeing what you have written!</p>
+  </div>
+
+  <div class="trick-card">
+    <div class="trick-head"><span class="trick-num">No. 11</span><span class="tag tag-purple">Mediumistic</span></div>
+    <div class="trick-title">A mediumistic effect 🌀</div>
+    <p class="trick-desc" style="margin-top:0.5rem;">To my knowledge, the only time this effect has been published elsewhere is in Joseph Rinn's "Searchlight on Psychical Research," which is a book dealing with the work of Rinn and Harry Houdini in the field of exposing fraudulent mediumship. It is an ideal trick for serious demonstrations of mediumship under what may be suggested are "test conditions."</p>
+    <p class="trick-desc">The effect is this: a name of a dead person is asked for and the sitter is told that a message from the other side may be obtained from the deceased. The medium is brought in and does not know the name. To impose test conditions which prevent signals and codes, she is put under a heavy blanket whilst seated on a chair. At a suitable time she calls out to the effect that she has a message coming through: "they" are asking her to write the message. Although she is in the dark as far as the audience know, it does not appear to matter to them that she writes in the dark. As the medium calls for a pencil, the performer hands one to another person to give her. She has a thick card to write on with her and has a small pocket torch. The pencil given by the performer has a cap, one of those removable chrome tips that some ordinary pencils have. In that tip is a slip of paper rolled up and put there by the performer, and on it is written via the swami what name was given. The medium writes a suitable sure-fire prediction and signs it with the name. This is a trick which was used by a professional medium for many years and the method was a closely guarded secret. Presented before the right type of audience and in a mediumistic manner it will be accepted as conclusive proof of psychic ability; it was, for many years.</p>
+  </div>
+
+  <div class="trick-card">
+    <div class="trick-head"><span class="trick-num">No. 12</span><span class="tag tag-blue">Informal</span></div>
+    <div class="trick-title">Time and space: an informal effect 🌍</div>
+    <p class="trick-desc" style="margin-top:0.5rem;">You know as well as I do that presentation makes the trick. Your technique from a performing point of view is important but ability to apply your skill is also important. Few things enhance the presentation so much as a good plot. This is nothing except the use of a swami to write the name of a place, but it is dressed up into a presentable trick.</p>
+    <p class="trick-desc">Start an argument about thought reading; that's a good way to get an excuse to prove by demonstration your point of view! Sooner or later some bright spark will speak of time and space, whereupon you leap in with a suggestion of your own: "Time and space are important. If telepathy exists, it must be, as the projection of thoughts involves distance and therefore space and, moreover, if there is no sympathy of time, the recipient will miss the thoughts. It's hard to describe, but easy to demonstrate if you will allow me!" They will; you can bet on that! Turn to someone and say, "Will you help me in an experiment? It is only an experiment and nothing may result, but do try; it will be interesting." You take out a card and a pencil; the swami is on. "I am going to write a city on this card," (pretend to write), "and I shall now ask you to close your eyes and do just as I say. You are travelling through space, not in an aircraft; imagine you have the ability to fly through space, projecting yourself through the air. You are moving fast; looking down you can see towns, trees, people. You fly out of this country and go abroad. In your mind you can go anywhere but now you are so high only the big places become visible. You will fly along and see the cities of the world. You are in space."</p>
+    <p class="trick-desc">If the spectator suddenly floats up in the air at this point, you stop your trick and turn to the others and say, "You see what I mean?" If not, carry on: "Now you are in space, so I will deal with time. In a moment I will say stop, and when I say stop tell me the nearest city you saw. Keep flying until I say stop. Right... stop!" He tells you the city and you write it on the card and then say, "Which proves my point, because I was concentrating on that very city and telling you to stop at the time when you reached it. Read what I wrote at the start." Which is what I call making a mountain out of a molehill, but the audience love it.</p>
+  </div>
+
+  <div class="trick-card">
+    <div class="trick-head"><span class="trick-num">No. 13</span><span class="tag tag-coral">Prop required</span></div>
+    <div class="trick-title">The card in glass 🥃</div>
+    <p class="trick-desc" style="margin-top:0.5rem;">This is a trick which utilises a technique which is new and which is the result of work done by Mr. Eric Mason. It is not at all easy to do, but is well worth the trouble taken in practice.</p>
+    <p class="trick-desc">The effect: the mentalist writes the name of a playing card (or a number, word, colour, etc.) on a small white card. This card he drops into an empty glass which stands on a table. The audience then decide upon any playing card, and then the card in the glass is tipped straight from the tumbler into the spectator's hands. He reads the name of the chosen playing card on the prediction card! The method is to have a glass with a fairly large oval hole cut near the base on one side. The mentalist can write on the card whilst it is in the glass by pushing his thumb through the hole. The card should be a tight fit in the glass and will then hold steady for writing with the swami. The fact that the card is visible all the time in the glass precludes all suspicion of trickery. The half-pint tumbler size of glass is used.</p>
+  </div>
+
+  <div class="trick-card">
+    <div class="trick-head"><span class="trick-num">No. 14</span><span class="tag tag-amber">Publicity</span></div>
+    <div class="trick-title">The week ahead prediction 📬</div>
+    <p class="trick-desc" style="margin-top:0.5rem;">Again the principle of this effect may be applied to other tricks. You send a letter to a friend which has inside a sealed envelope with instructions in the letter to say that the sealed envelope should not be opened until you arrive a week later. Inside the envelope you have given them is another smaller one; it is a window envelope as described on earlier pages. In the window envelope is a card in the proper position for filling in the facts, and on the card is written your prediction.</p>
+    <div class="callout" style="margin-top:0.75rem;">"Dear Mr. Williams, I am writing this now and in a week's time you will be reading it! When I meet you, I will ask you to name any person you have met during the week and [name] will be the name you say! You can keep this card. Corinda."</div>
+    <p class="trick-desc" style="margin-top:0.75rem;">The prediction is on one side of the card, your name and address on the other for future bookings! Needless to say, you arrive and as soon as you meet the person Mr. Williams, say "Hello, before you say anything, name someone you have been talking to this week. Better be someone I don't know." Later ask for the sealed envelope and open it yourself and take out the next envelope the right way up. Whilst reminding him of the name he chose, you fill it in, then slit open the small envelope and partly pull out the card, allowing him to pull it right out and read it. This is a very good publicity stunt.</p>
+  </div>
+
+  <div class="trick-card">
+    <div class="trick-head"><span class="trick-num">No. 15</span><span class="tag tag-amber">Publicity</span></div>
+    <div class="trick-title">Another publicity stunt 📣</div>
+    <p class="trick-desc" style="margin-top:0.5rem;">"I predict that when I perform at the Gala Club on Tuesday next, [name] will be seated in the third seat of the front row," today's date 1/7/58, Mr. X." When you are sure that you will play before a seated audience and that you are going to have rows of seats, this prediction is quite astonishing. It is sent as with trick No. 14 to the organiser and acquired at the beginning of your act. The lady or gentleman in the third seat (left or right; it matters not) of the front is asked, "Madam, yes you! Have we ever met before? Will you agree that I have never seen you before and that I couldn't have known you were coming here tonight? Thank you Madam, would you be good enough to tell me your name?" The envelope is opened as above and the card handed to the lady and then read out loud for all to hear. It is not a good trick for the theatre where seats in the front row can sometimes be reserved under a name.</p>
+  </div>
+
+  <div class="trick-card">
+    <div class="trick-head"><span class="trick-num">No. 16</span><span class="tag tag-blue">Stage</span></div>
+    <div class="trick-title">The seven chairs 🪑</div>
+    <p class="trick-desc" style="margin-top:0.5rem;">A rather novel effect for stage is published in Darling's "I'll Read Your Mind." It has nothing to do with swami gimmicks but the effect can be achieved by use of this apparatus. On the stage you have seven empty chairs in a row. On each one hangs a ticket numbering them one to seven. In your hands you have and show seven cards, playing card size, and each has a number on it from 1 to 7. You mix the cards and select one and hold it number-towards-you at the fingertips. Any spectator is invited up and is told to sit on any chair. When they sit down you turn round your card and on it is the number of that chair!</p>
+    <p class="trick-desc">This is a very simple effect. You have eight cards and show seven. The spare card is blank. You select this one and put the other seven aside in a pile. As the spectator sits down you write his chair number largely on the card. This is not too risky to repeat with another person and will need nine cards to do.</p>
+  </div>
+
+  <div class="trick-card">
+    <div class="trick-head"><span class="trick-num">No. 17</span><span class="tag tag-teal">Pocket trick</span></div>
+    <div class="trick-title">Any date of the year 📆</div>
+    <p class="trick-desc" style="margin-top:0.5rem;">A quick pocket trick. Have two pocket calendars which have all months of the year on one sheet. Give one to a spectator and tell him to choose any month of the year, and then any day in that month, and to "ring" it in pencil. You appear to do the same on yours. Ask him to call out his date and then hand your calendar to someone to show the same date ringed.</p>
+  </div>
+
+  <div class="trick-card">
+    <div class="trick-head"><span class="trick-num">No. 18</span><span class="tag tag-purple">With slates</span></div>
+    <div class="trick-title">The white swami ⬜</div>
+    <p class="trick-desc" style="margin-top:0.5rem;">In my booklet "Mini Slate Magic," which dealt with tricks with pocket slates, I described a special Swami Gimmick which I called "the white swami." It was nothing more than an ordinary gimmick but had artists' white pencil lead in the tip. It is an appliance for writing on black surfaces, such as pocket slates, and if you do have the slates this is quite a good trick to perform.</p>
+    <p class="trick-desc">You have two pocket slates; no flaps are required. They are shown clean, examined if you like, then banded together with elastic. A spectator thinks of a dead person's name whilst holding the slates to his forehead and trying to impress that name on the slate. You ask, after a suitable period, "I think I heard writing; what name did you think of?" Take back the slates, open them and show both sides; they are still clean! "Sorry, I must have been mistaken; try again," you say, but before you reband the slates you jot the initials of the dead person on one slate. Next time you "hear" writing, they open the slates and find the initials!</p>
+  </div>
+
+  <div class="trick-card">
+    <div class="trick-head"><span class="trick-num">No. 19</span><span class="tag tag-coral">Special occasion</span></div>
+    <div class="trick-title">The sex detector 👶</div>
+    <p class="trick-desc" style="margin-top:0.5rem;">You should never miss an opportunity and you will have to wait for this opportunity to occur! When someone you know is due to have a baby, prior to the birth send them a letter with the sealed envelope inside (see effects No. 14 and 15). Have a prediction inside on friendly terms such as: "Congratulations on the birth of your baby [boy or girl]. If you take my advice you will call the baby [insert the name]. Corinda." Make sure that in your letter you give instructions that the envelope must not be opened until you have seen the baby!</p>
+  </div>
+
+  <div class="trick-card">
+    <div class="trick-head"><span class="trick-num">No. 20</span><span class="tag tag-blue">Advanced</span></div>
+    <div class="trick-title">Headline predictions 📰</div>
+    <p class="trick-desc" style="margin-top:0.5rem;">To perform this class of effect you must be proficient with a Swami Gimmick. The idea is to send a sealed envelope to someone of importance and the prediction in it tells the headlines in the prominent local paper of that day. The letter is sent or handed over well before that day. There is no short cut; to do this you have to be able to write a sentence, although headlines are invariably brief, and the sealed envelope technique for tricks No. 14 and 15 will do. However, as an extra precaution you would be wise to lock the envelope in a steel cash box, calling it a "safe deposit," which can be obtained at most stationers.</p>
+  </div>
+
+  <div class="trick-card">
+    <div class="trick-head"><span class="trick-num">No. 21</span><span class="tag tag-amber">Topical</span></div>
+    <div class="trick-title">Topical effects ⚽</div>
+    <p class="trick-desc" style="margin-top:0.5rem;">Topical effects are always good; the Football Pools offer you considerable scope for work with a swami because you have only to write the single signs "1, 2 or X" to signify results. A simple effect is to have two coupons and pretend to fill in a result for the Three Draws, marking nothing in fact. The other coupon is then handed to a spectator who calls out which teams he thinks will draw (specify the Pool they are to select from). You fill in an "X" representing a draw against the teams they call and then show your result to be the same as their choice! If you care to take this a step further, you may fill in eight "X"s to predict or forecast the winning result of the Treble Chance Pool, which usually pays out in thousands of pounds. The general public know the odds against winning the pools.</p>
+  </div>
+
+  <div class="trick-card">
+    <div class="trick-head"><span class="trick-num">No. 22</span><span class="tag tag-teal">Highly recommended</span></div>
+    <div class="trick-title">A first-class newspaper test 📋</div>
+    <p class="trick-desc" style="margin-top:0.5rem;">A spectator is given a choice of any three newspapers. You write a prediction on a card and put it face down on the table. They select any page from their newspaper. They then tear it in half and choose any half; then tear in half again and choose any piece. From that piece, from either side they choose, and underline a word: any word. You have predicted that word. At no time have you touched the newspapers and they are all ordinary. Your prediction is worded ready to fill in their chosen word with the swami as you hand the card to be checked. This is an exceptionally clean and strong mental effect. I strongly recommend it.</p>
+  </div>
+
+  <div class="trick-card">
+    <div class="trick-head"><span class="trick-num">No. 23</span><span class="tag tag-amber">Social</span></div>
+    <div class="trick-title">Dartboard prediction 🎯</div>
+    <p class="trick-desc" style="margin-top:0.5rem;">A good stunt that you can pull in a pub or social club is to predict the total score made by someone who throws three darts at the board. To add to the fun of the effect, the last dart should be thrown with the spectator having his eyes closed, which also proves he is not a stooge.</p>
+  </div>
+
+  <div class="trick-card">
+    <div class="trick-head"><span class="trick-num">No. 24</span><span class="tag tag-amber">Close-up</span></div>
+    <div class="trick-title">Matches or cigarettes 🎲</div>
+    <p class="trick-desc" style="margin-top:0.5rem;">Another stunt for close-up work or table work is to predict the number of matches or cigarettes in a box taken by a spectator from his pocket and put on the table. With these close-up quick effects, you need not resort to window envelopes or any complicated technique. Simply forecast the total on the card and have the result declared and fill it in as you hand the card to be checked by another spectator. It is also a good thing to keep the prediction as brief as possible; make it of five to six words, straightforward, like: "YOU WILL SELECT THE [card] OF [suit]" for a card trick, or "THE TOTAL WILL BE [number] IN THE BOX" for matches.</p>
+  </div>
+
+</div>

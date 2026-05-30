@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Step Thirteen: Patter and Presentation — Corinda</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #fdf8f2;
+    --ink: #1a1410;
+    --ink-muted: #5c4f3d;
+    --ink-faint: #9c8c78;
+    --rose: #f5e6e8;
+    --rose-dark: #8b3a4a;
+    --rose-mid: #c4667a;
+    --amber: #fef3e2;
+    --amber-dark: #7a4f10;
+    --amber-mid: #c4820a;
+    --mint: #e4f4ef;
+    --mint-dark: #1a6b4a;
+    --mint-mid: #2d9b6a;
+    --sky: #e6f0fb;
+    --sky-dark: #1a4a80;
+    --sky-mid: #2e6db5;
+    --lavender: #eeecfc;
+    --lavender-dark: #3d2e8a;
+    --lavender-mid: #6b58c8;
+    --peach: #fdf0e8;
+    --peach-dark: #8a3a18;
+    --peach-mid: #c05c2a;
+    --lemon: #fefce8;
+    --lemon-dark: #6b5a00;
+    --lemon-mid: #b09010;
+    --gray-light: #f4f2ee;
+    --gray-mid: #d6d0c6;
+    --gray-dark: #6b6055;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.75;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3rem 2rem 6rem;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    text-align: center;
+    padding: 3rem 0 2.5rem;
+    border-bottom: 2px solid var(--ink);
+    margin-bottom: 3rem;
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+  }
+  .hero-sub {
+    font-size: 1rem;
+    color: var(--ink-muted);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+  }
+  .badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  .badge {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 14px;
+    border-radius: 50px;
+    letter-spacing: 0.03em;
+  }
+  .badge-rose { background: var(--rose); color: var(--rose-dark); }
+  .badge-amber { background: var(--amber); color: var(--amber-dark); }
+  .badge-mint { background: var(--mint); color: var(--mint-dark); }
+  .badge-sky { background: var(--sky); color: var(--sky-dark); }
+  .badge-lav { background: var(--lavender); color: var(--lavender-dark); }
+  .badge-peach { background: var(--peach); color: var(--peach-dark); }
+
+  /* ===== TOC ===== */
+  .toc-box {
+    background: var(--lemon);
+    border: 1.5px solid #e0d080;
+    border-radius: 14px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 3rem;
+  }
+  .toc-box h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--lemon-dark);
+    margin-bottom: 1rem;
+  }
+  .toc-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 2rem;
+  }
+  .toc-list li a {
+    font-size: 14px;
+    color: var(--lemon-dark);
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .toc-list li a:hover { text-decoration: underline; }
+  .toc-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    background: var(--lemon-dark);
+    color: var(--lemon);
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+
+  /* ===== SECTION HEADERS ===== */
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+  }
+  h2.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1.5px solid var(--gray-mid);
+  }
+  h3.sub-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin: 1.75rem 0 0.75rem;
+    color: var(--ink);
+  }
+
+  /* ===== PROSE ===== */
+  p { margin-bottom: 1rem; color: var(--ink); }
+  .prose-section { margin-bottom: 3.5rem; }
+
+  /* ===== CALLOUT BOXES ===== */
+  .callout {
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid;
+  }
+  .callout-rose { background: var(--rose); border-color: var(--rose-mid); color: var(--rose-dark); }
+  .callout-amber { background: var(--amber); border-color: var(--amber-mid); color: var(--amber-dark); }
+  .callout-mint { background: var(--mint); border-color: var(--mint-mid); color: var(--mint-dark); }
+  .callout-sky { background: var(--sky); border-color: var(--sky-mid); color: var(--sky-dark); }
+  .callout-lav { background: var(--lavender); border-color: var(--lavender-mid); color: var(--lavender-dark); }
+  .callout-peach { background: var(--peach); border-color: var(--peach-mid); color: var(--peach-dark); }
+  .callout-lemon { background: var(--lemon); border-color: var(--lemon-mid); color: var(--lemon-dark); }
+  .callout p { margin-bottom: 0.5rem; color: inherit; }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout-icon { font-size: 1.3rem; margin-bottom: 0.4rem; display: block; }
+  .callout-title { font-weight: 500; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.5rem; }
+
+  /* ===== NESTED BOXES ===== */
+  .nested-outer {
+    border-radius: 14px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border: 1.5px solid;
+  }
+  .nested-outer.rose { background: var(--rose); border-color: #d9a0aa; }
+  .nested-outer.amber { background: var(--amber); border-color: #d4a84a; }
+  .nested-outer.mint { background: var(--mint); border-color: #7dcca8; }
+  .nested-outer.sky { background: var(--sky); border-color: #7aaedd; }
+  .nested-outer.lav { background: var(--lavender); border-color: #a090e0; }
+  .nested-outer.peach { background: var(--peach); border-color: #d09070; }
+  .nested-outer.lemon { background: var(--lemon); border-color: #d0c060; }
+
+  .nested-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .nested-title.rose { color: var(--rose-dark); }
+  .nested-title.amber { color: var(--amber-dark); }
+  .nested-title.mint { color: var(--mint-dark); }
+  .nested-title.sky { color: var(--sky-dark); }
+  .nested-title.lav { color: var(--lavender-dark); }
+  .nested-title.peach { color: var(--peach-dark); }
+  .nested-title.lemon { color: var(--lemon-dark); }
+
+  .nested-inner {
+    background: rgba(255,255,255,0.65);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    margin-top: 0.75rem;
+    border: 1px solid rgba(255,255,255,0.9);
+  }
+  .nested-inner p { color: var(--ink); margin-bottom: 0.5rem; }
+  .nested-inner p:last-child { margin-bottom: 0; }
+
+  /* ===== CARD GRID ===== */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  .card {
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1.5px solid;
+  }
+  .card-rose { background: var(--rose); border-color: #d4a0aa; }
+  .card-amber { background: var(--amber); border-color: #d4a84a; }
+  .card-mint { background: var(--mint); border-color: #7dcca8; }
+  .card-sky { background: var(--sky); border-color: #7aaedd; }
+  .card-lav { background: var(--lavender); border-color: #a090e0; }
+  .card-peach { background: var(--peach); border-color: #d09070; }
+  .card-lemon { background: var(--lemon); border-color: #d0c060; }
+  .card-gray { background: var(--gray-light); border-color: var(--gray-mid); }
+  .card-emoji { font-size: 1.6rem; margin-bottom: 0.5rem; }
+  .card-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; margin-bottom: 0.3rem; }
+  .card-label.rose { color: var(--rose-mid); }
+  .card-label.amber { color: var(--amber-mid); }
+  .card-label.mint { color: var(--mint-mid); }
+  .card-label.sky { color: var(--sky-mid); }
+  .card-label.lav { color: var(--lavender-mid); }
+  .card-label.peach { color: var(--peach-mid); }
+  .card-label.lemon { color: var(--lemon-mid); }
+  .card-label.gray { color: var(--gray-dark); }
+  .card h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; margin-bottom: 0.5rem; }
+  .card h4.rose { color: var(--rose-dark); }
+  .card h4.amber { color: var(--amber-dark); }
+  .card h4.mint { color: var(--mint-dark); }
+  .card h4.sky { color: var(--sky-dark); }
+  .card h4.lav { color: var(--lavender-dark); }
+  .card h4.peach { color: var(--peach-dark); }
+  .card h4.lemon { color: var(--lemon-dark); }
+  .card h4.gray { color: var(--ink); }
+  .card p { font-size: 14px; color: var(--ink-muted); margin-bottom: 0; }
+
+  /* ===== CHECKLIST ===== */
+  .checklist { list-style: none; margin: 1rem 0 1rem 0; }
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 15px;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid var(--gray-mid);
+    color: var(--ink);
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .check-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    background: var(--ink);
+    color: var(--cream);
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 500;
+    margin-top: 2px;
+  }
+
+  /* ===== QUOTE ===== */
+  .pull-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    font-style: italic;
+    line-height: 1.55;
+    color: var(--ink);
+    border-left: 4px solid var(--ink);
+    padding: 0.75rem 1.5rem;
+    margin: 2rem 0;
+    background: var(--gray-light);
+    border-radius: 0 10px 10px 0;
+  }
+
+  /* ===== INTERVIEW ===== */
+  .interview-block {
+    margin: 1rem 0;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 0.75rem;
+    align-items: start;
+  }
+  .speaker-tag {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 50px;
+    text-align: center;
+    margin-top: 3px;
+  }
+  .speaker-corinda { background: var(--sky); color: var(--sky-dark); }
+  .speaker-claude { background: var(--mint); color: var(--mint-dark); }
+  .interview-text { font-size: 15px; color: var(--ink); line-height: 1.7; }
+
+  /* ===== DIVIDER ===== */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2.5rem 0;
+    color: var(--ink-faint);
+    font-size: 1.2rem;
+  }
+  .divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gray-mid);
+  }
+
+  /* ===== HIGHLIGHT ROW ===== */
+  .highlight-row {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+  }
+  .highlight-pill {
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .pill-rose { background: var(--rose); color: var(--rose-dark); }
+  .pill-amber { background: var(--amber); color: var(--amber-dark); }
+  .pill-mint { background: var(--mint); color: var(--mint-dark); }
+  .pill-lav { background: var(--lavender); color: var(--lavender-dark); }
+
+  /* ===== ERRATA ===== */
+  .errata-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 1rem 0;
+  }
+  .errata-table th {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 8px 12px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .errata-table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--gray-mid);
+    color: var(--ink-muted);
+    vertical-align: top;
+  }
+  .errata-table tr:last-child td { border-bottom: none; }
+  .errata-table tr:nth-child(even) td { background: var(--gray-light); }
+
+  /* step anchor */
+  .step-anchor {
+    display: block;
+    height: 80px;
+    margin-top: -80px;
+    visibility: hidden;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--ink);
+    text-align: center;
+    font-size: 13px;
+    color: var(--ink-faint);
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <div class="hero-eyebrow">Corinda's Series: Thirteen Steps to Mentalism</div>
+  <h1>Patter &amp;<br>Presentation ✨</h1>
+  <div class="hero-sub">Step Thirteen. The final word on what it truly means to perform.</div>
+  <div class="badge-row">
+    <span class="badge badge-rose">Personal Appearance</span>
+    <span class="badge badge-amber">Manner &amp; Speech</span>
+    <span class="badge badge-mint">Patter</span>
+    <span class="badge badge-sky">Good Effects</span>
+    <span class="badge badge-lav">Misdirection</span>
+    <span class="badge badge-peach">Co-ordination</span>
+  </div>
+</div>
+
+<!-- ===== TOC ===== -->
+<div class="toc-box">
+  <h2>📋 Contents at a Glance</h2>
+  <ul class="toc-list">
+    <li><a href="#intro"><span class="toc-num">1</span> Introduction</a></li>
+    <li><a href="#essentials"><span class="toc-num">2</span> Essentials of Good Performance</a></li>
+    <li><a href="#appearance"><span class="toc-num">3</span> Personal Appearance</a></li>
+    <li><a href="#manner"><span class="toc-num">4</span> Manner &amp; Speech</a></li>
+    <li><a href="#patter"><span class="toc-num">5</span> Patter</a></li>
+    <li><a href="#effects"><span class="toc-num">6</span> Good Effects</a></li>
+    <li><a href="#handling"><span class="toc-num">7</span> Handling</a></li>
+    <li><a href="#timing"><span class="toc-num">8</span> Timing</a></li>
+    <li><a href="#misdirection"><span class="toc-num">9</span> Misdirection</a></li>
+    <li><a href="#coordination"><span class="toc-num">10</span> Co-ordination</a></li>
+    <li><a href="#interview"><span class="toc-num">11</span> Interview: Claude Chandler</a></li>
+    <li><a href="#errata"><span class="toc-num">12</span> Errata &amp; Appendix</a></li>
+  </ul>
+</div>
+
+<!-- ===== INTRODUCTION ===== -->
+<span class="step-anchor" id="intro"></span>
+<div class="prose-section">
+  <div class="section-label" style="color: var(--rose-mid);">Opening Words 🌹</div>
+  <h2 class="section-title">Introduction</h2>
+
+  <div class="callout callout-rose">
+    <span class="callout-icon">⚠️</span>
+    <div class="callout-title">A Note of Humility</div>
+    <p>It is a bold and somewhat presumptuous step to take, when anybody sets out to write even a small booklet on Patter and Presentation.</p>
+  </div>
+
+  <p>A subject of this kind demands a lifetime of experience and a keen understanding and appreciation of magic as a whole. As writer of this book, I have neither of these qualifications and I would make it quite clear in the beginning that I try to do nothing more than express my personal views on Mentalism.</p>
+
+  <p>When necessary, I have taken the advice of those more qualified than myself and I am grateful for the considerable assistance of my many friends.</p>
+
+  <p>Since this "Step" expresses that which I presume to be a reasonable approach to presenting mental magic, it is naturally confined to Mentalism which I like. It may not include mental magic which is favoured by others and it may even be incomplete when consideration is given to the whole field of Mentalism, a vast subject.</p>
+
+  <p>However, it will be wide enough and comprehensive enough to give those who want to know, a knowledge of one way to perform Mentalism. The way which I have chosen is the one which favours simplicity, straightforwardness and impact.</p>
+
+  <p>Naturally, I have done my readers the courtesy of trying out these principles, before writing about them, so I have the satisfaction of knowing they work and I am confident that anybody else can do the same if they want to.</p>
+
+  <div class="pull-quote">
+    "It is not the trick that matters one fifth as much as the way you do it."
+  </div>
+
+  <p>Now to get down to work and discuss in detail the little things that make a weak trick appear as a miracle or, alternatively, the miracle seem a flop. In this short sentence alone, we have the very essence of mentalism; it is not the trick that matters one fifth as much as the way you do it.</p>
+
+  <p>I would go so far as to say that in the hands of a good performer, any trick, no matter how bad as an effect, could be made into something. Indeed, it is possible to perform several things which are not even tricks, and still bewilder an audience by dint of first class showmanship.</p>
+
+  <div class="callout callout-mint">
+    <span class="callout-icon">🤯</span>
+    <div class="callout-title">The Ultimate Flex</div>
+    <p>Nothing is more satisfying than to fool an audience, when you haven't done anything!</p>
+  </div>
+
+  <p>If we can appreciate this, we must realise of what value good presentation is to mental magic. It is in fact quite indispensable since you cannot perform good magic without it, and that means regardless of how brilliant your tricks (as tricks) may be.</p>
+
+  <p>It is a common failing to suppose that a first class trick or effect, needs less attention concerning presentation than a weaker one. One is almost misdirected into believing that a startling effect must be good when performed. But it is not so. There are two distinct things to be done before you achieve the ideal performance; first you get the best possible effect and then you get the best possible form of presentation. To get the effect and stop there is to stop half way to perfection.</p>
+
+  <div class="nested-outer rose">
+    <div class="nested-title rose">🔍 An Honest Industry Observation</div>
+    <div class="nested-inner">
+      <p>In my profession I meet magicians and mentalists all day and this gives me a fair opportunity to see how most of them work. I mean no offence when I say that in my opinion, the average person is not in the least interested in proper presentation, and good patter is likewise badly neglected.</p>
+      <p>There appears to be an insatiable urge to find new tricks (which is entertaining and interesting) and there is hardly any inclination to make these new tricks worth performing properly, which is not so interesting although far more profitable.</p>
+      <p>Really there is no need whatsoever for new tricks as there are more than enough already, and as an inventor and dealer I am as guilty as anyone for propagating new monstrosities!</p>
+    </div>
+  </div>
+
+  <div class="callout callout-amber">
+    <span class="callout-icon">💡</span>
+    <div class="callout-title">Corinda's Honest Advice</div>
+    <p>My honest advice for what it is worth, is to spend less time searching for new effects and more time working on those you already have. It is an achievement in one life to be able to do six tricks perfectly and if you get this far, then you are entitled to play games and fiddle with novel diversions.</p>
+  </div>
+
+  <p>The odd thing about magicians is that when this sort of thing is said, everybody agrees and at the same time everybody thinks it applies to somebody else.</p>
+
+  <div class="callout callout-peach">
+    <span class="callout-icon">👇</span>
+    <p>It could be you!</p>
+  </div>
+</div>
+
+<!-- ===== ESSENTIALS ===== -->
+<span class="step-anchor" id="essentials"></span>
+<div class="prose-section">
+  <div class="section-label" style="color: var(--amber-mid);">The Big Picture 🎯</div>
+  <h2 class="section-title">The Essentials of Good Performance</h2>
+
+  <p>No one thing makes a trick right or wrong. Many things go together. To name a few of the more important subjects, we have:</p>
+
+  <div class="card-grid">
+    <div class="card card-rose">
+      <div class="card-emoji">👔</div>
+      <div class="card-label rose">A</div>
+      <h4 class="rose">Personal Appearance</h4>
+      <p>Looking the part is the first impression you will ever make.</p>
+    </div>
+    <div class="card card-amber">
+      <div class="card-emoji">🗣️</div>
+      <div class="card-label amber">B</div>
+      <h4 class="amber">Manner &amp; Speech</h4>
+      <p>How you say it matters just as much as what you say.</p>
+    </div>
+    <div class="card card-mint">
+      <div class="card-emoji">💬</div>
+      <div class="card-label mint">C</div>
+      <h4 class="mint">Patter</h4>
+      <p>Your story. Your words. Your moment.</p>
+    </div>
+    <div class="card card-sky">
+      <div class="card-emoji">✨</div>
+      <div class="card-label sky">D</div>
+      <h4 class="sky">Good Effects</h4>
+      <p>Choose your material wisely. Not all tricks are equal.</p>
+    </div>
+    <div class="card card-lav">
+      <div class="card-emoji">🤲</div>
+      <div class="card-label lav">E</div>
+      <h4 class="lav">Handling</h4>
+      <p>The physical craft. Clean, smooth, and natural.</p>
+    </div>
+    <div class="card card-peach">
+      <div class="card-emoji">⏱️</div>
+      <div class="card-label peach">F</div>
+      <h4 class="peach">Timing</h4>
+      <p>Doing the right thing at exactly the right moment.</p>
+    </div>
+    <div class="card card-lemon">
+      <div class="card-emoji">🪄</div>
+      <div class="card-label lemon">G</div>
+      <h4 class="lemon">Misdirection</h4>
+      <p>One of the most important things you will ever study.</p>
+    </div>
+    <div class="card card-gray">
+      <div class="card-emoji">🎼</div>
+      <div class="card-label gray">H</div>
+      <h4 class="gray">Co-ordination</h4>
+      <p>Conducting all the above into one harmonious picture.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-sky">
+    <p>Let us deal briefly with each one in turn but at the same time, let us remember that they are not isolated in performance. They must all come together making, in effect, the complete picture.</p>
+  </div>
+</div>
+
+<!-- ===== APPEARANCE ===== -->
+<span class="step-anchor" id="appearance"></span>
+<div class="prose-section">
+  <div class="section-label" style="color: var(--rose-mid);">(A) 👔</div>
+  <h2 class="section-title">Personal Appearance</h2>
+
+  <div class="callout callout-rose">
+    <span class="callout-icon">💡</span>
+    <p>When you look good, you feel good. When you feel good, you work well.</p>
+  </div>
+
+  <p>Personal appearance is important and can easily be overlooked. When you are a performer, people have to look at two things: you and your magic. Both should be pleasing to the eye. You do not have to be rich in order to dress in good taste and there is no excuse for dirty hands and fingernails which can be an alarming distraction from the magic your hands do.</p>
+
+  <p>There is no such thing as a typical costume for the Mentalist. This is a good thing because it means you don't have to dress up into some make-believe role each time you wish to perform. Contrary to some schools of thought, I do not believe that the stage mentalist has to be garbed in flowing Eastern robes and crowned with a turban. The only time I would endorse such extravagance would be in the case of an Eastern Mentalist who rightly dressed in native style. That would be natural and what is natural is most important.</p>
+
+  <div class="nested-outer rose">
+    <div class="nested-title rose">🎬 What the Public Expects</div>
+    <div class="nested-inner">
+      <p>Personal appearance has a lot to do with the way the audience regard you. Consider what you want them to think of you. If you wish to present your mentalism as supernatural phenomena, then you are almost obliged to appear supernatural. One has to picture the common mental image of a character part as seen in the public eye.</p>
+      <p>Question people and ask what they think a Medium looks like, and few suppose that such a personality is an ordinary looking person. Introduce the supernatural and you automatically introduce alongside the Occult.</p>
+    </div>
+    <div class="nested-inner">
+      <p>There have been half a dozen or so films made which involved a Medium. In nearly every instance, the Medium always turned out to be an eccentric grey haired old lady, garbed in flowing dress and heavily bedecked with chains of beads, bangles and odd trinkets. Never once was the medium an ordinary looking person, which in fact is what they all are, as it did not matter what they really were like; it was what people expected them to be that counted.</p>
+    </div>
+  </div>
+
+  <p>Remember one secret of showbusiness is to exaggerate the ordinary so that it becomes a change from the commonplace and therefore is interesting to watch.</p>
+
+  <p>Bearing this point in mind, and others which we will discuss, we come to the question: is it worth pretending to be supernatural? I have little hesitation in giving my answer as No! At least, not for the mindreader. It is an artificial role which is hard to play, hard to maintain (since you have to keep it up) and to cap it all, it is quite unnecessary.</p>
+
+  <div class="callout callout-amber">
+    <span class="callout-icon">✅</span>
+    <div class="callout-title">So what should you look like?</div>
+    <p>You should look clean, suitably dressed to meet the company which you entertain (i.e. Pink jeans are not worn at a Duchess's Dinner Party) and for your own benefit, dress comfortably. If you are not sure at any time as to what to wear, play safe and wear a quiet suit and tie.</p>
+  </div>
+
+  <div class="callout callout-peach">
+    <span class="callout-icon">😬</span>
+    <div class="callout-title">A Cautionary Tale</div>
+    <p>One professional mindreader from England turned up to play a Casino in France two years ago; he was not allowed through the doors because of a House rule that all gentlemen wore ties. He missed the engagement because on a hot day he arrived in an open neck shirt.</p>
+  </div>
+
+  <p>When you are not well dressed and you arrive in company that is, naturally you feel different and can easily become embarrassed. How can you possibly work at ease when you are self-conscious about your appearance?</p>
+
+  <p>If you are one of these people who like to claim you don't care a damn what you look like, then you might like to know that the people who pay for an artist to entertain their guests, frequently expect somebody who looks like a gentleman and not a tramp. They care.</p>
+
+  <div class="callout callout-mint">
+    <span class="callout-icon">😌</span>
+    <p>Although you are committed to dress respectably, you are not barred from a touch of personal taste as long as it is reasonably good taste. You don't have to turn out like a tailor's dummy. For instance, I have often worked from a stage wearing a maroon corduroy jacket (rather like a smoking jacket) and with clean shoes, shirt and tie I think I felt almost civilised.</p>
+  </div>
+</div>
+
+<!-- ===== MANNER ===== -->
+<span class="step-anchor" id="manner"></span>
+<div class="prose-section">
+  <div class="section-label" style="color: var(--sky-mid);">(B) 🗣️</div>
+  <h2 class="section-title">Manner and Speech</h2>
+
+  <p>When you meet a strange person you form a quick impression of them by the way they dress, speak and behave. Quite often your audience meet you for the first time and they will form an opinion about you. They can arrive at three conclusions.</p>
+
+  <div class="highlight-row">
+    <span class="highlight-pill pill-mint">They like you 😊</span>
+    <span class="highlight-pill pill-rose">They do not like you 😐</span>
+    <span class="highlight-pill pill-amber">They can't even be bothered to think about you 😶</span>
+  </div>
+
+  <p>We have discussed the importance of correct dress and see now, once more, that it helps to form a good impression at the start. However, immaculate as you may appear, sooner or later you have to say something and once more you can make or break yourself. What you say and the manner in which you say it will have a decided effect on the audience, especially at the beginning.</p>
+
+  <div class="nested-outer sky">
+    <div class="nested-title sky">📣 The Golden Rules of Speech</div>
+    <div class="nested-inner">
+      <p>Speak clearly so that people hear what you have to say, talk loud enough without shouting for everybody to hear, and speak as best you can in the best possible English.</p>
+    </div>
+    <div class="nested-inner">
+      <p>When it comes to the manner of speech, the first thing at all times is politeness. Nothing creates a better and more lasting impression than good manners. Very few people study etiquette and it is a definite point in your favour if you can do the right thing at the right time. To know that one addresses a Bishop as "Your Grace" and not "Mac" or "Mate" is what one might take as a sign of culture! If you don't know what to do, almost any Public Library will have a book telling you about it.</p>
+    </div>
+  </div>
+
+  <div class="card-grid">
+    <div class="card card-mint">
+      <div class="card-emoji">😎</div>
+      <div class="card-label mint">Right Approach</div>
+      <h4 class="mint">What to Aim For</h4>
+      <p>Appear confident, friendly and professional. Like you actually want to be there.</p>
+    </div>
+    <div class="card card-rose">
+      <div class="card-emoji">😰</div>
+      <div class="card-label rose">Wrong Approach</div>
+      <h4 class="rose">What to Avoid</h4>
+      <p>Nervousness, big-headedness, conceitedness, amateurism and vagueness.</p>
+    </div>
+  </div>
+
+  <p>Try to appear as though you like being there and like doing the job. Never appear bored and disinterested. Oddly enough, you will find that as you feel so this, in some peculiar manner goes out into the audience. You have to make yourself feel good and feel confident and then they feel the same and soon accept you. When you are nervous, often you make the audience nervous, especially in close up work and this is almost useless for the role of a commanding mindreader.</p>
+
+  <div class="callout callout-lav">
+    <span class="callout-icon">🧠</span>
+    <div class="callout-title">A Good Mental Trick</div>
+    <p>A good dodge is to become introspective by assuming that you have an entire audience of professional cold readers (See Step Ten) and imagine how they will see you. If you were a cold reader you would look for dress, manner and speech, so look at yourself.</p>
+  </div>
+</div>
+
+<!-- ===== PATTER ===== -->
+<span class="step-anchor" id="patter"></span>
+<div class="prose-section">
+  <div class="section-label" style="color: var(--mint-mid);">(C) 💬</div>
+  <h2 class="section-title">Patter</h2>
+
+  <p>It is practically impossible to perform a mental act or routine without saying something. Magicians are a little more fortunate than mentalists in this respect; if they like, they can evolve an act, a so called "Silent Act" and nothing is said. Hardly any mental tricks explain themselves to an audience by vision alone and because of this, we are forced to meet the demand for good patter during performance.</p>
+
+  <div class="callout callout-mint">
+    <span class="callout-icon">📖</span>
+    <div class="callout-title">What is Patter?</div>
+    <p>Patter is the name we give to a story we tell and the casual asides of conversation that come during performance. Not to be confused with speech which is, as we have seen, another thing. One concerns voice production and correct use of a language and the other (patter) deals with what you say and why you say it in order to make the effect presentable.</p>
+  </div>
+
+  <p>One of the outstanding weak spots in the amateur mental programme is usually patter. More often than not, budding mentalists buy good mental effects from their dealers, and then go ahead and perform the mechanics of the trick as given in the instructions supplied and forget to add the very necessary talk to the effect. A dealer cannot hope to supply every client with correct patter for every trick he sells. He can suggest plots and themes for patter that go well with the trick, but it's your job to find the right words to be used at the right time.</p>
+
+  <div class="nested-outer mint">
+    <div class="nested-title mint">✍️ Write Your Own Script</div>
+    <div class="nested-inner">
+      <p>There are people whose profession it is to write words for others to say. Scriptwriters as we call them are of little use to a mentalist. The best scriptwriter for your mental act is yourself, and this is something that you should actually do; devise a script and learn it.</p>
+    </div>
+    <div class="nested-inner">
+      <p>The important thing is to understand the purpose and value of good patter. When you understand, you will realise that others cannot write words for you and that imitation of another person's patter is likewise useless.</p>
+    </div>
+  </div>
+
+  <p>I believe that it is very important to be yourself and let it seem that what you do is natural to you. This you cannot achieve with artificial patter. Your words have to be the sort of thing you say naturally and a scriptwriter doing the job for you would have to be a psychiatrist at the same time, in order to create words that were natural to you.</p>
+
+  <div class="pull-quote">
+    "Good patter is the means to an end. Perfect presentation."
+  </div>
+
+  <p>It can be used to draw attention to your tricks (or apparatus) and when this happens, attention goes away from yourself. I know of several excellent tricks which would fail absolutely without the use of one or two right words delivered in the right manner at the right time. To think that one little word can often be the making of a great trick!</p>
+
+  <div class="nested-outer amber">
+    <div class="nested-title amber">🃏 Patter as Trickery: Real Examples</div>
+    <div class="nested-inner">
+      <p>You will remember in Step Six on Billets we discussed in detail the Centre Tear Routine. We went through several stages and arrived at the most difficult part of the trick; we had to steal one piece of paper from several others held in view. This was achieved by using correct patter at the very right moment. A few natural words ("Have you got a match please?") took the attention from your hands to your face, and the trick was done.</p>
+    </div>
+    <div class="nested-inner">
+      <p>Another example: the crucial point in the Al Baker billet switch is reached, a few simple words, but right words ("Did you write it in English?") are spoken, and the trick is done.</p>
+    </div>
+  </div>
+
+  <h3 class="sub-title">How to Build Your Script 🏗️</h3>
+
+  <p>Start by writing your own script; fit the effects into the pattern we call a routine, and then write down everything you think you should say from beginning to end. In the beginning, overload your script, write too much because you can always cut down by editing, which comes later. Allow for a straightforward introduction to each trick and for what you have to say during the performance of the effect. Finish by scripting your comments that go at the end of your trick. Completeness is essential.</p>
+
+  <div class="callout callout-lemon">
+    <span class="callout-icon">🎙️</span>
+    <div class="callout-title">The Tape Recorder Trick</div>
+    <p>The use of a tape recorder in these trial and error stages can be a considerable help. Having got enough on paper to last you during performance, now work to improve what you have already said. Start with the words that matter most and see if you can find a stronger word for any point where patter is part of the trick itself.</p>
+  </div>
+
+  <p>For each and every trick there is a good pattern to follow when devising the patter you need. Start off by finding the best way to explain to the audience what you are going to do (as far as your trick permits). If you cannot explain what you are going to do, and we know it is not always possible or desirable, then tell the audience what you are doing at the time.</p>
+
+  <div class="callout callout-rose">
+    <span class="callout-icon">🚫</span>
+    <div class="callout-title">Avoid This at All Costs</div>
+    <p>Avoid the bad habit acquired by many of naming each and every thing they touch. "I am removing the cards from the case and cutting them." That is an example of rather stupid patter. People can see you do this and if you can think of nothing better to say, then utilise the brief pause by making a quick aside that amuses people and entertains them.</p>
+  </div>
+
+  <h3 class="sub-title">What Claims Should You Make? 🎭</h3>
+
+  <p>It is all a matter of opinion as to what you should or should not do. Some think you can claim to be the world's most phenomenal brain and others like to suggest that what they do is perfectly normal and could be done by anyone. My personal opinion leans towards the last suggestion as opposed to the first. However, not to the extent that I openly admit that anyone could do the things I do.</p>
+
+  <div class="nested-outer lav">
+    <div class="nested-title lav">🧠 Corinda's Favourite Introduction</div>
+    <div class="nested-inner">
+      <p>Whenever it is possible, and this is nearly always so when working mental magic at close quarters with an audience, I make a short introduction which tells them that I would like to show them a few interesting things that can be achieved if you like to train the human mind to do them. I openly state that it is my belief that everybody could do these things and that it is simply a question of study and practice. I flatter the incredibility of the human brain and not myself (which would be a wrong manner to adopt).</p>
+    </div>
+    <div class="nested-inner">
+      <p>I go on to explain that people could quite easily think there was something psychic about the things that can be done, and add that it is by no means so; certainly it takes training, a lot of hard work and a fair understanding of psychology, but all the same, it is something which anybody can train their mind to do!</p>
+    </div>
+  </div>
+
+  <p>As you realise, it is practically telling them the truth, but you need not fear the modesty of your claims will in any way affect their appreciation of your ability.</p>
+
+  <p>Having adopted this approach, I phrase the patter in straightforward language. I do not go off the deep end with long winded pseudo-scientific phraseology that supposedly sounds good. I prefer to use down to earth understandable language. I call a trick an "experiment" or a "simple test" and now and then I allow a technical term like "E.S.P." to slip in, just for effect.</p>
+
+  <div class="callout callout-peach">
+    <span class="callout-icon">😄</span>
+    <div class="callout-title">How to Handle Technical Terms</div>
+    <p>"And I expect you would like to know how it was done? I don't mind telling you, it is nothing really, simply a case of pre-inferential cognosis, but don't tell everybody..." Used in this vein you pass away a technical phrase as a joke and that's about the best you can do.</p>
+  </div>
+
+  <p>Generally speaking it is easier, safer and altogether more convincing to use language that people understand, and to act as yourself rather than attempt to create an artificial personality. Nothing appears more ridiculous than a performer who starts off with a Chinese accent and ends up talking like a Cockney.</p>
+
+  <p>Moreover, by using your own personality and speaking as you would normally, you find yourself at ease so much that although working to a script you are still able to ad lib remarks and witticisms into the proceedings, giving it all the more personal touch and making it all so much more natural.</p>
+
+  <div class="callout callout-mint">
+    <span class="callout-icon">🚂</span>
+    <div class="callout-title">Sound Interesting!</div>
+    <p>Remember it is not a lecture, not a case of reciting poems and not a monotone announcement. When you introduce a trick don't make it sound like the usual voice heard on a railway station, the one that drones on telling you the 10.50 train will stop at Fagsend and Doggit. Try and sound interesting.</p>
+  </div>
+
+  <div class="callout callout-sky">
+    <span class="callout-icon">🏆</span>
+    <div class="callout-title">The Final Word on Patter</div>
+    <p>I have no intention of giving you examples of patter for Mentalism. I think it would be downright stupid to do so. I have already explained that what suits one person rarely suits another. Better by far that you do as I suggest; write your own script, keep in mind the purpose and uses of patter, experiment yourself to find that which suits you and then you have patter for the tricks you do.</p>
+  </div>
+</div>
+
+<!-- ===== GOOD EFFECTS ===== -->
+<span class="step-anchor" id="effects"></span>
+<div class="prose-section">
+  <div class="section-label" style="color: var(--sky-mid);">(D) ✨</div>
+  <h2 class="section-title">Good Effects</h2>
+
+  <p>The prime purpose of this discussion is to analyse the makings of good (or bad) presentation. Therefore we must give some consideration to the actual effects that are performed. It is easy to say and nice to think that a brilliant performer could take any old trick and make it into a veritable miracle during performance. I am inclined to disagree with this hypothesis and in any case, if you know what you are doing, you do not have to use weak effects.</p>
+
+  <p>Your aim is not to prove how good you are by showing your ability to take a weak trick and make it presentable. Better by far that you start off right at the beginning with strong, good mental magic; there are plenty of good tricks to choose from and the best way to assess their value is to put each trick to a simple test.</p>
+
+  <h3 class="sub-title">The 10-Point Test ✅</h3>
+  <p>We draw up a short list of questions and see how many of them permit us to answer yes to any one trick. The more yesses we get, the better the trick.</p>
+
+  <ul class="checklist">
+    <li><span class="check-num">1</span> Can it be done without much preparation or expense?</li>
+    <li><span class="check-num">2</span> Is it absolutely reliable and sure to work every time?</li>
+    <li><span class="check-num">3</span> Can it be performed without using assistance of any kind?</li>
+    <li><span class="check-num">4</span> Will the audience understand what has happened?</li>
+    <li><span class="check-num">5</span> Will it be accepted as a mental effect and not a magic trick?</li>
+    <li><span class="check-num">6</span> Can it be done without excessive apparatus?</li>
+    <li><span class="check-num">7</span> Can it be performed anywhere; stage or close up?</li>
+    <li><span class="check-num">8</span> Does it suit your style and can you find good patter for it?</li>
+    <li><span class="check-num">9</span> Is the effect strong enough to fool everybody?</li>
+    <li><span class="check-num">10</span> Are you capable of working the trick?</li>
+  </ul>
+
+  <div class="callout callout-amber">
+    <span class="callout-icon">📊</span>
+    <p>Few tricks will come out of the test with ten points out of ten, but there may be excusable instances. The higher the score, the more suitable the trick. Also keep in mind that you can alter tricks so that you improve them. I find this a simple and time-saving system.</p>
+  </div>
+
+  <h3 class="sub-title">What Makes a Trick Good? 🔍</h3>
+
+  <div class="nested-outer sky">
+    <div class="nested-title sky">Standard 1: The Audience Must Understand It</div>
+    <div class="nested-inner">
+      <p>First I feel that it is absolutely imperative that the trick is one that can be explained to an audience. By that I mean, performed in such a way that they will understand what has happened. It might well seem a very odd thing to say, but one sees so many tricks of mentalism these days and quite a few of them are so involved or over subtle that at the end nobody is quite sure what has been achieved. That, to put it mildly, is a fat lot of good!</p>
+    </div>
+  </div>
+
+  <div class="nested-outer mint">
+    <div class="nested-title mint">Standard 2: Simplicity</div>
+    <div class="nested-inner">
+      <p>I like straightforwardness. Invariably, a trick which you find simple to understand is a trick which is simple to perform. This does not mean the trick has to be weak. Anybody who knows anything about magic will acknowledge that some of the most beautiful masterpieces of trickery are so simple that they outclass the mass of tricks.</p>
+      <p>If you bother to think about it, you will find that you personally get far more satisfaction by fooling somebody by a very simple dodge, than you do by a complicated and drawn out routine. Never be ashamed of simplicity.</p>
+    </div>
+  </div>
+
+  <div class="nested-outer amber">
+    <div class="nested-title amber">Standard 3: It Must Be Worth Doing</div>
+    <div class="nested-inner">
+      <p>There are many effects which although of the class mental magic, they are just not strong enough or unusual enough to be worth performing. You have to achieve something good.</p>
+      <p>If you know one good trick and nothing more, do the one and then stop. If you go on and add a few half-hearted catches you reveal yourself. If you do nothing more they are never sure how much you could do if you wanted to!</p>
+    </div>
+  </div>
+
+  <div class="callout callout-lemon">
+    <span class="callout-icon">😂</span>
+    <div class="callout-title">How to Know You've Done a Good Trick</div>
+    <p>Very simple. At the finish of the effect look at the audience; if they have gone white in the face, froth at the mouth with excitement, shake at the knees or get down on the floor and salaam you, it is quite a fair trick. If they snore or ask you what time your bus leaves, take a hint.</p>
+  </div>
+
+  <div class="callout callout-rose">
+    <span class="callout-icon">🤔</span>
+    <div class="callout-title">On "Do It Again"</div>
+    <p>I used to think one way to judge a trick was to wait and see if they said "Do it again." Now I know better. Often people say "Do it again" because you were so damn clumsy the first time that they caught half the trick and they now want to see the other half so that they know how it works. It is a great thing to make mistakes because that is the best way to learn!</p>
+  </div>
+
+  <h3 class="sub-title">On Routining and Applause Breaks 👏</h3>
+
+  <p>It is a very common mistake among inexperienced performers to take a few tricks and build them into an act. Then they hear the word "Continuity" and think this means that one trick must run smoothly and faultlessly into the next, making the whole a continuous routine. This is all wrong; utterly wrong.</p>
+
+  <div class="nested-outer lav">
+    <div class="nested-title lav">🎭 The See-Saw Principle</div>
+    <div class="nested-inner">
+      <p>If you have an act you might say you have a routine with six tricks. You have got to remember that it is six tricks and not one routine that you are showing. You should get at least six rounds of applause, one for each trick and each round of applause represents a break.</p>
+    </div>
+    <div class="nested-inner">
+      <p>A break relieves the tension. You start a trick and build up the tension using showmanship and effect to scare or amaze an audience, then you break off quickly and let their emotions fall back to normal and give them a chance to let off steam by applauding your work. Then you start again rather like a see-saw, causing elation and then relaxation.</p>
+    </div>
+    <div class="nested-inner">
+      <p>Added to this pattern of psychological mistreatment, each trick should be followed by a stronger one if possible, so that each time you elate the audience a little more than last time. Now you achieve the purpose of routining and that is to go forward in steps until you reach an outstanding peak. Then you end.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-peach">
+    <span class="callout-icon">👻</span>
+    <div class="callout-title">Lessons from Ghost Shows</div>
+    <p>I gained a lot of experience and understanding about breaks when I used to perform ghost shows. The necessity is not so apparent when doing ordinary mental magic (although it is still there) but when you go into the business of frightening people you find out that obvious breaks are imperative. You are performing a ghost show and you see and feel the tension building up; if you don't stop it gets unbearable, the audience become so tense that you feel as though an explosion is due to occur.</p>
+  </div>
+
+  <h3 class="sub-title">The Last Trick in Your Act 🏁</h3>
+
+  <p>Now what about the most important trick in the act, the last one you do. It is the most important because it is the one that leaves, or should leave, the final impression you create.</p>
+
+  <div class="card-grid">
+    <div class="card card-mint">
+      <div class="card-emoji">🚶</div>
+      <div class="card-label mint">Rule 1</div>
+      <h4 class="mint">End Alone on Stage</h4>
+      <p>It is quite wrong to conclude a performance surrounded by half a dozen people who have come up from the audience to help you.</p>
+    </div>
+    <div class="card card-sky">
+      <div class="card-emoji">🤲</div>
+      <div class="card-label sky">Rule 2</div>
+      <h4 class="sky">Finish Empty-Handed</h4>
+      <p>At the very end you should think of every way to focus attention on yourself and eliminate anything that may become even a slight distraction.</p>
+    </div>
+    <div class="card card-amber">
+      <div class="card-emoji">🎯</div>
+      <div class="card-label amber">Rule 3</div>
+      <h4 class="amber">Make a Clean Exit</h4>
+      <p>Make the end an end and be done with it. Don't cross over to a table and put things down.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-sky">
+    <span class="callout-icon">🎪</span>
+    <div class="callout-title">The Best Mental Tricks</div>
+    <p>I think that there is no question at all that the very best mental tricks are those you can do anywhere, at any time and with practically no preparation. A good test for your ability and for your tricks, or those you know and can do, is to be able to go anywhere and suddenly you are called on to perform a short show. You should be able there and then to do a pretty respectable routine with a few pieces of borrowed paper, a pencil, maybe a pack of cards or whatever else you find comes to hand. That is Mental magic at its best.</p>
+  </div>
+</div>
+
+<!-- ===== HANDLING ===== -->
+<span class="step-anchor" id="handling"></span>
+<div class="prose-section">
+  <div class="section-label" style="color: var(--lavender-mid);">(E) 🤲</div>
+  <h2 class="section-title">Handling</h2>
+
+  <p>We have talked about the type of trick to do and now we concern ourselves with the handling of these tricks. What is the right way to handle mental effects? The answer is, the way that suits you best.</p>
+
+  <div class="callout callout-rose">
+    <span class="callout-icon">🗑️</span>
+    <div class="callout-title">Throw Away the Instructions</div>
+    <p>Many tricks which utilise apparatus are supplied with instructions which tell you how the thing works. Sometimes the instructions go further and tell you what to do when and what to say as you do it. Cut this part of the instructions away and chuck it in the wastepaper basket; it is a waste of time if you want to learn serious mental magic.</p>
+  </div>
+
+  <p>In the first place, do you want to do and say the same thing as everybody else does? Do you realise that a dealer may sell 500 of a good mental trick, all with the same instructions? If every one of the 500 customers did and said the same thing, audiences would get so used to that effect it would be quite absurd.</p>
+
+  <p>As a human being you are gifted with the ability to think and originality in patter and presentation is simply a question of thinking for yourself. Only lazy people are satisfied to do just what instructions tell them to do.</p>
+
+  <div class="nested-outer lav">
+    <div class="nested-title lav">🪞 The Secret: Know Yourself</div>
+    <div class="nested-inner">
+      <p>The first thing you have to do is to find out how to do the trick. No matter what bright ideas you have of your own, you must be able to do the trick. When you have mastered the mechanics then you start to work on effect to make it suitable for your type of work.</p>
+    </div>
+    <div class="nested-inner">
+      <p>What suits you is that which suits your character, your personality and your style. Watch what you do in every day life so that you find out how you behave when you are behaving naturally. Do anything just as you would do it normally, but watch the way your hands hold a pencil, pick up a book, light a cigarette. Watch and observe; you are teaching yourself how you behave!</p>
+    </div>
+    <div class="nested-inner">
+      <p>When you know yourself and you know what you do, try to mould the tricks around this natural manner of yours; you are out to achieve something very clever, you will achieve something very clever if you do it. By being yourself you have created the most powerful misdirection in the world.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== TIMING ===== -->
+<span class="step-anchor" id="timing"></span>
+<div class="prose-section">
+  <div class="section-label" style="color: var(--peach-mid);">(F) ⏱️</div>
+  <h2 class="section-title">Timing</h2>
+
+  <div class="callout callout-peach">
+    <span class="callout-icon">⏰</span>
+    <div class="callout-title">What is Timing?</div>
+    <p>It is doing the right thing at the right moment. Not to be confused with "running time" which we cover later on. It is the factor that co-ordinates movement with speech during performance. Good timing is invisible; bad timing stands out a mile.</p>
+  </div>
+
+  <p>Many tricks depend on split second timing when it comes to doing something vital to the making of those tricks. Remember again in the example of the Centre Tear: we arrived at a point where you said a few words and then did something (removed the centre to the pocket). Split second timing of words with action enabled you to make a vital move. If the timing had been wrong, the words said before the hands were set to make the move, before the spectator had been misdirected or before you were standing in the right position, the whole thing failed.</p>
+
+  <h3 class="sub-title">Pacing Your Patter 🎵</h3>
+
+  <p>Remember a few pages back we were dealing with patter, what to say as you performed your tricks. Now we have to be sure that the words not only suit the action, but go with the action in time. Because it is essential that actions go with speech hand in hand, it is important when writing a script of patter for tricks that you perform the effects as you devise the patter.</p>
+
+  <div class="callout callout-amber">
+    <span class="callout-icon">🎙️</span>
+    <div class="callout-title">Spiel: Your Secret Weapon</div>
+    <p>We allow ourselves a licence of speech which is called in the business, "Spiel." This is off-the-cuff padding or ad lib patter. Fundamentally, it is something which you add to your script or general speech for fixed tricks. It is a common mistake for people to think that they can start at the beginning and go on to the end using unrehearsed speech all the way. Better by far that you have a solid script which covers the bulk of what you have to say, and fill in with spiel as your time, tricks and personality permit.</p>
+  </div>
+
+  <h3 class="sub-title">Running Time and Television 📺</h3>
+
+  <div class="nested-outer peach">
+    <div class="nested-title peach">📺 The TV Problem</div>
+    <div class="nested-inner">
+      <p>Up to a few years ago, running time was not so important as it is today. Music Halls and Theatres expected an act to run for "about" ten minutes and as much as one minute under or over the mark was a margin that the producer could afford to allow. In some fields today, a one minute overlap would be quite disastrous; I refer to Television of course.</p>
+    </div>
+    <div class="nested-inner">
+      <p>If you want to work on Television, you have got to know quite a bit about running time. You must understand in the first place that on a T.V. programme you are one small unit of time which makes up a full hour. The best way to think about it is to bear in mind the cost of one second on peak hour commercial television. Time doesn't seem very important until you think that ten seconds over running may cost somebody fifty pounds or more.</p>
+    </div>
+    <div class="nested-inner">
+      <p>If you finish before the scheduled time, you may unbalance the entire programme and your short act may seem to have a poor, rather drawn out finish. If you exceed the given time, a worse fate can happen. It may be necessary for the producer to fade out on your spot in order to get the next act in on time and from the viewers point of view, they see half a trick.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-lemon">
+    <span class="callout-icon">🤝</span>
+    <div class="callout-title">The Audience as Your Clock</div>
+    <p>If you are running too slow or going on too long, you will see plenty of movement and hear people whispering to each other. They are obviously restless and that is because you have not absorbed their complete attention and held it. If you are on a stage and cannot hear whispering or even see the audience because of bright footlights, you will still "feel" the reaction you are getting. In fact, it is to what extent a showman can judge the feel of an audience that makes him a glorious success or a blithering flop.</p>
+  </div>
+
+  <div class="callout callout-rose">
+    <span class="callout-icon">😅</span>
+    <div class="callout-title">A Gentle Warning</div>
+    <p>Occasionally one sees a trick performed and after waiting perhaps nine minutes to reach the end, you are never sure whether they clap because they liked the trick or because it has reached the end at last. Whenever I see this sort of thing, when it gets to five minutes I pray the thing will work because it scares me that in the event of failure the performer might have another go from the beginning again.</p>
+  </div>
+</div>
+
+<!-- ===== MISDIRECTION ===== -->
+<span class="step-anchor" id="misdirection"></span>
+<div class="prose-section">
+  <div class="section-label" style="color: var(--lemon-mid);">(G) 🪄</div>
+  <h2 class="section-title">Misdirection</h2>
+
+  <div class="callout callout-lemon">
+    <span class="callout-icon">⭐</span>
+    <div class="callout-title">This Cannot Be Stressed Enough</div>
+    <p>I cannot stress too strongly that Misdirection is one of the most important things for you to study. It will make your work perfect and it will make your work easy.</p>
+  </div>
+
+  <div class="pull-quote">
+    "The more simple, natural and outright your misdirection, the more powerful it becomes."
+  </div>
+
+  <div class="callout callout-mint">
+    <span class="callout-icon">🐘</span>
+    <div class="callout-title">The Elephant in the Room (Literally)</div>
+    <p>How good or powerful can misdirection be? It can be so good that if you were seated alone in a room with one man, and through the door came an elephant which had been especially prepared with black and white stripes, on its back a Scotsman playing very loudly Highland Lassie on a set of bagpipes (out of tune), and the elephant complete with escort thumped through the room, in theory your spectator wouldn't know it had happened. And why not? Because you misdirected his attention!</p>
+  </div>
+
+  <h3 class="sub-title">Two Fundamental Methods 🎯</h3>
+
+  <div class="card-grid">
+    <div class="card card-sky">
+      <div class="card-emoji">💬</div>
+      <div class="card-label sky">Method 1</div>
+      <h4 class="sky">Misdirection by Speech</h4>
+      <p>What you say draws attention away from what you are doing. The right word at the right moment changes everything.</p>
+    </div>
+    <div class="card card-rose">
+      <div class="card-emoji">👋</div>
+      <div class="card-label rose">Method 2</div>
+      <h4 class="rose">Misdirection by Action</h4>
+      <p>What you do draws the eye. Movement, gesture, and body language guide where attention flows.</p>
+    </div>
+  </div>
+
+  <p>Aside from the two obvious ways to apply Misdirection (i.e. Speech and action) there are other methods which from time to time are usable. We can adopt the use of sound, touch and smell all to good effect.</p>
+
+  <h3 class="sub-title">The Most Powerful Misdirection of All: A Mistake 😲</h3>
+
+  <p>What sort of Misdirection is strong for Mentalists? The answer is this: anything that appears to be done naturally either by you or to a spectator is powerful misdirection. A mistake is the most powerful of all.</p>
+
+  <div class="nested-outer amber">
+    <div class="nested-title amber">🃏 The Double Face Card Trick (A Study in Misdirection)</div>
+    <div class="nested-inner">
+      <p>You have five cards face up on the table, they are these cards: 10S, JH, QD, KH, AD. In your hand you have five more cards and these match in value and colour those on the table. That is to say, you have 10C, JD, QH, KD and AH and this, you explain to a spectator. You ask anyone to merely think of one of the cards that they see on the table.</p>
+    </div>
+    <div class="nested-inner">
+      <p>You remove one card from your fan and lay it face down on the table as though for all the world you have no doubts that your selection will match their choice. Whatever they say, you look surprised and disappointed, grab at your card on the table, look at it again and then show that you understand why you went wrong. "Sorry, I've got them in the wrong order," you say and replace the card from the table in your fan and commence to rearrange them, back outwards.</p>
+    </div>
+    <div class="nested-inner">
+      <p>Having done this to your satisfaction, you ask the spectator to deal those cards in any order he likes, one on each of the cards on the table. This he does. When they are turned over, every card matches perfectly, every time it matches and you do nothing whatsoever. You did the work earlier on, using misdirection and acting.</p>
+    </div>
+    <div class="nested-inner">
+      <p>The trick is achieved by using five double face cards and five double back. You didn't have any cards to look at but the mistake you made convinces them you had!</p>
+    </div>
+  </div>
+
+  <div class="callout callout-lav">
+    <span class="callout-icon">💡</span>
+    <p>In order that you may appreciate the importance and value of a trick of this kind, you would be best advised to try the effect both ways. Try to perform the trick on one audience without the preliminary error. Judge the reaction and then later try again on another audience and this time include the opening mistake; I guarantee you will find the effect ten times stronger.</p>
+  </div>
+
+  <p>It may well be thought that it is not a good thing to make a mistake at any time. On the face of it, it is not the right thing, but it all depends very much on how many mistakes you make, and in what direction you make them. In addition to this, there is a certain psychology between the audience and the performer which creates a feeling of sympathy when an error occurs. The audience tend to relax completely and their attention comes sharply off the trick and on to you; a very convenient condition at times!</p>
+
+  <h3 class="sub-title">Demonstrative Misdirection 🎩</h3>
+
+  <p>The next form of Misdirection which is of use to the Mentalist is that which I like to term "Demonstrative Misdirection." It can be applied for work with billets, books or cards and the principle, although very simple is extremely good.</p>
+
+  <div class="nested-outer mint">
+    <div class="nested-title mint">🔄 The Pack Switch: A Perfect Example</div>
+    <div class="nested-inner">
+      <p>Suppose you want to switch a pack of cards. One deck is in your hands and one deck in your pocket. You could go into a ballet dance of movement which might enable you to exchange packs, or alternatively you could do it by demonstrative misdirection.</p>
+    </div>
+    <div class="nested-inner">
+      <p>You want the spectator to have the deck in his pocket and so you simply say "I want you to keep this pack of cards in safe custody, not to open them, not to look at them for the moment, and to be sure that nobody else touches them. Take them please." You reach forward handing him the pack in your hands and then as he is about to grasp it, take it back and say: "No, better still, put them in your pocket like this and put your hand over the outside so that nobody can even get at the pack." Calmly put the deck in your pocket and leave it there, remove the hand and show him how to hold his hand over the outside; and having finished your explanation, casually reach back into your pocket and remove the second deck handing it to him for safe keeping. The pack is switched.</p>
+    </div>
+    <div class="nested-inner">
+      <p>The key is natural behaviour and because of this, go slow and suit the action to the word. Forget you are switching a pack of cards; the only time you have to remember this is when it comes to knowing which pack is which.</p>
+    </div>
+  </div>
+
+  <h3 class="sub-title">Repetitive Misdirection 🔁</h3>
+
+  <div class="nested-outer sky">
+    <div class="nested-title sky">♠️ The David Berglas Principle</div>
+    <div class="nested-inner">
+      <p>A classic example of the next form of misdirection, that which I call "Repetitive misdirection" is a trick which I believe should be credited to David Berglas. It is safe to assume that the more times an audience see the same thing the less attention they pay each time they see it done. This is a weakness that we can use to advantage.</p>
+    </div>
+    <div class="nested-inner">
+      <p>David Berglas will do several card tricks in succession and most of them start by having someone take a card, look at it and return it to the deck. After a while a minor miracle pops up. Spectator takes a card and replaces it anywhere in the deck and immediately shuffles the pack to his heart's content. The performer does not touch the pack again and yet he successfully names the selected card.</p>
+    </div>
+    <div class="nested-inner">
+      <p>The method is repetitive misdirection. For the first few tricks the spectator is told to take a card and they are fanned face down to allow him to select one. For the last trick, they are fanned face up! The whole thing is quite absurd because you see which card they take but you must add a few touches to conceal the fact.</p>
+    </div>
+  </div>
+
+  <div class="pull-quote">
+    "Never try and be clever when you can be simple, because nothing fools more than sheer simplicity."
+  </div>
+
+  <p>The use of the word obvious brings to mind another anomaly of misdirection. That which is obvious is not always apparent. People do not think of the obvious explanation; generally speaking they try and credit you with far more skill than you have. Another weakness. The more simple, natural and outright your misdirection, the more powerful it becomes.</p>
+</div>
+
+<!-- ===== CO-ORDINATION ===== -->
+<span class="step-anchor" id="coordination"></span>
+<div class="prose-section">
+  <div class="section-label" style="color: var(--peach-mid);">(H) 🎼</div>
+  <h2 class="section-title">Co-ordination</h2>
+
+  <p>We have gone to some lengths to describe all the minor features that go into making mentalism presentable. Now we discuss, very briefly, the importance of co-ordination, or doing things in tune.</p>
+
+  <div class="nested-outer peach">
+    <div class="nested-title peach">🎻 You Are the Conductor</div>
+    <div class="nested-inner">
+      <p>Imagine your assets of performing ability as various instruments of an orchestra. You know about patter and timing, misdirection and movement and all the other things that matter and consider each to be an instrument. What sort of overture emerges from this collection if there is no governing body?</p>
+    </div>
+    <div class="nested-inner">
+      <p>A true orchestra is ruled by a conductor, a man that co-ordinates the strings with the brass. You are the same; you are your own conductor. You have to do things to tune. The real secret of performance is the moulding of all things into one harmonious picture.</p>
+    </div>
+    <div class="nested-inner">
+      <p>Any one item on its own is not enough. Knowing the right things to say without knowing the right things to do is as bad as a half-finished symphony. Like music, everything has a time and place and more than that, it has a time and place in parallel with other things. All things mould together making one magnificent show and if not, that which lags behind or races ahead is that which goes out of tune.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-peach">
+    <span class="callout-icon">🎯</span>
+    <p>Conduct your performance as a man with an orchestra to care for and the result will be entertaining, and that is all that matters unless you seek to be a mentalist because it pleases your vanity.</p>
+  </div>
+</div>
+
+<div class="divider">✦ ✦ ✦</div>
+
+<!-- ===== INTERVIEW ===== -->
+<span class="step-anchor" id="interview"></span>
+<div class="prose-section">
+  <div class="section-label" style="color: var(--mint-mid);">Bonus Section 🎤</div>
+  <h2 class="section-title">An Interview with Claude Chandler</h2>
+
+  <div class="nested-outer mint">
+    <div class="nested-title mint">🎩 Who is Claude Chandler?</div>
+    <div class="nested-inner">
+      <p>Claude Chandler, now Vice-President of the London Magic Circle has spent a lifetime on the stage. As actor, magician, producer and writer he is well qualified to give advice; we attended a lecture given by Claude on the subject of Acting on the Stage and the Importance of Production and Presentation.</p>
+      <p>In our humble opinion, this lecture was brilliant and we were so impressed with the practicability of it all, that we arranged for him to come to our Studio and tape record an interview on the subject of Stage acting and Production for the benefit of our readers.</p>
+      <p>Like the Interview with Fogel in Step Seven, it is considered that a great deal of advice can be given and taken by these cross-question interviews. It may be pointed out that Claude Chandler is not a Mentalist. But those of you who have worked on any type of stage will readily agree that no matter who you are or what you are, Production and Acting counts one hundred per cent. If you learn to be an Actor you can play any role and a Mentalist is simply one role.</p>
+    </div>
+  </div>
+
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">We start off Claude by asking you a little bit about your personal career in show business, how long you have been at it and what sort of places you have played in your time.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">Well, I'm not a Mentalist of course although any actor could play the role of Mentalist; as you know, I am a professional magician and ventriloquist. I wouldn't like to say how far back I go!</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">Well how many years have you been at it?</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">Ever since I was a boy at school, and that's quite a while. I've done a great deal of private entertaining of course, and worked in the days when you went to the lovely country houses of England and most of the Theatres and music halls in the country.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">Interrupting you there Claude. I suppose it is worth mention that you have played Royal Command Performances?</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">I don't think that's the most interesting. I have worked for members of the Royal Family but I think the most interesting thing from magicians and mentalists points of view is the fact that when I was a young man, and the great and famous David Devant finally realised that through illness he would never perform again, he actually chose me to carry on with his work. I didn't know him, he saw me performing and asked me to come and see him and the outcome was I presented nearly all his most famous illusions in a show that ran for nearly an hour and a quarter. The Artists dream and the Golliwog ball, all the wonderful things that were his, which I performed for a number of seasons at Maskelynes and I suppose that is the most interesting thing in my career from a conjuring point of view. Needless to say, Devant himself was an Actor and I've always been extremely interested in Acting which brings us to the subject of this interview.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">Would you say you learnt a lot from Devant as an actor?</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">I don't think I learnt anything directly from him as an actor except of course that he was a very accomplished actor and he always mixed with actors and understood the value of acting, in magical presentation.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">May I ask you did you learn your acting from an acting school or did you learn it by experience, by constantly being at it?</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">I learnt it from experience, I never went to a school of acting, but I made a study of it; I've always studied acting and considered it, thought about it and read about it. Everything I could do, I did to find out about acting and the art of the actor. Then I learnt to apply it to magic as I think many people ought to do.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">How would you advise somebody who was interested in making a study of acting; what would you recommend to them? Should they go to a school?</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">Well, they can go to a school of acting of course, it's an excellent thing and if they can do it, although it is rather difficult and takes a long time, it is a wonderful thing for them. It would not be money or time wasted if they wanted to go in for magic or mentalism seriously. A course of acting would be a vast step forward. Otherwise, they must just find out what they can about it and study it from whatever point of view they are able.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">Off hand, can you think of any good book that you could advise to help on this subject?</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">No I don't think there is any special book for me to recommend. There are books undoubtedly published and many are to be found in every library.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">I believe I'm right in saying that in your career you have indeed done several Royal Command performances.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">Yes, I have on a number of occasions because, as I say, I used to work to people referred to as landed gentry and on many occasions, Royalty were there. This includes our present Queen and her family.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">And lastly, talking about you, I suppose you have played theatres and music halls?</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">I suppose I've played almost every theatre in the British Isles.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">And today, I believe I'm right in saying you do quite a bit of producing and you are also the Vice-President of The Magic Circle.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">Quite true.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">Well now, Claude, what I want to do is to ask you some questions that I think will help readers of this book to understand more the acting side of show business. Most of my questions are drawn from a lecture you gave recently on stage craft and acting, and having made some notes at the time I would ask you now to give us more detail. In general, we are concerned with points of interest to Mentalists as you realise this book specialises on that subject.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">I'd like to break in there and say I don't think it matters what you are doing. If you are giving a stage performance, whether you are a comedian or a Mentalist, a magician or any form of stage performer, you are employing the art of the actor and the better actor you are the better performance you are going to give to further your medium.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">This prompts me to ask you whether the same principles apply for stage as for close up?</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">Yes. Let us talk from the stage point of view, it's easier to talk that way. But the same principle applies wherever there is entertainment. If you have mastered the technique for stage you can apply those principles anywhere, even a drawing room.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">I remember the first thing you spoke about was deep breathing. At the start I thought it was unimportant, but half way through your lecture you had me convinced I was wrong.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">Yes. Although it seems a strange thing to say if you do learn the simple process of deep breathing, it can be a great help; I will try and describe it briefly to you. You take air in through the nostrils and fill the lungs and then expel the air out of the mouth. The way to do it is to empty the lungs; one thinks for deep breathing that you have to fill the lungs, but the important thing is to empty them first of all, because you can't fill them up with fresh air if you've left some stale air in there. Fill up by taking it slowly through the nostrils and breathe it out slowly through the mouth. But as you take in, tighten up all your muscles, grip your hands, and flex your arm and shoulder muscles, and as you let the air come out, relax everything. Now I didn't describe in the lecture until later on the use of deep breathing, but I think it best if we do that now in this case.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">Yes, please do or readers may well think you are talking a lot of nonsense.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">Well, if you have mastered deep breathing, that is to say, you must practise it a bit, you cannot do it suddenly; it has to be acquired. You will find that one of its great values is when you are standing in the wings waiting to go on. There is nothing for you to do, everything is ready and all you do is to stand there and feel more and more nervous. Now deep breathing apart from the good it does you, will steady your nerves, gives the blood oxygen and gives you something to do, something to mildly occupy your mind just at that time when you are at the height of your nervousness waiting to go on. You will find it is a most valuable thing at that particular time.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">If I can pop another question here. Later you will be speaking about voice control, I believe I'm right in saying that you said there is an important connection between deep breathing and voice production?</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">Yes. That is another use which we shall discuss presently.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">Right. Let us leave that for further discussion later on and start now at the beginning of a performance. Can we ask you for tips for making an entry on to the stage? What is the right approach?</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">Yes, before I deal with that, I should say that an actor looks upon everything he does as playing a character. And it can be very helpful to mentalists if you think of yourself as playing a part. It's a bit like the ordinary individual at a party; dress him up and he behaves in a manner according to his dress or character. You will find that if you have formulated in your own mind that you are playing a part, you are the Mentalist or whatever you want to be, you step into that character and it's almost like putting on a disguise. You will be less nervous if you do that.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">Well Claude, in your opinion what character is a Mentalist? I mean, how can you tell so that you can portray that?</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">No. Simply form in your own mind a character, whatever you feel you would like to be on the stage. Your stage character may be just that little bit different to you. You may feel that when you want to walk across a room you like to slouch across; but in your own mind, you feel that the sort of man you would like to be on the stage is not a man who slouches so you cultivate for that character a more upright walk or a better walk. Maybe a more commanding appearance or manner, something a little more dynamic than you have in the ordinary way. It is a character, something a little different to yourself.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">Would you say it was wrong for mentalists to create a belief in himself to the extent that during his act he actually believes he can do that sort of thing?</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">I would say that it was essential for the mentalist to do it. As long as you bear in mind it's not playing a part in a play where you can make all sorts of exaggerated statements, here you must be careful that you do not overdo it and land yourself in trouble. Mentally, if you are playing a part you should believe you have these powers, that's the actor.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">Can we return to our earlier question about walking on?</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">One important thing to bear in mind is to stand well back. Don't stand close to the wings so that your first step brings you right on to the stage. Get well back off stage so that when it's your time to appear, you take at least three or four, or even more steps before anybody sees you. Then you are well walking, travelling at a good speed by the time the audience see you. Don't appear as though you have jumped out of the wings. Another important thing there: as you walk on, look at your audience. Directly you get on to the stage, look at them. The power of the human eye is amazing and if you don't look at them you look a fool. We might say that's a golden rule.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">So to sum it up, stand well back to arrive on stage at a good walking speed and as you come on turn your head to face the audience. Then where do you go?</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">You arrive centre stage normally.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">You mentioned the danger of standing too far forward on the stage because the footlights can make you look funny.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">True. Take a reasonable distance, depending on the stage and your set up of props and what you have got. I would say as far as you can say, if you keep a few feet from the footlights without falling over your props you will be all right. It is very bad to stand on top of the footlights and you should always try and avoid it.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">When we were speaking just now about looking at an audience, I meant to ask you more about that. In your lecture you described how to do this.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">Many beginners and often really experienced people fail to know how to look at an audience. Some people will tell you to look over their heads, to look here, to look there. The actual secret is that you look in the direction of the audience, but you do not focus; you do not allow your eyes to focus on any particular thing or any particular person. Then you will give the impression that you are speaking and looking at everybody. Your eyes casually move around up into the gallery or circle and down again. Never look directly at any one person. An actor doesn't look at the audience because he is playing a part. If you are in a scene or a play, you don't look at the audience; they are the "Fourth Wall." On the other hand, as an entertainer walking on to address an audience, then you are going to speak to the audience and so you do look at them.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">What happens in the case of some theatres where the lighting conditions make it almost impossible to see the audience?</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">You look in the right direction just the same and the audience will not know you cannot see them. It makes no difference.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">Can we get on to a very important subject, that of Voice Production, correct speech and talking so that everyone can hear you?</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">Well of course, it's a big subject. One can take elocution and have your voice trained and that sort of thing, but broadly speaking first of all is the correct production of the voice, what is known as a "Forward Production" and that means the voice must be pitched just behind the front top teeth. Pitch the voice forward and not down in the throat. A good way to assist you, if you don't think you have a forward voice is to use what is called the nasal voice, that is talking through the nose; if you do that, and then leave the nose open, you will find the voice is in that forward position.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">People usually believe that if you get on a stage and talk to the back row of an audience, everybody must hear you; would you say this is correct?</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">Yes. Definitely. If you feel that you are talking to someone who is sitting in the back row it will work. But be careful not to shout. Again it comes back to deep breathing. You have a good lung capacity and you can hold a lot of air, and you can conserve air. The more air you get behind your words, the more force you can give them without shouting.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">There was a tricky point in your lecture where you were forced to show that you could perform deep breathing on stage without visibly blowing yourself out in view of the audience.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">No. You do the deep breathing in the wings before you get on stage but it can still be done gently whilst actually on stage.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">And you had something to say about speaking good English and not clipping off the ends of words.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">Yes, you get that in Elocution. One of the things they teach you is to sound your consonants clearly. Also, not to clip off the endings of words, finish a word. You would be surprised; if some of our entertainers could make tape recordings and listen carefully to what they are saying, they would be very surprised to hear how many of the endings of their words they clip off. In a big hall or theatre it means that those words just don't get over. Pronounce your words clearly and finish them.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">Do you vary the volume of your voice according to the size of the place in which you are performing?</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">Yes. Obviously you must do so. To go to an extreme, you may be performing in open air. Due to inexperience you may find yourself inclined to shout; if you would only realise that you can be heard in the open air as long as you speak clearly and distinctly. In a hall or theatre there is always a certain amount of vibration which brings the sound back to you so you can hear yourself speaking. In the open air your voice seems to disappear and you worry, thinking you are not being heard. Always try to avoid shouting.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">Now to change the topic again, I remember you said the hardest thing for an actor to do is to stand still on the stage. What can you add to that?</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">True. Many an actor finds it extremely difficult to stand still on the stage. The secret is to plant your weight firmly on both feet, don't have your weight on one foot. Let your arms hang by your side and relax. If you put your arms by your sides and your muscles are stiff, it will betray any nervousness and you won't look at ease. You must relax completely.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">Why do you consider it important that an actor or mentalist does stand still?</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">I think that it's important to stand still because when you do move it has dramatic effect. If you are constantly moving about it serves no purpose, it becomes monotonous and you lose people's attention. If you stand still as you should do when you are talking to an audience, then, when you do move, it is definitely dramatic.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">In your lecture you mention quite a bit about bad habits concerning movement on stage. Can we speak about them?</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">That was the various things you can do through nervousness. The sort of things that people do, not knowing they are doing them as a result of nerves. A common habit is nodding the head in emphasis and another is shifting the weight from one foot to another. People don't realise it but eventually they form almost a rocking movement which is most irritating and means the performer lacks repose. Another bad habit is to gradually wander forward a little bit and then wander back. Again you see you have unnecessary movement.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">I have another note on your comment that an actor never does anything on stage unless he knows that he does it. What did that mean?</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">It is a very hard thing for the inexperienced performer to grasp. A trained actor is in complete command of himself. Every intonation of his voice and every muscle of his body, every look in the eye and all he does is known to himself. He does not do anything on the stage without knowing he does it and the danger with so many of our performers, many that I have seen in magical societies, is that they have so many bad habits and they do things not knowing they are doing them. You can do whatever you like on the stage; it may not be successful, which is a matter of trial and error, if you want to do your Mentalism standing on your head, you can, if you wish, but you should know that you're doing it! You can do it on one foot if you like, the awful thing is the man that does it on one foot and doesn't know he's standing on one foot.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">A complication occurs to me listening to you Claude. You say that it's important that an actor knows about everything he does, his speech and movement; does that mean a person must watch himself whilst performing? How can a performer overcome the difficulty of watching himself and not paying enough attention to the audience?</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">Well, it's a curious thing and I suppose it only comes by long training or long experience. There is an essential difference between the inexperienced performer and the experienced performer, be he actor or any other form of entertainer. The experienced performer constantly thinks of the audience; he sees everything via the eyes of the audience. The inexperienced performer is constantly thinking what he's doing. "I'm walking on a stage, I'm picking up this, I'm standing here, etc." He can't help it, even he would change with experience to the professional attitude: "the audience see me walking on a stage, they see me picking this up, it's having this effect on them." All the time, the effect on the audience as they see it. One must stand outside oneself and learn to look at oneself and see what is going on.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">Speaking about stage movement, you gave some useful advice on the right way to walk on stage.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">An actor is taught to walk the stage for an example; a mentalist stands in the middle of the stage. He has to turn up stage towards a table, pick up something and return to the centre of the stage. Now if you turn round and approach that table and bring your feet together, you cannot get back to the centre without a lot of shuffling of your feet. If you arrive at the table with what we call the upstage foot (that's the foot furthest away from the audience) with your weight on it, and the downstage foot is more or less allowed to hang behind, in that position, you find you can turn and come back with almost no movement of your feet. It is difficult to describe but if you try, you will find that if you bring your feet together you can't turn round and start off back again without an awful lot of shuffling. That's the kind of thing one learns in walking the stage.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">Dealing more with movement, what would you say is dramatic movement?</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">I think almost anything that he hasn't done constantly, is dramatic movement for the mentalist. It brings me back to my point: if a man is constantly walking back and forth there's nothing startling in any movement he may do. But if he's been standing still for quite a time and he suddenly moves and turns upstage, that sudden movement can be arresting. Any gesture or movement that is done fairly quickly and held can be dramatic. Another example: if you point your finger to someone in the audience, or straight out into the audience, and stand there pointing, it's bound to be dramatic as long as it has some bearing.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">Let us leave this now and change to another topic. What would you say are some common faults with patter?</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">The outstanding fault is not learning patter. Patter should be learnt and I think the mentalists are probably the greatest offenders. A mentalist has to do so much explaining and the whole of his script should be edited with the greatest of care so that he has an economy of words, otherwise it gets lost and fogged with verbosity. I would say a vital thing is to write out your patter first and learn it after some editing has been done. Get it clear and concise. I've seen many a good mental performer fail because the audience don't quite know where they are with this awful jumble of words.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">I feel I should point out in defence of Mentalists, that we have to use what is called spiel, very often an almost impromptu fill-in of patter.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">There we have the peculiarity of this subject, so you allow patches in your script which are there for the purpose of ad libbing or spiel. The other points should be linked up by definite patter.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">I gather that you think the average mentalist uses too much patter?</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">Not too much. It seems overburdening because he hasn't got it cut down; he could say all he has to say with less words. A mental act is bound to be very wordy so let's get it as clear and concise as we possibly can. The only way is to write it out and then edit it.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">Can you offer any tips on how to learn patter?</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">An old dodge is to read it over before you go to sleep, any actor will tell you that. Merely read it, no need to keep saying it over to yourself. Remember patter has so many uses and it is therefore important. It can be used as misdirection; it is not what you do, but what you make the audience think you do and patter can help you to achieve that.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">Now what about props; you mentioned the importance of planning where you are going to put your stuff on stage.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">It is vitally important. Every prop on stage should have its place. Where it comes from and where it goes to. Moreover, if you have one trick with props that is to be followed by another, it's important to know what you are going to do with the props in between. If you need time to get rid of the props from your last trick, start talking about the next one whilst you are putting the props away. It is what we call continuity; things must go on smoothly. You must hold the audience's attention all the time.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">Well Claude we have covered a pretty wide selection of subjects, but we have yet to deal with the very end of your act. What advice can you offer to our readers concerning curtain calls and exit?</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">One very important thing is to check at every theatre to find out which way the tabs close. If you want to make a quick and smooth movement to the front to take your curtain, you must head in the right direction through the tabs. Look up at any time in your act if you have any doubts, and don't leave it too late.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">In conclusion in your lecture you mentioned some rather important points about having assistants in the act, and the difference between an assistant and partner when it comes to curtain calls.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-claude">Claude 🎩</span>
+    <p class="interview-text">Yes, well I did mention that because so many magicians and mentalists do have their wives and friends as assistants, and the point is this: with full time experienced professional men who have assistants, male or female on the stage, the assistants do not take a call. The performer who has been assisted by his wife is in a difficult position because she will want to take a call, but strictly speaking, as an assistant, she should not do so. If the performer feels she has to be there to take a call, the best way is to give her a little more to do in the act and then she becomes more important and she equals a partner and becomes entitled to take a call.</p>
+  </div>
+  <div class="interview-block">
+    <span class="speaker-tag speaker-corinda">Corinda 🎙️</span>
+    <p class="interview-text">Well Claude, I'm sure there are many other things you could tell us but we have to stop somewhere and we are thankful for all your advice in this interview.</p>
+  </div>
+</div>
+
+<div class="divider">✦ ✦ ✦</div>
+
+<!-- ===== ERRATA ===== -->
+<span class="step-anchor" id="errata"></span>
+<div class="prose-section">
+  <div class="section-label" style="color: var(--ink-faint);">Appendix 📝</div>
+  <h2 class="section-title">Errata and Additions</h2>
+
+  <div class="callout callout-lemon">
+    <span class="callout-icon">🔎</span>
+    <p>However careful one tries to be, there is always the mistake. Many readers have kindly informed me of errors published in this series and for the benefit of purists the following alterations and additions should be made to existing copies:</p>
+  </div>
+
+  <table class="errata-table">
+    <thead>
+      <tr>
+        <th>Step</th>
+        <th>Location</th>
+        <th>Correction</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Step One</td>
+        <td>Pp. 16</td>
+        <td>Madame DISS DEBAR should read, Madame DIS DEBAR.</td>
+      </tr>
+      <tr>
+        <td>Step Three</td>
+        <td>Pp. 66, para 2</td>
+        <td>Should read: "Alternatively start with the number above the Key (i.e. 38) and when you reach a Key Square subtract two." Also on this page Diagram "B" and Diagram "C" should have a black star added in top left hand squares (Square number 52 in "C" and the equivalent in "B").</td>
+      </tr>
+      <tr>
+        <td>Step Seven</td>
+        <td>Pp. 229, para. 8</td>
+        <td>For Houdini read Houdin.</td>
+      </tr>
+      <tr>
+        <td>Step Ten</td>
+        <td>Pp. 309</td>
+        <td>Photo-memory by Hans Trixer. Either method may be used. The number called and performer names card or the card called and then performer states at which number it will appear. Line 23 should read "You said Ten and I said Three of Hearts."</td>
+      </tr>
+      <tr>
+        <td>Step Ten</td>
+        <td>Pp. 316</td>
+        <td>Beyond the Veil. Readers were not informed that in the pack, the cards which should be short cards were: 8C, QC, AC, 10D, 2S, 4C, AD, QS, 10S, AH, 8D, 8H, 4D, AS, JH, 8S, 10C, 4S, JD, KD, 6S, 4H, 5H, 9H, 6C, 7H (total 26 cards). The other 26 cards not mentioned consist of the remainder of the pack. This deck, arranged in long and short pairs, with cards in any order, will allow you to spell out from the stacked deck when instructions, as given in the effect, are followed.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub-title">Acknowledgment 🙏</h3>
+
+  <p>A final note on The Thirteen Steps to Mentalism. Those of you who have seen or read this complete series will appreciate that I owe a great deal to many fellow Mentalists for their advice, help and general support. To all those who have so generously given us tricks and routines, I express my sincere thanks. To those who have given us tricks without knowing it, I say thanks again, and leave in modest consolation the words of Hans Trixer who, speaking of those who steal or borrow tricks, writes:</p>
+
+  <div class="pull-quote">
+    "When you steal one trick, they call it plagiarism. When you steal many, they call it research."
+    <div style="font-size: 14px; font-style: normal; font-family: 'DM Sans', sans-serif; color: var(--ink-muted); margin-top: 0.5rem;">. Hans Trixer</div>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <p>Step Thirteen: Patter and Presentation. Corinda's Thirteen Steps to Mentalism.</p>
+  <p style="margin-top: 0.5rem;">Printed in England by H. Clarke &amp; Co. (London) Ltd.</p>
+</div>
+
+</body>
+</html>

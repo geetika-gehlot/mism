@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mediumistic Stunts — Corinda</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lora:ital@0;1&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #fdf8f0;
+    color: #1a1208;
+    line-height: 1.75;
+    font-size: 16px;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3rem 2rem 6rem;
+  }
+
+  /* TITLE BLOCK */
+  .title-block {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: #1a1208;
+    border-radius: 18px;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .title-block::before {
+    content: '👁️';
+    font-size: 3.5rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  .title-block h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #f5e6c8;
+    letter-spacing: 0.08em;
+    line-height: 1.15;
+  }
+  .title-block .subtitle {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    color: #c9a96e;
+    margin-top: 0.75rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.04em;
+  }
+  .title-block .step-badge {
+    display: inline-block;
+    background: #c9a96e;
+    color: #1a1208;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.35rem 1.1rem;
+    border-radius: 99px;
+    margin-bottom: 1.2rem;
+  }
+
+  /* SECTION HEADERS */
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    color: #1a1208;
+    margin: 2.5rem 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #3b2a0f;
+    margin: 1.5rem 0 0.5rem;
+  }
+
+  p { margin-bottom: 1rem; }
+  p:last-child { margin-bottom: 0; }
+
+  /* BOXES — the core system */
+  .box {
+    border-radius: 14px;
+    padding: 1.4rem 1.6rem;
+    margin: 1.5rem 0;
+  }
+  .box-amber {
+    background: #fff8e6;
+    border: 1.5px solid #e8c96a;
+  }
+  .box-rose {
+    background: #fff0f3;
+    border: 1.5px solid #f0a8b8;
+  }
+  .box-mint {
+    background: #edfaf3;
+    border: 1.5px solid #7dd4a8;
+  }
+  .box-sky {
+    background: #edf4ff;
+    border: 1.5px solid #89bbe0;
+  }
+  .box-lavender {
+    background: #f3f0ff;
+    border: 1.5px solid #b8aaf0;
+  }
+  .box-peach {
+    background: #fff4ee;
+    border: 1.5px solid #f0b08a;
+  }
+  .box-lemon {
+    background: #fffbe6;
+    border: 1.5px solid #d4bc4a;
+  }
+  .box-sage {
+    background: #f2f7ee;
+    border: 1.5px solid #9abf82;
+  }
+  .box-dark {
+    background: #1a1208;
+    color: #f5e6c8;
+    border: none;
+  }
+  .box-dark h3, .box-dark p, .box-dark li {
+    color: #f5e6c8;
+  }
+
+  /* NESTED BOX */
+  .nested {
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    margin: 1rem 0;
+    border-left: 4px solid;
+  }
+  .nested-amber { background: #fff3cc; border-color: #c9a030; }
+  .nested-rose  { background: #ffe8ed; border-color: #d96080; }
+  .nested-mint  { background: #d8f7e8; border-color: #3daa72; }
+  .nested-sky   { background: #daeeff; border-color: #4a9ed4; }
+  .nested-lavender { background: #ebe6ff; border-color: #8878d4; }
+  .nested-peach { background: #ffe8d6; border-color: #d47038; }
+
+  /* CALLOUT */
+  .callout {
+    border-radius: 12px;
+    padding: 1rem 1.3rem;
+    margin: 1.2rem 0;
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-start;
+  }
+  .callout-icon { font-size: 1.3rem; line-height: 1.5; flex-shrink: 0; }
+  .callout-amber { background: #fff3cc; }
+  .callout-rose  { background: #ffe8ed; }
+  .callout-mint  { background: #d8f7e8; }
+  .callout-sky   { background: #daeeff; }
+
+  /* TRICK CARD */
+  .trick-card {
+    background: #fff;
+    border-radius: 14px;
+    border: 1.5px solid #e8dcc8;
+    padding: 1.4rem 1.6rem;
+    margin: 1.8rem 0;
+    box-shadow: 0 2px 12px rgba(60,30,0,0.06);
+  }
+  .trick-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: #1a1208;
+    color: #c9a96e;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  .trick-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+  }
+  .trick-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: #1a1208;
+    font-weight: 700;
+  }
+  .trick-emoji { font-size: 1.4rem; }
+
+  /* TABLE OF CONTENTS */
+  .toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+    margin: 1rem 0;
+  }
+  .toc-item {
+    background: #fff;
+    border: 1px solid #e0d4bc;
+    border-radius: 10px;
+    padding: 0.55rem 0.9rem;
+    font-size: 0.88rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .toc-num {
+    background: #c9a96e;
+    color: #1a1208;
+    font-weight: 700;
+    font-size: 0.75rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 99px;
+    flex-shrink: 0;
+  }
+
+  /* GLOSSARY GRID */
+  .gloss-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    margin: 1rem 0;
+  }
+  .gloss-item {
+    border-radius: 10px;
+    padding: 0.8rem 1rem;
+  }
+  .gloss-term {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+    color: #1a1208;
+  }
+  .gloss-def {
+    font-size: 0.85rem;
+    color: #4a3820;
+    line-height: 1.5;
+  }
+
+  /* DIVIDER */
+  .divider {
+    text-align: center;
+    margin: 2.5rem 0;
+    font-size: 1.3rem;
+    letter-spacing: 0.5rem;
+    color: #c9a96e;
+  }
+
+  /* TAG PILLS */
+  .tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 99px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin: 0.15rem;
+  }
+  .tag-physical { background: #ffe0cc; color: #7a3010; }
+  .tag-mental   { background: #cce8ff; color: #0a3d6b; }
+  .tag-seance   { background: #f0e0ff; color: #4a1070; }
+  .tag-stage    { background: #d0f5e8; color: #0a4a28; }
+
+  /* PART HEADER */
+  .part-header {
+    background: linear-gradient(135deg, #1a1208 0%, #3b2a0f 100%);
+    color: #f5e6c8;
+    border-radius: 16px;
+    padding: 2rem 2rem;
+    margin: 3rem 0 2rem;
+    text-align: center;
+  }
+  .part-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #c9a96e;
+    margin-bottom: 0.4rem;
+  }
+  .part-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #f5e6c8;
+  }
+
+  /* BOOK LIST */
+  .book-item {
+    background: #fff;
+    border: 1.5px solid #e8dcc8;
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    margin: 0.8rem 0;
+  }
+  .book-num {
+    font-weight: 700;
+    color: #c9a96e;
+    margin-right: 0.4rem;
+  }
+
+  /* ATMOSPHERE TIP */
+  .atmo-tip {
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-start;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    margin: 0.5rem 0;
+    background: #fffbf2;
+    border: 1px solid #e8d8a8;
+  }
+  .atmo-icon { font-size: 1.2rem; flex-shrink: 0; }
+
+  @media (max-width: 600px) {
+    .toc-grid, .gloss-grid { grid-template-columns: 1fr; }
+    .title-block h1 { font-size: 2rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- TITLE -->
+  <div class="title-block">
+    <div class="step-badge">Step Nine · Thirteen Steps to Mentalism</div>
+    <h1>Mediumistic Stunts</h1>
+    <div class="subtitle">by Corinda &nbsp;·&nbsp; With drawings by Eric Mason</div>
+  </div>
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="box box-amber">
+    <h2>📋 Contents at a Glance</h2>
+
+    <h3>Part One — Introduction</h3>
+    <div class="toc-grid">
+      <div class="toc-item"><span class="toc-num">p.275</span> Introduction</div>
+      <div class="toc-item"><span class="toc-num">p.277</span> Establishing 'Atmosphere'</div>
+      <div class="toc-item"><span class="toc-num">p.278</span> Reference to Effects in Other Steps</div>
+      <div class="toc-item"><span class="toc-num">p.278</span> Mediumistic Patter</div>
+    </div>
+
+    <h3 style="margin-top:1.2rem;">Part Two — Physical Phenomena ✨</h3>
+    <div class="toc-grid">
+      <div class="toc-item"><span class="toc-num">1</span> Spirit Writing</div>
+      <div class="toc-item"><span class="toc-num">2</span> Spooky Stunts for Blackout</div>
+      <div class="toc-item"><span class="toc-num">3</span> Astral Signs</div>
+      <div class="toc-item"><span class="toc-num">4</span> The Spirit Hand</div>
+      <div class="toc-item"><span class="toc-num">5</span> Cardboard Skeletons</div>
+      <div class="toc-item"><span class="toc-num">6</span> Fire Balls</div>
+      <div class="toc-item"><span class="toc-num">7</span> "It"</div>
+      <div class="toc-item"><span class="toc-num">8</span> Ectoplasm</div>
+      <div class="toc-item"><span class="toc-num">9</span> Apports</div>
+      <div class="toc-item"><span class="toc-num">10</span> Spirit Lights</div>
+      <div class="toc-item"><span class="toc-num">11</span> The Icy Hand</div>
+      <div class="toc-item"><span class="toc-num">12</span> Message in Mid-Air</div>
+      <div class="toc-item"><span class="toc-num">13</span> The Spirit Candles</div>
+      <div class="toc-item"><span class="toc-num">14</span> The Waistcoat Escape</div>
+      <div class="toc-item"><span class="toc-num">15</span> Stage Spirit Cabinet Routine</div>
+      <div class="toc-item"><span class="toc-num">16</span> "Telekinecards" by Punx</div>
+      <div class="toc-item"><span class="toc-num">17</span> Palladino Table Lifting</div>
+      <div class="toc-item"><span class="toc-num">18</span> Arm Hook Table Lift</div>
+      <div class="toc-item"><span class="toc-num">19</span> Waist Hook Table Lift</div>
+      <div class="toc-item"><span class="toc-num">20</span> The Haunted Ball</div>
+      <div class="toc-item"><span class="toc-num">21</span> The Spirit Guide</div>
+      <div class="toc-item"><span class="toc-num">22</span> The Dead Hand Writes</div>
+      <div class="toc-item"><span class="toc-num">23</span> Corinda's "Ghost Walk"</div>
+      <div class="toc-item"><span class="toc-num">24</span> Spirit Moulding</div>
+    </div>
+
+    <h3 style="margin-top:1.2rem;">Part Three — Mental Phenomena 🧠</h3>
+    <div class="toc-grid">
+      <div class="toc-item"><span class="toc-num">25</span> "Phoney Business"</div>
+      <div class="toc-item"><span class="toc-num">26</span> "Yes-No" Slate Gag</div>
+      <div class="toc-item"><span class="toc-num">27</span> "Cryptopsychism"</div>
+      <div class="toc-item"><span class="toc-num">28</span> The Ouija Board</div>
+      <div class="toc-item"><span class="toc-num">29</span> Spirit Writing on Slate</div>
+      <div class="toc-item"><span class="toc-num">30</span> "Strike a Light!" by Punx</div>
+    </div>
+  </div>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- PART ONE -->
+  <div class="part-header">
+    <div class="part-label">Part One</div>
+    <div class="part-title">Introduction 👁️</div>
+  </div>
+
+  <p>Those who concern themselves with the study of Mentalism will find that as they progress through the many and varied channels of magic of the mind, they encounter other branches of "The Occult" which closely relate themselves to the parent Art of Mental Magic.</p>
+
+  <div class="box box-lavender">
+    <p>Mentalism in itself is a pure Art, a science of psychology, applied magic and physical experiment. However, the very nature of Mentalism is such that it lends itself to association with similar or Allied Arts. We find such things as Muscle Reading, Hypnotism, Mnemotechnics and Mediumship all find their place in association with the pure art.</p>
+  </div>
+
+  <p>Mediumship is one of the Allied Arts, one which links itself very strongly with magic of the mind, and understandably so. Mediumship and Mentalism differ in kind when the first takes on a physical nature and becomes demonstrative of actual manifestation; until then, existing as mediumship of the kind called mental phenomena, there is hardly any difference to be found.</p>
+
+  <div class="callout callout-mint">
+    <span class="callout-icon">💡</span>
+    <p>Practically any good mental effect could be adapted to use as a demonstration of mediumistic ability; a few alterations in the general patter and usual type of presentation would make most mental effects basic material for the seance room. On the other hand, not all mediumistic effects could be adapted to mentalism simply because they are too involved, specialised or literally too far fetched for the average audience.</p>
+  </div>
+
+  <p>The incredibility of the mentalists' audience is quite something, but compared with what one can get away with in the seance room — it's nothing.</p>
+
+  <div class="box box-peach">
+    <p>My experience is that there is absolutely no limit to what you can do in a seance room and I say that after a good many years at the game! (Lest that remark be misinterpreted, I had better qualify it by adding that "my game" was not as a Fraudulent Medium — a type which I consider to be the lowest form of animal.)</p>
+  </div>
+
+  <p>Mediumship or so called paranormal development is a study far too complex and vast to come within the bounds of one Step. Moreover, we are not really concerned with the subject as a whole; at this point we aim to deal with a selected number of tricks and routines that can be associated with Mentalism and a few in reverse, that can be adapted to mediumship.</p>
+
+  <div class="callout callout-amber">
+    <span class="callout-icon">📚</span>
+    <p>I have already written one book which deals specifically with the subject of Mediumship for Magicians and if you require comprehensive details of patter and presentation for Mediumistic effects, you would do best to refer to that publication.</p>
+  </div>
+
+  <div class="box box-sky">
+    <h3>📌 The Two Classes of Effect</h3>
+    <div class="nested nested-sky">
+      <p><strong>Physical Phenomena</strong> — any effect that involves visible action; i.e. Levitation, Telekinesis, Materialisation, etc. <span class="tag tag-physical">Physical</span></p>
+    </div>
+    <div class="nested nested-lavender">
+      <p><strong>Mental Phenomena</strong> — any effect which is of a purely mental nature, involving action not seen by the audience; i.e. Telepathy, Coincidences, Psychometry, etc. <span class="tag tag-mental">Mental</span></p>
+    </div>
+  </div>
+
+  <p>The selection of effects given in this step have been divided into these two classes. Before we give effects, a short section on presentation is given. This is merely a rough guide to the type of patter and style of presentation that is best adopted for these effects. In all probability, you will not seek to make a specialised performance of these effects so there is little demand for endless details; should it be that you are keen to study the field of mediumship with a view to full scale entertainment in this class (i.e. ghost shows, etc.) then for your benefit I have added a list of books which I consider would be useful to further your studies of applied mediumship.</p>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- MEDIUMISTIC PATTER -->
+  <h2>🗣️ Mediumistic Patter</h2>
+
+  <p>If you are going to present mediumistic effects, you may as well do it as near to the real thing as you can. The most important part of presenting these effects is the patter you use and the dramatic delivery of speech.</p>
+
+  <div class="callout callout-rose">
+    <span class="callout-icon">⚠️</span>
+    <p>To refer to your partner as an "assistant" would be grossly out of place. Performing an effect of this kind the "assistant" is always "the Medium." This serves as an example for substitution of phrase; you will find that most magical and mental terms have their counterpart in mediumistic jargon.</p>
+  </div>
+
+  <div class="box box-amber">
+    <h3>🔄 The Language Swap Guide</h3>
+    <p>The following is a compact description of the type of phrases that are commonly used by mediums:</p>
+    <div class="gloss-grid">
+      <div class="gloss-item" style="background:#fff8e6;border-radius:10px;">
+        <div class="gloss-term">Mindreading / Thoughtreading</div>
+        <div class="gloss-def">Telepathy, Paranormal Cognition, E.S.P., or Extra Sensory Perception</div>
+      </div>
+      <div class="gloss-item" style="background:#fff0f3;border-radius:10px;">
+        <div class="gloss-term">Second Sight</div>
+        <div class="gloss-def">Clairvoyance</div>
+      </div>
+      <div class="gloss-item" style="background:#edfaf3;border-radius:10px;">
+        <div class="gloss-term">Supernormal Hearing</div>
+        <div class="gloss-def">Clairaudience</div>
+      </div>
+      <div class="gloss-item" style="background:#edf4ff;border-radius:10px;">
+        <div class="gloss-term">Supernormal Feeling</div>
+        <div class="gloss-def">Clairsentience</div>
+      </div>
+      <div class="gloss-item" style="background:#f3f0ff;border-radius:10px;">
+        <div class="gloss-term">Equipment / Apparatus</div>
+        <div class="gloss-def">Psychic Appliance</div>
+      </div>
+      <div class="gloss-item" style="background:#fff4ee;border-radius:10px;">
+        <div class="gloss-term">Audience / Ladies and Gentlemen</div>
+        <div class="gloss-def">Meeting, Gathering, Sitting, Seance; Sitters, Friends, or The Gathering</div>
+      </div>
+      <div class="gloss-item" style="background:#fff8e6;border-radius:10px;">
+        <div class="gloss-term">Ghost / The Dead</div>
+        <div class="gloss-def">Spirits; Spirit Friends</div>
+      </div>
+      <div class="gloss-item" style="background:#edfaf3;border-radius:10px;">
+        <div class="gloss-term">Trick / Effect</div>
+        <div class="gloss-def">Psychical Experiments, Mediumship Tests, Phenomena</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="box box-mint">
+    <h3>🌐 The Spirit World's Geography</h3>
+    <div class="nested nested-mint">
+      <p>The Medium usually has one special Spirit Friend called her "Guide" and when the Guide acts through the Medium, she is said to be "Controlled" — or the Guide is her "Control."</p>
+    </div>
+    <div class="nested nested-sky">
+      <p>Spirit Friends have a home; they are said to come from the "Spirit World" which may otherwise be referred to as "Beyond the Veil" or "From the other side." We, the Living, are said to be on "The Earthplane."</p>
+    </div>
+    <div class="nested nested-lavender">
+      <p>When the Medium is under control, she is said to be "In Trance" and if the voice of the Medium is said to be the voice of her Guide or Control, then it is claimed that the Guide is talking "Through the Medium," probably delivering a "Trance Lecture" or "Spirit Message."</p>
+    </div>
+  </div>
+
+  <div class="box box-lavender">
+    <h3>✨ Key Phenomenon Words</h3>
+    <div class="gloss-grid">
+      <div class="gloss-item" style="background:#ece8ff;border-radius:10px;">
+        <div class="gloss-term">Materialisation</div>
+        <div class="gloss-def">To appear as a spirit or part of one; also the appearance of something inanimate</div>
+      </div>
+      <div class="gloss-item" style="background:#ece8ff;border-radius:10px;">
+        <div class="gloss-term">Telekinesis</div>
+        <div class="gloss-def">Visible movement of objects at a distance</div>
+      </div>
+      <div class="gloss-item" style="background:#ece8ff;border-radius:10px;">
+        <div class="gloss-term">Dematerialisation</div>
+        <div class="gloss-def">The magical equivalent of "Vanish"; opposite of Materialisation</div>
+      </div>
+      <div class="gloss-item" style="background:#ece8ff;border-radius:10px;">
+        <div class="gloss-term">Apportation</div>
+        <div class="gloss-def">The appearance of something brought into the room by supernatural means; moved invisibly (not the same as Telekinesis)</div>
+      </div>
+      <div class="gloss-item" style="background:#ece8ff;border-radius:10px;">
+        <div class="gloss-term">Levitation</div>
+        <div class="gloss-def">Floating or suspending an object or person in mid air</div>
+      </div>
+      <div class="gloss-item" style="background:#ece8ff;border-radius:10px;">
+        <div class="gloss-term">Transfiguration</div>
+        <div class="gloss-def">A visible change of appearance, usually confined to the face; Spirits are said to build their features over the medium's face</div>
+      </div>
+      <div class="gloss-item" style="background:#ece8ff;border-radius:10px;">
+        <div class="gloss-term">Ectoplasm / Psychoplasm</div>
+        <div class="gloss-def">The material used for Spirit Moulding; responsible for many materialisations</div>
+      </div>
+      <div class="gloss-item" style="background:#ece8ff;border-radius:10px;">
+        <div class="gloss-term">Manifestations</div>
+        <div class="gloss-def">Any action phrases in general; the overall term</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-sky">
+    <span class="callout-icon">🤝</span>
+    <p>Finally, to gain the co-operation of the audience you request that they adopt a "Sympathetic Attitude" which will help you to establish "Harmony, Psychic Condition and Friendly Vibrations."</p>
+  </div>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- ESTABLISHING ATMOSPHERE -->
+  <h2>🕯️ Establishing "Atmosphere" in the Seance Room</h2>
+
+  <p>Part and parcel of the Presentation of mediumistic effects, is the atmosphere that you have to create to give that authentic feeling to the programme.</p>
+
+  <div class="box box-dark">
+    <p>I would say that without any doubt, the most important aspect of presenting spooky magic, is the atmosphere that you create. Effects hardly matter — it is surprising what little you have to do in the way of trickery — as long as the atmosphere is tense and expectant.</p>
+    <div style="margin-top:1rem;padding:1rem;background:rgba(255,255,255,0.07);border-radius:10px;">
+      <p>There is a subtle thrill to be gained from a serious and mysterious setting; the audience become entertained with anticipation alone and given the right setting for a seance, any effect you do perform becomes quite exaggerated in its importance and achievement. You cannot pay too much attention to creating the right "seance room atmosphere."</p>
+    </div>
+  </div>
+
+  <div class="box box-peach">
+    <h3>🎭 Atmosphere Tips That Work</h3>
+
+    <div class="atmo-tip">
+      <span class="atmo-icon">🧨</span>
+      <p>To get a mysterious setting, try to be unorthodox. Avoid like the plague, anything that suggests or appears "Theatrical." You will never really scare an audience if they feel they are watching a play; you must bring them into the seance room and make them feel they are taking part in the strange proceedings.</p>
+    </div>
+
+    <div class="atmo-tip">
+      <span class="atmo-icon">🪔</span>
+      <p>Start off by creating a strange and exotic smell — use Joss Sticks or Oriental Incense which gives a weird, mysterious odour strange to the atmosphere.</p>
+    </div>
+
+    <div class="atmo-tip">
+      <span class="atmo-icon">🎵</span>
+      <p>Keep the feeling on a serious plane by playing quiet background music most of the time. No music is more likely to sober the atmosphere than Church Organ Music. The long playing Bach Organ Fugue (Columbia 33CX.1074, Vol. One, Albert Schweitzer) is one of the best recordings that I have found for this purpose.</p>
+    </div>
+
+    <div class="atmo-tip">
+      <span class="atmo-icon">🔴</span>
+      <p>Concentrate on unusual lighting schemes. Make particular use of Red lamps for any part of the seance that involves physical manifestations. Remember all the time, the darker the room, the better it is for you.</p>
+    </div>
+
+    <div class="nested nested-rose" style="margin-top:1rem;">
+      <p>⚠️ If you want to concentrate on serious demonstrations of mediumship, avoid any typical ghost-show activities. Such things as playing Chopin's Funeral March as background music and sticking in a Black Light Ballet with Dancing Disjointing Skeletons would make your seance what is best described as "Corny."</p>
+    </div>
+  </div>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- THE STAGE MEDIUM -->
+  <h2>🎪 The Stage Medium</h2>
+
+  <p>Up to now we have concerned ourselves with the type of Mediumship that is as near to the "real medium" as you can get. However, it is accepted that many people will have no interest in such presentation. Quite a few Mentalists like to stick in a couple of spooky effects just to boost the act and that is as far as their interest goes.</p>
+
+  <p>The Stage Medium is the type that does a Second Sight Act, invariably question and answer routines, or may be one person who flings in a Spirit Cabinet routine for good value in his "Mental Programme." I think it's a bit dangerous to mix physical mediumship with a strictly all-mental act, but you must judge for yourself how far you can go before you make the act too incredible to believe.</p>
+
+  <div class="box box-mint">
+    <h3>✅ The Best Presentation Strategy</h3>
+    <p>There is a definite answer to any danger caused by using physical mediumship in a Mental Act, and that is to present it as a demonstration of "How Mediums Trick the Public."</p>
+    <div class="nested nested-mint">
+      <p>This is a time tested routine that always appeals to the public and they are on your side from the start. You perform a series of spooky effects which entertain and baffle the audience, but there is no necessity for telling them how you did it; on the other hand, they don't have to believe it as you have already said it is a demonstration of trickery.</p>
+    </div>
+    <p>I would say that this is about the most favourable form of presentation for the Stage Medium. Such an addition to your programme is definitely good; even magicians doing straight magic will find that a few spooky stunts improve the show and by some strange psychology, a magician who does this sort of thing is always popular with the audience and often they credit him with far more ability than he really has!</p>
+  </div>
+
+  <div class="box box-sky">
+    <h3>🏆 Best Effects for Stage Mediumship (Expose Demonstrations)</h3>
+    <p>There are many effects in this book which can be used for the purpose of Stage Mediumship (Expose Demonstrations). Some of the best are:</p>
+    <div style="display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:0.7rem;">
+      <span class="tag tag-stage">The Spirit Cabinet Routine</span>
+      <span class="tag tag-stage">Rope Ties and Escapes</span>
+      <span class="tag tag-stage">The Waistcoat Escape</span>
+      <span class="tag tag-stage">Table Lifting</span>
+      <span class="tag tag-stage">Spirit Writing</span>
+      <span class="tag tag-stage">Telekinetic Effects</span>
+    </div>
+    <p style="margin-top:0.8rem;">The audience like to see something, so the best effects for this purpose are those which involve visible action.</p>
+  </div>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- PART TWO -->
+  <div class="part-header">
+    <div class="part-label">Part Two</div>
+    <div class="part-title">Physical Phenomena ✨</div>
+  </div>
+
+  <!-- TRICK 8: ECTOPLASM -->
+  <div class="trick-card">
+    <div class="trick-header">
+      <div class="trick-number">8</div>
+      <div class="trick-emoji">👻</div>
+      <div class="trick-title">Ectoplasm</div>
+      <span class="tag tag-physical">Physical</span>
+    </div>
+    <div class="box box-lemon" style="margin:0 0 1rem;">
+      <p>Another materialisation that can be performed whilst you are tied in a chair is made possible by treating all but one corner of your pocket hankie with luminous paint. The hankie is then tucked in your top pocket (jacket outside) with the non-luminous corner sticking out.</p>
+    </div>
+    <p>You are tied with your hands behind your back and the lights go out. Reach forward and catch the tip of the hankie in your teeth. Slowly draw it out producing a greenish glowing material which looks very ghostly. When it is all out of the pocket, wave it in the teeth and then tilt your head right back letting the hankie fall over your shoulder and down the back where the hands can grasp it and tuck it into the hip pocket.</p>
+    <div class="nested nested-amber">
+      <p>Alternatively, drop it in your lap and reach under your legs (stand slightly) to pull the hankie through to the back and out of the way. Few people will ever notice the absence of your pocket handkerchief when the lights go on!</p>
+    </div>
+  </div>
+
+  <!-- TRICK 9: APPORTS -->
+  <div class="trick-card">
+    <div class="trick-header">
+      <div class="trick-number">9</div>
+      <div class="trick-emoji">🌿</div>
+      <div class="trick-title">Apports</div>
+      <span class="tag tag-physical">Physical</span>
+    </div>
+    <div class="callout callout-mint">
+      <span class="callout-icon">😄</span>
+      <p>With a fourpenny pea shooter and some peas you can have a lot of fun and cause quite a bit of disturbance. It is better to shoot the peas at a wall or at the ceiling so that they make a tapping noise, rather than to risk hitting someone in the eye by aiming shots at the audience.</p>
+    </div>
+  </div>
+
+  <!-- TRICK 10: SPIRIT LIGHTS -->
+  <div class="trick-card">
+    <div class="trick-header">
+      <div class="trick-number">10</div>
+      <div class="trick-emoji">✨</div>
+      <div class="trick-title">Spirit Lights</div>
+      <span class="tag tag-physical">Physical</span>
+    </div>
+    <p>Many weird effects can be achieved by brushing wire wool across the terminals of a pocket torch battery. Small sparks of light are emitted which can appear quite mysterious.</p>
+  </div>
+
+  <!-- TRICK 11: THE ICY HAND -->
+  <div class="trick-card">
+    <div class="trick-header">
+      <div class="trick-number">11</div>
+      <div class="trick-emoji">🧊</div>
+      <div class="trick-title">The Icy Hand</div>
+      <span class="tag tag-physical">Physical</span>
+      <span class="tag tag-seance">Seance</span>
+    </div>
+    <p>There are two ways of doing this and both are sensationally creepy.</p>
+    <div class="box box-sky">
+      <div class="nested nested-sky">
+        <p><strong>Method 1:</strong> Have a wet sponge which you touch gently to the hands and faces of the sitters — it's a most unpleasant feeling in the seance room!</p>
+      </div>
+      <div class="nested nested-sky" style="margin-top:0.7rem;">
+        <p><strong>Method 2:</strong> Have a rubber bag in your pocket with blocks of ice from the fridge in it. Leave your hand in the bag holding the ice until it gets really cold and wet — then go up to someone and take their hand! I can assure you they think they are shaking hands with the dead — and they don't hold on for long!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRICK 12: MESSAGE IN MID AIR -->
+  <div class="trick-card">
+    <div class="trick-header">
+      <div class="trick-number">12</div>
+      <div class="trick-emoji">🌫️</div>
+      <div class="trick-title">The Message in Mid-Air</div>
+      <span class="tag tag-physical">Physical</span>
+    </div>
+    <div class="callout callout-amber">
+      <span class="callout-icon">🌟</span>
+      <p>Another sensational stunt which looks like nothing on earth is to let the audience see the spirits write a message in mid air.</p>
+    </div>
+    <p>To do this is quite simple. A fairly large blackboard and a stick of luminous wax is all that is required. You mix luminous paint with beeswax to form a stick of chalk. When you write with it — the writing appears slowly as you do it letter by letter — and the board cannot be seen so the writing suspends itself in mid air!</p>
+    <div class="nested nested-mint">
+      <p>To climax this you can turn the board around very quickly and the writing "dematerialises."</p>
+    </div>
+  </div>
+
+  <!-- TRICK 13: THE SPIRIT CANDLES -->
+  <div class="trick-card">
+    <div class="trick-header">
+      <div class="trick-number">13</div>
+      <div class="trick-emoji">🕯️</div>
+      <div class="trick-title">The Spirit Candles</div>
+      <span class="tag tag-seance">Seance</span>
+      <span class="tag tag-physical">Physical</span>
+    </div>
+    <div class="box box-rose">
+      <p>I have given many demonstration seances and of the numerous effects that I use, this is one that never ceases to create a stir. Usually I have the medium seated at a table working a ouija board with a committee member. The ouija board spells out a message from the other side which tells all that "they" are willing to try and produce some physical phenomena. Three candles light the table and the board spells out "Watch the candles." One by one they go out. Each time one goes out it gets darker and more creepy!</p>
+    </div>
+    <h3>🔧 Construction</h3>
+    <p>Get three 1 by 6 in. white candles. With a sharp pair of scissors, groove out right down one side of the candle until you reach the wick. Remove the wick and with a hot knitting needle enlarge the hole through the centre of the candle. Now insert a lighter wick leaving the small wire drag-through on the wick.</p>
+    <p>Allow about a quarter of an inch to stick up at the top, just like a normal candle wick and then carefully drop a blob of wax on to the top of the wick which will lock it in place until the candle is lighted. Put a very fine strip of wood in the slot made by the scissors and then cover the wood completely with wax from another candle. It can now be viewed from all sides and nothing is to be seen.</p>
+    <h3>🔧 Operation</h3>
+    <p>Prepare three candles thus and having done so, next obtain a heavy board and drill three small holes about four inches apart along the board. Get some fine thread or nylon and pass it through these holes fixing one end to the wire part of the lighter wick in the candle. Stand the candles thus threaded right over the holes in the board and wax them in position so that they will not move. The board is placed on the table and the three "pulls" lead off to an assistant. (Usually a co-operative member of the committee!)</p>
+    <div class="callout callout-mint">
+      <span class="callout-icon">🎉</span>
+      <p>Now when the candles are lighted the wax at the top melts but remains in sufficient quantity to prevent the wick falling down the tube. If however, the thread is pulled, the molten wax is not enough to hold the wick back and is therefore pulled down into the candle and out goes the flame. The apparatus is crude but reliable and the effect, which matters more than the apparatus, is really terrific for the seance room.</p>
+    </div>
+  </div>
+
+  <!-- TRICK 14: WAISTCOAT ESCAPE -->
+  <div class="trick-card">
+    <div class="trick-header">
+      <div class="trick-number">14</div>
+      <div class="trick-emoji">🥼</div>
+      <div class="trick-title">The Waistcoat Escape</div>
+      <span class="tag tag-stage">Stage</span>
+    </div>
+    <div class="box box-lemon">
+      <p>This is a trick that I have used for many years and found a good standby for doing a stunt with little preparation. It is ideal for parties but can also be used in a more serious vein. You borrow a gentleman's waistcoat (or use your own), remove your jacket and put the waistcoat on and then replace your jacket.</p>
+    </div>
+    <p>You explain to the audience that you will demonstrate an old medium's trick of escaping from a restriction; that you will remove the waistcoat whilst leaving the jacket on and whilst a member of the audience holds one of your hands all the time.</p>
+    <div class="box box-rose">
+      <h3>🎩 The Steps</h3>
+      <div class="nested nested-rose">
+        <p>When you put the waistcoat on, button it up properly and holding your hands in the air turn round slowly to let everybody see that it is being worn in the authentic manner. Next don your jacket and button that down the front.</p>
+      </div>
+      <div class="nested nested-rose">
+        <p>The action must of course be screened from the audience, so you borrow a sheet or blanket (a table cloth will do in emergencies) and have two people hold it up forming a screen. Before you step behind the screen, have one of the assistants take hold of your left hand and tell him to grasp it firmly and not to let go at any time.</p>
+      </div>
+      <div class="nested nested-rose">
+        <p>Step behind the screen which should be held so that your head and feet are left in view, allow the hand also to be seen held by the spectator.</p>
+      </div>
+    </div>
+    <div class="box box-mint">
+      <h3>🔢 Behind the Screen: The Moves</h3>
+      <div class="nested nested-mint">
+        <p><strong>(a)</strong> With the free hand unbutton the jacket and slip it off and down the left arm.</p>
+      </div>
+      <div class="nested nested-mint">
+        <p><strong>(b)</strong> Likewise, unbutton the waistcoat and slip it on to the left arm.</p>
+      </div>
+      <div class="nested nested-mint">
+        <p><strong>(c)</strong> Reach over to the left and pull the jacket through the left arm hole of the waistcoat making sure that it does not twist in doing so.</p>
+      </div>
+      <div class="nested nested-mint">
+        <p><strong>(d)</strong> Slip the right arm back into the jacket and button it again at the front.</p>
+      </div>
+      <div class="nested nested-mint">
+        <p><strong>(e)</strong> Bring the waistcoat on again — but this time it is OVER the jacket and not under. Quickly button it up along the front and the work is done.</p>
+      </div>
+    </div>
+    <div class="callout callout-amber">
+      <span class="callout-icon">🏁</span>
+      <p>Still standing behind the screen you explain to the audience that for many years the famous medium baffled the world with this escape — but tonight you have done just the same and gone further still — not only have you taken it off but you have put it back on again! (The audience suppose they will see no change!) Quickly now push the sheet aside and step into view saying "And to make it more of a problem, I have put it on over the coat just for a change!" People really believe you took it off and then put it on again — when in fact it never comes off at all.</p>
+    </div>
+    <div class="callout callout-mint">
+      <span class="callout-icon">💡</span>
+      <p>To summarise this stunt, it is really a paradox. When you know how it is done there is nothing in it — but I can assure you that if you had seen it and did not know the method, you would not find it easy to solve the problem. For best effects it is essential that you move quickly. I find that with a good waistcoat (one that has fairly large armholes) I can do the complete routine in just under fifty seconds. If you take too long, the routine drags so aim at a breakneck pace.</p>
+    </div>
+    <p>Also, from time to time I have been unable to improvise a screen and when this happens you simply step outside the door and push your arm into the room allowing all to see the spectator holding your hand. The door is left ajar because it can be very painful when somebody closes it with your arm in that position!</p>
+  </div>
+
+  <!-- TRICK 15: SPIRIT CABINET ROUTINE -->
+  <div class="trick-card">
+    <div class="trick-header">
+      <div class="trick-number">15</div>
+      <div class="trick-emoji">🎶</div>
+      <div class="trick-title">The Stage Spirit Cabinet Routine</div>
+      <span class="tag tag-stage">Stage</span>
+    </div>
+    <div class="box box-lavender">
+      <p>The Stage Cabinet Routine differs from the Seance Cabinet Routine. The first has to be quick and presented with an air of comedy; the second is deadly serious and dramatic — also usually a slow affair.</p>
+    </div>
+    <p>Normally the Stage Cabinet Routine consists of a demonstration of how mediums make the spirits manipulate musical instruments. A large cabinet, something like a beach tent is erected in the centre of the stage. The medium sits on a chair in the cabinet and is tied to prevent him using his hands. A small table bearing an assortment of musical instruments is placed within the cabinet and an assistant stands ready at the front.</p>
+    <p>At a given signal, the assistant quickly draws a curtain across the front of the cabinet and the very instant the front closes — the instruments begin to play! The audience hear several of them playing at once — and then the assistant quickly pulls back the curtain only to show all the instruments still on the table and the medium still securely tied in his chair!</p>
+    <div class="box box-peach">
+      <p>Again the curtain is drawn and again the music (of a kind) is heard; this time however, the spirits get a bit frustrated and the instruments begin to come hurtling over the top of the cabinet crashing to the floor. The curtain is again pulled back and the table is empty — all the instruments have been apported out of the cabinet but the medium is still firmly tied.</p>
+    </div>
+    <p>In addition to playing with musical instruments other phenomena may be included. A spirit message is made to appear on a large blackboard, the medium changes places with another person; in Annemann's "Practical Mental Effects" there is a change of coloured shirts that is quite good and so on.</p>
+    <div class="box box-mint">
+      <h3>🎺 The Instrument Symphony</h3>
+      <p>If you choose which musical instruments you use — by careful selection you will find that it is possible to sound many of them at the same time.</p>
+      <div class="nested nested-mint">
+        <p>The medium, although apparently secured can escape very quickly and get back into the tie. He has freedom of his hands, feet and mouth. First you have a piano accordion (any old second hand one will do, costing very little) you sound this by slipping one foot into the strap at one end and pulling up and down with one of the hands. The fingers operate the keys in doing so.</p>
+      </div>
+      <div class="nested nested-mint">
+        <p>With the other hand pick up any mouth instrument — a flute is quite good — and stick that in your mouth gripping it with the teeth. With the free hand again grab a large handbell and shake it like hell to create a real din! With the unused foot — tap on a drum giving a base rhythm to your unearthly concerto.</p>
+      </div>
+      <div class="callout callout-amber" style="margin-top:0.8rem;">
+        <span class="callout-icon">😂</span>
+        <p>Never mind about playing tunes or anything recognisable. To sound the instruments is enough and if anyone wants to know what was played, tell them it was Symphony No. 17 just written by Beethoven in the Spirit World.</p>
+      </div>
+    </div>
+    <div class="box box-sky">
+      <h3>📡 The Signal System</h3>
+      <p>Have one extra instrument lying on the table that you use only for signals to your assistant. For example a hooter. Drop the others on the table and pick up the hooter and sound two "honks." Immediately your assistant counts five and then whips back the curtain. In the count of five you drop the hooter and slip back into the tie.</p>
+    </div>
+    <div class="box box-amber">
+      <h3>🪢 Levante's Tie</h3>
+      <p>The most effective tie that I know is one taught me by The Great Levante who made a leading feature of the Spirit Cabinet Routine in his Stage Show. The performer sits on a chair and brings his feet together. About six feet of white rope is used for the tie.</p>
+      <div class="nested nested-amber">
+        <p>First it is passed under the performer's knees and then crossed once on top. The performer puts his hands together as though praying, and places them over the cross above his knees. The rope is then tied over his wrists with several knots.</p>
+      </div>
+      <div class="nested nested-amber">
+        <p>It is a simple matter to gain slack when the tie is made; all one has to do is to part the knees a little. Later when you want to free the hands, just bring the knees together and the rope goes loose; when you put them back in the loop, again force the knees apart which makes the tie appear tight and still secure.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRICK 16: TELEKINECARDS -->
+  <div class="trick-card">
+    <div class="trick-header">
+      <div class="trick-number">16</div>
+      <div class="trick-emoji">🃏</div>
+      <div class="trick-title">"Telekinecards" by Punx</div>
+      <span class="tag tag-physical">Physical</span>
+    </div>
+    <div class="box box-lemon">
+      <h3>🎭 The Effect</h3>
+      <p>The performer prepares for an experiment in Telekinesis by giving an introductory talk on the subject. He connects Telekinesis with the power of the mind to move an object at a distance; he hands out five cards for examination and then has them mixed again. Five people each take one of the cards and do not reveal what card they have taken. The cards are E.S.P. Sign cards each bearing a different symbol.</p>
+    </div>
+    <p>Now the performer takes a fairly large wooden board which is a glorified card stand. He sits down and holds the board at the top; along a ridge at the front stand five duplicate E.S.P. cards facing the audience. He now asks any person with a card to look at it and then to gaze at the duplicate of their design and to think that they have the power to move that card.</p>
+    <p>Suppose they hold a square — they concentrate on the square on the performer's board. As they watch, slowly and dramatically the E.S.P. Square card begins to move and it rises from the stands at the front, moves right up the board and then returns to its place on the ridge.</p>
+    <div class="callout callout-mint">
+      <span class="callout-icon">🌟</span>
+      <p>The performer asks which card "was thought of" and the spectator names the square! This is repeated with all five cards with correct results every time. On the last card — it rises to the top of the board whereupon the performer takes it and holds it up asking if that was the chosen one. This having been done, the spectators may come forward and examine the board if they so wish — it is in no way faked.</p>
+    </div>
+    <div class="box box-rose">
+      <h3>🔍 The Method</h3>
+      <p>"Telekinecards" is a trick which utilises a very old Spirit Cabinet principle that is known as "The Third Hand." Apparently the performer holds the board with both hands, one at each end along the top. In actual fact the left hand is a dummy, just a set of bent fingers that can be quickly clipped on to the edge of the board. The right hand is real — but it is held in exactly the same manner as the dummy.</p>
+      <div class="nested nested-rose">
+        <p>This means the performer, screened behind the board which rests on his lap, is in a position to move his other hand to whatever purpose he likes! The cards are lined with razor blades and the performer has a powerful magnet. The board is three-ply wood which does not obstruct the magnet from moving the cards where you wish.</p>
+      </div>
+      <div class="nested nested-rose">
+        <p>Use a powerful magnet (about 12 lbs. lift) and stick a good amount of razor blades in each card. (Step Two deals with making magnetic Cards). You could ask the audience to call out any card which you then force to move. But the effect is doubled if it appears that you yourself do not know what one has been selected.</p>
+      </div>
+      <div class="nested nested-rose">
+        <p>The easiest way to do this is to mark the set of cards that the audience take. Make bold and clearly definable markings on the back of their cards — they are not going to inspect them for trickery so make nothing of it.</p>
+      </div>
+    </div>
+    <div class="callout callout-amber">
+      <span class="callout-icon">📐</span>
+      <p>The board is rested on your lap to take the weight. It should be size 1 ft. 6 in. by 2 ft. of smooth three-ply wood or smooth hardboard. Along the base run a strip of wood to form a ledge. To show the cards clearly, paint the board black.</p>
+    </div>
+  </div>
+
+  <!-- TRICK 17: PALLADINO TABLE LIFT -->
+  <div class="trick-card">
+    <div class="trick-header">
+      <div class="trick-number">17</div>
+      <div class="trick-emoji">🪑</div>
+      <div class="trick-title">The Palladino Table Lift</div>
+      <span class="tag tag-physical">Physical</span>
+    </div>
+    <p>There are several methods of Table Lifting which is an effect highly suitable for Stage Mediumship or Seance room. It can be presented as quite a mystery and the only trouble with the effect is that quite often the performers are tempted to go too far and a solid mystery becomes a "lark."</p>
+    <div class="box box-sky">
+      <p>The Palladino method is for one person. Palladino was a famous medium who did a lot of table lifting; she had a special lightweight table that could be manipulated in the semi-dark by lifting it with her foot. Otherwise, there is the pin fake method which is very effective for single person operation — but you must have a light table. (A balsa wood one would be perfect.)</p>
+    </div>
+    <div class="box box-lavender">
+      <h3>🔩 The Pin Fake Method</h3>
+      <p>In the top of the table you drive a pin with a fairly large head which is left protruding about one eighth of an inch. It is too small to be seen. On the middle finger of the right hand you have a ring which is slotted on the underside to fit the pin head.</p>
+      <div class="nested nested-lavender">
+        <p>It is simply a matter of engaging the ring on the pinhead as you place both hands on the table and then lifting. If you have two of these rings and two pin-heads — you can start with both hands on the table top, whilst floating in mid air, remove one hand and leave the table apparently adhering to the other. Replace that hand (engaging the other head as you do so) and free the one just used to support the table.</p>
+      </div>
+      <div class="nested nested-lavender">
+        <p>Because of the amount of leverage you can get with the fake ring — you can, if you wish, pull out the pins at the end which makes the table free for inspection. It is not imperative that they are allowed to examine the table.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRICK 18: ARM HOOK TABLE LIFT -->
+  <div class="trick-card">
+    <div class="trick-header">
+      <div class="trick-number">18</div>
+      <div class="trick-emoji">💪</div>
+      <div class="trick-title">Table Lifting with Arm Hooks</div>
+      <span class="tag tag-physical">Physical</span>
+    </div>
+    <div class="callout callout-rose">
+      <span class="callout-icon">👥</span>
+      <p>This method requires an assistant; you cannot work it alone.</p>
+    </div>
+    <p>Both you and your assistant are equipped with a set of gadgets called "Arm Hooks." These are strong steel hooks that are strapped to the wrist forearm. If both you and your assistant have two of these, one on each arm, you will be able to lift an amazing weight between you.</p>
+    <p>The best way to present this is to have four people, each sit at one side of the table — but you be sure that the assistant sits opposite you. As they all place their hands on the table with fingers stretched out, etc., you engage the hooks on the edge of the table and from then on it's a matter of presentation. You will find that the sleeves cover the Arm hooks and make them very hard to spot unless the audience see directly under the table.</p>
+  </div>
+
+  <!-- TRICK 19: WAIST HOOK TABLE LIFT -->
+  <div class="trick-card">
+    <div class="trick-header">
+      <div class="trick-number">19</div>
+      <div class="trick-emoji">🏋️</div>
+      <div class="trick-title">Table Lifting with Waist Hooks</div>
+      <span class="tag tag-physical">Physical</span>
+    </div>
+    <p>This is another two person method (or more) and by this means a really heavy table can be floated or, with very strong waist hooks, you can float a table whilst a small person sits on it! It has the advantage that both hands are free at all times although they must be used to steady the table whilst floating.</p>
+    <div class="box box-peach">
+      <p>You have a strong leather belt about 2 in. wide. At the point around your waist in front of the stomach, you have a small steel hook. This engages on to the edge of the table as you stand and lean forward. Your assistant (opposite) does the same. If you lean back and push on the table top with both hands, you have a very strong lifting position — so much so, that if any spectators are joining in around the table — they will not be able to push it back to the floor.</p>
+    </div>
+    <p>The table cannot be lifted very high as is obvious — but it can be raised well clear of the floor and moved around the stage with good effect.</p>
+  </div>
+
+  <!-- TRICK 20: THE HAUNTED BALL -->
+  <div class="trick-card">
+    <div class="trick-header">
+      <div class="trick-number">20</div>
+      <div class="trick-emoji">🎱</div>
+      <div class="trick-title">The Haunted Ball</div>
+      <span class="tag tag-seance">Seance</span>
+    </div>
+    <div class="callout callout-rose">
+      <span class="callout-icon">🏠</span>
+      <p>This is strictly a drawing room or seance room stunt — and cannot be done on the stage.</p>
+    </div>
+    <div class="box box-sky">
+      <h3>🎭 The Effect</h3>
+      <p>In effect, you have a card table (although almost any table will do) and it may be examined before the experiment and after. It is in no way prepared. You have also a table tennis ball which can be examined before and after — it too, is unprepared.</p>
+      <p>A spectator places the ball on the table — which is stood in the middle of a well lit room. No one goes near the table and people can stand all round. The Medium, demonstrating Telekinesis, proclaims that he will move the ball at any time suggested by the audience. He waits until he is told to try and then stares profoundly at the ball. Slowly it moves and gaining speed rolls to the edge of the table and falls to the floor. Immediately everybody can examine everything and they are not likely to find the answer! The Medium stands some ten feet away from the table whilst the effect is demonstrated.</p>
+    </div>
+    <div class="box box-mint">
+      <h3>🔍 The Method</h3>
+      <div class="callout callout-mint">
+        <span class="callout-icon">😄</span>
+        <p>This is another of those ridiculous methods that achieve such good results.</p>
+      </div>
+      <p>It costs very little to rig up and it is quite reliable. The room must have a carpet and you need a plate lifter with a long extension of fine rubber hosing. Run the plate lifter under the carpet leaving the bulb somewhere in the middle of the floor. Note the spot where it is by looking for some marking in the design of the carpet.</p>
+      <p>The other end run well away from the centre of the room and leave that too (with the second bulb) in a place that you can identify. Borrow a table, the lighter the better and have it examined. Move it to the middle of the room and in placing it there — be quite sure that one of the legs stands over the bulb under the carpet below.</p>
+      <div class="nested nested-mint">
+        <p>Now take up your position near the other end of the lifter and have the ball placed near the middle of the table. To make it move, you only have to tread gently on the bulb below your foot and the table is lifted slightly causing enough tilt to make the ball roll off. The tilt, which is about one inch is too small to be observed by the most observant watcher. Yet it is quite sufficient to cause the ball to move.</p>
+      </div>
+      <div class="nested nested-mint">
+        <p>If you like, you can lift your foot before the ball drops off the table, which will stop it at the edge. Also, if you care to repeat the experiment, move the table so that a different leg stands on the lifter — and then the ball will roll in a different direction on the second showing!</p>
+      </div>
+      <div class="callout callout-amber" style="margin-top:0.8rem;">
+        <span class="callout-icon">💡</span>
+        <p>If you try this as I have, you will find that an ordinary plate lifter will lift quite a heavy table — it is more than surprising to find a small rubber bulb will lift a medium oak table — but it does. Finally, if you do work with an assistant — make full advantage of the situation by having her work it whilst you stand wherever the audience decide — even out of the room if they insist!</p>
+      </div>
+      <div class="nested nested-rose" style="margin-top:0.8rem;">
+        <p>⚠️ One thing that must be watched all the time if the audience surround the table, is that no one of them stands on the feed pipe. This would block the air supply and spoil the effect. I have used this principle for challenge effects — where people defy you to demonstrate telekinesis — it has always won the battle for me!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRICK 21: SPIRIT GUIDE -->
+  <div class="trick-card">
+    <div class="trick-header">
+      <div class="trick-number">21</div>
+      <div class="trick-emoji">🌿</div>
+      <div class="trick-title">The Spirit Guide</div>
+      <span class="tag tag-seance">Seance</span>
+    </div>
+    <p>One of the best methods of appearing and disappearing what seems to be a ghostly figure, is to paint a crude six feet tall spooky picture on a large black curtain or roller blind. The "picture" is a life size cowled figure painted in good quality luminous paint; alternatively an animal or a shapeless blob can be used.</p>
+    <div class="callout callout-mint">
+      <span class="callout-icon">🌟</span>
+      <p>To operate, it is simply a matter of slowly unfolding or unrolling the picture and then twisting it about in the dark to cause weird movements of the cloth. The effect is very good; the constant change of the shape causes people to imagine that they see all sorts of things materialise. Again, this is one of the simple things that look silly in daylight — but incredibly different in the dark and mysterious atmosphere of the seance room.</p>
+    </div>
+  </div>
+
+  <!-- TRICK 22: THE DEAD HAND WRITES -->
+  <div class="trick-card">
+    <div class="trick-header">
+      <div class="trick-number">22</div>
+      <div class="trick-emoji">🖊️</div>
+      <div class="trick-title">The Dead Hand Writes</div>
+      <span class="tag tag-seance">Seance</span>
+    </div>
+    <div class="box box-rose">
+      <h3>🎭 The Effect</h3>
+      <p>This is another visible effect which has all the qualifications of good spooky magic. It is the glorified presentation of a Living and Dead Test — but how it's glorified!</p>
+      <p>In effect, a sitter is invited to write five names on a card — and to make any one of them the name of a Dead Person. He does not say which of the names is the Dead name nor does he reveal its position on the list. The card is taken and placed on a board. A box is brought in; it is opened and with great care a Hand is unpacked from cotton wool in which it is wrapped.</p>
+      <p>The hand is laid on the board and a pencil placed between the fingers; a square of black cloth is laid gently over the hand and all is set. It is suggested that in order for any "Communication" to be received in the form of writing, it is necessary for our Spirit Friends to Control the medium's hand or be allowed to manipulate a hand.</p>
+      <div class="nested nested-rose">
+        <p>The hand used for your experiment was "lent by a Museum" (don't say whether it is a dummy or an amputated real one — leaving a nasty inference!). For the test, the Spirits will form an ectoplasmic arm to join the hand (which may or may not become visible) and having done so, will write or make a mark on the card.</p>
+      </div>
+    </div>
+    <div class="box box-mint">
+      <h3>🔍 The Method</h3>
+      <p>Get a heavy, old rubber or wooden hand (window display model will do) and about twenty feet of thread. Run the thread across the board à la Rapping Hand, Floating Ball and similar effects and lead it off to some place where you have a stooge, assistant or committeeman ready to gently tug at the right moment.</p>
+      <div class="nested nested-mint">
+        <p><strong>Alternatively, for one-man working:</strong> run the thread from the cloth up to the ceiling and through a small hook. Lead the end back and anchor it to a chair standing nearby. Thus when you back away from the board you may casually rest your hand on the chair and in doing so engage the thread. Screening the movement with your body by a slight turn, you tug away merrily until you think the illusion has been created.</p>
+      </div>
+      <div class="nested nested-mint">
+        <p><strong>Another method</strong> is a plate lifter — but I dare not venture into that one or I stand to be accused of having plate lifters on the brain!</p>
+      </div>
+      <div class="callout callout-amber" style="margin-top:0.8rem;">
+        <span class="callout-icon">🧵</span>
+        <p>Thread is good — thread works and that's all that matters. Never think twice about the method as long as it works; remember at all times you are demonstrating effects — not how they are done.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRICK 23: GHOST WALK -->
+  <div class="trick-card">
+    <div class="trick-header">
+      <div class="trick-number">23</div>
+      <div class="trick-emoji">👻</div>
+      <div class="trick-title">Corinda's "Ghost Walk"</div>
+      <span class="tag tag-seance">Seance</span>
+    </div>
+    <div class="box box-dark">
+      <p>There is an old maxim for ghostworkers that is as true today as it was in the beginning: "The more Ghosts in a Ghost Show — the better it will be." This is absolutely the last word in man made Ghosts. The apparatus seen in daylight is a laughable heap of nonsense, but paraded in the gloom of the seance room — it is the ultimate in spookery.</p>
+    </div>
+    <div class="box box-lavender">
+      <h3>🎭 The Effect</h3>
+      <p>In effect, the performer (usually the Medium) reaches the point where it is necessary to climax the proceedings — and naturally the aim is to make this the very best you can offer. The onlookers have seen mild manifestations, ghostly effects have come and gone but nothing typical of the classic ghost has been seen.</p>
+      <p>Our Medium prepares the path by delivering an address in which she tells that for the final experiment, she will call upon the Spirit World to send a fully materialised form. She explains that all must be patient, everybody must join hands and under no circumstances should anybody touch anything that materialises.</p>
+      <div class="nested nested-lavender">
+        <p>The gathering sit in near total darkness waiting for the materialisation of a Spirit Friend. Quiet organ music is to be heard in the background and the Medium is to be seen breathing heavily in trance condition. (To affect Trance Condition, flop into a chair and act as though you have just drunk a bottle of Gin!)</p>
+      </div>
+      <p style="margin-top:0.8rem;">Slowly but surely the door creaks open and then in glides a full size Ghost. This ghost can be anything from five to ten feet tall; it flows into diverse shapes as it moves, sometimes touching the floor, sometimes floating in mid-air. It glows with a greenish light (which is said to be ectoplasm) and it does not flop around within two feet of the door — No! It comes right into the audience, flows within inches of them — they see it and some see through it.</p>
+      <p>More! It touches them with icy cold fingers and whispers or groans odd sayings into the ear of any disbeliever! Then it oozes back to the centre of the floor and there, in full view of the audience, slowly begins to dematerialise until it shrinks in size from feet to inches and finally vanishes completely. The lights go on — the Medium recovers from her ordeal with the Spirits (not Gin!) and nothing is to be seen which explains such unorthodox goings-on!</p>
+    </div>
+    <div class="box box-peach">
+      <h3>📖 A Memorable Story</h3>
+      <p>Before disclosing the modus operandi I will relate briefly a memorable story concerning my apparition. It happened some years ago whilst my time was spent in cavorts to expose Fraudulent Mediums. Very few were to be found that ever did anything worth exposing — but one man (a Medium) did occasionally, and for the right price, "materialise" a Spirit Friend.</p>
+      <p>On one of these occasions I had the good fortune to "get in" with another friend. We waited throughout the usual rigmarole until "Mr. X" declared that "they" would come through — and at this he departed into a large screened Cabinet.</p>
+      <div class="nested nested-peach">
+        <p>In due course a rather small misty shape emerged from the cabinet and uttered unintelligible sentences which sounded remarkably like the Medium talking with a peg on his nose! In time the little one disappeared and another slightly larger came forth. However, more or less as this appeared — so did something else! Nowhere near the Medium but well within the seance room when it was seen — a six foot monster groaning and slithering towards the cabinet was soon spotted by the Medium who rapidly came out of his trance and dashed from the cabinet quite horrified that there in his seance room was a ghost that he didn't materialise!!</p>
+      </div>
+      <div class="callout callout-rose" style="margin-top:0.8rem;">
+        <span class="callout-icon">😱</span>
+        <p>Nothing can be more embarrassing to a ghost worker — than to have a ghost turn up that isn't "one of yours" — and our spook, which we took along, nearly gave the Medium heart failure. That was how the ghost walk came into being.</p>
+      </div>
+    </div>
+    <div class="box box-mint">
+      <h3>🔧 Making the Monster</h3>
+      <p>To make such a monster as I have described, one requires about six yards of fine white net or nylon material (54-in. wide). This material one forms into a crude shroud — cutting a billowing head cowl and allowing the rest to drape loosely. No arms are required. The shroud is then daubed with a good quality liquid luminous paint and for best effects, this is done in a haphazard manner for strangely enough, the rougher the painting the better the ghost.</p>
+      <div class="nested nested-mint">
+        <p>The next requirement is an assistant who wears all BLACK clothing. Over his shoes he wears a pair of black socks which allow footsteps to be deadened. The appliance is exposed to a bright light (electric will do) and then donned by the assistant. When ready he has but to enter the room and go as near as he likes to the sitters. It is strange that the luminous net over black cloth creates an illusion of transparency, which in effect makes the ghost look entirely vapour.</p>
+      </div>
+      <div class="nested nested-mint">
+        <p>To make the monster more fiercesome, the assistant wears a skull mask that has been similarly treated with luminous paint and a pair of white gloves that have been treated adds the finishing touch.</p>
+      </div>
+    </div>
+    <div class="box box-sky">
+      <h3>✨ In-Room Materialisation</h3>
+      <p>If you so desire, the Ghost can be materialised actually in the seance room. All you have to do is to pre-expose the shroud and accessories and stuff them into a black bag. In full view of the audience (with the lights out that is) you pull out the material bit by bit, which allows the Ghost to slowly form. From then on it can be donned by an assistant in the room (perhaps from the audience) or may be paraded around without being worn at all.</p>
+      <div class="nested nested-sky">
+        <p>Finally, the black bag is used to dematerialise the ghost. It is simply stuffed into the bag — but for best effects, slowly bunch it up first to create the illusion of diminishing in size before entirely dematerialising. Sometimes I have had the black bag tied to a black rope — and after the ghost has been "bagged" an assistant pulls the bag away into another room or into some convenient hiding place.</p>
+      </div>
+      <div class="nested nested-sky">
+        <p>At the worst, to use a current colloquialism, you can "stick it up your jumper" — there is little bulk to it all when well bunched up.</p>
+      </div>
+    </div>
+    <div class="callout callout-rose">
+      <span class="callout-icon">⚠️</span>
+      <p>As a final word on the Ghost Walk I feel I should add that, on occasion I have used the apparition to entertain friends at home — just for the fun of it. This I no longer do as experience has taught me that it is too frightening and I think it should be confined to the seance room where people expect and hope to be scared. Under no circumstances should it be demonstrated to any children — it would be liable to cause considerable harm.</p>
+    </div>
+  </div>
+
+  <!-- TRICK 24: SPIRIT MOULDING -->
+  <div class="trick-card">
+    <div class="trick-header">
+      <div class="trick-number">24</div>
+      <div class="trick-emoji">🫴</div>
+      <div class="trick-title">Spirit Moulding</div>
+      <span class="tag tag-seance">Seance</span>
+    </div>
+    <p>In the History of Spiritualism we find that some "investigators" have managed to get the Spirits to mould their hands and faces in wax. The method is a bit messy but undoubtedly sets an air of mystery as to how such a thing could be done.</p>
+    <div class="box box-lavender">
+      <h3>🎭 The Effect</h3>
+      <p>On the seance room table the medium places a bowl of luke warm molten paraffin wax. (Low melting point wax is obtainable from suppliers to Histologists.) Alongside she places a bowl of cold water. The lights are put out and the sitters wait. After a while the lights are put on and now to account for slight noises which happened in the dark, we find a perfect hand moulded in wax — floating in the water bowl.</p>
+      <div class="nested nested-lavender">
+        <p>It could not have been made by the medium or anybody by just putting their hand in the wax and then into the water — as it would be impossible to withdraw the hand from the cast without breaking the mould.</p>
+      </div>
+    </div>
+    <div class="box box-mint">
+      <h3>🔍 The Secret</h3>
+      <p>The method I can reveal in a few lines as once you know the secret it is obvious. You have a thin rubber glove which you inflate by blowing up. This you dip in the wax and then into the cold water which sets the wax quickly. Release the air from the glove and remove it through the wrist hole and there is your "spirit hand."</p>
+      <div class="nested nested-mint">
+        <p>Specialists in this sort of trickery have gone to the trouble of making a fine mould of their own hand, from which is made a rubber glove with their fingerprints on the outside. When this glove is used for the Spirit Moulding process — it forms a cast with fingerprints on the inside — which "proves" a hand must have been used to form the cast!</p>
+      </div>
+    </div>
+    <div class="callout callout-sky">
+      <span class="callout-icon">🏛️</span>
+      <p>The moulding of faces is less dramatic as it offers no problem as to how it is done. If you want to do this the best thing is to use ordinary face masks but keep them slightly oiled to prevent the wax sticking. As a matter of interest, in the Museum of The Society for Psychical Research there are Spirit Hands (moulded) to be seen on show today. I do not know how the Society explain their origination.</p>
+    </div>
+  </div>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- PART THREE -->
+  <div class="part-header">
+    <div class="part-label">Part Three</div>
+    <div class="part-title">Mental Phenomena 🧠</div>
+  </div>
+
+  <!-- TRICK 25: PHONEY BUSINESS -->
+  <div class="trick-card">
+    <div class="trick-header">
+      <div class="trick-number">25</div>
+      <div class="trick-emoji">📞</div>
+      <div class="trick-title">"Phoney Business" by Corinda</div>
+      <span class="tag tag-mental">Mental</span>
+    </div>
+    <div class="box box-sky">
+      <h3>🎭 The Effect</h3>
+      <p>The experiment takes part as one of a series of demonstrations of paranormal perception. This time a telephone is used to prove that it is possible to control thought over a considerable distance. The performer conducts several tests. If the demonstration is outside of a seance room — playing cards are used; if not, Tarot cards are used.</p>
+    </div>
+    <p>The performer explains that he knows a Medium who lives, shall we say, in Brighton. (He chooses some place away from the scene of action.) He tells that arrangements have been made with the medium to conduct a series of E.S.P. by telephone. He explains further that arrangements have been made so that the medium can signal the audience by ringing the telephone from her end of the line.</p>
+    <div class="box box-lavender">
+      <h3>📋 The Three Tests</h3>
+      <div class="nested nested-lavender">
+        <p><strong>Test 1 — Cards:</strong> First about four cards are selected from a pack and then replaced and mixed with the remainder by the audience. The spectator calls the Medium, she says she is ready, and hangs up. Immediately the Medium rings the phone three times. Four cards are then held one at a time over the telephone — and four times the telephone rings, each time the spectator happens to be holding one of the selected cards.</p>
+      </div>
+      <div class="nested nested-lavender">
+        <p><strong>Test 2 — Word:</strong> A word is chalked on a board. The complete alphabet is written out. The telephone spells out the word letter by letter as the spectator runs along the row and the phone rings "stop" on each required letter.</p>
+      </div>
+      <div class="nested nested-lavender">
+        <p><strong>Test 3 — Number:</strong> A spectator chooses a number. The bell on the telephone rings out a series of numbers; these are chalked on the board and when the last has been signalled, the spectator reveals their number for the first time. They agree!</p>
+      </div>
+    </div>
+    <div class="box box-mint">
+      <h3>🔍 The Method</h3>
+      <p>Before you can perform this effect it will be necessary for you to make yourself what is called a "Body Ringer," which is a similar appliance as is used for electrical Spirit Bell Routines. The Body Ringer is simply an electric bell, a battery and a flat push-button wired to function properly.</p>
+      <div class="nested nested-mint">
+        <p>The Bell is strapped to the leg (thigh) and the battery is carried in the back trousers pocket. The push-button is affixed with elastic bands to one knee and is adjusted so that when both knees are pressed together, the bell is sounded. The tone of the bell should resemble the tone of any normal telephone bell although absolute likeness is not imperative since the real telephone bell is at no time sounded and the audience cannot compare the two noises.</p>
+      </div>
+      <div class="nested nested-mint">
+        <p>Once the arrangements have been made at the start of the routine, the Medium actually rings off and you do all the ringing with the appliance on your person. When on occasion throughout the routine you lift the receiver to congratulate the Medium on her success, you act the part again because in reality, the telephone line is dead.</p>
+      </div>
+      <div class="callout callout-amber" style="margin-top:0.8rem;">
+        <span class="callout-icon">💡</span>
+        <p>The last thing to add is that it may be as well to telephone the seance room number from an outside telephone and leave the receiver off so that the line remains engaged and cannot be called accidentally from an outside source — if such a thing happened it could be quite embarrassing!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRICK 26: YES-NO SLATE GAG -->
+  <div class="trick-card">
+    <div class="trick-header">
+      <div class="trick-number">26</div>
+      <div class="trick-emoji">🪨</div>
+      <div class="trick-title">"Yes-No" Slate Gag</div>
+      <span class="tag tag-mental">Mental</span>
+    </div>
+    <div class="box box-lemon">
+      <p>There are two ways of presenting this swindle — and it depends on what sort of audience you have — as to how you work the trick.</p>
+    </div>
+    <div class="box box-sky">
+      <h3>😂 Version 1: For Laymen</h3>
+      <p>The performer enters holding a slate and chalk in the hand. He points to someone and asks "Can you read minds?" Whatever the reply, he proposes an experiment. He writes vigorously on the slate and holds it so that no one sees what is written as yet.</p>
+      <div class="nested nested-sky">
+        <p>He now asks the spectator to be quite honest, and to say outright if they can tell him what he has written on the slate. Invariably the reply is "No" whereupon our wit turns the slate to reveal the word "NO" chalked boldly across the slate. A mind has been read! It's a corny gag that gets a good laugh — and the number of gags that get laughs in Mentalism, are few and far between.</p>
+      </div>
+      <p style="margin-top:0.8rem;">Just one thing has to be watched when writing "No." You go over the same lines several times because it can become obvious from your arm movement what word you are writing on the slate.</p>
+    </div>
+    <div class="box box-rose">
+      <h3>🎩 Version 2: For Magicians (Sucker Effect!)</h3>
+      <p>The second variation is a sucker effect for magicians who know the first version! Performer enters with slate as before and goes through the same procedure, asking a spectator to try and read his mind. However, after writing "No" on the slate it is "accidentally" flashed to the audience who get a glimpse of the word and naturally presume they know what's coming!</p>
+      <div class="nested nested-rose">
+        <p>Again you ask the spectator to be quite truthful — and say outright if he knows what you have written on the slate. This time he answers "yes" because in truth, he has seen the writing. Slowly, and with amazement on your face you turn the slate and there in bold letters is "Yes"...!</p>
+      </div>
+      <div class="nested nested-rose">
+        <p>The method, which I should think is obvious, is simply a flap slate. Under the flap on the slate itself you have previously written "Yes." The flap is put into position and the slate is shown clean with a casual wave before you write "No" on the flap. It is dumped on a table for a brief second whilst you do something like putting the chalk away in the box — and then picked up again leaving the flap behind.</p>
+      </div>
+      <div class="callout callout-amber" style="margin-top:0.8rem;">
+        <span class="callout-icon">⚠️</span>
+        <p>As a final word, take great care with both methods — that when getting the spectator to answer "yes" or "No" — you phrase your question so that he cannot reply in any other manner. This is not too difficult.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRICK 27: CRYPTOPSYCHISM -->
+  <div class="trick-card">
+    <div class="trick-header">
+      <div class="trick-number">27</div>
+      <div class="trick-emoji">🔐</div>
+      <div class="trick-title">"Cryptopsychism"</div>
+      <span class="tag tag-mental">Mental</span>
+    </div>
+    <p>Another simple mediumistic mental effect is this stunt where the medium leaves the room and stays outside; the performer has the committee write a list of objects and some of these are chosen. The list is taken out to the medium who proceeds to tick off the chosen items. The test can be repeated over and over again and it may be done impromptu. It is very, very simple but also very deceptive.</p>
+    <div class="box box-mint">
+      <h3>🔍 The Secret</h3>
+      <p>The performer in the room explains that certain objects have harmonious relationship with others. He asks the spectator to write down a list of about a dozen objects. He then glances at the list and names two or three items that he thinks are linked by this so called Harmonious Relationship.</p>
+      <div class="nested nested-mint">
+        <p>He instructs the spectator to take the list to the medium who will name any objects that she feels have this binding factor — and she names the same because all she does is to look at the second letter of the first word, and to tick off every word in the list that has that letter in it. You have named the objects by virtue of the same principle.</p>
+      </div>
+      <div class="nested nested-mint">
+        <p>It will be seen that the code will probably vary each time the test is done and although it would be a simple matter to devise continuations that would withstand rigid inspection, it is hardly necessary as it is only a simple parlour stunt that you can use to fool a few friends.</p>
+      </div>
+      <div class="callout callout-amber" style="margin-top:0.8rem;">
+        <span class="callout-icon">🧠</span>
+        <p>Do not be inclined to scorn the simplicity of the code. Fogel and I have used it with very good effect and it's one of those effects that if you do have a spectator solve the code — it makes him very happy because he supposes he is more intelligent than the others! A little psychology goes a long way!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRICK 28: THE OUIJA BOARD -->
+  <div class="trick-card">
+    <div class="trick-header">
+      <div class="trick-number">28</div>
+      <div class="trick-emoji">🔮</div>
+      <div class="trick-title">The Ouija Board</div>
+      <span class="tag tag-mental">Mental</span>
+      <span class="tag tag-seance">Seance</span>
+    </div>
+    <div class="box box-lavender">
+      <p>Of all the forms for novel revelation of a chosen word, dead name, spirit message or what-have-you, this is one of the best and most suitable for seance room Mentalism.</p>
+    </div>
+    <p>Most of you will know what a Ouija Board is — but for those of you that don't I will describe it briefly. The Ouija Board is usually a plate of glass square or circular in shape and around the rim are stuck small pieces of card or paper which bear the letters of the alphabet; additional to 26 letter cards, there is usually a "Yes" card and a "No" card.</p>
+    <p>In operation, a small tumbler is placed on the glass and the medium (sometimes with a sitter or two) places her fingertips on the bottom of the glass. (It goes upside down on the Ouija Board.) It is now purported that the Spirits, acting through the Medium, move the glass around the board going from letter to letter thus spelling out a message.</p>
+    <div class="callout callout-rose">
+      <span class="callout-icon">😄</span>
+      <p>Those of you with lesser morals than myself, will readily see the wonderful opportunity to push the glass where you want it to go — and to Summerland with the Spirits!</p>
+    </div>
+    <div class="box box-sky">
+      <p>So with the knowledge that we can easily make the Spirits spell out a word — it remains a matter of getting the word. In Step Six on Billets I gave you the easiest method in the World — the Centre Tear, and this would be a good place to use it. (See page 166.) Alternative methods would be forcing, carbon impressions, pencil reading and billet switching; all these are to be found on the lower rungs! (Steps 1-8.)</p>
+    </div>
+    <div class="nested nested-lavender">
+      <p>📝 <strong>Note:</strong> "Summerland" was the name given by an eminent Fraudulent Medium to the "home" of Spirits — the world from which they come. One should picture the location as a sort of Astral Vineyard.</p>
+    </div>
+  </div>
+
+  <!-- TRICK 29: SPIRIT WRITING ON SLATE -->
+  <div class="trick-card">
+    <div class="trick-header">
+      <div class="trick-number">29</div>
+      <div class="trick-emoji">🖊️</div>
+      <div class="trick-title">Spirit Writing on a Slate</div>
+      <span class="tag tag-mental">Mental</span>
+    </div>
+    <p>There are very many methods of producing a spirit message on a slate, and during the course of time I think I have explored the best of them. This one I have used very often and it is quite good.</p>
+    <div class="box box-lemon">
+      <h3>🎭 The Effect</h3>
+      <p>Four people sit round a table; you have a slate cleaned by the sitter opposite you and then you both hold it under the table for a brief moment; having given the Spirits sufficient time to materialise a message the sitter pulls up the slate and there is chalked a few kind words from Granny!</p>
+    </div>
+    <div class="box box-mint">
+      <h3>😏 The Cheeky Method</h3>
+      <p>The modus operandi is cheeky — that's why I liked it. You have two slates and one of them is prepared with the message written in chalk. This slate lies in your lap as you sit opposite the victim. To your right is an assistant — although nobody knows it.</p>
+      <div class="nested nested-mint">
+        <p>All you have to do is to show the clean slate and take it in the left hand — as you go under the table you simply pick up the other slate in the right hand, push that forward into the subject's hand, but, at the same time, cross your arms and pass the clean slate to the assistant on your right who takes it into his lap and then sticks it up his jumper. This can be done without any conspicuous movement.</p>
+      </div>
+      <div class="nested nested-mint">
+        <p>Usually at this point I would give the assistant a chance to dispose of the slate by turning to him and saying "would you please get a duster — we may need it." He would get up and go for a duster, leave the other slate and return leaving the whole phoney set-up as clean as a whistle!</p>
+      </div>
+      <div class="callout callout-amber" style="margin-top:0.8rem;">
+        <span class="callout-icon">💡</span>
+        <p>If you have one of those tables with cross bars just under the top — you can rest the message slate on the bars in place having it in the lap. It is all very simple and bewildering — which is what good spook stuff should be.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRICK 30: STRIKE A LIGHT -->
+  <div class="trick-card">
+    <div class="trick-header">
+      <div class="trick-number">30</div>
+      <div class="trick-emoji">🔦</div>
+      <div class="trick-title">"Strike a Light!" by Punx</div>
+      <span class="tag tag-mental">Mental</span>
+    </div>
+    <div class="callout callout-amber">
+      <span class="callout-icon">🌟</span>
+      <p>Usually any effect which involves putting all the lights out — is a waste of time, but in this case — working in the seance room — we have every opportunity for doing so and the trick is very good.</p>
+    </div>
+    <div class="box box-sky">
+      <h3>🎭 The Effect</h3>
+      <p>About a dozen people sit around the seance table. The performer works alone; he throws a box of matches on to the table and then turns his back to give instructions to the gathering. He asks any one of them to open the box and select any match from the thirty or forty therein.</p>
+      <p>This done he tells that person to give the match to any other person who is then to mark their initials on the stem — at the end away from the head. The match is then replaced in the box and is thoroughly mixed with the others. Now the performer turns round for the first time.</p>
+      <div class="nested nested-sky">
+        <p>He takes the box and calls for the lights to be turned off. As soon as they go off — within a matter of seconds the audience see him strike a match and with it burning in his hand he goes round the circle looking into the faces of the sitters. In front of one man he stops — and calls "Lights." As they go on — he blows out the match and hands it to this man saying "this is the match chosen from the other fifty and you were the man to mark it with your initials!" He is right. The match is examined by all — it is indeed the original match chosen by a spectator and it has the initials on the stem. All others in the box are also open to inspection and there is no clue to the mystery.</p>
+      </div>
+    </div>
+    <div class="box box-mint">
+      <h3>🔍 The Method</h3>
+      <p>You have two boxes of matches. The first box which you throw on the table at the start contains matches which have all been dipped by their ends into luminous paint. When the lights are on this is not visible!</p>
+      <div class="nested nested-mint">
+        <p>So a luminous match is chosen and when this has been done you remark casually "can I have the box back please." Having regained the box — it is an easy matter to switch it for a box of untreated matches whilst your back is turned to the audience. The initials are marked on the chosen match and you throw the box behind you on to the table so that they can mix the luminous match with the untreated ones.</p>
+      </div>
+      <div class="nested nested-mint">
+        <p>This done you have nothing more to do other than to have the lights put out. As soon as this is done you open the box and there will be one match glaring at you. Hold it by the tip so that others do not see the glow and strike it. As you do so you will find it an easy matter to read the initials on the stem and knowing who those initials belong to — go round the faces until you recognise that person.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- BIBLIOGRAPHY -->
+  <h2>📚 Bibliography</h2>
+  <div class="box box-amber">
+    <p>There are thousands of books on this subject and most of them will tie you up in knots! Very few explain how to do the actual trickery; most concern themselves with case reports and masses of "evidence for the supernatural." For the serious student of mediumship, I offer a selection of books that I consider are most practical.</p>
+  </div>
+
+  <div class="book-item">
+    <p><span class="book-num">(1)</span> <strong>Searchlight on Psychical Research</strong> by Joseph Rinn. Undoubtedly a valuable work for practical information. Rinn associated himself with Harry Houdini in various cavorts to expose fraudulent mediums. I recommend this book to anyone interested in the subject — it is both entertaining and educational.</p>
+  </div>
+  <div class="book-item">
+    <p><span class="book-num">(2)</span> <strong>Modern Spiritualism</strong> by Frank Podmore. Two giant volumes that although very dry and factual, give what is probably the most comprehensive study of all round Spiritualism that has ever been written. All the famous mediums are described and not many of the tricks of the trade have been missed. Particularly good for information on table turning, spirit moulding, materialisation and the usual physical phenomena.</p>
+  </div>
+  <div class="book-item">
+    <p><span class="book-num">(3)</span> <strong>The Drama of Life After Death</strong> by George Lawton. One of the best books for an unbiased historic account of Spiritualism and other forms of Mediumship not associated with the Religion. Excellent for those who wish to understand the many weird and wonderful names invented by the mediumistic.</p>
+  </div>
+  <div class="book-item">
+    <p><span class="book-num">(4)</span> <strong>Behind the Scenes With Mediums</strong> by Abbot. Invaluable as a reference for technique. Particularly good for rope ties, slate routines, spirit cabinet effects and general physical phenomena.</p>
+  </div>
+  <div class="book-item" style="border-color:#c9a96e;background:#fff8e6;">
+    <p><span class="book-num">(5)</span> <strong>Mediumship for Magicians</strong> by Corinda. This book is by no means comprehensive but it is aimed at starting people (with a basic knowledge of magical principles) on the road to holding a complete ghost show. It's a good place to start if you are just entering the field — I will say no more lest I be accused of advertising!</p>
+  </div>
+  <div class="book-item">
+    <p><span class="book-num">(6)</span> <strong>The Dead do not Talk</strong> by Julian Proskauer. Rather a bitter attack on mediums and their activities, but enlightening and most informative to the serious student.</p>
+  </div>
+  <div class="book-item">
+    <p><span class="book-num">(7)</span> <strong>Spirits in the House</strong> by Chislett. Mr. Chislett writes a full account of his "home ghost show" — a performance which he gave regularly to visitors to his home. His book is particularly useful for information concerning Spirit Paintings.</p>
+  </div>
+  <div class="book-item">
+    <p><span class="book-num">(8)</span> <strong>The Fraudulent Mediums Act, 1951</strong> (H.M. Stationary Office). Not a book — but the official publication which everybody dealing with this work should read and understand. As a matter of interest, there is also The Hypnotism Act, 1950, which would be worth reading whilst dealing with the other Act. There is no danger of you breaking the Law by performing mediumistic effect for entertainment purposes; but you do as well to know the Law as many times you will be asked a question that deals with the subject.</p>
+  </div>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <!-- REFERENCE IN OTHER STEPS -->
+  <div class="box box-sage">
+    <h2>🔗 Reference to Mediumistic Effects in Other Steps</h2>
+    <div class="toc-grid">
+      <div class="toc-item"><span class="toc-num">Step 1 p.20</span> Trick No. 11: "A Mediumistic Effect"</div>
+      <div class="toc-item"><span class="toc-num">Step 1 p.19</span> Trick No. 8: "Living and Dead"</div>
+      <div class="toc-item"><span class="toc-num">Step 2 p.38</span> Sound Reading</div>
+      <div class="toc-item"><span class="toc-num">Step 3 p.79</span> The Mnemonic Number Code (4)</div>
+      <div class="toc-item"><span class="toc-num">Step 3 p.79</span> "Take my Word"</div>
+      <div class="toc-item"><span class="toc-num">Step 5 p.146</span> "Psychical Research Versus Mentalism"</div>
+      <div class="toc-item"><span class="toc-num">Step 6 p.186</span> Use of the Crystal Ball</div>
+      <div class="toc-item"><span class="toc-num">Step 7 p.201</span> "Zarkamorta II"</div>
+      <div class="toc-item"><span class="toc-num">Step 8</span> Two Person Telepathy (Complete Volume)</div>
+      <div class="toc-item"><span class="toc-num">Step 11</span> Q&A Effects (Complete Volume)</div>
+      <div class="toc-item"><span class="toc-num">Step 12</span> "The Haunted House"</div>
+      <div class="toc-item"><span class="toc-num">Step 12</span> "The Challenge Seance"</div>
+    </div>
+  </div>
+
+  <div class="divider">✦ ✦ ✦</div>
+
+  <div style="text-align:center;padding:2rem 0;color:#9a7a48;font-size:0.85rem;font-family:'Lora',serif;font-style:italic;">
+    No part of this publication may be reproduced without written permission. 👁️
+  </div>
+
+</div>
+</body>
+</html>

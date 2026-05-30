@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Step Twelve: Publicity Stunts — Corinda's Thirteen Steps to Mentalism</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #FDFBF7;
+    --warm-white: #FAF8F2;
+    --text-dark: #1C1A16;
+    --text-mid: #3D3A32;
+    --text-muted: #6B6760;
+    --box-yellow: #FFFDE7; --box-yellow-b: #F9E04B; --box-yellow-t: #4A3F00;
+    --box-mint: #E8F8F2; --box-mint-b: #4FC591; --box-mint-t: #0D4A30;
+    --box-lav: #F0EDFE; --box-lav-b: #9B8EE8; --box-lav-t: #2E2570;
+    --box-peach: #FFF0E8; --box-peach-b: #F4895A; --box-peach-t: #5C1F00;
+    --box-sky: #E6F4FF; --box-sky-b: #5AAEF5; --box-sky-t: #073B70;
+    --box-rose: #FFF0F4; --box-rose-b: #F06C8A; --box-rose-t: #5C0020;
+    --box-sage: #EEF6E8; --box-sage-b: #7BBF55; --box-sage-t: #1A4200;
+    --box-gold: #FFF8E1; --box-gold-b: #E8B400; --box-gold-t: #4A3000;
+    --box-teal: #E2F7F4; --box-teal-b: #2DBCAA; --box-teal-t: #0A3B35;
+    --box-coral: #FFF0EC; --box-coral-b: #FF6B47; --box-coral-t: #5C1500;
+    --box-lilac: #F8EDFE; --box-lilac-b: #C47AE8; --box-lilac-t: #430068;
+    --box-steel: #EEF3FA; --box-steel-b: #6B95D6; --box-steel-t: #102250;
+  }
+  body { background: var(--cream); font-family: 'DM Sans', sans-serif; color: var(--text-dark); font-size: 16px; line-height: 1.75; }
+  .page { max-width: 860px; margin: 0 auto; padding: 60px 40px 120px; }
+
+  /* HERO */
+  .hero { background: linear-gradient(135deg, #1a1200 0%, #2e2200 100%); color: #F5F0E0; border-radius: 20px; padding: 52px 48px; margin-bottom: 48px; position: relative; overflow: hidden; }
+  .hero::before { content: '📣'; position: absolute; right: 40px; top: 40px; font-size: 72px; opacity: 0.15; }
+  .hero .eyebrow { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #D4A843; margin-bottom: 14px; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: 42px; line-height: 1.2; color: #FAF4E2; margin-bottom: 16px; }
+  .hero .subtitle { font-size: 15px; color: #B5AC8E; max-width: 540px; }
+  .hero .byline { margin-top: 24px; font-family: 'DM Mono', monospace; font-size: 12px; color: #8A8068; letter-spacing: 1px; }
+
+  /* TOC */
+  .toc-box { background: var(--box-lav); border: 1.5px solid var(--box-lav-b); border-radius: 16px; padding: 28px 32px; margin-bottom: 48px; }
+  .toc-box h2 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--box-lav-t); margin-bottom: 16px; }
+  .toc-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 32px; }
+  .toc-item { font-size: 13.5px; color: var(--box-lav-t); padding: 3px 0; border-bottom: 1px dashed #C3B8F0; display: flex; justify-content: space-between; }
+  .toc-item .pg { opacity: 0.55; font-family: 'DM Mono', monospace; font-size: 12px; }
+
+  /* HEADINGS */
+  h2.sh { font-family: 'Playfair Display', serif; font-size: 30px; color: var(--text-dark); margin: 56px 0 8px; padding-bottom: 8px; border-bottom: 2px solid #E8E0CC; }
+  h3.sub { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--text-mid); margin: 36px 0 12px; }
+  h4.mini { font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin: 28px 0 10px; }
+  p { margin-bottom: 16px; color: var(--text-mid); }
+
+  /* BOXES */
+  .box { border-radius: 14px; padding: 22px 26px; margin: 22px 0; border-left: 5px solid; }
+  .box p { margin-bottom: 10px; } .box p:last-child { margin-bottom: 0; }
+  .box.yellow  { background: var(--box-yellow); border-color: var(--box-yellow-b); color: var(--box-yellow-t); }
+  .box.mint    { background: var(--box-mint);   border-color: var(--box-mint-b);   color: var(--box-mint-t); }
+  .box.lav     { background: var(--box-lav);    border-color: var(--box-lav-b);    color: var(--box-lav-t); }
+  .box.peach   { background: var(--box-peach);  border-color: var(--box-peach-b);  color: var(--box-peach-t); }
+  .box.sky     { background: var(--box-sky);    border-color: var(--box-sky-b);    color: var(--box-sky-t); }
+  .box.rose    { background: var(--box-rose);   border-color: var(--box-rose-b);   color: var(--box-rose-t); }
+  .box.sage    { background: var(--box-sage);   border-color: var(--box-sage-b);   color: var(--box-sage-t); }
+  .box.gold    { background: var(--box-gold);   border-color: var(--box-gold-b);   color: var(--box-gold-t); }
+  .box.teal    { background: var(--box-teal);   border-color: var(--box-teal-b);   color: var(--box-teal-t); }
+  .box.coral   { background: var(--box-coral);  border-color: var(--box-coral-b);  color: var(--box-coral-t); }
+  .box.lilac   { background: var(--box-lilac);  border-color: var(--box-lilac-b);  color: var(--box-lilac-t); }
+  .box.steel   { background: var(--box-steel);  border-color: var(--box-steel-b);  color: var(--box-steel-t); }
+
+  /* CALLOUT */
+  .callout { border-radius: 14px; padding: 20px 24px; margin: 24px 0; display: flex; gap: 16px; align-items: flex-start; border: 1.5px solid; }
+  .callout .icon { font-size: 26px; line-height: 1; flex-shrink: 0; margin-top: 2px; }
+  .callout .body { flex: 1; }
+  .callout .body strong { display: block; font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+  .callout .body p { margin: 0; font-size: 14.5px; line-height: 1.65; }
+  .callout.yellow { background: var(--box-yellow); border-color: var(--box-yellow-b); color: var(--box-yellow-t); }
+  .callout.mint   { background: var(--box-mint);   border-color: var(--box-mint-b);   color: var(--box-mint-t); }
+  .callout.peach  { background: var(--box-peach);  border-color: var(--box-peach-b);  color: var(--box-peach-t); }
+  .callout.sky    { background: var(--box-sky);    border-color: var(--box-sky-b);    color: var(--box-sky-t); }
+  .callout.rose   { background: var(--box-rose);   border-color: var(--box-rose-b);   color: var(--box-rose-t); }
+  .callout.sage   { background: var(--box-sage);   border-color: var(--box-sage-b);   color: var(--box-sage-t); }
+  .callout.lav    { background: var(--box-lav);    border-color: var(--box-lav-b);    color: var(--box-lav-t); }
+  .callout.gold   { background: var(--box-gold);   border-color: var(--box-gold-b);   color: var(--box-gold-t); }
+  .callout.teal   { background: var(--box-teal);   border-color: var(--box-teal-b);   color: var(--box-teal-t); }
+  .callout.coral  { background: var(--box-coral);  border-color: var(--box-coral-b);  color: var(--box-coral-t); }
+  .callout.lilac  { background: var(--box-lilac);  border-color: var(--box-lilac-b);  color: var(--box-lilac-t); }
+
+  /* NESTED */
+  .nest-out { border-radius: 16px; padding: 22px 24px; margin: 24px 0; border: 1.5px solid; }
+  .nest-out .nt { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; margin-bottom: 14px; }
+  .nest-in { border-radius: 10px; padding: 14px 18px; margin: 10px 0; border: 1px solid; }
+  .nest-in .it { font-family: 'DM Sans', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+  .nest-in p { font-size: 14px; line-height: 1.6; margin: 0; }
+
+  .no-yellow { background: var(--box-yellow); border-color: var(--box-yellow-b); color: var(--box-yellow-t); }
+  .ni-yellow { background: #FFFDE7; border-color: #D4B800; color: #3A2E00; }
+  .no-mint   { background: var(--box-mint); border-color: var(--box-mint-b); color: var(--box-mint-t); }
+  .ni-mint   { background: #D4F5E8; border-color: #2A9668; color: #0A3A22; }
+  .no-sky    { background: var(--box-sky); border-color: var(--box-sky-b); color: var(--box-sky-t); }
+  .ni-sky    { background: #D2EBFF; border-color: #2E7EC8; color: #042050; }
+  .no-lav    { background: var(--box-lav); border-color: var(--box-lav-b); color: var(--box-lav-t); }
+  .ni-lav    { background: #E4DFFD; border-color: #7568D8; color: #221A60; }
+  .no-sage   { background: var(--box-sage); border-color: var(--box-sage-b); color: var(--box-sage-t); }
+  .ni-sage   { background: #DCF0D0; border-color: #52952A; color: #122E00; }
+  .no-peach  { background: var(--box-peach); border-color: var(--box-peach-b); color: var(--box-peach-t); }
+  .ni-peach  { background: #FFE0CC; border-color: #C85A22; color: #440F00; }
+  .no-teal   { background: var(--box-teal); border-color: var(--box-teal-b); color: var(--box-teal-t); }
+  .ni-teal   { background: #C8EEE9; border-color: #1A9080; color: #062B26; }
+  .no-gold   { background: var(--box-gold); border-color: var(--box-gold-b); color: var(--box-gold-t); }
+  .ni-gold   { background: #FFF0B0; border-color: #C09000; color: #3A2400; }
+  .no-rose   { background: var(--box-rose); border-color: var(--box-rose-b); color: var(--box-rose-t); }
+  .ni-rose   { background: #FFD8E4; border-color: #C0405C; color: #440018; }
+  .no-coral  { background: var(--box-coral); border-color: var(--box-coral-b); color: var(--box-coral-t); }
+  .ni-coral  { background: #FFD8CC; border-color: #CC4422; color: #3C0E00; }
+
+  /* LISTS */
+  .num-list { list-style: none; counter-reset: nl; margin: 16px 0; }
+  .num-list li { counter-increment: nl; display: flex; gap: 14px; align-items: flex-start; margin-bottom: 12px; font-size: 15px; color: var(--text-mid); }
+  .num-list li::before { content: counter(nl); background: #1C1A16; color: #FAF0CC; font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 3px; }
+  .bul-list { list-style: none; margin: 16px 0; }
+  .bul-list li { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; font-size: 15px; color: var(--text-mid); }
+  .bul-list li::before { content: '›'; font-size: 20px; line-height: 1.3; color: #9B8EE8; flex-shrink: 0; }
+
+  /* PART BANNER */
+  .part-banner { border-radius: 14px; padding: 28px 32px; margin: 48px 0 32px; display: flex; align-items: center; gap: 20px; }
+  .part-banner .pn { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; opacity: 0.7; margin-bottom: 4px; }
+  .part-banner h2 { font-family: 'Playfair Display', serif; font-size: 26px; line-height: 1.2; }
+  .part-banner .bi { font-size: 52px; flex-shrink: 0; }
+  .pb1 { background: var(--box-sky);  border: 1.5px solid var(--box-sky-b);  color: var(--box-sky-t); }
+  .pb2 { background: var(--box-gold); border: 1.5px solid var(--box-gold-b); color: var(--box-gold-t); }
+
+  /* GRID */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+  .grid-card { border-radius: 12px; padding: 20px; border: 1.5px solid; }
+
+  /* CAMPAIGN STEPS */
+  .camp-steps { display: flex; flex-direction: column; gap: 0; margin: 20px 0; }
+  .camp-step { display: flex; gap: 0; align-items: stretch; }
+  .camp-step .cs-num { width: 48px; display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+  .camp-step .cs-circle { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 500; flex-shrink: 0; }
+  .camp-step .cs-line { flex: 1; width: 2px; background: #E0D8C0; margin: 0 auto; }
+  .camp-step:last-child .cs-line { display: none; }
+  .camp-step .cs-body { flex: 1; padding: 0 0 28px 16px; }
+  .camp-step .cs-title { font-weight: 600; font-size: 15px; margin-bottom: 6px; }
+  .camp-step .cs-text { font-size: 14px; color: var(--text-mid); line-height: 1.65; }
+  .cs-a .cs-circle { background: var(--box-sky);   color: var(--box-sky-t);   border: 1.5px solid var(--box-sky-b); }
+  .cs-b .cs-circle { background: var(--box-coral); color: var(--box-coral-t); border: 1.5px solid var(--box-coral-b); }
+  .cs-c .cs-circle { background: var(--box-mint);  color: var(--box-mint-t);  border: 1.5px solid var(--box-mint-b); }
+  .cs-d .cs-circle { background: var(--box-gold);  color: var(--box-gold-t);  border: 1.5px solid var(--box-gold-b); }
+
+  /* STUNT CARD */
+  .stunt-card { border-radius: 16px; padding: 26px 28px; margin: 28px 0; border: 1.5px solid; }
+  .stunt-card .stunt-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+  .stunt-card .stunt-icon { font-size: 32px; }
+  .stunt-card .stunt-title { font-family: 'Playfair Display', serif; font-size: 20px; }
+  .stunt-card .stunt-tag { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.65; }
+
+  /* SUMMARY GRID */
+  .sum10 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0; }
+  .sum-item { border-radius: 10px; padding: 14px 16px; border: 1.5px solid; display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.6; }
+  .sum-item .sn { font-family: 'DM Mono', monospace; font-size: 18px; font-weight: 500; opacity: 0.45; flex-shrink: 0; line-height: 1; margin-top: 2px; }
+
+  /* DIVIDER */
+  hr.div { border: none; border-top: 2px dashed #DDD6C0; margin: 40px 0; }
+
+  /* TAGS */
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+  .tag { font-size: 12px; font-weight: 500; letter-spacing: 0.5px; padding: 4px 12px; border-radius: 20px; border: 1px solid; white-space: nowrap; }
+  .tag.yellow { background: var(--box-yellow); border-color: var(--box-yellow-b); color: var(--box-yellow-t); }
+  .tag.mint   { background: var(--box-mint);   border-color: var(--box-mint-b);   color: var(--box-mint-t); }
+  .tag.sky    { background: var(--box-sky);    border-color: var(--box-sky-b);    color: var(--box-sky-t); }
+  .tag.peach  { background: var(--box-peach);  border-color: var(--box-peach-b);  color: var(--box-peach-t); }
+  .tag.sage   { background: var(--box-sage);   border-color: var(--box-sage-b);   color: var(--box-sage-t); }
+  .tag.lav    { background: var(--box-lav);    border-color: var(--box-lav-b);    color: var(--box-lav-t); }
+  .tag.gold   { background: var(--box-gold);   border-color: var(--box-gold-b);   color: var(--box-gold-t); }
+  .tag.rose   { background: var(--box-rose);   border-color: var(--box-rose-b);   color: var(--box-rose-t); }
+  .tag.teal   { background: var(--box-teal);   border-color: var(--box-teal-b);   color: var(--box-teal-t); }
+  .tag.coral  { background: var(--box-coral);  border-color: var(--box-coral-b);  color: var(--box-coral-t); }
+
+  /* QUOTE */
+  .pull-quote { background: #1C1A16; color: #FAF0CC; border-radius: 14px; padding: 28px 32px; margin: 28px 0; font-family: 'Playfair Display', serif; font-size: 19px; line-height: 1.55; font-style: italic; }
+  .pull-quote .attr { font-family: 'DM Mono', monospace; font-size: 11px; color: #8A8068; letter-spacing: 1.5px; margin-top: 12px; font-style: normal; }
+
+  @media (max-width: 640px) {
+    .page { padding: 30px 20px 80px; }
+    .toc-cols, .two-col, .sum10 { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 28px; }
+    .hero { padding: 36px 28px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="eyebrow">Corinda's Thirteen Steps to Mentalism &nbsp;·&nbsp; Step Twelve</div>
+  <h1>Publicity Stunts 📣</h1>
+  <p class="subtitle">It is indeed a business. Like any other business, what you have for sale has to be advertised, displayed, and marketed, whether it be the sale of broom handles or a mental act. 🎩</p>
+  <div class="byline">Written by Corinda &nbsp;&nbsp;|&nbsp;&nbsp; Presented for the Modern Mentalist</div>
+</div>
+
+<!-- TOC -->
+<div class="toc-box">
+  <h2>📖 What's Inside</h2>
+  <div class="toc-cols">
+    <div>
+      <div class="toc-item"><span>Introduction</span><span class="pg">367</span></div>
+      <div class="toc-item"><span>The Law of Supply and Demand</span><span class="pg">368</span></div>
+      <div class="toc-item"><span>Creating a Demand</span><span class="pg">369</span></div>
+      <div class="toc-item"><span>Personal Advertising</span><span class="pg">371</span></div>
+      <div class="toc-item"><span>Visiting Cards</span><span class="pg">372</span></div>
+      <div class="toc-item"><span>The Brochure</span><span class="pg">372</span></div>
+      <div class="toc-item"><span>Photographs</span><span class="pg">375</span></div>
+      <div class="toc-item"><span>Headed Paper</span><span class="pg">375</span></div>
+      <div class="toc-item"><span>The Publicity Campaign</span><span class="pg">375</span></div>
+    </div>
+    <div>
+      <div class="toc-item"><span>Radio Prediction Stunt</span><span class="pg">377</span></div>
+      <div class="toc-item"><span>Personal Column Stunt</span><span class="pg">378</span></div>
+      <div class="toc-item"><span>Registered Letter Stunt</span><span class="pg">379</span></div>
+      <div class="toc-item"><span>Bullet Catching Stunt</span><span class="pg">379</span></div>
+      <div class="toc-item"><span>Visiting Card Gimmick</span><span class="pg">382</span></div>
+      <div class="toc-item"><span>The Haunted House Stunt</span><span class="pg">382</span></div>
+      <div class="toc-item"><span>Challenge Seance Stunt</span><span class="pg">383</span></div>
+      <div class="toc-item"><span>Headline Predictions</span><span class="pg">383</span></div>
+      <div class="toc-item"><span>Glorified Muscle Reading</span><span class="pg">384</span></div>
+      <div class="toc-item"><span>Blindfold Drive and Walk</span><span class="pg">386</span></div>
+      <div class="toc-item"><span>Publicity Pencils</span><span class="pg">385</span></div>
+      <div class="toc-item"><span>Conclusion</span><span class="pg">386</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- PART ONE -->
+<div class="part-banner pb1">
+  <div class="bi">📋</div>
+  <div>
+    <div class="pn">Part One</div>
+    <h2>The Business of Showbusiness</h2>
+  </div>
+</div>
+
+<h2 class="sh">Introduction 🎪</h2>
+
+<p>This step does not deal so much with tricks and technique as do the predecessors; it confines itself to publicity, a subject which is of equal importance to the trickery side of mentalism, and one that cannot be ignored by any who propose to make a living by professional or semi-professional entertainment.</p>
+
+<div class="callout gold">
+  <div class="icon">💼</div>
+  <div class="body">
+    <strong>The world of entertainment is showbusiness.</strong>
+    <p>As the latter half of that word indicates, it is indeed a business. Like any other business, what you have for sale has to be advertised, displayed, and marketed, whether it be the sale of broom handles or a mental act.</p>
+  </div>
+</div>
+
+<p>Publicity is a very important thing to the showman, and it is by no means an understatement to say that the average semi-professional man does not pay enough attention to the subject. He is inclined to go so far towards designing an act and then seems reasonably happy to sit back and wait for bookers to come along and purchase his talent.</p>
+
+<div class="callout peach">
+  <div class="icon">🚀</div>
+  <div class="body">
+    <strong>The real professional knows better.</strong>
+    <p>He cannot afford to sit back and wait; he gets out and goes to the right places and right people and sells his act so that next week, like last week, he may continue to eat. Moreover, contrary to common belief, eating is at times a luxury even unto the professional!</p>
+  </div>
+</div>
+
+<div class="box rose">
+  <p>The only man who knows for sure where his next meal is coming from is the magician who has a rabbit in the act. So let's blast the wind out of "magical stardom and money galore." The chances of being a star at anything in showbusiness are pretty rough; the chances of being a star as a magician or mindreader are ten times worse.</p>
+  <p>It's no good hanging on the history of magic and kidding yourself that your chances are good. They are not. Your chances of professional success are, to put it mildly, lousy. I might add to that by saying that without some knowledge about publicity, you have no chance at all.</p>
+</div>
+
+<p>I do not sit back and grind forth these bold statements without reasonable support to what I say. First, let it be clearly understood that I have no axe to grind. To put it mildly, I do very well earning my living out of magic and mentalism and I don't care how many stars there are or there will be.</p>
+
+<div class="callout coral">
+  <div class="icon">⚠️</div>
+  <div class="body">
+    <strong>A hard truth about the state of magic.</strong>
+    <p>I have no time for dreamers who wish to imagine that today magic is the easiest thing on earth. I have no time for bad performers who should either improve or get out of magic and leave it to somebody who can do better. I have no time for magicians and mentalists who try and kid me that magic is getting more and more popular every day. It is not. In fact, the way it's going, magic could die completely; and if this happened, nine people out of ten would blame "television," lack of theatres, cabaret conditions, etc., and the odd one would admit that nothing harmed magic more than bad magicians.</p>
+  </div>
+</div>
+
+<p>It has been my good fortune to know quite intimately a large number of professional magicians and mentalists. Of all those I know, very few would tell you that their job was an easy one: all of them have to be on their toes all the time and it's a constant battle to keep going.</p>
+
+<div class="box sky">
+  <p>Only dreamers sit back and think top line magicians drive around in a chauffeur-driven Cadillac, sit in front of roaring log fires at their country mansions, and guzzle champagne by the gallon. The average "pro" sits at home staying up late at night working on everyday problems. He has to scheme out new tricks, try and improve on something he has already done for ten years, think up new and topical patter, consider new publicity angles that will bring him in more work, and keep up a constant demand for his talent.</p>
+  <p>With his cup of tea he works on two major problems: getting an act that can be done under present day conditions, and then finding a way to sell the act to bring him work.</p>
+</div>
+
+<div class="callout rose">
+  <div class="icon">❗</div>
+  <div class="body">
+    <strong>The bottom line before we go further.</strong>
+    <p>What I have said has been put in the introduction because you now know that if you do not have a good act to perform, you have no right to try and sell it in the first place. Don't try and put a shoddy product on the market. This book will tell you how to sell what you've got, but get something worth selling before you start.</p>
+  </div>
+</div>
+
+<hr class="div">
+
+<h2 class="sh">The Law of Supply and Demand ⚖️</h2>
+
+<p>There are two fundamental ways of selling anything. Either you are able to supply that which is in demand, or you create a demand for that which you can supply. If you understand this, you are a good business man.</p>
+
+<div class="two-col">
+  <div class="grid-card" style="background: var(--box-mint); border-color: var(--box-mint-b); color: var(--box-mint-t);">
+    <div style="font-size: 22px; margin-bottom: 8px;">📊</div>
+    <div style="font-weight: 700; font-size: 15px; margin-bottom: 8px;">Supply the Demand</div>
+    <p style="font-size: 14px; margin: 0;">You think "now what do they want?" and, finding the answer, you go ahead and create an act that fits present day requirements.</p>
+  </div>
+  <div class="grid-card" style="background: var(--box-lav); border-color: var(--box-lav-b); color: var(--box-lav-t);">
+    <div style="font-size: 22px; margin-bottom: 8px;">🎯</div>
+    <div style="font-weight: 700; font-size: 15px; margin-bottom: 8px;">Create the Demand</div>
+    <p style="font-size: 14px; margin: 0;">You already have an act. You think "how can I create a demand for this act?" The two are not the same.</p>
+  </div>
+</div>
+
+<div class="box peach">
+  <p>It is quite possible that you have worked for a long time to perfect a series of tricks and to routine them into an act. Then, when everything is ready to go, you suddenly find that nobody "wants that kind of thing." You have spent five years working on something that isn't in demand. On the other hand, you might think you are a shrewd fellow who looks around and spots everything that's going well and you decide to do the same. So you spend five years perfecting a new act and when it's ready you find that what was in demand is now decidedly out of fashion. It's not as easy as it seems.</p>
+</div>
+
+<h3 class="sub">Creating a Demand 🔥</h3>
+
+<p>We presume that in the first place you have an act. What is more, we presume that it is a very good act; it has been tried and tested as best you can, everything has been fully rehearsed, you know how to do all the tricks with your eyes closed (we speak figuratively!), and all in all, you have faith in the quality of your act.</p>
+
+<div class="callout yellow">
+  <div class="icon">💡</div>
+  <div class="body">
+    <strong>Fit the place of performance to the act.</strong>
+    <p>Before you decide upon a publicity campaign, you must first decide where you want to perform. Obviously, big illusion acts cannot be done in small rooms where you get dinners held. Close-up magic and mentalism looks silly on a large stage. Ideally, you should have an act that you can do almost anywhere.</p>
+  </div>
+</div>
+
+<div class="callout mint">
+  <div class="icon">🧠</div>
+  <div class="body">
+    <strong>The mentalist's built-in advantage.</strong>
+    <p>Fortunately, the mentalist has the advantage over the magician when it comes to creating a "versatile" act. The mentalist does not have to work with big props and a personality can fit into any room or fill any stage. When you think of it, you realise that a mindreader is primarily supposed to read minds and if so, any apparatus, no matter what it may be, is something which does not fit the picture of the true mindreader. Our conception of the authentic telepathist is the man who simply stands there and tells you what you are thinking.</p>
+  </div>
+</div>
+
+<p>The less equipment you have, the more places there are for you to perform. So we analyse our act and then decide where we can best perform it.</p>
+
+<div class="nest-out no-sky">
+  <div class="nt">🏛️ A World of Venues: The Middle Market</div>
+  <p style="font-size:14px; margin: 0 0 14px; color: var(--box-sky-t);">As an example, let us assume that we decide dinners, small audiences at intimate gatherings, and perhaps small halls, are the places where we can best perform. From this we see that, although we have cut down our field, we have even so allowed plenty of scope.</p>
+  <div class="nest-in ni-sky"><div class="it">🥂 Social gatherings</div><p>Social parties, wedding anniversaries, twenty-first birthdays, and the kind.</p></div>
+  <div class="nest-in ni-sky"><div class="it">⛪ Church activities</div><p>A diverse number of clubs of the semi-sophisticated class.</p></div>
+  <div class="nest-in ni-sky"><div class="it">🏢 Corporate dinners</div><p>Annual affairs of industrial companies that often call for an entertainer at their dinner and dance.</p></div>
+  <div class="nest-in ni-sky"><div class="it">🎭 Masonic dinners</div><p>Entertaining at private licensed rooms for groups which hire these premises for meetings; receptions of various kinds and charity banquets.</p></div>
+  <div class="nest-in ni-sky"><div class="it">🏠 Private engagements</div><p>Held at private houses of the well-to-do, and often pay very well.</p></div>
+  <div class="nest-in ni-sky"><div class="it">🎪 Variety and concert parties</div><p>Last, but by no means least, now and then work is to be found with a concert party or variety group.</p></div>
+</div>
+
+<div class="callout sage">
+  <div class="icon">💰</div>
+  <div class="body">
+    <strong>On fees: be reasonable.</strong>
+    <p>It is almost a sin to undercharge and it is foolhardy to overcharge. You might get paid more for work in high-class places, but there is more work to be had as you come down the scale of social entertainment. Many "old hands" I know earn as much in a year with regular bookings at clubs and dinners as do quite a few top-line professionals who now and then get a cabaret booking. The best place for anybody to work is the place where they feel best suited.</p>
+  </div>
+</div>
+
+<div class="callout coral">
+  <div class="icon">📝</div>
+  <div class="body">
+    <strong>Don't waste money advertising above your market.</strong>
+    <p>Only a fool will go madly ahead and spend a small fortune on an artistic and expensive brochure that, sent to club organisers, gets him a booking that would have come just the same from a duplicated letter. And on the other hand, a cheap duplicated letter sent to a cabaret booking agent does not bear out a sophisticated act that it suggests.</p>
+  </div>
+</div>
+
+<p>Decide what you want to do, where you want to do it, and then, and only then, get down to creating a demand by perpetrating a publicity campaign.</p>
+
+<hr class="div">
+
+<h2 class="sh">Personal Publicity 🌟</h2>
+
+<p>There are many different types of publicity and we shall deal with a few of them. One type we term personal publicity and that is what is often called in showbusiness "a gimmick." A personal publicity gimmick can be literally anything; it's very vague and yet there are many good examples to be found.</p>
+
+<div class="nest-out no-yellow">
+  <div class="nt">✨ The Gimmick: Your Hallmark for Life</div>
+  <div class="nest-in ni-yellow">
+    <div class="it">🤣 Tommy Cooper</div>
+    <p>It can be something you say or how you say it; you become noted for those words or that expression. It can be a laugh: our English magician Tommy Cooper soon wins an audience with his gimmicked laugh.</p>
+  </div>
+  <div class="nest-in ni-yellow">
+    <div class="it">👤 Yul Brynner</div>
+    <p>It can be a mannerism or personal feature. You would be surprised to learn what a perfectly bald head did for Yul Brynner the actor!</p>
+  </div>
+  <div class="nest-in ni-yellow">
+    <div class="it">🎩 Charles Chaplin</div>
+    <p>One of the greatest men of showbusiness: he wasn't born with two feet stuck sideways and a bent cane in his hand. He made the gimmick and the gimmick helped to make him. Anything is better than nothing.</p>
+  </div>
+  <div class="nest-in ni-yellow">
+    <div class="it">⚡ Richard Himber</div>
+    <p>Even being nasty like Richard Himber makes you famous! Although he's the most horrible man I know, I still have a healthy respect for him: he's one man that knows and uses publicity.</p>
+  </div>
+</div>
+
+<div class="callout gold">
+  <div class="icon">🏆</div>
+  <div class="body">
+    <strong>The acid test of a good gimmick.</strong>
+    <p>One that, if used by an impersonator, people would recognise you without being told who was being impersonated.</p>
+  </div>
+</div>
+
+<hr class="div">
+
+<h2 class="sh">Personal Advertising 📎</h2>
+
+<p>Under this heading we cater for such things as business or visiting cards, brochures, handouts, headed writing paper, and novelties which advertise you and your business.</p>
+
+<h3 class="sub">Visiting Cards 🪪</h3>
+
+<p>Things which are so cheap and useful that there is no excuse for being without them. However, little as you may pay for them, you should go to the trouble of having them done right. Most important of all, get the wording right on the card. The basic essentials are your name, address, telephone number, and profession.</p>
+
+<div class="two-col">
+  <div class="grid-card" style="background: var(--box-mint); border-color: var(--box-mint-b); color: var(--box-mint-t);">
+    <div style="font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px;">✅ Example "A" — Correct</div>
+    <div style="background: white; border-radius: 8px; padding: 18px; text-align: center; border: 1px solid #C8EEE9;">
+      <div style="font-family: 'Playfair Display', serif; font-size: 17px; color: #1C1A16; margin-bottom: 4px;">Mr. T. Corinda</div>
+      <div style="font-size: 13px; color: #555; letter-spacing: 1px;">Mindreader</div>
+    </div>
+    <p style="margin-top: 10px; font-size: 13.5px; margin-bottom: 0;">Tells them WHO you are. It is a sign of culture to know what to say and what not to say, even on a visiting card.</p>
+  </div>
+  <div class="grid-card" style="background: var(--box-rose); border-color: var(--box-rose-b); color: var(--box-rose-t);">
+    <div style="font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px;">❌ Example "B" — Avoid</div>
+    <div style="background: white; border-radius: 8px; padding: 14px; border: 1px solid #F06C8A; font-size: 12px; color: #444; line-height: 1.6;">
+      Available for dates. Mr. T. Corinda, M.I.M.C., I.B.M. Magic, Mentalism, Hypnotism &amp; Puppets (For Children &amp; Adults). Address: 65 Mortimer Street, Tel. Lan 2491 London, W.1.
+    </div>
+    <p style="margin-top: 10px; font-size: 13.5px; margin-bottom: 0;">Nearly an autobiography. "Available for dates..." suggests unemployment! The only conclusion is "well, what the hell is he?"</p>
+  </div>
+</div>
+
+<div class="box sage">
+  <p>The Magic Circle is a famous club and sometimes it carries weight when getting bookings, so if you want to use any titles, and having the right to do so, say what they are and don't abbreviate. Better by far to leave such qualifications to the brochure which is read by people who want to know about you.</p>
+</div>
+
+<h3 class="sub">The Brochure 📄</h3>
+
+<div class="callout lav">
+  <div class="icon">💰</div>
+  <div class="body">
+    <strong>Of course it's worth it.</strong>
+    <p>If you work it out in businesslike fashion, you find that you need as little as one percent result or booking from your circulation to pay the material cost, which leaves you with all that publicity if nothing more. At our Magic Studio we have often sent out ten thousand circulars and when we get one hundred replies it is very good business. As a professional entertainer you are in business, and in any form of business, advertising is usually an investment and not an expenditure.</p>
+  </div>
+</div>
+
+<div class="nest-out no-lav">
+  <div class="nt">📐 Designing Your Brochure: A Practical Guide</div>
+  <div class="nest-in ni-lav"><div class="it">📏 Size and format</div><p>For economy, have your brochure designed so that from one page, it folds into four. Take a quarto sheet and fold it twice and you get a leaflet with four small faces and one large when opened out. This is quite adequate for the unpretentious!</p></div>
+  <div class="nest-in ni-lav"><div class="it">🎨 Paper and colour</div><p>A good quality white art paper and at least two colours. The more colours you use, the more the expense, but no less than two colours; better three or four. Consult a good colour printer or commercial artist.</p></div>
+  <div class="nest-in ni-lav"><div class="it">🖼️ Front cover</div><p>A first-class drawing and a few words which present your name. Sometimes you can use a phrase which invites people to look further: "Can you read minds?" and the next page tells them you can! I prefer a simple introduction.</p></div>
+  <div class="nest-in ni-lav"><div class="it">📝 Inside left</div><p>Information about yourself: who you are, what you do, where you have done it. Make sure that it is in good English and don't be ashamed to give yourself a bit of a build-up. Remember, this leaflet has got to sell you!</p></div>
+  <div class="nest-in ni-lav"><div class="it">⭐ Inside right</div><p>What others say: a time-honoured advertising technique. Cover this with photo copies of press reports, cut-outs from complimentary letters, and perhaps a final plug which tells them how they go about booking you.</p></div>
+  <div class="nest-in ni-lav"><div class="it">📸 Back page</div><p>The best place for a full-size photograph (professional pose) is the small back page. A close-up head shot is good for this.</p></div>
+  <div class="nest-in ni-lav"><div class="it">🗺️ The full middle page</div><p>Some excellent cartoons, contemporary art line drawings, historic plates, or a mixed layout of action pictures. The latter are very good because they show what you have done: shots of large audiences, you on a television screen, close-ups showing expressions of amazement, and name headings from daily newspapers with favourable comments.</p></div>
+</div>
+
+<div class="callout coral">
+  <div class="icon">🎨</div>
+  <div class="body">
+    <strong>Get a professional artist.</strong>
+    <p>Ten to one you are not an artist and you can't beat the right man for the right job. You don't go to the dentist to get your boots repaired, so spend a few pounds or dollars and have a professional artist draw up the brochure for you. I know one English magician who recently paid £140 for nothing more than art work on a brochure. But what he has is a work of art.</p>
+  </div>
+</div>
+
+<div class="box teal">
+  <p>A helpful artist will tell you where to have blocks made and recommend a good colour printer. He will also handle the whole project if you pay the right money. Remember, it's his job, so he knows what he's doing.</p>
+  <p>No matter how good your brochure, you still have to go along and prove you're good on the day!</p>
+</div>
+
+<h3 class="sub">Photographs 📸</h3>
+
+<p>You will need quite a few copies of good photographs of yourself. This means, without any arguments, a good photographer. Your pal with his Brownie camera might take good snapshots but they are not in the least any good for you. Go to a professional photographer (or have him come to you) and get it done properly.</p>
+
+<div class="two-col">
+  <div style="background: var(--box-sky); border: 1.5px solid var(--box-sky-b); color: var(--box-sky-t); border-radius: 12px; padding: 18px;">
+    <div style="font-weight: 700; margin-bottom: 6px;">🖼️ Theatre display size</div>
+    <p style="font-size: 14px; margin: 0;">Usually about 10 in. × 7 in.</p>
+  </div>
+  <div style="background: var(--box-mint); border: 1.5px solid var(--box-mint-b); color: var(--box-mint-t); border-radius: 12px; padding: 18px;">
+    <div style="font-weight: 700; margin-bottom: 6px;">📬 Postcard size</div>
+    <p style="font-size: 14px; margin: 0;">About 3½ in. × 6 in.</p>
+  </div>
+</div>
+
+<p>Normally, the more copies you have printed from the negatives, the cheaper it gets, so look ahead and have as many done at once as you can afford. Lastly, in case you are unacquainted with the fact, there are people who can doctor your photos, working on originals, to make them look much better than the first print. Unless six chins is your gimmick, have an artist blot out five!</p>
+
+<h3 class="sub">Headed Paper 📋</h3>
+
+<p>It is pretty important that you have a good headed paper. During the course of each year I should say I receive some thousands of letters from magicians and mentalists and, to be quite truthful, the usual standard of headings used on their business papers is utterly appalling.</p>
+
+<div class="box rose">
+  <p>To start with, I loathe corny names; stage titles adopted by people who, having no imagination, think "The Great Faggo" fits in well with a cigarette act. An accurate check of my records at the office shows we have no less than seventeen people calling themselves "Mr. E." (all of them claim they were the first!), which cannot be a good thing for the other sixteen "Mr. E's." It cannot be a good thing to have a name that can be confused with another person.</p>
+  <p>Your headed paper should look like the rest of your advertising material: tasteful and neat. It is literal etiquette to put your address on the right of the page, so don't stick it on the left.</p>
+</div>
+
+<h3 class="sub">The Publicity Campaign 🚀</h3>
+
+<p>A brochure is part promise and part history: it's a promise of what you will do and history of what you have done! Therefore, you cannot conduct a publicity campaign until you have an act.</p>
+
+<p>The basic structure of your campaign is founded on a very simple formula: get something to sell, let them know you have it for sale, sell it, keep on selling it.</p>
+
+<div class="camp-steps">
+  <div class="camp-step cs-a">
+    <div class="cs-num">
+      <div class="cs-circle">A</div>
+      <div class="cs-line"></div>
+    </div>
+    <div class="cs-body">
+      <div class="cs-title">Get something to sell 🎭</div>
+      <div class="cs-text">In other words, once again, have a good act ready to do and ready to describe in your publicity matter.</div>
+    </div>
+  </div>
+  <div class="camp-step cs-b">
+    <div class="cs-num">
+      <div class="cs-circle">B</div>
+      <div class="cs-line"></div>
+    </div>
+    <div class="cs-body">
+      <div class="cs-title">Let them know with a bang 💥</div>
+      <div class="cs-text">You are ready to go, and the easiest way to arrive is with a bang. That means a fairly big publicity stunt, and the more your ambition, the greater must be the stunt. For this, in mentalism, we call upon headline predictions, football pool or racing predictions, blindfold drives, challenges, and things of that kind. They are the stunts that launch you like a battleship: and sometimes you end up in deep water!</div>
+    </div>
+  </div>
+  <div class="camp-step cs-c">
+    <div class="cs-num">
+      <div class="cs-circle">C</div>
+      <div class="cs-line"></div>
+    </div>
+    <div class="cs-body">
+      <div class="cs-title">Exploit every gain 📰</div>
+      <div class="cs-text">Having done the big stunt, it's a fat lot of good sitting back and waiting, so you exploit any publicity you gain and bring it to the attention of those who will be impressed and give you work for it.</div>
+    </div>
+  </div>
+  <div class="camp-step cs-d">
+    <div class="cs-num">
+      <div class="cs-circle">D</div>
+      <div class="cs-line"></div>
+    </div>
+    <div class="cs-body">
+      <div class="cs-title">Maintain and repeat 🔄</div>
+      <div class="cs-text">Having got a booking on the strength of your publicity stunt, you now play it out and keep getting bookings since your object is to stay in work as much as possible. No matter how famous you are, throughout your career it is necessary to bolster your name with another publicity stunt. So keep at it and when the fame of the last stunt dies down, start working on another to rekindle the fire.</div>
+    </div>
+  </div>
+</div>
+
+<hr class="div">
+
+<!-- PART TWO -->
+<div class="part-banner pb2">
+  <div class="bi">💥</div>
+  <div>
+    <div class="pn">Part Two</div>
+    <h2>Publicity Stunts: Plots and Ideas</h2>
+  </div>
+</div>
+
+<p>Having surveyed the reason and purpose behind publicity, we are now in a position to get down to details. We know what we want and why we want it.</p>
+
+<div class="callout gold">
+  <div class="icon">🎭</div>
+  <div class="body">
+    <strong>The one rule that governs all stunts.</strong>
+    <p>Although you may well be using a standard and very simple mental trick for your publicity stunt, you must grossly exaggerate the effect. We aim for magnificent and spectacular presentation as though our effect was being performed for the Nation instead of for one small audience.</p>
+  </div>
+</div>
+
+<p>If you want to "reach" the Nation, cause a big stir, get known, and become talked about, if you think it out, there are very few media to convey your fame. It comes down to methods of mass communication and there are three outstanding methods: sound radio, television, and newspapers.</p>
+
+<div class="box teal">
+  <p>The common pattern of a publicity campaign runs along these lines. You collaborate with a well-known newspaper and do a stunt which gives them a "story." They report on you and your activity and, if it's interesting enough, you stand a good chance of appearing on television or getting on the air in any of the short interview programmes that deal with topical events and personalities of the week.</p>
+  <p>That is the ultimate, the ideal pattern for a major publicity stunt, because it exploits what you have done to a maximum degree. If it works out really well, you may get "follow-ups" by way of press agencies circulating your story in many smaller papers, magazines, and with a bit of good fortune, you may even get a newsreel film run on you.</p>
+</div>
+
+<div class="callout lav">
+  <div class="icon">🧠</div>
+  <div class="body">
+    <strong>Think big. Always.</strong>
+    <p>Such a glorious success may seem too much to be hoped for by the average man. That is because the average man does not "think big" and does not give the essential material a "story." Big thinking brings big results and newspaper editors like a story about the outstanding and the unusual. So in your presentation of a publicity trick, do it "big" and let there be material for a story that's outstanding news.</p>
+  </div>
+</div>
+
+<hr class="div">
+<h4 class="mini">The Stunts 🎪</h4>
+
+<!-- STUNT 1: RADIO PREDICTION -->
+<div class="stunt-card" style="background: var(--box-sky); border-color: var(--box-sky-b); color: var(--box-sky-t);">
+  <div class="stunt-head">
+    <div class="stunt-icon">📻</div>
+    <div>
+      <div class="stunt-tag">Stunt 01</div>
+      <div class="stunt-title">The Radio Prediction</div>
+    </div>
+  </div>
+  <p>About two months ago I was working on a series of BBC Radio Programmes with my good friend David Berglas. Halfway through the series of thirteen programmes we decided that a publicity stunt would do everybody a bit of good!</p>
+  <p>Our first concern was to "think big." My job was to get ideas and David's job was to do them; normally I reckon that given time I can work out a stunt which is big enough for any occasion, but Mr. Berglas is a "stunt eater." I'd think up something that would scare the living daylights out of the ordinary performer and David would look it over as though it was a new novelty for kiddies. He talks in terms of "Vanishing Nelson's Column" and "Stopping all the traffic in Piccadilly for three minutes."</p>
+  <div class="nest-in ni-sky" style="margin: 14px 0;">
+    <div class="it">📦 The Plot</div>
+    <p>A prediction would be sealed in a fairly large box and displayed very prominently for quite a while. The usual run of things like "leaving it in a bank vault" and "the Editor keeps it in his safe" were out. Not big enough.</p>
+  </div>
+  <div class="nest-in ni-sky" style="margin: 14px 0;">
+    <div class="it">🌟 The Execution</div>
+    <p>After rejecting twenty ideas, it was agreed that the best place to display the box was to suspend it in mid-air, somewhere so that everybody and anybody could see it yet nobody could get at it. After three weeks of arguments, debates, bribes, swearing, and threatening, David finally gained permission to suspend the box on a wire cable hanging right over the middle of London's prominent thoroughfare, Regent Street, within a few feet of Piccadilly Circus, which we call the "heart of London."</p>
+  </div>
+  <div class="nest-in ni-sky" style="margin: 14px 0;">
+    <div class="it">🎯 The Result</div>
+    <p>It stayed there causing curiosity, traffic jams, and alarm from old ladies who thought it had come from Mars, for no less than one week. During that time, thousands upon thousands of people must have looked up and wondered what the hell it was. By the time the week was up and the stunt taken place, there was a keen interest by half the Nation to know what was going to happen. The BBC were delighted that the listening public increased their tuning in to the programme.</p>
+  </div>
+  <p>Members of the audience provided information to make up an imaginary passport: they supplied the name, address, age, and nationality, etc. When this had been done in the Studio, a team of officials, supported by a BBC outside broadcasting unit, hauled in the box through the windows of a famous hotel and opened it up. There inside, where it had been for a week, was a genuine passport issued especially to David Berglas a week ago: and it predicted with amazing accuracy the facts just supplied in the Studio!</p>
+  <div class="callout mint" style="margin-top: 14px;">
+    <div class="icon">🏆</div>
+    <div class="body">
+      <strong>Was it worth it?</strong>
+      <p>The answer came that night. David had been booked to appear six times at weekly intervals on the radio series. That night the producer wanted to know if he could possibly continue and stay in until the series ended: another seven weeks. David did thirteen programmes. This particular occasion served as a first-class example that big results demand big thinking.</p>
+    </div>
+  </div>
+</div>
+
+<!-- STUNT 2: PERSONAL COLUMN -->
+<div class="stunt-card" style="background: var(--box-mint); border-color: var(--box-mint-b); color: var(--box-mint-t);">
+  <div class="stunt-head">
+    <div class="stunt-icon">📰</div>
+    <div>
+      <div class="stunt-tag">Stunt 02</div>
+      <div class="stunt-title">The Personal Column Advert Stunt</div>
+    </div>
+  </div>
+  <p>Leslie May of Edinburgh reminded me that a very good publicity stunt is one where you insert an advertisement in some prominent daily paper. Practically any trick will do: a simple card prediction, a word for a book test, a name, etc. You merely word out a small advert which goes:</p>
+  <div style="background: white; border-radius: 10px; padding: 18px 20px; margin: 14px 0; border: 1px solid #4FC591; font-style: italic; color: #1C1A16; font-size: 14.5px; line-height: 1.7;">
+    "AT THE SAVOY tonight, Mr. Eric Mason will select the Ace of Clubs... LESLIE MAY (Paranormalist)."
+  </div>
+  <p>You insert the place of performance of course, and use the name of the chairman or president as the one who will select the card. You see that you have a copy of the paper with you when you arrive at the place of performance and say nothing about your advert until, by some means, you have forced the chairman to choose the Ace of Clubs. Then comes printed evidence of your prediction being correct.</p>
+  <p>Not to mention the curiosity that can be aroused by other people who spot your advert in the personal column. Leslie May suggests two adverts in one paper: the personal column and the entertainments section would result in a good tie-up. The easiest way to force the Ace of Clubs is to keep it under glass in bright sunlight, à la tomato plants!!</p>
+
+  <div style="margin-top: 18px; padding-top: 14px; border-top: 1px dashed #4FC591;">
+    <div style="font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; margin-bottom: 10px; color: var(--box-mint-t);">🎭 A True Story Worth Telling...</div>
+    <p>At this point I will ask to be forgiven for sidetracking publicity stunts to come in with a true story, told briefly, which concerned David Berglas and a printed prediction set in The Radio Times. David, at a Studio in London, worked a stunt with a lady in Manchester (another studio, linked up). She had been told to choose a newspaper, choose a page, tear it up into eight pieces, and choose one piece. Tear that bit up, and finally came the order from David: "and now you have one piece left; please choose any side."</p>
+    <p>For half a minute there was a deathly silence and then David heard laughter and some unscripted remarks from the compere at the other end, who on this occasion was Cyril Fletcher. Naturally, David got a bit worried at this unexpected turn of events, and, as best he could on a live broadcast, he asked Cyril Fletcher, "What's going on..." Back came the reply: "Well, our guest has done what you told her. She is chewing the paper!!"</p>
+    <p>The lady obviously mistook "choose" for "chew" and there she was chewing the vital slip that was intended as the prediction to tie up with the Radio Times advertisement! If she had swallowed it, it would have taken an operation to prove the prediction correct. As it was, a sad and rather well-eaten slip of paper was deciphered, and with lots of giggles it turned out all right in the end. There's no accounting for taste! 😂</p>
+  </div>
+</div>
+
+<!-- STUNT 3: REGISTERED LETTER -->
+<div class="stunt-card" style="background: var(--box-lav); border-color: var(--box-lav-b); color: var(--box-lav-t);">
+  <div class="stunt-head">
+    <div class="stunt-icon">✉️</div>
+    <div>
+      <div class="stunt-tag">Stunt 03</div>
+      <div class="stunt-title">Registered Letter Prediction</div>
+    </div>
+  </div>
+  <p>Another stunt which goes well when you know in plenty of time the place of performance: send a registered letter containing a prediction to the organiser (or to anyone who will be there on the night).</p>
+  <p>In actual fact, the envelope is empty, only to be loaded with a prediction from a billet knife or billet pencil (see Step Four) when you come to use it during the act. You don't want the organiser to open the prediction before time, so what you do is send him the prediction sealed in an envelope which is enclosed within another envelope (the registered one), along with a note telling him to bring the enclosed envelope to your performance and to safeguard it intact until that time. They will co-operate if you do it tactfully. If you are the proud owner of a prediction chest, this may also be sent via registered mail and worked accordingly.</p>
+</div>
+
+<!-- STUNT 4: BULLET CATCHING -->
+<div class="stunt-card" style="background: var(--box-peach); border-color: var(--box-peach-b); color: var(--box-peach-t);">
+  <div class="stunt-head">
+    <div class="stunt-icon">🎯</div>
+    <div>
+      <div class="stunt-tag">Stunt 04</div>
+      <div class="stunt-title">Fogel's Bullet Catching</div>
+    </div>
+  </div>
+  <p>From time to time performers have utilised the dramatic stage trick "Catching a Bullet in the Teeth" for the purpose of a publicity stunt. Legend has it that Ted Annemann once did a stunt, catching a bullet, and nobody knows how. Reading the description of this in Dexter's book is most interesting and quite impossible! Who cares? Annemann knew the difference between performing effects and demonstrating principles!</p>
+
+  <div class="callout rose" style="margin: 14px 0;">
+    <div class="icon">⚠️</div>
+    <div class="body">
+      <strong>This is not a toy.</strong>
+      <p>The bullet catch is a good publicity stunt because it fringes on play with death. However, it is not something to be done by a fool. There are many safe methods; there are just as many unsafe ones. Some people insist that any publicity is good, but they go wrong when you hit the headlines with "Mindreader blows his brains out when stunt goes wrong." So you're in the news!?</p>
+    </div>
+  </div>
+
+  <p>Two years ago I had the great pleasure to watch the greatest publicity stunt I have ever seen. Maurice Fogel does the trick. Fogel does everything the book says: takes a trick and makes it big.</p>
+
+  <div class="nest-in ni-peach" style="margin: 14px 0;">
+    <div class="it">🎪 The Scene</div>
+    <p>On stage: a team of six crackshot guardsmen. A colonel in charge of the "firing squad." Regulation army rifles, sandbags, and anti-ricochet boards around. A plate holding eighteen live bullets, and each guardsman loads any bullet he likes. Twice they fire a salvo of six rounds at a plate which disintegrates under the impact of six bullets. The din is terrific, the atmosphere tense.</p>
+  </div>
+  <div class="nest-in ni-peach" style="margin: 14px 0;">
+    <div class="it">😱 The Moment</div>
+    <p>Fogel now stands in shirt sleeves ready to face the onslaught of catching six bullets at once. The colonel gives the order: "Load, take aim, FIRE!" Another deafening bang and Fogel totters forward and crashes flat on his face. Everyone is on their feet with one thought: "it's gone wrong." Thirty seconds later, after what seems to be ten hours of utter silence, Fogel stands to his feet, turns, and smiles, and six bullets array themselves in his teeth!</p>
+  </div>
+  <div class="nest-in ni-peach" style="margin: 14px 0;">
+    <div class="it">📰 The Coverage</div>
+    <p>They drop on to a plate; eager committee men rush forward and grab them, identify markings: they match. They are the bullets. That night and next day nearly every paper in the country carried the story and many held front page pictures. Three newsreel films went out and brought the story on film to the public for six months afterwards.</p>
+  </div>
+
+  <div class="pull-quote">
+    I doubt that I will ever see a more frightening, dramatic, and gripping performance than on this occasion.
+    <div class="attr">— Corinda</div>
+  </div>
+</div>
+
+<!-- PERSONAL PUBLICITY: HAFLER -->
+<div class="stunt-card" style="background: var(--box-sage); border-color: var(--box-sage-b); color: var(--box-sage-t);">
+  <div class="stunt-head">
+    <div class="stunt-icon">🌎</div>
+    <div>
+      <div class="stunt-tag">Example of Personal Publicity</div>
+      <div class="stunt-title">Raymond Hafler of California</div>
+    </div>
+  </div>
+  <p>Raymond Hafler of California, U.S.A., is a good friend and fellow mentalist and his status in mentalism we would call semi-professional. Most of his time nowadays is taken up with professional work at the Municipal Courts of Long Beach. This means that he doesn't have to have good personal publicity, but Ray, a mentalist of many years' experience, knows the value of a job well done.</p>
+
+  <div class="nest-in ni-sage" style="margin: 14px 0;">
+    <div class="it">🪪 His Card</div>
+    <p>The card is direct, simple, and sophisticated. It reads: "Raymond W. Hafler, the mentalist. Entertains and mystifies discriminating audiences. Phone: ___."</p>
+  </div>
+  <div class="nest-in ni-sage" style="margin: 14px 0;">
+    <div class="it">📄 His Leaflet</div>
+    <p>A small, single-fold card. The front is a straightforward drawing bearing his name. The inside tells you all about it and the back tells you he can be booked by telephone. It reads well; it sounds very much as though they will get someone who knows what he's talking about, and has worldly experience.</p>
+  </div>
+  <div class="nest-in ni-sage" style="margin: 14px 0;">
+    <div class="it">🏅 His Credentials</div>
+    <p>He had 24 years in the U.S. Navy and ended up a Lieutenant Commander. During his service he performed endless varieties of magic and mentalism in many countries of the world. On the USS Breckenridge alone, he played to cabin and troop passengers in well over a hundred shows. He has the experience and ability to back up the claims in his leaflet.</p>
+  </div>
+
+  <div class="callout mint" style="margin-top: 14px;">
+    <div class="icon">💎</div>
+    <div class="body">
+      <strong>The rare example worth aspiring to.</strong>
+      <p>There's nothing special about Ray Hafler to say why he should be used as an example in the Steps; only that he is a rare example of a non-professional who takes the trouble to do it properly. Some who read this will think to themselves "it doesn't strike me as being very much," and nine out of ten who think so will be mentalists who have nothing like it to offer themselves!</p>
+    </div>
+  </div>
+</div>
+
+<!-- STUNT 5: VISITING CARD GIMMICK -->
+<div class="stunt-card" style="background: var(--box-gold); border-color: var(--box-gold-b); color: var(--box-gold-t);">
+  <div class="stunt-head">
+    <div class="stunt-icon">🃏</div>
+    <div>
+      <div class="stunt-tag">Stunt 05</div>
+      <div class="stunt-title">The Visiting Card Gimmick</div>
+    </div>
+  </div>
+  <p>I have played with this idea for quite a while and it seems to be a good way to stop people throwing your card in their wastepaper bin as soon as they get home. On one side of your card you have the normal name and address as on any card. On the back you have specially printed a mass of numbers in rows and columns: from one to a hundred mixed in any order will do. Using the cards all the time, you soon get to know where the numbers are, roughly speaking.</p>
+  <p>One side of your card says you are a mindreader and you let them see it; invariably they look at the back also, and in doing so they are curious about the numbers. You tell them they are there for a simple mindreading test you do. Take back the card and ask them to think of any number from one to a hundred. Say you will circle the one they are thinking of; pretend to mark one with a pencil; ask what they chose and then do the rest with a Swami gimmick (see Step One for technique).</p>
+  <p>This is not much to carry: a few cards and a Swami gimmick. They are sure to keep the card as a souvenir and probably it will be shown to many of their friends when they relate the experience!</p>
+</div>
+
+<!-- STUNT 6: HAUNTED HOUSE -->
+<div class="stunt-card" style="background: var(--box-lilac); border-color: var(--box-lilac-b); color: var(--box-lilac-t);">
+  <div class="stunt-head">
+    <div class="stunt-icon">👻</div>
+    <div>
+      <div class="stunt-tag">Stunt 06</div>
+      <div class="stunt-title">The Haunted House Stunt</div>
+    </div>
+  </div>
+  <p>Once again we find Fogel tied up with something big and unusual. As a publicity stunt, something that is sure to make good reading in the newspapers: you (as a mentalist), knowing a thing or two about poltergeists, go to a house that is alleged to be haunted and "lay the ghost." Usually this is a fixed and phoney set-up.</p>
+  <div class="nest-in" style="background: #EED8FD; border-color: #A050D0; color: #300050; margin: 14px 0;">
+    <div class="it">🎭 The Plot Build-Up</div>
+    <p>A friend lends their house for the occasion, claims they are being disturbed by strange noises, etc. Over a short time they build up the plot; the local spiritualist association has a go and gets no results; the psychical research team fails to stop the disturbance, etc. Finally they ask you if you can do something to help.</p>
+  </div>
+  <div class="nest-in" style="background: #EED8FD; border-color: #A050D0; color: #300050; margin: 14px 0;">
+    <div class="it">🔮 The Seance</div>
+    <p>You go in (with local press, police, the vicar, and whosoever else you can ensnare!) and hold a seance. The last time Fogel went through this palaver, he was actually invited to try and exorcise a ghost. Surrounded by officials he held a seance and some mighty queer happenings took place. By some strange coincidence, a spook sent the message that it was restless, but now promised to leave and would never cause trouble again!</p>
+  </div>
+  <p>Not only did it make good reading in the press write-ups, but the house owners were no longer disturbed and were indeed truly grateful to Fogel.</p>
+</div>
+
+<!-- STUNT 7: CHALLENGE SEANCE -->
+<div class="stunt-card" style="background: var(--box-rose); border-color: var(--box-rose-b); color: var(--box-rose-t);">
+  <div class="stunt-head">
+    <div class="stunt-icon">🔔</div>
+    <div>
+      <div class="stunt-tag">Stunt 07</div>
+      <div class="stunt-title">The Challenge Seance</div>
+    </div>
+  </div>
+  <p>There's a lot of work in this stunt, but a lot happens and I have done it several times with good results. As a mentalist, you challenge a medium to produce any supernatural phenomena that you yourself cannot outdo or duplicate by methods which, you claim, are natural. To give it all a certain amount of attraction, a big money wager is offered; press, local dignitaries, and officials are invited, and away you go! Step Nine gives you all the information you want on what to do.</p>
+
+  <div class="callout rose" style="margin: 14px 0;">
+    <div class="icon">💡</div>
+    <div class="body">
+      <strong>The best way to get a medium for this sort of stunt.</strong>
+      <p>Train one yourself! You haven't got a chance in a million of finding a physical medium who will accept a genuine challenge from you, and even if you did find one, you stand to lose your bet if the medium suddenly pulls three yards of ectoplasm from your left ear and you don't know how! You need a man or woman who can act, and you teach them a few tricks of the trade to put them in business against you!</p>
+    </div>
+  </div>
+
+  <p>With the right person to act as medium on your side, you can't go far wrong and it will still seem legitimate. In case you should doubt that, I have tried it out before highly critical audiences and still got away with it (i.e., Magic Circle, Society for Psychical Research, newspaper reporters, etc.).</p>
+  <p>In the past it has always been a reasonably safe bet for publicity. I have many press records of stunts in the past and some of the names, to mention a few, include Harry Houdini, Carl Hertz and his challenge to Madame Dis Debar which held a full page in the London Times to say the least, Julien Proskauwer, Harry Kellar, and of course Maskelyne and Devant.</p>
+</div>
+
+<!-- STUNT 8: HEADLINE PREDICTIONS -->
+<div class="stunt-card" style="background: var(--box-sky); border-color: var(--box-sky-b); color: var(--box-sky-t);">
+  <div class="stunt-head">
+    <div class="stunt-icon">🗞️</div>
+    <div>
+      <div class="stunt-tag">Stunt 08</div>
+      <div class="stunt-title">Headline Predictions</div>
+    </div>
+  </div>
+  <p>Probably the most used publicity stunt of them all is the prediction of the headlines in some prominent newspaper. The reason for its popularity is that it nearly always gets a story in print, and this is mostly the outcome of providing press material that is personal to the newspaper itself.</p>
+  <p>On the market, magic dealers have about ten good ways of performing the feat. To mention a few: prediction chest, billet knife or pencil, Fogel's headline prediction which is sealed in a bottle, and so on. Most of them achieve the effect by simple means. There is barely any need to discuss technical details; all that is lacking, generally speaking, is good presentation.</p>
+
+  <div class="nest-in ni-sky" style="margin: 14px 0;">
+    <div class="it">🏬 Display in a Shop Window</div>
+    <p>Let us suppose that we have arranged to forecast the headlines in our local paper. To create as much interest as possible, we seal the prediction in a box and then arrange to have this box prominently displayed in the window of some big store and surround it with showcards which tell the public: "This box contains an Amazing Prediction made by Oscar Oswald, mindreader" and "£1,000 offered if he is wrong!" etc. The box displayed there for a week is seen by many before it is opened: all added material to your story, all added publicity which you don't get if the box is left in the Editor's safe for a week.</p>
+  </div>
+  <div class="nest-in ni-sky" style="margin: 14px 0;">
+    <div class="it">🎪 The Ticker Tape Variant</div>
+    <p>Another presentation plot comes from Punx. He has the prediction chest opened after a week or two and out comes a roll of "ticker tape" with brief headlines for ten leading newspapers throughout the country. I have yet to hear of a better disguise for a rolled piece of paper in a box!!</p>
+  </div>
+  <div class="nest-in ni-sky" style="margin: 14px 0;">
+    <div class="it">🎭 Suspended from the Theatre Dome</div>
+    <p>The box has been suspended from the dome of the theatre from the start of the show. Finally, I had no trouble switching a small length of recording tape which made it possible for me to perform a novel headline prediction by tape recorder.</p>
+  </div>
+</div>
+
+<!-- STUNT 9: MUSCLE READING -->
+<div class="stunt-card" style="background: var(--box-teal); border-color: var(--box-teal-b); color: var(--box-teal-t);">
+  <div class="stunt-head">
+    <div class="stunt-icon">📚</div>
+    <div>
+      <div class="stunt-tag">Stunt 09</div>
+      <div class="stunt-title">Glorified Muscle Reading</div>
+    </div>
+  </div>
+  <p>I rebuke myself for not using this as an example earlier when speaking on little tricks that are blown up to an enormous size to become publicity stunts! This little trick is a book test, and the method we claim is muscle reading, or whatever you prefer to call it.</p>
+  <p>You start off in the editor's office. You wait there and keep a small committee amused with a few mindreading tricks, whilst they send someone to any public library in the town. That person is told to go where he likes, choose any book in the library, and select any page or word. He makes an accurate note of all the details such as name of book and page number, etc., and then returns to you. He is instructed most carefully to return the book to the exact position where he found it.</p>
+  <p>When he gets back you have him seal the record paper in an envelope and hand this to the editor or sub-editor (whoever is free!). Now you start out with a group of three or four people: one reporter to write up the details, one cameraman to take a few shots, the editor to see that everything is above board, and the man who picked the place and book for the test.</p>
+  <p>You call a cab and off you go to the library. You find the right floor and then tour your group around sections and divisions through thousands of books. You get warm at the right shelf, you find the book, you open it at the right page, and with a sigh of exhaustion, underline with your pen the chosen word! You ask the editor to open the envelope and check your findings, and if it's favourable publicity you want after that palaver, the contents of the envelope had better be right!</p>
+
+  <div class="nest-in ni-teal" style="margin: 14px 0;">
+    <div class="it">🕵️ The Carbon Copy Method</div>
+    <p>Send the scout out to choose his word, etc., telling him to remember exactly the facts. When he gets back, find some excuse to get him to write the facts down: "I want the editor to have a copy in his possession all the time, before we leave." A sheet of carbon paper stuck inside a newspaper will then get you a copy.</p>
+  </div>
+  <div class="nest-in ni-teal" style="margin: 14px 0;">
+    <div class="it">🚕 The Cab Signal Method</div>
+    <p>With help this time: have the scout followed by a friend. By this you will be able to find the book and maybe the page, and proper muscle reading will find you the word. The best way for your friend to signal you is to have him waiting outside for you to come on to the street with your party. He then calls a cab and you do the same. You guide your cab driver in the same direction as the friend drives. At the library you again "pick up" your friend and he goes to the shelf and selects a book from there, but not the chosen one. Browsing through the book he keeps it open at a page number which tells you how many books along the row is the chosen book. Then he turns his pages to give you the number of your page, etc. As long as you keep an eye on your assistant, there is no need to stand beside him. He can leave the book open on a table and then walk away: you spot the page number as you pass by.</p>
+  </div>
+</div>
+
+<!-- STUNT 10: PUBLICITY PENCILS -->
+<div class="stunt-card" style="background: var(--box-yellow); border-color: var(--box-yellow-b); color: var(--box-yellow-t);">
+  <div class="stunt-head">
+    <div class="stunt-icon">✏️</div>
+    <div>
+      <div class="stunt-tag">Stunt 10</div>
+      <div class="stunt-title">Publicity Pencils</div>
+    </div>
+  </div>
+  <p>It is not commonly known that for very little outlay, you can have your name and a few words inscribed on ordinary lead pencils. It is economical to have about one thousand done at once and the cost of this number is somewhere in the region of fourpence each. I have some which bear my name and also the inscription: "The Pencil Made for Mindreading."</p>
+  <p>As you may guess, give one of these to anybody and the first thing they want to know is "why is it made for mindreading?"... which immediately provides the excuse to get them to write something down ready for one to do the Centre Tear (see Step Six). When they have written a word, their name, or telephone number, I go through the usual procedure and destroy the billet. Now I take back the pencil and on another piece of paper, slowly reproduce what they wrote! This ability I attribute to the pencil, explaining in brief the principles of automatic writing, and give a good example by describing a planchette.</p>
+  <p>By the time it's done, not only do they keep my pencil as a souvenir, but also they remember every time they use it and frequently tell the story to other people. Every time you give away a fourpenny pencil, you get a pound of publicity!</p>
+
+  <div class="callout yellow" style="margin-top: 14px;">
+    <div class="icon">💡</div>
+    <div class="body">
+      <strong>The underlying principle.</strong>
+      <p>In a small way, the publicity pencil serves to illustrate that anything which arouses curiosity is good for publicity. The more interest it creates, the better the gimmick. To arouse the inquisitive instinct is one of the few ways to get people to ask you to show them your ability: a better thing than you trying to force them to pay attention!</p>
+    </div>
+  </div>
+</div>
+
+<!-- STUNT 11: BLINDFOLD -->
+<div class="stunt-card" style="background: var(--box-coral); border-color: var(--box-coral-b); color: var(--box-coral-t);">
+  <div class="stunt-head">
+    <div class="stunt-icon">🚗</div>
+    <div>
+      <div class="stunt-tag">Stunt 11</div>
+      <div class="stunt-title">Blindfold Drives and Walks</div>
+    </div>
+  </div>
+  <p>Not to be forgotten whilst on the topic of publicity plots: we have blindfold drives and walks. Anything which breeds danger attracts attention and is good for publicity, and this is in that class. So much so, in fact, that today in many big cities of the world, blindfold driving of cars or bicycles is forbidden and the necessary permission from the police is unobtainable.</p>
+  <p>This is rather unfortunate because it stands to reason that when you drive blindfolded, the more the traffic on the road and the larger the city, the more impressive the stunt becomes. To see the local vicar peddle around the village green on a penny farthing is less dramatic than watching our budding mentalist shoot up busy Oxford Street in a steamroller. So the first thing you do before you even bother to think about blindfold drives is to find out if they will allow it where you want to do it. If they will, Step Five tells you everything you need to know about blindfolds to make it possible.</p>
+  <p>Blindfold walks on their own don't mean a thing. You need a plot.</p>
+
+  <div class="nest-in ni-coral" style="margin: 14px 0;">
+    <div class="it">🌿 Hampton Court Maze</div>
+    <p>A good stunt: find the middle of the maze whilst blindfolded, a thing which most people cannot do under normal conditions!</p>
+  </div>
+  <div class="nest-in ni-coral" style="margin: 14px 0;">
+    <div class="it">😰 The Danger Element</div>
+    <p>If you care to, walk a plank which crosses two buildings pretty high in the air.</p>
+  </div>
+  <div class="nest-in ni-coral" style="margin: 14px 0;">
+    <div class="it">🦁 At the Zoo</div>
+    <p>Lead a committee to the cage of any animal they care to nominate. In a museum, lead the group to any object they name.</p>
+  </div>
+
+  <div style="margin-top: 18px; padding-top: 14px; border-top: 1px dashed var(--box-coral-b);">
+    <div style="font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; margin-bottom: 10px;">🎖️ The Remarkable Pierre Dufont</div>
+    <p>It would be unworthy of me to pass the subject of blindfold walks without mention of Pierre Dufont. This gentleman led six officers of the British Army for two miles across a field whilst blindfolded. The only extraordinary thing about the episode was that it was an enemy minefield in France during the war. When asked why he did it and if he was scared, his reply was very simple. He said that if he had remained behind, the chances were he would have been caught and shot, which was a good excuse for going forward. He later confessed that before the war he had been a showman, and he decided on the occasion to die a showman if fate would have it: so he wore a blindfold!</p>
+    <p>There seems to be little doubt, according to the report in "The Soldier," that if Dufont had followed the usual paths across the fields (which he would have done without the blindfold) they would all have been blown to bits.</p>
+  </div>
+</div>
+
+<hr class="div">
+
+<!-- CONCLUSION -->
+<h2 class="sh">Conclusion: The Ten Commandments of Publicity 📜</h2>
+
+<p>Sufficient plots have been given to illustrate what makes a good publicity stunt and all that remains now is to summarise all that we have studied, so that we get the bare essentials of that which is needed for good publicity.</p>
+
+<div class="sum10">
+  <div class="sum-item" style="background: var(--box-mint); border-color: var(--box-mint-b); color: var(--box-mint-t);">
+    <div class="sn">01</div><div>First have a good product to sell: have a good act. 🎭</div>
+  </div>
+  <div class="sum-item" style="background: var(--box-lav); border-color: var(--box-lav-b); color: var(--box-lav-t);">
+    <div class="sn">02</div><div>Organise personal publicity; keep it in good taste. 🎨</div>
+  </div>
+  <div class="sum-item" style="background: var(--box-sky); border-color: var(--box-sky-b); color: var(--box-sky-t);">
+    <div class="sn">03</div><div>Attract attention, create mass interest, and arouse curiosity. 👀</div>
+  </div>
+  <div class="sum-item" style="background: var(--box-gold); border-color: var(--box-gold-b); color: var(--box-gold-t);">
+    <div class="sn">04</div><div>Think big. 🚀</div>
+  </div>
+  <div class="sum-item" style="background: var(--box-peach); border-color: var(--box-peach-b); color: var(--box-peach-t);">
+    <div class="sn">05</div><div>Whilst you remain in showbusiness you need publicity. Keep it up. 🔄</div>
+  </div>
+  <div class="sum-item" style="background: var(--box-rose); border-color: var(--box-rose-b); color: var(--box-rose-t);">
+    <div class="sn">06</div><div>Don't take unnecessary chances: they are not worth it. ⚠️</div>
+  </div>
+  <div class="sum-item" style="background: var(--box-teal); border-color: var(--box-teal-b); color: var(--box-teal-t);">
+    <div class="sn">07</div><div>A personal gimmick is worth a ton of printed matter. ✨</div>
+  </div>
+  <div class="sum-item" style="background: var(--box-sage); border-color: var(--box-sage-b); color: var(--box-sage-t);">
+    <div class="sn">08</div><div>Learn to commercialise your publicity and not to waste it. 💰</div>
+  </div>
+  <div class="sum-item" style="background: var(--box-coral); border-color: var(--box-coral-b); color: var(--box-coral-t);">
+    <div class="sn">09</div><div>Be dramatic and grossly exaggerate any trick you do. 🎪</div>
+  </div>
+  <div class="sum-item" style="background: var(--box-yellow); border-color: var(--box-yellow-b); color: var(--box-yellow-t);">
+    <div class="sn">10</div><div>Be as good as your publicity says you are! 🏆</div>
+  </div>
+</div>
+
+<p style="text-align: center; margin-top: 48px; font-family: 'DM Mono', monospace; font-size: 11px; color: #B0AA96; letter-spacing: 2px;">END OF STEP TWELVE &nbsp;·&nbsp; CORINDA</p>
+
+</div>
+</body>
+</html>
